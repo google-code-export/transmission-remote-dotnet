@@ -16,6 +16,7 @@ namespace TransmissionClientNew
         public static string[] uploadArgs;
         public static Object updateLock = new Object();
         public static int failCount = 0;
+        public static bool preAuthenticate = false;
 
         [STAThread]
         static void Main(string[] args)

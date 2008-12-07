@@ -32,7 +32,7 @@ namespace TransmissionClientNew
             if (settings.authEnabled)
             {
                 request.Credentials = new NetworkCredential(settings.user, settings.pass);
-                request.PreAuthenticate = true;
+                request.PreAuthenticate = Program.preAuthenticate;
             }
             if (settings.proxyEnabled == 1)
             {

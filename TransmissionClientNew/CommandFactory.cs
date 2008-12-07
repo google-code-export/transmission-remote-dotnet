@@ -55,26 +55,27 @@ namespace TransmissionClientNew
                 StreamWriter stOut = new StreamWriter(request.GetRequestStream(), System.Text.Encoding.ASCII);
                 stOut.Write(json);
                 stOut.Close();
-                StreamReader stIn = new StreamReader(request.GetResponse().GetResponseStream());
+                WebResponse webResponse = request.GetResponse();
+                StreamReader stIn = new StreamReader(webResponse.GetResponseStream());
                 str_response = stIn.ReadToEnd();
                 stIn.Close();
-                JsonObject response = (JsonObject)JsonConvert.Import(str_response);
-                if (response["result"].ToString() != "success")
+                JsonObject jsonResponse = (JsonObject)JsonConvert.Import(str_response);
+                if (jsonResponse["result"].ToString() != "success")
                 {
                     return new ErrorCommand("Unsuccessful request", str_response);
                 }
-                switch (((JsonNumber)response["tag"]).ToInt16())
+                switch (((JsonNumber)jsonResponse["tag"]).ToInt16())
                 {
                     case (short)ResponseTag.SessionGet:
-                        return new SessionCommand(response);
+                        return new SessionCommand(jsonResponse, webResponse.Headers);
                     case (short)ResponseTag.TorrentGet:
-                        return new TorrentGetCommand(response, false);
+                        return new TorrentGetCommand(jsonResponse, false);
                     case (short)ResponseTag.TorrentGetLoop:
-                        return new TorrentGetCommand(response, true);
+                        return new TorrentGetCommand(jsonResponse, true);
                     case (short)ResponseTag.UpdateFiles:
-                        return new UpdateFilesCommand(response);
+                        return new UpdateFilesCommand(jsonResponse);
                     case (short)ResponseTag.UpdatePriorities:
-                        return new UpdatePrioritiesCommand(response);
+                        return new UpdatePrioritiesCommand(jsonResponse);
                     case (short)ResponseTag.DoNothing:
                         return new NoCommand();
                 }

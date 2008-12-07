@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using Jayrock.Json;
 using System.Windows.Forms;
+using System.Net;
 
 namespace TransmissionClientNew.Commmands
 {
     class SessionCommand : TransmissionCommand
     {
-        public SessionCommand(JsonObject response)
+        public SessionCommand(JsonObject response, WebHeaderCollection headers)
         {
+            Program.preAuthenticate = (headers.Get("Server") == null);
             Program.sessionData = response;
             Program.failCount = 0;
         }
