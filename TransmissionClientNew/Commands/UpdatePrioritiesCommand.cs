@@ -19,7 +19,7 @@ namespace TransmissionClientNew.Commmands
         public void Execute()
         {
             JsonObject arguments = (JsonObject)response[ProtocolConstants.KEY_ARGUMENTS];
-            JsonArray torrents = (JsonArray)arguments["torrents"];
+            JsonArray torrents = (JsonArray)arguments[ProtocolConstants.KEY_TORRENTS];
             JsonObject torrent = (JsonObject)torrents[0];
             int id = ((JsonNumber)torrent[ProtocolConstants.FIELD_ID]).ToInt32();
             TorrentInfoDialog form;

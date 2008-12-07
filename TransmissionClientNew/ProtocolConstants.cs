@@ -7,28 +7,39 @@ namespace TransmissionClientNew
 {
     public class ProtocolConstants
     {
-        public static readonly string KEY_TAG = "tag";
-        public static readonly string KEY_METHOD = "method";
-        public static readonly string KEY_IDS = "ids";
-        public static readonly string KEY_ARGUMENTS = "arguments";
-        public static readonly string KEY_FIELDS = "fields";
-        public static readonly string METHOD_TORRENTGET = "torrent-get";
-        public static readonly string FIELD_ETA = "eta";
-        public static readonly string FIELD_RATEDOWNLOAD = "rateDownload";
-        public static readonly string FIELD_RATEUPLOAD = "rateUpload";
-        public static readonly string FIELD_TOTALSIZE = "totalSize";
-        public static readonly string FIELD_HAVEVALID = "haveValid";
-        public static readonly string FIELD_UPLOADEDEVER = "uploadedEver";
-        public static readonly string FIELD_LEECHERS = "leechers";
-        public static readonly string FIELD_SEEDERS = "seeders";
-        public static readonly string FIELD_ADDEDDATE = "addedDate";
-        public static readonly string FIELD_ID = "id";
-        public static readonly string FIELD_FILES = "files";
-        public static readonly string FIELD_PRIORITIES = "priorities";
-        public static readonly string FIELD_WANTED = "wanted";
-        public static readonly string FIELD_DOWNLOADLIMIT = "downloadLimit";
-        public static readonly string FIELD_DOWNLOADLIMITMODE = "downloadLimitMode";
-        public static readonly string FIELD_UPLOADLIMIT = "uploadLimit";
-        public static readonly string FIELD_UPLOADLIMITMODE = "uploadLimitMode";
+        public static readonly int
+            STATUS_DOWNLOADING = 4,
+            STATUS_SEEDING = 8,
+            STATUS_STOPPED = 16;
+
+        public static readonly string
+            KEY_TAG = "tag",
+            KEY_METHOD = "method",
+            KEY_IDS = "ids",
+            KEY_ARGUMENTS = "arguments",
+            KEY_FIELDS = "fields",
+            KEY_TORRENTS = "torrents",
+            METHOD_TORRENTGET = "torrent-get",
+            METHOD_TORRENTSTART = "torrent-start",
+            METHOD_TORRENTSTOP = "torrent-stop",
+            FIELD_LEFTUNTILDONE = "leftUntilDone",
+            FIELD_ETA = "eta",
+            FIELD_STATUS = "status",
+            FIELD_RATEDOWNLOAD = "rateDownload",
+            FIELD_RATEUPLOAD = "rateUpload",
+            FIELD_TOTALSIZE = "totalSize",
+            FIELD_HAVEVALID = "haveValid",
+            FIELD_UPLOADEDEVER = "uploadedEver",
+            FIELD_LEECHERS = "leechers",
+            FIELD_SEEDERS = "seeders",
+            FIELD_ADDEDDATE = "addedDate",
+            FIELD_ID = "id",
+            FIELD_FILES = "files",
+            FIELD_PRIORITIES = "priorities",
+            FIELD_WANTED = "wanted",
+            FIELD_DOWNLOADLIMIT = "downloadLimit",
+            FIELD_DOWNLOADLIMITMODE = "downloadLimitMode",
+            FIELD_UPLOADLIMIT = "uploadLimit",
+            FIELD_UPLOADLIMITMODE = "uploadLimitMode";
     }
 }

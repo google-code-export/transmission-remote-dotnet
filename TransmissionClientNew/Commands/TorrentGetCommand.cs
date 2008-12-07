@@ -33,7 +33,7 @@ namespace TransmissionClientNew.Commmands
             long totalSize = 0;
             long totalDownloadedSize = 0;
             JsonObject arguments = (JsonObject)response[ProtocolConstants.KEY_ARGUMENTS];
-            JsonArray torrents = (JsonArray)arguments["torrents"];
+            JsonArray torrents = (JsonArray)arguments[ProtocolConstants.KEY_TORRENTS];
             Program.updateSerial++;
             Program.form.SuspendListView();
             foreach (JsonObject torrent in torrents)
@@ -44,12 +44,12 @@ namespace TransmissionClientNew.Commmands
                 totalSize += ((JsonNumber)torrent[ProtocolConstants.FIELD_TOTALSIZE]).ToInt64();
                 totalDownloadedSize += ((JsonNumber)torrent[ProtocolConstants.FIELD_HAVEVALID]).ToInt64();
                 totalTorrents++;
-                short status = ((JsonNumber)torrent["status"]).ToInt16();
-                if (status == (short)TorrentStatus.Downloading)
+                short status = ((JsonNumber)torrent[ProtocolConstants.FIELD_STATUS]).ToInt16();
+                if (status == ProtocolConstants.STATUS_DOWNLOADING)
                 {
                     totalDownloading++;
                 }
-                else if (status == (short)TorrentStatus.Seeding)
+                else if (status == ProtocolConstants.STATUS_SEEDING)
                 {
                     totalSeeding++;
                 }

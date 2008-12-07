@@ -119,7 +119,7 @@ namespace TransmissionClientNew
 
         private void StopStartButton_Click(object sender, EventArgs e)
         {
-            Program.form.CreateActionWorker().RunWorkerAsync(Requests.Generic(((JsonNumber)t.info["status"]).ToInt16() == 16 ? "torrent-start" : "torrent-stop", GetId()));
+            Program.form.CreateActionWorker().RunWorkerAsync(Requests.Generic(((JsonNumber)t.info[ProtocolConstants.FIELD_STATUS]).ToInt16() == ProtocolConstants.STATUS_STOPPED ? ProtocolConstants.METHOD_TORRENTSTART : ProtocolConstants.METHOD_TORRENTSTOP, GetId()));
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)

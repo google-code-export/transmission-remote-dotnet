@@ -7,26 +7,6 @@ using Jayrock.Json;
 
 namespace TransmissionClientNew
 {
-    /* From remote/daemon.c
-     * static const char * details_keys[] = {
-    "activityDate", ProtocolConstants.FIELD_ADDEDDATE, "announceResponse", "announceURL",
-    "comment", "corruptEver", "creator", "dateCreated", "doneDate",
-    ProtocolConstants.FIELD_HAVEVALID, "errorString", ProtocolConstants.FIELD_ETA, "hashString", "haveUnchecked",
-    ProtocolConstants.FIELD_HAVEVALID, ProtocolConstants.FIELD_ID, "isPrivate", "lastAnnounceTime", "lastScrapeTime",
-    ProtocolConstants.FIELD_LEECHERS, "leftUntilDone", "name", "nextAnnounceTime", "nextScrapeTime",
-    "peersConnected", "peersGettingFromUs", "peersSendingToUs",
-    "pieceCount", "pieceSize", ProtocolConstants.FIELD_RATEDOWNLOAD, ProtocolConstants.FIELD_RATEUPLOAD, "recheckProgress",
-    "scrapeResponse", ProtocolConstants.FIELD_SEEDERS, "sizeWhenDone", "sizeWhenDone", "startDate",
-    "status", "timesCompleted", ProtocolConstants.FIELD_TOTALSIZE, ProtocolConstants.FIELD_UPLOADEDEVER,
-    "webseeds", "webseedsSendingToUs" };
-    */
-
-    public enum TorrentStatus
-    {
-        Downloading = 4,
-        Seeding = 8
-    }
-
     public class Torrent
     {
         public ListViewItem item;
@@ -107,9 +87,12 @@ namespace TransmissionClientNew
             }
             else
             {
-                if (Program.form.NotifyIcon.Visible == true && ((JsonNumber)this.info["status"]).ToInt16() == (short)TorrentStatus.Downloading && ((JsonNumber)this.info["leftUntilDone"]).ToInt64() > 0 && ((JsonNumber)info["leftUntilDone"]).ToInt64() == 0)
+                if (Program.form.NotifyIcon.Visible == true
+                    && ((JsonNumber)this.info[ProtocolConstants.FIELD_STATUS]).ToInt16() == ProtocolConstants.STATUS_DOWNLOADING
+                    && ((JsonNumber)this.info[ProtocolConstants.FIELD_LEFTUNTILDONE]).ToInt64() > 0
+                    && ((JsonNumber)info[ProtocolConstants.FIELD_LEFTUNTILDONE]).ToInt64() == 0)
                 {
-                    Program.form.NotifyIcon.ShowBalloonTip(4, (string)info["name"], "This torrent has finished downloading.", ToolTipIcon.Info);
+                    Program.form.NotifyIcon.ShowBalloonTip(LocalSettingsSingleton.COMPLETED_BALOON_TIME, (string)info["name"], "This torrent has finished downloading.", ToolTipIcon.Info);
                 }
                 this.info = info;
                 item.SubItems[0].Text = (string)info["name"];
@@ -160,7 +143,7 @@ namespace TransmissionClientNew
         {
             get
             {
-                return ((JsonNumber)info["status"]).ToInt16();
+                return ((JsonNumber)info[ProtocolConstants.FIELD_STATUS]).ToInt16();
             }
         }
 

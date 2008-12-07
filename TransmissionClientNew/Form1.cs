@@ -319,7 +319,7 @@ namespace TransmissionClientNew
         {
             if (TorrentListView.SelectedItems.Count > 0)
             {
-                CreateActionWorker().RunWorkerAsync(Requests.Generic("torrent-stop", BuildIdArray()));
+                CreateActionWorker().RunWorkerAsync(Requests.Generic(ProtocolConstants.METHOD_TORRENTSTOP, BuildIdArray()));
             }
         }
 
@@ -327,18 +327,18 @@ namespace TransmissionClientNew
         {
             if (TorrentListView.SelectedItems.Count > 0)
             {
-                CreateActionWorker().RunWorkerAsync(Requests.Generic("torrent-start", BuildIdArray()));
+                CreateActionWorker().RunWorkerAsync(Requests.Generic(ProtocolConstants.METHOD_TORRENTSTART, BuildIdArray()));
             }
         }
 
         public void startAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreateActionWorker().RunWorkerAsync(Requests.Generic("torrent-start", null));
+            CreateActionWorker().RunWorkerAsync(Requests.Generic(ProtocolConstants.METHOD_TORRENTSTART, null));
         }
 
         public void stopAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreateActionWorker().RunWorkerAsync(Requests.Generic("torrent-stop", null));
+            CreateActionWorker().RunWorkerAsync(Requests.Generic(ProtocolConstants.METHOD_TORRENTSTOP, null));
         }
          
         private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
@@ -400,6 +400,9 @@ namespace TransmissionClientNew
             else if (e.Control && e.KeyCode == Keys.D)
             {
                 Program.Connected = false;
+            }
+            else if (e.KeyCode == Keys.P)
+            {
             }
         }
 

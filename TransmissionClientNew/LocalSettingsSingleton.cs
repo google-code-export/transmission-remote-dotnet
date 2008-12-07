@@ -10,9 +10,9 @@ namespace TransmissionClientNew
     public sealed class LocalSettingsSingleton
     {
         private readonly string REGISTRY_KEY = "Software\\TransmissionRemote";
+        public static readonly int COMPLETED_BALOON_TIME = 4;
 
         static LocalSettingsSingleton instance = null;
-
         static readonly object padlock = new object();
 
         public static LocalSettingsSingleton Instance

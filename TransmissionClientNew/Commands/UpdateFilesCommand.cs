@@ -20,7 +20,7 @@ namespace TransmissionClientNew.Commmands
         public void Execute()
         {
             JsonObject arguments = (JsonObject)response[ProtocolConstants.KEY_ARGUMENTS];
-            JsonArray torrents = (JsonArray)arguments["torrents"];
+            JsonArray torrents = (JsonArray)arguments[ProtocolConstants.KEY_TORRENTS];
             foreach (JsonObject torrent in torrents)
             {
                 int id = ((JsonNumber)torrent[ProtocolConstants.FIELD_ID]).ToInt32();

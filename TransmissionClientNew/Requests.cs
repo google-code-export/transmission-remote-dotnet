@@ -89,10 +89,12 @@ namespace TransmissionClientNew
                 ProtocolConstants.FIELD_SEEDERS,
                 ProtocolConstants.FIELD_TOTALSIZE,
                 ProtocolConstants.FIELD_UPLOADEDEVER,
-                "sizeWhenDone","status","swarmSpeed",
+                ProtocolConstants.FIELD_STATUS,
+                ProtocolConstants.FIELD_LEFTUNTILDONE,
+                "sizeWhenDone","swarmSpeed",
                 "isPrivate","comment","creator","dateCreated",
                 "hashString","haveUnchecked","peers","announceURL",
-                "error","errorString","leftUntilDone","name",
+                "error","errorString","name",
                 "peersGettingFromUs","peersKnown","peersSendingToUs"});
             arguments.Put(ProtocolConstants.KEY_FIELDS, fields);
             request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
