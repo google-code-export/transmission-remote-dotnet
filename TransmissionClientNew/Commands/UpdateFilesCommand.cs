@@ -42,8 +42,20 @@ namespace TransmissionClientNew.Commmands
         public static void UpdateFiles(JsonObject torrent, TorrentInfoDialog form)
         {
             JsonArray files = (JsonArray)torrent["files"];
+            if (files == null)
+            {
+                return;
+            }
             JsonArray priorities = (JsonArray)torrent["priorities"];
+            if (priorities == null)
+            {
+                return;
+            }
             JsonArray wanted = (JsonArray)torrent["wanted"];
+            if (wanted == null)
+            {
+                return;
+            }
             form.FilesListView.SuspendLayout();
             for (int i = 0; i < files.Length; i++)
             {
