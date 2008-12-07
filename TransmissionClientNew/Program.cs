@@ -67,6 +67,11 @@ namespace TransmissionClientNew
                 }
         }
 
+        public static void ResetFailCount()
+        {
+            failCount = 0;
+        }
+
         public static Boolean Connected
         {
             set

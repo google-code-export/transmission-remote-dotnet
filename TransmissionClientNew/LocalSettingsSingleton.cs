@@ -9,7 +9,10 @@ namespace TransmissionClientNew
 {
     public sealed class LocalSettingsSingleton
     {
+        private readonly string REGISTRY_KEY = "Software\\TransmissionRemote";
+
         static LocalSettingsSingleton instance = null;
+
         static readonly object padlock = new object();
 
         public static LocalSettingsSingleton Instance
@@ -47,9 +50,9 @@ namespace TransmissionClientNew
         private LocalSettingsSingleton()
         {
             RegistryKey key;
-            if ((key = Registry.CurrentUser.OpenSubKey("Software\\TransmissionRemote")) == null)
+            if ((key = Registry.CurrentUser.OpenSubKey(REGISTRY_KEY)) == null)
             {
-                key = Registry.CurrentUser.CreateSubKey("Software\\TransmissionRemote");
+                key = Registry.CurrentUser.CreateSubKey(REGISTRY_KEY);
             }
             if (key.GetValue("host") != null)
             {
@@ -122,9 +125,9 @@ namespace TransmissionClientNew
             try
             {
                 RegistryKey key;
-                if ((key = Registry.CurrentUser.OpenSubKey("Software\\TransmissionRemote", true)) == null)
+                if ((key = Registry.CurrentUser.OpenSubKey(REGISTRY_KEY, true)) == null)
                 {
-                    key = Registry.CurrentUser.CreateSubKey("Software\\TransmissionRemote");
+                    key = Registry.CurrentUser.CreateSubKey(REGISTRY_KEY);
                 }
                 key.SetValue("host", this.host);
                 key.SetValue("port", this.port);
@@ -151,7 +154,7 @@ namespace TransmissionClientNew
             }
         }
 
-        public string url
+        public string URL
         {
             get
             {

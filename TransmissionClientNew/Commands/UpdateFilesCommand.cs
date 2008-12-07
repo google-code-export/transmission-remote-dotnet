@@ -14,16 +14,16 @@ namespace TransmissionClientNew.Commmands
         public UpdateFilesCommand(JsonObject response)
         {
             this.response = response;
-            Program.failCount = 0;
+            Program.ResetFailCount();
         }
 
         public void Execute()
         {
-            JsonObject arguments = (JsonObject)response["arguments"];
+            JsonObject arguments = (JsonObject)response[ProtocolConstants.KEY_ARGUMENTS];
             JsonArray torrents = (JsonArray)arguments["torrents"];
             foreach (JsonObject torrent in torrents)
             {
-                int id = ((JsonNumber)torrent["id"]).ToInt32();
+                int id = ((JsonNumber)torrent[ProtocolConstants.FIELD_ID]).ToInt32();
                 TorrentInfoDialog form;
                 if (Program.infoDialogs.ContainsKey(id))
                 {
@@ -41,17 +41,17 @@ namespace TransmissionClientNew.Commmands
 
         public static void UpdateFiles(JsonObject torrent, TorrentInfoDialog form)
         {
-            JsonArray files = (JsonArray)torrent["files"];
+            JsonArray files = (JsonArray)torrent[ProtocolConstants.FIELD_FILES];
             if (files == null)
             {
                 return;
             }
-            JsonArray priorities = (JsonArray)torrent["priorities"];
+            JsonArray priorities = (JsonArray)torrent[ProtocolConstants.FIELD_PRIORITIES];
             if (priorities == null)
             {
                 return;
             }
-            JsonArray wanted = (JsonArray)torrent["wanted"];
+            JsonArray wanted = (JsonArray)torrent[ProtocolConstants.FIELD_WANTED];
             if (wanted == null)
             {
                 return;

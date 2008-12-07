@@ -228,8 +228,8 @@ namespace TransmissionClientNew
             arguments.Put("speed-limit-up", UploadLimitField.Value);
             arguments.Put("speed-limit-down-enabled", DownloadLimitEnable.Checked);
             arguments.Put("speed-limit-down", DownloadLimitField.Value);
-            request.Put("arguments", arguments);
-            request.Put("tag", (int)ResponseTag.DoNothing);
+            request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
+            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
             Program.form.CreateActionWorker().RunWorkerAsync(request);
             this.Close();
         }

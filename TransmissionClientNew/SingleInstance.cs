@@ -38,7 +38,7 @@ namespace TransmissionClientNew
         /// <summary>
         /// Passes the given arguments to the first running instance of the application.
         /// </summary>
-        /// <param name="arguments">The arguments to pass.</param>
+        /// <param name=ProtocolConstants.KEY_ARGUMENTS>The arguments to pass.</param>
         /// <returns>Return true if the operation succeded, false otherwise.</returns>
         public Boolean PassArgumentsToFirstInstance(String[] arguments)
         {
@@ -118,7 +118,7 @@ namespace TransmissionClientNew
         /// <summary>
         /// Fires the ArgumentsReceived event.
         /// </summary>
-        /// <param name="arguments">The arguments to pass with the ArgumentsReceivedEventArgs.</param>
+        /// <param name=ProtocolConstants.KEY_ARGUMENTS>The arguments to pass with the ArgumentsReceivedEventArgs.</param>
         private void OnArgumentsReceived(String[] arguments)
         {
             if (ArgumentsReceived != null)

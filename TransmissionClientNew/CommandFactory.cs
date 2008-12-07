@@ -27,7 +27,7 @@ namespace TransmissionClientNew
             {
                 using (TransmissionWebClient wc = new TransmissionWebClient())
                 {
-                    wc.UploadFile(settings.url + "upload?paused=" + (settings.startPaused ? "true" : "false"), file);
+                    wc.UploadFile(settings.URL + "upload?paused=" + (settings.startPaused ? "true" : "false"), file);
                 }
                 if (!Program.form.RefreshWorker.IsBusy)
                 {
@@ -46,7 +46,7 @@ namespace TransmissionClientNew
             string str_response = null;
             try
             {
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(LocalSettingsSingleton.Instance.url + "rpc");
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(LocalSettingsSingleton.Instance.URL + "rpc");
                 TransmissionWebClient.SetupWebRequest(request);
                 request.Method = "POST";
                 request.ContentType = "application/json";
@@ -64,7 +64,7 @@ namespace TransmissionClientNew
                 {
                     return new ErrorCommand("Unsuccessful request", str_response);
                 }
-                switch (((JsonNumber)jsonResponse["tag"]).ToInt16())
+                switch (((JsonNumber)jsonResponse[ProtocolConstants.KEY_TAG]).ToInt16())
                 {
                     case (short)ResponseTag.SessionGet:
                         return new SessionCommand(jsonResponse, webResponse.Headers);

@@ -8,77 +8,94 @@ using System.IO;
 
 namespace TransmissionClientNew
 {
-    class Requests
+    public class Requests
     {
         public static JsonObject SessionGet()
         {
             JsonObject request = new JsonObject();
-            request.Put("method", "session-get");
-            request.Put("tag", (int)ResponseTag.SessionGet);
+            request.Put(ProtocolConstants.KEY_METHOD, "session-get");
+            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.SessionGet);
             return request;
         }
 
         public static JsonObject Generic(string method, JsonArray ids)
         {
             JsonObject request = new JsonObject();
-            request.Put("method", method);
+            request.Put(ProtocolConstants.KEY_METHOD, method);
             JsonObject arguments = new JsonObject();
             if (ids != null)
             {
-                arguments.Put("ids", ids);
+                arguments.Put(ProtocolConstants.KEY_IDS, ids);
             }
-            request.Put("arguments", arguments);
-            request.Put("tag", (int)ResponseTag.DoNothing);
+            request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
+            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
             return request;
         }
 
         public static JsonObject Files(JsonArray ids)
         {
             JsonObject request = new JsonObject();
-            request.Put("method", "torrent-get");
-            request.Put("tag", (int)ResponseTag.UpdateFiles);
+            request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTGET);
+            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.UpdateFiles);
             JsonObject arguments = new JsonObject();
-            arguments.Put("ids", ids);
+            arguments.Put(ProtocolConstants.KEY_IDS, ids);
             JsonArray fields = new JsonArray();
-            fields.Put("files");
-            fields.Put("id");
-            arguments.Put("fields", fields);
-            request.Put("arguments", arguments);
+            fields.Put(ProtocolConstants.FIELD_FILES);
+            fields.Put(ProtocolConstants.FIELD_ID);
+            arguments.Put(ProtocolConstants.KEY_FIELDS, fields);
+            request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
             return request;
         }
         
         public static JsonObject Priorities(int id)
         {
             JsonObject request = new JsonObject();
-            request.Put("method", "torrent-get");
-            request.Put("tag", (int)ResponseTag.UpdatePriorities);
+            request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTGET);
+            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.UpdatePriorities);
             JsonObject arguments = new JsonObject();
             JsonArray ids = new JsonArray();
             ids.Put(id);
-            arguments.Put("ids", ids);
+            arguments.Put(ProtocolConstants.KEY_IDS, ids);
             JsonArray fields = new JsonArray();
-            fields.Put("files");
-            fields.Put("id");
-            fields.Put("priorities");
-            fields.Put("wanted");
-            fields.Put("downloadLimit");
-            fields.Put("downloadLimitMode");
-            fields.Put("uploadLimit");
-            fields.Put("uploadLimitMode");
-            arguments.Put("fields", fields);
-            request.Put("arguments", arguments);
+            fields.Put(ProtocolConstants.FIELD_FILES);
+            fields.Put(ProtocolConstants.FIELD_ID);
+            fields.Put(ProtocolConstants.FIELD_PRIORITIES);
+            fields.Put(ProtocolConstants.FIELD_WANTED);
+            fields.Put(ProtocolConstants.FIELD_DOWNLOADLIMIT);
+            fields.Put(ProtocolConstants.FIELD_DOWNLOADLIMITMODE);
+            fields.Put(ProtocolConstants.FIELD_UPLOADLIMIT);
+            fields.Put(ProtocolConstants.FIELD_UPLOADLIMITMODE);
+            arguments.Put(ProtocolConstants.KEY_FIELDS, fields);
+            request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
             return request;
         }
 
         public static JsonObject TorrentGet(Boolean beginLoop)
         {
             JsonObject request = new JsonObject();
-            request.Put("method", "torrent-get");
-            request.Put("tag", beginLoop ? (int)ResponseTag.TorrentGetLoop : (int)ResponseTag.TorrentGet);
+            request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTGET);
+            request.Put(ProtocolConstants.KEY_TAG, beginLoop ? (int)ResponseTag.TorrentGetLoop : (int)ResponseTag.TorrentGet);
             JsonObject arguments = new JsonObject();
-            JsonArray fields = new JsonArray(new string[]{"id", "addedDate","announceURL","comment","creator","dateCreated","haveValid","error","errorString","eta","hashString","haveUnchecked","haveValid","id","isPrivate","leechers","leftUntilDone","name","peersGettingFromUs","peersKnown","peersSendingToUs","rateDownload","rateUpload","seeders","sizeWhenDone","status","swarmSpeed","totalSize","uploadedEver","peers"});
-            arguments.Put("fields", fields);
-            request.Put("arguments", arguments);
+            JsonArray fields = new JsonArray(new string[]{
+                ProtocolConstants.FIELD_ID,
+                ProtocolConstants.FIELD_ADDEDDATE,
+                ProtocolConstants.FIELD_HAVEVALID,
+                ProtocolConstants.FIELD_ETA,
+                ProtocolConstants.FIELD_HAVEVALID,
+                ProtocolConstants.FIELD_ID,
+                ProtocolConstants.FIELD_LEECHERS,
+                ProtocolConstants.FIELD_RATEDOWNLOAD,
+                ProtocolConstants.FIELD_RATEUPLOAD,
+                ProtocolConstants.FIELD_SEEDERS,
+                ProtocolConstants.FIELD_TOTALSIZE,
+                ProtocolConstants.FIELD_UPLOADEDEVER,
+                "sizeWhenDone","status","swarmSpeed",
+                "isPrivate","comment","creator","dateCreated",
+                "hashString","haveUnchecked","peers","announceURL",
+                "error","errorString","leftUntilDone","name",
+                "peersGettingFromUs","peersKnown","peersSendingToUs"});
+            arguments.Put(ProtocolConstants.KEY_FIELDS, fields);
+            request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
             return request;
         }
     }

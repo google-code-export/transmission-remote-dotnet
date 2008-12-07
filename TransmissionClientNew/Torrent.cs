@@ -9,15 +9,15 @@ namespace TransmissionClientNew
 {
     /* From remote/daemon.c
      * static const char * details_keys[] = {
-    "activityDate", "addedDate", "announceResponse", "announceURL",
+    "activityDate", ProtocolConstants.FIELD_ADDEDDATE, "announceResponse", "announceURL",
     "comment", "corruptEver", "creator", "dateCreated", "doneDate",
-    "haveValid", "errorString", "eta", "hashString", "haveUnchecked",
-    "haveValid", "id", "isPrivate", "lastAnnounceTime", "lastScrapeTime",
-    "leechers", "leftUntilDone", "name", "nextAnnounceTime", "nextScrapeTime",
+    ProtocolConstants.FIELD_HAVEVALID, "errorString", ProtocolConstants.FIELD_ETA, "hashString", "haveUnchecked",
+    ProtocolConstants.FIELD_HAVEVALID, ProtocolConstants.FIELD_ID, "isPrivate", "lastAnnounceTime", "lastScrapeTime",
+    ProtocolConstants.FIELD_LEECHERS, "leftUntilDone", "name", "nextAnnounceTime", "nextScrapeTime",
     "peersConnected", "peersGettingFromUs", "peersSendingToUs",
-    "pieceCount", "pieceSize", "rateDownload", "rateUpload", "recheckProgress",
-    "scrapeResponse", "seeders", "sizeWhenDone", "sizeWhenDone", "startDate",
-    "status", "timesCompleted", "totalSize", "uploadedEver",
+    "pieceCount", "pieceSize", ProtocolConstants.FIELD_RATEDOWNLOAD, ProtocolConstants.FIELD_RATEUPLOAD, "recheckProgress",
+    "scrapeResponse", ProtocolConstants.FIELD_SEEDERS, "sizeWhenDone", "sizeWhenDone", "startDate",
+    "status", "timesCompleted", ProtocolConstants.FIELD_TOTALSIZE, ProtocolConstants.FIELD_UPLOADEDEVER,
     "webseeds", "webseedsSendingToUs" };
     */
 
@@ -168,7 +168,7 @@ namespace TransmissionClientNew
         {
             get
             {
-                return ((JsonNumber)info["id"]).ToInt32();
+                return ((JsonNumber)info[ProtocolConstants.FIELD_ID]).ToInt32();
             }
         }
 
@@ -182,7 +182,7 @@ namespace TransmissionClientNew
                 }
                 else
                 {
-                    double eta = ((JsonNumber)info["eta"]).ToDouble();
+                    double eta = ((JsonNumber)info[ProtocolConstants.FIELD_ETA]).ToDouble();
                     if (eta > 0)
                     {
                         return TimeSpan.FromSeconds(eta).ToString();
@@ -207,7 +207,7 @@ namespace TransmissionClientNew
         {
             get
             {
-                return ((JsonNumber)info["seeders"]).ToString();
+                return ((JsonNumber)info[ProtocolConstants.FIELD_SEEDERS]).ToString();
             }
         }
 
@@ -215,7 +215,7 @@ namespace TransmissionClientNew
         {
             get
             {
-                return ((JsonNumber)info["leechers"]).ToString();
+                return ((JsonNumber)info[ProtocolConstants.FIELD_LEECHERS]).ToString();
             }
         }
 
@@ -231,7 +231,7 @@ namespace TransmissionClientNew
         {
             get
             {
-                return ((JsonNumber)info["totalSize"]).ToInt64();
+                return ((JsonNumber)info[ProtocolConstants.FIELD_TOTALSIZE]).ToInt64();
             }
         }
 
@@ -247,7 +247,7 @@ namespace TransmissionClientNew
         {
             get
             {
-                return Toolbox.DateFromEpoch(((JsonNumber)info["addedDate"]).ToDouble()).ToString();
+                return Toolbox.DateFromEpoch(((JsonNumber)info[ProtocolConstants.FIELD_ADDEDDATE]).ToDouble()).ToString();
             }
         }
 
@@ -279,7 +279,7 @@ namespace TransmissionClientNew
         {
             get
             {
-                return ((JsonNumber)info["uploadedEver"]).ToInt64();
+                return ((JsonNumber)info[ProtocolConstants.FIELD_UPLOADEDEVER]).ToInt64();
             }
         }
 
@@ -295,7 +295,7 @@ namespace TransmissionClientNew
         {
             get
             {
-                return ((JsonNumber)info["haveValid"]).ToInt64();
+                return ((JsonNumber)info[ProtocolConstants.FIELD_HAVEVALID]).ToInt64();
             }
         }
 
@@ -311,7 +311,7 @@ namespace TransmissionClientNew
         {
             get
             {
-                return Toolbox.GetFileSize(((JsonNumber)info["rateDownload"]).ToInt64()) + "/s";
+                return Toolbox.GetFileSize(((JsonNumber)info[ProtocolConstants.FIELD_RATEDOWNLOAD]).ToInt64()) + "/s";
             }
         }
 
@@ -319,7 +319,7 @@ namespace TransmissionClientNew
         {
             get
             {
-                return Toolbox.GetFileSize(((JsonNumber)info["rateUpload"]).ToInt64()) + "/s";
+                return Toolbox.GetFileSize(((JsonNumber)info[ProtocolConstants.FIELD_RATEUPLOAD]).ToInt64()) + "/s";
             }
         }
 

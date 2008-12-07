@@ -24,7 +24,7 @@ namespace TransmissionClientNew
 
         private void RemoteSettingsDialog_Load(object sender, EventArgs e)
         {
-            JsonObject settings = (JsonObject)Program.sessionData["arguments"];
+            JsonObject settings = (JsonObject)Program.sessionData[ProtocolConstants.KEY_ARGUMENTS];
             DownloadToField.Text = (string)settings["download-dir"];
             LimitDownloadCheckBox.Checked = ((JsonNumber)settings["speed-limit-down-enabled"]).ToInt32() == 1;
             LimitDownloadValue.Enabled = LimitDownloadCheckBox.Checked;
@@ -56,8 +56,8 @@ namespace TransmissionClientNew
             arguments.Put("speed-limit-down-enabled", LimitDownloadCheckBox.Checked);
             arguments.Put("speed-limit-down", LimitDownloadValue.Value);
             arguments.Put("download-dir", DownloadToField.Text);
-            request.Put("arguments", arguments);
-            request.Put("tag", (int)ResponseTag.DoNothing);
+            request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
+            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
             SettingsWorker.RunWorkerAsync(request);
             this.Close();
         }

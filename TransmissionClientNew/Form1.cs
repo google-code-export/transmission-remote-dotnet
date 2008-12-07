@@ -107,12 +107,10 @@ namespace TransmissionClientNew
 
         private void RemoveTorrentsPrompt()
         {
-            if (TorrentListView.SelectedItems.Count == 1)
+            if (TorrentListView.SelectedItems.Count == 1
+                && MessageBox.Show("Do you want to remove " + TorrentListView.SelectedItems[0].Text + "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (MessageBox.Show("Do you want to remove " + TorrentListView.SelectedItems[0].Text + "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
                     RemoveTorrents();
-                }
             }
             else if (TorrentListView.SelectedItems.Count > 1
                 && MessageBox.Show("You have selected " + TorrentListView.SelectedItems.Count + " torrents for removal. Are you sure?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

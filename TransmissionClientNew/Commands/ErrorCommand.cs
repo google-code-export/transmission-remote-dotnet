@@ -6,8 +6,9 @@ using System.Windows.Forms;
 
 namespace TransmissionClientNew.Commmands
 {
-    class ErrorCommand : TransmissionCommand
+    public class ErrorCommand : TransmissionCommand
     {
+        private static readonly int MAX_MESSAGE_LENGTH = 300;
         private string title;
         private string body;
 
@@ -33,6 +34,7 @@ namespace TransmissionClientNew.Commmands
             }
             else
             {
+                Program.uploadArgs = null;
                 if (!Program.Connected)
                 {
                     form.toolStripStatusLabel1.Text = "Unable to connect (" + this.title + ")";
@@ -42,7 +44,7 @@ namespace TransmissionClientNew.Commmands
                 {
                     Program.Connected = false;
                     form.toolStripStatusLabel1.Text = "Disconnected. Exceeded maximum number of failed requests.";
-                    MessageBox.Show(this.body.Length > 300 ? this.body.Substring(0, 300) : this.body, this.title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(this.body.Length > MAX_MESSAGE_LENGTH ? this.body.Substring(0, MAX_MESSAGE_LENGTH) : this.body, this.title, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {

@@ -9,7 +9,7 @@ namespace TransmissionClientNew.Commmands
     {
         public NoCommand()
         {
-            Program.failCount = 0;
+            Program.ResetFailCount();
         }
 
         public void Execute()

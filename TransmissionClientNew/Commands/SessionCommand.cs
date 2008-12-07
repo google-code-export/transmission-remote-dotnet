@@ -14,7 +14,7 @@ namespace TransmissionClientNew.Commmands
         {
             Program.preAuthenticate = (headers.Get("Server") == null);
             Program.sessionData = response;
-            Program.failCount = 0;
+            Program.ResetFailCount();
         }
 
         public void Execute()

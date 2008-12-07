@@ -13,15 +13,15 @@ namespace TransmissionClientNew.Commmands
         public UpdatePrioritiesCommand(JsonObject response)
         {
             this.response = response;
-            Program.failCount = 0;
+            Program.ResetFailCount();
         }
 
         public void Execute()
         {
-            JsonObject arguments = (JsonObject)response["arguments"];
+            JsonObject arguments = (JsonObject)response[ProtocolConstants.KEY_ARGUMENTS];
             JsonArray torrents = (JsonArray)arguments["torrents"];
             JsonObject torrent = (JsonObject)torrents[0];
-            int id = ((JsonNumber)torrent["id"]).ToInt32();
+            int id = ((JsonNumber)torrent[ProtocolConstants.FIELD_ID]).ToInt32();
             TorrentInfoDialog form;
             if (Program.infoDialogs.ContainsKey(id))
             {
@@ -32,13 +32,13 @@ namespace TransmissionClientNew.Commmands
                 return;
             }
             UpdateFilesCommand.UpdateFiles(torrent, form);
-            if (torrent["uploadLimitMode"] != null)
+            if (torrent[ProtocolConstants.FIELD_UPLOADLIMITMODE] != null)
             {
                 form.UploadLimitEnable.Enabled = form.DownloadLimitEnable.Enabled = true;
-                form.UploadLimitField.Enabled = form.UploadLimitEnable.Checked = ((JsonNumber)torrent["uploadLimitMode"]).ToBoolean();
-                form.UploadLimitField.Value = ((JsonNumber)torrent["uploadLimit"]).ToInt32();
-                form.DownloadLimitField.Enabled = form.DownloadLimitEnable.Checked = ((JsonNumber)torrent["downloadLimitMode"]).ToBoolean();
-                form.DownloadLimitField.Value = ((JsonNumber)torrent["downloadLimit"]).ToInt32();
+                form.UploadLimitField.Enabled = form.UploadLimitEnable.Checked = ((JsonNumber)torrent[ProtocolConstants.FIELD_UPLOADLIMITMODE]).ToBoolean();
+                form.UploadLimitField.Value = ((JsonNumber)torrent[ProtocolConstants.FIELD_UPLOADLIMIT]).ToInt32();
+                form.DownloadLimitField.Enabled = form.DownloadLimitEnable.Checked = ((JsonNumber)torrent[ProtocolConstants.FIELD_DOWNLOADLIMITMODE]).ToBoolean();
+                form.DownloadLimitField.Value = ((JsonNumber)torrent[ProtocolConstants.FIELD_DOWNLOADLIMIT]).ToInt32();
                 form.FilesListView.Enabled = true;
                 Toolbox.StripeListView(form.FilesListView);
             }

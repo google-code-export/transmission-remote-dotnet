@@ -16,7 +16,7 @@ namespace TransmissionClientNew.Commmands
         {
             this.response = response;
             this.beginLoop = beginLoop;
-            Program.failCount = 0;
+            Program.ResetFailCount();
         }
 
         public void Execute()
@@ -32,17 +32,17 @@ namespace TransmissionClientNew.Commmands
             int totalDownloading = 0;
             long totalSize = 0;
             long totalDownloadedSize = 0;
-            JsonObject arguments = (JsonObject)response["arguments"];
+            JsonObject arguments = (JsonObject)response[ProtocolConstants.KEY_ARGUMENTS];
             JsonArray torrents = (JsonArray)arguments["torrents"];
             Program.updateSerial++;
             Program.form.SuspendListView();
             foreach (JsonObject torrent in torrents)
             {
-                int id = ((JsonNumber)torrent["id"]).ToInt32();
-                totalUpload += ((JsonNumber)torrent["rateUpload"]).ToInt64();
-                totalDownload += ((JsonNumber)torrent["rateDownload"]).ToInt64();
-                totalSize += ((JsonNumber)torrent["totalSize"]).ToInt64();
-                totalDownloadedSize += ((JsonNumber)torrent["haveValid"]).ToInt64();
+                int id = ((JsonNumber)torrent[ProtocolConstants.FIELD_ID]).ToInt32();
+                totalUpload += ((JsonNumber)torrent[ProtocolConstants.FIELD_RATEUPLOAD]).ToInt64();
+                totalDownload += ((JsonNumber)torrent[ProtocolConstants.FIELD_RATEDOWNLOAD]).ToInt64();
+                totalSize += ((JsonNumber)torrent[ProtocolConstants.FIELD_TOTALSIZE]).ToInt64();
+                totalDownloadedSize += ((JsonNumber)torrent[ProtocolConstants.FIELD_HAVEVALID]).ToInt64();
                 totalTorrents++;
                 short status = ((JsonNumber)torrent["status"]).ToInt16();
                 if (status == (short)TorrentStatus.Downloading)

@@ -49,37 +49,37 @@ namespace TransmissionClientNew
                 switch (ColumnToSort)
                 {
                     case 2:
-                        ObjectCompare = new ListViewTorrentInt64Comparer("totalSize");
+                        ObjectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_TOTALSIZE);
                         break;
                     case 3:
                         ObjectCompare = new ListViewTorrentProgressComparer();
                         break;
                     case 4:
-                        ObjectCompare = new ListViewTorrentInt32Comparer("rateDownload");
+                        ObjectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_RATEDOWNLOAD);
                         break;
                     case 5:
-                        ObjectCompare = new ListViewTorrentInt32Comparer("rateUpload");
+                        ObjectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_RATEUPLOAD);
                         break;
                     case 6:
-                        ObjectCompare = new ListViewTorrentInt64Comparer("eta");
+                        ObjectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_ETA);
                         break;
                     case 7:
-                        ObjectCompare = new ListViewTorrentInt64Comparer("haveValid");
+                        ObjectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_HAVEVALID);
                         break;
                     case 8:
-                        ObjectCompare = new ListViewTorrentInt64Comparer("uploadedEver");
+                        ObjectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_UPLOADEDEVER);
                         break;
                     case 9:
                         ObjectCompare = new ListViewTorrentRatioComparer();
                         break;
                     case 10:
-                        ObjectCompare = new ListViewTorrentInt32Comparer("seeders");
+                        ObjectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_SEEDERS);
                         break;
                     case 11:
-                        ObjectCompare = new ListViewTorrentInt32Comparer("leechers");
+                        ObjectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_LEECHERS);
                         break;
                     case 13:
-                        ObjectCompare = new ListViewTorrentInt64Comparer("addedDate");
+                        ObjectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_ADDEDDATE);
                         break;
                     default:
                         ObjectCompare = new ListViewTextInsensitiveComparer(ColumnToSort);
