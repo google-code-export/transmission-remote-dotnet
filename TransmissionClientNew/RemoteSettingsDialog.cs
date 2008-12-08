@@ -24,15 +24,33 @@ namespace TransmissionClientNew
 
         private void RemoteSettingsDialog_Load(object sender, EventArgs e)
         {
-            JsonObject settings = (JsonObject)Program.sessionData[ProtocolConstants.KEY_ARGUMENTS];
-            DownloadToField.Text = (string)settings["download-dir"];
-            LimitDownloadCheckBox.Checked = ((JsonNumber)settings["speed-limit-down-enabled"]).ToInt32() == 1;
-            LimitDownloadValue.Enabled = LimitDownloadCheckBox.Checked;
-            LimitDownloadValue.Value = ((JsonNumber)settings["speed-limit-down"]).ToInt32()/1024;
-            LimitUploadCheckBox.Checked = ((JsonNumber)settings["speed-limit-up-enabled"]).ToInt32() == 1;
-            LimitUploadValue.Enabled = LimitUploadCheckBox.Checked;
-            LimitUploadValue.Value = ((JsonNumber)settings["speed-limit-up"]).ToInt32()/1024;
-            IncomingPortValue.Value = ((JsonNumber)settings["port"]).ToInt32();
+            try
+            {
+                JsonObject settings = (JsonObject)Program.sessionData[ProtocolConstants.KEY_ARGUMENTS];
+                DownloadToField.Text = (string)settings["download-dir"];
+                LimitDownloadValue.Enabled = LimitDownloadCheckBox.Checked = ((JsonNumber)settings["speed-limit-down-enabled"]).ToBoolean();
+                SetLimitField(((JsonNumber)settings["speed-limit-down"]).ToInt32(), LimitDownloadValue);
+                LimitUploadValue.Enabled = LimitUploadCheckBox.Checked = ((JsonNumber)settings["speed-limit-up-enabled"]).ToBoolean();
+                SetLimitField(((JsonNumber)settings["speed-limit-up"]).ToInt32(), LimitUploadValue);
+                IncomingPortValue.Value = ((JsonNumber)settings["port"]).ToInt32();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Unable to load settings data", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
+        }
+
+        private void SetLimitField(int limit, NumericUpDown field)
+        {
+            if (Program.oldTransmissionVersion)
+            {
+                field.Value = limit >= 1024 && limit <= field.Maximum ? limit / 1024 : 0;
+            }
+            else
+            {
+                field.Value = limit >= 0 && limit <= field.Maximum ? limit : 0;
+            }
         }
 
         private void LimitUploadCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -48,7 +66,7 @@ namespace TransmissionClientNew
         private void SaveButton_Click(object sender, EventArgs e)
         {
             JsonObject request = new JsonObject();
-            request.Put("method", "session-set");
+            request.Put(ProtocolConstants.KEY_METHOD, "session-set");
             JsonObject arguments = new JsonObject();
             arguments.Put("port", IncomingPortValue.Value);
             arguments.Put("speed-limit-up-enabled", LimitUploadCheckBox.Checked);

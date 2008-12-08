@@ -322,5 +322,13 @@ namespace TransmissionClientNew
                 return ratio < 0 ? "∞" : ratio.ToString();
             }
         }
+
+        public string Comment
+        {
+            get
+            {
+                return (string)info[ProtocolConstants.FIELD_COMMENT];
+            }
+        }
     }
 }

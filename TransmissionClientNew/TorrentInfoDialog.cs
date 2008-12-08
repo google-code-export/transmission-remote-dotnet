@@ -15,6 +15,7 @@ namespace TransmissionClientNew
         public Torrent t;
         public JsonArray priorities;
         public ContextMenu noSelectionMenu;
+        public ContextMenu yesSelectionMenu;
 
         public string FormatPriority(JsonNumber n)
         {
@@ -51,16 +52,15 @@ namespace TransmissionClientNew
             Program.infoDialogs.Add(t.Id, this);
             Program.form.FilesTimer.Enabled = true;
             Program.form.CreateActionWorker().RunWorkerAsync(Requests.Priorities(t.Id));
-            ContextMenu menu = new ContextMenu();
-            menu.MenuItems.Add("High Priority", new EventHandler(this.SetHighPriorityHandler));
-            menu.MenuItems.Add("Normal Priority", new EventHandler(this.SetNormalPriorityHandler));
-            menu.MenuItems.Add("Low Priority", new EventHandler(this.SetLowPriorityHandler));
-            menu.MenuItems.Add("-");
-            menu.MenuItems.Add("Download", new EventHandler(this.SetWantedHandler));
-            menu.MenuItems.Add("Skip", new EventHandler(this.SetUnwantedHandler));
-            menu.MenuItems.Add("-");
-            menu.MenuItems.Add("Select All", new EventHandler(this.SelectAll));
-            FilesListView.Tag = menu;
+            this.yesSelectionMenu = new ContextMenu();
+            this.yesSelectionMenu.MenuItems.Add("High Priority", new EventHandler(this.SetHighPriorityHandler));
+            this.yesSelectionMenu.MenuItems.Add("Normal Priority", new EventHandler(this.SetNormalPriorityHandler));
+            this.yesSelectionMenu.MenuItems.Add("Low Priority", new EventHandler(this.SetLowPriorityHandler));
+            this.yesSelectionMenu.MenuItems.Add("-");
+            this.yesSelectionMenu.MenuItems.Add("Download", new EventHandler(this.SetWantedHandler));
+            this.yesSelectionMenu.MenuItems.Add("Skip", new EventHandler(this.SetUnwantedHandler));
+            this.yesSelectionMenu.MenuItems.Add("-");
+            this.yesSelectionMenu.MenuItems.Add("Select All", new EventHandler(this.SelectAll));
             FilesListView.ContextMenu = this.noSelectionMenu = new ContextMenu(new MenuItem[] { new MenuItem("Select All", new EventHandler(this.SelectAll)) });
             this.UpdateInfo();
         }
@@ -79,7 +79,7 @@ namespace TransmissionClientNew
                 this.Text = this.NameLabel.Text = (string)info[ProtocolConstants.FIELD_NAME];
                 DownloadedLabel.Text = t.HaveValidString;
                 UploadedLabel.Text = t.UploadedString;
-                CommentLabel.Text = (string)info["comment"];
+                CommentLabel.Text = t.Comment;
                 SizeLabel.Text = t.TotalSizeString;
                 double percentage = t.Percentage;
                 PercentLabel.Text = percentage.ToString() + "%";
@@ -199,11 +199,11 @@ namespace TransmissionClientNew
                 }
             }
             JsonObject request = new JsonObject();
-            request.Put("method", "torrent-set");
+            request.Put(ProtocolConstants.KEY_METHOD, "torrent-set");
             JsonObject arguments = new JsonObject();
             JsonArray ids = new JsonArray();
             ids.Put(t.Id);
-            arguments.Put("ids", ids);
+            arguments.Put(ProtocolConstants.KEY_IDS, ids);
             if (high.Count > 0)
             {
                 arguments.Put("priority-high", high);
@@ -246,7 +246,7 @@ namespace TransmissionClientNew
 
         private void FilesListView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FilesListView.ContextMenu = FilesListView.SelectedItems.Count > 0 ? (ContextMenu)FilesListView.Tag : this.noSelectionMenu;
+            FilesListView.ContextMenu = FilesListView.SelectedItems.Count > 0 ? this.yesSelectionMenu : this.noSelectionMenu;
         }
 
         private void FilesListView_KeyDown(object sender, KeyEventArgs e)

@@ -12,7 +12,9 @@ namespace TransmissionClientNew.Commmands
     {
         public SessionCommand(JsonObject response, WebHeaderCollection headers)
         {
-            Program.preAuthenticate = (headers.Get("Server") == null);
+            /* The absence of a server header suggests a version < 1.40, so
+             * remember that preauthenticating is necessary. */
+            Program.oldTransmissionVersion = (headers.Get("Server") == null);
             Program.sessionData = response;
             Program.ResetFailCount();
         }

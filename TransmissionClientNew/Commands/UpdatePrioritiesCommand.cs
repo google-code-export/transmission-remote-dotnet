@@ -36,9 +36,11 @@ namespace TransmissionClientNew.Commmands
             {
                 form.UploadLimitEnable.Enabled = form.DownloadLimitEnable.Enabled = true;
                 form.UploadLimitField.Enabled = form.UploadLimitEnable.Checked = ((JsonNumber)torrent[ProtocolConstants.FIELD_UPLOADLIMITMODE]).ToBoolean();
-                form.UploadLimitField.Value = ((JsonNumber)torrent[ProtocolConstants.FIELD_UPLOADLIMIT]).ToInt32();
+                int upLimit = ((JsonNumber)torrent[ProtocolConstants.FIELD_UPLOADLIMIT]).ToInt32();
+                form.UploadLimitField.Value = upLimit >= 0 && upLimit <= form.UploadLimitField.Maximum ? upLimit : 0;
                 form.DownloadLimitField.Enabled = form.DownloadLimitEnable.Checked = ((JsonNumber)torrent[ProtocolConstants.FIELD_DOWNLOADLIMITMODE]).ToBoolean();
-                form.DownloadLimitField.Value = ((JsonNumber)torrent[ProtocolConstants.FIELD_DOWNLOADLIMIT]).ToInt32();
+                int downLimit = ((JsonNumber)torrent[ProtocolConstants.FIELD_DOWNLOADLIMIT]).ToInt32();
+                form.DownloadLimitField.Value = downLimit >= 0 && downLimit <= form.DownloadLimitField.Maximum ? downLimit : 0;
                 form.FilesListView.Enabled = true;
                 Toolbox.StripeListView(form.FilesListView);
             }

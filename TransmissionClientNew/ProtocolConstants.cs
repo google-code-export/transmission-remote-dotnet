@@ -25,6 +25,7 @@ namespace TransmissionClientNew
             METHOD_TORRENTSTART = "torrent-start",
             METHOD_TORRENTSTOP = "torrent-stop",
             FIELD_LEFTUNTILDONE = "leftUntilDone",
+            FIELD_COMMENT = "comment",
             FIELD_NAME = "name",
             FIELD_ANNOUNCEURL = "announceURL",
             FIELD_ETA = "eta",
