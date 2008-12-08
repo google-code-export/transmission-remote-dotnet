@@ -21,7 +21,9 @@ namespace TransmissionClientNew
                 foreach (ListViewItem item in list.Items)
                 {
                     item.BackColor = item.Index % 2 == 1 ?
-                        Color.FromArgb(window.R - stripe_offset, window.G - stripe_offset, window.B - stripe_offset)
+                        Color.FromArgb(window.R - stripe_offset,
+                            window.G - stripe_offset,
+                            window.B - stripe_offset)
                         : window;
                 }
             }

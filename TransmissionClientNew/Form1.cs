@@ -401,9 +401,6 @@ namespace TransmissionClientNew
             {
                 Program.Connected = false;
             }
-            else if (e.KeyCode == Keys.P)
-            {
-            }
         }
 
         private void Form1_Shown(object sender, EventArgs e)

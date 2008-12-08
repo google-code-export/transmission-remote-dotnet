@@ -76,7 +76,7 @@ namespace TransmissionClientNew
             else
             {
                 JsonObject info = t.info;
-                this.Text = this.NameLabel.Text = (string)info["name"];
+                this.Text = this.NameLabel.Text = (string)info[ProtocolConstants.FIELD_NAME];
                 DownloadedLabel.Text = t.HaveValidString;
                 UploadedLabel.Text = t.UploadedString;
                 CommentLabel.Text = (string)info["comment"];
@@ -96,7 +96,7 @@ namespace TransmissionClientNew
                 ErrorLabel.Text = (string)info["errorString"];
                 StopStartButton.Text = (t.StatusCode == 16 ? "Start" : "Stop");
                 StatusLabel.Text = t.Status;
-                AnnounceURLLabel.Text = (string)info["announceURL"];
+                AnnounceURLLabel.Text = (string)info[ProtocolConstants.FIELD_ANNOUNCEURL];
             }
         }
 

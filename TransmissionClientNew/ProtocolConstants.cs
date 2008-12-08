@@ -7,7 +7,9 @@ namespace TransmissionClientNew
 {
     public class ProtocolConstants
     {
-        public static readonly int
+        public static readonly short
+            STATUS_WAITING_TO_CHECK = 1,
+            STATUS_CHECKING = 2,
             STATUS_DOWNLOADING = 4,
             STATUS_SEEDING = 8,
             STATUS_STOPPED = 16;
@@ -23,6 +25,8 @@ namespace TransmissionClientNew
             METHOD_TORRENTSTART = "torrent-start",
             METHOD_TORRENTSTOP = "torrent-stop",
             FIELD_LEFTUNTILDONE = "leftUntilDone",
+            FIELD_NAME = "name",
+            FIELD_ANNOUNCEURL = "announceURL",
             FIELD_ETA = "eta",
             FIELD_STATUS = "status",
             FIELD_RATEDOWNLOAD = "rateDownload",

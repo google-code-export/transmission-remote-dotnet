@@ -65,7 +65,7 @@ namespace TransmissionClientNew.Commmands
                 string lengthStr = Toolbox.GetFileSize(length);
                 string percentStr = Math.Round((done / (decimal)length) * 100, 2) + "%";
                 string completeStr = Toolbox.GetFileSize(done);
-                string name = (string)file["name"];
+                string name = (string)file[ProtocolConstants.FIELD_NAME];
                 ListViewItem item;
                 if ((item = GetFileItem(form.FilesListView, name)) == null)
                 {

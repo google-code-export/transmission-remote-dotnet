@@ -93,7 +93,7 @@ namespace TransmissionClientNew
                 ProtocolConstants.FIELD_LEFTUNTILDONE,
                 "sizeWhenDone","swarmSpeed",
                 "isPrivate","comment","creator","dateCreated",
-                "hashString","haveUnchecked","peers","announceURL",
+                "hashString","haveUnchecked","peers",ProtocolConstants.FIELD_ANNOUNCEURL,
                 "error","errorString","name",
                 "peersGettingFromUs","peersKnown","peersSendingToUs"});
             arguments.Put(ProtocolConstants.KEY_FIELDS, fields);

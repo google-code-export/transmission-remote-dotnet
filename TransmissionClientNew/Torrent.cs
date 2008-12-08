@@ -17,7 +17,7 @@ namespace TransmissionClientNew
         {
             this.updateSerial = Program.updateSerial;
             this.info = info;
-            item = new ListViewItem((string)info["name"]);
+            item = new ListViewItem((string)info[ProtocolConstants.FIELD_NAME]);
             item.ToolTipText = item.Name;
             item.Tag = this;
             item.SubItems.Add(this.Status);
@@ -32,7 +32,7 @@ namespace TransmissionClientNew
             item.SubItems.Add(this.RatioString);
             item.SubItems.Add(this.Seeders + " (" + this.PeersSendingToUs + ")");
             item.SubItems.Add(this.Leechers + " (" + this.PeersGettingFromUs + ")");
-            item.SubItems.Add(((string)info["announceURL"]));
+            item.SubItems.Add(((string)info[ProtocolConstants.FIELD_ANNOUNCEURL]));
             item.SubItems.Add(this.Added);
             Program.torrentIndex[this.Id] = this;
             Add();
@@ -92,10 +92,10 @@ namespace TransmissionClientNew
                     && ((JsonNumber)this.info[ProtocolConstants.FIELD_LEFTUNTILDONE]).ToInt64() > 0
                     && ((JsonNumber)info[ProtocolConstants.FIELD_LEFTUNTILDONE]).ToInt64() == 0)
                 {
-                    Program.form.NotifyIcon.ShowBalloonTip(LocalSettingsSingleton.COMPLETED_BALOON_TIME, (string)info["name"], "This torrent has finished downloading.", ToolTipIcon.Info);
+                    Program.form.NotifyIcon.ShowBalloonTip(LocalSettingsSingleton.COMPLETED_BALOON_TIMEOUT, (string)info[ProtocolConstants.FIELD_NAME], "This torrent has finished downloading.", ToolTipIcon.Info);
                 }
                 this.info = info;
-                item.SubItems[0].Text = (string)info["name"];
+                item.SubItems[0].Text = (string)info[ProtocolConstants.FIELD_NAME];
                 item.ToolTipText = item.SubItems[0].Text;
                 item.SubItems[1].Text = this.Status;
                 item.SubItems[2].Text = Toolbox.GetFileSize(this.TotalSize);

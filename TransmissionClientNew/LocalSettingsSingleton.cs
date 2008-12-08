@@ -9,8 +9,27 @@ namespace TransmissionClientNew
 {
     public sealed class LocalSettingsSingleton
     {
+        /* Some unconfigurable variables. */
         private readonly string REGISTRY_KEY = "Software\\TransmissionRemote";
-        public static readonly int COMPLETED_BALOON_TIME = 4;
+        public static readonly int COMPLETED_BALOON_TIMEOUT = 4;
+
+        /* Registry keys */
+        private static readonly string REGKEY_HOST = "host",
+            REGKEY_PORT = "port",
+            REGKEY_AUTOCONNECT = "autoConnect",
+            REGKEY_USER = "user",
+            REGKEY_PASS = "pass",
+            REGKEY_AUTHENABLED = "authEnabled",
+            REGKEY_PROXYENABLED = "proxyEnabled",
+            REGKEY_PROXYHOST = "proxyHost",
+            REGKEY_PROXYPORT = "proxyPort",
+            REGKEY_PROXYUSER = "proxyUser",
+            REGKEY_PROXYPASS = "proxyPass",
+            REGKEY_PROXYAUTH = "proxyAuth",
+            REGKEY_STARTPAUSED = "startPaused",
+            REGKEY_RETRYLIMIT = "retryLimit",
+            REGKEY_MINTOTRAY = "minToTray",
+            REGKEY_REFRESHRATE = "refreshRate";
 
         static LocalSettingsSingleton instance = null;
         static readonly object padlock = new object();
@@ -54,69 +73,69 @@ namespace TransmissionClientNew
             {
                 key = Registry.CurrentUser.CreateSubKey(REGISTRY_KEY);
             }
-            if (key.GetValue("host") != null)
+            if (key.GetValue(REGKEY_HOST) != null)
             {
-                this.host = (string)key.GetValue("host");
+                this.host = (string)key.GetValue(REGKEY_HOST);
             }
-            if (key.GetValue("port") != null)
+            if (key.GetValue(REGKEY_PORT) != null)
             {
-                this.port = (int)key.GetValue("port");
+                this.port = (int)key.GetValue(REGKEY_PORT);
             }
-            if (key.GetValue("autoConnect") != null)
+            if (key.GetValue(REGKEY_AUTOCONNECT) != null)
             {
-                this.autoConnect = (int)key.GetValue("autoConnect") == 1;
+                this.autoConnect = (int)key.GetValue(REGKEY_AUTOCONNECT) == 1;
             }
-            if (key.GetValue("refreshRate") != null)
+            if (key.GetValue(REGKEY_REFRESHRATE) != null)
             {
-                this.refreshRate = (int)key.GetValue("refreshRate");
+                this.refreshRate = (int)key.GetValue(REGKEY_REFRESHRATE);
             }
-            if (key.GetValue("user") != null)
+            if (key.GetValue(REGKEY_USER) != null)
             {
-                this.user = (string)key.GetValue("user");
+                this.user = (string)key.GetValue(REGKEY_USER);
             }
-            if (key.GetValue("pass") != null)
+            if (key.GetValue(REGKEY_PASS) != null)
             {
-                this.pass = (string)key.GetValue("pass");
+                this.pass = (string)key.GetValue(REGKEY_PASS);
             }
-            if (key.GetValue("authEnabled") != null)
+            if (key.GetValue(REGKEY_AUTHENABLED) != null)
             {
-                this.authEnabled = (int)key.GetValue("authEnabled") == 1;
+                this.authEnabled = (int)key.GetValue(REGKEY_AUTHENABLED) == 1;
             }
-            if (key.GetValue("minToTray") != null)
+            if (key.GetValue(REGKEY_MINTOTRAY) != null)
             {
-                this.minToTray = (int)key.GetValue("minToTray") == 1;
+                this.minToTray = (int)key.GetValue(REGKEY_MINTOTRAY) == 1;
             }
-            if (key.GetValue("proxyEnabled") != null)
+            if (key.GetValue(REGKEY_PROXYENABLED) != null)
             {
-                this.proxyEnabled = (int)key.GetValue("proxyEnabled");
+                this.proxyEnabled = (int)key.GetValue(REGKEY_PROXYENABLED);
             }
-            if (key.GetValue("proxyHost") != null)
+            if (key.GetValue(REGKEY_PROXYHOST) != null)
             {
-                this.proxyHost = (string)key.GetValue("proxyHost");
+                this.proxyHost = (string)key.GetValue(REGKEY_PROXYHOST);
             }
-            if (key.GetValue("proxyPort") != null)
+            if (key.GetValue(REGKEY_PROXYPORT) != null)
             {
-                this.proxyPort = (int)key.GetValue("proxyPort");
+                this.proxyPort = (int)key.GetValue(REGKEY_PROXYPORT);
             }
-            if (key.GetValue("proxyUser") != null)
+            if (key.GetValue(REGKEY_PROXYUSER) != null)
             {
-                this.proxyUser = (string)key.GetValue("proxyUser");
+                this.proxyUser = (string)key.GetValue(REGKEY_PROXYUSER);
             }
-            if (key.GetValue("proxyPass") != null)
+            if (key.GetValue(REGKEY_PROXYPASS) != null)
             {
-                this.proxyPass = (string)key.GetValue("proxyPass");
+                this.proxyPass = (string)key.GetValue(REGKEY_PROXYPASS);
             }
-            if (key.GetValue("proxyAuth") != null)
+            if (key.GetValue(REGKEY_PROXYAUTH) != null)
             {
-                this.proxyAuth = (int)key.GetValue("proxyAuth") == 1;
+                this.proxyAuth = (int)key.GetValue(REGKEY_PROXYAUTH) == 1;
             }
-            if (key.GetValue("startPaused") != null)
+            if (key.GetValue(REGKEY_STARTPAUSED) != null)
             {
-                this.startPaused = (int)key.GetValue("startPaused") == 1;
+                this.startPaused = (int)key.GetValue(REGKEY_STARTPAUSED) == 1;
             }
-            if (key.GetValue("retryLimit") != null)
+            if (key.GetValue(REGKEY_RETRYLIMIT) != null)
             {
-                this.retryLimit = (int)key.GetValue("retryLimit");
+                this.retryLimit = (int)key.GetValue(REGKEY_RETRYLIMIT);
             }
         }
 
@@ -129,22 +148,22 @@ namespace TransmissionClientNew
                 {
                     key = Registry.CurrentUser.CreateSubKey(REGISTRY_KEY);
                 }
-                key.SetValue("host", this.host);
-                key.SetValue("port", this.port);
-                key.SetValue("refreshRate", this.refreshRate);
-                key.SetValue("autoConnect", this.autoConnect ? 1 : 0);
-                key.SetValue("user", this.user);
-                key.SetValue("pass", this.pass);
-                key.SetValue("authEnabled", this.authEnabled ? 1 : 0);
-                key.SetValue("minToTray", this.minToTray ? 1 : 0);
-                key.SetValue("proxyEnabled", this.proxyEnabled);
-                key.SetValue("proxyHost", this.proxyHost);
-                key.SetValue("proxyPort", this.proxyPort);
-                key.SetValue("proxyUser", this.proxyUser);
-                key.SetValue("proxyPass", this.proxyPass);
-                key.SetValue("proxyAuth", this.proxyAuth ? 1 : 0);
-                key.SetValue("startPaused", this.startPaused ? 1 : 0);
-                key.SetValue("retryLimit", this.retryLimit);
+                key.SetValue(REGKEY_HOST, this.host);
+                key.SetValue(REGKEY_PORT, this.port);
+                key.SetValue(REGKEY_REFRESHRATE, this.refreshRate);
+                key.SetValue(REGKEY_AUTOCONNECT, this.autoConnect ? 1 : 0);
+                key.SetValue(REGKEY_USER, this.user);
+                key.SetValue(REGKEY_PASS, this.pass);
+                key.SetValue(REGKEY_AUTHENABLED, this.authEnabled ? 1 : 0);
+                key.SetValue(REGKEY_MINTOTRAY, this.minToTray ? 1 : 0);
+                key.SetValue(REGKEY_PROXYENABLED, this.proxyEnabled);
+                key.SetValue(REGKEY_PROXYHOST, this.proxyHost);
+                key.SetValue(REGKEY_PROXYPORT, this.proxyPort);
+                key.SetValue(REGKEY_PROXYUSER, this.proxyUser);
+                key.SetValue(REGKEY_PROXYPASS, this.proxyPass);
+                key.SetValue(REGKEY_PROXYAUTH, this.proxyAuth ? 1 : 0);
+                key.SetValue(REGKEY_STARTPAUSED, this.startPaused ? 1 : 0);
+                key.SetValue(REGKEY_RETRYLIMIT, this.retryLimit);
                 Program.form.RefreshTimer.Interval = refreshRate * 1000;
                 Program.form.FilesTimer.Interval = refreshRate * 1000 * 2;
             }
