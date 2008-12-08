@@ -74,7 +74,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            //this.FilesListView = new System.Windows.Forms.ListView();
             this.FilesListView = new TransmissionClientNew.ListViewNF();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
@@ -212,7 +211,7 @@
             this.UploadLimitField.Enabled = false;
             this.UploadLimitField.Location = new System.Drawing.Point(235, 83);
             this.UploadLimitField.Maximum = new decimal(new int[] {
-            1024,
+            1048576,
             0,
             0,
             0});
@@ -230,7 +229,7 @@
             this.DownloadLimitField.Enabled = false;
             this.DownloadLimitField.Location = new System.Drawing.Point(235, 60);
             this.DownloadLimitField.Maximum = new decimal(new int[] {
-            1024,
+            1048576,
             0,
             0,
             0});

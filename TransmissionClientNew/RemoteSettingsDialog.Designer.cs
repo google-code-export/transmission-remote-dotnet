@@ -76,7 +76,7 @@
             // 
             this.LimitUploadValue.Location = new System.Drawing.Point(118, 67);
             this.LimitUploadValue.Maximum = new decimal(new int[] {
-            65535,
+            1048576,
             0,
             0,
             0});
@@ -99,7 +99,7 @@
             // 
             this.LimitDownloadValue.Location = new System.Drawing.Point(118, 93);
             this.LimitDownloadValue.Maximum = new decimal(new int[] {
-            65535,
+            1048576,
             0,
             0,
             0});
