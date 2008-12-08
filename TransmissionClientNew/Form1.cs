@@ -519,5 +519,11 @@ namespace TransmissionClientNew
                 TorrentListView.ResumeLayout();
             }
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutDialog dialog = new AboutDialog();
+            dialog.Show();
+        }
     }
 }

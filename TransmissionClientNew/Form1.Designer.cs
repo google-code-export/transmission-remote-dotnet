@@ -45,15 +45,21 @@
             this.columnHeader11 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader12 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader13 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader14 = new System.Windows.Forms.ColumnHeader();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.RefreshWorker = new System.ComponentModel.BackgroundWorker();
+            this.RefreshTimer = new System.Windows.Forms.Timer(this.components);
+            this.NotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.FilesWorker = new System.ComponentModel.BackgroundWorker();
+            this.FilesTimer = new System.Windows.Forms.Timer(this.components);
             this.SettingsDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.LocalSettingsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RemoteSettingsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ConnectButton = new System.Windows.Forms.ToolStripButton();
             this.DisconnectButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.UploadButton = new System.Windows.Forms.ToolStripButton();
             this.StartButton = new System.Windows.Forms.ToolStripSplitButton();
             this.startAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,12 +67,8 @@
             this.stopAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RemoveButton = new System.Windows.Forms.ToolStripButton();
             this.DetailsButton = new System.Windows.Forms.ToolStripButton();
-            this.RefreshWorker = new System.ComponentModel.BackgroundWorker();
-            this.RefreshTimer = new System.Windows.Forms.Timer(this.components);
-            this.NotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.FilesWorker = new System.ComponentModel.BackgroundWorker();
-            this.FilesTimer = new System.Windows.Forms.Timer(this.components);
-            this.columnHeader14 = new System.Windows.Forms.ColumnHeader();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -182,6 +184,11 @@
             // 
             this.columnHeader13.Text = "Tracker";
             // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Added";
+            this.columnHeader14.Width = 120;
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -213,14 +220,47 @@
             this.DetailsButton});
             this.toolStrip1.Location = new System.Drawing.Point(3, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(168, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(608, 25);
             this.toolStrip1.TabIndex = 0;
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // RefreshWorker
+            // 
+            this.RefreshWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.RefreshWorker_DoWork);
+            // 
+            // RefreshTimer
+            // 
+            this.RefreshTimer.Interval = 3000;
+            this.RefreshTimer.Tick += new System.EventHandler(this.RefreshTimer_Tick);
+            // 
+            // NotifyIcon
+            // 
+            this.NotifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("NotifyIcon.Icon")));
+            this.NotifyIcon.Text = "Transmission Remote Control";
+            this.NotifyIcon.Visible = true;
+            this.NotifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon_MouseClick);
+            // 
+            // FilesWorker
+            // 
+            this.FilesWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.FilesWorker_DoWork);
+            this.FilesWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.FilesWorker_RunWorkerCompleted);
+            // 
+            // FilesTimer
+            // 
+            this.FilesTimer.Interval = 3000;
+            this.FilesTimer.Tick += new System.EventHandler(this.FilesTimer_Tick);
             // 
             // SettingsDropDownButton
             // 
             this.SettingsDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.LocalSettingsMenuItem,
-            this.RemoteSettingsMenuItem});
+            this.RemoteSettingsMenuItem,
+            this.toolStripSeparator2,
+            this.aboutToolStripMenuItem});
             this.SettingsDropDownButton.Image = global::TransmissionClientNew.Properties.Resources.settings;
             this.SettingsDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.SettingsDropDownButton.Name = "SettingsDropDownButton";
@@ -230,14 +270,14 @@
             // LocalSettingsMenuItem
             // 
             this.LocalSettingsMenuItem.Name = "LocalSettingsMenuItem";
-            this.LocalSettingsMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.LocalSettingsMenuItem.Size = new System.Drawing.Size(152, 22);
             this.LocalSettingsMenuItem.Text = "Local";
             this.LocalSettingsMenuItem.Click += new System.EventHandler(this.LocalSettingsMenuItem_Click);
             // 
             // RemoteSettingsMenuItem
             // 
             this.RemoteSettingsMenuItem.Name = "RemoteSettingsMenuItem";
-            this.RemoteSettingsMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.RemoteSettingsMenuItem.Size = new System.Drawing.Size(152, 22);
             this.RemoteSettingsMenuItem.Text = "Remote";
             this.RemoteSettingsMenuItem.Visible = false;
             this.RemoteSettingsMenuItem.Click += new System.EventHandler(this.RemoteSettingsMenuItem_Click);
@@ -260,11 +300,6 @@
             this.DisconnectButton.Text = "Disconnect";
             this.DisconnectButton.Visible = false;
             this.DisconnectButton.Click += new System.EventHandler(this.DisconnectButton_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // UploadButton
             // 
@@ -340,36 +375,17 @@
             this.DetailsButton.Visible = false;
             this.DetailsButton.Click += new System.EventHandler(this.DetailsButton_Click);
             // 
-            // RefreshWorker
+            // toolStripSeparator2
             // 
-            this.RefreshWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.RefreshWorker_DoWork);
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
-            // RefreshTimer
+            // aboutToolStripMenuItem
             // 
-            this.RefreshTimer.Interval = 3000;
-            this.RefreshTimer.Tick += new System.EventHandler(this.RefreshTimer_Tick);
-            // 
-            // NotifyIcon
-            // 
-            this.NotifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("NotifyIcon.Icon")));
-            this.NotifyIcon.Text = "Transmission Remote Control";
-            this.NotifyIcon.Visible = true;
-            this.NotifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon_MouseClick);
-            // 
-            // FilesWorker
-            // 
-            this.FilesWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.FilesWorker_DoWork);
-            this.FilesWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.FilesWorker_RunWorkerCompleted);
-            // 
-            // FilesTimer
-            // 
-            this.FilesTimer.Interval = 3000;
-            this.FilesTimer.Tick += new System.EventHandler(this.FilesTimer_Tick);
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "Added";
-            this.columnHeader14.Width = 120;
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -380,7 +396,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "Form1";
-            this.Text = "Transmission BitTorrent Controller";
+            this.Text = "Transmission Remote";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Form1_Shown);
             this.Resize += new System.EventHandler(this.Form1_Resize);
@@ -439,6 +455,8 @@
         private System.ComponentModel.BackgroundWorker FilesWorker;
         public System.Windows.Forms.Timer FilesTimer;
         private System.Windows.Forms.ColumnHeader columnHeader14;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 
