@@ -81,7 +81,6 @@ namespace TransmissionClientNew
                 ProtocolConstants.FIELD_ADDEDDATE,
                 ProtocolConstants.FIELD_HAVEVALID,
                 ProtocolConstants.FIELD_ETA,
-                ProtocolConstants.FIELD_HAVEVALID,
                 ProtocolConstants.FIELD_ID,
                 ProtocolConstants.FIELD_LEECHERS,
                 ProtocolConstants.FIELD_RATEDOWNLOAD,

@@ -13,6 +13,8 @@ namespace TransmissionClientNew
 {
     public partial class Form1 : Form
     {
+        public static readonly string DEFAULT_WINDOW_TITLE = "Transmission Remote";
+
         public Boolean minimise = false;
         private ListViewItemSorter lvwColumnSorter;
         private ContextMenu noSelectionMenu;

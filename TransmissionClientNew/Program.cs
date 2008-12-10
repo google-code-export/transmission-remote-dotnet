@@ -85,7 +85,7 @@ namespace TransmissionClientNew
                     trayMenu.MenuItems.Add("-");
                     trayMenu.MenuItems.Add("Disconnect", new EventHandler(form.DisconnectButton_Click));
                     form.toolStripStatusLabel1.Text = "Connected.";
-                    form.Text = "Transmission BitTorrent Controller - " + LocalSettingsSingleton.Instance.host;
+                    form.Text = Form1.DEFAULT_WINDOW_TITLE + " - " + LocalSettingsSingleton.Instance.host;
                     updateSerial = 0;
                 }
                 else
@@ -100,14 +100,14 @@ namespace TransmissionClientNew
                     }
                     trayMenu.MenuItems.Add("Connect", new EventHandler(form.ConnectButton_Click));
                     form.toolStripStatusLabel1.Text = "Disconnected.";
-                    form.Text = "Transmission BitTorrent Controller";
+                    form.Text = Form1.DEFAULT_WINDOW_TITLE;
                     form.RefreshTimer.Enabled = false;
                     lock (updateLock)
                     {
                         form.TorrentListView.Items.Clear();
                     }
                 }
-                form.NotifyIcon.Text = "Transmission BitTorrent Controller";
+                form.NotifyIcon.Text = Form1.DEFAULT_WINDOW_TITLE;
                 form.Connected(connected);
                 trayMenu.MenuItems.Add("-");
                 trayMenu.MenuItems.Add("Exit", new EventHandler(form.ExitApplicationHandler));
