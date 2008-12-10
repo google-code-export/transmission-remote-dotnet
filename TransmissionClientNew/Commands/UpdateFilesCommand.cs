@@ -47,15 +47,7 @@ namespace TransmissionClientNew.Commmands
                 return;
             }
             JsonArray priorities = (JsonArray)torrent[ProtocolConstants.FIELD_PRIORITIES];
-            if (priorities == null)
-            {
-                return;
-            }
             JsonArray wanted = (JsonArray)torrent[ProtocolConstants.FIELD_WANTED];
-            if (wanted == null)
-            {
-                return;
-            }
             form.FilesListView.SuspendLayout();
             for (int i = 0; i < files.Length; i++)
             {
@@ -63,13 +55,12 @@ namespace TransmissionClientNew.Commmands
                 long length = ((JsonNumber)file["length"]).ToInt64();
                 long done = ((JsonNumber)file["bytesCompleted"]).ToInt64();
                 string lengthStr = Toolbox.GetFileSize(length);
-                string percentStr = Math.Round((done / (decimal)length) * 100, 2) + "%";
+                string percentStr = Toolbox.CalcPercentage(done, length) + "%";
                 string completeStr = Toolbox.GetFileSize(done);
                 string name = (string)file[ProtocolConstants.FIELD_NAME];
-                ListViewItem item;
-                if ((item = GetFileItem(form.FilesListView, name)) == null)
+                if (i >= form.FilesListView.Items.Count)
                 {
-                    item = new ListViewItem(name);
+                    ListViewItem item = new ListViewItem(name);
                     item.Name = name;
                     item.ToolTipText = name;
                     item.SubItems.Add(percentStr);
@@ -81,24 +72,13 @@ namespace TransmissionClientNew.Commmands
                 }
                 else
                 {
+                    ListViewItem item = form.FilesListView.Items[i];
                     item.SubItems[1].Text = percentStr;
                     item.SubItems[2].Text = lengthStr;
                     item.SubItems[3].Text = completeStr;
                 }
             }
             form.FilesListView.ResumeLayout();
-        }
-
-        private static ListViewItem GetFileItem(ListView list, string name)
-        {
-            foreach (ListViewItem item in list.Items)
-            {
-                if (item.Name == name)
-                {
-                    return item;
-                }
-            }
-            return null;
         }
     }
 }

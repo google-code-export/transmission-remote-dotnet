@@ -37,7 +37,14 @@ namespace TransmissionClientNew
 
         public static double CalcPercentage(long x, long total)
         {
-            return Math.Round((x / (double)total) * 100, 2);
+            if (total > 0)
+            {
+                return Math.Round((x / (double)total) * 100, 2);
+            }
+            else
+            {
+                return 100;
+            }
         }
 
         public static decimal CalcRatio(long upload_total, long download_total)
