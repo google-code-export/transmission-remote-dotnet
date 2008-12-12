@@ -17,7 +17,7 @@ namespace TransmissionClientNew
         {
             this.updateSerial = Program.updateSerial;
             this.info = info;
-            item = new ListViewItem((string)info[ProtocolConstants.FIELD_NAME]);
+            item = new ListViewItem(this.Name);
             item.ToolTipText = item.Name;
             item.Tag = this;
             item.SubItems.Add(this.Status);
@@ -92,10 +92,10 @@ namespace TransmissionClientNew
                     && ((JsonNumber)this.info[ProtocolConstants.FIELD_LEFTUNTILDONE]).ToInt64() > 0
                     && ((JsonNumber)info[ProtocolConstants.FIELD_LEFTUNTILDONE]).ToInt64() == 0)
                 {
-                    Program.form.NotifyIcon.ShowBalloonTip(LocalSettingsSingleton.COMPLETED_BALOON_TIMEOUT, (string)info[ProtocolConstants.FIELD_NAME], "This torrent has finished downloading.", ToolTipIcon.Info);
+                    Program.form.NotifyIcon.ShowBalloonTip(LocalSettingsSingleton.COMPLETED_BALOON_TIMEOUT, this.Name, "This torrent has finished downloading.", ToolTipIcon.Info);
                 }
                 this.info = info;
-                item.SubItems[0].Text = (string)info[ProtocolConstants.FIELD_NAME];
+                item.SubItems[0].Text = this.Name;
                 item.ToolTipText = item.SubItems[0].Text;
                 item.SubItems[1].Text = this.Status;
                 item.SubItems[2].Text = Toolbox.GetFileSize(this.TotalSize);
@@ -114,6 +114,14 @@ namespace TransmissionClientNew
                 {
                     Program.infoDialogs[this.Id].UpdateInfo();
                 }
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return (string)info[ProtocolConstants.FIELD_NAME];
             }
         }
 

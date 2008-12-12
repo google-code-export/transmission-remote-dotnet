@@ -76,7 +76,7 @@ namespace TransmissionClientNew
             else
             {
                 JsonObject info = t.info;
-                this.Text = this.NameLabel.Text = (string)info[ProtocolConstants.FIELD_NAME];
+                this.Text = this.NameLabel.Text = t.Name;
                 DownloadedLabel.Text = t.HaveValidString;
                 UploadedLabel.Text = t.UploadedString;
                 CommentLabel.Text = t.Comment;
@@ -124,8 +124,12 @@ namespace TransmissionClientNew
 
         private void RemoveButton_Click(object sender, EventArgs e)
         {
-            Program.form.CreateActionWorker().RunWorkerAsync(Requests.Generic("torrent-remove", GetId()));
-            this.Close();
+            if (MessageBox.Show("Are you sure you want to remove '" + this.Text + "'?", "Confirm removal", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                == DialogResult.Yes)
+            {
+                Program.form.CreateActionWorker().RunWorkerAsync(Requests.Generic("torrent-remove", GetId()));
+                this.Close();
+            }
         }
 
         private void SetHighPriorityHandler(object sender, EventArgs e)
@@ -143,7 +147,7 @@ namespace TransmissionClientNew
                 item.SubItems[4].Text = "Low";
             }
         }
-        
+
         private void SetNormalPriorityHandler(object sender, EventArgs e)
         {
             foreach (ListViewItem item in FilesListView.SelectedItems)
@@ -185,7 +189,7 @@ namespace TransmissionClientNew
                 {
                     unwanted.Add(item.Index);
                 }
-                switch(item.SubItems[4].Text)
+                switch (item.SubItems[4].Text)
                 {
                     case "High":
                         high.Add(item.Index);
