@@ -43,7 +43,7 @@ namespace TransmissionClientNew
 
         private void SetLimitField(int limit, NumericUpDown field)
         {
-            if (Program.oldTransmissionVersion)
+            if (Program.transmissionVersion < 1.40)
             {
                 field.Value = limit >= 1024 && limit <= field.Maximum ? limit / 1024 : 0;
             }

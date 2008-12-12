@@ -12,9 +12,22 @@ namespace TransmissionClientNew.Commmands
     {
         public SessionCommand(JsonObject response, WebHeaderCollection headers)
         {
-            /* The absence of a server header suggests a version < 1.40, so
-             * remember that preauthenticating is necessary. */
-            Program.oldTransmissionVersion = (headers.Get("Server") == null);
+            /* I'm not exactly sure if the version numbers here are correct
+             * but for the purposes of what it's used for these heuristics
+             * work fine at the moment. I'll make use of the content of the
+             * version response after the next release. */
+            if (response.Contains("version"))
+            {
+                Program.transmissionVersion = 1.41;
+            }
+            else if (headers.Get("Server") != null)
+            {
+                Program.transmissionVersion = 1.40;
+            }
+            else
+            {
+                Program.transmissionVersion = 1.39;
+            }
             Program.sessionData = response;
             Program.ResetFailCount();
         }

@@ -11,6 +11,9 @@ namespace TransmissionClientNew
 {
     public partial class LocalSettingsDialog : Form
     {
+        private string originalHost;
+        private int originalPort;
+
         public LocalSettingsDialog()
         {
             InitializeComponent();
@@ -19,8 +22,8 @@ namespace TransmissionClientNew
         private void LocalSettingsDialog_Load(object sender, EventArgs e)
         {
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-            HostField.Text = settings.host;
-            PortField.Value = settings.port;
+            HostField.Text = originalHost = settings.host;
+            PortField.Value = originalPort = settings.port;
             RefreshRateValue.Value = settings.refreshRate;
             AutoConnectCheckBox.Checked = settings.autoConnect;
             PassField.Enabled = UserField.Enabled = EnableAuthCheckBox.Checked = settings.authEnabled;
@@ -64,6 +67,11 @@ namespace TransmissionClientNew
             settings.startPaused = StartPausedCheckBox.Checked;
             settings.retryLimit = (int)RetryLimitValue.Value;
             settings.Commit();
+            if (Program.Connected && (settings.host != originalHost || settings.port != originalPort))
+            {
+                Program.Connected = false;
+                Program.form.Connect();
+            }
             this.Close();
         }
 

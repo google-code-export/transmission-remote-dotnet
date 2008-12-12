@@ -16,7 +16,7 @@ namespace TransmissionClientNew
         public static string[] uploadArgs;
         public static Object updateLock = new Object();
         public static int failCount = 0;
-        public static bool oldTransmissionVersion = false;
+        public static double transmissionVersion = 1.41;
 
         [STAThread]
         static void Main(string[] args)
