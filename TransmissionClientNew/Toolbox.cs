@@ -76,6 +76,11 @@ namespace TransmissionRemoteDotnet
             }
         }
 
+        public static string KbpsString(int rate)
+        {
+            return String.Format("{0}KB/s", rate);
+        }
+
         public static string GetFileSize(long Bytes)
         {
             if (Bytes >= 1073741824)

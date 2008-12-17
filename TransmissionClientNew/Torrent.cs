@@ -25,14 +25,14 @@ namespace TransmissionRemoteDotnet
             item.SubItems.Add(percentage.ToString() + "%");
             item.SubItems.Add(this.Status);
             item.SubItems.Add(this.Seeders + " (" + this.PeersSendingToUs + ")");
-            item.SubItems.Add("");
+            item.SubItems.Add(this.Peers.Count.ToString());
             item.SubItems.Add(percentage >= 100 ? "N/A" : this.DownloadRate);
             item.SubItems.Add(this.UploadRate);
             item.SubItems.Add(this.ETA);
             item.SubItems.Add(this.UploadedString);
             item.SubItems.Add(this.RatioString);
-            item.SubItems.Add("");
-            item.SubItems.Add(this.Added);
+            item.SubItems.Add(this.Added.ToString());
+            item.SubItems.Add("N/A");
             Program.torrentIndex[this.Id] = this;
             Add();
         }
@@ -96,7 +96,7 @@ namespace TransmissionRemoteDotnet
                     && ((JsonNumber)info[ProtocolConstants.FIELD_LEFTUNTILDONE]).ToInt64() == 0)
                 {
                     Program.form.notifyIcon.ShowBalloonTip(LocalSettingsSingleton.COMPLETED_BALOON_TIMEOUT, this.Name, "This torrent has finished downloading.", ToolTipIcon.Info);
-                    item.SubItems[13].Text = DateTime.Now.ToString();
+                    item.SubItems[12].Text = DateTime.Now.ToString();
                 }
                 this.info = info;
                 item.SubItems[0].Text = this.Name;
@@ -105,15 +105,23 @@ namespace TransmissionRemoteDotnet
                 item.SubItems[2].Text = percentage.ToString() + "%";
                 item.SubItems[3].Text = this.Status;
                 item.SubItems[4].Text = this.Seeders + " (" + this.PeersSendingToUs + ")";
-                //peers
+                item.SubItems[5].Text = this.Peers.Count.ToString();
                 item.SubItems[6].Text = percentage >= 100 ? "N/A" : this.DownloadRate;
                 item.SubItems[7].Text = this.UploadRate;
                 item.SubItems[8].Text = this.ETA;
                 item.SubItems[9].Text = this.UploadedString;
                 item.SubItems[10].Text = this.RatioString;
-                item.SubItems[11].Text = this.Added;
+                item.SubItems[11].Text = this.Added.ToString();
                 //completed
                 this.updateSerial = Program.updateSerial;
+            }
+        }
+
+        public JsonArray Peers
+        {
+            get
+            {
+                return (JsonArray)info[ProtocolConstants.FIELD_PEERS];
             }
         }
 
@@ -203,6 +211,22 @@ namespace TransmissionRemoteDotnet
             }
         }
 
+        public string ErrorString
+        {
+            get
+            {
+                return (string)info["errorString"];
+            }
+        }
+
+        public string Creator
+        {
+            get
+            {
+                return (string)info["creator"];
+            }
+        }
+
         public string ETA
         {
             get
@@ -234,19 +258,19 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        public string Seeders
+        public int Seeders
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_SEEDERS]).ToString();
+                return ((JsonNumber)info[ProtocolConstants.FIELD_SEEDERS]).ToInt32();
             }
         }
 
-        public string Leechers
+        public int Leechers
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_LEECHERS]).ToString();
+                return ((JsonNumber)info[ProtocolConstants.FIELD_LEECHERS]).ToInt32();
             }
         }
 
@@ -274,27 +298,27 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        public string Added
+        public DateTime Added
         {
             get
             {
-                return Toolbox.DateFromEpoch(((JsonNumber)info[ProtocolConstants.FIELD_ADDEDDATE]).ToDouble()).ToString();
+                return Toolbox.DateFromEpoch(((JsonNumber)info[ProtocolConstants.FIELD_ADDEDDATE]).ToDouble());
             }
         }
 
-        public string PeersSendingToUs
+        public int PeersSendingToUs
         {
             get
             {
-                return ((JsonNumber)info["peersSendingToUs"]).ToString();
+                return ((JsonNumber)info["peersSendingToUs"]).ToInt32();
             }
         }
 
-        public string PeersGettingFromUs
+        public int PeersGettingFromUs
         {
             get
             {
-                return ((JsonNumber)info["peersGettingFromUs"]).ToString();
+                return ((JsonNumber)info["peersGettingFromUs"]).ToInt32();
             }
         }
 

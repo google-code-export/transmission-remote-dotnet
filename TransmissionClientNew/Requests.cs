@@ -34,40 +34,34 @@ namespace TransmissionRemoteDotnet
 
         public static JsonObject Files(JsonArray ids)
         {
+            return Files(ids, false);
+        }
+
+        private static JsonObject Files(JsonArray ids, bool includePriorities)
+        {
             JsonObject request = new JsonObject();
             request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTGET);
-            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.UpdateFiles);
+            request.Put(ProtocolConstants.KEY_TAG, includePriorities ? (int)ResponseTag.UpdateFilesAndPriorities : (int)ResponseTag.UpdateFiles);
             JsonObject arguments = new JsonObject();
             arguments.Put(ProtocolConstants.KEY_IDS, ids);
             JsonArray fields = new JsonArray();
             fields.Put(ProtocolConstants.FIELD_FILES);
             fields.Put(ProtocolConstants.FIELD_ID);
+            if (includePriorities)
+            {
+                fields.Put(ProtocolConstants.FIELD_PRIORITIES);
+                fields.Put(ProtocolConstants.FIELD_WANTED);
+            }
             arguments.Put(ProtocolConstants.KEY_FIELDS, fields);
             request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
             return request;
         }
         
-        public static JsonObject Priorities(int id)
+        public static JsonObject FilesAndPriorities(int id)
         {
-            JsonObject request = new JsonObject();
-            request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTGET);
-            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.UpdateFilesAndPriorities);
-            JsonObject arguments = new JsonObject();
             JsonArray ids = new JsonArray();
             ids.Put(id);
-            arguments.Put(ProtocolConstants.KEY_IDS, ids);
-            JsonArray fields = new JsonArray();
-            fields.Put(ProtocolConstants.FIELD_FILES);
-            fields.Put(ProtocolConstants.FIELD_ID);
-            fields.Put(ProtocolConstants.FIELD_PRIORITIES);
-            fields.Put(ProtocolConstants.FIELD_WANTED);
-            fields.Put(ProtocolConstants.FIELD_DOWNLOADLIMIT);
-            fields.Put(ProtocolConstants.FIELD_DOWNLOADLIMITMODE);
-            fields.Put(ProtocolConstants.FIELD_UPLOADLIMIT);
-            fields.Put(ProtocolConstants.FIELD_UPLOADLIMITMODE);
-            arguments.Put(ProtocolConstants.KEY_FIELDS, fields);
-            request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
-            return request;
+            return Files(ids, true);
         }
 
         public static JsonObject TorrentGet(Boolean beginLoop)

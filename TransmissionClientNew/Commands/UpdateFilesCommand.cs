@@ -37,11 +37,11 @@ namespace TransmissionRemoteDotnet.Commmands
                 UpdateFiles(torrent, form.filesListView);
                 if (includePriorities)
                 {
-                    form.filesTimer.Enabled = true;
                     form.filesListView.Enabled = true;
                     Toolbox.StripeListView(form.filesListView);
                 }
                 form.filesListView.ResumeLayout();
+                form.filesTimer.Enabled = true;
             }
         }
 

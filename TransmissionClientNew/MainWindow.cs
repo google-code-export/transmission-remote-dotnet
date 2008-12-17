@@ -53,7 +53,7 @@ namespace TransmissionRemoteDotnet
                 }
                 trayMenu.MenuItems.Add("Connect", new EventHandler(this.connectButton_Click));
                 this.toolStripStatusLabel.Text = "Disconnected.";
-                this.notifyIcon.Text = "[DISCONNECTED] "+MainWindow.DEFAULT_WINDOW_TITLE;
+                this.notifyIcon.Text = "[DISCONNECTED] " + MainWindow.DEFAULT_WINDOW_TITLE;
                 this.Text = MainWindow.DEFAULT_WINDOW_TITLE;
                 this.refreshTimer.Enabled = false;
                 this.torrentAndTabsSplitContainer.Panel2Collapsed = true;
@@ -71,7 +71,7 @@ namespace TransmissionRemoteDotnet
                 = remoteSettingsToolStripMenuItem.Visible
                 = connected;
         }
-        
+
         public void startAllMenuItem_Click(object sender, EventArgs e)
         {
             CreateActionWorker().RunWorkerAsync(Requests.Generic(ProtocolConstants.METHOD_TORRENTSTART, null));
@@ -389,26 +389,28 @@ namespace TransmissionRemoteDotnet
         private void torrentListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             int count = torrentListView.SelectedItems.Count;
-            Boolean oneOrMore = count > 0;
+            bool oneOrMore = count > 0;
+            bool one = count == 1;
             torrentListView.ContextMenu = oneOrMore ? this.torrentSelectionMenu : null;
-            startTorrentButton.Enabled = oneOrMore;
-            pauseTorrentButton.Enabled = oneOrMore;
-            removeTorrentButton.Enabled = oneOrMore;
+            startTorrentButton.Enabled = pauseTorrentButton.Enabled
+                = removeTorrentButton.Enabled = oneOrMore;
             filesTimer.Enabled = false;
-            filesListView.Enabled = false;
             MainWindow form = Program.form;
             lock (form.filesListView)
             {
                 form.filesListView.Items.Clear();
             }
-            if (count == 1)
+            lock (form.peersListView)
+            {
+                form.peersListView.Items.Clear();
+            }
+            if (one)
             {
                 Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
-                CreateActionWorker().RunWorkerAsync(Requests.Priorities(t.Id));
-                torrentAndTabsSplitContainer.Panel2Collapsed = false;
+                CreateActionWorker().RunWorkerAsync(Requests.FilesAndPriorities(t.Id));
                 trackersListView.Items.Clear();
                 trackersListView.SuspendLayout();
-                foreach(JsonObject tracker in t.Trackers)
+                foreach (JsonObject tracker in t.Trackers)
                 {
                     int tier = ((JsonNumber)tracker["tier"]).ToInt32();
                     string announceUrl = (string)tracker["announce"];
@@ -421,11 +423,9 @@ namespace TransmissionRemoteDotnet
                 Toolbox.StripeListView(trackersListView);
                 trackersListView.ResumeLayout();
             }
-            else
-            {
-                torrentAndTabsSplitContainer.Panel2Collapsed = true;
-            }
-            UpdateInfoPanel();
+            torrentAndTabsSplitContainer.Panel2Collapsed = !one;
+            refreshElapsedTimer.Enabled = one;
+            UpdateInfoPanel(true);
         }
 
         private void ShowTorrentPropsHandler(object sender, EventArgs e)
@@ -785,27 +785,81 @@ namespace TransmissionRemoteDotnet
             CreateActionWorker().RunWorkerAsync(request);
         }
 
-        private delegate void UpdateInfoPanelDelegate();
-        public void UpdateInfoPanel()
+        private delegate void UpdateInfoPanelDelegate(bool first);
+        public void UpdateInfoPanel(bool first)
         {
             if (this.InvokeRequired)
             {
-                this.Invoke(new UpdateInfoPanelDelegate(this.UpdateInfoPanel));
+                this.Invoke(new UpdateInfoPanelDelegate(this.UpdateInfoPanel), first);
             }
             else
             {
                 if (torrentListView.SelectedItems.Count == 1)
                 {
                     Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
-                    progressBar1.Value = (int)t.Percentage;
+                    if (first)
+                    {
+                        torrentDetailGroupBox.Text = t.Name;
+                        startedAtLabel.Text = t.Added.ToString();
+                        createdAtLabel.Text = t.Created;
+                        createdByLabel.Text = t.Creator;
+                        commentLabel.Text = t.Comment;
+                    }
+                    remainingLabel.Text = t.ETA;
+                    uploadedLabel.Text = t.UploadedString;
+                    uploadLimitLabel.Text = t.UploadLimitMode ? Toolbox.KbpsString(t.UploadLimit) : "∞";
+                    uploadRateLabel.Text = t.UploadRate;
+                    seedersLabel.Text = String.Format("{0} of {0} connected", t.PeersSendingToUs, t.Seeders);
+                    leechersLabel.Text = String.Format("{0} of {0} connected", t.PeersGettingFromUs, t.Leechers);
+                    ratioLabel.Text = t.RatioString;
+                    progressBar.Value = (int)t.Percentage;
                     percentageLabel.Text = t.Percentage.ToString() + "%";
+                    downloadedLabel.Text = t.HaveValidString;
+                    downloadSpeedLabel.Text = t.DownloadRate;
+                    downloadLimitLabel.Text = t.DownloadLimitMode ? Toolbox.KbpsString(t.DownloadLimit) : "∞";
+                    statusLabel.Text = t.Status;
+                    if (!(errorLabel.Text = t.ErrorString).Equals(""))
+                    {
+                        labelForErrorLabel.Visible = errorLabel.Visible;
+                    }
+                    RefreshElapsedTimer();
+                    /*if (t.info["peers"] != null)
+                    {
+                        MessageBox.Show(t.info["peers"].ToString());
+                    }*/
                 }
             }
         }
 
         private void filesListView_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
+        }
 
+        private void refreshElapsedTimer_Tick(object sender, EventArgs e)
+        {
+            RefreshElapsedTimer();
+        }
+
+        private void RefreshElapsedTimer()
+        {
+            if (torrentListView.SelectedItems.Count == 1)
+            {
+                Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
+                TimeSpan age = DateTime.Now.Subtract(t.Added);
+                timeElapsedLabel.Text = String.Format("{0}d {1}h {2}m {3}s", new object[] { age.Days, age.Hours, age.Minutes, age.Seconds });
+            }
+            else
+            {
+                refreshElapsedTimer.Enabled = false;
+            }
+        }
+
+        private void MainWindow_Resize(object sender, EventArgs e)
+        {
+            if (notifyIcon.Visible && FormWindowState.Minimized == this.WindowState)
+            {
+                this.Hide();
+            }
         }
     }
 }

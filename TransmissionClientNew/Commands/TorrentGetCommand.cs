@@ -68,7 +68,7 @@ namespace TransmissionRemoteDotnet.Commmands
             }
             form.ResumeTorrentListView();
             form.UpdateStatus("Connected | "+ Toolbox.GetFileSize(totalDownload) + "/s down, " + Toolbox.GetFileSize(totalUpload) + "/s up | "+totalTorrents+" torrents: "+totalDownloading+" downloading, "+totalSeeding+" seeding | "+Toolbox.GetFileSize(totalDownloadedSize)+" / "+Toolbox.GetFileSize(totalSize));
-            form.UpdateInfoPanel();
+            form.UpdateInfoPanel(false);
             Queue<int> removeQueue = new Queue<int>();
             foreach (KeyValuePair<int, Torrent> pair in Program.torrentIndex)
             {
