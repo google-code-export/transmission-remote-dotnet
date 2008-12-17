@@ -102,7 +102,7 @@ namespace TransmissionRemoteDotnet.Commmands
             }
             else
             {
-                form.connectButton.Enabled = form.refreshTimer.Enabled = true;
+                form.refreshTimer.Enabled = true;
             }
         }
     }

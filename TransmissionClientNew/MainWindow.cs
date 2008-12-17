@@ -20,6 +20,7 @@ namespace TransmissionRemoteDotnet
         private ContextMenu torrentSelectionMenu;
         private ContextMenu fileSelectionMenu;
         private ContextMenu noFileSelectionMenu;
+        private BackgroundWorker connectWorker;
 
         public MainWindow()
         {
@@ -337,9 +338,12 @@ namespace TransmissionRemoteDotnet
 
         private void connectWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            this.connectButton.Enabled = true;
-            TransmissionCommand command = (TransmissionCommand)e.Result;
-            command.Execute();
+            BackgroundWorker senderBW = (BackgroundWorker)sender;
+            if (this.connectWorker.Equals(senderBW))
+            {
+                TransmissionCommand command = (TransmissionCommand)e.Result;
+                command.Execute();
+            }
         }
 
         private delegate void ConnectDelegate();
@@ -351,9 +355,8 @@ namespace TransmissionRemoteDotnet
             }
             else
             {
-                connectButton.Enabled = false;
                 toolStripStatusLabel.Text = "Connecting...";
-                BackgroundWorker connectWorker = new BackgroundWorker();
+                BackgroundWorker connectWorker = this.connectWorker = new BackgroundWorker();
                 connectWorker.DoWork += new DoWorkEventHandler(connectWorker_DoWork);
                 connectWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(connectWorker_RunWorkerCompleted);
                 connectWorker.RunWorkerAsync();
