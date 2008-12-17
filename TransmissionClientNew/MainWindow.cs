@@ -810,7 +810,9 @@ namespace TransmissionRemoteDotnet
                     Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
                     if (first)
                     {
-                        torrentDetailGroupBox.Text = t.Name;
+                        torrentDetailGroupBox.Text = peersTorrentNameGroupBox.Text
+                            = trackersTorrentNameGroupBox.Text = filesTorrentNameGroupBox.Text
+                            = t.Name;
                         startedAtLabel.Text = t.Added.ToString();
                         createdAtLabel.Text = t.Created;
                         createdByLabel.Text = t.Creator;

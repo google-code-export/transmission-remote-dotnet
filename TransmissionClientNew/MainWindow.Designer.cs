@@ -135,6 +135,7 @@
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader17 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.peersTabPage = new System.Windows.Forms.TabPage();
             this.peersListView = new TransmissionRemoteDotnet.ListViewNF();
@@ -143,7 +144,9 @@
             this.columnHeader29 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader30 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader31 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader17 = new System.Windows.Forms.ColumnHeader();
+            this.filesTorrentNameGroupBox = new System.Windows.Forms.GroupBox();
+            this.peersTorrentNameGroupBox = new System.Windows.Forms.GroupBox();
+            this.trackersTorrentNameGroupBox = new System.Windows.Forms.GroupBox();
             this.menuStrip.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -171,6 +174,9 @@
             this.trackersTabPage.SuspendLayout();
             this.filesTabPage.SuspendLayout();
             this.peersTabPage.SuspendLayout();
+            this.filesTorrentNameGroupBox.SuspendLayout();
+            this.peersTorrentNameGroupBox.SuspendLayout();
+            this.trackersTorrentNameGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -1075,7 +1081,7 @@
             // 
             // trackersTabPage
             // 
-            this.trackersTabPage.Controls.Add(this.trackersListView);
+            this.trackersTabPage.Controls.Add(this.trackersTorrentNameGroupBox);
             this.trackersTabPage.Location = new System.Drawing.Point(4, 22);
             this.trackersTabPage.Name = "trackersTabPage";
             this.trackersTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -1092,9 +1098,9 @@
             this.columnHeader21});
             this.trackersListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.trackersListView.FullRowSelect = true;
-            this.trackersListView.Location = new System.Drawing.Point(3, 3);
+            this.trackersListView.Location = new System.Drawing.Point(3, 16);
             this.trackersListView.Name = "trackersListView";
-            this.trackersListView.Size = new System.Drawing.Size(884, 214);
+            this.trackersListView.Size = new System.Drawing.Size(878, 195);
             this.trackersListView.TabIndex = 0;
             this.trackersListView.UseCompatibleStateImageBehavior = false;
             this.trackersListView.View = System.Windows.Forms.View.Details;
@@ -1116,7 +1122,7 @@
             // 
             // filesTabPage
             // 
-            this.filesTabPage.Controls.Add(this.filesListView);
+            this.filesTabPage.Controls.Add(this.filesTorrentNameGroupBox);
             this.filesTabPage.Location = new System.Drawing.Point(4, 22);
             this.filesTabPage.Name = "filesTabPage";
             this.filesTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -1136,9 +1142,9 @@
             this.columnHeader5});
             this.filesListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.filesListView.Enabled = false;
-            this.filesListView.Location = new System.Drawing.Point(3, 3);
+            this.filesListView.Location = new System.Drawing.Point(3, 16);
             this.filesListView.Name = "filesListView";
-            this.filesListView.Size = new System.Drawing.Size(884, 214);
+            this.filesListView.Size = new System.Drawing.Size(878, 195);
             this.filesListView.TabIndex = 0;
             this.filesListView.UseCompatibleStateImageBehavior = false;
             this.filesListView.View = System.Windows.Forms.View.Details;
@@ -1161,13 +1167,17 @@
             // 
             this.columnHeader4.Text = "%";
             // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "Skip";
+            // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Priority";
             // 
             // peersTabPage
             // 
-            this.peersTabPage.Controls.Add(this.peersListView);
+            this.peersTabPage.Controls.Add(this.peersTorrentNameGroupBox);
             this.peersTabPage.Location = new System.Drawing.Point(4, 22);
             this.peersTabPage.Name = "peersTabPage";
             this.peersTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -1186,9 +1196,9 @@
             this.columnHeader31});
             this.peersListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.peersListView.FullRowSelect = true;
-            this.peersListView.Location = new System.Drawing.Point(3, 3);
+            this.peersListView.Location = new System.Drawing.Point(3, 16);
             this.peersListView.Name = "peersListView";
-            this.peersListView.Size = new System.Drawing.Size(884, 214);
+            this.peersListView.Size = new System.Drawing.Size(878, 195);
             this.peersListView.TabIndex = 0;
             this.peersListView.UseCompatibleStateImageBehavior = false;
             this.peersListView.View = System.Windows.Forms.View.Details;
@@ -1218,10 +1228,38 @@
             this.columnHeader31.Text = "Rate To Peer";
             this.columnHeader31.Width = 80;
             // 
-            // columnHeader17
+            // filesTorrentNameGroupBox
             // 
-            this.columnHeader17.DisplayIndex = 4;
-            this.columnHeader17.Text = "Skip";
+            this.filesTorrentNameGroupBox.Controls.Add(this.filesListView);
+            this.filesTorrentNameGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.filesTorrentNameGroupBox.Location = new System.Drawing.Point(3, 3);
+            this.filesTorrentNameGroupBox.Name = "filesTorrentNameGroupBox";
+            this.filesTorrentNameGroupBox.Size = new System.Drawing.Size(884, 214);
+            this.filesTorrentNameGroupBox.TabIndex = 1;
+            this.filesTorrentNameGroupBox.TabStop = false;
+            this.filesTorrentNameGroupBox.Text = "groupBox1";
+            // 
+            // peersTorrentNameGroupBox
+            // 
+            this.peersTorrentNameGroupBox.Controls.Add(this.peersListView);
+            this.peersTorrentNameGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.peersTorrentNameGroupBox.Location = new System.Drawing.Point(3, 3);
+            this.peersTorrentNameGroupBox.Name = "peersTorrentNameGroupBox";
+            this.peersTorrentNameGroupBox.Size = new System.Drawing.Size(884, 214);
+            this.peersTorrentNameGroupBox.TabIndex = 1;
+            this.peersTorrentNameGroupBox.TabStop = false;
+            this.peersTorrentNameGroupBox.Text = "groupBox1";
+            // 
+            // trackersTorrentNameGroupBox
+            // 
+            this.trackersTorrentNameGroupBox.Controls.Add(this.trackersListView);
+            this.trackersTorrentNameGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trackersTorrentNameGroupBox.Location = new System.Drawing.Point(3, 3);
+            this.trackersTorrentNameGroupBox.Name = "trackersTorrentNameGroupBox";
+            this.trackersTorrentNameGroupBox.Size = new System.Drawing.Size(884, 214);
+            this.trackersTorrentNameGroupBox.TabIndex = 1;
+            this.trackersTorrentNameGroupBox.TabStop = false;
+            this.trackersTorrentNameGroupBox.Text = "groupBox1";
             // 
             // MainWindow
             // 
@@ -1278,6 +1316,9 @@
             this.trackersTabPage.ResumeLayout(false);
             this.filesTabPage.ResumeLayout(false);
             this.peersTabPage.ResumeLayout(false);
+            this.filesTorrentNameGroupBox.ResumeLayout(false);
+            this.peersTorrentNameGroupBox.ResumeLayout(false);
+            this.trackersTorrentNameGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1399,5 +1440,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader30;
         private System.Windows.Forms.ColumnHeader columnHeader31;
         private System.Windows.Forms.ColumnHeader columnHeader17;
+        private System.Windows.Forms.GroupBox trackersTorrentNameGroupBox;
+        private System.Windows.Forms.GroupBox filesTorrentNameGroupBox;
+        private System.Windows.Forms.GroupBox peersTorrentNameGroupBox;
     }
 }
