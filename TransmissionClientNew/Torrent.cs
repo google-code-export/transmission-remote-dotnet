@@ -28,7 +28,7 @@ namespace TransmissionRemoteDotnet
             item.SubItems.Add(this.Peers.Count.ToString());
             item.SubItems.Add(percentage >= 100 ? "N/A" : this.DownloadRate);
             item.SubItems.Add(this.UploadRate);
-            item.SubItems.Add(this.ETA);
+            item.SubItems.Add(this.GetShortETA());
             item.SubItems.Add(this.UploadedString);
             item.SubItems.Add(this.RatioString);
             item.SubItems.Add(this.Added.ToString());
@@ -108,7 +108,7 @@ namespace TransmissionRemoteDotnet
                 item.SubItems[5].Text = this.Peers.Count.ToString();
                 item.SubItems[6].Text = percentage >= 100 ? "N/A" : this.DownloadRate;
                 item.SubItems[7].Text = this.UploadRate;
-                item.SubItems[8].Text = this.ETA;
+                item.SubItems[8].Text = this.GetShortETA();
                 item.SubItems[9].Text = this.UploadedString;
                 item.SubItems[10].Text = this.RatioString;
                 item.SubItems[11].Text = this.Added.ToString();
@@ -227,10 +227,18 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        public string ETA
+        public string GetShortETA()
         {
-            get
-            {
+            return GetETA(true);
+        }
+
+        public string GetLongETA()
+        {
+            return GetETA(false);
+        }
+
+        private string GetETA(bool small)
+        {
                 if (this.Percentage >= 100)
                 {
                     return "N/A";
@@ -240,14 +248,21 @@ namespace TransmissionRemoteDotnet
                     double eta = ((JsonNumber)info[ProtocolConstants.FIELD_ETA]).ToDouble();
                     if (eta > 0)
                     {
-                        return TimeSpan.FromSeconds(eta).ToString();
+                        TimeSpan ts = TimeSpan.FromSeconds(eta);
+                        if (small)
+                        {
+                            return ts.ToString();
+                        }
+                        else
+                        {
+                            return Toolbox.FormatTimespanLong(ts);
+                        }
                     }
                     else
                     {
                         return "Unknown";
                     }
                 }
-            }
         }
 
         public double Percentage

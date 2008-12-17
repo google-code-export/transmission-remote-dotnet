@@ -404,11 +404,15 @@ namespace TransmissionRemoteDotnet
             {
                 form.peersListView.Items.Clear();
             }
+            lock (form.trackersListView)
+            {
+                trackersListView.Items.Clear();
+            }
             if (one)
             {
+                peersListView.Tag = 0;
                 Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
                 CreateActionWorker().RunWorkerAsync(Requests.FilesAndPriorities(t.Id));
-                trackersListView.Items.Clear();
                 trackersListView.SuspendLayout();
                 foreach (JsonObject tracker in t.Trackers)
                 {
@@ -640,7 +644,11 @@ namespace TransmissionRemoteDotnet
             if (!filesWorker.IsBusy)
             {
                 filesTimer.Enabled = false;
-                filesWorker.RunWorkerAsync(Requests.Files(BuildFirstIdArray()));
+                try
+                {
+                    filesWorker.RunWorkerAsync(Requests.Files(BuildFirstIdArray()));
+                }
+                catch { }
             }
         }
 
@@ -805,7 +813,7 @@ namespace TransmissionRemoteDotnet
                         createdByLabel.Text = t.Creator;
                         commentLabel.Text = t.Comment;
                     }
-                    remainingLabel.Text = t.ETA;
+                    remainingLabel.Text = t.GetLongETA();
                     uploadedLabel.Text = t.UploadedString;
                     uploadLimitLabel.Text = t.UploadLimitMode ? Toolbox.KbpsString(t.UploadLimit) : "∞";
                     uploadRateLabel.Text = t.UploadRate;
@@ -823,12 +831,56 @@ namespace TransmissionRemoteDotnet
                         labelForErrorLabel.Visible = errorLabel.Visible;
                     }
                     RefreshElapsedTimer();
-                    /*if (t.info["peers"] != null)
+                    peersListView.Tag = (int)peersListView.Tag + 1;
+                    peersListView.SuspendLayout();
+                    foreach (JsonObject peer in t.Peers)
                     {
-                        MessageBox.Show(t.info["peers"].ToString());
-                    }*/
+                        ListViewItem item = FindPeerItem(peer["address"].ToString(), peer["clientName"].ToString());
+                        if (item == null)
+                        {
+                            item = new ListViewItem((string)peer["address"]);
+                            item.SubItems.Add((string)peer["clientName"]);
+                            item.SubItems.Add((string)peer["progress"] + "%");
+                            item.SubItems.Add(Toolbox.GetFileSize(((JsonNumber)peer["rateToClient"]).ToInt64()));
+                            item.SubItems.Add(Toolbox.GetFileSize(((JsonNumber)peer["rateToPeer"]).ToInt64()));
+                            peersListView.Items.Add(item);
+                            Toolbox.StripeListView(peersListView);
+                        }
+                        else
+                        {
+                            item.SubItems[2].Text = (string)peer["progress"] + "%";
+                            item.SubItems[3].Text = Toolbox.GetFileSize(((JsonNumber)peer["rateToClient"]).ToInt64());
+                            item.SubItems[4].Text = Toolbox.GetFileSize(((JsonNumber)peer["rateToPeer"]).ToInt64());
+                        } 
+                        item.Tag = peersListView.Tag;
+                    }
+                    Queue<ListViewItem> removalQueue = new Queue<ListViewItem>();
+                    foreach (ListViewItem item in peersListView.Items)
+                    {
+                        if ((int)item.Tag != (int)peersListView.Tag)
+                        {
+                            removalQueue.Enqueue(item);
+                        }
+                    }
+                    foreach(ListViewItem item in removalQueue)
+                    {
+                        peersListView.Items.Remove(item);
+                    }
+                    peersListView.ResumeLayout();
                 }
             }
+        }
+
+        private ListViewItem FindPeerItem(string address, string clientName)
+        {
+            foreach (ListViewItem peer in peersListView.Items)
+            {
+                if (peer.SubItems[0].Text.Equals(address) && peer.SubItems[1].Text.Equals(clientName))
+                {
+                    return peer;
+                }
+            }
+            return null;
         }
 
         private void filesListView_ItemChecked(object sender, ItemCheckedEventArgs e)
@@ -845,8 +897,7 @@ namespace TransmissionRemoteDotnet
             if (torrentListView.SelectedItems.Count == 1)
             {
                 Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
-                TimeSpan age = DateTime.Now.Subtract(t.Added);
-                timeElapsedLabel.Text = String.Format("{0}d {1}h {2}m {3}s", new object[] { age.Days, age.Hours, age.Minutes, age.Seconds });
+                timeElapsedLabel.Text = Toolbox.FormatTimespanLong(DateTime.Now.Subtract(t.Added));
             }
             else
             {

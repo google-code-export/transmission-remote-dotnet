@@ -64,7 +64,6 @@ namespace TransmissionRemoteDotnet
 
         public static TransmissionCommand Request(JsonObject data)
         {
-            Console.WriteLine(DateTime.Now.ToString() + " : "+ data.ToString());
             string str_response = null;
             try
             {

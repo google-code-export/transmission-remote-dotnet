@@ -81,6 +81,11 @@ namespace TransmissionRemoteDotnet
             return String.Format("{0}KB/s", rate);
         }
 
+        public static string FormatTimespanLong(TimeSpan span)
+        {
+            return String.Format("{0}d {1}h {2}m {3}s", new object[] { span.Days, span.Hours, span.Minutes, span.Seconds });
+        }
+
         public static string GetFileSize(long Bytes)
         {
             if (Bytes >= 1073741824)
