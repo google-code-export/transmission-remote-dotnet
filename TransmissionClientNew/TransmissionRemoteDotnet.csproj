@@ -118,6 +118,9 @@
       <DependentUpon>RemoteSettingsDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="TorrentPropertiesDialog.resx">
+      <DependentUpon>TorrentPropertiesDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UriPromptWindow.resx">
       <DependentUpon>UriPromptWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,12 +154,17 @@
     <Compile Include="Commands\TorrentGetCommand.cs" />
     <Compile Include="Requests.cs" />
     <Compile Include="Commands\SessionCommand.cs" />
+    <Compile Include="TorrentPropertiesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TorrentPropertiesDialog.Designer.cs">
+      <DependentUpon>TorrentPropertiesDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransmissionCommand.cs" />
     <Compile Include="TransmissionWebClient.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Commands\UpdateFilesCommand.cs" />
-    <Compile Include="Commands\UpdatePrioritiesCommand.cs" />
     <Compile Include="UriPromptWindow.cs">
       <SubType>Form</SubType>
     </Compile>

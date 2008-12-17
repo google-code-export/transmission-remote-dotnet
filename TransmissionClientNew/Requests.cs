@@ -51,7 +51,7 @@ namespace TransmissionRemoteDotnet
         {
             JsonObject request = new JsonObject();
             request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTGET);
-            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.UpdatePriorities);
+            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.UpdateFilesAndPriorities);
             JsonObject arguments = new JsonObject();
             JsonArray ids = new JsonArray();
             ids.Put(id);
@@ -91,10 +91,15 @@ namespace TransmissionRemoteDotnet
                 ProtocolConstants.FIELD_STATUS,
                 ProtocolConstants.FIELD_LEFTUNTILDONE,
                 ProtocolConstants.FIELD_ANNOUNCEURL,
+                ProtocolConstants.FIELD_DOWNLOADLIMIT,
+                ProtocolConstants.FIELD_DOWNLOADLIMITMODE,
+                ProtocolConstants.FIELD_UPLOADLIMIT,
+                ProtocolConstants.FIELD_UPLOADLIMITMODE,
+                ProtocolConstants.FIELD_NAME,
                 "sizeWhenDone","swarmSpeed",
                 "isPrivate","comment","creator","dateCreated",
                 "hashString","haveUnchecked","peers",
-                "error","errorString","name",
+                "error","errorString", "trackers",
                 "peersGettingFromUs","peersKnown","peersSendingToUs"});
             arguments.Put(ProtocolConstants.KEY_FIELDS, fields);
             request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);

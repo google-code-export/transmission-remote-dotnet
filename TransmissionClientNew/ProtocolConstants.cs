@@ -45,6 +45,7 @@ namespace TransmissionRemoteDotnet
             FIELD_DOWNLOADLIMIT = "downloadLimit",
             FIELD_DOWNLOADLIMITMODE = "downloadLimitMode",
             FIELD_UPLOADLIMIT = "uploadLimit",
-            FIELD_UPLOADLIMITMODE = "uploadLimitMode";
+            FIELD_UPLOADLIMITMODE = "uploadLimitMode",
+            FIELD_TRACKERS = "trackers";
     }
 }

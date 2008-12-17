@@ -117,6 +117,14 @@ namespace TransmissionRemoteDotnet
             }
         }
 
+        public JsonArray Trackers
+        {
+            get
+            {
+                return (JsonArray)info[ProtocolConstants.FIELD_TRACKERS];
+            }
+        }
+
         public string Name
         {
             get
@@ -160,6 +168,38 @@ namespace TransmissionRemoteDotnet
             get
             {
                 return ((JsonNumber)info[ProtocolConstants.FIELD_ID]).ToInt32();
+            }
+        }
+
+        public int DownloadLimit
+        {
+            get
+            {
+                return ((JsonNumber)info[ProtocolConstants.FIELD_DOWNLOADLIMIT]).ToInt32();
+            }
+        }
+
+        public bool DownloadLimitMode
+        {
+            get
+            {
+                return ((JsonNumber)info[ProtocolConstants.FIELD_DOWNLOADLIMITMODE]).ToBoolean();
+            }
+        }
+
+        public int UploadLimit
+        {
+            get
+            {
+                return ((JsonNumber)info[ProtocolConstants.FIELD_UPLOADLIMIT]).ToInt32();
+            }
+        }
+
+        public bool UploadLimitMode
+        {
+            get
+            {
+                return ((JsonNumber)info[ProtocolConstants.FIELD_UPLOADLIMITMODE]).ToBoolean();
             }
         }
 

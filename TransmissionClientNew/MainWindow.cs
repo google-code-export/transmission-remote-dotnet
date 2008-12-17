@@ -14,6 +14,7 @@ namespace TransmissionRemoteDotnet
     public partial class MainWindow : Form
     {
         public static readonly string DEFAULT_WINDOW_TITLE = "Transmission Remote";
+
         public Boolean minimise = false;
         private ListViewItemSorter lvwColumnSorter;
         private ContextMenu torrentSelectionMenu;
@@ -24,6 +25,7 @@ namespace TransmissionRemoteDotnet
         {
             Program.connStatusChanged += new ConnStatusChangedDelegate(Program_connStatusChanged);
             InitializeComponent();
+            torrentAndTabsSplitContainer.Panel2Collapsed = true;
         }
 
         private void Program_connStatusChanged(Boolean connected)
@@ -37,6 +39,7 @@ namespace TransmissionRemoteDotnet
                 trayMenu.MenuItems.Add("Disconnect", new EventHandler(this.disconnectButton_Click));
                 this.toolStripStatusLabel.Text = "Connected. Getting torrent information...";
                 this.Text = MainWindow.DEFAULT_WINDOW_TITLE + " - " + LocalSettingsSingleton.Instance.host;
+                this.notifyIcon.Text = "[CONNECTED] " + MainWindow.DEFAULT_WINDOW_TITLE;
             }
             else
             {
@@ -50,11 +53,11 @@ namespace TransmissionRemoteDotnet
                 }
                 trayMenu.MenuItems.Add("Connect", new EventHandler(this.connectButton_Click));
                 this.toolStripStatusLabel.Text = "Disconnected.";
+                this.notifyIcon.Text = "[DISCONNECTED] "+MainWindow.DEFAULT_WINDOW_TITLE;
                 this.Text = MainWindow.DEFAULT_WINDOW_TITLE;
                 this.refreshTimer.Enabled = false;
-                this.torrentAndFileListViewSplitContainer.Panel2Collapsed = true;
+                this.torrentAndTabsSplitContainer.Panel2Collapsed = true;
             }
-            this.notifyIcon.Text = MainWindow.DEFAULT_WINDOW_TITLE;
             trayMenu.MenuItems.Add("-");
             trayMenu.MenuItems.Add("Exit", new EventHandler(this.exitToolStripMenuItem_Click));
             this.notifyIcon.ContextMenu = trayMenu;
@@ -118,7 +121,9 @@ namespace TransmissionRemoteDotnet
             this.torrentSelectionMenu = new ContextMenu(new MenuItem[] {
                 new MenuItem("Start", new EventHandler(this.startTorrentButton_Click)),
                 new MenuItem("Pause", new EventHandler(this.pauseTorrentButton_Click)),
-                new MenuItem("Remove", new EventHandler(this.removeTorrentButton_Click))
+                new MenuItem("Remove", new EventHandler(this.removeTorrentButton_Click)),
+                new MenuItem("-"),
+                new MenuItem("Properties", new EventHandler(this.ShowTorrentPropsHandler))
             });
             this.fileSelectionMenu = new ContextMenu(new MenuItem[] {
                 new MenuItem("High Priority", new EventHandler(this.SetHighPriorityHandler)),
@@ -325,12 +330,12 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        private void ConnectWorker_DoWork(object sender, DoWorkEventArgs e)
+        private void connectWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             e.Result = CommandFactory.Request(Requests.SessionGet());
         }
 
-        private void ConnectWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void connectWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             this.connectButton.Enabled = true;
             TransmissionCommand command = (TransmissionCommand)e.Result;
@@ -349,8 +354,8 @@ namespace TransmissionRemoteDotnet
                 connectButton.Enabled = false;
                 toolStripStatusLabel.Text = "Connecting...";
                 BackgroundWorker connectWorker = new BackgroundWorker();
-                connectWorker.DoWork += new DoWorkEventHandler(ConnectWorker_DoWork);
-                connectWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(ConnectWorker_RunWorkerCompleted);
+                connectWorker.DoWork += new DoWorkEventHandler(connectWorker_DoWork);
+                connectWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(connectWorker_RunWorkerCompleted);
                 connectWorker.RunWorkerAsync();
             }
         }
@@ -400,13 +405,37 @@ namespace TransmissionRemoteDotnet
             {
                 Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
                 CreateActionWorker().RunWorkerAsync(Requests.Priorities(t.Id));
-                torrentAndFileListViewSplitContainer.Panel2Collapsed = false;
+                torrentAndTabsSplitContainer.Panel2Collapsed = false;
+                trackersListView.Items.Clear();
+                trackersListView.SuspendLayout();
+                foreach(JsonObject tracker in t.Trackers)
+                {
+                    int tier = ((JsonNumber)tracker["tier"]).ToInt32();
+                    string announceUrl = (string)tracker["announce"];
+                    string scrapeUrl = (string)tracker["scrape"];
+                    ListViewItem item = new ListViewItem(tier.ToString());
+                    item.SubItems.Add(announceUrl);
+                    item.SubItems.Add(scrapeUrl);
+                    trackersListView.Items.Add(item);
+                }
+                Toolbox.StripeListView(trackersListView);
+                trackersListView.ResumeLayout();
             }
             else
             {
-                torrentAndFileListViewSplitContainer.Panel2Collapsed = true;
+                torrentAndTabsSplitContainer.Panel2Collapsed = true;
             }
             UpdateInfoPanel();
+        }
+
+        private void ShowTorrentPropsHandler(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in torrentListView.SelectedItems)
+            {
+                Torrent t = (Torrent)item.Tag;
+                TorrentPropertiesDialog dialog = new TorrentPropertiesDialog(t);
+                dialog.Show();
+            }
         }
 
         private void removeTorrentButton_Click(object sender, EventArgs e)
@@ -552,6 +581,7 @@ namespace TransmissionRemoteDotnet
         private void stateListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             ListBox box = (ListBox)sender;
+            torrentListView.SuspendLayout();
             switch (box.SelectedIndex)
             {
                 case 1: // downloading
@@ -586,6 +616,7 @@ namespace TransmissionRemoteDotnet
                     break;
             }
             Toolbox.StripeListView(this.torrentListView);
+            torrentListView.ResumeLayout();
         }
 
         private void ShowTorrentIfStatus(short statusCode)
@@ -770,6 +801,11 @@ namespace TransmissionRemoteDotnet
                     percentageLabel.Text = t.Percentage.ToString() + "%";
                 }
             }
+        }
+
+        private void filesListView_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+
         }
     }
 }

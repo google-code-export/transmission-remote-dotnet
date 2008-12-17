@@ -10,9 +10,11 @@ namespace TransmissionRemoteDotnet.Commmands
     class UpdateFilesCommand : TransmissionCommand
     {
         private JsonObject response;
+        private bool includePriorities;
 
-        public UpdateFilesCommand(JsonObject response)
+        public UpdateFilesCommand(JsonObject response, bool includePriorities)
         {
+            this.includePriorities = includePriorities;
             this.response = response;
             Program.ResetFailCount();
         }
@@ -22,19 +24,25 @@ namespace TransmissionRemoteDotnet.Commmands
             JsonObject arguments = (JsonObject)response[ProtocolConstants.KEY_ARGUMENTS];
             JsonArray torrents = (JsonArray)arguments[ProtocolConstants.KEY_TORRENTS];
             MainWindow form = Program.form;
-            foreach (JsonObject torrent in torrents)
+            if (torrents.Count != 1 || form.torrentListView.SelectedItems.Count != 1)
             {
-                int id = ((JsonNumber)torrent[ProtocolConstants.FIELD_ID]).ToInt32();
-                if (form.torrentListView.SelectedItems.Count != 1)
-                {
-                    Torrent t = (Torrent)form.torrentListView.SelectedItems[0].Tag;
-                    if (t.Id == id)
-                    {
-                        UpdateFiles(torrent, form.filesListView);
-                    }
-                }
+                return;
             }
-            Program.form.filesTimer.Enabled = true;
+            JsonObject torrent = (JsonObject)torrents[0];
+            int id = ((JsonNumber)torrent[ProtocolConstants.FIELD_ID]).ToInt32();
+            Torrent t = (Torrent)form.torrentListView.SelectedItems[0].Tag;
+            if (t.Id == id)
+            {
+                form.filesListView.SuspendLayout();
+                UpdateFiles(torrent, form.filesListView);
+                if (includePriorities)
+                {
+                    form.filesTimer.Enabled = true;
+                    form.filesListView.Enabled = true;
+                    Toolbox.StripeListView(form.filesListView);
+                }
+                form.filesListView.ResumeLayout();
+            }
         }
 
         public static void UpdateFiles(JsonObject torrent, ListView listView)
@@ -46,7 +54,6 @@ namespace TransmissionRemoteDotnet.Commmands
             }
             JsonArray priorities = (JsonArray)torrent[ProtocolConstants.FIELD_PRIORITIES];
             JsonArray wanted = (JsonArray)torrent[ProtocolConstants.FIELD_WANTED];
-            listView.SuspendLayout();
             for (int i = 0; i < files.Length; i++)
             {
                 JsonObject file = (JsonObject)files[i];

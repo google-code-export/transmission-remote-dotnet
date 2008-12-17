@@ -94,9 +94,9 @@ namespace TransmissionRemoteDotnet
                     case (short)ResponseTag.TorrentGetLoop:
                         return new TorrentGetCommand(jsonResponse, true);
                     case (short)ResponseTag.UpdateFiles:
-                        return new UpdateFilesCommand(jsonResponse);
-                    case (short)ResponseTag.UpdatePriorities:
-                        return new UpdatePrioritiesCommand(jsonResponse);
+                        return new UpdateFilesCommand(jsonResponse, false);
+                    case (short)ResponseTag.UpdateFilesAndPriorities:
+                        return new UpdateFilesCommand(jsonResponse, true);
                     case (short)ResponseTag.DoNothing:
                         return new NoCommand();
                 }
