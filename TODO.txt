@@ -1,0 +1,1 @@
+ * Put checkboxes back on files listview. This will involve finding a workaround for the checkchanged event firing for each item when the tab is rendered.
