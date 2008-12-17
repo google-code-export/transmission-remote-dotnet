@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TransmissionClientNew
+namespace TransmissionRemoteDotnet
 {
     public partial class LocalSettingsDialog : Form
     {
@@ -25,6 +25,7 @@ namespace TransmissionClientNew
             HostField.Text = originalHost = settings.host;
             PortField.Value = originalPort = settings.port;
             RefreshRateValue.Value = settings.refreshRate;
+            UseSSLCheckBox.Checked = settings.useSSL;
             AutoConnectCheckBox.Checked = settings.autoConnect;
             PassField.Enabled = UserField.Enabled = EnableAuthCheckBox.Checked = settings.authEnabled;
             UserField.Text = settings.user;
@@ -52,12 +53,13 @@ namespace TransmissionClientNew
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
             settings.host = HostField.Text;
             settings.port = (int)PortField.Value;
+            settings.useSSL = UseSSLCheckBox.Checked;
             settings.autoConnect = AutoConnectCheckBox.Checked;
             settings.refreshRate = (int)RefreshRateValue.Value;
             settings.authEnabled = EnableAuthCheckBox.Checked;
             settings.user = UserField.Text;
             settings.pass = PassField.Text;
-            Program.form.NotifyIcon.Visible = settings.minToTray = MinToTrayCheckBox.Checked;
+            Program.form.notifyIcon.Visible = settings.minToTray = MinToTrayCheckBox.Checked;
             settings.proxyEnabled = EnableProxyCombo.SelectedIndex;
             settings.proxyHost = ProxyHostField.Text;
             settings.proxyPort = (int)ProxyPortField.Value;

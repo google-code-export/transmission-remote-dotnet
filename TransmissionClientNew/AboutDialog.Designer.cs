@@ -1,4 +1,4 @@
-﻿namespace TransmissionClientNew
+﻿namespace TransmissionRemoteDotnet
 {
     partial class AboutDialog
     {

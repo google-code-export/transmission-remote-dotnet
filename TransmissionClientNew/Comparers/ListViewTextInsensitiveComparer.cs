@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TransmissionClientNew.Comparers
+namespace TransmissionRemoteDotnet.Comparers
 {
     public class ListViewTextInsensitiveComparer : IComparer
     {

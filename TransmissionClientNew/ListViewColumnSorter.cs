@@ -4,9 +4,9 @@ using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using TransmissionClientNew.Comparers;
+using TransmissionRemoteDotnet.Comparers;
 
-namespace TransmissionClientNew
+namespace TransmissionRemoteDotnet
 {
     public class ListViewItemSorter : IComparer
     {
@@ -48,37 +48,34 @@ namespace TransmissionClientNew
                 ColumnToSort = value;
                 switch (ColumnToSort)
                 {
-                    case 2:
+                    case 1:
                         ObjectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_TOTALSIZE);
                         break;
-                    case 3:
+                    case 2:
                         ObjectCompare = new ListViewTorrentProgressComparer();
                         break;
                     case 4:
-                        ObjectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_RATEDOWNLOAD);
+                        ObjectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_SEEDERS);
                         break;
                     case 5:
-                        ObjectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_RATEUPLOAD);
+                        ObjectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_RATEDOWNLOAD);
                         break;
                     case 6:
-                        ObjectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_ETA);
+                        ObjectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_RATEUPLOAD);
                         break;
                     case 7:
-                        ObjectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_HAVEVALID);
+                        ObjectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_ETA);
                         break;
                     case 8:
                         ObjectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_UPLOADEDEVER);
                         break;
                     case 9:
-                        ObjectCompare = new ListViewTorrentRatioComparer();
+                        ObjectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_HAVEVALID);
                         break;
                     case 10:
-                        ObjectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_SEEDERS);
+                        ObjectCompare = new ListViewTorrentRatioComparer();
                         break;
                     case 11:
-                        ObjectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_LEECHERS);
-                        break;
-                    case 13:
                         ObjectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_ADDEDDATE);
                         break;
                     default:
@@ -103,6 +100,5 @@ namespace TransmissionClientNew
                 return OrderOfSort;
             }
         }
-
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 using Jayrock.Json;
 using System.Windows.Forms;
 
-namespace TransmissionClientNew.Commmands
+namespace TransmissionRemoteDotnet.Commmands
 {
     class UpdateFilesCommand : TransmissionCommand
     {
@@ -21,25 +21,23 @@ namespace TransmissionClientNew.Commmands
         {
             JsonObject arguments = (JsonObject)response[ProtocolConstants.KEY_ARGUMENTS];
             JsonArray torrents = (JsonArray)arguments[ProtocolConstants.KEY_TORRENTS];
+            MainWindow form = Program.form;
             foreach (JsonObject torrent in torrents)
             {
                 int id = ((JsonNumber)torrent[ProtocolConstants.FIELD_ID]).ToInt32();
-                TorrentInfoDialog form;
-                if (Program.infoDialogs.ContainsKey(id))
+                if (form.torrentListView.SelectedItems.Count != 1)
                 {
-                    form = Program.infoDialogs[id];
+                    Torrent t = (Torrent)form.torrentListView.SelectedItems[0].Tag;
+                    if (t.Id == id)
+                    {
+                        UpdateFiles(torrent, form.filesListView);
+                    }
                 }
-                else
-                {
-                    continue;
-                }
-                UpdateFiles(torrent, form);
-                form.StatusStripLabel.Text = "";
             }
-            Program.form.FilesTimer.Enabled = true;
+            Program.form.filesTimer.Enabled = true;
         }
 
-        public static void UpdateFiles(JsonObject torrent, TorrentInfoDialog form)
+        public static void UpdateFiles(JsonObject torrent, ListView listView)
         {
             JsonArray files = (JsonArray)torrent[ProtocolConstants.FIELD_FILES];
             if (files == null)
@@ -48,7 +46,7 @@ namespace TransmissionClientNew.Commmands
             }
             JsonArray priorities = (JsonArray)torrent[ProtocolConstants.FIELD_PRIORITIES];
             JsonArray wanted = (JsonArray)torrent[ProtocolConstants.FIELD_WANTED];
-            form.FilesListView.SuspendLayout();
+            listView.SuspendLayout();
             for (int i = 0; i < files.Length; i++)
             {
                 JsonObject file = (JsonObject)files[i];
@@ -58,27 +56,27 @@ namespace TransmissionClientNew.Commmands
                 string percentStr = Toolbox.CalcPercentage(done, length) + "%";
                 string completeStr = Toolbox.GetFileSize(done);
                 string name = (string)file[ProtocolConstants.FIELD_NAME];
-                if (i >= form.FilesListView.Items.Count)
+                if (i >= listView.Items.Count && priorities != null)
                 {
                     ListViewItem item = new ListViewItem(name);
                     item.Name = name;
                     item.ToolTipText = name;
-                    item.SubItems.Add(percentStr);
                     item.SubItems.Add(lengthStr);
                     item.SubItems.Add(completeStr);
-                    item.SubItems.Add(form.FormatPriority((JsonNumber)priorities[i]));
+                    item.SubItems.Add(percentStr);
+                    item.SubItems.Add(Toolbox.FormatPriority((JsonNumber)priorities[i]));
                     item.Checked = ((JsonNumber)wanted[i]).ToBoolean();
-                    form.FilesListView.Items.Add(item);
+                    listView.Items.Add(item);
                 }
                 else
                 {
-                    ListViewItem item = form.FilesListView.Items[i];
-                    item.SubItems[1].Text = percentStr;
-                    item.SubItems[2].Text = lengthStr;
-                    item.SubItems[3].Text = completeStr;
+                    ListViewItem item = listView.Items[i];
+                    item.SubItems[1].Text = lengthStr;
+                    item.SubItems[2].Text = completeStr;
+                    item.SubItems[3].Text = percentStr;
                 }
             }
-            form.FilesListView.ResumeLayout();
+            listView.ResumeLayout();
         }
     }
 }

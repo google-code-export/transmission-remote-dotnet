@@ -1,0 +1,26 @@
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\bin\Release\Transmission Remote.exe
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\bin\Release\Transmission Remote.pdb
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.AboutDialog.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.LocalSettingsDialog.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.Properties.Resources.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.RemoteSettingsDialog.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.UriPromptWindow.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.MainWindow.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.csproj.GenerateResource.Cache
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\Transmission Remote.exe
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\Transmission Remote.pdb
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet - Copy\TransmissionClientNew\obj\Release\Transmission Remote.exe
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet - Copy\TransmissionClientNew\obj\Release\Transmission Remote.pdb
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet - Copy\TransmissionClientNew\bin\Release\Transmission Remote.exe
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet - Copy\TransmissionClientNew\bin\Release\Transmission Remote.pdb
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet - Copy\TransmissionClientNew\bin\Release\Jayrock.dll
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet - Copy\TransmissionClientNew\bin\Release\Jayrock.Json.dll
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet - Copy\TransmissionClientNew\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet - Copy\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.AboutDialog.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet - Copy\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.LocalSettingsDialog.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet - Copy\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.Properties.Resources.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet - Copy\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.RemoteSettingsDialog.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet - Copy\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.UriPromptWindow.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet - Copy\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.MainWindow.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet - Copy\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.csproj.GenerateResource.Cache

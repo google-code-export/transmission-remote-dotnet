@@ -4,7 +4,7 @@ using System.IO.Pipes;
 using System.Threading;
 using System.Collections.Generic;
 
-namespace TransmissionClientNew
+namespace TransmissionRemoteDotnet
 {
     public class ArgumentsReceivedEventArgs : EventArgs
     {

@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Win32;
 using System.Windows.Forms;
 
-namespace TransmissionClientNew
+namespace TransmissionRemoteDotnet
 {
     public sealed class LocalSettingsSingleton
     {
@@ -16,6 +16,7 @@ namespace TransmissionClientNew
         /* Registry keys */
         private static readonly string REGKEY_HOST = "host",
             REGKEY_PORT = "port",
+            REGKEY_USESSL = "usessl",
             REGKEY_AUTOCONNECT = "autoConnect",
             REGKEY_USER = "user",
             REGKEY_PASS = "pass",
@@ -51,6 +52,7 @@ namespace TransmissionClientNew
 
         public string host = "";
         public int port = 9091;
+        public Boolean useSSL = false;
         public int refreshRate = 5;
         public Boolean autoConnect = false;
         public string user = "";
@@ -80,6 +82,10 @@ namespace TransmissionClientNew
             if (key.GetValue(REGKEY_PORT) != null)
             {
                 this.port = (int)key.GetValue(REGKEY_PORT);
+            }
+            if (key.GetValue(REGKEY_USESSL) != null)
+            {
+                this.useSSL = (int)key.GetValue(REGKEY_USESSL) == 1;
             }
             if (key.GetValue(REGKEY_AUTOCONNECT) != null)
             {
@@ -150,6 +156,7 @@ namespace TransmissionClientNew
                 }
                 key.SetValue(REGKEY_HOST, this.host);
                 key.SetValue(REGKEY_PORT, this.port);
+                key.SetValue(REGKEY_USESSL, this.useSSL ? 1 : 0);
                 key.SetValue(REGKEY_REFRESHRATE, this.refreshRate);
                 key.SetValue(REGKEY_AUTOCONNECT, this.autoConnect ? 1 : 0);
                 key.SetValue(REGKEY_USER, this.user);
@@ -164,8 +171,8 @@ namespace TransmissionClientNew
                 key.SetValue(REGKEY_PROXYAUTH, this.proxyAuth ? 1 : 0);
                 key.SetValue(REGKEY_STARTPAUSED, this.startPaused ? 1 : 0);
                 key.SetValue(REGKEY_RETRYLIMIT, this.retryLimit);
-                Program.form.RefreshTimer.Interval = refreshRate * 1000;
-                Program.form.FilesTimer.Interval = refreshRate * 1000 * 2;
+                Program.form.refreshTimer.Interval = refreshRate * 1000;
+                //Program.form.FilesTimer.Interval = refreshRate * 1000 * 2;
             }
             catch (Exception ex)
             {
@@ -177,7 +184,7 @@ namespace TransmissionClientNew
         {
             get
             {
-                return "http://" + this.host + ":" + this.port + "/transmission/";
+                return (useSSL?"https":"http")+"://" + this.host + ":" + this.port + "/transmission/";
             }
         }
     }

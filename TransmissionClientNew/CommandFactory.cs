@@ -10,16 +10,37 @@ using System.Net;
 using Jayrock.Json;
 using Jayrock.Json.Conversion;
 using System.IO;
-using TransmissionClientNew.Commmands;
+using TransmissionRemoteDotnet.Commmands;
 
-namespace TransmissionClientNew
+namespace TransmissionRemoteDotnet
 {
     public class CommandFactory
     {
+        public static TransmissionCommand UploadFile(Uri uri)
+        {
+            string target = Path.GetTempFileName();
+            try
+            {
+                WebClient webClient = new WebClient();
+                webClient.DownloadFile(uri, target);
+            }
+            catch (Exception ex)
+            {
+                return new ErrorCommand(ex);
+            }
+            TransmissionCommand command = UploadFile(target);
+            try
+            {
+                File.Delete(target);
+            }
+            catch { }
+            return command;
+        }
+
         public static TransmissionCommand UploadFile(string file)
         {
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-            if (!Program.Connected || file == null || !file.EndsWith(".torrent", StringComparison.CurrentCultureIgnoreCase) || !File.Exists(file))
+            if (!Program.Connected || file == null || !File.Exists(file))
             {
                 return null;
             }
@@ -29,9 +50,9 @@ namespace TransmissionClientNew
                 {
                     wc.UploadFile(settings.URL + "upload?paused=" + (settings.startPaused ? "true" : "false"), file);
                 }
-                if (!Program.form.RefreshWorker.IsBusy)
+                if (!Program.form.refreshWorker.IsBusy)
                 {
-                    Program.form.RefreshWorker.RunWorkerAsync(false);
+                    Program.form.refreshWorker.RunWorkerAsync(false);
                 }
             }
             catch (Exception ex)

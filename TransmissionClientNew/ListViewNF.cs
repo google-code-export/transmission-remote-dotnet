@@ -7,7 +7,7 @@ using System.Text;
 
 using System.Windows.Forms;
 
-namespace TransmissionClientNew
+namespace TransmissionRemoteDotnet
 {
     public class ListViewNF : ListView
     {

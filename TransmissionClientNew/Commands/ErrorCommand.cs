@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TransmissionClientNew.Commmands
+namespace TransmissionRemoteDotnet.Commmands
 {
     public class ErrorCommand : TransmissionCommand
     {
@@ -27,7 +27,7 @@ namespace TransmissionClientNew.Commmands
         private delegate void ExecuteDelegate();
         public void Execute()
         {
-            Form1 form = Program.form;
+            MainWindow form = Program.form;
             if (form.InvokeRequired)
             {
                 form.Invoke(new ExecuteDelegate(this.Execute));
@@ -37,18 +37,18 @@ namespace TransmissionClientNew.Commmands
                 Program.uploadArgs = null;
                 if (!Program.Connected)
                 {
-                    form.toolStripStatusLabel1.Text = "Unable to connect (" + this.title + ")";
+                    form.toolStripStatusLabel.Text = "Unable to connect (" + this.title + ")";
                     MessageBox.Show(this.body, this.title, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (++Program.failCount > LocalSettingsSingleton.Instance.retryLimit)
                 {
                     Program.Connected = false;
-                    form.toolStripStatusLabel1.Text = "Disconnected. Exceeded maximum number of failed requests.";
+                    form.toolStripStatusLabel.Text = "Disconnected. Exceeded maximum number of failed requests.";
                     MessageBox.Show(this.body.Length > MAX_MESSAGE_LENGTH ? this.body.Substring(0, MAX_MESSAGE_LENGTH) : this.body, this.title, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    form.toolStripStatusLabel1.Text = "Failed request #" + Program.failCount + ": " + this.title;
+                    form.toolStripStatusLabel.Text = "Failed request #" + Program.failCount + ": " + this.title;
                 }
             }
         }

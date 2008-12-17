@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Jayrock.Json;
 
-namespace TransmissionClientNew
+namespace TransmissionRemoteDotnet
 {
     public partial class RemoteSettingsDialog : Form
     {

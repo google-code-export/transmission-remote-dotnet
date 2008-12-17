@@ -8,7 +8,7 @@
     <ProjectGuid>{4691616B-6112-4361-B5FA-F44176844B54}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TransmissionClientNew</RootNamespace>
+    <RootNamespace>TransmissionRemoteDotnet</RootNamespace>
     <AssemblyName>Transmission Remote</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -51,11 +51,11 @@
   <ItemGroup>
     <Reference Include="Jayrock, Version=0.9.8316.0, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files\transmission\Jayrock.dll</HintPath>
+      <HintPath>..\..\..\..\..\Desktop\Jayrock.dll</HintPath>
     </Reference>
     <Reference Include="Jayrock.Json, Version=0.9.8316.0, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files\transmission\Jayrock.Json.dll</HintPath>
+      <HintPath>..\..\..\..\..\Desktop\Jayrock.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -87,12 +87,6 @@
     <Compile Include="Comparers\ListViewTorrentInt64Comparer.cs" />
     <Compile Include="Comparers\ListViewTorrentProgressComparer.cs" />
     <Compile Include="Comparers\ListViewTorrentRatioComparer.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="ListViewColumnSorter.cs" />
     <Compile Include="ListViewNF.cs">
       <SubType>Component</SubType>
@@ -111,10 +105,6 @@
       <DependentUpon>AboutDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="LocalSettingsDialog.resx">
       <DependentUpon>LocalSettingsDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -128,9 +118,11 @@
       <DependentUpon>RemoteSettingsDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="TorrentInfoDialog.resx">
-      <DependentUpon>TorrentInfoDialog.cs</DependentUpon>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="UriPromptWindow.resx">
+      <DependentUpon>UriPromptWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -159,18 +151,24 @@
     <Compile Include="Commands\TorrentGetCommand.cs" />
     <Compile Include="Requests.cs" />
     <Compile Include="Commands\SessionCommand.cs" />
-    <Compile Include="TorrentInfoDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TorrentInfoDialog.Designer.cs">
-      <DependentUpon>TorrentInfoDialog.cs</DependentUpon>
-    </Compile>
     <Compile Include="TransmissionCommand.cs" />
     <Compile Include="TransmissionWebClient.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Commands\UpdateFilesCommand.cs" />
     <Compile Include="Commands\UpdatePrioritiesCommand.cs" />
+    <Compile Include="UriPromptWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UriPromptWindow.Designer.cs">
+      <DependentUpon>UriPromptWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="icons\button_cancel.png" />
@@ -195,9 +193,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="icons\details.png" />
-    <None Include="Properties\app.manifest" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\ledgreen.png" />
+    <None Include="Resources\ledred.png" />
+    <None Include="Resources\connect_creating.png" />
+    <None Include="Resources\connect_no.png" />
+    <None Include="Resources\edit_add.png" />
+    <None Include="Resources\network.png" />
+    <None Include="Resources\player_pause.png" />
+    <None Include="Resources\player_play.png" />
+    <None Include="Resources\button_cancel.png" />
+    <None Include="Resources\configure.png" />
+    <None Include="Resources\netconfigure.png" />
+    <None Include="Resources\net_add.png" />
     <Content Include="transmission_large.ico" />
   </ItemGroup>
   <ItemGroup>

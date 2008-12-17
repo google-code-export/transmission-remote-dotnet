@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using Jayrock.Json;
 
-namespace TransmissionClientNew
+namespace TransmissionRemoteDotnet
 {
     class Toolbox
     {
@@ -26,6 +26,23 @@ namespace TransmissionClientNew
                             window.B - stripe_offset)
                         : window;
                 }
+            }
+        }
+
+        public static string FormatPriority(JsonNumber n)
+        {
+            short s = n.ToInt16();
+            if (s < 0)
+            {
+                return "Low";
+            }
+            else if (s > 0)
+            {
+                return "High";
+            }
+            else
+            {
+                return "Normal";
             }
         }
 

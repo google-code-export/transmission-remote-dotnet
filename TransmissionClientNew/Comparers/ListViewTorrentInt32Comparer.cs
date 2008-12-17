@@ -6,7 +6,7 @@ using System.Text;
 using System.Windows.Forms;
 using Jayrock.Json;
 
-namespace TransmissionClientNew.Comparers
+namespace TransmissionRemoteDotnet.Comparers
 {
     public class ListViewTorrentInt32Comparer : IComparer
     {

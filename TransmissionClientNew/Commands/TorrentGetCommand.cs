@@ -5,7 +5,7 @@ using System.Text;
 using Jayrock.Json;
 using System.Windows.Forms;
 
-namespace TransmissionClientNew.Commmands
+namespace TransmissionRemoteDotnet.Commmands
 {
     class TorrentGetCommand : TransmissionCommand
     {
@@ -35,7 +35,8 @@ namespace TransmissionClientNew.Commmands
             JsonObject arguments = (JsonObject)response[ProtocolConstants.KEY_ARGUMENTS];
             JsonArray torrents = (JsonArray)arguments[ProtocolConstants.KEY_TORRENTS];
             Program.updateSerial++;
-            Program.form.SuspendListView();
+            MainWindow form = Program.form;
+            form.SuspendTorrentListView();
             foreach (JsonObject torrent in torrents)
             {
                 int id = ((JsonNumber)torrent[ProtocolConstants.FIELD_ID]).ToInt32();
@@ -53,20 +54,21 @@ namespace TransmissionClientNew.Commmands
                 {
                     totalSeeding++;
                 }
-                if (Program.torrentIndex.ContainsKey(id))
+                lock (Program.torrentIndex)
                 {
-                    Program.torrentIndex[id].Update(torrent);
-                }
-                else
-                {
-                    lock (Program.updateLock)
+                    if (Program.torrentIndex.ContainsKey(id))
+                    {
+                        Program.torrentIndex[id].Update(torrent);
+                    }
+                    else
                     {
                         Program.torrentIndex[id] = new Torrent(torrent);
                     }
                 }
             }
-            Program.form.ResumeListView();
-            Program.form.UpdateStatus("Connected | "+ Toolbox.GetFileSize(totalDownload) + "/s down, " + Toolbox.GetFileSize(totalUpload) + "/s up | "+totalTorrents+" torrents: "+totalDownloading+" downloading, "+totalSeeding+" seeding | "+Toolbox.GetFileSize(totalDownloadedSize)+" / "+Toolbox.GetFileSize(totalSize));
+            form.ResumeTorrentListView();
+            form.UpdateStatus("Connected | "+ Toolbox.GetFileSize(totalDownload) + "/s down, " + Toolbox.GetFileSize(totalUpload) + "/s up | "+totalTorrents+" torrents: "+totalDownloading+" downloading, "+totalSeeding+" seeding | "+Toolbox.GetFileSize(totalDownloadedSize)+" / "+Toolbox.GetFileSize(totalSize));
+            form.UpdateInfoPanel();
             Queue<int> removeQueue = new Queue<int>();
             foreach (KeyValuePair<int, Torrent> pair in Program.torrentIndex)
             {
@@ -77,7 +79,7 @@ namespace TransmissionClientNew.Commmands
                     removeQueue.Enqueue(pair.Key);
                 }
             }
-            lock (Program.updateLock)
+            lock (Program.torrentIndex)
             {
                 foreach (int id in removeQueue)
                 {
@@ -93,14 +95,14 @@ namespace TransmissionClientNew.Commmands
         private delegate void BeginLoopDelegate();
         private void BeginLoop()
         {
-            Form1 form = Program.form;
+            MainWindow form = Program.form;
             if (form.InvokeRequired)
             {
                 form.Invoke(new BeginLoopDelegate(this.BeginLoop));
             }
             else
             {
-                form.ConnectButton.Enabled = form.RefreshTimer.Enabled = true;
+                form.connectButton.Enabled = form.refreshTimer.Enabled = true;
             }
         }
     }

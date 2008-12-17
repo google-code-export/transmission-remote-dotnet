@@ -1,4 +1,4 @@
-﻿namespace TransmissionClientNew
+﻿namespace TransmissionRemoteDotnet
 {
     partial class LocalSettingsDialog
     {
@@ -61,6 +61,7 @@
             this.StartPausedCheckBox = new System.Windows.Forms.CheckBox();
             this.RetryLimitValue = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
+            this.UseSSLCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.PortField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RefreshRateValue)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -111,7 +112,7 @@
             0});
             this.PortField.Name = "PortField";
             this.PortField.Size = new System.Drawing.Size(64, 20);
-            this.PortField.TabIndex = 3;
+            this.PortField.TabIndex = 2;
             this.PortField.Value = new decimal(new int[] {
             1,
             0,
@@ -141,7 +142,7 @@
             // AutoConnectCheckBox
             // 
             this.AutoConnectCheckBox.AutoSize = true;
-            this.AutoConnectCheckBox.Location = new System.Drawing.Point(201, 51);
+            this.AutoConnectCheckBox.Location = new System.Drawing.Point(201, 79);
             this.AutoConnectCheckBox.Name = "AutoConnectCheckBox";
             this.AutoConnectCheckBox.Size = new System.Drawing.Size(90, 17);
             this.AutoConnectCheckBox.TabIndex = 4;
@@ -239,6 +240,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.UseSSLCheckBox);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.RetryLimitValue);
             this.groupBox2.Controls.Add(this.AutoConnectCheckBox);
@@ -426,6 +428,16 @@
             this.label10.TabIndex = 8;
             this.label10.Text = "Retry limit: ";
             // 
+            // UseSSLCheckBox
+            // 
+            this.UseSSLCheckBox.AutoSize = true;
+            this.UseSSLCheckBox.Location = new System.Drawing.Point(201, 51);
+            this.UseSSLCheckBox.Name = "UseSSLCheckBox";
+            this.UseSSLCheckBox.Size = new System.Drawing.Size(89, 17);
+            this.UseSSLCheckBox.TabIndex = 3;
+            this.UseSSLCheckBox.Text = "Secure (SSL)";
+            this.UseSSLCheckBox.UseVisualStyleBackColor = true;
+            // 
             // LocalSettingsDialog
             // 
             this.AcceptButton = this.SaveButton;
@@ -493,5 +505,6 @@
         private System.Windows.Forms.CheckBox StartPausedCheckBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown RetryLimitValue;
+        private System.Windows.Forms.CheckBox UseSSLCheckBox;
     }
 }

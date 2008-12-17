@@ -6,7 +6,7 @@ using Jayrock.Json;
 using System.Windows.Forms;
 using System.IO;
 
-namespace TransmissionClientNew
+namespace TransmissionRemoteDotnet
 {
     public class Requests
     {

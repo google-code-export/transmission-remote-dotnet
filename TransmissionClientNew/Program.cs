@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Jayrock.Json;
+using System.Net;
 
-namespace TransmissionClientNew
+namespace TransmissionRemoteDotnet
 {
+    public delegate void ConnStatusChangedDelegate(bool connected);
+
     static class Program
     {
+        public static event ConnStatusChangedDelegate connStatusChanged;
         private static Boolean connected = false;
-        public static Form1 form;
+        public static MainWindow form;
         public static Dictionary<int, Torrent> torrentIndex = new Dictionary<int, Torrent>();
         public static long updateSerial = 0;
         public static JsonObject sessionData;
-        public static Dictionary<int, TorrentInfoDialog> infoDialogs = new Dictionary<int, TorrentInfoDialog>();
         public static string[] uploadArgs;
-        public static Object updateLock = new Object();
         public static int failCount = 0;
         public static double transmissionVersion = 1.41;
 
@@ -26,7 +28,8 @@ namespace TransmissionClientNew
             {
                 if (singleInstance.IsFirstInstance)
                 {
-                    System.Net.ServicePointManager.Expect100Continue = false;
+                    ServicePointManager.Expect100Continue = false;
+                    ServicePointManager.ServerCertificateValidationCallback = TransmissionWebClient.ValidateServerCertificate;
                     /* Store a list of torrents to upload after connect? */
                     if (LocalSettingsSingleton.Instance.autoConnect && args.Length > 0)
                     {
@@ -36,7 +39,7 @@ namespace TransmissionClientNew
                     singleInstance.ListenForArgumentsFromSuccessiveInstances();
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
-                    Application.Run(form = new Form1());
+                    Application.Run(form = new MainWindow());
                 }
                 else
                 {
@@ -72,46 +75,26 @@ namespace TransmissionClientNew
             failCount = 0;
         }
 
-        public static Boolean Connected
+        public static bool Connected
         {
             set
             {
                 connected = value;
-                ContextMenu trayMenu = new ContextMenu();
                 if (connected)
                 {
-                    trayMenu.MenuItems.Add("Start all", new EventHandler(form.startAllToolStripMenuItem_Click));
-                    trayMenu.MenuItems.Add("Stop all", new EventHandler(form.stopAllToolStripMenuItem_Click));
-                    trayMenu.MenuItems.Add("-");
-                    trayMenu.MenuItems.Add("Disconnect", new EventHandler(form.DisconnectButton_Click));
-                    form.toolStripStatusLabel1.Text = "Connected.";
-                    form.Text = Form1.DEFAULT_WINDOW_TITLE + " - " + LocalSettingsSingleton.Instance.host;
                     updateSerial = 0;
                 }
                 else
                 {
-                    lock (updateLock)
+                    lock (torrentIndex)
                     {
-                        foreach (KeyValuePair<int, TorrentInfoDialog> pair in Program.infoDialogs)
-                        {
-                            pair.Value.Close();
-                        }
                         torrentIndex.Clear();
                     }
-                    trayMenu.MenuItems.Add("Connect", new EventHandler(form.ConnectButton_Click));
-                    form.toolStripStatusLabel1.Text = "Disconnected.";
-                    form.Text = Form1.DEFAULT_WINDOW_TITLE;
-                    form.RefreshTimer.Enabled = false;
-                    lock (updateLock)
-                    {
-                        form.TorrentListView.Items.Clear();
-                    }
                 }
-                form.NotifyIcon.Text = Form1.DEFAULT_WINDOW_TITLE;
-                form.Connected(connected);
-                trayMenu.MenuItems.Add("-");
-                trayMenu.MenuItems.Add("Exit", new EventHandler(form.ExitApplicationHandler));
-                form.NotifyIcon.ContextMenu = trayMenu;
+                if (connStatusChanged != null)
+                {
+                    connStatusChanged(connected);
+                }
             }
             get
             {

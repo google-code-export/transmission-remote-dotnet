@@ -6,7 +6,7 @@ using Jayrock.Json;
 using System.Windows.Forms;
 using System.Net;
 
-namespace TransmissionClientNew.Commmands
+namespace TransmissionRemoteDotnet.Commmands
 {
     class SessionCommand : TransmissionCommand
     {
@@ -36,8 +36,12 @@ namespace TransmissionClientNew.Commmands
         {
             if (!Program.Connected)
             {
+
                 Program.Connected = true;
-                Program.form.RefreshWorker.RunWorkerAsync(true);
+                if (!Program.form.refreshWorker.IsBusy)
+                {
+                    Program.form.refreshWorker.RunWorkerAsync(true);
+                }
                 if (Program.uploadArgs != null)
                 {
                     Program.form.CreateUploadWorker().RunWorkerAsync(Program.uploadArgs);

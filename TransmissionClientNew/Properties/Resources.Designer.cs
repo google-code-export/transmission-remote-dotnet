@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TransmissionClientNew.Properties {
+namespace TransmissionRemoteDotnet.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace TransmissionClientNew.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TransmissionClientNew.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TransmissionRemoteDotnet.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -60,58 +60,79 @@ namespace TransmissionClientNew.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap add {
+        internal static System.Drawing.Bitmap button_cancel1 {
             get {
-                object obj = ResourceManager.GetObject("add", resourceCulture);
+                object obj = ResourceManager.GetObject("button_cancel1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap button_cancel {
+        internal static System.Drawing.Bitmap configure {
             get {
-                object obj = ResourceManager.GetObject("button_cancel", resourceCulture);
+                object obj = ResourceManager.GetObject("configure", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap connect {
+        internal static System.Drawing.Bitmap connect_creating {
             get {
-                object obj = ResourceManager.GetObject("connect", resourceCulture);
+                object obj = ResourceManager.GetObject("connect_creating", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap details {
+        internal static System.Drawing.Bitmap connect_no {
             get {
-                object obj = ResourceManager.GetObject("details", resourceCulture);
+                object obj = ResourceManager.GetObject("connect_no", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap disconnect {
+        internal static System.Drawing.Bitmap edit_add {
             get {
-                object obj = ResourceManager.GetObject("disconnect", resourceCulture);
+                object obj = ResourceManager.GetObject("edit_add", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap player_play {
+        internal static System.Drawing.Bitmap ledgreen {
             get {
-                object obj = ResourceManager.GetObject("player_play", resourceCulture);
+                object obj = ResourceManager.GetObject("ledgreen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap player_stop {
+        internal static System.Drawing.Bitmap ledred {
             get {
-                object obj = ResourceManager.GetObject("player_stop", resourceCulture);
+                object obj = ResourceManager.GetObject("ledred", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap settings {
+        internal static System.Drawing.Bitmap net_add {
             get {
-                object obj = ResourceManager.GetObject("settings", resourceCulture);
+                object obj = ResourceManager.GetObject("net_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap netconfigure {
+            get {
+                object obj = ResourceManager.GetObject("netconfigure", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap player_pause {
+            get {
+                object obj = ResourceManager.GetObject("player_pause", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap player_play1 {
+            get {
+                object obj = ResourceManager.GetObject("player_play1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
