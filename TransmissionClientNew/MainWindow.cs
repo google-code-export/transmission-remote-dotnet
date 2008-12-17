@@ -884,14 +884,13 @@ namespace TransmissionRemoteDotnet
             return resolveHostWorker;
         }
 
-        void resolveHostWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void resolveHostWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            Console.WriteLine(DateTime.Now.ToString()+ " : Resolution just finished");
             TransmissionCommand command = (TransmissionCommand)e.Result;
             command.Execute();
         }
 
-        void resolveHostWorker_DoWork(object sender, DoWorkEventArgs e)
+        private void resolveHostWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             e.Result = new ResolveHostCommand((ListViewItem)e.Argument);
         }
