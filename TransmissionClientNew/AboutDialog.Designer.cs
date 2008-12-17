@@ -80,6 +80,7 @@
             // 
             // button1
             // 
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.Location = new System.Drawing.Point(17, 137);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 27);
@@ -90,8 +91,10 @@
             // 
             // AboutDialog
             // 
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.button1;
             this.ClientSize = new System.Drawing.Size(487, 176);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
@@ -99,6 +102,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "AboutDialog";
             this.Text = "About Transmission Remote";
             this.Load += new System.EventHandler(this.AboutDialog_Load);

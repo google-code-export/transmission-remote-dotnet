@@ -63,8 +63,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.PortField)).BeginInit();
@@ -76,8 +76,8 @@
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage4.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
@@ -141,6 +141,7 @@
             // 
             // CloseDialogButton
             // 
+            this.CloseDialogButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CloseDialogButton.Location = new System.Drawing.Point(249, 185);
             this.CloseDialogButton.Name = "CloseDialogButton";
             this.CloseDialogButton.Size = new System.Drawing.Size(81, 23);
@@ -456,16 +457,6 @@
             this.tabControl1.Size = new System.Drawing.Size(321, 167);
             this.tabControl1.TabIndex = 6;
             // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.groupBox4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(313, 141);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "General";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.groupBox2);
@@ -476,6 +467,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Server";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.groupBox4);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(313, 141);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "General";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -503,12 +504,14 @@
             this.AcceptButton = this.SaveButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.CloseDialogButton;
             this.ClientSize = new System.Drawing.Size(347, 219);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.CloseDialogButton);
             this.Controls.Add(this.SaveButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "LocalSettingsDialog";
             this.Text = "Local Settings";
             this.Load += new System.EventHandler(this.LocalSettingsDialog_Load);
@@ -525,8 +528,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);

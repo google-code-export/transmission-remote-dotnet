@@ -142,6 +142,7 @@
             // 
             // CloseFormButton
             // 
+            this.CloseFormButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CloseFormButton.Location = new System.Drawing.Point(240, 149);
             this.CloseFormButton.Name = "CloseFormButton";
             this.CloseFormButton.Size = new System.Drawing.Size(75, 23);
@@ -176,12 +177,14 @@
             this.AcceptButton = this.SaveButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.CloseFormButton;
             this.ClientSize = new System.Drawing.Size(332, 182);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CloseFormButton);
             this.Controls.Add(this.SaveButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "RemoteSettingsDialog";
             this.Text = "Remote Settings";
             this.Load += new System.EventHandler(this.RemoteSettingsDialog_Load);
