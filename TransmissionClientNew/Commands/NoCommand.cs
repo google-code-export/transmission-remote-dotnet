@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TransmissionRemoteDotnet.Commmands
 {
-    class NoCommand : TransmissionCommand
+    public class NoCommand : TransmissionCommand
     {
         public NoCommand()
         {

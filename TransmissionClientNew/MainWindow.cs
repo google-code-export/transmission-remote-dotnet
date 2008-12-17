@@ -14,7 +14,6 @@ namespace TransmissionRemoteDotnet
     public partial class MainWindow : Form
     {
         public static readonly string DEFAULT_WINDOW_TITLE = "Transmission Remote";
-
         public Boolean minimise = false;
         private ListViewItemSorter lvwColumnSorter;
         private ContextMenu torrentSelectionMenu;
@@ -40,7 +39,6 @@ namespace TransmissionRemoteDotnet
                 trayMenu.MenuItems.Add("Disconnect", new EventHandler(this.disconnectButton_Click));
                 this.toolStripStatusLabel.Text = "Connected. Getting torrent information...";
                 this.Text = MainWindow.DEFAULT_WINDOW_TITLE + " - " + LocalSettingsSingleton.Instance.host;
-                this.notifyIcon.Text = "[CONNECTED] " + MainWindow.DEFAULT_WINDOW_TITLE;
             }
             else
             {
@@ -54,11 +52,11 @@ namespace TransmissionRemoteDotnet
                 }
                 trayMenu.MenuItems.Add("Connect", new EventHandler(this.connectButton_Click));
                 this.toolStripStatusLabel.Text = "Disconnected.";
-                this.notifyIcon.Text = "[DISCONNECTED] " + MainWindow.DEFAULT_WINDOW_TITLE;
                 this.Text = MainWindow.DEFAULT_WINDOW_TITLE;
                 this.refreshTimer.Enabled = false;
                 this.torrentAndTabsSplitContainer.Panel2Collapsed = true;
             }
+            this.notifyIcon.Text = MainWindow.DEFAULT_WINDOW_TITLE;
             trayMenu.MenuItems.Add("-");
             trayMenu.MenuItems.Add("Exit", new EventHandler(this.exitToolStripMenuItem_Click));
             this.notifyIcon.ContextMenu = trayMenu;
@@ -810,7 +808,7 @@ namespace TransmissionRemoteDotnet
                     Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
                     if (first)
                     {
-                        torrentDetailGroupBox.Text = peersTorrentNameGroupBox.Text
+                        generalTorrentNameGroupBox.Text = peersTorrentNameGroupBox.Text
                             = trackersTorrentNameGroupBox.Text = filesTorrentNameGroupBox.Text
                             = t.Name;
                         startedAtLabel.Text = t.Added.ToString();
@@ -844,18 +842,20 @@ namespace TransmissionRemoteDotnet
                         if (item == null)
                         {
                             item = new ListViewItem((string)peer["address"]);
+                            item.SubItems.Add("");
                             item.SubItems.Add((string)peer["clientName"]);
                             item.SubItems.Add((string)peer["progress"] + "%");
                             item.SubItems.Add(Toolbox.GetFileSize(((JsonNumber)peer["rateToClient"]).ToInt64()));
                             item.SubItems.Add(Toolbox.GetFileSize(((JsonNumber)peer["rateToPeer"]).ToInt64()));
                             peersListView.Items.Add(item);
                             Toolbox.StripeListView(peersListView);
+                            CreateHostnameResolutionWorker().RunWorkerAsync(item);
                         }
                         else
                         {
-                            item.SubItems[2].Text = (string)peer["progress"] + "%";
-                            item.SubItems[3].Text = Toolbox.GetFileSize(((JsonNumber)peer["rateToClient"]).ToInt64());
-                            item.SubItems[4].Text = Toolbox.GetFileSize(((JsonNumber)peer["rateToPeer"]).ToInt64());
+                            item.SubItems[3].Text = (string)peer["progress"] + "%";
+                            item.SubItems[4].Text = Toolbox.GetFileSize(((JsonNumber)peer["rateToClient"]).ToInt64());
+                            item.SubItems[5].Text = Toolbox.GetFileSize(((JsonNumber)peer["rateToPeer"]).ToInt64());
                         } 
                         item.Tag = peersListView.Tag;
                     }
@@ -876,11 +876,31 @@ namespace TransmissionRemoteDotnet
             }
         }
 
+        private BackgroundWorker CreateHostnameResolutionWorker()
+        {
+            BackgroundWorker resolveHostWorker = new BackgroundWorker();
+            resolveHostWorker.DoWork += new DoWorkEventHandler(resolveHostWorker_DoWork);
+            resolveHostWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(resolveHostWorker_RunWorkerCompleted);
+            return resolveHostWorker;
+        }
+
+        void resolveHostWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            Console.WriteLine(DateTime.Now.ToString()+ " : Resolution just finished");
+            TransmissionCommand command = (TransmissionCommand)e.Result;
+            command.Execute();
+        }
+
+        void resolveHostWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            e.Result = new ResolveHostCommand((ListViewItem)e.Argument);
+        }
+
         private ListViewItem FindPeerItem(string address, string clientName)
         {
             foreach (ListViewItem peer in peersListView.Items)
             {
-                if (peer.SubItems[0].Text.Equals(address) && peer.SubItems[1].Text.Equals(clientName))
+                if (peer.SubItems[0].Text.Equals(address) && peer.SubItems[2].Text.Equals(clientName))
                 {
                     return peer;
                 }

@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace TransmissionRemoteDotnet.Commmands
 {
-    class TorrentGetCommand : TransmissionCommand
+    public class TorrentGetCommand : TransmissionCommand
     {
         private JsonObject response;
         private Boolean beginLoop;

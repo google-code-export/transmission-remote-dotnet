@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace TransmissionRemoteDotnet.Commmands
 {
-    class UpdateFilesCommand : TransmissionCommand
+    public class UpdateFilesCommand : TransmissionCommand
     {
         private JsonObject response;
         private bool includePriorities;

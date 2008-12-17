@@ -67,20 +67,6 @@
             this.filesWorker = new System.ComponentModel.BackgroundWorker();
             this.refreshElapsedTimer = new System.Windows.Forms.Timer(this.components);
             this.torrentAndTabsSplitContainer = new System.Windows.Forms.SplitContainer();
-            this.torrentListView = new TransmissionRemoteDotnet.ListViewNF();
-            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader8 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader9 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader10 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader11 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader12 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader13 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader14 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader15 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader16 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader18 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader19 = new System.Windows.Forms.ColumnHeader();
             this.torrentTabControl = new System.Windows.Forms.TabControl();
             this.generalTabPage = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
@@ -89,7 +75,7 @@
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.percentageLabel = new System.Windows.Forms.Label();
-            this.torrentDetailGroupBox = new System.Windows.Forms.GroupBox();
+            this.generalTorrentNameGroupBox = new System.Windows.Forms.GroupBox();
             this.createdByLabel = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.createdAtLabel = new System.Windows.Forms.Label();
@@ -125,11 +111,29 @@
             this.label2 = new System.Windows.Forms.Label();
             this.timeElapsedLabel = new System.Windows.Forms.Label();
             this.trackersTabPage = new System.Windows.Forms.TabPage();
+            this.filesTabPage = new System.Windows.Forms.TabPage();
+            this.peersTabPage = new System.Windows.Forms.TabPage();
+            this.filesTorrentNameGroupBox = new System.Windows.Forms.GroupBox();
+            this.peersTorrentNameGroupBox = new System.Windows.Forms.GroupBox();
+            this.trackersTorrentNameGroupBox = new System.Windows.Forms.GroupBox();
+            this.torrentListView = new TransmissionRemoteDotnet.ListViewNF();
+            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader8 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader9 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader10 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader11 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader12 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader13 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader14 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader15 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader16 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader18 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader19 = new System.Windows.Forms.ColumnHeader();
             this.trackersListView = new TransmissionRemoteDotnet.ListViewNF();
             this.columnHeader22 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader20 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader21 = new System.Windows.Forms.ColumnHeader();
-            this.filesTabPage = new System.Windows.Forms.TabPage();
             this.filesListView = new TransmissionRemoteDotnet.ListViewNF();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
@@ -137,16 +141,13 @@
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader17 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
-            this.peersTabPage = new System.Windows.Forms.TabPage();
             this.peersListView = new TransmissionRemoteDotnet.ListViewNF();
             this.columnHeader27 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader23 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader28 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader29 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader30 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader31 = new System.Windows.Forms.ColumnHeader();
-            this.filesTorrentNameGroupBox = new System.Windows.Forms.GroupBox();
-            this.peersTorrentNameGroupBox = new System.Windows.Forms.GroupBox();
-            this.trackersTorrentNameGroupBox = new System.Windows.Forms.GroupBox();
             this.menuStrip.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -170,7 +171,7 @@
             this.splitContainer5.Panel1.SuspendLayout();
             this.splitContainer5.Panel2.SuspendLayout();
             this.splitContainer5.SuspendLayout();
-            this.torrentDetailGroupBox.SuspendLayout();
+            this.generalTorrentNameGroupBox.SuspendLayout();
             this.trackersTabPage.SuspendLayout();
             this.filesTabPage.SuspendLayout();
             this.peersTabPage.SuspendLayout();
@@ -540,87 +541,6 @@
             this.torrentAndTabsSplitContainer.SplitterDistance = 222;
             this.torrentAndTabsSplitContainer.TabIndex = 0;
             // 
-            // torrentListView
-            // 
-            this.torrentListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader9,
-            this.columnHeader10,
-            this.columnHeader11,
-            this.columnHeader12,
-            this.columnHeader13,
-            this.columnHeader14,
-            this.columnHeader15,
-            this.columnHeader16,
-            this.columnHeader18,
-            this.columnHeader19});
-            this.torrentListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.torrentListView.Enabled = false;
-            this.torrentListView.FullRowSelect = true;
-            this.torrentListView.Location = new System.Drawing.Point(0, 0);
-            this.torrentListView.Name = "torrentListView";
-            this.torrentListView.Size = new System.Drawing.Size(898, 222);
-            this.torrentListView.TabIndex = 0;
-            this.torrentListView.UseCompatibleStateImageBehavior = false;
-            this.torrentListView.View = System.Windows.Forms.View.Details;
-            this.torrentListView.SelectedIndexChanged += new System.EventHandler(this.torrentListView_SelectedIndexChanged);
-            this.torrentListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.torrentListView_ColumnClick);
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Name";
-            this.columnHeader6.Width = 200;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Size";
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Done";
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Status";
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "Seeds";
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "Peers";
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "Down Speed";
-            // 
-            // columnHeader13
-            // 
-            this.columnHeader13.Text = "Up Speed";
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "ETA";
-            // 
-            // columnHeader15
-            // 
-            this.columnHeader15.Text = "Uploaded";
-            // 
-            // columnHeader16
-            // 
-            this.columnHeader16.Text = "Ratio";
-            // 
-            // columnHeader18
-            // 
-            this.columnHeader18.Text = "Added On";
-            // 
-            // columnHeader19
-            // 
-            this.columnHeader19.Text = "Completed On";
-            // 
             // torrentTabControl
             // 
             this.torrentTabControl.Controls.Add(this.generalTabPage);
@@ -661,7 +581,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.AutoScroll = true;
-            this.splitContainer3.Panel2.Controls.Add(this.torrentDetailGroupBox);
+            this.splitContainer3.Panel2.Controls.Add(this.generalTorrentNameGroupBox);
             this.splitContainer3.Size = new System.Drawing.Size(884, 214);
             this.splitContainer3.SplitterDistance = 25;
             this.splitContainer3.TabIndex = 0;
@@ -728,47 +648,48 @@
             this.percentageLabel.TabIndex = 0;
             this.percentageLabel.Text = "__.__ %";
             // 
-            // torrentDetailGroupBox
+            // generalTorrentNameGroupBox
             // 
-            this.torrentDetailGroupBox.Controls.Add(this.createdByLabel);
-            this.torrentDetailGroupBox.Controls.Add(this.label17);
-            this.torrentDetailGroupBox.Controls.Add(this.createdAtLabel);
-            this.torrentDetailGroupBox.Controls.Add(this.label16);
-            this.torrentDetailGroupBox.Controls.Add(this.errorLabel);
-            this.torrentDetailGroupBox.Controls.Add(this.labelForErrorLabel);
-            this.torrentDetailGroupBox.Controls.Add(this.commentLabel);
-            this.torrentDetailGroupBox.Controls.Add(this.label15);
-            this.torrentDetailGroupBox.Controls.Add(this.ratioLabel);
-            this.torrentDetailGroupBox.Controls.Add(this.label14);
-            this.torrentDetailGroupBox.Controls.Add(this.leechersLabel);
-            this.torrentDetailGroupBox.Controls.Add(this.seedersLabel);
-            this.torrentDetailGroupBox.Controls.Add(this.label13);
-            this.torrentDetailGroupBox.Controls.Add(this.label10);
-            this.torrentDetailGroupBox.Controls.Add(this.uploadLimitLabel);
-            this.torrentDetailGroupBox.Controls.Add(this.label12);
-            this.torrentDetailGroupBox.Controls.Add(this.uploadRateLabel);
-            this.torrentDetailGroupBox.Controls.Add(this.label8);
-            this.torrentDetailGroupBox.Controls.Add(this.uploadedLabel);
-            this.torrentDetailGroupBox.Controls.Add(this.label5);
-            this.torrentDetailGroupBox.Controls.Add(this.remainingLabel);
-            this.torrentDetailGroupBox.Controls.Add(this.label4);
-            this.torrentDetailGroupBox.Controls.Add(this.statusLabel);
-            this.torrentDetailGroupBox.Controls.Add(this.label11);
-            this.torrentDetailGroupBox.Controls.Add(this.downloadLimitLabel);
-            this.torrentDetailGroupBox.Controls.Add(this.label9);
-            this.torrentDetailGroupBox.Controls.Add(this.downloadSpeedLabel);
-            this.torrentDetailGroupBox.Controls.Add(this.label7);
-            this.torrentDetailGroupBox.Controls.Add(this.label6);
-            this.torrentDetailGroupBox.Controls.Add(this.downloadedLabel);
-            this.torrentDetailGroupBox.Controls.Add(this.startedAtLabel);
-            this.torrentDetailGroupBox.Controls.Add(this.label3);
-            this.torrentDetailGroupBox.Controls.Add(this.label2);
-            this.torrentDetailGroupBox.Controls.Add(this.timeElapsedLabel);
-            this.torrentDetailGroupBox.Location = new System.Drawing.Point(12, 8);
-            this.torrentDetailGroupBox.Name = "torrentDetailGroupBox";
-            this.torrentDetailGroupBox.Size = new System.Drawing.Size(755, 169);
-            this.torrentDetailGroupBox.TabIndex = 2;
-            this.torrentDetailGroupBox.TabStop = false;
+            this.generalTorrentNameGroupBox.Controls.Add(this.createdByLabel);
+            this.generalTorrentNameGroupBox.Controls.Add(this.label17);
+            this.generalTorrentNameGroupBox.Controls.Add(this.createdAtLabel);
+            this.generalTorrentNameGroupBox.Controls.Add(this.label16);
+            this.generalTorrentNameGroupBox.Controls.Add(this.errorLabel);
+            this.generalTorrentNameGroupBox.Controls.Add(this.labelForErrorLabel);
+            this.generalTorrentNameGroupBox.Controls.Add(this.commentLabel);
+            this.generalTorrentNameGroupBox.Controls.Add(this.label15);
+            this.generalTorrentNameGroupBox.Controls.Add(this.ratioLabel);
+            this.generalTorrentNameGroupBox.Controls.Add(this.label14);
+            this.generalTorrentNameGroupBox.Controls.Add(this.leechersLabel);
+            this.generalTorrentNameGroupBox.Controls.Add(this.seedersLabel);
+            this.generalTorrentNameGroupBox.Controls.Add(this.label13);
+            this.generalTorrentNameGroupBox.Controls.Add(this.label10);
+            this.generalTorrentNameGroupBox.Controls.Add(this.uploadLimitLabel);
+            this.generalTorrentNameGroupBox.Controls.Add(this.label12);
+            this.generalTorrentNameGroupBox.Controls.Add(this.uploadRateLabel);
+            this.generalTorrentNameGroupBox.Controls.Add(this.label8);
+            this.generalTorrentNameGroupBox.Controls.Add(this.uploadedLabel);
+            this.generalTorrentNameGroupBox.Controls.Add(this.label5);
+            this.generalTorrentNameGroupBox.Controls.Add(this.remainingLabel);
+            this.generalTorrentNameGroupBox.Controls.Add(this.label4);
+            this.generalTorrentNameGroupBox.Controls.Add(this.statusLabel);
+            this.generalTorrentNameGroupBox.Controls.Add(this.label11);
+            this.generalTorrentNameGroupBox.Controls.Add(this.downloadLimitLabel);
+            this.generalTorrentNameGroupBox.Controls.Add(this.label9);
+            this.generalTorrentNameGroupBox.Controls.Add(this.downloadSpeedLabel);
+            this.generalTorrentNameGroupBox.Controls.Add(this.label7);
+            this.generalTorrentNameGroupBox.Controls.Add(this.label6);
+            this.generalTorrentNameGroupBox.Controls.Add(this.downloadedLabel);
+            this.generalTorrentNameGroupBox.Controls.Add(this.startedAtLabel);
+            this.generalTorrentNameGroupBox.Controls.Add(this.label3);
+            this.generalTorrentNameGroupBox.Controls.Add(this.label2);
+            this.generalTorrentNameGroupBox.Controls.Add(this.timeElapsedLabel);
+            this.generalTorrentNameGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.generalTorrentNameGroupBox.Location = new System.Drawing.Point(0, 0);
+            this.generalTorrentNameGroupBox.Name = "generalTorrentNameGroupBox";
+            this.generalTorrentNameGroupBox.Size = new System.Drawing.Size(884, 185);
+            this.generalTorrentNameGroupBox.TabIndex = 2;
+            this.generalTorrentNameGroupBox.TabStop = false;
             // 
             // createdByLabel
             // 
@@ -1090,6 +1011,142 @@
             this.trackersTabPage.Text = "Trackers";
             this.trackersTabPage.UseVisualStyleBackColor = true;
             // 
+            // filesTabPage
+            // 
+            this.filesTabPage.Controls.Add(this.filesTorrentNameGroupBox);
+            this.filesTabPage.Location = new System.Drawing.Point(4, 22);
+            this.filesTabPage.Name = "filesTabPage";
+            this.filesTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.filesTabPage.Size = new System.Drawing.Size(890, 220);
+            this.filesTabPage.TabIndex = 2;
+            this.filesTabPage.Text = "Files";
+            this.filesTabPage.UseVisualStyleBackColor = true;
+            // 
+            // peersTabPage
+            // 
+            this.peersTabPage.Controls.Add(this.peersTorrentNameGroupBox);
+            this.peersTabPage.Location = new System.Drawing.Point(4, 22);
+            this.peersTabPage.Name = "peersTabPage";
+            this.peersTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.peersTabPage.Size = new System.Drawing.Size(890, 220);
+            this.peersTabPage.TabIndex = 3;
+            this.peersTabPage.Text = "Peers";
+            this.peersTabPage.UseVisualStyleBackColor = true;
+            // 
+            // filesTorrentNameGroupBox
+            // 
+            this.filesTorrentNameGroupBox.Controls.Add(this.filesListView);
+            this.filesTorrentNameGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.filesTorrentNameGroupBox.Location = new System.Drawing.Point(3, 3);
+            this.filesTorrentNameGroupBox.Name = "filesTorrentNameGroupBox";
+            this.filesTorrentNameGroupBox.Size = new System.Drawing.Size(884, 214);
+            this.filesTorrentNameGroupBox.TabIndex = 1;
+            this.filesTorrentNameGroupBox.TabStop = false;
+            this.filesTorrentNameGroupBox.Text = "groupBox1";
+            // 
+            // peersTorrentNameGroupBox
+            // 
+            this.peersTorrentNameGroupBox.Controls.Add(this.peersListView);
+            this.peersTorrentNameGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.peersTorrentNameGroupBox.Location = new System.Drawing.Point(3, 3);
+            this.peersTorrentNameGroupBox.Name = "peersTorrentNameGroupBox";
+            this.peersTorrentNameGroupBox.Size = new System.Drawing.Size(884, 214);
+            this.peersTorrentNameGroupBox.TabIndex = 1;
+            this.peersTorrentNameGroupBox.TabStop = false;
+            this.peersTorrentNameGroupBox.Text = "groupBox1";
+            // 
+            // trackersTorrentNameGroupBox
+            // 
+            this.trackersTorrentNameGroupBox.Controls.Add(this.trackersListView);
+            this.trackersTorrentNameGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trackersTorrentNameGroupBox.Location = new System.Drawing.Point(3, 3);
+            this.trackersTorrentNameGroupBox.Name = "trackersTorrentNameGroupBox";
+            this.trackersTorrentNameGroupBox.Size = new System.Drawing.Size(884, 214);
+            this.trackersTorrentNameGroupBox.TabIndex = 1;
+            this.trackersTorrentNameGroupBox.TabStop = false;
+            this.trackersTorrentNameGroupBox.Text = "groupBox1";
+            // 
+            // torrentListView
+            // 
+            this.torrentListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10,
+            this.columnHeader11,
+            this.columnHeader12,
+            this.columnHeader13,
+            this.columnHeader14,
+            this.columnHeader15,
+            this.columnHeader16,
+            this.columnHeader18,
+            this.columnHeader19});
+            this.torrentListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.torrentListView.Enabled = false;
+            this.torrentListView.FullRowSelect = true;
+            this.torrentListView.Location = new System.Drawing.Point(0, 0);
+            this.torrentListView.Name = "torrentListView";
+            this.torrentListView.Size = new System.Drawing.Size(898, 222);
+            this.torrentListView.TabIndex = 0;
+            this.torrentListView.UseCompatibleStateImageBehavior = false;
+            this.torrentListView.View = System.Windows.Forms.View.Details;
+            this.torrentListView.SelectedIndexChanged += new System.EventHandler(this.torrentListView_SelectedIndexChanged);
+            this.torrentListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.torrentListView_ColumnClick);
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Name";
+            this.columnHeader6.Width = 200;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Size";
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Done";
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Status";
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Seeds";
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Peers";
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Down Speed";
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Up Speed";
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "ETA";
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "Uploaded";
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "Ratio";
+            // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Text = "Added On";
+            // 
+            // columnHeader19
+            // 
+            this.columnHeader19.Text = "Completed On";
+            // 
             // trackersListView
             // 
             this.trackersListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -1119,17 +1176,6 @@
             // 
             this.columnHeader21.Text = "Scrape URL";
             this.columnHeader21.Width = 300;
-            // 
-            // filesTabPage
-            // 
-            this.filesTabPage.Controls.Add(this.filesTorrentNameGroupBox);
-            this.filesTabPage.Location = new System.Drawing.Point(4, 22);
-            this.filesTabPage.Name = "filesTabPage";
-            this.filesTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.filesTabPage.Size = new System.Drawing.Size(890, 220);
-            this.filesTabPage.TabIndex = 2;
-            this.filesTabPage.Text = "Files";
-            this.filesTabPage.UseVisualStyleBackColor = true;
             // 
             // filesListView
             // 
@@ -1175,21 +1221,11 @@
             // 
             this.columnHeader5.Text = "Priority";
             // 
-            // peersTabPage
-            // 
-            this.peersTabPage.Controls.Add(this.peersTorrentNameGroupBox);
-            this.peersTabPage.Location = new System.Drawing.Point(4, 22);
-            this.peersTabPage.Name = "peersTabPage";
-            this.peersTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.peersTabPage.Size = new System.Drawing.Size(890, 220);
-            this.peersTabPage.TabIndex = 3;
-            this.peersTabPage.Text = "Peers";
-            this.peersTabPage.UseVisualStyleBackColor = true;
-            // 
             // peersListView
             // 
             this.peersListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader27,
+            this.columnHeader23,
             this.columnHeader28,
             this.columnHeader29,
             this.columnHeader30,
@@ -1205,8 +1241,13 @@
             // 
             // columnHeader27
             // 
-            this.columnHeader27.Text = "Address";
-            this.columnHeader27.Width = 120;
+            this.columnHeader27.Text = "IP Address";
+            this.columnHeader27.Width = 100;
+            // 
+            // columnHeader23
+            // 
+            this.columnHeader23.Text = "Hostname";
+            this.columnHeader23.Width = 220;
             // 
             // columnHeader28
             // 
@@ -1227,39 +1268,6 @@
             // 
             this.columnHeader31.Text = "Rate To Peer";
             this.columnHeader31.Width = 80;
-            // 
-            // filesTorrentNameGroupBox
-            // 
-            this.filesTorrentNameGroupBox.Controls.Add(this.filesListView);
-            this.filesTorrentNameGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.filesTorrentNameGroupBox.Location = new System.Drawing.Point(3, 3);
-            this.filesTorrentNameGroupBox.Name = "filesTorrentNameGroupBox";
-            this.filesTorrentNameGroupBox.Size = new System.Drawing.Size(884, 214);
-            this.filesTorrentNameGroupBox.TabIndex = 1;
-            this.filesTorrentNameGroupBox.TabStop = false;
-            this.filesTorrentNameGroupBox.Text = "groupBox1";
-            // 
-            // peersTorrentNameGroupBox
-            // 
-            this.peersTorrentNameGroupBox.Controls.Add(this.peersListView);
-            this.peersTorrentNameGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.peersTorrentNameGroupBox.Location = new System.Drawing.Point(3, 3);
-            this.peersTorrentNameGroupBox.Name = "peersTorrentNameGroupBox";
-            this.peersTorrentNameGroupBox.Size = new System.Drawing.Size(884, 214);
-            this.peersTorrentNameGroupBox.TabIndex = 1;
-            this.peersTorrentNameGroupBox.TabStop = false;
-            this.peersTorrentNameGroupBox.Text = "groupBox1";
-            // 
-            // trackersTorrentNameGroupBox
-            // 
-            this.trackersTorrentNameGroupBox.Controls.Add(this.trackersListView);
-            this.trackersTorrentNameGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trackersTorrentNameGroupBox.Location = new System.Drawing.Point(3, 3);
-            this.trackersTorrentNameGroupBox.Name = "trackersTorrentNameGroupBox";
-            this.trackersTorrentNameGroupBox.Size = new System.Drawing.Size(884, 214);
-            this.trackersTorrentNameGroupBox.TabIndex = 1;
-            this.trackersTorrentNameGroupBox.TabStop = false;
-            this.trackersTorrentNameGroupBox.Text = "groupBox1";
             // 
             // MainWindow
             // 
@@ -1311,8 +1319,8 @@
             this.splitContainer5.Panel2.ResumeLayout(false);
             this.splitContainer5.Panel2.PerformLayout();
             this.splitContainer5.ResumeLayout(false);
-            this.torrentDetailGroupBox.ResumeLayout(false);
-            this.torrentDetailGroupBox.PerformLayout();
+            this.generalTorrentNameGroupBox.ResumeLayout(false);
+            this.generalTorrentNameGroupBox.PerformLayout();
             this.trackersTabPage.ResumeLayout(false);
             this.filesTabPage.ResumeLayout(false);
             this.peersTabPage.ResumeLayout(false);
@@ -1399,7 +1407,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer refreshElapsedTimer;
         private System.Windows.Forms.Label timeElapsedLabel;
-        private System.Windows.Forms.GroupBox torrentDetailGroupBox;
+        private System.Windows.Forms.GroupBox generalTorrentNameGroupBox;
         private System.Windows.Forms.Label downloadedLabel;
         private System.Windows.Forms.Label startedAtLabel;
         private System.Windows.Forms.Label label3;
@@ -1443,5 +1451,6 @@
         private System.Windows.Forms.GroupBox trackersTorrentNameGroupBox;
         private System.Windows.Forms.GroupBox filesTorrentNameGroupBox;
         private System.Windows.Forms.GroupBox peersTorrentNameGroupBox;
+        private System.Windows.Forms.ColumnHeader columnHeader23;
     }
 }

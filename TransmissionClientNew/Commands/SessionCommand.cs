@@ -8,7 +8,7 @@ using System.Net;
 
 namespace TransmissionRemoteDotnet.Commmands
 {
-    class SessionCommand : TransmissionCommand
+    public class SessionCommand : TransmissionCommand
     {
         public SessionCommand(JsonObject response, WebHeaderCollection headers)
         {

@@ -82,6 +82,7 @@
     </Compile>
     <Compile Include="CommandFactory.cs" />
     <Compile Include="Commands\ErrorCommand.cs" />
+    <Compile Include="Commands\ResolveHostCommand.cs" />
     <Compile Include="Comparers\ListViewTextInsensitiveComparer.cs" />
     <Compile Include="Comparers\ListViewTorrentInt32Comparer.cs" />
     <Compile Include="Comparers\ListViewTorrentInt64Comparer.cs" />
