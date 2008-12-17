@@ -143,6 +143,7 @@
             this.columnHeader29 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader30 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader31 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader17 = new System.Windows.Forms.ColumnHeader();
             this.menuStrip.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -1126,12 +1127,12 @@
             // 
             // filesListView
             // 
-            this.filesListView.CheckBoxes = true;
             this.filesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
+            this.columnHeader17,
             this.columnHeader5});
             this.filesListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.filesListView.Enabled = false;
@@ -1184,6 +1185,7 @@
             this.columnHeader30,
             this.columnHeader31});
             this.peersListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.peersListView.FullRowSelect = true;
             this.peersListView.Location = new System.Drawing.Point(3, 3);
             this.peersListView.Name = "peersListView";
             this.peersListView.Size = new System.Drawing.Size(884, 214);
@@ -1215,6 +1217,11 @@
             // 
             this.columnHeader31.Text = "Rate To Peer";
             this.columnHeader31.Width = 80;
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.DisplayIndex = 4;
+            this.columnHeader17.Text = "Skip";
             // 
             // MainWindow
             // 
@@ -1391,5 +1398,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader29;
         private System.Windows.Forms.ColumnHeader columnHeader30;
         private System.Windows.Forms.ColumnHeader columnHeader31;
+        private System.Windows.Forms.ColumnHeader columnHeader17;
     }
 }

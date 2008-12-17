@@ -672,7 +672,7 @@ namespace TransmissionRemoteDotnet
             {
                 foreach (ListViewItem item in filesListView.SelectedItems)
                 {
-                    item.SubItems[4].Text = "High";
+                    item.SubItems[5].Text = "High";
                 }
             }
             DispatchFilesUpdate();
@@ -684,7 +684,7 @@ namespace TransmissionRemoteDotnet
             {
                 foreach (ListViewItem item in filesListView.SelectedItems)
                 {
-                    item.SubItems[4].Text = "Low";
+                    item.SubItems[5].Text = "Low";
                 }
             }
             DispatchFilesUpdate();
@@ -696,7 +696,7 @@ namespace TransmissionRemoteDotnet
             {
                 foreach (ListViewItem item in filesListView.SelectedItems)
                 {
-                    item.SubItems[4].Text = "Normal";
+                    item.SubItems[5].Text = "Normal";
                 }
             }
             DispatchFilesUpdate();
@@ -708,7 +708,7 @@ namespace TransmissionRemoteDotnet
             {
                 foreach (ListViewItem item in filesListView.SelectedItems)
                 {
-                    item.Checked = false;
+                    item.SubItems[4].Text = "Yes";
                 }
             }
             DispatchFilesUpdate();
@@ -720,7 +720,7 @@ namespace TransmissionRemoteDotnet
             {
                 foreach (ListViewItem item in filesListView.SelectedItems)
                 {
-                    item.Checked = true;
+                    item.SubItems[4].Text = "No";
                 }
             }
             DispatchFilesUpdate();
@@ -742,15 +742,15 @@ namespace TransmissionRemoteDotnet
             {
                 foreach (ListViewItem item in filesListView.Items)
                 {
-                    if (item.Checked)
-                    {
-                        wanted.Add(item.Index);
-                    }
-                    else
+                    if (item.SubItems[4].Text.Equals("Yes"))
                     {
                         unwanted.Add(item.Index);
                     }
-                    switch (item.SubItems[4].Text)
+                    else
+                    {
+                        wanted.Add(item.Index);
+                    }
+                    switch (item.SubItems[5].Text)
                     {
                         case "High":
                             high.Add(item.Index);
@@ -787,7 +787,7 @@ namespace TransmissionRemoteDotnet
             {
                 arguments.Put("files-wanted", wanted);
             }
-            if (wanted.Count > 0)
+            if (unwanted.Count > 0)
             {
                 arguments.Put("files-unwanted", unwanted);
             }
@@ -831,7 +831,7 @@ namespace TransmissionRemoteDotnet
                     statusLabel.Text = t.Status;
                     if (!(errorLabel.Text = t.ErrorString).Equals(""))
                     {
-                        labelForErrorLabel.Visible = errorLabel.Visible;
+                        labelForErrorLabel.Visible = errorLabel.Visible = true;
                     }
                     RefreshElapsedTimer();
                     peersListView.Tag = (int)peersListView.Tag + 1;

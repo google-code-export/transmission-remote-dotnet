@@ -71,8 +71,8 @@ namespace TransmissionRemoteDotnet.Commmands
                     item.SubItems.Add(lengthStr);
                     item.SubItems.Add(completeStr);
                     item.SubItems.Add(percentStr);
+                    item.SubItems.Add(((JsonNumber)wanted[i]).ToBoolean() ? "No" : "Yes");
                     item.SubItems.Add(Toolbox.FormatPriority((JsonNumber)priorities[i]));
-                    item.Checked = ((JsonNumber)wanted[i]).ToBoolean();
                     listView.Items.Add(item);
                 }
                 else
