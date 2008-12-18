@@ -25,3 +25,4 @@ C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet -
 C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet - Copy\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.MainWindow.resources
 C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet - Copy\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.csproj.GenerateResource.Cache
 C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet - Copy\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentPropertiesDialog.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet - Copy\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.ErrorLogWindow.resources

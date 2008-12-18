@@ -52,7 +52,7 @@ namespace TransmissionRemoteDotnet
                 }
                 if (!Program.form.refreshWorker.IsBusy)
                 {
-                    Program.form.refreshWorker.RunWorkerAsync(false);
+                    Program.form.refreshWorker.RunWorkerAsync();
                 }
             }
             catch (Exception ex)
@@ -90,9 +90,7 @@ namespace TransmissionRemoteDotnet
                     case (short)ResponseTag.SessionGet:
                         return new SessionCommand(jsonResponse, webResponse.Headers);
                     case (short)ResponseTag.TorrentGet:
-                        return new TorrentGetCommand(jsonResponse, false);
-                    case (short)ResponseTag.TorrentGetLoop:
-                        return new TorrentGetCommand(jsonResponse, true);
+                        return new TorrentGetCommand(jsonResponse);
                     case (short)ResponseTag.UpdateFiles:
                         return new UpdateFilesCommand(jsonResponse, false);
                     case (short)ResponseTag.UpdateFilesAndPriorities:
@@ -104,6 +102,10 @@ namespace TransmissionRemoteDotnet
             catch (InvalidCastException)
             {
                 return new ErrorCommand("Unable to parse the following response", str_response != null ? str_response : "Null");
+            }
+            catch (JsonException ex)
+            {
+                return new ErrorCommand(ex.GetType().ToString() + " (" + ex.Message + ")", "This error can usually be fixed by upgrading transmission or increasing the retry limit. The following is the JSON output:\r\n "+str_response);
             }
             catch (Exception ex)
             {

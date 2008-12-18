@@ -43,6 +43,9 @@
             this.localSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.remoteSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showErrorLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.projectSiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.mainVerticalSplitContainer = new System.Windows.Forms.SplitContainer();
@@ -119,7 +122,6 @@
             this.filesTimer = new System.Windows.Forms.Timer(this.components);
             this.filesWorker = new System.ComponentModel.BackgroundWorker();
             this.refreshElapsedTimer = new System.Windows.Forms.Timer(this.components);
-            this.projectSiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.torrentListView = new TransmissionRemoteDotnet.ListViewNF();
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
@@ -286,11 +288,32 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showErrorLogToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.projectSiteToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // showErrorLogToolStripMenuItem
+            // 
+            this.showErrorLogToolStripMenuItem.Name = "showErrorLogToolStripMenuItem";
+            this.showErrorLogToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.showErrorLogToolStripMenuItem.Text = "Show Error Log";
+            this.showErrorLogToolStripMenuItem.Click += new System.EventHandler(this.showErrorLogToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(221, 6);
+            // 
+            // projectSiteToolStripMenuItem
+            // 
+            this.projectSiteToolStripMenuItem.Name = "projectSiteToolStripMenuItem";
+            this.projectSiteToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.projectSiteToolStripMenuItem.Text = "Project site";
+            this.projectSiteToolStripMenuItem.Click += new System.EventHandler(this.projectSiteToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -356,7 +379,7 @@
             "Seeding"});
             this.stateListBox.Location = new System.Drawing.Point(0, 0);
             this.stateListBox.Name = "stateListBox";
-            this.stateListBox.Size = new System.Drawing.Size(112, 484);
+            this.stateListBox.Size = new System.Drawing.Size(112, 100);
             this.stateListBox.TabIndex = 0;
             this.stateListBox.SelectedIndexChanged += new System.EventHandler(this.stateListBox_SelectedIndexChanged);
             // 
@@ -488,6 +511,7 @@
             // 
             // generalTorrentNameGroupBox
             // 
+            this.generalTorrentNameGroupBox.AutoSize = true;
             this.generalTorrentNameGroupBox.Controls.Add(this.createdByLabel);
             this.generalTorrentNameGroupBox.Controls.Add(this.label17);
             this.generalTorrentNameGroupBox.Controls.Add(this.createdAtLabel);
@@ -524,7 +548,7 @@
             this.generalTorrentNameGroupBox.Controls.Add(this.timeElapsedLabel);
             this.generalTorrentNameGroupBox.Location = new System.Drawing.Point(3, 11);
             this.generalTorrentNameGroupBox.Name = "generalTorrentNameGroupBox";
-            this.generalTorrentNameGroupBox.Size = new System.Drawing.Size(708, 171);
+            this.generalTorrentNameGroupBox.Size = new System.Drawing.Size(708, 172);
             this.generalTorrentNameGroupBox.TabIndex = 2;
             this.generalTorrentNameGroupBox.TabStop = false;
             // 
@@ -955,7 +979,7 @@
             this.remoteConfigureButton});
             this.toolStrip.Location = new System.Drawing.Point(3, 0);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(382, 39);
+            this.toolStrip.Size = new System.Drawing.Size(81, 39);
             this.toolStrip.TabIndex = 0;
             // 
             // connectButton
@@ -1118,13 +1142,6 @@
             this.refreshElapsedTimer.Interval = 1000;
             this.refreshElapsedTimer.Tick += new System.EventHandler(this.refreshElapsedTimer_Tick);
             // 
-            // projectSiteToolStripMenuItem
-            // 
-            this.projectSiteToolStripMenuItem.Name = "projectSiteToolStripMenuItem";
-            this.projectSiteToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.projectSiteToolStripMenuItem.Text = "Project site";
-            this.projectSiteToolStripMenuItem.Click += new System.EventHandler(this.projectSiteToolStripMenuItem_Click);
-            // 
             // torrentListView
             // 
             this.torrentListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -1177,7 +1194,7 @@
             // 
             // columnHeader11
             // 
-            this.columnHeader11.Text = "Peers";
+            this.columnHeader11.Text = "Leechers";
             // 
             // columnHeader12
             // 
@@ -1367,6 +1384,7 @@
             this.generalTabPage.ResumeLayout(false);
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
+            this.splitContainer3.Panel2.PerformLayout();
             this.splitContainer3.ResumeLayout(false);
             this.splitContainer4.Panel1.ResumeLayout(false);
             this.splitContainer4.Panel1.PerformLayout();
@@ -1517,5 +1535,7 @@
         private System.Windows.Forms.ToolStripMenuItem disconnectToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem projectSiteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showErrorLogToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
     }
 }

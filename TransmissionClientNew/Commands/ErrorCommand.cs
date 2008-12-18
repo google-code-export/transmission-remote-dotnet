@@ -38,16 +38,18 @@ namespace TransmissionRemoteDotnet.Commmands
                 if (!Program.Connected)
                 {
                     form.toolStripStatusLabel.Text = "Unable to connect (" + this.title + ")";
-                    MessageBox.Show(this.body, this.title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(this.body.Length > MAX_MESSAGE_LENGTH ? this.body.Substring(0, MAX_MESSAGE_LENGTH)+"..." : this.body, this.title, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (++Program.failCount > LocalSettingsSingleton.Instance.retryLimit)
                 {
                     Program.Connected = false;
                     form.toolStripStatusLabel.Text = "Disconnected. Exceeded maximum number of failed requests.";
-                    MessageBox.Show(this.body.Length > MAX_MESSAGE_LENGTH ? this.body.Substring(0, MAX_MESSAGE_LENGTH) : this.body, this.title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Program.Log(this.title, this.body);
+                    MessageBox.Show(this.body.Length > MAX_MESSAGE_LENGTH ? this.body.Substring(0, MAX_MESSAGE_LENGTH)+"..." : this.body, this.title, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
+                    Program.Log(this.title, this.body);
                     form.toolStripStatusLabel.Text = "Failed request #" + Program.failCount + ": " + this.title;
                 }
             }

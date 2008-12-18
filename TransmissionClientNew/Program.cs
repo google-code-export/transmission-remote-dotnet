@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Jayrock.Json;
 using System.Net;
+using TransmissionRemoteDotnet.Commmands;
 
 namespace TransmissionRemoteDotnet
 {
     public delegate void ConnStatusChangedDelegate(bool connected);
     public delegate void TorrentsUpdatedDelegate();
+    public delegate void OnErrorDelegate();
 
     static class Program
     {
         public static event ConnStatusChangedDelegate onConnStatusChanged;
         public static event TorrentsUpdatedDelegate onTorrentsUpdated;
+        public static event OnErrorDelegate onError;
 
         private static Boolean connected = false;
         public static MainWindow form;
@@ -22,6 +25,7 @@ namespace TransmissionRemoteDotnet
         public static string[] uploadArgs;
         public static int failCount = 0;
         public static double transmissionVersion = 1.41;
+        public static List<ListViewItem> logItems = new List<ListViewItem>();
 
         [STAThread]
         static void Main(string[] args)
@@ -48,6 +52,18 @@ namespace TransmissionRemoteDotnet
                 {
                     singleInstance.PassArgumentsToFirstInstance(args);
                 }
+            }
+        }
+
+        public static void Log(string title, string body)
+        {
+            ListViewItem logItem = new ListViewItem(DateTime.Now.ToString());
+            logItem.SubItems.Add(title);
+            logItem.SubItems.Add(body);
+            logItems.Add(logItem);
+            if (onError != null)
+            {
+                onError();
             }
         }
 

@@ -25,7 +25,7 @@ namespace TransmissionRemoteDotnet
             item.SubItems.Add(percentage.ToString() + "%");
             item.SubItems.Add(this.Status);
             item.SubItems.Add(this.Seeders + " (" + this.PeersSendingToUs + ")");
-            item.SubItems.Add(this.Peers.Count.ToString());
+            item.SubItems.Add(this.Leechers + " (" + this.PeersGettingFromUs + ")");
             item.SubItems.Add(percentage >= 100 ? "N/A" : this.DownloadRate);
             item.SubItems.Add(this.UploadRate);
             item.SubItems.Add(this.GetShortETA());
@@ -35,6 +35,19 @@ namespace TransmissionRemoteDotnet
             item.SubItems.Add("N/A");
             Program.torrentIndex[this.Id] = this;
             Add();
+            LogError();
+        }
+
+        private void LogError()
+        {
+            if (this.ErrorString != null)
+            {
+                List<ListViewItem> logItems = Program.logItems;
+                if (logItems.Count <= 0 || (logItems.Count > 0 && !Program.logItems[Program.logItems.Count - 1].SubItems[1].Text.Equals(this.Name)))
+                {
+                    Program.Log(this.Name, this.ErrorString);
+                }
+            }
         }
 
         public void Show()
@@ -58,6 +71,7 @@ namespace TransmissionRemoteDotnet
             {
                 form.torrentListView.Items.Add(item);
                 form.StripeListView();
+                LogError();
             }
         }
 
@@ -105,7 +119,7 @@ namespace TransmissionRemoteDotnet
                 item.SubItems[2].Text = percentage.ToString() + "%";
                 item.SubItems[3].Text = this.Status;
                 item.SubItems[4].Text = this.Seeders + " (" + this.PeersSendingToUs + ")";
-                item.SubItems[5].Text = this.Peers.Count.ToString();
+                item.SubItems[5].Text = this.Leechers + " (" + this.PeersGettingFromUs + ")";
                 item.SubItems[6].Text = percentage >= 100 ? "N/A" : this.DownloadRate;
                 item.SubItems[7].Text = this.UploadRate;
                 item.SubItems[8].Text = this.GetShortETA();
@@ -114,6 +128,7 @@ namespace TransmissionRemoteDotnet
                 item.SubItems[11].Text = this.Added.ToString();
                 //completed
                 this.updateSerial = Program.updateSerial;
+                LogError();
             }
         }
 
@@ -239,30 +254,30 @@ namespace TransmissionRemoteDotnet
 
         private string GetETA(bool small)
         {
-                if (this.Percentage >= 100)
+            if (this.Percentage >= 100)
+            {
+                return "N/A";
+            }
+            else
+            {
+                double eta = ((JsonNumber)info[ProtocolConstants.FIELD_ETA]).ToDouble();
+                if (eta > 0)
                 {
-                    return "N/A";
-                }
-                else
-                {
-                    double eta = ((JsonNumber)info[ProtocolConstants.FIELD_ETA]).ToDouble();
-                    if (eta > 0)
+                    TimeSpan ts = TimeSpan.FromSeconds(eta);
+                    if (small)
                     {
-                        TimeSpan ts = TimeSpan.FromSeconds(eta);
-                        if (small)
-                        {
-                            return ts.ToString();
-                        }
-                        else
-                        {
-                            return Toolbox.FormatTimespanLong(ts);
-                        }
+                        return ts.ToString();
                     }
                     else
                     {
-                        return "Unknown";
+                        return Toolbox.FormatTimespanLong(ts);
                     }
                 }
+                else
+                {
+                    return "Unknown";
+                }
+            }
         }
 
         public double Percentage

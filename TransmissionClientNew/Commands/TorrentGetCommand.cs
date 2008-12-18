@@ -10,12 +10,10 @@ namespace TransmissionRemoteDotnet.Commmands
     public class TorrentGetCommand : TransmissionCommand
     {
         private JsonObject response;
-        private Boolean beginLoop;
 
-        public TorrentGetCommand(JsonObject response, Boolean beginLoop)
+        public TorrentGetCommand(JsonObject response)
         {
             this.response = response;
-            this.beginLoop = beginLoop;
             Program.ResetFailCount();
         }
 
@@ -98,7 +96,7 @@ namespace TransmissionRemoteDotnet.Commmands
             }
             else
             {
-                if (beginLoop)
+                if (Program.updateSerial <= 1)
                 {
                     form.refreshTimer.Enabled = true;
                 }

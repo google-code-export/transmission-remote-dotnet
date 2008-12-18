@@ -12,6 +12,7 @@ namespace TransmissionRemoteDotnet
         /* Some unconfigurable variables. */
         private readonly string REGISTRY_KEY = "Software\\TransmissionRemote";
         public static readonly int COMPLETED_BALOON_TIMEOUT = 4;
+        public static readonly int FILES_REFRESH_MULTIPLICANT = 3;
 
         /* Registry keys */
         private static readonly string REGKEY_HOST = "host",
@@ -172,7 +173,7 @@ namespace TransmissionRemoteDotnet
                 key.SetValue(REGKEY_STARTPAUSED, this.startPaused ? 1 : 0);
                 key.SetValue(REGKEY_RETRYLIMIT, this.retryLimit);
                 Program.form.refreshTimer.Interval = refreshRate * 1000;
-                //Program.form.FilesTimer.Interval = refreshRate * 1000 * 2;
+                Program.form.filesTimer.Interval = refreshRate * 1000 * FILES_REFRESH_MULTIPLICANT;
             }
             catch (Exception ex)
             {

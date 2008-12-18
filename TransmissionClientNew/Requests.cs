@@ -64,11 +64,11 @@ namespace TransmissionRemoteDotnet
             return Files(id, true);
         }
 
-        public static JsonObject TorrentGet(Boolean beginLoop)
+        public static JsonObject TorrentGet()
         {
             JsonObject request = new JsonObject();
             request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTGET);
-            request.Put(ProtocolConstants.KEY_TAG, beginLoop ? (int)ResponseTag.TorrentGetLoop : (int)ResponseTag.TorrentGet);
+            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.TorrentGet);
             JsonObject arguments = new JsonObject();
             JsonArray fields = new JsonArray(new string[]{
                 ProtocolConstants.FIELD_ID,

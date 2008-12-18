@@ -40,7 +40,7 @@ namespace TransmissionRemoteDotnet.Commmands
                 Program.Connected = true;
                 if (!Program.form.refreshWorker.IsBusy)
                 {
-                    Program.form.refreshWorker.RunWorkerAsync(true);
+                    Program.form.refreshWorker.RunWorkerAsync();
                 }
                 if (Program.uploadArgs != null)
                 {
