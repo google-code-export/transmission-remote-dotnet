@@ -30,6 +30,10 @@ namespace TransmissionRemoteDotnet.Commmands
                 return;
             }
             JsonObject torrent = (JsonObject)torrents[0];
+            if (torrent == null)
+            {
+                return;
+            }
             int id = ((JsonNumber)torrent[ProtocolConstants.FIELD_ID]).ToInt32();
             Torrent t = (Torrent)item.Tag;
             if (t.Id == id)

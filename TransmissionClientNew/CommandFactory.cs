@@ -101,7 +101,7 @@ namespace TransmissionRemoteDotnet
             }
             catch (InvalidCastException)
             {
-                return new ErrorCommand("Unable to parse the following response", str_response != null ? str_response : "Null");
+                return new ErrorCommand("Unable to parse the following response (possible protocol violation)", str_response != null ? str_response : "Null");
             }
             catch (JsonException ex)
             {
