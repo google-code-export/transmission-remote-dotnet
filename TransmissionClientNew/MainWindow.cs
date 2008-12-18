@@ -32,8 +32,11 @@ namespace TransmissionRemoteDotnet
 
         void Program_onTorrentsUpdated()
         {
-            UpdateInfoPanel(false);
-            stateListBox.Enabled = torrentListView.Enabled = true;
+            lock (torrentListView)
+            {
+                UpdateInfoPanel(false);
+                stateListBox.Enabled = torrentListView.Enabled = true;
+            }
         }
 
         private void Program_connStatusChanged(Boolean connected)
@@ -391,47 +394,50 @@ namespace TransmissionRemoteDotnet
 
         private void torrentListView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int count = torrentListView.SelectedItems.Count;
-            bool oneOrMore = count > 0;
-            bool one = count == 1;
-            torrentListView.ContextMenu = oneOrMore ? this.torrentSelectionMenu : null;
-            startTorrentButton.Enabled = pauseTorrentButton.Enabled
-                = removeTorrentButton.Enabled = oneOrMore;
-            MainWindow form = Program.form;
-            lock (form.filesListView)
+            lock (torrentListView)
             {
-                form.filesListView.Items.Clear();
-            }
-            lock (form.peersListView)
-            {
-                form.peersListView.Items.Clear();
-            }
-            lock (form.trackersListView)
-            {
-                trackersListView.Items.Clear();
-            }
-            if (one)
-            {
-                peersListView.Tag = 0;
-                Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
-                CreateActionWorker().RunWorkerAsync(Requests.FilesAndPriorities(t.Id));
-                trackersListView.SuspendLayout();
-                foreach (JsonObject tracker in t.Trackers)
+                int count = torrentListView.SelectedItems.Count;
+                bool oneOrMore = count > 0;
+                bool one = count == 1;
+                torrentListView.ContextMenu = oneOrMore ? this.torrentSelectionMenu : null;
+                startTorrentButton.Enabled = pauseTorrentButton.Enabled
+                    = removeTorrentButton.Enabled = oneOrMore;
+                MainWindow form = Program.form;
+                lock (form.filesListView)
                 {
-                    int tier = ((JsonNumber)tracker["tier"]).ToInt32();
-                    string announceUrl = (string)tracker["announce"];
-                    string scrapeUrl = (string)tracker["scrape"];
-                    ListViewItem item = new ListViewItem(tier.ToString());
-                    item.SubItems.Add(announceUrl);
-                    item.SubItems.Add(scrapeUrl);
-                    trackersListView.Items.Add(item);
+                    form.filesListView.Items.Clear();
                 }
-                Toolbox.StripeListView(trackersListView);
-                trackersListView.ResumeLayout();
+                lock (form.peersListView)
+                {
+                    form.peersListView.Items.Clear();
+                }
+                lock (form.trackersListView)
+                {
+                    trackersListView.Items.Clear();
+                }
+                if (one)
+                {
+                    peersListView.Tag = 0;
+                    Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
+                    CreateActionWorker().RunWorkerAsync(Requests.FilesAndPriorities(t.Id));
+                    trackersListView.SuspendLayout();
+                    foreach (JsonObject tracker in t.Trackers)
+                    {
+                        int tier = ((JsonNumber)tracker["tier"]).ToInt32();
+                        string announceUrl = (string)tracker["announce"];
+                        string scrapeUrl = (string)tracker["scrape"];
+                        ListViewItem item = new ListViewItem(tier.ToString());
+                        item.SubItems.Add(announceUrl);
+                        item.SubItems.Add(scrapeUrl);
+                        trackersListView.Items.Add(item);
+                    }
+                    Toolbox.StripeListView(trackersListView);
+                    trackersListView.ResumeLayout();
+                }
+                torrentAndTabsSplitContainer.Panel2Collapsed = !one;
+                refreshElapsedTimer.Enabled = filesTimer.Enabled = one;
+                UpdateInfoPanel(true);
             }
-            torrentAndTabsSplitContainer.Panel2Collapsed = !one;
-            refreshElapsedTimer.Enabled = filesTimer.Enabled = one;
-            UpdateInfoPanel(true);
         }
 
         private void ShowTorrentPropsHandler(object sender, EventArgs e)
@@ -740,69 +746,73 @@ namespace TransmissionRemoteDotnet
 
         private void DispatchFilesUpdate()
         {
-            JsonArray high = new JsonArray();
-            JsonArray normal = new JsonArray();
-            JsonArray low = new JsonArray();
-            JsonArray wanted = new JsonArray();
-            JsonArray unwanted = new JsonArray();
             lock (filesListView)
             {
-                foreach (ListViewItem item in filesListView.Items)
+                JsonArray high = new JsonArray();
+                JsonArray normal = new JsonArray();
+                JsonArray low = new JsonArray();
+                JsonArray wanted = new JsonArray();
+                JsonArray unwanted = new JsonArray();
+                lock (filesListView)
                 {
-                    if (item.SubItems[4].Text.Equals("Yes"))
+                    foreach (ListViewItem item in filesListView.Items)
                     {
-                        unwanted.Add(item.Index);
-                    }
-                    else
-                    {
-                        wanted.Add(item.Index);
-                    }
-                    switch (item.SubItems[5].Text)
-                    {
-                        case "High":
-                            high.Add(item.Index);
-                            break;
-                        case "Normal":
-                            normal.Add(item.Index);
-                            break;
-                        case "Low":
-                            low.Add(item.Index);
-                            break;
+                        if (item.SubItems[4].Text.Equals("Yes"))
+                        {
+                            unwanted.Add(item.Index);
+                        }
+                        else
+                        {
+                            wanted.Add(item.Index);
+                        }
+                        switch (item.SubItems[5].Text)
+                        {
+                            case "High":
+                                high.Add(item.Index);
+                                break;
+                            case "Normal":
+                                normal.Add(item.Index);
+                                break;
+                            case "Low":
+                                low.Add(item.Index);
+                                break;
+                        }
                     }
                 }
+                JsonObject request = new JsonObject();
+                request.Put(ProtocolConstants.KEY_METHOD, "torrent-set");
+                JsonObject arguments = new JsonObject();
+                JsonArray ids = new JsonArray();
+                Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
+                ids.Put(t.Id);
+                arguments.Put(ProtocolConstants.KEY_IDS, ids);
+                if (high.Count > 0)
+                {
+                    arguments.Put("priority-high", high);
+                }
+                if (normal.Count > 0)
+                {
+                    arguments.Put("priority-normal", normal);
+                }
+                if (low.Count > 0)
+                {
+                    arguments.Put("priority-low", low);
+                }
+                if (wanted.Count > 0)
+                {
+                    arguments.Put("files-wanted", wanted);
+                }
+                if (unwanted.Count > 0)
+                {
+                    arguments.Put("files-unwanted", unwanted);
+                }
+                request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
+                request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
+                CreateActionWorker().RunWorkerAsync(request);
             }
-            JsonObject request = new JsonObject();
-            request.Put(ProtocolConstants.KEY_METHOD, "torrent-set");
-            JsonObject arguments = new JsonObject();
-            JsonArray ids = new JsonArray();
-            Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
-            ids.Put(t.Id);
-            arguments.Put(ProtocolConstants.KEY_IDS, ids);
-            if (high.Count > 0)
-            {
-                arguments.Put("priority-high", high);
-            }
-            if (normal.Count > 0)
-            {
-                arguments.Put("priority-normal", normal);
-            }
-            if (low.Count > 0)
-            {
-                arguments.Put("priority-low", low);
-            }
-            if (wanted.Count > 0)
-            {
-                arguments.Put("files-wanted", wanted);
-            }
-            if (unwanted.Count > 0)
-            {
-                arguments.Put("files-unwanted", unwanted);
-            }
-            request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
-            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
-            CreateActionWorker().RunWorkerAsync(request);
         }
 
+        // lock torrentListView BEFORE calling this method
         public void UpdateInfoPanel(bool first)
         {
             if (torrentListView.SelectedItems.Count == 1)
