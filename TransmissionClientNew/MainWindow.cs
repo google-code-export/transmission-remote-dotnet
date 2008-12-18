@@ -395,7 +395,6 @@ namespace TransmissionRemoteDotnet
             torrentListView.ContextMenu = oneOrMore ? this.torrentSelectionMenu : null;
             startTorrentButton.Enabled = pauseTorrentButton.Enabled
                 = removeTorrentButton.Enabled = oneOrMore;
-            filesTimer.Enabled = false;
             MainWindow form = Program.form;
             lock (form.filesListView)
             {
@@ -429,7 +428,7 @@ namespace TransmissionRemoteDotnet
                 trackersListView.ResumeLayout();
             }
             torrentAndTabsSplitContainer.Panel2Collapsed = !one;
-            refreshElapsedTimer.Enabled = one;
+            refreshElapsedTimer.Enabled = filesTimer.Enabled = one;
             UpdateInfoPanel(true);
         }
 
@@ -650,16 +649,12 @@ namespace TransmissionRemoteDotnet
             if (!filesWorker.IsBusy)
             {
                 filesTimer.Enabled = false;
-                try
+                ListViewItem selection;
+                if (torrentListView.SelectedItems.Count == 1 && (selection = torrentListView.SelectedItems[0]) != null)
                 {
-                    ListViewItem selection;
-                    if (torrentListView.SelectedItems.Count != 1 && (selection = torrentListView.SelectedItems[0]) != null)
-                    {
-                        Torrent t = (Torrent)selection.Tag;
-                        filesWorker.RunWorkerAsync(Requests.Files(t.Id));
-                    }
+                    Torrent t = (Torrent)selection.Tag;
+                    filesWorker.RunWorkerAsync(Requests.Files(t.Id));
                 }
-                catch { }
             }
         }
 
@@ -848,7 +843,7 @@ namespace TransmissionRemoteDotnet
                         item.SubItems.Add("");
                         item.SubItems.Add((string)peer["clientName"]);
                         item.SubItems.Add((string)peer["progress"] + "%");
-                        item.SubItems.Add(Toolbox.GetFileSize(((JsonNumber)peer["rateToClient"]).ToInt64())+"/s");
+                        item.SubItems.Add(Toolbox.GetFileSize(((JsonNumber)peer["rateToClient"]).ToInt64()) + "/s");
                         item.SubItems.Add(Toolbox.GetFileSize(((JsonNumber)peer["rateToPeer"]).ToInt64()) + "/s");
                         peersListView.Items.Add(item);
                         Toolbox.StripeListView(peersListView);
