@@ -746,70 +746,75 @@ namespace TransmissionRemoteDotnet
 
         private void DispatchFilesUpdate()
         {
+            JsonArray high = new JsonArray();
+            JsonArray normal = new JsonArray();
+            JsonArray low = new JsonArray();
+            JsonArray wanted = new JsonArray();
+            JsonArray unwanted = new JsonArray();
+            Torrent t;
+            lock (torrentListView)
+            {
+                if (torrentListView.Items.Count != 1 || torrentListView.SelectedItems[0] == null)
+                {
+                    return;
+                }
+                t = (Torrent)torrentListView.SelectedItems[0].Tag;
+            }
             lock (filesListView)
             {
-                JsonArray high = new JsonArray();
-                JsonArray normal = new JsonArray();
-                JsonArray low = new JsonArray();
-                JsonArray wanted = new JsonArray();
-                JsonArray unwanted = new JsonArray();
-                lock (filesListView)
+                foreach (ListViewItem item in filesListView.Items)
                 {
-                    foreach (ListViewItem item in filesListView.Items)
+                    if (item.SubItems[4].Text.Equals("Yes"))
                     {
-                        if (item.SubItems[4].Text.Equals("Yes"))
-                        {
-                            unwanted.Add(item.Index);
-                        }
-                        else
-                        {
-                            wanted.Add(item.Index);
-                        }
-                        switch (item.SubItems[5].Text)
-                        {
-                            case "High":
-                                high.Add(item.Index);
-                                break;
-                            case "Normal":
-                                normal.Add(item.Index);
-                                break;
-                            case "Low":
-                                low.Add(item.Index);
-                                break;
-                        }
+                        unwanted.Add(item.Index);
+                    }
+                    else
+                    {
+                        wanted.Add(item.Index);
+                    }
+                    switch (item.SubItems[5].Text)
+                    {
+                        case "High":
+                            high.Add(item.Index);
+                            break;
+                        case "Normal":
+                            normal.Add(item.Index);
+                            break;
+                        case "Low":
+                            low.Add(item.Index);
+                            break;
                     }
                 }
-                JsonObject request = new JsonObject();
-                request.Put(ProtocolConstants.KEY_METHOD, "torrent-set");
-                JsonObject arguments = new JsonObject();
-                JsonArray ids = new JsonArray();
-                Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
-                ids.Put(t.Id);
-                arguments.Put(ProtocolConstants.KEY_IDS, ids);
-                if (high.Count > 0)
-                {
-                    arguments.Put("priority-high", high);
-                }
-                if (normal.Count > 0)
-                {
-                    arguments.Put("priority-normal", normal);
-                }
-                if (low.Count > 0)
-                {
-                    arguments.Put("priority-low", low);
-                }
-                if (wanted.Count > 0)
-                {
-                    arguments.Put("files-wanted", wanted);
-                }
-                if (unwanted.Count > 0)
-                {
-                    arguments.Put("files-unwanted", unwanted);
-                }
-                request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
-                request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
-                CreateActionWorker().RunWorkerAsync(request);
             }
+            JsonObject request = new JsonObject();
+            request.Put(ProtocolConstants.KEY_METHOD, "torrent-set");
+            JsonObject arguments = new JsonObject();
+            JsonArray ids = new JsonArray();
+            ids.Put(t.Id);
+            arguments.Put(ProtocolConstants.KEY_IDS, ids);
+            if (high.Count > 0)
+            {
+                arguments.Put("priority-high", high);
+            }
+            if (normal.Count > 0)
+            {
+                arguments.Put("priority-normal", normal);
+            }
+            if (low.Count > 0)
+            {
+                arguments.Put("priority-low", low);
+            }
+            if (wanted.Count > 0)
+            {
+                arguments.Put("files-wanted", wanted);
+            }
+            if (unwanted.Count > 0)
+            {
+                arguments.Put("files-unwanted", unwanted);
+            }
+            request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
+            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
+            CreateActionWorker().RunWorkerAsync(request);
         }
 
         // lock torrentListView BEFORE calling this method
