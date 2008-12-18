@@ -40,7 +40,7 @@ namespace TransmissionRemoteDotnet
 
         private void LogError()
         {
-            if (this.ErrorString != null)
+            if (this.ErrorString != null && !this.ErrorString.Equals(""))
             {
                 List<ListViewItem> logItems = Program.logItems;
                 if (logItems.Count <= 0 || (logItems.Count > 0 && !Program.logItems[Program.logItems.Count - 1].SubItems[1].Text.Equals(this.Name)))

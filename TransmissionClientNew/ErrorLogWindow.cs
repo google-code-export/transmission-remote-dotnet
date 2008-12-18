@@ -22,9 +22,12 @@ namespace TransmissionRemoteDotnet
         }
         private void ErrorLogWindow_Load(object sender, EventArgs e)
         {
-            foreach (ListViewItem item in Program.logItems)
+            lock (Program.logItems)
             {
-                errorListView.Items.Add(item);
+                foreach (ListViewItem item in Program.logItems)
+                {
+                    errorListView.Items.Add(item);
+                }
             }
         }
 
@@ -36,7 +39,10 @@ namespace TransmissionRemoteDotnet
         private void button2_Click(object sender, EventArgs e)
         {
             errorListView.Items.Clear();
-            Program.logItems.Clear();
+            lock (Program.logItems)
+            {
+                Program.logItems.Clear();
+            }
         }
 
         private void ErrorLogWindow_FormClosing(object sender, FormClosingEventArgs e)
@@ -46,14 +52,19 @@ namespace TransmissionRemoteDotnet
 
         private void OnError()
         {
-            List<ListViewItem> logItems = Program.logItems;
-            if (logItems.Count > errorListView.Items.Count)
+            errorListView.SuspendLayout();
+            lock (Program.logItems)
             {
-                for (int i = errorListView.Items.Count; i < logItems.Count; i++)
+                List<ListViewItem> logItems = Program.logItems;
+                if (logItems.Count > errorListView.Items.Count)
                 {
-                    errorListView.Items.Add(logItems[i]);
+                    for (int i = errorListView.Items.Count; i < logItems.Count; i++)
+                    {
+                        errorListView.Items.Add(logItems[i]);
+                    }
                 }
             }
+            errorListView.ResumeLayout();
         }
 
         private void errorListView_DoubleClick(object sender, EventArgs e)
