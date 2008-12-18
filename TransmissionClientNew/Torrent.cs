@@ -269,7 +269,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return Toolbox.CalcPercentage(this.HaveValid, this.TotalSize);
+                return Toolbox.CalcPercentage(this.HaveTotal, this.TotalSize);
             }
         }
 
@@ -361,11 +361,11 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        public long HaveValid
+        public long HaveTotal
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_HAVEVALID]).ToInt64();
+                return ((JsonNumber)info[ProtocolConstants.FIELD_HAVEVALID]).ToInt64() + ((JsonNumber)info[ProtocolConstants.FIELD_HAVEUNCHECKED]).ToInt64();
             }
         }
 
@@ -373,7 +373,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return Toolbox.GetFileSize(this.HaveValid);
+                return Toolbox.GetFileSize(this.HaveTotal);
             }
         }
 
@@ -397,7 +397,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return Toolbox.CalcRatio(this.Uploaded, this.HaveValid);
+                return Toolbox.CalcRatio(this.Uploaded, this.HaveTotal);
             }
         }
 

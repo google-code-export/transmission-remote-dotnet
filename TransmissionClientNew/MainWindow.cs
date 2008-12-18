@@ -272,14 +272,6 @@ namespace TransmissionRemoteDotnet
             return ids;
         }
 
-        private JsonArray BuildFirstIdArray()
-        {
-            JsonArray ids = new JsonArray();
-            Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
-            ids.Put(t.Id);
-            return ids;
-        }
-
         private void RemoveTorrentsPrompt()
         {
             if (torrentListView.SelectedItems.Count == 1
@@ -660,7 +652,12 @@ namespace TransmissionRemoteDotnet
                 filesTimer.Enabled = false;
                 try
                 {
-                    filesWorker.RunWorkerAsync(Requests.Files(BuildFirstIdArray()));
+                    ListViewItem selection;
+                    if (torrentListView.SelectedItems.Count != 1 && (selection = torrentListView.SelectedItems[0]) != null)
+                    {
+                        Torrent t = (Torrent)selection.Tag;
+                        filesWorker.RunWorkerAsync(Requests.Files(t.Id));
+                    }
                 }
                 catch { }
             }

@@ -13,7 +13,7 @@ namespace TransmissionRemoteDotnet
         public static JsonObject SessionGet()
         {
             JsonObject request = new JsonObject();
-            request.Put(ProtocolConstants.KEY_METHOD, "session-get");
+            request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_SESSIONGET);
             request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.SessionGet);
             return request;
         }
@@ -32,17 +32,19 @@ namespace TransmissionRemoteDotnet
             return request;
         }
 
-        public static JsonObject Files(JsonArray ids)
+        public static JsonObject Files(int id)
         {
-            return Files(ids, false);
+            return Files(id, false);
         }
 
-        private static JsonObject Files(JsonArray ids, bool includePriorities)
+        private static JsonObject Files(int id, bool includePriorities)
         {
             JsonObject request = new JsonObject();
             request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTGET);
             request.Put(ProtocolConstants.KEY_TAG, includePriorities ? (int)ResponseTag.UpdateFilesAndPriorities : (int)ResponseTag.UpdateFiles);
             JsonObject arguments = new JsonObject();
+            JsonArray ids = new JsonArray();
+            ids.Push(id);
             arguments.Put(ProtocolConstants.KEY_IDS, ids);
             JsonArray fields = new JsonArray();
             fields.Put(ProtocolConstants.FIELD_FILES);
@@ -59,9 +61,7 @@ namespace TransmissionRemoteDotnet
         
         public static JsonObject FilesAndPriorities(int id)
         {
-            JsonArray ids = new JsonArray();
-            ids.Put(id);
-            return Files(ids, true);
+            return Files(id, true);
         }
 
         public static JsonObject TorrentGet(Boolean beginLoop)
@@ -74,6 +74,7 @@ namespace TransmissionRemoteDotnet
                 ProtocolConstants.FIELD_ID,
                 ProtocolConstants.FIELD_ADDEDDATE,
                 ProtocolConstants.FIELD_HAVEVALID,
+                ProtocolConstants.FIELD_HAVEUNCHECKED,
                 ProtocolConstants.FIELD_ETA,
                 ProtocolConstants.FIELD_ID,
                 ProtocolConstants.FIELD_LEECHERS,
@@ -92,7 +93,7 @@ namespace TransmissionRemoteDotnet
                 ProtocolConstants.FIELD_NAME,
                 "sizeWhenDone","swarmSpeed",
                 "isPrivate","comment","creator","dateCreated",
-                "hashString","haveUnchecked","peers",
+                "hashString","peers",
                 "error","errorString", "trackers",
                 "peersGettingFromUs","peersKnown","peersSendingToUs"});
             arguments.Put(ProtocolConstants.KEY_FIELDS, fields);
