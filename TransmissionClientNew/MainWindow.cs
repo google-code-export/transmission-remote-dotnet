@@ -651,11 +651,13 @@ namespace TransmissionRemoteDotnet
             if (!filesWorker.IsBusy)
             {
                 filesTimer.Enabled = false;
-                ListViewItem selection;
-                if (torrentListView.SelectedItems.Count == 1 && (selection = torrentListView.SelectedItems[0]) != null)
+                lock (torrentListView)
                 {
-                    Torrent t = (Torrent)selection.Tag;
-                    filesWorker.RunWorkerAsync(Requests.Files(t.Id));
+                    if (torrentListView.SelectedItems.Count == 1)
+                    {
+                        Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
+                        filesWorker.RunWorkerAsync(Requests.Files(t.Id));
+                    }
                 }
             }
         }

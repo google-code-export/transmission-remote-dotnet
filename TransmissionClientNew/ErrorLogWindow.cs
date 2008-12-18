@@ -20,13 +20,17 @@ namespace TransmissionRemoteDotnet
             Program.onError += onErrorDelegate;
             InitializeComponent();
         }
+
         private void ErrorLogWindow_Load(object sender, EventArgs e)
         {
             lock (Program.logItems)
             {
-                foreach (ListViewItem item in Program.logItems)
+                lock (errorListView)
                 {
-                    errorListView.Items.Add(item);
+                    foreach (ListViewItem item in Program.logItems)
+                    {
+                        errorListView.Items.Add(item);
+                    }
                 }
             }
         }
@@ -38,7 +42,10 @@ namespace TransmissionRemoteDotnet
 
         private void button2_Click(object sender, EventArgs e)
         {
-            errorListView.Items.Clear();
+            lock (errorListView)
+            {
+                errorListView.Items.Clear();
+            }
             lock (Program.logItems)
             {
                 Program.logItems.Clear();
@@ -55,12 +62,15 @@ namespace TransmissionRemoteDotnet
             errorListView.SuspendLayout();
             lock (Program.logItems)
             {
-                List<ListViewItem> logItems = Program.logItems;
-                if (logItems.Count > errorListView.Items.Count)
+                lock (errorListView)
                 {
-                    for (int i = errorListView.Items.Count; i < logItems.Count; i++)
+                    List<ListViewItem> logItems = Program.logItems;
+                    if (logItems.Count > errorListView.Items.Count)
                     {
-                        errorListView.Items.Add(logItems[i]);
+                        for (int i = errorListView.Items.Count; i < logItems.Count; i++)
+                        {
+                            errorListView.Items.Add(logItems[i]);
+                        }
                     }
                 }
             }
@@ -69,9 +79,12 @@ namespace TransmissionRemoteDotnet
 
         private void errorListView_DoubleClick(object sender, EventArgs e)
         {
-            if (errorListView.SelectedItems.Count == 1)
+            lock (errorListView)
             {
-                Clipboard.SetText(errorListView.SelectedItems[0].SubItems[2].Text);
+                if (errorListView.SelectedItems.Count == 1)
+                {
+                    Clipboard.SetText(errorListView.SelectedItems[0].SubItems[2].Text);
+                }
             }
         }
     }

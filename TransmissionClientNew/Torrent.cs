@@ -53,9 +53,12 @@ namespace TransmissionRemoteDotnet
         public void Show()
         {
             ListView.ListViewItemCollection itemCollection = Program.form.torrentListView.Items;
-            if (!itemCollection.Contains(item))
+            lock (Program.form.torrentListView)
             {
-                itemCollection.Add(item);
+                if (!itemCollection.Contains(item))
+                {
+                    itemCollection.Add(item);
+                }
             }
         }
 
@@ -69,7 +72,10 @@ namespace TransmissionRemoteDotnet
             }
             else
             {
-                form.torrentListView.Items.Add(item);
+                lock (form.torrentListView)
+                {
+                    form.torrentListView.Items.Add(item);
+                }
                 form.StripeListView();
                 LogError();
             }
@@ -85,10 +91,13 @@ namespace TransmissionRemoteDotnet
             }
             else
             {
-                ListView.ListViewItemCollection itemCollection = Program.form.torrentListView.Items;
-                if (itemCollection.Contains(item))
+                lock (Program.form.torrentListView)
                 {
-                    itemCollection.Remove(item);
+                    ListView.ListViewItemCollection itemCollection = Program.form.torrentListView.Items;
+                    if (itemCollection.Contains(item))
+                    {
+                        itemCollection.Remove(item);
+                    }
                 }
             }
         }
