@@ -54,7 +54,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Download To: ";
+            this.label1.Text = "Download To:";
             // 
             // DownloadToField
             // 
@@ -116,7 +116,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Incoming port: ";
+            this.label2.Text = "Incoming port:";
             // 
             // IncomingPortValue
             // 
@@ -132,7 +132,7 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(159, 149);
+            this.SaveButton.Location = new System.Drawing.Point(156, 142);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 23);
             this.SaveButton.TabIndex = 8;
@@ -143,7 +143,7 @@
             // CloseFormButton
             // 
             this.CloseFormButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CloseFormButton.Location = new System.Drawing.Point(240, 149);
+            this.CloseFormButton.Location = new System.Drawing.Point(237, 142);
             this.CloseFormButton.Name = "CloseFormButton";
             this.CloseFormButton.Size = new System.Drawing.Size(75, 23);
             this.CloseFormButton.TabIndex = 9;
@@ -166,7 +166,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.LimitDownloadCheckBox);
             this.groupBox1.Controls.Add(this.LimitDownloadValue);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(9, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(303, 131);
             this.groupBox1.TabIndex = 10;
@@ -178,7 +178,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CloseFormButton;
-            this.ClientSize = new System.Drawing.Size(332, 182);
+            this.ClientSize = new System.Drawing.Size(324, 175);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CloseFormButton);
             this.Controls.Add(this.SaveButton);

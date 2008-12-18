@@ -12,6 +12,8 @@ namespace TransmissionRemoteDotnet
 {
     public partial class AboutDialog : Form
     {
+        public static readonly string PROJECT_SITE = "http://code.google.com/p/transmission-remote-dotnet/";
+
         public AboutDialog()
         {
             InitializeComponent();

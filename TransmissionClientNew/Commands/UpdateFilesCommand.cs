@@ -24,13 +24,14 @@ namespace TransmissionRemoteDotnet.Commmands
             JsonObject arguments = (JsonObject)response[ProtocolConstants.KEY_ARGUMENTS];
             JsonArray torrents = (JsonArray)arguments[ProtocolConstants.KEY_TORRENTS];
             MainWindow form = Program.form;
-            if (torrents.Count != 1 || form.torrentListView.SelectedItems.Count != 1)
+            ListViewItem item;
+            if (torrents.Count != 1 || form.torrentListView.SelectedItems.Count != 1 || (item = form.torrentListView.SelectedItems[0]) == null)
             {
                 return;
             }
             JsonObject torrent = (JsonObject)torrents[0];
             int id = ((JsonNumber)torrent[ProtocolConstants.FIELD_ID]).ToInt32();
-            Torrent t = (Torrent)form.torrentListView.SelectedItems[0].Tag;
+            Torrent t = (Torrent)item.Tag;
             if (t.Id == id)
             {
                 form.filesListView.SuspendLayout();
@@ -63,27 +64,31 @@ namespace TransmissionRemoteDotnet.Commmands
                 string percentStr = Toolbox.CalcPercentage(done, length) + "%";
                 string completeStr = Toolbox.GetFileSize(done);
                 string name = (string)file[ProtocolConstants.FIELD_NAME];
-                if (i >= listView.Items.Count && priorities != null)
+                listView.SuspendLayout();
+                lock (listView)
                 {
-                    ListViewItem item = new ListViewItem(name);
-                    item.Name = name;
-                    item.ToolTipText = name;
-                    item.SubItems.Add(lengthStr);
-                    item.SubItems.Add(completeStr);
-                    item.SubItems.Add(percentStr);
-                    item.SubItems.Add(((JsonNumber)wanted[i]).ToBoolean() ? "No" : "Yes");
-                    item.SubItems.Add(Toolbox.FormatPriority((JsonNumber)priorities[i]));
-                    listView.Items.Add(item);
+                    if (i >= listView.Items.Count && priorities != null)
+                    {
+                        ListViewItem item = new ListViewItem(name);
+                        item.Name = name;
+                        item.ToolTipText = name;
+                        item.SubItems.Add(lengthStr);
+                        item.SubItems.Add(completeStr);
+                        item.SubItems.Add(percentStr);
+                        item.SubItems.Add(((JsonNumber)wanted[i]).ToBoolean() ? "No" : "Yes");
+                        item.SubItems.Add(Toolbox.FormatPriority((JsonNumber)priorities[i]));
+                        listView.Items.Add(item);
+                    }
+                    else
+                    {
+                        ListViewItem item = listView.Items[i];
+                        item.SubItems[1].Text = lengthStr;
+                        item.SubItems[2].Text = completeStr;
+                        item.SubItems[3].Text = percentStr;
+                    }
                 }
-                else
-                {
-                    ListViewItem item = listView.Items[i];
-                    item.SubItems[1].Text = lengthStr;
-                    item.SubItems[2].Text = completeStr;
-                    item.SubItems[3].Text = percentStr;
-                }
+                listView.ResumeLayout();
             }
-            listView.ResumeLayout();
         }
     }
 }

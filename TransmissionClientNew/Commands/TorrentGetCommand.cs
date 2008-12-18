@@ -67,8 +67,7 @@ namespace TransmissionRemoteDotnet.Commmands
                 }
             }
             form.ResumeTorrentListView();
-            form.UpdateStatus("Connected | "+ Toolbox.GetFileSize(totalDownload) + "/s down, " + Toolbox.GetFileSize(totalUpload) + "/s up | "+totalTorrents+" torrents: "+totalDownloading+" downloading, "+totalSeeding+" seeding | "+Toolbox.GetFileSize(totalDownloadedSize)+" / "+Toolbox.GetFileSize(totalSize));
-            form.UpdateInfoPanel(false);
+            form.UpdateStatus("Connected | " + Toolbox.GetFileSize(totalDownload) + "/s down, " + Toolbox.GetFileSize(totalUpload) + "/s up | " + totalTorrents + " torrents: " + totalDownloading + " downloading, " + totalSeeding + " seeding | " + Toolbox.GetFileSize(totalDownloadedSize) + " / " + Toolbox.GetFileSize(totalSize));
             Queue<int> removeQueue = new Queue<int>();
             foreach (KeyValuePair<int, Torrent> pair in Program.torrentIndex)
             {
@@ -86,23 +85,24 @@ namespace TransmissionRemoteDotnet.Commmands
                     Program.torrentIndex.Remove(id);
                 }
             }
-            if (beginLoop)
-            {
-                BeginLoop();
-            }
+            PostUpdateUiOperations();
         }
 
-        private delegate void BeginLoopDelegate();
-        private void BeginLoop()
+        private delegate void PostUpdateUiOperationsDelegate();
+        private void PostUpdateUiOperations()
         {
             MainWindow form = Program.form;
             if (form.InvokeRequired)
             {
-                form.Invoke(new BeginLoopDelegate(this.BeginLoop));
+                form.Invoke(new PostUpdateUiOperationsDelegate(this.PostUpdateUiOperations));
             }
             else
             {
-                form.refreshTimer.Enabled = true;
+                if (beginLoop)
+                {
+                    form.refreshTimer.Enabled = true;
+                }
+                Program.RaisePostUpdateEvent();
             }
         }
     }

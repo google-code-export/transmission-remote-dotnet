@@ -89,7 +89,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Host: ";
+            this.label1.Text = "Host:";
             // 
             // HostField
             // 
@@ -105,7 +105,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Port: ";
+            this.label2.Text = "Port:";
             // 
             // PortField
             // 
@@ -226,7 +226,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 13);
             this.label10.TabIndex = 8;
-            this.label10.Text = "Retry limit: ";
+            this.label10.Text = "Retry limit:";
             // 
             // RetryLimitValue
             // 
@@ -295,7 +295,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(32, 13);
             this.label7.TabIndex = 2;
-            this.label7.Text = "Port: ";
+            this.label7.Text = "Port:";
             // 
             // ProxyPassField
             // 
@@ -348,7 +348,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(59, 13);
             this.label9.TabIndex = 8;
-            this.label9.Text = "Password: ";
+            this.label9.Text = "Password:";
             // 
             // label8
             // 
@@ -357,7 +357,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(35, 13);
             this.label8.TabIndex = 5;
-            this.label8.Text = "User: ";
+            this.label8.Text = "User:";
             // 
             // label6
             // 
@@ -366,7 +366,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 13);
             this.label6.TabIndex = 0;
-            this.label6.Text = "Host: ";
+            this.label6.Text = "Host:";
             // 
             // StartPausedCheckBox
             // 
@@ -402,7 +402,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 0;
-            this.label4.Text = "User: ";
+            this.label4.Text = "User:";
             // 
             // PassField
             // 
@@ -430,7 +430,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 3;
-            this.label5.Text = "Password: ";
+            this.label5.Text = "Password:";
             // 
             // groupBox1
             // 

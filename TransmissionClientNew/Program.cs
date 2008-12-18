@@ -7,10 +7,13 @@ using System.Net;
 namespace TransmissionRemoteDotnet
 {
     public delegate void ConnStatusChangedDelegate(bool connected);
+    public delegate void TorrentsUpdatedDelegate();
 
     static class Program
     {
-        public static event ConnStatusChangedDelegate connStatusChanged;
+        public static event ConnStatusChangedDelegate onConnStatusChanged;
+        public static event TorrentsUpdatedDelegate onTorrentsUpdated;
+
         private static Boolean connected = false;
         public static MainWindow form;
         public static Dictionary<int, Torrent> torrentIndex = new Dictionary<int, Torrent>();
@@ -75,6 +78,14 @@ namespace TransmissionRemoteDotnet
             failCount = 0;
         }
 
+        public static void RaisePostUpdateEvent()
+        {
+            if (onTorrentsUpdated != null)
+            {
+                onTorrentsUpdated();
+            }
+        }
+
         public static bool Connected
         {
             set
@@ -91,9 +102,9 @@ namespace TransmissionRemoteDotnet
                         torrentIndex.Clear();
                     }
                 }
-                if (connStatusChanged != null)
+                if (onConnStatusChanged != null)
                 {
-                    connStatusChanged(connected);
+                    onConnStatusChanged(connected);
                 }
             }
             get
