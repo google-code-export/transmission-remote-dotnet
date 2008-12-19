@@ -30,12 +30,16 @@ namespace TransmissionRemoteDotnet
             torrentAndTabsSplitContainer.Panel2Collapsed = true;
         }
 
-        void Program_onTorrentsUpdated()
+        private void Program_onTorrentsUpdated()
         {
             lock (torrentListView)
             {
                 UpdateInfoPanel(false);
                 stateListBox.Enabled = torrentListView.Enabled = true;
+            }
+            if (Program.updateSerial <= 1)
+            {
+                refreshTimer.Enabled = true;
             }
         }
 

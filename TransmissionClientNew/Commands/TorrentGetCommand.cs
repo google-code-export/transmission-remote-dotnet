@@ -107,10 +107,6 @@ namespace TransmissionRemoteDotnet.Commmands
             }
             else
             {
-                if (Program.updateSerial <= 1)
-                {
-                    form.refreshTimer.Enabled = true;
-                }
                 Program.RaisePostUpdateEvent();
             }
         }
