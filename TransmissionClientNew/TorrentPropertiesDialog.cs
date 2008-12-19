@@ -47,8 +47,8 @@ namespace TransmissionRemoteDotnet
             this.Text = torrent.Name + " - Torrent Properties";
             uploadLimitField.Enabled = uploadLimitEnableField.Checked = torrent.UploadLimitMode;
             downloadLimitField.Enabled = downloadLimitEnableField.Checked = torrent.DownloadLimitMode;
-            uploadLimitField.Value = torrent.UploadLimit;
-            downloadLimitField.Value = torrent.DownloadLimit;
+            uploadLimitField.Value = torrent.UploadLimit >= 0 && torrent.UploadLimit <= uploadLimitField.Maximum ? torrent.UploadLimit : 0;
+            downloadLimitField.Value = torrent.DownloadLimit >= 0 && torrent.DownloadLimit <= downloadLimitField.Maximum ? torrent.DownloadLimit : 0;
         }
 
         private void downloadLimitEnableField_CheckedChanged(object sender, EventArgs e)

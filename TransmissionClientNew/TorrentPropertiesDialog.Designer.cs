@@ -85,6 +85,11 @@
             // downloadLimitField
             // 
             this.downloadLimitField.Location = new System.Drawing.Point(153, 40);
+            this.downloadLimitField.Maximum = new decimal(new int[] {
+            1048576,
+            0,
+            0,
+            0});
             this.downloadLimitField.Name = "downloadLimitField";
             this.downloadLimitField.Size = new System.Drawing.Size(56, 20);
             this.downloadLimitField.TabIndex = 9;
@@ -92,6 +97,11 @@
             // uploadLimitField
             // 
             this.uploadLimitField.Location = new System.Drawing.Point(153, 16);
+            this.uploadLimitField.Maximum = new decimal(new int[] {
+            1048576,
+            0,
+            0,
+            0});
             this.uploadLimitField.Name = "uploadLimitField";
             this.uploadLimitField.Size = new System.Drawing.Size(56, 20);
             this.uploadLimitField.TabIndex = 8;
@@ -138,6 +148,7 @@
             // 
             // button2
             // 
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Location = new System.Drawing.Point(224, 122);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(72, 22);
@@ -158,8 +169,10 @@
             // 
             // TorrentPropertiesDialog
             // 
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(310, 157);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.tabControl1);

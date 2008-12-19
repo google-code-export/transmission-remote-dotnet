@@ -83,12 +83,12 @@ namespace TransmissionRemoteDotnet
         private void SettingsWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             e.Result = CommandFactory.Request((JsonObject)e.Argument);
-            CommandFactory.Request(Requests.SessionGet());
         }
 
         private void SettingsWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             TransmissionCommand command = (TransmissionCommand)e.Result;
+            Program.form.CreateActionWorker().RunWorkerAsync(Requests.SessionGet());
             command.Execute();
         }
     }
