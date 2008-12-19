@@ -662,7 +662,7 @@ namespace TransmissionRemoteDotnet
                     if (torrentListView.SelectedItems.Count == 1)
                     {
                         Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
-                        filesWorker.RunWorkerAsync(Requests.Files(t.Id));
+                        filesWorker.RunWorkerAsync(t.Id);
                     }
                 }
             }
@@ -670,7 +670,8 @@ namespace TransmissionRemoteDotnet
 
         private void filesWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            e.Result = CommandFactory.Request((JsonObject)e.Argument);
+            int id = (int)e.Argument;
+            e.Result = CommandFactory.Request(Requests.Files(id));
         }
 
         private void filesWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)

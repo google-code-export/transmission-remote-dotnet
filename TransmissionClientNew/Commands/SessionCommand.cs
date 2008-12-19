@@ -10,15 +10,34 @@ namespace TransmissionRemoteDotnet.Commmands
 {
     public class SessionCommand : TransmissionCommand
     {
+        private double ParseVersionString(string str)
+        {
+            for (int i = 0; i < str.Length; i++)
+            {
+                if ((str[i] < (int)'0' || str[i] > (int)'9') && str[i] != (int)'.')
+                {
+                    return Double.Parse(str.Substring(0, i));
+                }
+            }
+            throw new FormatException("Unable to parse: " + str);
+        }
+
         public SessionCommand(JsonObject response, WebHeaderCollection headers)
         {
             /* I'm not exactly sure if the version numbers here are correct
              * but for the purposes of what it's used for these heuristics
-             * work fine at the moment. I'll make use of the content of the
-             * version response after the next release. */
-            if (response.Contains("version"))
+             * work fine at the moment. */
+            JsonObject arguments = (JsonObject)response["arguments"];
+            if (arguments.Contains("version"))
             {
-                Program.transmissionVersion = 1.41;
+                try
+                {
+                    Program.transmissionVersion = ParseVersionString((string)arguments["version"]);
+                }
+                catch (Exception)
+                {
+                    Program.transmissionVersion = 1.41;
+                }
             }
             else if (headers.Get("Server") != null)
             {
@@ -36,7 +55,6 @@ namespace TransmissionRemoteDotnet.Commmands
         {
             if (!Program.Connected)
             {
-
                 Program.Connected = true;
                 if (!Program.form.refreshWorker.IsBusy)
                 {

@@ -54,7 +54,7 @@ namespace TransmissionRemoteDotnet
         public string host = "";
         public int port = 9091;
         public Boolean useSSL = false;
-        public int refreshRate = 5;
+        public int refreshRate = 2;
         public Boolean autoConnect = false;
         public string user = "";
         public string pass = "";
@@ -67,7 +67,7 @@ namespace TransmissionRemoteDotnet
         public string proxyPass = "";
         public Boolean proxyAuth = false;
         public Boolean startPaused = false;
-        public int retryLimit = 3;
+        public int retryLimit = 5;
 
         private LocalSettingsSingleton()
         {
