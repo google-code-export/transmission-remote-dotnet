@@ -8,7 +8,7 @@ namespace TransmissionRemoteDotnet.Commmands
 {
     public class ErrorCommand : TransmissionCommand
     {
-        private static readonly int MAX_MESSAGE_LENGTH = 300;
+        private static readonly int MAX_MESSAGE_LENGTH = 500;
         private string title;
         private string body;
 

@@ -65,7 +65,18 @@ namespace TransmissionRemoteDotnet.Commmands
                 }
             }
             form.ResumeTorrentListView();
-            form.UpdateStatus("Connected | " + Toolbox.GetFileSize(totalDownload) + "/s down, " + Toolbox.GetFileSize(totalUpload) + "/s up | " + totalTorrents + " torrents: " + totalDownloading + " downloading, " + totalSeeding + " seeding | " + Toolbox.GetFileSize(totalDownloadedSize) + " / " + Toolbox.GetFileSize(totalSize));
+            form.UpdateStatus(String.Format(
+                "Connected | {0} down, {1} up | {2} torrents: {3} downloading, {4} seeding | {5} / {6}",
+                new object[] {
+                    Toolbox.GetSpeed(totalDownload),
+                    Toolbox.GetSpeed(totalUpload),
+                    totalTorrents,
+                    totalDownloading,
+                    totalSeeding,
+                    Toolbox.GetFileSize(totalDownloadedSize),
+                    Toolbox.GetFileSize(totalSize)
+                }
+                ));
             Queue<int> removeQueue = new Queue<int>();
             foreach (KeyValuePair<int, Torrent> pair in Program.torrentIndex)
             {

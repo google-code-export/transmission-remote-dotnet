@@ -10,20 +10,20 @@ namespace TransmissionRemoteDotnet
 {
     class Toolbox
     {
-        private const int stripe_offset = 15;
+        private static readonly int STRIPE_OFFSET = 15;
 
         public static void StripeListView(ListView list)
         {
             Color window = SystemColors.Window;
             /* Check for weird window backgrounds */
-            if (window.R >= stripe_offset && window.G >= stripe_offset && window.B >= stripe_offset)
+            if (window.R >= STRIPE_OFFSET && window.G >= STRIPE_OFFSET && window.B >= STRIPE_OFFSET)
             {
                 foreach (ListViewItem item in list.Items)
                 {
                     item.BackColor = item.Index % 2 == 1 ?
-                        Color.FromArgb(window.R - stripe_offset,
-                            window.G - stripe_offset,
-                            window.B - stripe_offset)
+                        Color.FromArgb(window.R - STRIPE_OFFSET,
+                            window.G - STRIPE_OFFSET,
+                            window.B - STRIPE_OFFSET)
                         : window;
                 }
             }
@@ -86,26 +86,31 @@ namespace TransmissionRemoteDotnet
             return String.Format("{0}d {1}h {2}m {3}s", new object[] { span.Days, span.Hours, span.Minutes, span.Seconds });
         }
 
-        public static string GetFileSize(long Bytes)
+        public static string GetSpeed(long bytes)
         {
-            if (Bytes >= 1073741824)
+            return GetFileSize(bytes) + "/s";
+        }
+
+        public static string GetFileSize(long bytes)
+        {
+            if (bytes >= 1073741824)
             {
-                Decimal size = Decimal.Divide(Bytes, 1073741824);
+                Decimal size = Decimal.Divide(bytes, 1073741824);
                 return String.Format("{0:##.##} GB", size);
             }
-            else if (Bytes >= 1048576)
+            else if (bytes >= 1048576)
             {
-                Decimal size = Decimal.Divide(Bytes, 1048576);
+                Decimal size = Decimal.Divide(bytes, 1048576);
                 return String.Format("{0:##.##} MB", size);
             }
-            else if (Bytes >= 1024)
+            else if (bytes >= 1024)
             {
-                Decimal size = Decimal.Divide(Bytes, 1024);
+                Decimal size = Decimal.Divide(bytes, 1024);
                 return String.Format("{0:##.##} KB", size);
             }
-            else if (Bytes > 0 & Bytes < 1024)
+            else if (bytes > 0 & bytes < 1024)
             {
-                Decimal size = Bytes;
+                Decimal size = bytes;
                 return String.Format("{0:##.##} B", size);
             }
             else

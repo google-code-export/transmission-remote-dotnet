@@ -89,7 +89,7 @@ namespace TransmissionRemoteDotnet.Commmands
                         item.SubItems.Add(Toolbox.FormatPriority((JsonNumber)priorities[i]));
                         listView.Items.Add(item);
                     }
-                    else
+                    else if (i < listView.Items.Count)
                     {
                         ListViewItem item = listView.Items[i];
                         item.SubItems[1].Text = lengthStr;

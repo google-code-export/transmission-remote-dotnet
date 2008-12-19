@@ -269,10 +269,13 @@ namespace TransmissionRemoteDotnet
         private JsonArray BuildIdArray()
         {
             JsonArray ids = new JsonArray();
-            foreach (ListViewItem item in torrentListView.SelectedItems)
+            lock (torrentListView)
             {
-                Torrent t = (Torrent)item.Tag;
-                ids.Put(t.Id);
+                foreach (ListViewItem item in torrentListView.SelectedItems)
+                {
+                    Torrent t = (Torrent)item.Tag;
+                    ids.Put(t.Id);
+                }
             }
             return ids;
         }
@@ -417,6 +420,7 @@ namespace TransmissionRemoteDotnet
                 }
                 if (one)
                 {
+                    filesListView.Enabled = false;
                     peersListView.Tag = 0;
                     Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
                     CreateActionWorker().RunWorkerAsync(Requests.FilesAndPriorities(t.Id));
@@ -855,10 +859,7 @@ namespace TransmissionRemoteDotnet
                 downloadSpeedLabel.Text = t.DownloadRate;
                 downloadLimitLabel.Text = t.DownloadLimitMode ? Toolbox.KbpsString(t.DownloadLimit) : "∞";
                 statusLabel.Text = t.Status;
-                if (!(errorLabel.Text = t.ErrorString).Equals(""))
-                {
-                    labelForErrorLabel.Visible = errorLabel.Visible = true;
-                }
+                labelForErrorLabel.Visible = errorLabel.Visible = !(errorLabel.Text = t.ErrorString).Equals("");
                 RefreshElapsedTimer();
                 if (t.Peers != null)
                 {
@@ -872,18 +873,19 @@ namespace TransmissionRemoteDotnet
                             item = new ListViewItem((string)peer["address"]);
                             item.SubItems.Add("");
                             item.SubItems.Add((string)peer["clientName"]);
-                            item.SubItems.Add((string)peer["progress"] + "%");
-                            item.SubItems.Add(Toolbox.GetFileSize(((JsonNumber)peer["rateToClient"]).ToInt64()) + "/s");
-                            item.SubItems.Add(Toolbox.GetFileSize(((JsonNumber)peer["rateToPeer"]).ToInt64()) + "/s");
+                            item.ToolTipText = item.SubItems[2].Text;
+                            item.SubItems.Add((string)peer[ProtocolConstants.FIELD_PROGRESS] + "%");
+                            item.SubItems.Add(Toolbox.GetSpeed(((JsonNumber)peer[ProtocolConstants.FIELD_RATETOCLIENT]).ToInt64()));
+                            item.SubItems.Add(Toolbox.GetSpeed(((JsonNumber)peer[ProtocolConstants.FIELD_RATETOPEER]).ToInt64()));
                             peersListView.Items.Add(item);
                             Toolbox.StripeListView(peersListView);
                             CreateHostnameResolutionWorker().RunWorkerAsync(item);
                         }
                         else
                         {
-                            item.SubItems[3].Text = (string)peer["progress"] + "%";
-                            item.SubItems[4].Text = Toolbox.GetFileSize(((JsonNumber)peer["rateToClient"]).ToInt64());
-                            item.SubItems[5].Text = Toolbox.GetFileSize(((JsonNumber)peer["rateToPeer"]).ToInt64());
+                            item.SubItems[3].Text = (string)peer[ProtocolConstants.FIELD_PROGRESS] + "%";
+                            item.SubItems[4].Text = Toolbox.GetSpeed(((JsonNumber)peer[ProtocolConstants.FIELD_RATETOCLIENT]).ToInt64());
+                            item.SubItems[5].Text = Toolbox.GetSpeed(((JsonNumber)peer[ProtocolConstants.FIELD_RATETOPEER]).ToInt64());
                         }
                         item.Tag = peersListView.Tag;
                     }

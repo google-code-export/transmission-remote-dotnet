@@ -1163,6 +1163,7 @@
             this.torrentListView.FullRowSelect = true;
             this.torrentListView.Location = new System.Drawing.Point(0, 0);
             this.torrentListView.Name = "torrentListView";
+            this.torrentListView.ShowItemToolTips = true;
             this.torrentListView.Size = new System.Drawing.Size(848, 228);
             this.torrentListView.TabIndex = 0;
             this.torrentListView.UseCompatibleStateImageBehavior = false;
@@ -1199,10 +1200,12 @@
             // columnHeader12
             // 
             this.columnHeader12.Text = "Down Speed";
+            this.columnHeader12.Width = 80;
             // 
             // columnHeader13
             // 
             this.columnHeader13.Text = "Up Speed";
+            this.columnHeader13.Width = 80;
             // 
             // columnHeader14
             // 
@@ -1211,6 +1214,7 @@
             // columnHeader15
             // 
             this.columnHeader15.Text = "Uploaded";
+            this.columnHeader15.Width = 90;
             // 
             // columnHeader16
             // 
@@ -1268,6 +1272,7 @@
             this.filesListView.FullRowSelect = true;
             this.filesListView.Location = new System.Drawing.Point(3, 16);
             this.filesListView.Name = "filesListView";
+            this.filesListView.ShowItemToolTips = true;
             this.filesListView.Size = new System.Drawing.Size(828, 206);
             this.filesListView.TabIndex = 0;
             this.filesListView.UseCompatibleStateImageBehavior = false;
@@ -1282,10 +1287,12 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Size";
+            this.columnHeader2.Width = 70;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Done";
+            this.columnHeader3.Width = 70;
             // 
             // columnHeader4
             // 
@@ -1294,10 +1301,12 @@
             // columnHeader17
             // 
             this.columnHeader17.Text = "Skip";
+            this.columnHeader17.Width = 55;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Priority";
+            this.columnHeader5.Width = 50;
             // 
             // peersListView
             // 
@@ -1312,6 +1321,7 @@
             this.peersListView.FullRowSelect = true;
             this.peersListView.Location = new System.Drawing.Point(3, 16);
             this.peersListView.Name = "peersListView";
+            this.peersListView.ShowItemToolTips = true;
             this.peersListView.Size = new System.Drawing.Size(828, 206);
             this.peersListView.TabIndex = 0;
             this.peersListView.UseCompatibleStateImageBehavior = false;

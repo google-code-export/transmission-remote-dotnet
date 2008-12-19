@@ -91,10 +91,10 @@ namespace TransmissionRemoteDotnet
                 ProtocolConstants.FIELD_UPLOADLIMIT,
                 ProtocolConstants.FIELD_UPLOADLIMITMODE,
                 ProtocolConstants.FIELD_NAME,
-                "sizeWhenDone","swarmSpeed",
-                "isPrivate","comment","creator","dateCreated",
-                "hashString","peers",
-                "error","errorString", "trackers",
+                ProtocolConstants.FIELD_ERRORSTRING,
+                "sizeWhenDone","swarmSpeed", "isPrivate",
+                "comment","creator","dateCreated",
+                "hashString","peers", "error","trackers",
                 "peersGettingFromUs","peersKnown","peersSendingToUs"});
             arguments.Put(ProtocolConstants.KEY_FIELDS, fields);
             request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);

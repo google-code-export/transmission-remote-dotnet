@@ -101,11 +101,11 @@ namespace TransmissionRemoteDotnet
             }
             catch (InvalidCastException)
             {
-                return new ErrorCommand("Unable to parse the following response (possible protocol violation)", str_response != null ? str_response : "Null");
+                return new ErrorCommand("Unable to parse the server response (possible protocol violation)", str_response != null ? str_response : "Null");
             }
             catch (JsonException ex)
             {
-                return new ErrorCommand(ex.GetType().ToString() + " (" + ex.Message + ")", "This error can usually be fixed by upgrading transmission or increasing the retry limit. The following is the JSON output:\r\n "+str_response);
+                return new ErrorCommand("Unable to parse server response (" + ex.Message + ")", "This error can usually be fixed by upgrading transmission or increasing the retry limit. The following is the JSON output:\r\n\r\n "+str_response);
             }
             catch (Exception ex)
             {

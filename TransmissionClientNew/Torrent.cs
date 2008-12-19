@@ -32,7 +32,7 @@ namespace TransmissionRemoteDotnet
             item.SubItems.Add(this.UploadedString);
             item.SubItems.Add(this.RatioString);
             item.SubItems.Add(this.Added.ToString());
-            item.SubItems.Add("N/A");
+            item.SubItems.Add(percentage >= 100 ? "Unknown" : "N/A");
             Program.torrentIndex[this.Id] = this;
             Add();
             LogError();
@@ -239,7 +239,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return (string)info["errorString"];
+                return (string)info[ProtocolConstants.FIELD_ERRORSTRING];
             }
         }
 
@@ -317,7 +317,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return Toolbox.GetFileSize(((JsonNumber)info["swarmSpeed"]).ToInt64()) + "/s";
+                return Toolbox.GetSpeed(((JsonNumber)info["swarmSpeed"]).ToInt64());
             }
         }
 
@@ -405,7 +405,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return Toolbox.GetFileSize(((JsonNumber)info[ProtocolConstants.FIELD_RATEDOWNLOAD]).ToInt64()) + "/s";
+                return Toolbox.GetSpeed(((JsonNumber)info[ProtocolConstants.FIELD_RATEDOWNLOAD]).ToInt64());
             }
         }
 
@@ -413,7 +413,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return Toolbox.GetFileSize(((JsonNumber)info[ProtocolConstants.FIELD_RATEUPLOAD]).ToInt64()) + "/s";
+                return Toolbox.GetSpeed(((JsonNumber)info[ProtocolConstants.FIELD_RATEUPLOAD]).ToInt64());
             }
         }
 

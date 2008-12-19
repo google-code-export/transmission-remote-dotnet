@@ -27,6 +27,7 @@ namespace TransmissionRemoteDotnet.Commmands
             if (this.host != null && !host.HostName.Equals(this.item.SubItems[0].Text))
             {
                 this.item.SubItems[1].Text = host.HostName;
+                item.ToolTipText = host.HostName;
             }
         }
     }
