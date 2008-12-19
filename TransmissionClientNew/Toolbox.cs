@@ -78,7 +78,7 @@ namespace TransmissionRemoteDotnet
 
         public static string KbpsString(int rate)
         {
-            return String.Format("{0}KB/s", rate);
+            return rate + " KB/s";
         }
 
         public static string FormatTimespanLong(TimeSpan span)

@@ -69,16 +69,29 @@ namespace TransmissionRemoteDotnet.Commmands
             for (int i = 0; i < files.Length; i++)
             {
                 JsonObject file = (JsonObject)files[i];
-                long length = ((JsonNumber)file["length"]).ToInt64();
                 long done = ((JsonNumber)file["bytesCompleted"]).ToInt64();
-                string lengthStr = Toolbox.GetFileSize(length);
+                long length = ((JsonNumber)file["length"]).ToInt64();
                 string percentStr = Toolbox.CalcPercentage(done, length) + "%";
                 string completeStr = Toolbox.GetFileSize(done);
-                string name = (string)file[ProtocolConstants.FIELD_NAME];
                 lock (listView)
                 {
                     if (i >= listView.Items.Count && priorities != null && wanted != null)
                     {
+                        string lengthStr = Toolbox.GetFileSize(length);
+                        string name = (string)file[ProtocolConstants.FIELD_NAME];
+                        int fwdSlashPos = name.IndexOf('/');
+                        if (fwdSlashPos > 0)
+                        {
+                            name = name.Remove(0, fwdSlashPos + 1);
+                        }
+                        else
+                        {
+                            int bckSlashPos = name.IndexOf('\\');
+                            if (bckSlashPos > 0)
+                            {
+                                name = name.Remove(0, bckSlashPos + 1);
+                            }
+                        }
                         ListViewItem item = new ListViewItem(name);
                         item.Name = name;
                         item.ToolTipText = name;
@@ -92,7 +105,6 @@ namespace TransmissionRemoteDotnet.Commmands
                     else if (i < listView.Items.Count)
                     {
                         ListViewItem item = listView.Items[i];
-                        item.SubItems[1].Text = lengthStr;
                         item.SubItems[2].Text = completeStr;
                         item.SubItems[3].Text = percentStr;
                     }
