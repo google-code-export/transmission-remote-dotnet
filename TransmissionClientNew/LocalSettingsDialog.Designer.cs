@@ -67,6 +67,7 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PortField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RefreshRateValue)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -87,7 +88,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(8, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Host:";
             // 
@@ -103,7 +104,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(8, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Port:";
             // 
@@ -131,7 +132,7 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(161, 185);
+            this.SaveButton.Location = new System.Drawing.Point(52, 185);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(81, 23);
             this.SaveButton.TabIndex = 4;
@@ -224,7 +225,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(8, 104);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(58, 13);
+            this.label10.Size = new System.Drawing.Size(55, 13);
             this.label10.TabIndex = 8;
             this.label10.Text = "Retry limit:";
             // 
@@ -293,7 +294,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(7, 52);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(32, 13);
+            this.label7.Size = new System.Drawing.Size(29, 13);
             this.label7.TabIndex = 2;
             this.label7.Text = "Port:";
             // 
@@ -346,7 +347,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(8, 104);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 13);
+            this.label9.Size = new System.Drawing.Size(56, 13);
             this.label9.TabIndex = 8;
             this.label9.Text = "Password:";
             // 
@@ -355,7 +356,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(8, 78);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.Size = new System.Drawing.Size(32, 13);
             this.label8.TabIndex = 5;
             this.label8.Text = "User:";
             // 
@@ -364,7 +365,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(8, 25);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.Size = new System.Drawing.Size(32, 13);
             this.label6.TabIndex = 0;
             this.label6.Text = "Host:";
             // 
@@ -390,7 +391,7 @@
             // 
             // UserField
             // 
-            this.UserField.Location = new System.Drawing.Point(85, 22);
+            this.UserField.Location = new System.Drawing.Point(85, 47);
             this.UserField.Name = "UserField";
             this.UserField.Size = new System.Drawing.Size(109, 20);
             this.UserField.TabIndex = 1;
@@ -398,15 +399,15 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 25);
+            this.label4.Location = new System.Drawing.Point(6, 50);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "User:";
             // 
             // PassField
             // 
-            this.PassField.Location = new System.Drawing.Point(85, 48);
+            this.PassField.Location = new System.Drawing.Point(85, 73);
             this.PassField.Name = "PassField";
             this.PassField.PasswordChar = '*';
             this.PassField.Size = new System.Drawing.Size(109, 20);
@@ -415,20 +416,20 @@
             // EnableAuthCheckBox
             // 
             this.EnableAuthCheckBox.AutoSize = true;
-            this.EnableAuthCheckBox.Location = new System.Drawing.Point(202, 25);
+            this.EnableAuthCheckBox.Location = new System.Drawing.Point(9, 19);
             this.EnableAuthCheckBox.Name = "EnableAuthCheckBox";
-            this.EnableAuthCheckBox.Size = new System.Drawing.Size(59, 17);
+            this.EnableAuthCheckBox.Size = new System.Drawing.Size(129, 17);
             this.EnableAuthCheckBox.TabIndex = 2;
-            this.EnableAuthCheckBox.Text = "Enable";
+            this.EnableAuthCheckBox.Text = "Enable authentication";
             this.EnableAuthCheckBox.UseVisualStyleBackColor = true;
             this.EnableAuthCheckBox.CheckedChanged += new System.EventHandler(this.EnableAuthCheckBox_CheckedChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 52);
+            this.label5.Location = new System.Drawing.Point(5, 77);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 13);
+            this.label5.Size = new System.Drawing.Size(56, 13);
             this.label5.TabIndex = 3;
             this.label5.Text = "Password:";
             // 
@@ -499,6 +500,16 @@
             this.tabPage3.Text = "Proxy";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(139, 185);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(104, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Save and Connect";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // LocalSettingsDialog
             // 
             this.AcceptButton = this.SaveButton;
@@ -506,6 +517,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CloseDialogButton;
             this.ClientSize = new System.Drawing.Size(347, 219);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.CloseDialogButton);
             this.Controls.Add(this.SaveButton);
@@ -576,5 +588,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button button1;
     }
 }

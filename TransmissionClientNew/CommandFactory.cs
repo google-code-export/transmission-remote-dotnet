@@ -34,7 +34,7 @@ namespace TransmissionRemoteDotnet
                 File.Delete(target);
             }
             catch { }
-            return command;
+            return command != null ? command : new NoCommand();
         }
 
         public static TransmissionCommand UploadFile(string file)
@@ -105,7 +105,7 @@ namespace TransmissionRemoteDotnet
             }
             catch (JsonException ex)
             {
-                return new ErrorCommand("Unable to parse server response (" + ex.Message + ")", "This error can usually be fixed by upgrading transmission or increasing the retry limit. The following is the JSON output:\r\n\r\n "+str_response);
+                return new ErrorCommand("Unable to parse the server response (" + ex.Message + ")", "This error can usually be fixed by upgrading transmission or increasing the retry limit. The following is the JSON output:\r\n\r\n "+str_response);
             }
             catch (Exception ex)
             {

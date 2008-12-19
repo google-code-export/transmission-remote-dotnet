@@ -78,17 +78,17 @@ namespace TransmissionRemoteDotnet.Commmands
                 }
                 ));
             Queue<int> removeQueue = new Queue<int>();
-            foreach (KeyValuePair<int, Torrent> pair in Program.torrentIndex)
-            {
-                Torrent t = pair.Value;
-                if (t.updateSerial != Program.updateSerial)
-                {
-                    t.Remove();
-                    removeQueue.Enqueue(pair.Key);
-                }
-            }
             lock (Program.torrentIndex)
             {
+                foreach (KeyValuePair<int, Torrent> pair in Program.torrentIndex)
+                {
+                    Torrent t = pair.Value;
+                    if (t.updateSerial != Program.updateSerial)
+                    {
+                        t.Remove();
+                        removeQueue.Enqueue(pair.Key);
+                    }
+                }
                 foreach (int id in removeQueue)
                 {
                     Program.torrentIndex.Remove(id);

@@ -76,7 +76,7 @@ namespace TransmissionRemoteDotnet
                 {
                     form.torrentListView.Items.Add(item);
                 }
-                form.StripeListView();
+                Toolbox.StripeListView(form.torrentListView);
                 LogError();
             }
         }
@@ -91,12 +91,13 @@ namespace TransmissionRemoteDotnet
             }
             else
             {
-                lock (Program.form.torrentListView)
+                lock (form.torrentListView)
                 {
-                    ListView.ListViewItemCollection itemCollection = Program.form.torrentListView.Items;
+                    ListView.ListViewItemCollection itemCollection = form.torrentListView.Items;
                     if (itemCollection.Contains(item))
                     {
                         itemCollection.Remove(item);
+                        Toolbox.StripeListView(form.torrentListView);
                     }
                 }
             }

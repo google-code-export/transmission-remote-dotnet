@@ -48,7 +48,7 @@ namespace TransmissionRemoteDotnet
             this.Close();
         }
 
-        private void SaveButton_Click(object sender, EventArgs e)
+        private void SaveSettings()
         {
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
             settings.host = HostField.Text;
@@ -69,6 +69,12 @@ namespace TransmissionRemoteDotnet
             settings.startPaused = StartPausedCheckBox.Checked;
             settings.retryLimit = (int)RetryLimitValue.Value;
             settings.Commit();
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            SaveSettings();
+            LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
             if (Program.Connected && (settings.host != originalHost || settings.port != originalPort))
             {
                 Program.Connected = false;
@@ -91,6 +97,14 @@ namespace TransmissionRemoteDotnet
         private void ProxyAuthEnableCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             ProxyUserField.Enabled = ProxyPassField.Enabled = ProxyAuthEnableCheckBox.Checked;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveSettings();
+            Program.Connected = false;
+            Program.form.Connect();
+            this.Close();
         }
     }
 }

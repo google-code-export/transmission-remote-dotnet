@@ -34,11 +34,11 @@ namespace TransmissionRemoteDotnet
 
         public static void SetupWebRequest(HttpWebRequest request)
         {
-            /* Very important !!! Fixes bug in .NET (or shttpd?) */
-            request.KeepAlive = false;
+            /* Resolves a bug in shttpd (older T versions). */
+            //request.KeepAlive = Program.transmissionVersion < 1.40;
+            request.KeepAlive = false; 
             request.UserAgent = TransmissionWebClient.userAgent;
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-
             if (settings.authEnabled)
             {
                 request.Credentials = new NetworkCredential(settings.user, settings.pass);

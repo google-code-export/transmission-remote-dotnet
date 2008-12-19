@@ -14,19 +14,24 @@ namespace TransmissionRemoteDotnet
 
         public static void StripeListView(ListView list)
         {
+            list.SuspendLayout();
             Color window = SystemColors.Window;
             /* Check for weird window backgrounds */
             if (window.R >= STRIPE_OFFSET && window.G >= STRIPE_OFFSET && window.B >= STRIPE_OFFSET)
             {
-                foreach (ListViewItem item in list.Items)
+                lock (list)
                 {
-                    item.BackColor = item.Index % 2 == 1 ?
-                        Color.FromArgb(window.R - STRIPE_OFFSET,
-                            window.G - STRIPE_OFFSET,
-                            window.B - STRIPE_OFFSET)
-                        : window;
+                    foreach (ListViewItem item in list.Items)
+                    {
+                        item.BackColor = item.Index % 2 == 1 ?
+                            Color.FromArgb(window.R - STRIPE_OFFSET,
+                                window.G - STRIPE_OFFSET,
+                                window.B - STRIPE_OFFSET)
+                            : window;
+                    }
                 }
             }
+            list.ResumeLayout();
         }
 
         public static string FormatPriority(JsonNumber n)
@@ -121,10 +126,15 @@ namespace TransmissionRemoteDotnet
 
         public static void SelectAll(ListView lv)
         {
-            foreach (ListViewItem item in lv.Items)
+            lv.SuspendLayout();
+            lock (lv)
             {
-                item.Selected = true;
+                foreach (ListViewItem item in lv.Items)
+                {
+                    item.Selected = true;
+                }
             }
+            lv.ResumeLayout();
         }
     }
 }

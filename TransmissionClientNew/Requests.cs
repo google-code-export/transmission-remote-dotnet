@@ -92,9 +92,10 @@ namespace TransmissionRemoteDotnet
                 ProtocolConstants.FIELD_UPLOADLIMITMODE,
                 ProtocolConstants.FIELD_NAME,
                 ProtocolConstants.FIELD_ERRORSTRING,
+                ProtocolConstants.FIELD_PEERS,
                 "sizeWhenDone","swarmSpeed", "isPrivate",
                 "comment","creator","dateCreated",
-                "hashString","peers", "error","trackers",
+                "hashString", "error","trackers",
                 "peersGettingFromUs","peersKnown","peersSendingToUs"});
             arguments.Put(ProtocolConstants.KEY_FIELDS, fields);
             request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
