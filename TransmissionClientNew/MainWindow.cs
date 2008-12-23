@@ -61,11 +61,11 @@ namespace TransmissionRemoteDotnet
             });
             stateListBox.SuspendLayout();
             ImageList stateListBoxImageList = new ImageList();
-            stateListBoxImageList.Images.Add("ledpurple", global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledpurple);
+            stateListBoxImageList.Images.Add("ledblue", global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledblue);
             stateListBoxImageList.Images.Add("ledorange", global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledorange);
             stateListBoxImageList.Images.Add("ledred", global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledred);
             stateListBoxImageList.Images.Add("ledgreen", global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledgreen);
-            stateListBoxImageList.Images.Add("ledblue", global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledblue);
+            stateListBoxImageList.Images.Add("ledpurple", global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledpurple);
             stateListBox.ImageList = stateListBoxImageList;
             stateListBox.Items.Add(new GListBoxItem("All", 0));
             stateListBox.Items.Add(new GListBoxItem("Downloading", 1));
