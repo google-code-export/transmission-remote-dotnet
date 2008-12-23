@@ -48,6 +48,12 @@ namespace TransmissionRemoteDotnet
                 ColumnToSort = value;
                 switch (ColumnToSort)
                 {
+                    case 0:
+                        ObjectCompare = new ListViewItemIPComparer(value);
+                        break;
+                    case 1:
+                        ObjectCompare = new ListViewTextInsensitiveReverseComparer(value);
+                        break;
                     case 3:
                         ObjectCompare = new ListViewItemDecimalComparer(value);
                         break;
