@@ -23,6 +23,7 @@ namespace TransmissionRemoteDotnet.Comparers
             ListViewItem lx = (ListViewItem)x;
             ListViewItem ly = (ListViewItem)y;
             string sx = lx.SubItems[columnIndex].Text;
+            /* Allow for IPv6 (untested) */
             char splitChar = sx.IndexOf(':') > 0 ? ':' : '.';
             string[] qx = sx.Split(splitChar);
             string[] qy = ly.SubItems[columnIndex].Text.Split(splitChar);

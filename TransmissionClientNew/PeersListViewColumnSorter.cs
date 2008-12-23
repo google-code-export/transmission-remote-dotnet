@@ -18,7 +18,7 @@ namespace TransmissionRemoteDotnet
         {
             ColumnToSort = 0;
             OrderOfSort = SortOrder.None;
-            ObjectCompare = new ListViewTextInsensitiveComparer(0);
+            ObjectCompare = new ListViewItemIPComparer(0);
         }
 
         public int Compare(object x, object y)

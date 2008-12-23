@@ -22,7 +22,6 @@ namespace TransmissionRemoteDotnet.Comparers
             ListViewItem ly = (ListViewItem)y;
             string sx = ReverseString(lx.SubItems[column].Text);
             string sy = ReverseString(ly.SubItems[column].Text);
-            Console.WriteLine(String.Format("Comparing \"{0}\" and \"{1}\"", sx, sy));
             return ((new CaseInsensitiveComparer()).Compare(sx, sy));
         }
 
