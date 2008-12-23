@@ -112,6 +112,15 @@
             this.filesTimer = new System.Windows.Forms.Timer(this.components);
             this.filesWorker = new System.ComponentModel.BackgroundWorker();
             this.refreshElapsedTimer = new System.Windows.Forms.Timer(this.components);
+            this.connectButton = new System.Windows.Forms.ToolStripButton();
+            this.disconnectButton = new System.Windows.Forms.ToolStripButton();
+            this.addTorrentButton = new System.Windows.Forms.ToolStripButton();
+            this.addWebTorrentButton = new System.Windows.Forms.ToolStripButton();
+            this.removeTorrentButton = new System.Windows.Forms.ToolStripButton();
+            this.startTorrentButton = new System.Windows.Forms.ToolStripButton();
+            this.pauseTorrentButton = new System.Windows.Forms.ToolStripButton();
+            this.localConfigureButton = new System.Windows.Forms.ToolStripButton();
+            this.remoteConfigureButton = new System.Windows.Forms.ToolStripButton();
             this.torrentListView = new TransmissionRemoteDotnet.ListViewNF();
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
@@ -145,15 +154,6 @@
             this.columnHeader29 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader30 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader31 = new System.Windows.Forms.ColumnHeader();
-            this.connectButton = new System.Windows.Forms.ToolStripButton();
-            this.disconnectButton = new System.Windows.Forms.ToolStripButton();
-            this.addTorrentButton = new System.Windows.Forms.ToolStripButton();
-            this.addWebTorrentButton = new System.Windows.Forms.ToolStripButton();
-            this.removeTorrentButton = new System.Windows.Forms.ToolStripButton();
-            this.startTorrentButton = new System.Windows.Forms.ToolStripButton();
-            this.pauseTorrentButton = new System.Windows.Forms.ToolStripButton();
-            this.localConfigureButton = new System.Windows.Forms.ToolStripButton();
-            this.remoteConfigureButton = new System.Windows.Forms.ToolStripButton();
             this.menuStrip.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -1014,6 +1014,115 @@
             this.refreshElapsedTimer.Interval = 1000;
             this.refreshElapsedTimer.Tick += new System.EventHandler(this.refreshElapsedTimer_Tick);
             // 
+            // connectButton
+            // 
+            this.connectButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.connectButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.connect_creating;
+            this.connectButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.connectButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.connectButton.Name = "connectButton";
+            this.connectButton.Size = new System.Drawing.Size(36, 36);
+            this.connectButton.Text = "Connect";
+            this.connectButton.Click += new System.EventHandler(this.connectButton_Click);
+            // 
+            // disconnectButton
+            // 
+            this.disconnectButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.disconnectButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.connect_no;
+            this.disconnectButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.disconnectButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.disconnectButton.Name = "disconnectButton";
+            this.disconnectButton.Size = new System.Drawing.Size(36, 36);
+            this.disconnectButton.Text = "Disconnect";
+            this.disconnectButton.Visible = false;
+            this.disconnectButton.Click += new System.EventHandler(this.disconnectButton_Click);
+            // 
+            // addTorrentButton
+            // 
+            this.addTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.addTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.edit_add;
+            this.addTorrentButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.addTorrentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addTorrentButton.Name = "addTorrentButton";
+            this.addTorrentButton.Size = new System.Drawing.Size(36, 36);
+            this.addTorrentButton.Text = "Add Torrent";
+            this.addTorrentButton.Visible = false;
+            this.addTorrentButton.Click += new System.EventHandler(this.addTorrentButton_Click);
+            // 
+            // addWebTorrentButton
+            // 
+            this.addWebTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.addWebTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.net_add;
+            this.addWebTorrentButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.addWebTorrentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addWebTorrentButton.Name = "addWebTorrentButton";
+            this.addWebTorrentButton.Size = new System.Drawing.Size(36, 36);
+            this.addWebTorrentButton.Text = "Add Torrent from URL";
+            this.addWebTorrentButton.Visible = false;
+            this.addWebTorrentButton.Click += new System.EventHandler(this.addWebTorrentButton_Click);
+            // 
+            // removeTorrentButton
+            // 
+            this.removeTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.removeTorrentButton.Enabled = false;
+            this.removeTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.button_cancel1;
+            this.removeTorrentButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.removeTorrentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.removeTorrentButton.Name = "removeTorrentButton";
+            this.removeTorrentButton.Size = new System.Drawing.Size(36, 36);
+            this.removeTorrentButton.Text = "Remove torrent(s)";
+            this.removeTorrentButton.Visible = false;
+            this.removeTorrentButton.Click += new System.EventHandler(this.removeTorrentButton_Click);
+            // 
+            // startTorrentButton
+            // 
+            this.startTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.startTorrentButton.Enabled = false;
+            this.startTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.player_play1;
+            this.startTorrentButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.startTorrentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.startTorrentButton.Name = "startTorrentButton";
+            this.startTorrentButton.Size = new System.Drawing.Size(36, 36);
+            this.startTorrentButton.Text = "Start torrent(s)";
+            this.startTorrentButton.Visible = false;
+            this.startTorrentButton.Click += new System.EventHandler(this.startTorrentButton_Click);
+            // 
+            // pauseTorrentButton
+            // 
+            this.pauseTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.pauseTorrentButton.Enabled = false;
+            this.pauseTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.player_pause;
+            this.pauseTorrentButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.pauseTorrentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.pauseTorrentButton.Name = "pauseTorrentButton";
+            this.pauseTorrentButton.Size = new System.Drawing.Size(36, 36);
+            this.pauseTorrentButton.Text = "Pause torrent(s)";
+            this.pauseTorrentButton.Visible = false;
+            this.pauseTorrentButton.Click += new System.EventHandler(this.pauseTorrentButton_Click);
+            // 
+            // localConfigureButton
+            // 
+            this.localConfigureButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.localConfigureButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.configure;
+            this.localConfigureButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.localConfigureButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.localConfigureButton.Name = "localConfigureButton";
+            this.localConfigureButton.Size = new System.Drawing.Size(36, 36);
+            this.localConfigureButton.Text = "Local Settings";
+            this.localConfigureButton.Click += new System.EventHandler(this.localConfigureButton_Click);
+            // 
+            // remoteConfigureButton
+            // 
+            this.remoteConfigureButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.remoteConfigureButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.netconfigure;
+            this.remoteConfigureButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.remoteConfigureButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.remoteConfigureButton.Name = "remoteConfigureButton";
+            this.remoteConfigureButton.Size = new System.Drawing.Size(36, 36);
+            this.remoteConfigureButton.Text = "Remote Settings";
+            this.remoteConfigureButton.Visible = false;
+            this.remoteConfigureButton.Click += new System.EventHandler(this.remoteConfigureButton_Click);
+            // 
             // torrentListView
             // 
             this.torrentListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -1164,6 +1273,7 @@
             this.filesListView.UseCompatibleStateImageBehavior = false;
             this.filesListView.View = System.Windows.Forms.View.Details;
             this.filesListView.SelectedIndexChanged += new System.EventHandler(this.filesListView_SelectedIndexChanged);
+            this.filesListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.filesListView_ColumnClick);
             // 
             // columnHeader1
             // 
@@ -1212,6 +1322,7 @@
             this.peersListView.TabIndex = 0;
             this.peersListView.UseCompatibleStateImageBehavior = false;
             this.peersListView.View = System.Windows.Forms.View.Details;
+            this.peersListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.peersListView_ColumnClick);
             // 
             // columnHeader27
             // 
@@ -1242,115 +1353,6 @@
             // 
             this.columnHeader31.Text = "Up Rate";
             this.columnHeader31.Width = 80;
-            // 
-            // connectButton
-            // 
-            this.connectButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.connectButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.connect_creating;
-            this.connectButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.connectButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.connectButton.Name = "connectButton";
-            this.connectButton.Size = new System.Drawing.Size(36, 36);
-            this.connectButton.Text = "Connect";
-            this.connectButton.Click += new System.EventHandler(this.connectButton_Click);
-            // 
-            // disconnectButton
-            // 
-            this.disconnectButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.disconnectButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.connect_no;
-            this.disconnectButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.disconnectButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.disconnectButton.Name = "disconnectButton";
-            this.disconnectButton.Size = new System.Drawing.Size(36, 36);
-            this.disconnectButton.Text = "Disconnect";
-            this.disconnectButton.Visible = false;
-            this.disconnectButton.Click += new System.EventHandler(this.disconnectButton_Click);
-            // 
-            // addTorrentButton
-            // 
-            this.addTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.edit_add;
-            this.addTorrentButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.addTorrentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.addTorrentButton.Name = "addTorrentButton";
-            this.addTorrentButton.Size = new System.Drawing.Size(36, 36);
-            this.addTorrentButton.Text = "Add Torrent";
-            this.addTorrentButton.Visible = false;
-            this.addTorrentButton.Click += new System.EventHandler(this.addTorrentButton_Click);
-            // 
-            // addWebTorrentButton
-            // 
-            this.addWebTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addWebTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.net_add;
-            this.addWebTorrentButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.addWebTorrentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.addWebTorrentButton.Name = "addWebTorrentButton";
-            this.addWebTorrentButton.Size = new System.Drawing.Size(36, 36);
-            this.addWebTorrentButton.Text = "Add Torrent from URL";
-            this.addWebTorrentButton.Visible = false;
-            this.addWebTorrentButton.Click += new System.EventHandler(this.addWebTorrentButton_Click);
-            // 
-            // removeTorrentButton
-            // 
-            this.removeTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.removeTorrentButton.Enabled = false;
-            this.removeTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.button_cancel1;
-            this.removeTorrentButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.removeTorrentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.removeTorrentButton.Name = "removeTorrentButton";
-            this.removeTorrentButton.Size = new System.Drawing.Size(36, 36);
-            this.removeTorrentButton.Text = "Remove torrent(s)";
-            this.removeTorrentButton.Visible = false;
-            this.removeTorrentButton.Click += new System.EventHandler(this.removeTorrentButton_Click);
-            // 
-            // startTorrentButton
-            // 
-            this.startTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.startTorrentButton.Enabled = false;
-            this.startTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.player_play1;
-            this.startTorrentButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.startTorrentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.startTorrentButton.Name = "startTorrentButton";
-            this.startTorrentButton.Size = new System.Drawing.Size(36, 36);
-            this.startTorrentButton.Text = "Start torrent(s)";
-            this.startTorrentButton.Visible = false;
-            this.startTorrentButton.Click += new System.EventHandler(this.startTorrentButton_Click);
-            // 
-            // pauseTorrentButton
-            // 
-            this.pauseTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.pauseTorrentButton.Enabled = false;
-            this.pauseTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.player_pause;
-            this.pauseTorrentButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.pauseTorrentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.pauseTorrentButton.Name = "pauseTorrentButton";
-            this.pauseTorrentButton.Size = new System.Drawing.Size(36, 36);
-            this.pauseTorrentButton.Text = "Pause torrent(s)";
-            this.pauseTorrentButton.Visible = false;
-            this.pauseTorrentButton.Click += new System.EventHandler(this.pauseTorrentButton_Click);
-            // 
-            // localConfigureButton
-            // 
-            this.localConfigureButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.localConfigureButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.configure;
-            this.localConfigureButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.localConfigureButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.localConfigureButton.Name = "localConfigureButton";
-            this.localConfigureButton.Size = new System.Drawing.Size(36, 36);
-            this.localConfigureButton.Text = "Local Settings";
-            this.localConfigureButton.Click += new System.EventHandler(this.localConfigureButton_Click);
-            // 
-            // remoteConfigureButton
-            // 
-            this.remoteConfigureButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.remoteConfigureButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.netconfigure;
-            this.remoteConfigureButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.remoteConfigureButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.remoteConfigureButton.Name = "remoteConfigureButton";
-            this.remoteConfigureButton.Size = new System.Drawing.Size(36, 36);
-            this.remoteConfigureButton.Text = "Remote Settings";
-            this.remoteConfigureButton.Visible = false;
-            this.remoteConfigureButton.Click += new System.EventHandler(this.remoteConfigureButton_Click);
             // 
             // MainWindow
             // 

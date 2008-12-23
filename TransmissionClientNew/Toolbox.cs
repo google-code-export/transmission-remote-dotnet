@@ -82,11 +82,11 @@ namespace TransmissionRemoteDotnet
             return epoch.Add(TimeSpan.FromSeconds(e));
         }
 
-        public static double CalcPercentage(long x, long total)
+        public static decimal CalcPercentage(long x, long total)
         {
             if (total > 0)
             {
-                return Math.Round((x / (double)total) * 100, 2);
+                return Math.Round((x / (decimal)total) * 100, 2);
             }
             else
             {
@@ -146,6 +146,17 @@ namespace TransmissionRemoteDotnet
             else
             {
                 return "0 B";
+            }
+        }
+
+        public static void CloneListViewItemCollection(ListView src, List<ListViewItem> dst)
+        {
+            lock (src)
+            {
+                foreach (ListViewItem item in src.Items)
+                {
+                    dst.Add(item);
+                }
             }
         }
 

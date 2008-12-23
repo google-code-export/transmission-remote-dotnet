@@ -21,7 +21,7 @@ namespace TransmissionRemoteDotnet
             item.ToolTipText = item.Name;
             item.Tag = this;
             item.SubItems.Add(this.TotalSizeString);
-            double percentage = this.Percentage;
+            decimal percentage = this.Percentage;
             item.SubItems.Add(percentage.ToString() + "%");
             item.SubItems.Add(this.Status);
             item.SubItems.Add(this.Seeders + " (" + this.PeersSendingToUs + ")");
@@ -125,7 +125,7 @@ namespace TransmissionRemoteDotnet
                 this.info = info;
                 item.SubItems[0].Text = this.Name;
                 item.SubItems[1].Text = this.TotalSizeString;
-                double percentage = this.Percentage;
+                decimal percentage = this.Percentage;
                 item.SubItems[2].Text = percentage.ToString() + "%";
                 item.SubItems[3].Text = this.Status;
                 item.SubItems[4].Text = this.Seeders + " (" + this.PeersSendingToUs + ")";
@@ -290,7 +290,7 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        public double Percentage
+        public decimal Percentage
         {
             get
             {

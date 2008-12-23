@@ -17,11 +17,14 @@ namespace TransmissionRemoteDotnet
         public const string DEFAULT_WINDOW_TITLE = "Transmission Remote";
         public Boolean minimise = false;
         private ListViewItemSorter lvwColumnSorter;
+        private FilesListViewItemSorter filesLvwColumnSorter;
+        private PeersListViewItemSorter peersLvwColumnSorter;
         private ContextMenu torrentSelectionMenu;
         private ContextMenu fileSelectionMenu;
         private ContextMenu noFileSelectionMenu;
         private BackgroundWorker connectWorker;
         private TabPage peersTabPageSaved;
+        public List<ListViewItem> fileItems = new List<ListViewItem>();
 
         public MainWindow()
         {
@@ -34,6 +37,8 @@ namespace TransmissionRemoteDotnet
             refreshTimer.Interval = settings.refreshRate * 1000;
             filesTimer.Interval = settings.refreshRate * 1000 * LocalSettingsSingleton.FILES_REFRESH_MULTIPLICANT;
             torrentListView.ListViewItemSorter = lvwColumnSorter = new ListViewItemSorter();
+            filesListView.ListViewItemSorter = filesLvwColumnSorter = new FilesListViewItemSorter();
+            peersListView.ListViewItemSorter = peersLvwColumnSorter = new PeersListViewItemSorter();
             this.torrentSelectionMenu = new ContextMenu(new MenuItem[] {
                 new MenuItem("Start", new EventHandler(this.startTorrentButton_Click)),
                 new MenuItem("Pause", new EventHandler(this.pauseTorrentButton_Click)),
@@ -61,8 +66,7 @@ namespace TransmissionRemoteDotnet
             stateListBoxImageList.Images.Add("ledred", global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledred);
             stateListBoxImageList.Images.Add("ledgreen", global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledgreen);
             stateListBoxImageList.Images.Add("ledblue", global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledblue);
-            
-            stateListBox.ImageList = stateListBoxImageList;            
+            stateListBox.ImageList = stateListBoxImageList;
             stateListBox.Items.Add(new GListBoxItem("All", 0));
             stateListBox.Items.Add(new GListBoxItem("Downloading", 1));
             stateListBox.Items.Add(new GListBoxItem("Paused", 2));
@@ -413,16 +417,16 @@ namespace TransmissionRemoteDotnet
                 torrentListView.ContextMenu = oneOrMore ? this.torrentSelectionMenu : null;
                 startTorrentButton.Enabled = pauseTorrentButton.Enabled
                     = removeTorrentButton.Enabled = oneOrMore;
-                MainWindow form = Program.form;
-                lock (form.filesListView)
+                lock (filesListView)
                 {
-                    form.filesListView.Items.Clear();
+                    filesListView.Items.Clear();
+                    fileItems.Clear();
                 }
-                lock (form.peersListView)
+                lock (peersListView)
                 {
-                    form.peersListView.Items.Clear();
+                    peersListView.Items.Clear();
                 }
-                lock (form.trackersListView)
+                lock (trackersListView)
                 {
                     trackersListView.Items.Clear();
                 }
@@ -772,7 +776,7 @@ namespace TransmissionRemoteDotnet
             }
             lock (filesListView)
             {
-                foreach (ListViewItem item in filesListView.Items)
+                foreach (ListViewItem item in fileItems)
                 {
                     if (item.SubItems[4].Text.Equals("Yes"))
                     {
@@ -900,22 +904,33 @@ namespace TransmissionRemoteDotnet
                         ListViewItem item = FindPeerItem(peer["address"].ToString(), peer["clientName"].ToString());
                         if (item == null)
                         {
-                            item = new ListViewItem((string)peer["address"]);
-                            item.SubItems.Add("");
-                            item.SubItems.Add((string)peer["clientName"]);
+                            item = new ListViewItem((string)peer["address"]); // 0
+                            item.SubItems.Add(""); // 1
+                            item.SubItems.Add((string)peer["clientName"]); // 2
                             item.ToolTipText = item.SubItems[0].Text;
-                            item.SubItems.Add(ParseProgress((string)peer[ProtocolConstants.FIELD_PROGRESS]) + "%");
-                            item.SubItems.Add(Toolbox.GetSpeed(((JsonNumber)peer[ProtocolConstants.FIELD_RATETOCLIENT]).ToInt64()));
-                            item.SubItems.Add(Toolbox.GetSpeed(((JsonNumber)peer[ProtocolConstants.FIELD_RATETOPEER]).ToInt64()));
+                            decimal progress = ParseProgress((string)peer[ProtocolConstants.FIELD_PROGRESS]);
+                            item.SubItems.Add(progress + "%"); // 3
+                            item.SubItems[3].Tag = progress;
+                            long rateToClient = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOCLIENT]).ToInt64();
+                            item.SubItems.Add(Toolbox.GetSpeed(rateToClient)); // 4
+                            item.SubItems[4].Tag = rateToClient;
+                            long rateToPeer = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOPEER]).ToInt64();
+                            item.SubItems.Add(Toolbox.GetSpeed(rateToPeer)); // 5
+                            item.SubItems[5].Tag = rateToPeer;
                             peersListView.Items.Add(item);
                             Toolbox.StripeListView(peersListView);
                             CreateHostnameResolutionWorker().RunWorkerAsync(item);
                         }
                         else
                         {
-                            item.SubItems[3].Text = ParseProgress((string)peer[ProtocolConstants.FIELD_PROGRESS]) + "%";
-                            item.SubItems[4].Text = Toolbox.GetSpeed(((JsonNumber)peer[ProtocolConstants.FIELD_RATETOCLIENT]).ToInt64());
-                            item.SubItems[5].Text = Toolbox.GetSpeed(((JsonNumber)peer[ProtocolConstants.FIELD_RATETOPEER]).ToInt64());
+                            decimal progress = ParseProgress((string)peer[ProtocolConstants.FIELD_PROGRESS]);
+                            item.SubItems[3].Text = progress + "%";
+                            long rateToClient = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOCLIENT]).ToInt64();
+                            item.SubItems[4].Text = Toolbox.GetSpeed(rateToClient);
+                            item.SubItems[4].Tag = rateToClient;
+                            long rateToPeer = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOPEER]).ToInt64();
+                            item.SubItems[5].Text = Toolbox.GetSpeed(rateToPeer);
+                            item.SubItems[5].Tag = rateToPeer;
                         }
                         item.Tag = peersListView.Tag;
                     }
@@ -1015,6 +1030,36 @@ namespace TransmissionRemoteDotnet
         {
             ErrorLogWindow window = new ErrorLogWindow();
             window.Show();
+        }
+
+        private void filesListView_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            if (e.Column == filesLvwColumnSorter.SortColumn)
+            {
+                filesLvwColumnSorter.Order = (filesLvwColumnSorter.Order == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending);
+            }
+            else
+            {
+                filesLvwColumnSorter.SortColumn = e.Column;
+                filesLvwColumnSorter.Order = SortOrder.Ascending;
+            }
+            this.filesListView.Sort();
+            Toolbox.StripeListView(filesListView);
+        }
+
+        private void peersListView_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            if (e.Column == peersLvwColumnSorter.SortColumn)
+            {
+                peersLvwColumnSorter.Order = (peersLvwColumnSorter.Order == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending);
+            }
+            else
+            {
+                peersLvwColumnSorter.SortColumn = e.Column;
+                peersLvwColumnSorter.Order = SortOrder.Ascending;
+            }
+            this.peersListView.Sort();
+            Toolbox.StripeListView(peersListView);
         }
     }
 }

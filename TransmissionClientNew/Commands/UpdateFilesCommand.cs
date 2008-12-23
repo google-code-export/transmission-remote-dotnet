@@ -58,15 +58,13 @@ namespace TransmissionRemoteDotnet.Commmands
             for (int i = 0; i < files.Length; i++)
             {
                 JsonObject file = (JsonObject)files[i];
-                long done = ((JsonNumber)file["bytesCompleted"]).ToInt64();
-                long length = ((JsonNumber)file["length"]).ToInt64();
-                string percentStr = Toolbox.CalcPercentage(done, length) + "%";
-                string completeStr = Toolbox.GetFileSize(done);
+                long done = ((JsonNumber)file[ProtocolConstants.FIELD_BYTESCOMPLETED]).ToInt64();
+                long length = ((JsonNumber)file[ProtocolConstants.FIELD_LENGTH]).ToInt64();
+                decimal progress = Toolbox.CalcPercentage(done, length);
                 lock (filesListView)
                 {
                     if (i >= filesListView.Items.Count && priorities != null && wanted != null)
                     {
-                        string lengthStr = Toolbox.GetFileSize(length);
                         string name = (string)file[ProtocolConstants.FIELD_NAME];
                         int fwdSlashPos = name.IndexOf('/');
                         if (fwdSlashPos > 0)
@@ -83,19 +81,25 @@ namespace TransmissionRemoteDotnet.Commmands
                         }
                         ListViewItem item = new ListViewItem(name);
                         item.Name = name;
+                        item.Tag = file;
                         item.ToolTipText = name;
-                        item.SubItems.Add(lengthStr);
-                        item.SubItems.Add(completeStr);
-                        item.SubItems.Add(percentStr);
+                        item.SubItems.Add(Toolbox.GetFileSize(length));
+                        item.SubItems[1].Tag = length;
+                        item.SubItems.Add(Toolbox.GetFileSize(done));
+                        item.SubItems[2].Tag = done;
+                        item.SubItems.Add(progress + "%");
+                        item.SubItems[3].Tag = progress;
                         item.SubItems.Add(((JsonNumber)wanted[i]).ToBoolean() ? "No" : "Yes");
                         item.SubItems.Add(FormatPriority((JsonNumber)priorities[i]));
                         filesListView.Items.Add(item);
                     }
                     else if (i < filesListView.Items.Count)
                     {
-                        ListViewItem item = filesListView.Items[i];
-                        item.SubItems[2].Text = completeStr;
-                        item.SubItems[3].Text = percentStr;
+                        ListViewItem item = form.fileItems[i];
+                        item.SubItems[2].Text = Toolbox.GetFileSize(done);
+                        item.SubItems[2].Tag = done;
+                        item.SubItems[3].Text = progress + "%";
+                        item.SubItems[3].Tag = progress;
                     }
                 }
             }
@@ -103,6 +107,7 @@ namespace TransmissionRemoteDotnet.Commmands
             {
                 form.filesListView.Enabled = true;
                 Toolbox.StripeListView(form.filesListView);
+                Toolbox.CloneListViewItemCollection(form.filesListView, form.fileItems);
             }
             form.filesListView.ResumeLayout();
             form.filesTimer.Enabled = true;

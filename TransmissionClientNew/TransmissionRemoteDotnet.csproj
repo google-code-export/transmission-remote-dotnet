@@ -83,6 +83,8 @@
     <Compile Include="CommandFactory.cs" />
     <Compile Include="Commands\ErrorCommand.cs" />
     <Compile Include="Commands\ResolveHostCommand.cs" />
+    <Compile Include="Comparers\ListViewItemDecimalComparer.cs" />
+    <Compile Include="Comparers\ListViewItemInt64Comparer.cs" />
     <Compile Include="Comparers\ListViewTextInsensitiveComparer.cs" />
     <Compile Include="Comparers\ListViewTorrentInt32Comparer.cs" />
     <Compile Include="Comparers\ListViewTorrentInt64Comparer.cs" />
@@ -94,6 +96,7 @@
     <Compile Include="ErrorLogWindow.Designer.cs">
       <DependentUpon>ErrorLogWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="FilesListViewColumnSorter.cs" />
     <Compile Include="GListBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -110,6 +113,7 @@
     </Compile>
     <Compile Include="Commands\NoCommand.cs" />
     <Compile Include="LocalSettingsSingleton.cs" />
+    <Compile Include="PeersListViewColumnSorter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AboutDialog.resx">
