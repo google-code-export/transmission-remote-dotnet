@@ -48,9 +48,8 @@
             this.projectSiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.mainVerticalSplitContainer = new System.Windows.Forms.SplitContainer();
-            this.stateListBox = new System.Windows.Forms.ListBox();
             this.torrentAndTabsSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.mainVerticalSplitContainer = new System.Windows.Forms.SplitContainer();
             this.torrentTabControl = new System.Windows.Forms.TabControl();
             this.generalTabPage = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
@@ -103,19 +102,10 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.connectButton = new System.Windows.Forms.ToolStripButton();
-            this.disconnectButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.addTorrentButton = new System.Windows.Forms.ToolStripButton();
-            this.addWebTorrentButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.removeTorrentButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.startTorrentButton = new System.Windows.Forms.ToolStripButton();
-            this.pauseTorrentButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.localConfigureButton = new System.Windows.Forms.ToolStripButton();
-            this.remoteConfigureButton = new System.Windows.Forms.ToolStripButton();
             this.refreshWorker = new System.ComponentModel.BackgroundWorker();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.refreshTimer = new System.Windows.Forms.Timer(this.components);
@@ -136,6 +126,7 @@
             this.columnHeader16 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader18 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader19 = new System.Windows.Forms.ColumnHeader();
+            this.stateListBox = new TransmissionRemoteDotnet.GListBox();
             this.trackersListView = new TransmissionRemoteDotnet.ListViewNF();
             this.columnHeader22 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader20 = new System.Windows.Forms.ColumnHeader();
@@ -154,16 +145,25 @@
             this.columnHeader29 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader30 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader31 = new System.Windows.Forms.ColumnHeader();
+            this.connectButton = new System.Windows.Forms.ToolStripButton();
+            this.disconnectButton = new System.Windows.Forms.ToolStripButton();
+            this.addTorrentButton = new System.Windows.Forms.ToolStripButton();
+            this.addWebTorrentButton = new System.Windows.Forms.ToolStripButton();
+            this.removeTorrentButton = new System.Windows.Forms.ToolStripButton();
+            this.startTorrentButton = new System.Windows.Forms.ToolStripButton();
+            this.pauseTorrentButton = new System.Windows.Forms.ToolStripButton();
+            this.localConfigureButton = new System.Windows.Forms.ToolStripButton();
+            this.remoteConfigureButton = new System.Windows.Forms.ToolStripButton();
             this.menuStrip.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
-            this.mainVerticalSplitContainer.Panel1.SuspendLayout();
-            this.mainVerticalSplitContainer.Panel2.SuspendLayout();
-            this.mainVerticalSplitContainer.SuspendLayout();
             this.torrentAndTabsSplitContainer.Panel1.SuspendLayout();
             this.torrentAndTabsSplitContainer.Panel2.SuspendLayout();
             this.torrentAndTabsSplitContainer.SuspendLayout();
+            this.mainVerticalSplitContainer.Panel1.SuspendLayout();
+            this.mainVerticalSplitContainer.Panel2.SuspendLayout();
+            this.mainVerticalSplitContainer.SuspendLayout();
             this.torrentTabControl.SuspendLayout();
             this.generalTabPage.SuspendLayout();
             this.splitContainer3.Panel1.SuspendLayout();
@@ -194,7 +194,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(848, 24);
+            this.menuStrip.Size = new System.Drawing.Size(948, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -328,15 +328,15 @@
             // 
             // toolStripContainer1.ContentPanel
             // 
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.mainVerticalSplitContainer);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.torrentAndTabsSplitContainer);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.statusStrip);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(848, 511);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(948, 511);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.LeftToolStripPanelVisible = false;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 24);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.RightToolStripPanelVisible = false;
-            this.toolStripContainer1.Size = new System.Drawing.Size(848, 550);
+            this.toolStripContainer1.Size = new System.Drawing.Size(948, 550);
             this.toolStripContainer1.TabIndex = 1;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -344,44 +344,6 @@
             // 
             this.toolStripContainer1.TopToolStripPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip);
-            // 
-            // mainVerticalSplitContainer
-            // 
-            this.mainVerticalSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainVerticalSplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.mainVerticalSplitContainer.Location = new System.Drawing.Point(0, 0);
-            this.mainVerticalSplitContainer.Name = "mainVerticalSplitContainer";
-            // 
-            // mainVerticalSplitContainer.Panel1
-            // 
-            this.mainVerticalSplitContainer.Panel1.Controls.Add(this.stateListBox);
-            this.mainVerticalSplitContainer.Panel1Collapsed = true;
-            // 
-            // mainVerticalSplitContainer.Panel2
-            // 
-            this.mainVerticalSplitContainer.Panel2.Controls.Add(this.torrentAndTabsSplitContainer);
-            this.mainVerticalSplitContainer.Size = new System.Drawing.Size(848, 489);
-            this.mainVerticalSplitContainer.SplitterDistance = 112;
-            this.mainVerticalSplitContainer.TabIndex = 1;
-            // 
-            // stateListBox
-            // 
-            this.stateListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.stateListBox.Enabled = false;
-            this.stateListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stateListBox.FormattingEnabled = true;
-            this.stateListBox.ItemHeight = 16;
-            this.stateListBox.Items.AddRange(new object[] {
-            "All",
-            "Downloading",
-            "Paused",
-            "Complete",
-            "Seeding"});
-            this.stateListBox.Location = new System.Drawing.Point(0, 0);
-            this.stateListBox.Name = "stateListBox";
-            this.stateListBox.Size = new System.Drawing.Size(112, 100);
-            this.stateListBox.TabIndex = 0;
-            this.stateListBox.SelectedIndexChanged += new System.EventHandler(this.stateListBox_SelectedIndexChanged);
             // 
             // torrentAndTabsSplitContainer
             // 
@@ -392,14 +354,32 @@
             // 
             // torrentAndTabsSplitContainer.Panel1
             // 
-            this.torrentAndTabsSplitContainer.Panel1.Controls.Add(this.torrentListView);
+            this.torrentAndTabsSplitContainer.Panel1.Controls.Add(this.mainVerticalSplitContainer);
             // 
             // torrentAndTabsSplitContainer.Panel2
             // 
             this.torrentAndTabsSplitContainer.Panel2.Controls.Add(this.torrentTabControl);
-            this.torrentAndTabsSplitContainer.Size = new System.Drawing.Size(848, 489);
-            this.torrentAndTabsSplitContainer.SplitterDistance = 228;
+            this.torrentAndTabsSplitContainer.Size = new System.Drawing.Size(948, 489);
+            this.torrentAndTabsSplitContainer.SplitterDistance = 240;
             this.torrentAndTabsSplitContainer.TabIndex = 0;
+            // 
+            // mainVerticalSplitContainer
+            // 
+            this.mainVerticalSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainVerticalSplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.mainVerticalSplitContainer.Location = new System.Drawing.Point(0, 0);
+            this.mainVerticalSplitContainer.Name = "mainVerticalSplitContainer";
+            // 
+            // mainVerticalSplitContainer.Panel1
+            // 
+            this.mainVerticalSplitContainer.Panel1.Controls.Add(this.torrentListView);
+            // 
+            // mainVerticalSplitContainer.Panel2
+            // 
+            this.mainVerticalSplitContainer.Panel2.Controls.Add(this.stateListBox);
+            this.mainVerticalSplitContainer.Size = new System.Drawing.Size(948, 240);
+            this.mainVerticalSplitContainer.SplitterDistance = 836;
+            this.mainVerticalSplitContainer.TabIndex = 1;
             // 
             // torrentTabControl
             // 
@@ -412,7 +392,7 @@
             this.torrentTabControl.Location = new System.Drawing.Point(0, 0);
             this.torrentTabControl.Name = "torrentTabControl";
             this.torrentTabControl.SelectedIndex = 0;
-            this.torrentTabControl.Size = new System.Drawing.Size(848, 257);
+            this.torrentTabControl.Size = new System.Drawing.Size(948, 245);
             this.torrentTabControl.TabIndex = 0;
             // 
             // generalTabPage
@@ -421,7 +401,7 @@
             this.generalTabPage.Location = new System.Drawing.Point(4, 22);
             this.generalTabPage.Name = "generalTabPage";
             this.generalTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.generalTabPage.Size = new System.Drawing.Size(840, 231);
+            this.generalTabPage.Size = new System.Drawing.Size(940, 219);
             this.generalTabPage.TabIndex = 0;
             this.generalTabPage.Text = "General";
             this.generalTabPage.UseVisualStyleBackColor = true;
@@ -442,7 +422,7 @@
             // 
             this.splitContainer3.Panel2.AutoScroll = true;
             this.splitContainer3.Panel2.Controls.Add(this.generalTorrentNameGroupBox);
-            this.splitContainer3.Size = new System.Drawing.Size(834, 225);
+            this.splitContainer3.Size = new System.Drawing.Size(934, 213);
             this.splitContainer3.SplitterDistance = 25;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -460,7 +440,7 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.splitContainer5);
-            this.splitContainer4.Size = new System.Drawing.Size(834, 25);
+            this.splitContainer4.Size = new System.Drawing.Size(934, 25);
             this.splitContainer4.SplitterDistance = 79;
             this.splitContainer4.TabIndex = 0;
             // 
@@ -488,8 +468,8 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.percentageLabel);
-            this.splitContainer5.Size = new System.Drawing.Size(751, 25);
-            this.splitContainer5.SplitterDistance = 676;
+            this.splitContainer5.Size = new System.Drawing.Size(851, 25);
+            this.splitContainer5.SplitterDistance = 776;
             this.splitContainer5.TabIndex = 0;
             // 
             // progressBar
@@ -497,7 +477,7 @@
             this.progressBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.progressBar.Location = new System.Drawing.Point(0, 0);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(676, 25);
+            this.progressBar.Size = new System.Drawing.Size(776, 25);
             this.progressBar.TabIndex = 0;
             // 
             // percentageLabel
@@ -546,6 +526,7 @@
             this.generalTorrentNameGroupBox.Controls.Add(this.label3);
             this.generalTorrentNameGroupBox.Controls.Add(this.label2);
             this.generalTorrentNameGroupBox.Controls.Add(this.timeElapsedLabel);
+            this.generalTorrentNameGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.generalTorrentNameGroupBox.Location = new System.Drawing.Point(3, 11);
             this.generalTorrentNameGroupBox.Name = "generalTorrentNameGroupBox";
             this.generalTorrentNameGroupBox.Size = new System.Drawing.Size(708, 172);
@@ -564,7 +545,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(497, 118);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(61, 13);
@@ -583,7 +564,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(497, 94);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(59, 13);
@@ -603,7 +584,7 @@
             // labelForErrorLabel
             // 
             this.labelForErrorLabel.AutoSize = true;
-            this.labelForErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelForErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelForErrorLabel.ForeColor = System.Drawing.Color.Red;
             this.labelForErrorLabel.Location = new System.Drawing.Point(497, 143);
             this.labelForErrorLabel.Name = "labelForErrorLabel";
@@ -624,7 +605,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(6, 143);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(54, 13);
@@ -643,7 +624,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(497, 71);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(35, 13);
@@ -671,7 +652,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(497, 49);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(54, 13);
@@ -681,7 +662,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(497, 25);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(40, 13);
@@ -700,7 +681,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(261, 94);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(64, 13);
@@ -719,7 +700,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(261, 71);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 13);
@@ -738,7 +719,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(262, 49);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 13);
@@ -757,7 +738,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(261, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 13);
@@ -776,7 +757,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(6, 119);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(40, 13);
@@ -795,7 +776,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(6, 94);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(78, 13);
@@ -814,7 +795,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(6, 71);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 13);
@@ -824,7 +805,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(6, 49);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 13);
@@ -852,7 +833,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(261, 119);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 13);
@@ -862,7 +843,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(6, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 13);
@@ -884,7 +865,7 @@
             this.trackersTabPage.Location = new System.Drawing.Point(4, 22);
             this.trackersTabPage.Name = "trackersTabPage";
             this.trackersTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.trackersTabPage.Size = new System.Drawing.Size(840, 231);
+            this.trackersTabPage.Size = new System.Drawing.Size(940, 219);
             this.trackersTabPage.TabIndex = 1;
             this.trackersTabPage.Text = "Trackers";
             this.trackersTabPage.UseVisualStyleBackColor = true;
@@ -895,7 +876,7 @@
             this.trackersTorrentNameGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.trackersTorrentNameGroupBox.Location = new System.Drawing.Point(3, 3);
             this.trackersTorrentNameGroupBox.Name = "trackersTorrentNameGroupBox";
-            this.trackersTorrentNameGroupBox.Size = new System.Drawing.Size(834, 225);
+            this.trackersTorrentNameGroupBox.Size = new System.Drawing.Size(934, 213);
             this.trackersTorrentNameGroupBox.TabIndex = 1;
             this.trackersTorrentNameGroupBox.TabStop = false;
             this.trackersTorrentNameGroupBox.Text = "groupBox1";
@@ -906,7 +887,7 @@
             this.filesTabPage.Location = new System.Drawing.Point(4, 22);
             this.filesTabPage.Name = "filesTabPage";
             this.filesTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.filesTabPage.Size = new System.Drawing.Size(840, 231);
+            this.filesTabPage.Size = new System.Drawing.Size(940, 219);
             this.filesTabPage.TabIndex = 2;
             this.filesTabPage.Text = "Files";
             this.filesTabPage.UseVisualStyleBackColor = true;
@@ -917,7 +898,7 @@
             this.filesTorrentNameGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.filesTorrentNameGroupBox.Location = new System.Drawing.Point(3, 3);
             this.filesTorrentNameGroupBox.Name = "filesTorrentNameGroupBox";
-            this.filesTorrentNameGroupBox.Size = new System.Drawing.Size(834, 225);
+            this.filesTorrentNameGroupBox.Size = new System.Drawing.Size(934, 213);
             this.filesTorrentNameGroupBox.TabIndex = 1;
             this.filesTorrentNameGroupBox.TabStop = false;
             this.filesTorrentNameGroupBox.Text = "groupBox1";
@@ -928,7 +909,7 @@
             this.peersTabPage.Location = new System.Drawing.Point(4, 22);
             this.peersTabPage.Name = "peersTabPage";
             this.peersTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.peersTabPage.Size = new System.Drawing.Size(840, 231);
+            this.peersTabPage.Size = new System.Drawing.Size(940, 219);
             this.peersTabPage.TabIndex = 3;
             this.peersTabPage.Text = "Peers";
             this.peersTabPage.UseVisualStyleBackColor = true;
@@ -939,7 +920,7 @@
             this.peersTorrentNameGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.peersTorrentNameGroupBox.Location = new System.Drawing.Point(3, 3);
             this.peersTorrentNameGroupBox.Name = "peersTorrentNameGroupBox";
-            this.peersTorrentNameGroupBox.Size = new System.Drawing.Size(834, 225);
+            this.peersTorrentNameGroupBox.Size = new System.Drawing.Size(934, 213);
             this.peersTorrentNameGroupBox.TabIndex = 1;
             this.peersTorrentNameGroupBox.TabStop = false;
             this.peersTorrentNameGroupBox.Text = "groupBox1";
@@ -950,7 +931,7 @@
             this.toolStripStatusLabel});
             this.statusStrip.Location = new System.Drawing.Point(0, 489);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(848, 22);
+            this.statusStrip.Size = new System.Drawing.Size(948, 22);
             this.statusStrip.TabIndex = 0;
             this.statusStrip.Text = "statusStrip1";
             // 
@@ -982,58 +963,11 @@
             this.toolStrip.Size = new System.Drawing.Size(81, 39);
             this.toolStrip.TabIndex = 0;
             // 
-            // connectButton
-            // 
-            this.connectButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.connectButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.connect_creating;
-            this.connectButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.connectButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.connectButton.Name = "connectButton";
-            this.connectButton.Size = new System.Drawing.Size(36, 36);
-            this.connectButton.Text = "Connect";
-            this.connectButton.Click += new System.EventHandler(this.connectButton_Click);
-            // 
-            // disconnectButton
-            // 
-            this.disconnectButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.disconnectButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.connect_no;
-            this.disconnectButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.disconnectButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.disconnectButton.Name = "disconnectButton";
-            this.disconnectButton.Size = new System.Drawing.Size(36, 36);
-            this.disconnectButton.Text = "Disconnect";
-            this.disconnectButton.Visible = false;
-            this.disconnectButton.Click += new System.EventHandler(this.disconnectButton_Click);
-            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 39);
             this.toolStripSeparator4.Visible = false;
-            // 
-            // addTorrentButton
-            // 
-            this.addTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.edit_add;
-            this.addTorrentButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.addTorrentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.addTorrentButton.Name = "addTorrentButton";
-            this.addTorrentButton.Size = new System.Drawing.Size(36, 36);
-            this.addTorrentButton.Text = "Add Torrent";
-            this.addTorrentButton.Visible = false;
-            this.addTorrentButton.Click += new System.EventHandler(this.addTorrentButton_Click);
-            // 
-            // addWebTorrentButton
-            // 
-            this.addWebTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addWebTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.net_add;
-            this.addWebTorrentButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.addWebTorrentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.addWebTorrentButton.Name = "addWebTorrentButton";
-            this.addWebTorrentButton.Size = new System.Drawing.Size(36, 36);
-            this.addWebTorrentButton.Text = "Add Torrent from URL";
-            this.addWebTorrentButton.Visible = false;
-            this.addWebTorrentButton.Click += new System.EventHandler(this.addWebTorrentButton_Click);
             // 
             // toolStripSeparator1
             // 
@@ -1041,78 +975,16 @@
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
             this.toolStripSeparator1.Visible = false;
             // 
-            // removeTorrentButton
-            // 
-            this.removeTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.removeTorrentButton.Enabled = false;
-            this.removeTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.button_cancel1;
-            this.removeTorrentButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.removeTorrentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.removeTorrentButton.Name = "removeTorrentButton";
-            this.removeTorrentButton.Size = new System.Drawing.Size(36, 36);
-            this.removeTorrentButton.Text = "Remove torrent(s)";
-            this.removeTorrentButton.Visible = false;
-            this.removeTorrentButton.Click += new System.EventHandler(this.removeTorrentButton_Click);
-            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
             this.toolStripSeparator2.Visible = false;
             // 
-            // startTorrentButton
-            // 
-            this.startTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.startTorrentButton.Enabled = false;
-            this.startTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.player_play1;
-            this.startTorrentButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.startTorrentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.startTorrentButton.Name = "startTorrentButton";
-            this.startTorrentButton.Size = new System.Drawing.Size(36, 36);
-            this.startTorrentButton.Text = "Start torrent(s)";
-            this.startTorrentButton.Visible = false;
-            this.startTorrentButton.Click += new System.EventHandler(this.startTorrentButton_Click);
-            // 
-            // pauseTorrentButton
-            // 
-            this.pauseTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.pauseTorrentButton.Enabled = false;
-            this.pauseTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.player_pause;
-            this.pauseTorrentButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.pauseTorrentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.pauseTorrentButton.Name = "pauseTorrentButton";
-            this.pauseTorrentButton.Size = new System.Drawing.Size(36, 36);
-            this.pauseTorrentButton.Text = "Pause torrent(s)";
-            this.pauseTorrentButton.Visible = false;
-            this.pauseTorrentButton.Click += new System.EventHandler(this.pauseTorrentButton_Click);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
-            // 
-            // localConfigureButton
-            // 
-            this.localConfigureButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.localConfigureButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.configure;
-            this.localConfigureButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.localConfigureButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.localConfigureButton.Name = "localConfigureButton";
-            this.localConfigureButton.Size = new System.Drawing.Size(36, 36);
-            this.localConfigureButton.Text = "Local Settings";
-            this.localConfigureButton.Click += new System.EventHandler(this.localConfigureButton_Click);
-            // 
-            // remoteConfigureButton
-            // 
-            this.remoteConfigureButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.remoteConfigureButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.netconfigure;
-            this.remoteConfigureButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.remoteConfigureButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.remoteConfigureButton.Name = "remoteConfigureButton";
-            this.remoteConfigureButton.Size = new System.Drawing.Size(36, 36);
-            this.remoteConfigureButton.Text = "Remote Settings";
-            this.remoteConfigureButton.Visible = false;
-            this.remoteConfigureButton.Click += new System.EventHandler(this.remoteConfigureButton_Click);
             // 
             // refreshWorker
             // 
@@ -1164,7 +1036,7 @@
             this.torrentListView.Location = new System.Drawing.Point(0, 0);
             this.torrentListView.Name = "torrentListView";
             this.torrentListView.ShowItemToolTips = true;
-            this.torrentListView.Size = new System.Drawing.Size(848, 228);
+            this.torrentListView.Size = new System.Drawing.Size(836, 240);
             this.torrentListView.TabIndex = 0;
             this.torrentListView.UseCompatibleStateImageBehavior = false;
             this.torrentListView.View = System.Windows.Forms.View.Details;
@@ -1228,6 +1100,20 @@
             // 
             this.columnHeader19.Text = "Completed On";
             // 
+            // stateListBox
+            // 
+            this.stateListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.stateListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.stateListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stateListBox.FormattingEnabled = true;
+            this.stateListBox.ImageList = null;
+            this.stateListBox.ItemHeight = 16;
+            this.stateListBox.Location = new System.Drawing.Point(0, 0);
+            this.stateListBox.Name = "stateListBox";
+            this.stateListBox.Size = new System.Drawing.Size(108, 228);
+            this.stateListBox.TabIndex = 0;
+            this.stateListBox.SelectedIndexChanged += new System.EventHandler(this.stateListBox_SelectedIndexChanged);
+            // 
             // trackersListView
             // 
             this.trackersListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -1238,7 +1124,7 @@
             this.trackersListView.FullRowSelect = true;
             this.trackersListView.Location = new System.Drawing.Point(3, 16);
             this.trackersListView.Name = "trackersListView";
-            this.trackersListView.Size = new System.Drawing.Size(828, 206);
+            this.trackersListView.Size = new System.Drawing.Size(928, 194);
             this.trackersListView.TabIndex = 0;
             this.trackersListView.UseCompatibleStateImageBehavior = false;
             this.trackersListView.View = System.Windows.Forms.View.Details;
@@ -1273,7 +1159,7 @@
             this.filesListView.Location = new System.Drawing.Point(3, 16);
             this.filesListView.Name = "filesListView";
             this.filesListView.ShowItemToolTips = true;
-            this.filesListView.Size = new System.Drawing.Size(828, 206);
+            this.filesListView.Size = new System.Drawing.Size(928, 194);
             this.filesListView.TabIndex = 0;
             this.filesListView.UseCompatibleStateImageBehavior = false;
             this.filesListView.View = System.Windows.Forms.View.Details;
@@ -1322,7 +1208,7 @@
             this.peersListView.Location = new System.Drawing.Point(3, 16);
             this.peersListView.Name = "peersListView";
             this.peersListView.ShowItemToolTips = true;
-            this.peersListView.Size = new System.Drawing.Size(828, 206);
+            this.peersListView.Size = new System.Drawing.Size(928, 194);
             this.peersListView.TabIndex = 0;
             this.peersListView.UseCompatibleStateImageBehavior = false;
             this.peersListView.View = System.Windows.Forms.View.Details;
@@ -1357,12 +1243,121 @@
             this.columnHeader31.Text = "Up Rate";
             this.columnHeader31.Width = 80;
             // 
+            // connectButton
+            // 
+            this.connectButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.connectButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.connect_creating;
+            this.connectButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.connectButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.connectButton.Name = "connectButton";
+            this.connectButton.Size = new System.Drawing.Size(36, 36);
+            this.connectButton.Text = "Connect";
+            this.connectButton.Click += new System.EventHandler(this.connectButton_Click);
+            // 
+            // disconnectButton
+            // 
+            this.disconnectButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.disconnectButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.connect_no;
+            this.disconnectButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.disconnectButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.disconnectButton.Name = "disconnectButton";
+            this.disconnectButton.Size = new System.Drawing.Size(36, 36);
+            this.disconnectButton.Text = "Disconnect";
+            this.disconnectButton.Visible = false;
+            this.disconnectButton.Click += new System.EventHandler(this.disconnectButton_Click);
+            // 
+            // addTorrentButton
+            // 
+            this.addTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.addTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.edit_add;
+            this.addTorrentButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.addTorrentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addTorrentButton.Name = "addTorrentButton";
+            this.addTorrentButton.Size = new System.Drawing.Size(36, 36);
+            this.addTorrentButton.Text = "Add Torrent";
+            this.addTorrentButton.Visible = false;
+            this.addTorrentButton.Click += new System.EventHandler(this.addTorrentButton_Click);
+            // 
+            // addWebTorrentButton
+            // 
+            this.addWebTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.addWebTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.net_add;
+            this.addWebTorrentButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.addWebTorrentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addWebTorrentButton.Name = "addWebTorrentButton";
+            this.addWebTorrentButton.Size = new System.Drawing.Size(36, 36);
+            this.addWebTorrentButton.Text = "Add Torrent from URL";
+            this.addWebTorrentButton.Visible = false;
+            this.addWebTorrentButton.Click += new System.EventHandler(this.addWebTorrentButton_Click);
+            // 
+            // removeTorrentButton
+            // 
+            this.removeTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.removeTorrentButton.Enabled = false;
+            this.removeTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.button_cancel1;
+            this.removeTorrentButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.removeTorrentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.removeTorrentButton.Name = "removeTorrentButton";
+            this.removeTorrentButton.Size = new System.Drawing.Size(36, 36);
+            this.removeTorrentButton.Text = "Remove torrent(s)";
+            this.removeTorrentButton.Visible = false;
+            this.removeTorrentButton.Click += new System.EventHandler(this.removeTorrentButton_Click);
+            // 
+            // startTorrentButton
+            // 
+            this.startTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.startTorrentButton.Enabled = false;
+            this.startTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.player_play1;
+            this.startTorrentButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.startTorrentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.startTorrentButton.Name = "startTorrentButton";
+            this.startTorrentButton.Size = new System.Drawing.Size(36, 36);
+            this.startTorrentButton.Text = "Start torrent(s)";
+            this.startTorrentButton.Visible = false;
+            this.startTorrentButton.Click += new System.EventHandler(this.startTorrentButton_Click);
+            // 
+            // pauseTorrentButton
+            // 
+            this.pauseTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.pauseTorrentButton.Enabled = false;
+            this.pauseTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.player_pause;
+            this.pauseTorrentButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.pauseTorrentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.pauseTorrentButton.Name = "pauseTorrentButton";
+            this.pauseTorrentButton.Size = new System.Drawing.Size(36, 36);
+            this.pauseTorrentButton.Text = "Pause torrent(s)";
+            this.pauseTorrentButton.Visible = false;
+            this.pauseTorrentButton.Click += new System.EventHandler(this.pauseTorrentButton_Click);
+            // 
+            // localConfigureButton
+            // 
+            this.localConfigureButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.localConfigureButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.configure;
+            this.localConfigureButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.localConfigureButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.localConfigureButton.Name = "localConfigureButton";
+            this.localConfigureButton.Size = new System.Drawing.Size(36, 36);
+            this.localConfigureButton.Text = "Local Settings";
+            this.localConfigureButton.Click += new System.EventHandler(this.localConfigureButton_Click);
+            // 
+            // remoteConfigureButton
+            // 
+            this.remoteConfigureButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.remoteConfigureButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.netconfigure;
+            this.remoteConfigureButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.remoteConfigureButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.remoteConfigureButton.Name = "remoteConfigureButton";
+            this.remoteConfigureButton.Size = new System.Drawing.Size(36, 36);
+            this.remoteConfigureButton.Text = "Remote Settings";
+            this.remoteConfigureButton.Visible = false;
+            this.remoteConfigureButton.Click += new System.EventHandler(this.remoteConfigureButton_Click);
+            // 
             // MainWindow
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(848, 574);
+            this.ClientSize = new System.Drawing.Size(948, 574);
             this.Controls.Add(this.toolStripContainer1);
             this.Controls.Add(this.menuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1384,12 +1379,12 @@
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
-            this.mainVerticalSplitContainer.Panel1.ResumeLayout(false);
-            this.mainVerticalSplitContainer.Panel2.ResumeLayout(false);
-            this.mainVerticalSplitContainer.ResumeLayout(false);
             this.torrentAndTabsSplitContainer.Panel1.ResumeLayout(false);
             this.torrentAndTabsSplitContainer.Panel2.ResumeLayout(false);
             this.torrentAndTabsSplitContainer.ResumeLayout(false);
+            this.mainVerticalSplitContainer.Panel1.ResumeLayout(false);
+            this.mainVerticalSplitContainer.Panel2.ResumeLayout(false);
+            this.mainVerticalSplitContainer.ResumeLayout(false);
             this.torrentTabControl.ResumeLayout(false);
             this.generalTabPage.ResumeLayout(false);
             this.splitContainer3.Panel1.ResumeLayout(false);
@@ -1471,13 +1466,12 @@
         public System.Windows.Forms.ToolStripButton connectButton;
         public System.Windows.Forms.Timer refreshTimer;
         public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
-        public System.ComponentModel.BackgroundWorker refreshWorker;
         public System.Windows.Forms.NotifyIcon notifyIcon;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         public ListViewNF torrentListView;
         private System.Windows.Forms.ToolStripMenuItem localSettingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem remoteSettingsToolStripMenuItem;
-        public System.Windows.Forms.ListBox stateListBox;
+        public TransmissionRemoteDotnet.GListBox stateListBox;
         private System.ComponentModel.BackgroundWorker filesWorker;
         public TransmissionRemoteDotnet.ListViewNF filesListView;
         public System.Windows.Forms.Timer filesTimer;
@@ -1547,5 +1541,6 @@
         private System.Windows.Forms.ToolStripMenuItem projectSiteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showErrorLogToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.ComponentModel.BackgroundWorker refreshWorker;
     }
 }

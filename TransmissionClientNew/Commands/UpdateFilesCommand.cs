@@ -47,18 +47,6 @@ namespace TransmissionRemoteDotnet.Commmands
                 return;
             }
             form.filesListView.SuspendLayout();
-            UpdateFiles(torrent, form.filesListView);
-            if (includePriorities)
-            {
-                form.filesListView.Enabled = true;
-                Toolbox.StripeListView(form.filesListView);
-            }
-            form.filesListView.ResumeLayout();
-            form.filesTimer.Enabled = true;
-        }
-
-        public static void UpdateFiles(JsonObject torrent, ListView listView)
-        {
             JsonArray files = (JsonArray)torrent[ProtocolConstants.FIELD_FILES];
             if (files == null)
             {
@@ -66,6 +54,7 @@ namespace TransmissionRemoteDotnet.Commmands
             }
             JsonArray priorities = (JsonArray)torrent[ProtocolConstants.FIELD_PRIORITIES];
             JsonArray wanted = (JsonArray)torrent[ProtocolConstants.FIELD_WANTED];
+            ListView filesListView = form.filesListView;
             for (int i = 0; i < files.Length; i++)
             {
                 JsonObject file = (JsonObject)files[i];
@@ -73,9 +62,9 @@ namespace TransmissionRemoteDotnet.Commmands
                 long length = ((JsonNumber)file["length"]).ToInt64();
                 string percentStr = Toolbox.CalcPercentage(done, length) + "%";
                 string completeStr = Toolbox.GetFileSize(done);
-                lock (listView)
+                lock (filesListView)
                 {
-                    if (i >= listView.Items.Count && priorities != null && wanted != null)
+                    if (i >= filesListView.Items.Count && priorities != null && wanted != null)
                     {
                         string lengthStr = Toolbox.GetFileSize(length);
                         string name = (string)file[ProtocolConstants.FIELD_NAME];
@@ -99,16 +88,40 @@ namespace TransmissionRemoteDotnet.Commmands
                         item.SubItems.Add(completeStr);
                         item.SubItems.Add(percentStr);
                         item.SubItems.Add(((JsonNumber)wanted[i]).ToBoolean() ? "No" : "Yes");
-                        item.SubItems.Add(Toolbox.FormatPriority((JsonNumber)priorities[i]));
-                        listView.Items.Add(item);
+                        item.SubItems.Add(FormatPriority((JsonNumber)priorities[i]));
+                        filesListView.Items.Add(item);
                     }
-                    else if (i < listView.Items.Count)
+                    else if (i < filesListView.Items.Count)
                     {
-                        ListViewItem item = listView.Items[i];
+                        ListViewItem item = filesListView.Items[i];
                         item.SubItems[2].Text = completeStr;
                         item.SubItems[3].Text = percentStr;
                     }
                 }
+            }
+            if (includePriorities)
+            {
+                form.filesListView.Enabled = true;
+                Toolbox.StripeListView(form.filesListView);
+            }
+            form.filesListView.ResumeLayout();
+            form.filesTimer.Enabled = true;
+        }
+
+        private string FormatPriority(JsonNumber n)
+        {
+            short s = n.ToInt16();
+            if (s < 0)
+            {
+                return "Low";
+            }
+            else if (s > 0)
+            {
+                return "High";
+            }
+            else
+            {
+                return "Normal";
             }
         }
     }

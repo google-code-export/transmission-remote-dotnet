@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Net;
 using TransmissionRemoteDotnet.Commmands;
 using Jayrock.Json;
 
@@ -13,7 +14,7 @@ namespace TransmissionRemoteDotnet
 {
     public partial class MainWindow : Form
     {
-        public static readonly string DEFAULT_WINDOW_TITLE = "Transmission Remote";
+        public const string DEFAULT_WINDOW_TITLE = "Transmission Remote";
         public Boolean minimise = false;
         private ListViewItemSorter lvwColumnSorter;
         private ContextMenu torrentSelectionMenu;
@@ -27,7 +28,47 @@ namespace TransmissionRemoteDotnet
             Program.onConnStatusChanged += new ConnStatusChangedDelegate(Program_connStatusChanged);
             Program.onTorrentsUpdated += new TorrentsUpdatedDelegate(Program_onTorrentsUpdated);
             InitializeComponent();
-            torrentAndTabsSplitContainer.Panel2Collapsed = true;
+            mainVerticalSplitContainer.Panel2Collapsed = torrentAndTabsSplitContainer.Panel2Collapsed = true;
+            this.peersTabPageSaved = this.peersTabPage;
+            LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
+            refreshTimer.Interval = settings.refreshRate * 1000;
+            filesTimer.Interval = settings.refreshRate * 1000 * LocalSettingsSingleton.FILES_REFRESH_MULTIPLICANT;
+            torrentListView.ListViewItemSorter = lvwColumnSorter = new ListViewItemSorter();
+            this.torrentSelectionMenu = new ContextMenu(new MenuItem[] {
+                new MenuItem("Start", new EventHandler(this.startTorrentButton_Click)),
+                new MenuItem("Pause", new EventHandler(this.pauseTorrentButton_Click)),
+                new MenuItem("Remove", new EventHandler(this.removeTorrentButton_Click)),
+                new MenuItem("-"),
+                new MenuItem("Properties", new EventHandler(this.ShowTorrentPropsHandler))
+            });
+            this.fileSelectionMenu = new ContextMenu(new MenuItem[] {
+                new MenuItem("High Priority", new EventHandler(this.SetHighPriorityHandler)),
+                new MenuItem("Normal Priority", new EventHandler(this.SetNormalPriorityHandler)),
+                new MenuItem("Low Priority", new EventHandler(this.SetLowPriorityHandler)),
+                new MenuItem("-"),
+                new MenuItem("Download", new EventHandler(this.SetWantedHandler)),
+                new MenuItem("Skip", new EventHandler(this.SetUnwantedHandler)),
+                new MenuItem("-"),
+                new MenuItem("Select All", new EventHandler(this.SelectAllFilesHandler))
+            });
+            this.noFileSelectionMenu = this.filesListView.ContextMenu = new ContextMenu(new MenuItem[] {
+                new MenuItem("Select All", new EventHandler(this.SelectAllFilesHandler))
+            });
+            stateListBox.SuspendLayout();
+            ImageList stateListBoxImageList = new ImageList();
+            stateListBoxImageList.Images.Add("ledpurple", global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledpurple);
+            stateListBoxImageList.Images.Add("ledorange", global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledorange);
+            stateListBoxImageList.Images.Add("ledred", global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledred);
+            stateListBoxImageList.Images.Add("ledgreen", global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledgreen);
+            stateListBoxImageList.Images.Add("ledblue", global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledblue);
+            
+            stateListBox.ImageList = stateListBoxImageList;            
+            stateListBox.Items.Add(new GListBoxItem("All", 0));
+            stateListBox.Items.Add(new GListBoxItem("Downloading", 1));
+            stateListBox.Items.Add(new GListBoxItem("Paused", 2));
+            stateListBox.Items.Add(new GListBoxItem("Complete", 3));
+            stateListBox.Items.Add(new GListBoxItem("Seeding", 4));
+            stateListBox.ResumeLayout();
         }
 
         private void Program_onTorrentsUpdated()
@@ -35,7 +76,8 @@ namespace TransmissionRemoteDotnet
             lock (torrentListView)
             {
                 UpdateInfoPanel(false);
-                stateListBox.Enabled = torrentListView.Enabled = true;
+                torrentListView.Enabled = true;
+                mainVerticalSplitContainer.Panel2Collapsed = false;
             }
             if (Program.updateSerial <= 1)
             {
@@ -58,7 +100,7 @@ namespace TransmissionRemoteDotnet
             }
             else
             {
-                stateListBox.Enabled = torrentListView.Enabled = false;
+                torrentListView.Enabled = false;
                 lock (this.torrentListView)
                 {
                     this.torrentListView.Items.Clear();
@@ -67,13 +109,14 @@ namespace TransmissionRemoteDotnet
                 this.toolStripStatusLabel.Text = "Disconnected.";
                 this.Text = MainWindow.DEFAULT_WINDOW_TITLE;
                 this.torrentAndTabsSplitContainer.Panel2Collapsed = true;
+                this.mainVerticalSplitContainer.Panel2Collapsed = true;
             }
             this.notifyIcon.Text = MainWindow.DEFAULT_WINDOW_TITLE;
             trayMenu.MenuItems.Add("-");
             trayMenu.MenuItems.Add("Exit", new EventHandler(this.exitToolStripMenuItem_Click));
             this.notifyIcon.ContextMenu = trayMenu;
             connectButton.Visible = connectToolStripMenuItem.Visible
-                = mainVerticalSplitContainer.Panel1Collapsed = !connected;
+                = !connected;
             disconnectButton.Visible = addTorrentToolStripMenuItem.Visible
                 = addTorrentButton.Visible = addWebTorrentButton.Visible
                 = remoteConfigureButton.Visible = pauseTorrentButton.Visible
@@ -124,35 +167,7 @@ namespace TransmissionRemoteDotnet
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            this.peersTabPageSaved = this.peersTabPage;
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-            refreshTimer.Interval = settings.refreshRate * 1000;
-            filesTimer.Interval = settings.refreshRate * 1000 * LocalSettingsSingleton.FILES_REFRESH_MULTIPLICANT;
-            torrentListView.ListViewItemSorter = lvwColumnSorter = new ListViewItemSorter();
-            if (settings.autoConnect)
-            {
-                Connect();
-            }
-            this.torrentSelectionMenu = new ContextMenu(new MenuItem[] {
-                new MenuItem("Start", new EventHandler(this.startTorrentButton_Click)),
-                new MenuItem("Pause", new EventHandler(this.pauseTorrentButton_Click)),
-                new MenuItem("Remove", new EventHandler(this.removeTorrentButton_Click)),
-                new MenuItem("-"),
-                new MenuItem("Properties", new EventHandler(this.ShowTorrentPropsHandler))
-            });
-            this.fileSelectionMenu = new ContextMenu(new MenuItem[] {
-                new MenuItem("High Priority", new EventHandler(this.SetHighPriorityHandler)),
-                new MenuItem("Normal Priority", new EventHandler(this.SetNormalPriorityHandler)),
-                new MenuItem("Low Priority", new EventHandler(this.SetLowPriorityHandler)),
-                new MenuItem("-"),
-                new MenuItem("Download", new EventHandler(this.SetWantedHandler)),
-                new MenuItem("Skip", new EventHandler(this.SetUnwantedHandler)),
-                new MenuItem("-"),
-                new MenuItem("Select All", new EventHandler(this.SelectAllFilesHandler))
-            });
-            this.noFileSelectionMenu = this.filesListView.ContextMenu = new ContextMenu(new MenuItem[] {
-                new MenuItem("Select All", new EventHandler(this.SelectAllFilesHandler))
-            });
             if (notifyIcon.Visible = settings.minToTray)
             {
                 foreach (string arg in Environment.GetCommandLineArgs())
@@ -164,16 +179,15 @@ namespace TransmissionRemoteDotnet
                     }
                 }
             }
+            if (settings.autoConnect)
+            {
+                Connect();
+            }
         }
 
         private void SelectAllFilesHandler(object sender, EventArgs e)
         {
-            lock (filesListView)
-            {
-                filesListView.SuspendLayout();
-                Toolbox.SelectAll(filesListView);
-                filesListView.ResumeLayout();
-            }
+            Toolbox.SelectAll(filesListView);
         }
 
         private void MainWindow_DragEnter(object sender, DragEventArgs e)
@@ -213,14 +227,6 @@ namespace TransmissionRemoteDotnet
             return worker;
         }
 
-        public BackgroundWorker CreateUriUploadWorker()
-        {
-            BackgroundWorker worker = new BackgroundWorker();
-            worker.DoWork += new DoWorkEventHandler(this.UploadWorker_DoWorkUri);
-            worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(this.UploadWorker_RunWorkerCompleted);
-            return worker;
-        }
-
         public BackgroundWorker CreateActionWorker()
         {
             BackgroundWorker worker = new BackgroundWorker();
@@ -239,9 +245,9 @@ namespace TransmissionRemoteDotnet
             TransmissionCommand command = (TransmissionCommand)e.Result;
             command.Execute();
             /* Everything seemed to go OK, so do an update if not already. */
-            if (command.GetType() != typeof(ErrorCommand) && !refreshWorker.IsBusy)
+            if (command.GetType() != typeof(ErrorCommand))
             {
-                refreshWorker.RunWorkerAsync();
+                RefreshIfNotRefreshing();
             }
         }
 
@@ -249,24 +255,20 @@ namespace TransmissionRemoteDotnet
         {
             foreach (string file in (string[])e.Argument)
             {
-                if ((e.Result = CommandFactory.UploadFile(file)) != null)
+                if ((e.Result = Toolbox.UploadFile(file, false)) != null)
                 {
                     /* An exception occured, so display it. */
                     return;
                 }
             }
-            e.Result = new NoCommand();
-        }
-
-        private void UploadWorker_DoWorkUri(object sender, DoWorkEventArgs e)
-        {
-            e.Result = CommandFactory.UploadFile((Uri)e.Argument);
         }
 
         private void UploadWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            TransmissionCommand command = (TransmissionCommand)e.Result;
-            command.Execute();
+            if (e.Result != null)
+            {
+                MessageBox.Show(((Exception)e.Result).Message, "Error while uploading torrent", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private JsonArray BuildIdArray()
@@ -299,7 +301,10 @@ namespace TransmissionRemoteDotnet
 
         private void RemoveTorrents()
         {
-            CreateActionWorker().RunWorkerAsync(Requests.Generic("torrent-remove", BuildIdArray()));
+            if (torrentListView.SelectedItems.Count > 0)
+            {
+                CreateActionWorker().RunWorkerAsync(Requests.Generic("torrent-remove", BuildIdArray()));
+            }
         }
 
         private void notifyIcon_MouseClick(object sender, MouseEventArgs e)
@@ -342,8 +347,9 @@ namespace TransmissionRemoteDotnet
         private void connectWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             BackgroundWorker senderBW = (BackgroundWorker)sender;
-            if (this.connectWorker.Equals(senderBW))
+            if (this.connectWorker != null && this.connectWorker.Equals(senderBW))
             {
+                this.connectWorker = null;
                 TransmissionCommand command = (TransmissionCommand)e.Result;
                 command.Execute();
             }
@@ -373,6 +379,11 @@ namespace TransmissionRemoteDotnet
         }
 
         private void refreshTimer_Tick(object sender, EventArgs e)
+        {
+            RefreshIfNotRefreshing();
+        }
+
+        public void RefreshIfNotRefreshing()
         {
             if (!refreshWorker.IsBusy)
             {
@@ -421,19 +432,6 @@ namespace TransmissionRemoteDotnet
                     peersListView.Tag = 0;
                     Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
                     CreateActionWorker().RunWorkerAsync(Requests.FilesAndPriorities(t.Id));
-                    trackersListView.SuspendLayout();
-                    foreach (JsonObject tracker in t.Trackers)
-                    {
-                        int tier = ((JsonNumber)tracker["tier"]).ToInt32();
-                        string announceUrl = (string)tracker["announce"];
-                        string scrapeUrl = (string)tracker["scrape"];
-                        ListViewItem item = new ListViewItem(tier.ToString());
-                        item.SubItems.Add(announceUrl);
-                        item.SubItems.Add(scrapeUrl);
-                        trackersListView.Items.Add(item);
-                    }
-                    Toolbox.StripeListView(trackersListView);
-                    trackersListView.ResumeLayout();
                 }
                 torrentAndTabsSplitContainer.Panel2Collapsed = !one;
                 refreshElapsedTimer.Enabled = filesTimer.Enabled = one;
@@ -580,13 +578,8 @@ namespace TransmissionRemoteDotnet
 
         private void addWebTorrentButton_Click(object sender, EventArgs e)
         {
-            UriPromptWindow uriPrompt = new UriPromptWindow(new UriDelegate(this.addWebTorrent_UriChosen));
+            UriPromptWindow uriPrompt = new UriPromptWindow();
             uriPrompt.Show();
-        }
-
-        private void addWebTorrent_UriChosen(Uri uri)
-        {
-            CreateUriUploadWorker().RunWorkerAsync(uri);
         }
 
         private void stateListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -834,6 +827,18 @@ namespace TransmissionRemoteDotnet
             CreateActionWorker().RunWorkerAsync(request);
         }
 
+        private decimal ParseProgress(string s)
+        {
+            try
+            {
+                return Math.Round(Decimal.Parse(s) * 100, 2);
+            }
+            catch
+            {
+                return new decimal(0);
+            }
+        }
+
         // lock torrentListView BEFORE calling this method
         public void UpdateInfoPanel(bool first)
         {
@@ -857,13 +862,26 @@ namespace TransmissionRemoteDotnet
                     {
                         torrentTabControl.TabPages.Remove(peersTabPageSaved);
                     }
+                    trackersListView.SuspendLayout();
+                    foreach (JsonObject tracker in t.Trackers)
+                    {
+                        int tier = ((JsonNumber)tracker["tier"]).ToInt32();
+                        string announceUrl = (string)tracker["announce"];
+                        string scrapeUrl = (string)tracker["scrape"];
+                        ListViewItem item = new ListViewItem(tier.ToString());
+                        item.SubItems.Add(announceUrl);
+                        item.SubItems.Add(scrapeUrl);
+                        trackersListView.Items.Add(item);
+                    }
+                    Toolbox.StripeListView(trackersListView);
+                    trackersListView.ResumeLayout();
                 }
                 remainingLabel.Text = t.GetLongETA();
                 uploadedLabel.Text = t.UploadedString;
                 uploadLimitLabel.Text = t.UploadLimitMode ? Toolbox.KbpsString(t.UploadLimit) : "∞";
                 uploadRateLabel.Text = t.UploadRate;
-                seedersLabel.Text = String.Format("{0} of {0} connected", t.PeersSendingToUs, t.Seeders);
-                leechersLabel.Text = String.Format("{0} of {0} connected", t.PeersGettingFromUs, t.Leechers);
+                seedersLabel.Text = String.Format("{0} of {1} connected", t.PeersSendingToUs, t.Seeders);
+                leechersLabel.Text = String.Format("{0} of {1} connected", t.PeersGettingFromUs, t.Leechers);
                 ratioLabel.Text = t.RatioString;
                 progressBar.Value = (int)t.Percentage;
                 percentageLabel.Text = t.Percentage.ToString() + "%";
@@ -885,8 +903,8 @@ namespace TransmissionRemoteDotnet
                             item = new ListViewItem((string)peer["address"]);
                             item.SubItems.Add("");
                             item.SubItems.Add((string)peer["clientName"]);
-                            item.ToolTipText = item.SubItems[2].Text;
-                            item.SubItems.Add((string)peer[ProtocolConstants.FIELD_PROGRESS] + "%");
+                            item.ToolTipText = item.SubItems[0].Text;
+                            item.SubItems.Add(ParseProgress((string)peer[ProtocolConstants.FIELD_PROGRESS]) + "%");
                             item.SubItems.Add(Toolbox.GetSpeed(((JsonNumber)peer[ProtocolConstants.FIELD_RATETOCLIENT]).ToInt64()));
                             item.SubItems.Add(Toolbox.GetSpeed(((JsonNumber)peer[ProtocolConstants.FIELD_RATETOPEER]).ToInt64()));
                             peersListView.Items.Add(item);
@@ -895,23 +913,26 @@ namespace TransmissionRemoteDotnet
                         }
                         else
                         {
-                            item.SubItems[3].Text = (string)peer[ProtocolConstants.FIELD_PROGRESS] + "%";
+                            item.SubItems[3].Text = ParseProgress((string)peer[ProtocolConstants.FIELD_PROGRESS]) + "%";
                             item.SubItems[4].Text = Toolbox.GetSpeed(((JsonNumber)peer[ProtocolConstants.FIELD_RATETOCLIENT]).ToInt64());
                             item.SubItems[5].Text = Toolbox.GetSpeed(((JsonNumber)peer[ProtocolConstants.FIELD_RATETOPEER]).ToInt64());
                         }
                         item.Tag = peersListView.Tag;
                     }
                     Queue<ListViewItem> removalQueue = new Queue<ListViewItem>();
-                    foreach (ListViewItem item in peersListView.Items)
+                    lock (peersListView)
                     {
-                        if ((int)item.Tag != (int)peersListView.Tag)
+                        foreach (ListViewItem item in peersListView.Items)
                         {
-                            removalQueue.Enqueue(item);
+                            if ((int)item.Tag != (int)peersListView.Tag)
+                            {
+                                removalQueue.Enqueue(item);
+                            }
                         }
-                    }
-                    foreach (ListViewItem item in removalQueue)
-                    {
-                        peersListView.Items.Remove(item);
+                        foreach (ListViewItem item in removalQueue)
+                        {
+                            peersListView.Items.Remove(item);
+                        }
                     }
                     if (removalQueue.Count > 0)
                     {
@@ -943,11 +964,14 @@ namespace TransmissionRemoteDotnet
 
         private ListViewItem FindPeerItem(string address, string clientName)
         {
-            foreach (ListViewItem peer in peersListView.Items)
+            lock (peersListView)
             {
-                if (peer.SubItems[0].Text.Equals(address) && peer.SubItems[2].Text.Equals(clientName))
+                foreach (ListViewItem peer in peersListView.Items)
                 {
-                    return peer;
+                    if (peer.SubItems[0].Text.Equals(address) && peer.SubItems[2].Text.Equals(clientName))
+                    {
+                        return peer;
+                    }
                 }
             }
             return null;
@@ -960,14 +984,17 @@ namespace TransmissionRemoteDotnet
 
         private void RefreshElapsedTimer()
         {
-            if (torrentListView.SelectedItems.Count == 1)
+            lock (torrentListView)
             {
-                Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
-                timeElapsedLabel.Text = Toolbox.FormatTimespanLong(DateTime.Now.Subtract(t.Added));
-            }
-            else
-            {
-                refreshElapsedTimer.Enabled = false;
+                if (torrentListView.SelectedItems.Count == 1)
+                {
+                    Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
+                    timeElapsedLabel.Text = Toolbox.FormatTimespanLong(DateTime.Now.Subtract(t.Added));
+                }
+                else
+                {
+                    refreshElapsedTimer.Enabled = false;
+                }
             }
         }
 

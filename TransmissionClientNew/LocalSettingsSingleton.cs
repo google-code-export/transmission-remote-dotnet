@@ -10,12 +10,12 @@ namespace TransmissionRemoteDotnet
     public sealed class LocalSettingsSingleton
     {
         /* Some unconfigurable variables. */
-        private readonly string REGISTRY_KEY = "Software\\TransmissionRemote";
-        public static readonly int COMPLETED_BALOON_TIMEOUT = 4;
-        public static readonly int FILES_REFRESH_MULTIPLICANT = 3;
+        private const string REGISTRY_KEY = "Software\\TransmissionRemote";
+        public const int COMPLETED_BALOON_TIMEOUT = 4;
+        public const int FILES_REFRESH_MULTIPLICANT = 3;
 
         /* Registry keys */
-        private static readonly string REGKEY_HOST = "host",
+        private const string REGKEY_HOST = "host",
             REGKEY_PORT = "port",
             REGKEY_USESSL = "usessl",
             REGKEY_AUTOCONNECT = "autoConnect",
@@ -33,8 +33,8 @@ namespace TransmissionRemoteDotnet
             REGKEY_MINTOTRAY = "minToTray",
             REGKEY_REFRESHRATE = "refreshRate";
 
-        static LocalSettingsSingleton instance = null;
-        static readonly object padlock = new object();
+        private static LocalSettingsSingleton instance = null;
+        private static readonly object padlock = new object();
 
         public static LocalSettingsSingleton Instance
         {

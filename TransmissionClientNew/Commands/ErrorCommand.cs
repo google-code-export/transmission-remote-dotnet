@@ -8,9 +8,9 @@ namespace TransmissionRemoteDotnet.Commmands
 {
     public class ErrorCommand : TransmissionCommand
     {
-        private static readonly int MAX_MESSAGE_LENGTH = 500;
-        private string title;
-        private string body;
+        private const int MAX_MESSAGE_LENGTH = 500;
+        public string title;
+        public string body;
 
         public ErrorCommand(string title, string body)
         {

@@ -94,6 +94,10 @@
     <Compile Include="ErrorLogWindow.Designer.cs">
       <DependentUpon>ErrorLogWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="GListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GListBoxItem.cs" />
     <Compile Include="ListViewColumnSorter.cs" />
     <Compile Include="ListViewNF.cs">
       <SubType>Component</SubType>
@@ -225,6 +229,11 @@
     <None Include="Resources\configure.png" />
     <None Include="Resources\netconfigure.png" />
     <None Include="Resources\net_add.png" />
+    <None Include="Resources\16x16_ledblue.png" />
+    <None Include="Resources\16x16_ledgreen.png" />
+    <None Include="Resources\16x16_ledorange.png" />
+    <None Include="Resources\16x16_ledpurple.png" />
+    <None Include="Resources\16x16_ledred.png" />
     <Content Include="transmission_large.ico" />
   </ItemGroup>
   <ItemGroup>

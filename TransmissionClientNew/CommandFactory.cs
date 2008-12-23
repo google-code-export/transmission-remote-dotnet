@@ -16,52 +16,6 @@ namespace TransmissionRemoteDotnet
 {
     public class CommandFactory
     {
-        public static TransmissionCommand UploadFile(Uri uri)
-        {
-            string target = Path.GetTempFileName();
-            try
-            {
-                WebClient webClient = new WebClient();
-                webClient.DownloadFile(uri, target);
-            }
-            catch (Exception ex)
-            {
-                return new ErrorCommand(ex);
-            }
-            TransmissionCommand command = UploadFile(target);
-            try
-            {
-                File.Delete(target);
-            }
-            catch { }
-            return command != null ? command : new NoCommand();
-        }
-
-        public static TransmissionCommand UploadFile(string file)
-        {
-            LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-            if (!Program.Connected || file == null || !File.Exists(file))
-            {
-                return null;
-            }
-            try
-            {
-                using (TransmissionWebClient wc = new TransmissionWebClient())
-                {
-                    wc.UploadFile(settings.URL + "upload?paused=" + (settings.startPaused ? "true" : "false"), file);
-                }
-                if (!Program.form.refreshWorker.IsBusy)
-                {
-                    Program.form.refreshWorker.RunWorkerAsync();
-                }
-            }
-            catch (Exception ex)
-            {
-                return new ErrorCommand(ex);
-            }
-            return null;
-        }
-
         public static TransmissionCommand Request(JsonObject data)
         {
             string str_response = null;

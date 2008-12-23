@@ -16,8 +16,7 @@ namespace TransmissionRemoteDotnet
 
         public ErrorLogWindow()
         {
-            onErrorDelegate = new OnErrorDelegate(this.OnError);
-            Program.onError += onErrorDelegate;
+            Program.onError += onErrorDelegate = new OnErrorDelegate(this.OnError);
             InitializeComponent();
         }
 

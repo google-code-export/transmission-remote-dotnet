@@ -19,9 +19,6 @@ namespace TransmissionRemoteDotnet
             return sslPolicyErrors != SslPolicyErrors.RemoteCertificateNotAvailable; // we need certificate, but accept untrusted
         }
 
-        /* Some proxies may require a known user agent? */
-        public const string userAgent = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)";
-
         protected override WebRequest GetWebRequest(Uri address)
         {
             WebRequest request = base.GetWebRequest(address);
@@ -35,9 +32,9 @@ namespace TransmissionRemoteDotnet
         public static void SetupWebRequest(HttpWebRequest request)
         {
             /* Resolves a bug in shttpd (older T versions). */
-            //request.KeepAlive = Program.transmissionVersion < 1.40;
-            request.KeepAlive = false; 
-            request.UserAgent = TransmissionWebClient.userAgent;
+            //request.KeepAlive = !(Program.transmissionVersion < 1.40);
+            request.KeepAlive = false;
+            request.UserAgent = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)";
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
             if (settings.authEnabled)
             {

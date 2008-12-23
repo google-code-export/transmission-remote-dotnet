@@ -56,10 +56,7 @@ namespace TransmissionRemoteDotnet.Commmands
             if (!Program.Connected)
             {
                 Program.Connected = true;
-                if (!Program.form.refreshWorker.IsBusy)
-                {
-                    Program.form.refreshWorker.RunWorkerAsync();
-                }
+                Program.form.RefreshIfNotRefreshing();
                 if (Program.uploadArgs != null)
                 {
                     Program.form.CreateUploadWorker().RunWorkerAsync(Program.uploadArgs);

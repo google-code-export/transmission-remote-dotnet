@@ -5,22 +5,64 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 using Jayrock.Json;
+using System.Net;
+using System.IO;
 
 namespace TransmissionRemoteDotnet
 {
     class Toolbox
     {
-        private static readonly int STRIPE_OFFSET = 15;
+        private const int STRIPE_OFFSET = 15;
+
+        public static Exception UploadFile(string file, bool deleteAfter)
+        {
+            return UploadFile(file, deleteAfter, null);
+        }
+
+        public static Exception UploadFile(string file, bool deleteAfter, UploadProgressChangedEventHandler progressHandler)
+        {
+            LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
+            Exception exception = null;
+            if (!Program.Connected || file == null || !File.Exists(file))
+            {
+                return null;
+            }
+            try
+            {
+                using (TransmissionWebClient wc = new TransmissionWebClient())
+                {
+                    if (progressHandler != null)
+                    {
+                        wc.UploadProgressChanged += progressHandler;
+                    }
+                    wc.UploadFile(settings.URL + "upload?paused=" + (settings.startPaused ? "true" : "false"), file);
+                }
+                Program.form.RefreshIfNotRefreshing();
+            }
+            catch (Exception ex)
+            {
+                exception = ex;
+            }
+            if (deleteAfter && File.Exists(file))
+            {
+                try
+                {
+                    File.Delete(file);
+                }
+                catch { }
+            }
+            return exception;
+        }
 
         public static void StripeListView(ListView list)
         {
-            list.SuspendLayout();
             Color window = SystemColors.Window;
             /* Check for weird window backgrounds */
             if (window.R >= STRIPE_OFFSET && window.G >= STRIPE_OFFSET && window.B >= STRIPE_OFFSET)
             {
                 lock (list)
                 {
+                    list.SuspendLayout();
                     foreach (ListViewItem item in list.Items)
                     {
                         item.BackColor = item.Index % 2 == 1 ?
@@ -29,25 +71,8 @@ namespace TransmissionRemoteDotnet
                                 window.B - STRIPE_OFFSET)
                             : window;
                     }
+                    list.ResumeLayout();
                 }
-            }
-            list.ResumeLayout();
-        }
-
-        public static string FormatPriority(JsonNumber n)
-        {
-            short s = n.ToInt16();
-            if (s < 0)
-            {
-                return "Low";
-            }
-            else if (s > 0)
-            {
-                return "High";
-            }
-            else
-            {
-                return "Normal";
             }
         }
 
@@ -126,15 +151,15 @@ namespace TransmissionRemoteDotnet
 
         public static void SelectAll(ListView lv)
         {
-            lv.SuspendLayout();
             lock (lv)
             {
+                lv.SuspendLayout();
                 foreach (ListViewItem item in lv.Items)
                 {
                     item.Selected = true;
                 }
+                lv.ResumeLayout();
             }
-            lv.ResumeLayout();
         }
     }
 }

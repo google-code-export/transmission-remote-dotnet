@@ -7,14 +7,14 @@ namespace TransmissionRemoteDotnet
 {
     public class ProtocolConstants
     {
-        public static readonly short
+        public const short
             STATUS_WAITING_TO_CHECK = 1,
             STATUS_CHECKING = 2,
             STATUS_DOWNLOADING = 4,
             STATUS_SEEDING = 8,
             STATUS_STOPPED = 16;
 
-        public static readonly string
+        public const string
             KEY_TAG = "tag",
             KEY_METHOD = "method",
             KEY_IDS = "ids",

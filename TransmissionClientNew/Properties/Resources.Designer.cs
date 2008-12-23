@@ -60,6 +60,41 @@ namespace TransmissionRemoteDotnet.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap _16x16_ledblue {
+            get {
+                object obj = ResourceManager.GetObject("_16x16_ledblue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap _16x16_ledgreen {
+            get {
+                object obj = ResourceManager.GetObject("_16x16_ledgreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap _16x16_ledorange {
+            get {
+                object obj = ResourceManager.GetObject("_16x16_ledorange", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap _16x16_ledpurple {
+            get {
+                object obj = ResourceManager.GetObject("_16x16_ledpurple", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap _16x16_ledred {
+            get {
+                object obj = ResourceManager.GetObject("_16x16_ledred", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap button_cancel1 {
             get {
                 object obj = ResourceManager.GetObject("button_cancel1", resourceCulture);

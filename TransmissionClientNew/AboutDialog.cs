@@ -12,7 +12,7 @@ namespace TransmissionRemoteDotnet
 {
     public partial class AboutDialog : Form
     {
-        public static readonly string PROJECT_SITE = "http://code.google.com/p/transmission-remote-dotnet/";
+        public const string PROJECT_SITE = "http://code.google.com/p/transmission-remote-dotnet/";
 
         public AboutDialog()
         {
@@ -32,7 +32,7 @@ namespace TransmissionRemoteDotnet
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             linkLabel1.LinkVisited = true;
-            System.Diagnostics.Process.Start(linkLabel1.Text);
+            System.Diagnostics.Process.Start(PROJECT_SITE);
         }
     }
 }
