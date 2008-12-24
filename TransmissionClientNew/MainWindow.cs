@@ -73,6 +73,8 @@ namespace TransmissionRemoteDotnet
             stateListBox.Items.Add(new GListBoxItem("Complete", 3));
             stateListBox.Items.Add(new GListBoxItem("Seeding", 4));
             stateListBox.ResumeLayout();
+            speedGraph.AddLine("Download", Color.Red);
+            speedGraph.AddLine("Upload", Color.Green);
         }
 
         private void Program_onTorrentsUpdated()
@@ -101,6 +103,10 @@ namespace TransmissionRemoteDotnet
                 trayMenu.MenuItems.Add("Disconnect", new EventHandler(this.disconnectButton_Click));
                 this.toolStripStatusLabel.Text = "Connected. Getting torrent information...";
                 this.Text = MainWindow.DEFAULT_WINDOW_TITLE + " - " + LocalSettingsSingleton.Instance.host;
+                speedGraph.GetLineHandle("Download").Clear();
+                speedGraph.GetLineHandle("Upload").Clear();
+                speedGraph.Push(0, "Download");
+                speedGraph.Push(0, "Upload");
             }
             else
             {
@@ -476,6 +482,21 @@ namespace TransmissionRemoteDotnet
             if (torrentListView.SelectedItems.Count > 0)
             {
                 CreateActionWorker().RunWorkerAsync(Requests.Generic(ProtocolConstants.METHOD_TORRENTSTOP, BuildIdArray()));
+            }
+        }
+
+        private delegate void UpdateGraphDelegate(int downspeed, int upspeed);
+        public void UpdateGraph(int downspeed, int upspeed)
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke(new UpdateGraphDelegate(this.UpdateGraph), downspeed, upspeed);
+            }
+            else
+            {
+                speedGraph.Push(downspeed, "Download");
+                speedGraph.Push(upspeed, "Upload");
+                speedGraph.UpdateGraph();
             }
         }
 
@@ -1060,6 +1081,27 @@ namespace TransmissionRemoteDotnet
             }
             this.peersListView.Sort();
             Toolbox.StripeListView(peersListView);
+        }
+
+        private void SpeedResComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (SpeedResComboBox.SelectedIndex)
+            {
+                case 3:
+                    speedGraph.LineInterval = 0.5F;
+                    break;
+                case 2:
+                    speedGraph.LineInterval = 5;
+                    break;
+                case 1:
+                    speedGraph.LineInterval = 15;
+                    break;
+                case 0:
+                default:
+                    speedGraph.LineInterval = 30;
+                    break;
+            }
+            speedGraph.UpdateGraph();
         }
     }
 }

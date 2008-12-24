@@ -74,6 +74,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="2DPushGraph.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="AboutDialog.cs">
       <SubType>Form</SubType>
     </Compile>

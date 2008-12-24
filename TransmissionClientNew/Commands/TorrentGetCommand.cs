@@ -65,6 +65,7 @@ namespace TransmissionRemoteDotnet.Commmands
                 }
             }
             form.ResumeTorrentListView();
+            form.UpdateGraph((int)totalDownload, (int)totalUpload);
             form.UpdateStatus(String.Format(
                 "Connected | {0} down, {1} up | {2} torrents: {3} downloading, {4} seeding | {5} / {6}",
                 new object[] {
