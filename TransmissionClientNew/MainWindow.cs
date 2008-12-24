@@ -73,8 +73,9 @@ namespace TransmissionRemoteDotnet
             stateListBox.Items.Add(new GListBoxItem("Complete", 3));
             stateListBox.Items.Add(new GListBoxItem("Seeding", 4));
             stateListBox.ResumeLayout();
-            speedGraph.AddLine("Download", Color.Red);
-            speedGraph.AddLine("Upload", Color.Green);
+            speedGraph.AddLine("Download", Color.Green);
+            speedGraph.AddLine("Upload", Color.Yellow);
+            speedResComboBox.SelectedIndex = 2;
         }
 
         private void Program_onTorrentsUpdated()
@@ -1085,7 +1086,7 @@ namespace TransmissionRemoteDotnet
 
         private void SpeedResComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (SpeedResComboBox.SelectedIndex)
+            switch (speedResComboBox.SelectedIndex)
             {
                 case 3:
                     speedGraph.LineInterval = 0.5F;
@@ -1096,7 +1097,6 @@ namespace TransmissionRemoteDotnet
                 case 1:
                     speedGraph.LineInterval = 15;
                     break;
-                case 0:
                 default:
                     speedGraph.LineInterval = 30;
                     break;
