@@ -17,6 +17,8 @@ namespace TransmissionRemoteDotnet.Commands
     {
         private UpdateFilesSubCommandMode mode;
         private ListViewItem item;
+
+        /* Update */
         private long bytesCompleted;
         private string bytesCompletedStr;
         private decimal progress;

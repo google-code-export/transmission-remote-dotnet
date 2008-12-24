@@ -793,7 +793,7 @@ namespace TransmissionRemoteDotnet
             Torrent t;
             lock (torrentListView)
             {
-                if (torrentListView.Items.Count != 1 || torrentListView.SelectedItems[0] == null)
+                if (torrentListView.SelectedItems.Count != 1)
                 {
                     return;
                 }
