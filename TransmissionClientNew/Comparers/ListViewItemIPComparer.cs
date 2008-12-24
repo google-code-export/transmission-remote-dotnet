@@ -22,15 +22,14 @@ namespace TransmissionRemoteDotnet.Comparers
         {
             ListViewItem lx = (ListViewItem)x;
             ListViewItem ly = (ListViewItem)y;
-            string sx = lx.SubItems[columnIndex].Text;
             char splitChar = '.';
-            string[] qx = sx.Split(splitChar);
+            string[] qx = lx.SubItems[columnIndex].Text.Split(splitChar);
             string[] qy = ly.SubItems[columnIndex].Text.Split(splitChar);
             for (int i = 0; i < qx.Length; i++)
             {
                 int qpx = Int32.Parse(qx[i]);
                 int qpy = Int32.Parse(qy[i]);
-                if (!qx.Equals(qy))
+                if (!qpx.Equals(qpy))
                 {
                     return qpx.CompareTo(qpy);
                 }

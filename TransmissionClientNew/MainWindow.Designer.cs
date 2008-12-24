@@ -138,6 +138,8 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.label18 = new System.Windows.Forms.Label();
             this.speedResComboBox = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.speedGraph = new CustomUIControls.Graphing.C2DPushGraph();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -1210,6 +1212,8 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.label20);
+            this.splitContainer1.Panel2.Controls.Add(this.label19);
             this.splitContainer1.Panel2.Controls.Add(this.speedGraph);
             this.splitContainer1.Size = new System.Drawing.Size(928, 194);
             this.splitContainer1.SplitterDistance = 30;
@@ -1254,6 +1258,30 @@
             this.speedResComboBox.Size = new System.Drawing.Size(119, 21);
             this.speedResComboBox.TabIndex = 1;
             this.speedResComboBox.SelectedIndexChanged += new System.EventHandler(this.SpeedResComboBox_SelectedIndexChanged);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.MidnightBlue;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Green;
+            this.label20.Location = new System.Drawing.Point(-2, 140);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(54, 20);
+            this.label20.TabIndex = 1;
+            this.label20.Text = "Down";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.MidnightBlue;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.Yellow;
+            this.label19.Location = new System.Drawing.Point(20, 110);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(32, 20);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "Up";
             // 
             // speedGraph
             // 
@@ -1535,6 +1563,7 @@
             this.groupBox1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             this.splitContainer1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             this.splitContainer2.Panel2.PerformLayout();
@@ -1681,5 +1710,7 @@
         private System.Windows.Forms.ComboBox speedResComboBox;
         private CustomUIControls.Graphing.C2DPushGraph speedGraph;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
     }
 }
