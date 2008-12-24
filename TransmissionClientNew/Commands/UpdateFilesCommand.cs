@@ -9,18 +9,14 @@ namespace TransmissionRemoteDotnet.Commmands
 {
     public class UpdateFilesCommand : TransmissionCommand
     {
-        private JsonObject response;
-        private bool includePriorities;
+        private bool first;
+        private List<UpdateFilesSubCommand> uiUpdateBatch;
 
-        public UpdateFilesCommand(JsonObject response, bool includePriorities)
+        public UpdateFilesCommand(JsonObject response)
         {
-            this.includePriorities = includePriorities;
-            this.response = response;
             Program.ResetFailCount();
-        }
+            uiUpdateBatch = new List<UpdateFilesSubCommand>();
 
-        public void Execute()
-        {
             MainWindow form = Program.form;
             JsonObject arguments = (JsonObject)response[ProtocolConstants.KEY_ARGUMENTS];
             JsonArray torrents = (JsonArray)arguments[ProtocolConstants.KEY_TORRENTS];
@@ -30,23 +26,22 @@ namespace TransmissionRemoteDotnet.Commmands
             }
             JsonObject torrent = (JsonObject)torrents[0];
             int id = ((JsonNumber)torrent[ProtocolConstants.FIELD_ID]).ToInt32();
-            Torrent t;
-            lock (form.torrentListView)
+            Torrent t = null;
+            form.Invoke(new MethodInvoker(delegate()
             {
-                if (form.torrentListView.SelectedItems.Count != 1)
+                ListView torrentListView = form.torrentListView;
+                lock (torrentListView)
                 {
-                    return;
+                    if (torrentListView.SelectedItems.Count == 1)
+                    {
+                        t = (Torrent)torrentListView.SelectedItems[0].Tag;
+                    }
                 }
-                else
-                {
-                    t = (Torrent)form.torrentListView.SelectedItems[0].Tag;
-                }
-            }
-            if (t.Id != id)
+            }));
+            if (t == null || t.Id != id)
             {
                 return;
             }
-            form.filesListView.SuspendLayout();
             JsonArray files = (JsonArray)torrent[ProtocolConstants.FIELD_FILES];
             if (files == null)
             {
@@ -54,80 +49,45 @@ namespace TransmissionRemoteDotnet.Commmands
             }
             JsonArray priorities = (JsonArray)torrent[ProtocolConstants.FIELD_PRIORITIES];
             JsonArray wanted = (JsonArray)torrent[ProtocolConstants.FIELD_WANTED];
-            ListView filesListView = form.filesListView;
+            first = (priorities != null && wanted != null);
             for (int i = 0; i < files.Length; i++)
             {
                 JsonObject file = (JsonObject)files[i];
-                long done = ((JsonNumber)file[ProtocolConstants.FIELD_BYTESCOMPLETED]).ToInt64();
+                long bytesCompleted = ((JsonNumber)file[ProtocolConstants.FIELD_BYTESCOMPLETED]).ToInt64();
                 long length = ((JsonNumber)file[ProtocolConstants.FIELD_LENGTH]).ToInt64();
-                decimal progress = Toolbox.CalcPercentage(done, length);
-                lock (filesListView)
+                if (first)
                 {
-                    if (i >= filesListView.Items.Count && priorities != null && wanted != null)
-                    {
-                        string name = (string)file[ProtocolConstants.FIELD_NAME];
-                        int fwdSlashPos = name.IndexOf('/');
-                        if (fwdSlashPos > 0)
-                        {
-                            name = name.Remove(0, fwdSlashPos + 1);
-                        }
-                        else
-                        {
-                            int bckSlashPos = name.IndexOf('\\');
-                            if (bckSlashPos > 0)
-                            {
-                                name = name.Remove(0, bckSlashPos + 1);
-                            }
-                        }
-                        ListViewItem item = new ListViewItem(name);
-                        item.Name = name;
-                        item.Tag = file;
-                        item.ToolTipText = name;
-                        item.SubItems.Add(Toolbox.GetFileSize(length));
-                        item.SubItems[1].Tag = length;
-                        item.SubItems.Add(Toolbox.GetFileSize(done));
-                        item.SubItems[2].Tag = done;
-                        item.SubItems.Add(progress + "%");
-                        item.SubItems[3].Tag = progress;
-                        item.SubItems.Add(((JsonNumber)wanted[i]).ToBoolean() ? "No" : "Yes");
-                        item.SubItems.Add(FormatPriority((JsonNumber)priorities[i]));
-                        filesListView.Items.Add(item);
-                    }
-                    else if (i < filesListView.Items.Count)
-                    {
-                        ListViewItem item = form.fileItems[i];
-                        item.SubItems[2].Text = Toolbox.GetFileSize(done);
-                        item.SubItems[2].Tag = done;
-                        item.SubItems[3].Text = progress + "%";
-                        item.SubItems[3].Tag = progress;
-                    }
+                    string name = (string)file[ProtocolConstants.FIELD_NAME];
+                    UpdateFilesSubCommand subCommand = new UpdateFilesSubCommand(name, length, ((JsonNumber)wanted[i]).ToBoolean(), (JsonNumber)priorities[i], bytesCompleted);
+                    uiUpdateBatch.Add(subCommand);
+                }
+                else if (i < form.fileItems.Count)
+                {
+                    ListViewItem item = form.fileItems[i];
+                    UpdateFilesSubCommand subCommand = new UpdateFilesSubCommand(item, bytesCompleted);
+                    uiUpdateBatch.Add(subCommand);
                 }
             }
-            if (includePriorities)
-            {
-                form.filesListView.Enabled = true;
-                Toolbox.StripeListView(form.filesListView);
-                Toolbox.CloneListViewItemCollection(form.filesListView, form.fileItems);
-            }
-            form.filesListView.ResumeLayout();
-            form.filesTimer.Enabled = true;
         }
 
-        private string FormatPriority(JsonNumber n)
+        public void Execute()
         {
-            short s = n.ToInt16();
-            if (s < 0)
+            MainWindow form = Program.form;
+            lock (form.filesListView)
             {
-                return "Low";
+                form.filesListView.SuspendLayout();
+                foreach (UpdateFilesSubCommand uiUpdate in uiUpdateBatch)
+                {
+                    uiUpdate.Execute();
+                }
+                if (first)
+                {
+                    form.filesListView.Enabled = true;
+                    Toolbox.StripeListView(form.filesListView);
+                }
+                form.filesListView.ResumeLayout();
             }
-            else if (s > 0)
-            {
-                return "High";
-            }
-            else
-            {
-                return "Normal";
-            }
+            form.filesTimer.Enabled = true;
         }
     }
 }

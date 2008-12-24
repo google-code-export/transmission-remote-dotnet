@@ -41,7 +41,7 @@ namespace TransmissionRemoteDotnet
         {
             JsonObject request = new JsonObject();
             request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTGET);
-            request.Put(ProtocolConstants.KEY_TAG, includePriorities ? (int)ResponseTag.UpdateFilesAndPriorities : (int)ResponseTag.UpdateFiles);
+            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.UpdateFiles);
             JsonObject arguments = new JsonObject();
             JsonArray ids = new JsonArray();
             ids.Push(id);

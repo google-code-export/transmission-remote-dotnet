@@ -188,6 +188,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Commands\UpdateFilesCommand.cs" />
+    <Compile Include="UpdateFilesSubCommand.cs" />
     <Compile Include="UriPromptWindow.cs">
       <SubType>Form</SubType>
     </Compile>

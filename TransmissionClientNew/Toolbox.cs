@@ -149,17 +149,6 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        public static void CloneListViewItemCollection(ListView src, List<ListViewItem> dst)
-        {
-            lock (src)
-            {
-                foreach (ListViewItem item in src.Items)
-                {
-                    dst.Add(item);
-                }
-            }
-        }
-
         public static void SelectAll(ListView lv)
         {
             lock (lv)

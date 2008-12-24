@@ -7,7 +7,7 @@ namespace TransmissionRemoteDotnet
 {
     public enum ResponseTag
     {
-        SessionGet, TorrentGet, DoNothing, UpdateFiles, UpdateFilesAndPriorities
+        SessionGet, TorrentGet, DoNothing, UpdateFiles
     }
 
     public interface TransmissionCommand

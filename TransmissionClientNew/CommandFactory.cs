@@ -46,9 +46,7 @@ namespace TransmissionRemoteDotnet
                     case (short)ResponseTag.TorrentGet:
                         return new TorrentGetCommand(jsonResponse);
                     case (short)ResponseTag.UpdateFiles:
-                        return new UpdateFilesCommand(jsonResponse, false);
-                    case (short)ResponseTag.UpdateFilesAndPriorities:
-                        return new UpdateFilesCommand(jsonResponse, true);
+                        return new UpdateFilesCommand(jsonResponse);
                     case (short)ResponseTag.DoNothing:
                         return new NoCommand();
                 }
