@@ -58,19 +58,19 @@ namespace TransmissionRemoteDotnet
                         ObjectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_SEEDERS);
                         break;
                     case 5:
-                        ObjectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_RATEDOWNLOAD);
+                        ObjectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_LEECHERS);
                         break;
                     case 6:
-                        ObjectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_RATEUPLOAD);
+                        ObjectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_RATEDOWNLOAD);
                         break;
                     case 7:
-                        ObjectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_ETA);
+                        ObjectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_RATEUPLOAD);
                         break;
                     case 8:
-                        ObjectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_UPLOADEDEVER);
+                        ObjectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_ETA);
                         break;
                     case 9:
-                        ObjectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_HAVEVALID);
+                        ObjectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_UPLOADEDEVER);
                         break;
                     case 10:
                         ObjectCompare = new ListViewTorrentRatioComparer();
