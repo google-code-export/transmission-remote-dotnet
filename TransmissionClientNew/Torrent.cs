@@ -76,7 +76,6 @@ namespace TransmissionRemoteDotnet
                 {
                     form.torrentListView.Items.Add(item);
                 }
-                Toolbox.StripeListView(form.torrentListView);
                 LogError();
             }
         }
@@ -97,7 +96,6 @@ namespace TransmissionRemoteDotnet
                     if (itemCollection.Contains(item))
                     {
                         itemCollection.Remove(item);
-                        Toolbox.StripeListView(form.torrentListView);
                     }
                 }
             }

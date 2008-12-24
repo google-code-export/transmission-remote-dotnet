@@ -91,6 +91,8 @@ namespace TransmissionRemoteDotnet
                 refreshTimer.Enabled = true;
             }
             FilterByState();
+            torrentListView.Sort();
+            Toolbox.StripeListView(torrentListView);
         }
 
         private void Program_connStatusChanged(Boolean connected)
@@ -427,6 +429,9 @@ namespace TransmissionRemoteDotnet
                 lock (filesListView)
                 {
                     filesListView.Items.Clear();
+                }
+                lock (fileItems)
+                {
                     fileItems.Clear();
                 }
                 lock (peersListView)
@@ -452,11 +457,14 @@ namespace TransmissionRemoteDotnet
 
         private void ShowTorrentPropsHandler(object sender, EventArgs e)
         {
-            foreach (ListViewItem item in torrentListView.SelectedItems)
+            lock (torrentListView)
             {
-                Torrent t = (Torrent)item.Tag;
-                TorrentPropertiesDialog dialog = new TorrentPropertiesDialog(t);
-                dialog.Show();
+                foreach (ListViewItem item in torrentListView.SelectedItems)
+                {
+                    Torrent t = (Torrent)item.Tag;
+                    TorrentPropertiesDialog dialog = new TorrentPropertiesDialog(t);
+                    dialog.Show();
+                }
             }
         }
 
@@ -617,7 +625,6 @@ namespace TransmissionRemoteDotnet
         {
             ListBox box = stateListBox;
             torrentListView.SuspendLayout();
-            int previousCount = torrentListView.Items.Count;
             lock (Program.torrentIndex)
             {
                 switch (box.SelectedIndex)
@@ -653,10 +660,6 @@ namespace TransmissionRemoteDotnet
                         }
                         break;
                 }
-            }
-            if (torrentListView.Items.Count != previousCount)
-            {
-                Toolbox.StripeListView(torrentListView);
             }
             torrentListView.ResumeLayout();
         }
@@ -796,7 +799,7 @@ namespace TransmissionRemoteDotnet
                 }
                 t = (Torrent)torrentListView.SelectedItems[0].Tag;
             }
-            lock (filesListView)
+            lock (fileItems)
             {
                 foreach (ListViewItem item in fileItems)
                 {
@@ -971,10 +974,8 @@ namespace TransmissionRemoteDotnet
                             peersListView.Items.Remove(item);
                         }
                     }
-                    if (removalQueue.Count > 0)
-                    {
-                        Toolbox.StripeListView(peersListView);
-                    }
+                    peersListView.Sort();
+                    Toolbox.StripeListView(peersListView);
                     peersListView.ResumeLayout();
                 }
             }

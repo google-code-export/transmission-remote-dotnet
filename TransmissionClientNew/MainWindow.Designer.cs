@@ -161,8 +161,6 @@
             this.columnHeader30 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader31 = new System.Windows.Forms.ColumnHeader();
             this.speedGraph = new CustomUIControls.Graphing.C2DPushGraph();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -981,8 +979,6 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.label20);
-            this.splitContainer1.Panel2.Controls.Add(this.label19);
             this.splitContainer1.Panel2.Controls.Add(this.speedGraph);
             this.splitContainer1.Size = new System.Drawing.Size(928, 194);
             this.splitContainer1.SplitterDistance = 30;
@@ -1480,30 +1476,6 @@
             this.speedGraph.Text = "c2DPushGraph1";
             this.speedGraph.TextColor = System.Drawing.Color.White;
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.MidnightBlue;
-            this.label19.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Yellow;
-            this.label19.Location = new System.Drawing.Point(18, 114);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(31, 23);
-            this.label19.TabIndex = 1;
-            this.label19.Text = "Up";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.MidnightBlue;
-            this.label20.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Green;
-            this.label20.Location = new System.Drawing.Point(0, 137);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(49, 23);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "Down";
-            // 
             // MainWindow
             // 
             this.AllowDrop = true;
@@ -1563,7 +1535,6 @@
             this.groupBox1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
             this.splitContainer1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             this.splitContainer2.Panel2.PerformLayout();
@@ -1710,7 +1681,5 @@
         private System.Windows.Forms.ComboBox speedResComboBox;
         private CustomUIControls.Graphing.C2DPushGraph speedGraph;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
     }
 }

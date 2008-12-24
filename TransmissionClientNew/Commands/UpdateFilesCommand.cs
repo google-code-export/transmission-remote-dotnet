@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Jayrock.Json;
 using System.Windows.Forms;
+using TransmissionRemoteDotnet.Commands;
 
 namespace TransmissionRemoteDotnet.Commmands
 {
@@ -61,11 +62,17 @@ namespace TransmissionRemoteDotnet.Commmands
                     UpdateFilesSubCommand subCommand = new UpdateFilesSubCommand(name, length, ((JsonNumber)wanted[i]).ToBoolean(), (JsonNumber)priorities[i], bytesCompleted);
                     uiUpdateBatch.Add(subCommand);
                 }
-                else if (i < form.fileItems.Count)
+                else
                 {
-                    ListViewItem item = form.fileItems[i];
-                    UpdateFilesSubCommand subCommand = new UpdateFilesSubCommand(item, bytesCompleted);
-                    uiUpdateBatch.Add(subCommand);
+                    lock (form.fileItems)
+                    {
+                        if (i < form.fileItems.Count)
+                        {
+                            ListViewItem item = form.fileItems[i];
+                            UpdateFilesSubCommand subCommand = new UpdateFilesSubCommand(item, bytesCompleted);
+                            uiUpdateBatch.Add(subCommand);
+                        }
+                    }
                 }
             }
         }
@@ -83,8 +90,9 @@ namespace TransmissionRemoteDotnet.Commmands
                 if (first)
                 {
                     form.filesListView.Enabled = true;
-                    Toolbox.StripeListView(form.filesListView);
                 }
+                form.filesListView.Sort();
+                Toolbox.StripeListView(form.filesListView);
                 form.filesListView.ResumeLayout();
             }
             form.filesTimer.Enabled = true;

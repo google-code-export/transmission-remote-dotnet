@@ -5,7 +5,7 @@ using System.Text;
 using Jayrock.Json;
 using System.Windows.Forms;
 
-namespace TransmissionRemoteDotnet
+namespace TransmissionRemoteDotnet.Commands
 {
     public enum UpdateFilesSubCommandMode
     {
@@ -50,7 +50,10 @@ namespace TransmissionRemoteDotnet
             item.SubItems[3].Tag = progress;
             item.SubItems.Add(wanted ? "No" : "Yes");
             item.SubItems.Add(FormatPriority(priority));
-            Program.form.fileItems.Add(item);
+            lock (Program.form.fileItems)
+            {
+                Program.form.fileItems.Add(item);
+            }
         }
 
         public UpdateFilesSubCommand(ListViewItem item, long bytesCompleted)
