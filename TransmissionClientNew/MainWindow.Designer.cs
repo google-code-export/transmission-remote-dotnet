@@ -127,6 +127,7 @@
             this.refreshElapsedTimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.mainVerticalSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.stateListBox = new TransmissionRemoteDotnet.GListBox();
             this.torrentListView = new TransmissionRemoteDotnet.ListViewNF();
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
@@ -141,7 +142,6 @@
             this.columnHeader16 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader18 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader19 = new System.Windows.Forms.ColumnHeader();
-            this.stateListBox = new TransmissionRemoteDotnet.GListBox();
             this.trackersListView = new TransmissionRemoteDotnet.ListViewNF();
             this.columnHeader22 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader20 = new System.Windows.Forms.ColumnHeader();
@@ -1213,14 +1213,28 @@
             // 
             // mainVerticalSplitContainer.Panel1
             // 
-            this.mainVerticalSplitContainer.Panel1.Controls.Add(this.torrentListView);
+            this.mainVerticalSplitContainer.Panel1.Controls.Add(this.stateListBox);
             // 
             // mainVerticalSplitContainer.Panel2
             // 
-            this.mainVerticalSplitContainer.Panel2.Controls.Add(this.stateListBox);
+            this.mainVerticalSplitContainer.Panel2.Controls.Add(this.torrentListView);
             this.mainVerticalSplitContainer.Size = new System.Drawing.Size(948, 240);
-            this.mainVerticalSplitContainer.SplitterDistance = 836;
+            this.mainVerticalSplitContainer.SplitterDistance = 109;
             this.mainVerticalSplitContainer.TabIndex = 1;
+            // 
+            // stateListBox
+            // 
+            this.stateListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.stateListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.stateListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stateListBox.FormattingEnabled = true;
+            this.stateListBox.ImageList = null;
+            this.stateListBox.ItemHeight = 16;
+            this.stateListBox.Location = new System.Drawing.Point(0, 0);
+            this.stateListBox.Name = "stateListBox";
+            this.stateListBox.Size = new System.Drawing.Size(109, 228);
+            this.stateListBox.TabIndex = 0;
+            this.stateListBox.SelectedIndexChanged += new System.EventHandler(this.stateListBox_SelectedIndexChanged);
             // 
             // torrentListView
             // 
@@ -1244,7 +1258,7 @@
             this.torrentListView.Location = new System.Drawing.Point(0, 0);
             this.torrentListView.Name = "torrentListView";
             this.torrentListView.ShowItemToolTips = true;
-            this.torrentListView.Size = new System.Drawing.Size(836, 240);
+            this.torrentListView.Size = new System.Drawing.Size(835, 240);
             this.torrentListView.TabIndex = 0;
             this.torrentListView.UseCompatibleStateImageBehavior = false;
             this.torrentListView.View = System.Windows.Forms.View.Details;
@@ -1307,20 +1321,6 @@
             // columnHeader19
             // 
             this.columnHeader19.Text = "Completed On";
-            // 
-            // stateListBox
-            // 
-            this.stateListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.stateListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.stateListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stateListBox.FormattingEnabled = true;
-            this.stateListBox.ImageList = null;
-            this.stateListBox.ItemHeight = 16;
-            this.stateListBox.Location = new System.Drawing.Point(0, 0);
-            this.stateListBox.Name = "stateListBox";
-            this.stateListBox.Size = new System.Drawing.Size(108, 228);
-            this.stateListBox.TabIndex = 0;
-            this.stateListBox.SelectedIndexChanged += new System.EventHandler(this.stateListBox_SelectedIndexChanged);
             // 
             // trackersListView
             // 

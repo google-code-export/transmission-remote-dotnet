@@ -31,7 +31,7 @@ namespace TransmissionRemoteDotnet
             Program.onConnStatusChanged += new ConnStatusChangedDelegate(Program_connStatusChanged);
             Program.onTorrentsUpdated += new TorrentsUpdatedDelegate(Program_onTorrentsUpdated);
             InitializeComponent();
-            mainVerticalSplitContainer.Panel2Collapsed = torrentAndTabsSplitContainer.Panel2Collapsed = true;
+            mainVerticalSplitContainer.Panel1Collapsed = torrentAndTabsSplitContainer.Panel2Collapsed = true;
             this.peersTabPageSaved = this.peersTabPage;
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
             refreshTimer.Interval = settings.refreshRate * 1000;
@@ -83,7 +83,7 @@ namespace TransmissionRemoteDotnet
             {
                 UpdateInfoPanel(false);
                 torrentListView.Enabled = true;
-                mainVerticalSplitContainer.Panel2Collapsed = false;
+                mainVerticalSplitContainer.Panel1Collapsed = false;
             }
             if (Program.updateSerial <= 1)
             {
@@ -119,7 +119,7 @@ namespace TransmissionRemoteDotnet
                 this.toolStripStatusLabel.Text = "Disconnected.";
                 this.Text = MainWindow.DEFAULT_WINDOW_TITLE;
                 this.torrentAndTabsSplitContainer.Panel2Collapsed = true;
-                this.mainVerticalSplitContainer.Panel2Collapsed = true;
+                this.mainVerticalSplitContainer.Panel1Collapsed = true;
             }
             this.notifyIcon.Text = MainWindow.DEFAULT_WINDOW_TITLE;
             trayMenu.MenuItems.Add("-");
