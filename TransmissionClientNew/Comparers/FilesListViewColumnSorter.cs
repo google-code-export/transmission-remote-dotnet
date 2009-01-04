@@ -4,9 +4,8 @@ using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using TransmissionRemoteDotnet.Comparers;
 
-namespace TransmissionRemoteDotnet
+namespace TransmissionRemoteDotnet.Comparers
 {
     public class FilesListViewItemSorter : IComparer
     {

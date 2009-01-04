@@ -10,6 +10,8 @@ namespace TransmissionRemoteDotnet.Commmands
 {
     public class SessionCommand : TransmissionCommand
     {
+        public const double DEFAULT_T_VERSION = 1.41;
+
         private double ParseVersionString(string str)
         {
             for (int i = 0; i < str.Length; i++)
@@ -34,9 +36,9 @@ namespace TransmissionRemoteDotnet.Commmands
                 {
                     Program.transmissionVersion = ParseVersionString((string)arguments["version"]);
                 }
-                catch (Exception)
+                catch
                 {
-                    Program.transmissionVersion = 1.41;
+                    Program.transmissionVersion = DEFAULT_T_VERSION;
                 }
             }
             else if (headers.Get("Server") != null)

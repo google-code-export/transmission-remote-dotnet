@@ -68,6 +68,13 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
+            this.profileComboBox = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.addProfileButton = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.removeProfileButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PortField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RefreshRateValue)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -81,6 +88,8 @@
             this.tabPage4.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -132,9 +141,9 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(52, 185);
+            this.SaveButton.Location = new System.Drawing.Point(13, 242);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(81, 23);
+            this.SaveButton.Size = new System.Drawing.Size(103, 23);
             this.SaveButton.TabIndex = 4;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -143,9 +152,9 @@
             // CloseDialogButton
             // 
             this.CloseDialogButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CloseDialogButton.Location = new System.Drawing.Point(249, 185);
+            this.CloseDialogButton.Location = new System.Drawing.Point(227, 242);
             this.CloseDialogButton.Name = "CloseDialogButton";
-            this.CloseDialogButton.Size = new System.Drawing.Size(81, 23);
+            this.CloseDialogButton.Size = new System.Drawing.Size(103, 23);
             this.CloseDialogButton.TabIndex = 5;
             this.CloseDialogButton.Text = "Cancel";
             this.CloseDialogButton.UseVisualStyleBackColor = true;
@@ -502,7 +511,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(139, 185);
+            this.button1.Location = new System.Drawing.Point(119, 242);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(104, 23);
             this.button1.TabIndex = 7;
@@ -510,13 +519,86 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // profileComboBox
+            // 
+            this.profileComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.profileComboBox.FormattingEnabled = true;
+            this.profileComboBox.Location = new System.Drawing.Point(6, 19);
+            this.profileComboBox.Name = "profileComboBox";
+            this.profileComboBox.Size = new System.Drawing.Size(120, 21);
+            this.profileComboBox.TabIndex = 8;
+            this.profileComboBox.SelectedIndexChanged += new System.EventHandler(this.profileComboBox_SelectedIndexChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(11, 16);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(0, 13);
+            this.label11.TabIndex = 9;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(6, 20);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(98, 20);
+            this.textBox1.TabIndex = 10;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // addProfileButton
+            // 
+            this.addProfileButton.Enabled = false;
+            this.addProfileButton.Image = global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledgreen;
+            this.addProfileButton.Location = new System.Drawing.Point(110, 17);
+            this.addProfileButton.Name = "addProfileButton";
+            this.addProfileButton.Size = new System.Drawing.Size(31, 24);
+            this.addProfileButton.TabIndex = 11;
+            this.addProfileButton.UseVisualStyleBackColor = true;
+            this.addProfileButton.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.removeProfileButton);
+            this.groupBox5.Controls.Add(this.label11);
+            this.groupBox5.Controls.Add(this.profileComboBox);
+            this.groupBox5.Location = new System.Drawing.Point(13, 185);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(166, 51);
+            this.groupBox5.TabIndex = 12;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Current profile";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.addProfileButton);
+            this.groupBox6.Controls.Add(this.textBox1);
+            this.groupBox6.Location = new System.Drawing.Point(185, 185);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(147, 51);
+            this.groupBox6.TabIndex = 13;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "New profile";
+            // 
+            // removeProfileButton
+            // 
+            this.removeProfileButton.Enabled = false;
+            this.removeProfileButton.Image = global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledred;
+            this.removeProfileButton.Location = new System.Drawing.Point(132, 16);
+            this.removeProfileButton.Name = "removeProfileButton";
+            this.removeProfileButton.Size = new System.Drawing.Size(28, 26);
+            this.removeProfileButton.TabIndex = 10;
+            this.removeProfileButton.UseVisualStyleBackColor = true;
+            this.removeProfileButton.Click += new System.EventHandler(this.removeProfileButton_Click);
+            // 
             // LocalSettingsDialog
             // 
             this.AcceptButton = this.SaveButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CloseDialogButton;
-            this.ClientSize = new System.Drawing.Size(347, 219);
+            this.ClientSize = new System.Drawing.Size(346, 275);
+            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.CloseDialogButton);
@@ -544,6 +626,10 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -589,5 +675,12 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox profileComboBox;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button addProfileButton;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button removeProfileButton;
     }
 }

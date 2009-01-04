@@ -13,13 +13,13 @@ namespace TransmissionRemoteDotnet
     {
         private string originalHost;
         private int originalPort;
-
+        
         public LocalSettingsDialog()
         {
             InitializeComponent();
         }
 
-        private void LocalSettingsDialog_Load(object sender, EventArgs e)
+        private void LoadCurrentProfile()
         {
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
             HostField.Text = originalHost = settings.host;
@@ -36,11 +36,28 @@ namespace TransmissionRemoteDotnet
             ProxyHostField.Text = settings.proxyHost;
             ProxyPortField.Value = settings.proxyPort;
             ProxyAuthEnableCheckBox.Checked = settings.proxyAuth;
-            ProxyUserField.Enabled = ProxyPassField.Enabled = (settings.proxyAuth && settings.proxyEnabled ==1);
+            ProxyUserField.Enabled = ProxyPassField.Enabled = (settings.proxyAuth && settings.proxyEnabled == 1);
             ProxyUserField.Text = settings.proxyUser;
             ProxyPassField.Text = settings.proxyPass;
             StartPausedCheckBox.Checked = settings.startPaused;
             RetryLimitValue.Value = settings.retryLimit;
+        }
+
+        private void LocalSettingsDialog_Load(object sender, EventArgs e)
+        {
+            LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
+            List<string> profiles = settings.Profiles;
+            profileComboBox.Tag = false;
+            for (int i = 0; i < profiles.Count; i++)
+            {
+                profileComboBox.Items.Add(profiles[i]);
+                if (profiles[i].Equals(settings.CurrentProfile))
+                {
+                    profileComboBox.SelectedIndex = i;
+                }
+            }
+            LoadCurrentProfile();
+            profileComboBox.Tag = true;
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -102,9 +119,63 @@ namespace TransmissionRemoteDotnet
         private void button1_Click(object sender, EventArgs e)
         {
             SaveSettings();
-            Program.Connected = false;
+            if (Program.Connected)
+            {
+                Program.Connected = false;
+            }
             Program.form.Connect();
             this.Close();
+        }
+
+        private void profileComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            removeProfileButton.Enabled = !profileComboBox.SelectedItem.ToString().Equals("Default");
+            if ((bool)profileComboBox.Tag == true)
+            {
+                LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
+                string selectedProfile = profileComboBox.SelectedItem.ToString();
+                if (!selectedProfile.Equals(settings.CurrentProfile))
+                {
+                    settings.Commit();
+                    settings.CurrentProfile = selectedProfile;
+                    LoadCurrentProfile();
+                    if (settings.autoConnect)
+                    {
+                        Program.form.Connect();
+                    }
+                }
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            addProfileButton.Enabled = textBox1.Text.Length > 0;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
+            profileComboBox.Tag = false;
+            settings.Commit();
+            profileComboBox.SelectedIndex = profileComboBox.Items.Add(settings.CurrentProfile = textBox1.Text);
+            profileComboBox.Tag = true;
+            textBox1.Text = "";
+            SaveSettings();
+        }
+
+        private void removeProfileButton_Click(object sender, EventArgs e)
+        {
+            LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
+            try
+            {
+                settings.CurrentProfile = "Default";
+                settings.RemoveProfile(profileComboBox.SelectedItem.ToString());
+                profileComboBox.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

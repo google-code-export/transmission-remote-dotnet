@@ -87,7 +87,6 @@ namespace TransmissionRemoteDotnet
                 using (StreamReader reader = new StreamReader(server))
                 {
                     server.WaitForConnection();
-
                     List<String> arguments = new List<String>();
                     while (server.IsConnected)
                         arguments.Add(reader.ReadLine());

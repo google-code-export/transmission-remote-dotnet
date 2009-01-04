@@ -49,14 +49,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Jayrock, Version=0.9.8316.0, Culture=neutral">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Desktop\Jayrock.dll</HintPath>
-    </Reference>
-    <Reference Include="Jayrock.Json, Version=0.9.8316.0, Culture=neutral">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Desktop\Jayrock.Json.dll</HintPath>
-    </Reference>
+    <Reference Include="Jayrock, Version=0.9.8316.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Jayrock.Json, Version=0.9.8316.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -101,7 +95,7 @@
     <Compile Include="ErrorLogWindow.Designer.cs">
       <DependentUpon>ErrorLogWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="FilesListViewColumnSorter.cs" />
+    <Compile Include="Comparers\FilesListViewColumnSorter.cs" />
     <Compile Include="GListBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -118,7 +112,7 @@
     </Compile>
     <Compile Include="Commands\NoCommand.cs" />
     <Compile Include="LocalSettingsSingleton.cs" />
-    <Compile Include="PeersListViewColumnSorter.cs" />
+    <Compile Include="Comparers\PeersListViewColumnSorter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AboutDialog.resx">

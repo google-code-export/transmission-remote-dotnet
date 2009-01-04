@@ -382,7 +382,7 @@
             // mainVerticalSplitContainer
             // 
             this.mainVerticalSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainVerticalSplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.mainVerticalSplitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.mainVerticalSplitContainer.Location = new System.Drawing.Point(0, 0);
             this.mainVerticalSplitContainer.Name = "mainVerticalSplitContainer";
             // 

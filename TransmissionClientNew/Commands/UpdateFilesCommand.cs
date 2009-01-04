@@ -16,8 +16,6 @@ namespace TransmissionRemoteDotnet.Commmands
         public UpdateFilesCommand(JsonObject response)
         {
             Program.ResetFailCount();
-            uiUpdateBatch = new List<UpdateFilesSubCommand>();
-
             MainWindow form = Program.form;
             JsonObject arguments = (JsonObject)response[ProtocolConstants.KEY_ARGUMENTS];
             JsonArray torrents = (JsonArray)arguments[ProtocolConstants.KEY_TORRENTS];
@@ -51,6 +49,7 @@ namespace TransmissionRemoteDotnet.Commmands
             JsonArray priorities = (JsonArray)torrent[ProtocolConstants.FIELD_PRIORITIES];
             JsonArray wanted = (JsonArray)torrent[ProtocolConstants.FIELD_WANTED];
             first = (priorities != null && wanted != null);
+            uiUpdateBatch = new List<UpdateFilesSubCommand>();
             for (int i = 0; i < files.Length; i++)
             {
                 JsonObject file = (JsonObject)files[i];

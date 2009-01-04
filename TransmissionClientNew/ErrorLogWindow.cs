@@ -28,7 +28,7 @@ namespace TransmissionRemoteDotnet
                 {
                     foreach (ListViewItem item in Program.logItems)
                     {
-                        errorListView.Items.Add(item);
+                        errorListView.Items.Add((ListViewItem)item.Clone());
                     }
                 }
             }
@@ -68,7 +68,7 @@ namespace TransmissionRemoteDotnet
                     {
                         for (int i = errorListView.Items.Count; i < logItems.Count; i++)
                         {
-                            errorListView.Items.Add(logItems[i]);
+                            errorListView.Items.Add((ListViewItem)logItems[i].Clone());
                         }
                     }
                 }

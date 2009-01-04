@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Net;
 using TransmissionRemoteDotnet.Commmands;
+using TransmissionRemoteDotnet.Comparers;
 using Jayrock.Json;
 
 namespace TransmissionRemoteDotnet

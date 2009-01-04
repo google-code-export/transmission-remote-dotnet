@@ -24,7 +24,7 @@ namespace TransmissionRemoteDotnet
         public static JsonObject sessionData;
         public static string[] uploadArgs;
         public static int failCount = 0;
-        public static double transmissionVersion = 1.41;
+        public static double transmissionVersion = SessionCommand.DEFAULT_T_VERSION;
         public static List<ListViewItem> logItems = new List<ListViewItem>();
 
         [STAThread]
