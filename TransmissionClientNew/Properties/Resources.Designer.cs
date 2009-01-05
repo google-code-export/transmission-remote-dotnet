@@ -60,6 +60,13 @@ namespace TransmissionRemoteDotnet.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap _16x16_add {
+            get {
+                object obj = ResourceManager.GetObject("_16x16_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap _16x16_ledblue {
             get {
                 object obj = ResourceManager.GetObject("_16x16_ledblue", resourceCulture);
@@ -91,6 +98,13 @@ namespace TransmissionRemoteDotnet.Properties {
         internal static System.Drawing.Bitmap _16x16_ledred {
             get {
                 object obj = ResourceManager.GetObject("_16x16_ledred", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap _16x16_remove {
+            get {
+                object obj = ResourceManager.GetObject("_16x16_remove", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

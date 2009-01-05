@@ -238,6 +238,8 @@
     <None Include="Resources\16x16_ledorange.png" />
     <None Include="Resources\16x16_ledpurple.png" />
     <None Include="Resources\16x16_ledred.png" />
+    <None Include="Resources\viewmag+.png" />
+    <None Include="Resources\_16x16_remove.png" />
     <Content Include="transmission_large.ico" />
   </ItemGroup>
   <ItemGroup>

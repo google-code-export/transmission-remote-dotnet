@@ -78,8 +78,8 @@ namespace TransmissionRemoteDotnet
             {
                 try
                 {
-                    RegistryKey key = Registry.CurrentUser.OpenSubKey(REGISTRY_KEY_ROOT);
-                    key.DeleteSubKeyTree(REGISTRY_KEY_ROOT + "\\" + name);
+                    RegistryKey key = Registry.CurrentUser.OpenSubKey(REGISTRY_KEY_ROOT, true);
+                    key.DeleteSubKey(name, false);
                 }
                 catch (Exception ex)
                 {

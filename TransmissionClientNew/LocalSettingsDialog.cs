@@ -168,9 +168,10 @@ namespace TransmissionRemoteDotnet
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
             try
             {
-                settings.CurrentProfile = "Default";
-                settings.RemoveProfile(profileComboBox.SelectedItem.ToString());
+                object selectedItem = profileComboBox.SelectedItem;
+                settings.RemoveProfile(selectedItem.ToString());
                 profileComboBox.SelectedIndex = 0;
+                profileComboBox.Items.Remove(selectedItem);
             }
             catch (Exception ex)
             {
