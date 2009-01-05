@@ -56,6 +56,7 @@ namespace TransmissionRemoteDotnet
         {
             RegistryKey root = GetRootKey(true);
             root.CreateSubKey(name);
+            root.Close();
             this.CurrentProfile = name;
         }
 
@@ -288,8 +289,7 @@ namespace TransmissionRemoteDotnet
             }
             else
             {
-                RegistryKey root = GetRootKey(false);
-                return root.OpenSubKey(currentProfile, writeable);
+                return GetRootKey(false).OpenSubKey(currentProfile, writeable);
             }
         }
 
@@ -298,8 +298,7 @@ namespace TransmissionRemoteDotnet
             get
             {
                 List<string> profiles = new List<string>();
-                RegistryKey key = Registry.CurrentUser.OpenSubKey(REGISTRY_KEY_ROOT);
-                profiles.AddRange(key.GetSubKeyNames());
+                profiles.AddRange(GetRootKey(false).GetSubKeyNames());
                 profiles.Sort();
                 profiles.Insert(0, "Default");
                 return profiles;
@@ -310,36 +309,35 @@ namespace TransmissionRemoteDotnet
         {
             try
             {
-                RegistryKey rootKey;
-                if ((rootKey = Registry.CurrentUser.OpenSubKey(REGISTRY_KEY_ROOT, true)) == null)
+                RegistryKey rootKey = GetRootKey(true);
+                if (rootKey == null)
                 {
-                    rootKey = Registry.CurrentUser.CreateSubKey(REGISTRY_KEY_ROOT);
+                    Registry.CurrentUser.CreateSubKey(REGISTRY_KEY_ROOT);
                 }
                 rootKey.SetValue(REGKEY_CURRENTPROFILE, this.currentProfile);
                 rootKey.Close();
                 RegistryKey profileKey = GetCurrentProfileKey(true);
-                if (profileKey == null)
+                if (profileKey != null)
                 {
-                    profileKey = GetRootKey(true);
+                    profileKey.SetValue(REGKEY_HOST, this.host);
+                    profileKey.SetValue(REGKEY_PORT, this.port);
+                    profileKey.SetValue(REGKEY_USESSL, this.useSSL ? 1 : 0);
+                    profileKey.SetValue(REGKEY_REFRESHRATE, this.refreshRate);
+                    profileKey.SetValue(REGKEY_AUTOCONNECT, this.autoConnect ? 1 : 0);
+                    profileKey.SetValue(REGKEY_USER, this.user);
+                    profileKey.SetValue(REGKEY_PASS, this.pass);
+                    profileKey.SetValue(REGKEY_AUTHENABLED, this.authEnabled ? 1 : 0);
+                    profileKey.SetValue(REGKEY_MINTOTRAY, this.minToTray ? 1 : 0);
+                    profileKey.SetValue(REGKEY_PROXYENABLED, this.proxyEnabled);
+                    profileKey.SetValue(REGKEY_PROXYHOST, this.proxyHost);
+                    profileKey.SetValue(REGKEY_PROXYPORT, this.proxyPort);
+                    profileKey.SetValue(REGKEY_PROXYUSER, this.proxyUser);
+                    profileKey.SetValue(REGKEY_PROXYPASS, this.proxyPass);
+                    profileKey.SetValue(REGKEY_PROXYAUTH, this.proxyAuth ? 1 : 0);
+                    profileKey.SetValue(REGKEY_STARTPAUSED, this.startPaused ? 1 : 0);
+                    profileKey.SetValue(REGKEY_RETRYLIMIT, this.retryLimit);
+                    profileKey.Close();
                 }
-                profileKey.SetValue(REGKEY_HOST, this.host);
-                profileKey.SetValue(REGKEY_PORT, this.port);
-                profileKey.SetValue(REGKEY_USESSL, this.useSSL ? 1 : 0);
-                profileKey.SetValue(REGKEY_REFRESHRATE, this.refreshRate);
-                profileKey.SetValue(REGKEY_AUTOCONNECT, this.autoConnect ? 1 : 0);
-                profileKey.SetValue(REGKEY_USER, this.user);
-                profileKey.SetValue(REGKEY_PASS, this.pass);
-                profileKey.SetValue(REGKEY_AUTHENABLED, this.authEnabled ? 1 : 0);
-                profileKey.SetValue(REGKEY_MINTOTRAY, this.minToTray ? 1 : 0);
-                profileKey.SetValue(REGKEY_PROXYENABLED, this.proxyEnabled);
-                profileKey.SetValue(REGKEY_PROXYHOST, this.proxyHost);
-                profileKey.SetValue(REGKEY_PROXYPORT, this.proxyPort);
-                profileKey.SetValue(REGKEY_PROXYUSER, this.proxyUser);
-                profileKey.SetValue(REGKEY_PROXYPASS, this.proxyPass);
-                profileKey.SetValue(REGKEY_PROXYAUTH, this.proxyAuth ? 1 : 0);
-                profileKey.SetValue(REGKEY_STARTPAUSED, this.startPaused ? 1 : 0);
-                profileKey.SetValue(REGKEY_RETRYLIMIT, this.retryLimit);
-                profileKey.Close();
                 Program.form.refreshTimer.Interval = refreshRate * 1000;
                 Program.form.filesTimer.Interval = refreshRate * 1000 * FILES_REFRESH_MULTIPLICANT;
             }

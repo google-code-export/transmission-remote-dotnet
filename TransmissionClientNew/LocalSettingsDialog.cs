@@ -13,7 +13,8 @@ namespace TransmissionRemoteDotnet
     {
         private string originalHost;
         private int originalPort;
-        
+        private bool ignoreProfileIndexChanged = true;
+
         public LocalSettingsDialog()
         {
             InitializeComponent();
@@ -47,7 +48,6 @@ namespace TransmissionRemoteDotnet
         {
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
             List<string> profiles = settings.Profiles;
-            profileComboBox.Tag = false;
             for (int i = 0; i < profiles.Count; i++)
             {
                 profileComboBox.Items.Add(profiles[i]);
@@ -61,7 +61,7 @@ namespace TransmissionRemoteDotnet
                 profileComboBox.SelectedIndex = 0;
             }
             LoadCurrentProfile();
-            profileComboBox.Tag = true;
+            ignoreProfileIndexChanged = false;
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -134,7 +134,7 @@ namespace TransmissionRemoteDotnet
         private void profileComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             removeProfileButton.Enabled = !profileComboBox.SelectedItem.ToString().Equals("Default");
-            if ((bool)profileComboBox.Tag == true)
+            if (!ignoreProfileIndexChanged)
             {
                 LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
                 string selectedProfile = profileComboBox.SelectedItem.ToString();
@@ -159,13 +159,12 @@ namespace TransmissionRemoteDotnet
         private void button2_Click(object sender, EventArgs e)
         {
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-            profileComboBox.Tag = false;
-            settings.Commit();
+            ignoreProfileIndexChanged = true;
             settings.CreateProfile(textBox1.Text);
             profileComboBox.SelectedIndex = profileComboBox.Items.Add(textBox1.Text);
-            profileComboBox.Tag = true;
+            ignoreProfileIndexChanged = false;
             textBox1.Text = "";
-            SaveSettings();
+            LoadCurrentProfile();
         }
 
         private void removeProfileButton_Click(object sender, EventArgs e)
