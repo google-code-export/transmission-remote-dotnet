@@ -71,22 +71,22 @@ namespace TransmissionRemoteDotnet
         {
             if (form != null)
             {
-                    if (e.Args.Length > 1)
+                if (e.Args.Length > 1)
+                {
+                    if (connected)
                     {
-                        if (connected)
-                        {
-                            form.CreateUploadWorker().RunWorkerAsync(e.Args);
-                        }
-                        else
-                        {
-                            form.ShowMustBeConnectedDialog();
-                        }
+                        form.CreateUploadWorker().RunWorkerAsync(e.Args);
                     }
                     else
                     {
-                        form.InvokeShow();
+                        form.ShowMustBeConnectedDialog();
                     }
                 }
+                else
+                {
+                    form.InvokeShow();
+                }
+            }
         }
 
         public static void ResetFailCount()

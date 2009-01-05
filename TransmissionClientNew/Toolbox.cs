@@ -14,6 +14,43 @@ namespace TransmissionRemoteDotnet
     {
         private const int STRIPE_OFFSET = 15;
 
+        public static void CopyListViewToClipboard(ListView listView)
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < listView.Columns.Count; i++)
+            {
+                sb.Append(listView.Columns[i].Text);
+                if (i != listView.Columns.Count - 1)
+                {
+                    sb.Append(',');
+                }
+                else
+                {
+                    sb.Append("\r\n");
+                }
+            }
+            lock (listView)
+            {
+                foreach (ListViewItem item in listView.SelectedItems)
+                {
+                    for (int i = 0; i < item.SubItems.Count; i++)
+                    {
+                        System.Windows.Forms.ListViewItem.ListViewSubItem si = item.SubItems[i];
+                        sb.Append(si.Text);
+                        if (i != item.SubItems.Count - 1)
+                        {
+                            sb.Append(',');
+                        }
+                        else
+                        {
+                            sb.Append("\r\n");
+                        }
+                    }
+                }
+            }
+            Clipboard.SetText(sb.ToString());
+        }
+
         public static Exception UploadFile(string file, bool deleteAfter)
         {
             return UploadFile(file, deleteAfter, null);
@@ -57,22 +94,18 @@ namespace TransmissionRemoteDotnet
         public static void StripeListView(ListView list)
         {
             Color window = SystemColors.Window;
-            /* Check for weird window backgrounds */
-            if (window.R >= STRIPE_OFFSET && window.G >= STRIPE_OFFSET && window.B >= STRIPE_OFFSET)
+            lock (list)
             {
-                lock (list)
+                list.SuspendLayout();
+                foreach (ListViewItem item in list.Items)
                 {
-                    list.SuspendLayout();
-                    foreach (ListViewItem item in list.Items)
-                    {
-                        item.BackColor = item.Index % 2 == 1 ?
-                            Color.FromArgb(window.R - STRIPE_OFFSET,
-                                window.G - STRIPE_OFFSET,
-                                window.B - STRIPE_OFFSET)
-                            : window;
-                    }
-                    list.ResumeLayout();
+                    item.BackColor = item.Index % 2 == 1 ?
+                        Color.FromArgb(window.R - STRIPE_OFFSET,
+                            window.G - STRIPE_OFFSET,
+                            window.B - STRIPE_OFFSET)
+                        : window;
                 }
+                list.ResumeLayout();
             }
         }
 

@@ -21,6 +21,7 @@ namespace TransmissionRemoteDotnet
         private FilesListViewItemSorter filesLvwColumnSorter;
         private PeersListViewItemSorter peersLvwColumnSorter;
         private ContextMenu torrentSelectionMenu;
+        private ContextMenu noTorrentSelectionMenu;
         private ContextMenu fileSelectionMenu;
         private ContextMenu noFileSelectionMenu;
         private BackgroundWorker connectWorker;
@@ -40,12 +41,20 @@ namespace TransmissionRemoteDotnet
             torrentListView.ListViewItemSorter = lvwColumnSorter = new ListViewItemSorter();
             filesListView.ListViewItemSorter = filesLvwColumnSorter = new FilesListViewItemSorter();
             peersListView.ListViewItemSorter = peersLvwColumnSorter = new PeersListViewItemSorter();
+            this.peersListView.ContextMenu = new ContextMenu(new MenuItem[]{
+                new MenuItem("Select All", new EventHandler(this.SelectAllPeersHandler)),
+                new MenuItem("Copy as CSV", new EventHandler(this.PeersToClipboardHandler))
+            });
+            this.noTorrentSelectionMenu = torrentListView.ContextMenu = new ContextMenu(new MenuItem[] {
+                new MenuItem("Select All", new EventHandler(this.SelectAllTorrentsHandler))
+            });
             this.torrentSelectionMenu = new ContextMenu(new MenuItem[] {
                 new MenuItem("Start", new EventHandler(this.startTorrentButton_Click)),
                 new MenuItem("Pause", new EventHandler(this.pauseTorrentButton_Click)),
                 new MenuItem("Remove", new EventHandler(this.removeTorrentButton_Click)),
                 new MenuItem("-"),
-                new MenuItem("Properties", new EventHandler(this.ShowTorrentPropsHandler))
+                new MenuItem("Properties", new EventHandler(this.ShowTorrentPropsHandler)),
+                new MenuItem("Copy as CSV", new EventHandler(this.TorrentsToClipboardHandler))
             });
             this.fileSelectionMenu = new ContextMenu(new MenuItem[] {
                 new MenuItem("High Priority", new EventHandler(this.SetHighPriorityHandler)),
@@ -55,7 +64,8 @@ namespace TransmissionRemoteDotnet
                 new MenuItem("Download", new EventHandler(this.SetWantedHandler)),
                 new MenuItem("Skip", new EventHandler(this.SetUnwantedHandler)),
                 new MenuItem("-"),
-                new MenuItem("Select All", new EventHandler(this.SelectAllFilesHandler))
+                new MenuItem("Select All", new EventHandler(this.SelectAllFilesHandler)),
+                new MenuItem("Copy as CSV", new EventHandler(this.FilesToClipboardHandler))
             });
             this.noFileSelectionMenu = this.filesListView.ContextMenu = new ContextMenu(new MenuItem[] {
                 new MenuItem("Select All", new EventHandler(this.SelectAllFilesHandler))
@@ -143,6 +153,21 @@ namespace TransmissionRemoteDotnet
                 = connected;
         }
 
+        public void TorrentsToClipboardHandler(object sender, EventArgs e)
+        {
+            Toolbox.CopyListViewToClipboard(torrentListView);
+        }
+
+        public void FilesToClipboardHandler(object sender, EventArgs e)
+        {
+            Toolbox.CopyListViewToClipboard(filesListView);
+        }
+
+        public void PeersToClipboardHandler(object sender, EventArgs e)
+        {
+            Toolbox.CopyListViewToClipboard(peersListView);
+        }
+
         public void startAllMenuItem_Click(object sender, EventArgs e)
         {
             CreateActionWorker().RunWorkerAsync(Requests.Generic(ProtocolConstants.METHOD_TORRENTSTART, null));
@@ -202,6 +227,16 @@ namespace TransmissionRemoteDotnet
         private void SelectAllFilesHandler(object sender, EventArgs e)
         {
             Toolbox.SelectAll(filesListView);
+        }
+
+        private void SelectAllTorrentsHandler(object sender, EventArgs e)
+        {
+            Toolbox.SelectAll(torrentListView);
+        }
+
+        private void SelectAllPeersHandler(object sender, EventArgs e)
+        {
+            Toolbox.SelectAll(peersListView);
         }
 
         private void MainWindow_DragEnter(object sender, DragEventArgs e)
@@ -424,7 +459,7 @@ namespace TransmissionRemoteDotnet
                 int count = torrentListView.SelectedItems.Count;
                 bool oneOrMore = count > 0;
                 bool one = count == 1;
-                torrentListView.ContextMenu = oneOrMore ? this.torrentSelectionMenu : null;
+                torrentListView.ContextMenu = oneOrMore ? this.torrentSelectionMenu : this.noTorrentSelectionMenu;
                 startTorrentButton.Enabled = pauseTorrentButton.Enabled
                     = removeTorrentButton.Enabled = oneOrMore;
                 lock (filesListView)
@@ -538,24 +573,23 @@ namespace TransmissionRemoteDotnet
 
         private void MainWindow_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Delete)
+            if (e.Control && e.KeyCode == Keys.X && !Program.Connected)
             {
-                RemoveTorrentsPrompt();
+                Connect();
             }
-            else if (e.Control && e.KeyCode == Keys.A)
+            else if (e.Control && e.KeyCode == Keys.X)
             {
-                torrentListView.Focus();
-                Toolbox.SelectAll(torrentListView);
+                Program.Connected = false;
             }
             else if (e.Control && e.KeyCode == Keys.P)
             {
                 LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-                if (settings.proxyEnabled == 0)
+                if (settings.proxyEnabled == 0 && LocalSettingsSingleton.Instance.proxyHost.Length > 0)
                 {
                     settings.proxyEnabled = 1;
                     toolStripStatusLabel.Text = "Proxy enabled.";
                 }
-                else if (settings.proxyEnabled == 1)
+                else if (settings.proxyEnabled == 1 || settings.proxyEnabled == 0)
                 {
                     settings.proxyEnabled = 2;
                     toolStripStatusLabel.Text = "Proxy disabled.";
@@ -566,14 +600,6 @@ namespace TransmissionRemoteDotnet
                     toolStripStatusLabel.Text = "Proxy dependent on IE settings.";
                 }
                 settings.Commit();
-            }
-            else if (e.Control && e.KeyCode == Keys.C)
-            {
-                Connect();
-            }
-            else if (e.Control && e.KeyCode == Keys.D)
-            {
-                Program.Connected = false;
             }
         }
 
@@ -1104,6 +1130,36 @@ namespace TransmissionRemoteDotnet
                     break;
             }
             speedGraph.UpdateGraph();
+        }
+
+        private void torrentListView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                RemoveTorrentsPrompt();
+            }
+            else if (e.Control && e.KeyCode == Keys.A)
+            {
+                torrentListView.Focus();
+                Toolbox.SelectAll(torrentListView);
+            }
+            else if (e.Control && e.KeyCode == Keys.C)
+            {
+                Toolbox.CopyListViewToClipboard(torrentListView);
+            }
+        }
+
+        private void torrentDetailsTabListView_KeyDown(object sender, KeyEventArgs e)
+        {
+            ListView listView = (ListView)sender;
+            if (e.KeyCode == Keys.A && e.Control)
+            {
+                Toolbox.SelectAll(listView);
+            }
+            else if (e.KeyCode == Keys.C && e.Control)
+            {
+                Toolbox.CopyListViewToClipboard(listView);
+            }
         }
     }
 }

@@ -11,7 +11,7 @@ namespace TransmissionRemoteDotnet.Commmands
     public class UpdateFilesCommand : TransmissionCommand
     {
         private bool first;
-        private List<UpdateFilesSubCommand> uiUpdateBatch;
+        private List<TransmissionCommand> uiUpdateBatch;
 
         public UpdateFilesCommand(JsonObject response)
         {
@@ -49,7 +49,7 @@ namespace TransmissionRemoteDotnet.Commmands
             JsonArray priorities = (JsonArray)torrent[ProtocolConstants.FIELD_PRIORITIES];
             JsonArray wanted = (JsonArray)torrent[ProtocolConstants.FIELD_WANTED];
             first = (priorities != null && wanted != null);
-            uiUpdateBatch = new List<UpdateFilesSubCommand>();
+            uiUpdateBatch = new List<TransmissionCommand>();
             for (int i = 0; i < files.Length; i++)
             {
                 JsonObject file = (JsonObject)files[i];
@@ -58,8 +58,8 @@ namespace TransmissionRemoteDotnet.Commmands
                 if (first)
                 {
                     string name = (string)file[ProtocolConstants.FIELD_NAME];
-                    UpdateFilesSubCommand subCommand = new UpdateFilesSubCommand(name, length, ((JsonNumber)wanted[i]).ToBoolean(), (JsonNumber)priorities[i], bytesCompleted);
-                    uiUpdateBatch.Add(subCommand);
+                    UpdateFilesCreateSubCommand subCommand = new UpdateFilesCreateSubCommand(name, length, ((JsonNumber)wanted[i]).ToBoolean(), (JsonNumber)priorities[i], bytesCompleted);
+                    uiUpdateBatch.Add((TransmissionCommand)subCommand);
                 }
                 else
                 {
@@ -68,8 +68,8 @@ namespace TransmissionRemoteDotnet.Commmands
                         if (i < form.fileItems.Count)
                         {
                             ListViewItem item = form.fileItems[i];
-                            UpdateFilesSubCommand subCommand = new UpdateFilesSubCommand(item, bytesCompleted);
-                            uiUpdateBatch.Add(subCommand);
+                            UpdateFilesUpdateSubCommand subCommand = new UpdateFilesUpdateSubCommand(item, bytesCompleted);
+                            uiUpdateBatch.Add((TransmissionCommand)subCommand);
                         }
                     }
                 }
@@ -78,11 +78,15 @@ namespace TransmissionRemoteDotnet.Commmands
 
         public void Execute()
         {
+            if (uiUpdateBatch == null)
+            {
+                return;
+            }
             MainWindow form = Program.form;
             lock (form.filesListView)
             {
                 form.filesListView.SuspendLayout();
-                foreach (UpdateFilesSubCommand uiUpdate in uiUpdateBatch)
+                foreach (TransmissionCommand uiUpdate in uiUpdateBatch)
                 {
                     uiUpdate.Execute();
                 }

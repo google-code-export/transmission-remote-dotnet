@@ -6,27 +6,38 @@ using Jayrock.Json;
 using System.Windows.Forms;
 
 namespace TransmissionRemoteDotnet.Commands
-{
-    public enum UpdateFilesSubCommandMode
+{     
+    class UpdateFilesUpdateSubCommand : TransmissionCommand
     {
-        Create,
-        Update
-    }
-     
-    class UpdateFilesSubCommand : TransmissionCommand
-    {
-        private UpdateFilesSubCommandMode mode;
         private ListViewItem item;
-
-        /* Update */
         private long bytesCompleted;
         private string bytesCompletedStr;
         private decimal progress;
 
-        public UpdateFilesSubCommand(string name, long length, bool wanted,
+        public UpdateFilesUpdateSubCommand(ListViewItem item, long bytesCompleted)
+        {
+            this.item = item;
+            this.bytesCompleted = bytesCompleted;
+            this.bytesCompletedStr = Toolbox.GetFileSize(bytesCompleted);
+            this.progress = Toolbox.CalcPercentage(bytesCompleted, (long)item.SubItems[1].Tag);
+        }
+
+        public void Execute()
+        {
+            item.SubItems[2].Tag = bytesCompleted;
+            item.SubItems[2].Text = bytesCompletedStr;
+            item.SubItems[3].Tag = progress;
+            item.SubItems[3].Text = progress + "%";
+        }
+    }
+
+    class UpdateFilesCreateSubCommand : TransmissionCommand
+    {
+        private ListViewItem item;
+
+        public UpdateFilesCreateSubCommand(string name, long length, bool wanted,
             JsonNumber priority, long bytesCompleted)
         {
-            this.mode = UpdateFilesSubCommandMode.Create;
             int fwdSlashPos = name.IndexOf('/');
             if (fwdSlashPos > 0)
             {
@@ -58,28 +69,9 @@ namespace TransmissionRemoteDotnet.Commands
             }
         }
 
-        public UpdateFilesSubCommand(ListViewItem item, long bytesCompleted)
-        {
-            this.mode = UpdateFilesSubCommandMode.Update;
-            this.item = item;
-            this.bytesCompleted = bytesCompleted;
-            this.bytesCompletedStr = Toolbox.GetFileSize(bytesCompleted);
-            this.progress = Toolbox.CalcPercentage(bytesCompleted, (long)item.SubItems[1].Tag);
-        }
-
         public void Execute()
         {
-            if (this.mode == UpdateFilesSubCommandMode.Create)
-            {
-                Program.form.filesListView.Items.Add(item);
-            }
-            else if (this.mode == UpdateFilesSubCommandMode.Update)
-            {
-                item.SubItems[2].Tag = bytesCompleted;
-                item.SubItems[2].Text = bytesCompletedStr;
-                item.SubItems[3].Tag = progress;
-                item.SubItems[3].Text = progress + "%";
-            }
+            Program.form.filesListView.Items.Add(item);
         }
 
         private string FormatPriority(JsonNumber n)
