@@ -10,7 +10,7 @@ namespace TransmissionRemoteDotnet
     public sealed class LocalSettingsSingleton
     {
         /* Some unconfigurable variables. */
-        private const string REGISTRY_KEY_ROOT = "Software\\TransmissionRemote";
+        private const string REGISTRY_KEY_ROOT = @"Software\TransmissionRemote";
         public const int COMPLETED_BALOON_TIMEOUT = 4;
         public const int FILES_REFRESH_MULTIPLICANT = 3;
 
@@ -52,7 +52,19 @@ namespace TransmissionRemoteDotnet
             }
         }
 
+        public void CreateProfile(string name)
+        {
+            RegistryKey root = GetRootKey(true);
+            root.CreateSubKey(name);
+            this.CurrentProfile = name;
+        }
+
         private string currentProfile;
+
+        private RegistryKey GetRootKey(bool writeable)
+        {
+            return Registry.CurrentUser.OpenSubKey(REGISTRY_KEY_ROOT, writeable);
+        }
 
         public string CurrentProfile
         {
@@ -62,7 +74,6 @@ namespace TransmissionRemoteDotnet
             }
             set
             {
-                //Commit();
                 if (Program.Connected)
                 {
                     Program.Connected = false;
@@ -74,17 +85,15 @@ namespace TransmissionRemoteDotnet
 
         public void RemoveProfile(string name)
         {
-            if (name.Length > 0)
+            try
             {
-                try
-                {
-                    RegistryKey key = Registry.CurrentUser.OpenSubKey(REGISTRY_KEY_ROOT, true);
-                    key.DeleteSubKey(name, false);
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
+                RegistryKey key = GetRootKey(true);
+                key.DeleteSubKeyTree(name);
+                key.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
 
@@ -108,8 +117,8 @@ namespace TransmissionRemoteDotnet
 
         private LocalSettingsSingleton()
         {
-            RegistryKey key;
-            if ((key = Registry.CurrentUser.OpenSubKey(REGISTRY_KEY_ROOT)) == null)
+            RegistryKey key = GetRootKey(false);
+            if (key == null)
             {
                 key = Registry.CurrentUser.CreateSubKey(REGISTRY_KEY_ROOT);
             }
@@ -126,10 +135,11 @@ namespace TransmissionRemoteDotnet
 
         public void LoadCurrentProfile()
         {
-            RegistryKey key;
-            if ((key = Registry.CurrentUser.OpenSubKey(this.CurrentKey)) == null)
+            RegistryKey key = GetCurrentProfileKey(false);
+            if (key == null && !currentProfile.Equals("Default"))
             {
-                key = Registry.CurrentUser.CreateSubKey(this.CurrentKey);
+                this.CurrentProfile = "Default";
+                return;
             }
             if (key.GetValue(REGKEY_HOST) != null)
             {
@@ -270,18 +280,16 @@ namespace TransmissionRemoteDotnet
             key.Close();
         }
 
-        private string CurrentKey
+        private RegistryKey GetCurrentProfileKey(bool writeable)
         {
-            get
+            if (currentProfile.Equals("Default"))
             {
-                if (currentProfile.Equals("Default"))
-                {
-                    return REGISTRY_KEY_ROOT;
-                }
-                else
-                {
-                    return REGISTRY_KEY_ROOT + "\\" + currentProfile;
-                }
+                return GetRootKey(writeable);
+            }
+            else
+            {
+                RegistryKey root = GetRootKey(false);
+                return root.OpenSubKey(currentProfile, writeable);
             }
         }
 
@@ -291,8 +299,9 @@ namespace TransmissionRemoteDotnet
             {
                 List<string> profiles = new List<string>();
                 RegistryKey key = Registry.CurrentUser.OpenSubKey(REGISTRY_KEY_ROOT);
-                profiles.Add("Default");
                 profiles.AddRange(key.GetSubKeyNames());
+                profiles.Sort();
+                profiles.Insert(0, "Default");
                 return profiles;
             }
         }
@@ -308,10 +317,10 @@ namespace TransmissionRemoteDotnet
                 }
                 rootKey.SetValue(REGKEY_CURRENTPROFILE, this.currentProfile);
                 rootKey.Close();
-                RegistryKey profileKey;
-                if ((profileKey = Registry.CurrentUser.OpenSubKey(this.CurrentKey, true)) == null)
+                RegistryKey profileKey = GetCurrentProfileKey(true);
+                if (profileKey == null)
                 {
-                    profileKey = Registry.CurrentUser.CreateSubKey(this.CurrentKey);
+                    profileKey = GetRootKey(true);
                 }
                 profileKey.SetValue(REGKEY_HOST, this.host);
                 profileKey.SetValue(REGKEY_PORT, this.port);

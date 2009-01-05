@@ -71,10 +71,10 @@
             this.profileComboBox = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.addProfileButton = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.removeProfileButton = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.addProfileButton = new System.Windows.Forms.Button();
+            this.removeProfileButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PortField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RefreshRateValue)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -213,9 +213,9 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.HostField);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(6, 6);
+            this.groupBox2.Location = new System.Drawing.Point(5, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(300, 129);
+            this.groupBox2.Size = new System.Drawing.Size(300, 130);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
@@ -267,7 +267,7 @@
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Location = new System.Drawing.Point(3, 3);
+            this.groupBox3.Location = new System.Drawing.Point(5, 5);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(300, 130);
             this.groupBox3.TabIndex = 3;
@@ -392,9 +392,9 @@
             // 
             this.groupBox4.Controls.Add(this.MinToTrayCheckBox);
             this.groupBox4.Controls.Add(this.StartPausedCheckBox);
-            this.groupBox4.Location = new System.Drawing.Point(6, 5);
+            this.groupBox4.Location = new System.Drawing.Point(5, 5);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(300, 129);
+            this.groupBox4.Size = new System.Drawing.Size(300, 130);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             // 
@@ -449,9 +449,9 @@
             this.groupBox1.Controls.Add(this.PassField);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.UserField);
-            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Location = new System.Drawing.Point(5, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(300, 129);
+            this.groupBox1.Size = new System.Drawing.Size(300, 130);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
@@ -545,17 +545,6 @@
             this.textBox1.TabIndex = 10;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // addProfileButton
-            // 
-            this.addProfileButton.Enabled = false;
-            this.addProfileButton.Image = global::TransmissionRemoteDotnet.Properties.Resources._16x16_add;
-            this.addProfileButton.Location = new System.Drawing.Point(110, 17);
-            this.addProfileButton.Name = "addProfileButton";
-            this.addProfileButton.Size = new System.Drawing.Size(31, 24);
-            this.addProfileButton.TabIndex = 11;
-            this.addProfileButton.UseVisualStyleBackColor = true;
-            this.addProfileButton.Click += new System.EventHandler(this.button2_Click);
-            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.removeProfileButton);
@@ -568,17 +557,6 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Current profile";
             // 
-            // removeProfileButton
-            // 
-            this.removeProfileButton.Enabled = false;
-            this.removeProfileButton.Image = global::TransmissionRemoteDotnet.Properties.Resources._16x16_remove;
-            this.removeProfileButton.Location = new System.Drawing.Point(132, 16);
-            this.removeProfileButton.Name = "removeProfileButton";
-            this.removeProfileButton.Size = new System.Drawing.Size(28, 26);
-            this.removeProfileButton.TabIndex = 10;
-            this.removeProfileButton.UseVisualStyleBackColor = true;
-            this.removeProfileButton.Click += new System.EventHandler(this.removeProfileButton_Click);
-            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.addProfileButton);
@@ -589,6 +567,28 @@
             this.groupBox6.TabIndex = 13;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "New profile";
+            // 
+            // addProfileButton
+            // 
+            this.addProfileButton.Enabled = false;
+            this.addProfileButton.Image = global::TransmissionRemoteDotnet.Properties.Resources._16x16_add;
+            this.addProfileButton.Location = new System.Drawing.Point(111, 17);
+            this.addProfileButton.Name = "addProfileButton";
+            this.addProfileButton.Size = new System.Drawing.Size(30, 25);
+            this.addProfileButton.TabIndex = 11;
+            this.addProfileButton.UseVisualStyleBackColor = true;
+            this.addProfileButton.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // removeProfileButton
+            // 
+            this.removeProfileButton.Enabled = false;
+            this.removeProfileButton.Image = global::TransmissionRemoteDotnet.Properties.Resources._16x16_remove;
+            this.removeProfileButton.Location = new System.Drawing.Point(132, 17);
+            this.removeProfileButton.Name = "removeProfileButton";
+            this.removeProfileButton.Size = new System.Drawing.Size(30, 25);
+            this.removeProfileButton.TabIndex = 10;
+            this.removeProfileButton.UseVisualStyleBackColor = true;
+            this.removeProfileButton.Click += new System.EventHandler(this.removeProfileButton_Click);
             // 
             // LocalSettingsDialog
             // 

@@ -56,6 +56,10 @@ namespace TransmissionRemoteDotnet
                     profileComboBox.SelectedIndex = i;
                 }
             }
+            if (profileComboBox.SelectedIndex < 0)
+            {
+                profileComboBox.SelectedIndex = 0;
+            }
             LoadCurrentProfile();
             profileComboBox.Tag = true;
         }
@@ -136,7 +140,7 @@ namespace TransmissionRemoteDotnet
                 string selectedProfile = profileComboBox.SelectedItem.ToString();
                 if (!selectedProfile.Equals(settings.CurrentProfile))
                 {
-                    settings.Commit();
+                    SaveSettings();
                     settings.CurrentProfile = selectedProfile;
                     LoadCurrentProfile();
                     if (settings.autoConnect)
@@ -157,7 +161,8 @@ namespace TransmissionRemoteDotnet
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
             profileComboBox.Tag = false;
             settings.Commit();
-            profileComboBox.SelectedIndex = profileComboBox.Items.Add(settings.CurrentProfile = textBox1.Text);
+            settings.CreateProfile(textBox1.Text);
+            profileComboBox.SelectedIndex = profileComboBox.Items.Add(textBox1.Text);
             profileComboBox.Tag = true;
             textBox1.Text = "";
             SaveSettings();
