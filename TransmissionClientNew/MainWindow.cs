@@ -10,6 +10,8 @@ using System.Net;
 using TransmissionRemoteDotnet.Commmands;
 using TransmissionRemoteDotnet.Comparers;
 using Jayrock.Json;
+using MaxMind;
+using System.IO;
 
 namespace TransmissionRemoteDotnet
 {
@@ -26,6 +28,7 @@ namespace TransmissionRemoteDotnet
         private ContextMenu noFileSelectionMenu;
         private BackgroundWorker connectWorker;
         private TabPage peersTabPageSaved;
+        private GeoIPCountry geo;
         public List<ListViewItem> fileItems = new List<ListViewItem>();
 
         public MainWindow()
@@ -87,6 +90,28 @@ namespace TransmissionRemoteDotnet
             speedGraph.AddLine("Download", Color.Green);
             speedGraph.AddLine("Upload", Color.Yellow);
             speedResComboBox.SelectedIndex = 2;
+        }
+
+        private void OpenGeoipDatabase()
+        {
+            try
+            {
+                geo = new GeoIPCountry("GeoIP.dat");
+                for (int i = 1; i < GeoIPCountry.CountryCodes.Length; i++)
+                {
+                    string flagname = ("flags_" + GeoIPCountry.CountryCodes[i]).ToLower();
+                    Bitmap flag = global::TransmissionRemoteDotnet.Properties.Flags.GetFlags(flagname);
+                    if (flag != null)
+                    {
+                        flagsImageList.Images.Add(flagname, flag);
+                    }
+                }
+                this.peersListView.SmallImageList = this.flagsImageList;
+            }
+            catch (FileNotFoundException)
+            {
+                Program.Log("Could not load the GeoIP database.", "GeoIP error");
+            }
         }
 
         private void Program_onTorrentsUpdated()
@@ -218,6 +243,7 @@ namespace TransmissionRemoteDotnet
                     }
                 }
             }
+            OpenGeoipDatabase();
             if (settings.autoConnect)
             {
                 Connect();
@@ -646,6 +672,8 @@ namespace TransmissionRemoteDotnet
         private void stateListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             FilterByState();
+            torrentListView.Sort();
+            Toolbox.StripeListView(torrentListView);
         }
 
         private void FilterByState()
@@ -958,31 +986,58 @@ namespace TransmissionRemoteDotnet
                         {
                             item = new ListViewItem((string)peer["address"]); // 0
                             item.SubItems.Add(""); // 1
+                            IPAddress ip = null;
+                            try
+                            {
+                                ip = IPAddress.Parse(item.SubItems[0].Text);
+                            }
+                            catch { }
+                            int countryIndex = -1;
+                            if (geo != null)
+                            {
+                                if (ip == null)
+                                {
+                                    countryIndex = 0;
+                                }
+                                else
+                                {
+                                    countryIndex = geo.FindIndex(ip);
+                                    item.SubItems.Add(GeoIPCountry.CountryNames[countryIndex]);
+                                }
+                            }
+                            else
+                            {
+                                item.SubItems.Add("");
+                            }
                             item.SubItems.Add((string)peer["clientName"]); // 2
                             item.ToolTipText = item.SubItems[0].Text;
                             decimal progress = ParseProgress((string)peer[ProtocolConstants.FIELD_PROGRESS]);
                             item.SubItems.Add(progress + "%"); // 3
-                            item.SubItems[3].Tag = progress;
+                            item.SubItems[4].Tag = progress;
                             long rateToClient = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOCLIENT]).ToInt64();
                             item.SubItems.Add(Toolbox.GetSpeed(rateToClient)); // 4
-                            item.SubItems[4].Tag = rateToClient;
+                            item.SubItems[5].Tag = rateToClient;
                             long rateToPeer = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOPEER]).ToInt64();
                             item.SubItems.Add(Toolbox.GetSpeed(rateToPeer)); // 5
-                            item.SubItems[5].Tag = rateToPeer;
+                            item.SubItems[6].Tag = rateToPeer;
                             peersListView.Items.Add(item);
                             Toolbox.StripeListView(peersListView);
-                            CreateHostnameResolutionWorker().RunWorkerAsync(item);
+                            if (countryIndex >= 0)
+                            {
+                                item.ImageIndex = flagsImageList.Images.IndexOfKey("flags_" + GeoIPCountry.CountryCodes[countryIndex]);
+                            }
+                            CreateHostnameResolutionWorker().RunWorkerAsync(new object[] { item, ip });
                         }
                         else
                         {
                             decimal progress = ParseProgress((string)peer[ProtocolConstants.FIELD_PROGRESS]);
-                            item.SubItems[3].Text = progress + "%";
+                            item.SubItems[4].Text = progress + "%";
                             long rateToClient = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOCLIENT]).ToInt64();
-                            item.SubItems[4].Text = Toolbox.GetSpeed(rateToClient);
-                            item.SubItems[4].Tag = rateToClient;
+                            item.SubItems[5].Text = Toolbox.GetSpeed(rateToClient);
+                            item.SubItems[5].Tag = rateToClient;
                             long rateToPeer = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOPEER]).ToInt64();
-                            item.SubItems[5].Text = Toolbox.GetSpeed(rateToPeer);
-                            item.SubItems[5].Tag = rateToPeer;
+                            item.SubItems[6].Text = Toolbox.GetSpeed(rateToPeer);
+                            item.SubItems[6].Tag = rateToPeer;
                         }
                         item.Tag = peersListView.Tag;
                     }
@@ -1024,7 +1079,8 @@ namespace TransmissionRemoteDotnet
 
         private void resolveHostWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            e.Result = new ResolveHostCommand((ListViewItem)e.Argument);
+            object[] args = (object[])e.Argument;
+            e.Result = new ResolveHostCommand((ListViewItem)args[0], (IPAddress)args[1]);
         }
 
         private ListViewItem FindPeerItem(string address, string clientName)
@@ -1140,7 +1196,6 @@ namespace TransmissionRemoteDotnet
             }
             else if (e.Control && e.KeyCode == Keys.A)
             {
-                torrentListView.Focus();
                 Toolbox.SelectAll(torrentListView);
             }
             else if (e.Control && e.KeyCode == Keys.C)

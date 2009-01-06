@@ -96,6 +96,8 @@
       <DependentUpon>ErrorLogWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Comparers\FilesListViewColumnSorter.cs" />
+    <Compile Include="Properties\Flags.Designer.cs" />
+    <Compile Include="GeoIPCountry.cs" />
     <Compile Include="GListBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -122,6 +124,7 @@
     <EmbeddedResource Include="ErrorLogWindow.resx">
       <DependentUpon>ErrorLogWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Flags.resx" />
     <EmbeddedResource Include="LocalSettingsDialog.resx">
       <DependentUpon>LocalSettingsDialog.cs</DependentUpon>
       <SubType>Designer</SubType>

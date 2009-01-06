@@ -12,12 +12,12 @@ namespace TransmissionRemoteDotnet.Commmands
         private ListViewItem item;
         private IPHostEntry host;
 
-        public ResolveHostCommand(ListViewItem item)
+        public ResolveHostCommand(ListViewItem item, IPAddress ip)
         {
             this.item = item;
             try
             {
-                this.host = Dns.GetHostEntry(item.SubItems[0].Text);
+                this.host = Dns.GetHostEntry(ip);
             }
             catch { }
         }

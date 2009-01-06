@@ -53,13 +53,13 @@ namespace TransmissionRemoteDotnet.Comparers
                     case 1:
                         ObjectCompare = new ListViewTextInsensitiveReverseComparer(value);
                         break;
-                    case 3:
+                    case 4:
                         ObjectCompare = new ListViewItemDecimalComparer(value);
                         break;
-                    case 4:
+                    case 5:
                         ObjectCompare = new ListViewItemInt64Comparer(value);
                         break;
-                    case 5:
+                    case 6:
                         ObjectCompare = new ListViewItemInt64Comparer(value);
                         break;
                     default:

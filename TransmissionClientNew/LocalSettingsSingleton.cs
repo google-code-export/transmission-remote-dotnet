@@ -116,6 +116,7 @@ namespace TransmissionRemoteDotnet
         public Boolean startPaused;
         public int retryLimit;
         public string customPath;
+        private string urlCache;
 
         private LocalSettingsSingleton()
         {
@@ -281,6 +282,7 @@ namespace TransmissionRemoteDotnet
                 this.retryLimit = 3;
             }
             key.Close();
+            RefreshUrlCache();
         }
 
         private RegistryKey GetCurrentProfileKey(bool writeable)
@@ -314,7 +316,7 @@ namespace TransmissionRemoteDotnet
                 RegistryKey rootKey = GetRootKey(true);
                 if (rootKey == null)
                 {
-                    Registry.CurrentUser.CreateSubKey(REGISTRY_KEY_ROOT);
+                    rootKey = Registry.CurrentUser.CreateSubKey(REGISTRY_KEY_ROOT);
                 }
                 rootKey.SetValue(REGKEY_CURRENTPROFILE, this.currentProfile);
                 rootKey.Close();
@@ -340,6 +342,7 @@ namespace TransmissionRemoteDotnet
                     profileKey.SetValue(REGKEY_RETRYLIMIT, this.retryLimit);
                     profileKey.Close();
                 }
+                RefreshUrlCache();
                 Program.form.refreshTimer.Interval = refreshRate * 1000;
                 Program.form.filesTimer.Interval = refreshRate * 1000 * FILES_REFRESH_MULTIPLICANT;
             }
@@ -349,11 +352,16 @@ namespace TransmissionRemoteDotnet
             }
         }
 
+        public void RefreshUrlCache()
+        {
+            this.urlCache = (useSSL ? "https" : "http") + "://" + this.host + ":" + this.port + (this.customPath == null ? "/transmission/" : this.customPath);
+        }
+
         public string URL
         {
             get
             {
-                return (useSSL ? "https" : "http") + "://" + this.host + ":" + this.port + (this.customPath == null ? "/transmission/" : this.customPath);
+                return this.urlCache;
             }
         }
     }
