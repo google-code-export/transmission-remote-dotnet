@@ -115,6 +115,7 @@ namespace TransmissionRemoteDotnet
         public Boolean proxyAuth;
         public Boolean startPaused;
         public int retryLimit;
+        public string customPath;
 
         private LocalSettingsSingleton()
         {
@@ -142,6 +143,7 @@ namespace TransmissionRemoteDotnet
                 this.CurrentProfile = "Default";
                 return;
             }
+            this.customPath = (string)key.GetValue("customPath");
             if (key.GetValue(REGKEY_HOST) != null)
             {
                 this.host = (string)key.GetValue(REGKEY_HOST);
@@ -351,7 +353,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return (useSSL ? "https" : "http") + "://" + this.host + ":" + this.port + "/transmission/";
+                return (useSSL ? "https" : "http") + "://" + this.host + ":" + this.port + (this.customPath == null ? "/transmission/" : this.customPath);
             }
         }
     }

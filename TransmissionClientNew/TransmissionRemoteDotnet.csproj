@@ -234,12 +234,12 @@
     <None Include="Resources\netconfigure.png" />
     <None Include="Resources\net_add.png" />
     <None Include="Resources\16x16_ledblue.png" />
-    <None Include="Resources\16x16_ledgreen.png" />
-    <None Include="Resources\16x16_ledorange.png" />
-    <None Include="Resources\16x16_ledpurple.png" />
-    <None Include="Resources\16x16_ledred.png" />
     <None Include="Resources\viewmag+.png" />
     <None Include="Resources\_16x16_remove.png" />
+    <None Include="Resources\apply16.png" />
+    <None Include="Resources\down16.png" />
+    <None Include="Resources\player_pause16.png" />
+    <None Include="Resources\up16.png" />
     <Content Include="transmission_large.ico" />
   </ItemGroup>
   <ItemGroup>
