@@ -41,24 +41,35 @@
             this.CloseFormButton = new System.Windows.Forms.Button();
             this.SettingsWorker = new System.ComponentModel.BackgroundWorker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.PeerLimitValue = new System.Windows.Forms.NumericUpDown();
+            this.PEXcheckBox = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.PortForward = new System.Windows.Forms.CheckBox();
+            this.EncryptionCombobox = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.LimitUploadValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LimitDownloadValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IncomingPortValue)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PeerLimitValue)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Location = new System.Drawing.Point(6, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.Size = new System.Drawing.Size(74, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Download To:";
             // 
             // DownloadToField
             // 
-            this.DownloadToField.Location = new System.Drawing.Point(111, 15);
+            this.DownloadToField.Location = new System.Drawing.Point(111, 24);
             this.DownloadToField.Name = "DownloadToField";
             this.DownloadToField.Size = new System.Drawing.Size(176, 20);
             this.DownloadToField.TabIndex = 1;
@@ -66,7 +77,7 @@
             // LimitUploadCheckBox
             // 
             this.LimitUploadCheckBox.AutoSize = true;
-            this.LimitUploadCheckBox.Location = new System.Drawing.Point(9, 71);
+            this.LimitUploadCheckBox.Location = new System.Drawing.Point(9, 24);
             this.LimitUploadCheckBox.Name = "LimitUploadCheckBox";
             this.LimitUploadCheckBox.Size = new System.Drawing.Size(82, 17);
             this.LimitUploadCheckBox.TabIndex = 4;
@@ -76,7 +87,7 @@
             // 
             // LimitUploadValue
             // 
-            this.LimitUploadValue.Location = new System.Drawing.Point(111, 70);
+            this.LimitUploadValue.Location = new System.Drawing.Point(111, 23);
             this.LimitUploadValue.Maximum = new decimal(new int[] {
             1048576,
             0,
@@ -89,7 +100,7 @@
             // LimitDownloadCheckBox
             // 
             this.LimitDownloadCheckBox.AutoSize = true;
-            this.LimitDownloadCheckBox.Location = new System.Drawing.Point(9, 97);
+            this.LimitDownloadCheckBox.Location = new System.Drawing.Point(9, 50);
             this.LimitDownloadCheckBox.Name = "LimitDownloadCheckBox";
             this.LimitDownloadCheckBox.Size = new System.Drawing.Size(96, 17);
             this.LimitDownloadCheckBox.TabIndex = 6;
@@ -99,7 +110,7 @@
             // 
             // LimitDownloadValue
             // 
-            this.LimitDownloadValue.Location = new System.Drawing.Point(111, 96);
+            this.LimitDownloadValue.Location = new System.Drawing.Point(111, 49);
             this.LimitDownloadValue.Maximum = new decimal(new int[] {
             1048576,
             0,
@@ -112,15 +123,15 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 44);
+            this.label2.Location = new System.Drawing.Point(6, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 13);
+            this.label2.Size = new System.Drawing.Size(74, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Incoming port:";
             // 
             // IncomingPortValue
             // 
-            this.IncomingPortValue.Location = new System.Drawing.Point(111, 42);
+            this.IncomingPortValue.Location = new System.Drawing.Point(111, 51);
             this.IncomingPortValue.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -132,7 +143,7 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(156, 142);
+            this.SaveButton.Location = new System.Drawing.Point(158, 266);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 23);
             this.SaveButton.TabIndex = 8;
@@ -143,7 +154,7 @@
             // CloseFormButton
             // 
             this.CloseFormButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CloseFormButton.Location = new System.Drawing.Point(237, 142);
+            this.CloseFormButton.Location = new System.Drawing.Point(239, 266);
             this.CloseFormButton.Name = "CloseFormButton";
             this.CloseFormButton.Size = new System.Drawing.Size(75, 23);
             this.CloseFormButton.TabIndex = 9;
@@ -158,19 +169,118 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.PeerLimitValue);
+            this.groupBox1.Controls.Add(this.PEXcheckBox);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.PortForward);
+            this.groupBox1.Controls.Add(this.EncryptionCombobox);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.DownloadToField);
-            this.groupBox1.Controls.Add(this.LimitUploadCheckBox);
             this.groupBox1.Controls.Add(this.IncomingPortValue);
-            this.groupBox1.Controls.Add(this.LimitUploadValue);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.LimitDownloadCheckBox);
-            this.groupBox1.Controls.Add(this.LimitDownloadValue);
             this.groupBox1.Location = new System.Drawing.Point(9, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(303, 131);
+            this.groupBox1.Size = new System.Drawing.Size(303, 167);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "General";
+            // 
+            // PeerLimitValue
+            // 
+            this.PeerLimitValue.Location = new System.Drawing.Point(111, 108);
+            this.PeerLimitValue.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.PeerLimitValue.Name = "PeerLimitValue";
+            this.PeerLimitValue.Size = new System.Drawing.Size(64, 20);
+            this.PeerLimitValue.TabIndex = 14;
+            // 
+            // PEXcheckBox
+            // 
+            this.PEXcheckBox.AutoSize = true;
+            this.PEXcheckBox.Location = new System.Drawing.Point(9, 138);
+            this.PEXcheckBox.Name = "PEXcheckBox";
+            this.PEXcheckBox.Size = new System.Drawing.Size(135, 17);
+            this.PEXcheckBox.TabIndex = 13;
+            this.PEXcheckBox.Text = "Enable Peer Exchange";
+            this.PEXcheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 110);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Peer Limit";
+            // 
+            // PortForward
+            // 
+            this.PortForward.AutoSize = true;
+            this.PortForward.Location = new System.Drawing.Point(201, 52);
+            this.PortForward.Name = "PortForward";
+            this.PortForward.Size = new System.Drawing.Size(86, 17);
+            this.PortForward.TabIndex = 11;
+            this.PortForward.Text = "Port Forward";
+            this.PortForward.UseVisualStyleBackColor = true;
+            // 
+            // EncryptionCombobox
+            // 
+            this.EncryptionCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EncryptionCombobox.FormattingEnabled = true;
+            this.EncryptionCombobox.Items.AddRange(new object[] {
+            "tolerated",
+            "preferred",
+            "required"});
+            this.EncryptionCombobox.Location = new System.Drawing.Point(111, 79);
+            this.EncryptionCombobox.Name = "EncryptionCombobox";
+            this.EncryptionCombobox.Size = new System.Drawing.Size(176, 21);
+            this.EncryptionCombobox.TabIndex = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 82);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Encryption:";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.LimitDownloadValue);
+            this.groupBox2.Controls.Add(this.LimitDownloadCheckBox);
+            this.groupBox2.Controls.Add(this.LimitUploadValue);
+            this.groupBox2.Controls.Add(this.LimitUploadCheckBox);
+            this.groupBox2.Location = new System.Drawing.Point(9, 178);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(303, 82);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Global speed limit";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(182, 28);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "KB/s";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(182, 54);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(31, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "KB/s";
             // 
             // RemoteSettingsDialog
             // 
@@ -178,10 +288,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CloseFormButton;
-            this.ClientSize = new System.Drawing.Size(324, 175);
+            this.ClientSize = new System.Drawing.Size(326, 297);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CloseFormButton);
             this.Controls.Add(this.SaveButton);
+            this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -193,6 +304,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.IncomingPortValue)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PeerLimitValue)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -211,5 +325,14 @@
         private System.Windows.Forms.Button CloseFormButton;
         private System.ComponentModel.BackgroundWorker SettingsWorker;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox EncryptionCombobox;
+        private System.Windows.Forms.CheckBox PortForward;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox PEXcheckBox;
+        private System.Windows.Forms.NumericUpDown PeerLimitValue;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }

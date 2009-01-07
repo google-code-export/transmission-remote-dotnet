@@ -11,7 +11,6 @@
 namespace TransmissionRemoteDotnet.Properties {
     using System;
     
-    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -22,7 +21,7 @@ namespace TransmissionRemoteDotnet.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "2.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Flags {
+    public class Flags {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -59,7 +58,7 @@ namespace TransmissionRemoteDotnet.Properties {
                 resourceCulture = value;
             }
         }
-        internal static System.Drawing.Bitmap GetFlags(string name)
+        public static System.Drawing.Bitmap GetFlags(string name)
         {
             object obj = ResourceManager.GetObject(name, resourceCulture);
             return ((System.Drawing.Bitmap)(obj));

@@ -95,21 +95,7 @@ namespace TransmissionRemoteDotnet.Commmands
                     Program.torrentIndex.Remove(id);
                 }
             }
-            PostUpdateUiOperations();
-        }
-
-        private delegate void PostUpdateUiOperationsDelegate();
-        private void PostUpdateUiOperations()
-        {
-            MainWindow form = Program.form;
-            if (form.InvokeRequired)
-            {
-                form.Invoke(new PostUpdateUiOperationsDelegate(this.PostUpdateUiOperations));
-            }
-            else
-            {
-                Program.RaisePostUpdateEvent();
-            }
+            Program.RaisePostUpdateEvent();
         }
     }
 }

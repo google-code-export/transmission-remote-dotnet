@@ -33,6 +33,16 @@ namespace TransmissionRemoteDotnet
                 LimitUploadValue.Enabled = LimitUploadCheckBox.Checked = ((JsonNumber)settings["speed-limit-up-enabled"]).ToBoolean();
                 SetLimitField(((JsonNumber)settings["speed-limit-up"]).ToInt32(), LimitUploadValue);
                 IncomingPortValue.Value = ((JsonNumber)settings["port"]).ToInt32();
+                PortForward.Checked = ((JsonNumber)settings["port-forwarding-enabled"]).ToBoolean();
+                string enc = settings["encryption"] as string;
+                if (enc.Equals("preferred"))
+                    EncryptionCombobox.SelectedIndex = 1;
+                else if (enc.Equals("required"))
+                    EncryptionCombobox.SelectedIndex = 2;
+                else
+                    EncryptionCombobox.SelectedIndex = 0;
+                PeerLimitValue.Value = ((JsonNumber)settings["peer-limit"]).ToInt32();
+                PEXcheckBox.Checked = ((JsonNumber)settings["pex-allowed"]).ToBoolean();
             }
             catch (Exception ex)
             {
@@ -69,6 +79,21 @@ namespace TransmissionRemoteDotnet
             request.Put(ProtocolConstants.KEY_METHOD, "session-set");
             JsonObject arguments = new JsonObject();
             arguments.Put("port", IncomingPortValue.Value);
+            arguments.Put("port-forwarding-enabled", PortForward.Checked);
+            arguments.Put("pex-allowed", PEXcheckBox.Checked);
+            arguments.Put("peer-limit", PeerLimitValue.Value);
+            switch (EncryptionCombobox.SelectedIndex)
+            {
+                case 1:
+                    arguments.Put("encryption", "preferred");
+                    break;
+                case 2:
+                    arguments.Put("encryption", "required");
+                    break;
+                default:
+                    arguments.Put("encryption", "tolerated");
+                    break;
+            }
             arguments.Put("speed-limit-up-enabled", LimitUploadCheckBox.Checked);
             arguments.Put("speed-limit-up", LimitUploadValue.Value);
             arguments.Put("speed-limit-down-enabled", LimitDownloadCheckBox.Checked);

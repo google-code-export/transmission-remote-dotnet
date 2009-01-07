@@ -99,7 +99,7 @@ namespace TransmissionRemoteDotnet
                 geo = new GeoIPCountry("GeoIP.dat");
                 for (int i = 1; i < GeoIPCountry.CountryCodes.Length; i++)
                 {
-                    string flagname = ("flags_" + GeoIPCountry.CountryCodes[i]).ToLower();
+                    string flagname = "flags_" + GeoIPCountry.CountryCodes[i].ToLower();
                     Bitmap flag = global::TransmissionRemoteDotnet.Properties.Flags.GetFlags(flagname);
                     if (flag != null)
                     {
@@ -449,8 +449,7 @@ namespace TransmissionRemoteDotnet
 
         private void refreshWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            TransmissionCommand command = CommandFactory.Request(Requests.TorrentGet());
-            command.Execute();
+            e.Result = CommandFactory.Request(Requests.TorrentGet());
         }
 
         private void refreshTimer_Tick(object sender, EventArgs e)
@@ -556,33 +555,17 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        private delegate void UpdateGraphDelegate(int downspeed, int upspeed);
         public void UpdateGraph(int downspeed, int upspeed)
         {
-            if (this.InvokeRequired)
-            {
-                this.Invoke(new UpdateGraphDelegate(this.UpdateGraph), downspeed, upspeed);
-            }
-            else
-            {
-                speedGraph.Push(downspeed, "Download");
-                speedGraph.Push(upspeed, "Upload");
-                speedGraph.UpdateGraph();
-            }
+            speedGraph.Push(downspeed, "Download");
+            speedGraph.Push(upspeed, "Upload");
+            speedGraph.UpdateGraph();
         }
 
-        private delegate void UpdateStatusDelegate(string text);
         public void UpdateStatus(string text)
         {
-            if (this.InvokeRequired)
-            {
-                this.Invoke(new UpdateStatusDelegate(this.UpdateStatus), text);
-            }
-            else
-            {
-                toolStripStatusLabel.Text = text;
-                notifyIcon.Text = text.Length < 64 ? text : text.Substring(0, 63);
-            }
+            toolStripStatusLabel.Text = text;
+            notifyIcon.Text = text.Length < 64 ? text : text.Substring(0, 63);
         }
 
         private void addTorrentButton_Click(object sender, EventArgs e)
@@ -1009,7 +992,7 @@ namespace TransmissionRemoteDotnet
                             {
                                 item.SubItems.Add("");
                             }
-                            item.SubItems.Add((string)peer["clientName"]); // 2
+                            item.SubItems.Add((string)peer[ProtocolConstants.FIELD_CLIENTNAME]); // 2
                             item.ToolTipText = item.SubItems[0].Text;
                             decimal progress = ParseProgress((string)peer[ProtocolConstants.FIELD_PROGRESS]);
                             item.SubItems.Add(progress + "%"); // 3
@@ -1215,6 +1198,12 @@ namespace TransmissionRemoteDotnet
             {
                 Toolbox.CopyListViewToClipboard(listView);
             }
+        }
+
+        private void refreshWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            TransmissionCommand command = (TransmissionCommand)e.Result;
+            command.Execute();
         }
     }
 }

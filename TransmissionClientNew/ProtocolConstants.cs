@@ -25,6 +25,7 @@ namespace TransmissionRemoteDotnet
             METHOD_TORRENTSTART = "torrent-start",
             METHOD_TORRENTSTOP = "torrent-stop",
             METHOD_SESSIONGET = "session-get",
+            FIELD_CLIENTNAME = "clientName",
             FIELD_HAVEUNCHECKED = "haveUnchecked",
             FIELD_LEFTUNTILDONE = "leftUntilDone",
             FIELD_COMMENT = "comment",
