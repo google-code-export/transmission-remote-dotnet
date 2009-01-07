@@ -12,7 +12,25 @@ namespace TransmissionRemoteDotnet
 {
     public partial class RemoteSettingsDialog : Form
     {
-        public RemoteSettingsDialog()
+        private static RemoteSettingsDialog instance = null;
+        private static readonly object padlock = new object();
+
+        public static RemoteSettingsDialog Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null || instance.IsDisposed)
+                    {
+                        instance = new RemoteSettingsDialog();
+                    }
+                }
+                return instance;
+            }
+        }
+
+        private RemoteSettingsDialog()
         {
             InitializeComponent();
         }

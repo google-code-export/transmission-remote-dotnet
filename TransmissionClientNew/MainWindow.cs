@@ -203,30 +203,14 @@ namespace TransmissionRemoteDotnet
             CreateActionWorker().RunWorkerAsync(Requests.Generic(ProtocolConstants.METHOD_TORRENTSTOP, null));
         }
 
-        private delegate void SuspendTorrentListViewDelegate();
         public void SuspendTorrentListView()
         {
-            if (this.InvokeRequired)
-            {
-                this.Invoke(new SuspendTorrentListViewDelegate(this.SuspendTorrentListView));
-            }
-            else
-            {
-                torrentListView.SuspendLayout();
-            }
+            torrentListView.SuspendLayout();
         }
 
-        private delegate void ResumeTorrentListViewDelegate();
         public void ResumeTorrentListView()
         {
-            if (this.InvokeRequired)
-            {
-                this.Invoke(new ResumeTorrentListViewDelegate(this.ResumeTorrentListView));
-            }
-            else
-            {
-                torrentListView.ResumeLayout();
-            }
+            torrentListView.ResumeLayout();
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
@@ -430,21 +414,13 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        private delegate void ConnectDelegate();
         public void Connect()
         {
-            if (this.InvokeRequired)
-            {
-                this.Invoke(new ConnectDelegate(this.Connect));
-            }
-            else
-            {
-                toolStripStatusLabel.Text = "Connecting...";
-                BackgroundWorker connectWorker = this.connectWorker = new BackgroundWorker();
-                connectWorker.DoWork += new DoWorkEventHandler(connectWorker_DoWork);
-                connectWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(connectWorker_RunWorkerCompleted);
-                connectWorker.RunWorkerAsync();
-            }
+            toolStripStatusLabel.Text = "Connecting...";
+            BackgroundWorker connectWorker = this.connectWorker = new BackgroundWorker();
+            connectWorker.DoWork += new DoWorkEventHandler(connectWorker_DoWork);
+            connectWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(connectWorker_RunWorkerCompleted);
+            connectWorker.RunWorkerAsync();
         }
 
         private void refreshWorker_DoWork(object sender, DoWorkEventArgs e)
@@ -467,14 +443,14 @@ namespace TransmissionRemoteDotnet
 
         private void localConfigureButton_Click(object sender, EventArgs e)
         {
-            LocalSettingsDialog dialog = new LocalSettingsDialog();
-            dialog.Show();
+            //LocalSettingsDialog dialog = new LocalSettingsDialog();
+            //dialog.Show();
+            LocalSettingsDialog.Instance.Show();
         }
 
         private void remoteConfigureButton_Click(object sender, EventArgs e)
         {
-            RemoteSettingsDialog dialog = new RemoteSettingsDialog();
-            dialog.Show();
+            RemoteSettingsDialog.Instance.Show();
         }
 
         private void torrentListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -590,15 +566,19 @@ namespace TransmissionRemoteDotnet
             {
                 Program.Connected = false;
             }
+            else if (e.Control && e.KeyCode == Keys.O)
+            {
+                LocalSettingsDialog.Instance.Show();
+            }
             else if (e.Control && e.KeyCode == Keys.P)
             {
                 LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-                if (settings.proxyEnabled == 0 && LocalSettingsSingleton.Instance.proxyHost.Length > 0)
+                if (settings.proxyEnabled == 0 && settings.proxyHost.Length > 0)
                 {
                     settings.proxyEnabled = 1;
                     toolStripStatusLabel.Text = "Proxy enabled.";
                 }
-                else if (settings.proxyEnabled == 1 || settings.proxyEnabled == 0)
+                else if (settings.proxyEnabled <= 1)
                 {
                     settings.proxyEnabled = 2;
                     toolStripStatusLabel.Text = "Proxy disabled.";
@@ -985,8 +965,8 @@ namespace TransmissionRemoteDotnet
                                 else
                                 {
                                     countryIndex = geo.FindIndex(ip);
-                                    item.SubItems.Add(GeoIPCountry.CountryNames[countryIndex]);
                                 }
+                                item.SubItems.Add(GeoIPCountry.CountryNames[countryIndex]);
                             }
                             else
                             {
@@ -1007,7 +987,7 @@ namespace TransmissionRemoteDotnet
                             Toolbox.StripeListView(peersListView);
                             if (countryIndex >= 0)
                             {
-                                item.ImageIndex = flagsImageList.Images.IndexOfKey("flags_" + GeoIPCountry.CountryCodes[countryIndex]);
+                                item.ImageIndex = flagsImageList.Images.IndexOfKey("flags_" + GeoIPCountry.CountryCodes[countryIndex].ToLower());
                             }
                             CreateHostnameResolutionWorker().RunWorkerAsync(new object[] { item, ip });
                         }

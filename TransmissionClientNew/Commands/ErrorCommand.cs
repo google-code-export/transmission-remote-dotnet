@@ -24,34 +24,26 @@ namespace TransmissionRemoteDotnet.Commmands
             this.body = ex.Message;
         }
 
-        private delegate void ExecuteDelegate();
         public void Execute()
         {
             MainWindow form = Program.form;
-            if (form.InvokeRequired)
+            Program.uploadArgs = null;
+            if (!Program.Connected)
             {
-                form.Invoke(new ExecuteDelegate(this.Execute));
+                form.toolStripStatusLabel.Text = "Unable to connect (" + this.title + ")";
+                MessageBox.Show(this.body.Length > MAX_MESSAGE_LENGTH ? this.body.Substring(0, MAX_MESSAGE_LENGTH) + "..." : this.body, this.title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (++Program.failCount > LocalSettingsSingleton.Instance.retryLimit)
+            {
+                Program.Connected = false;
+                form.toolStripStatusLabel.Text = "Disconnected. Exceeded maximum number of failed requests.";
+                Program.Log(this.title, this.body);
+                MessageBox.Show(this.body.Length > MAX_MESSAGE_LENGTH ? this.body.Substring(0, MAX_MESSAGE_LENGTH) + "..." : this.body, this.title, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                Program.uploadArgs = null;
-                if (!Program.Connected)
-                {
-                    form.toolStripStatusLabel.Text = "Unable to connect (" + this.title + ")";
-                    MessageBox.Show(this.body.Length > MAX_MESSAGE_LENGTH ? this.body.Substring(0, MAX_MESSAGE_LENGTH)+"..." : this.body, this.title, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if (++Program.failCount > LocalSettingsSingleton.Instance.retryLimit)
-                {
-                    Program.Connected = false;
-                    form.toolStripStatusLabel.Text = "Disconnected. Exceeded maximum number of failed requests.";
-                    Program.Log(this.title, this.body);
-                    MessageBox.Show(this.body.Length > MAX_MESSAGE_LENGTH ? this.body.Substring(0, MAX_MESSAGE_LENGTH)+"..." : this.body, this.title, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    Program.Log(this.title, this.body);
-                    form.toolStripStatusLabel.Text = "Failed request #" + Program.failCount + ": " + this.title;
-                }
+                Program.Log(this.title, this.body);
+                form.toolStripStatusLabel.Text = "Failed request #" + Program.failCount + ": " + this.title;
             }
         }
     }
