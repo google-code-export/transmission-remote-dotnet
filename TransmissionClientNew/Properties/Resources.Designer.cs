@@ -130,6 +130,20 @@ namespace TransmissionRemoteDotnet.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap folder16 {
+            get {
+                object obj = ResourceManager.GetObject("folder16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap info16 {
+            get {
+                object obj = ResourceManager.GetObject("info16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap ledgreen {
             get {
                 object obj = ResourceManager.GetObject("ledgreen", resourceCulture);
@@ -158,6 +172,20 @@ namespace TransmissionRemoteDotnet.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap peer16 {
+            get {
+                object obj = ResourceManager.GetObject("peer16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap pipe16 {
+            get {
+                object obj = ResourceManager.GetObject("pipe16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap player_pause {
             get {
                 object obj = ResourceManager.GetObject("player_pause", resourceCulture);
@@ -175,6 +203,13 @@ namespace TransmissionRemoteDotnet.Properties {
         internal static System.Drawing.Bitmap player_play1 {
             get {
                 object obj = ResourceManager.GetObject("player_play1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap server16 {
+            get {
+                object obj = ResourceManager.GetObject("server16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

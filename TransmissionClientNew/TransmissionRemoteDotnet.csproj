@@ -243,6 +243,11 @@
     <None Include="Resources\down16.png" />
     <None Include="Resources\player_pause16.png" />
     <None Include="Resources\up16.png" />
+    <None Include="Resources\folder16.png" />
+    <None Include="Resources\server16.png" />
+    <None Include="Resources\peer16.png" />
+    <None Include="Resources\info16.png" />
+    <None Include="Resources\pipe16.png" />
     <Content Include="transmission_large.ico" />
   </ItemGroup>
   <ItemGroup>

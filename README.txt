@@ -6,6 +6,9 @@ them, but please be patient. Please send them through the google code site (belo
 
 http://code.google.com/p/transmission-remote-dotnet/
 
+If when you start the application you are greeted with an exception (error message) then try upgrading
+your .NET framework. 3.5 is recommended.
+
 Enjoy! 
 
 SOURCE CODE

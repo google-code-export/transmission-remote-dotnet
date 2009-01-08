@@ -43,25 +43,33 @@ namespace TransmissionRemoteDotnet
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                currentUri = new Uri(textBox1.Text);
-            }
-            catch
+            if (textBox1.Text.Length > 0)
             {
                 try
                 {
-                    currentUri = new Uri("http://" + textBox1.Text);
+                    currentUri = new Uri(textBox1.Text);
                 }
-                catch (Exception ex)
+                catch
                 {
-                    button1.Enabled = false;
-                    toolStripStatusLabel1.Text = ex.Message;
-                    return;
+                    try
+                    {
+                        currentUri = new Uri("http://" + textBox1.Text);
+                    }
+                    catch (Exception ex)
+                    {
+                        button1.Enabled = false;
+                        toolStripStatusLabel1.Text = ex.Message;
+                        return;
+                    }
                 }
+                toolStripStatusLabel1.Text = "Input accepted.";
+                button1.Enabled = true;
             }
-            toolStripStatusLabel1.Text = "Input accepted.";
-            button1.Enabled = true;
+            else
+            {
+                toolStripStatusLabel1.Text = "Waiting for input...";
+                button1.Enabled = false;
+            }
         }
 
         private void downloadTorrentWorker_DoWork(object sender, DoWorkEventArgs e)

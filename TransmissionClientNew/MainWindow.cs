@@ -36,6 +36,16 @@ namespace TransmissionRemoteDotnet
             Program.onConnStatusChanged += new ConnStatusChangedDelegate(Program_connStatusChanged);
             Program.onTorrentsUpdated += new TorrentsUpdatedDelegate(Program_onTorrentsUpdated);
             InitializeComponent();
+            tabControlImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.folder16);
+            filesTabPage.ImageIndex = 0;
+            tabControlImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.peer16);
+            peersTabPage.ImageIndex = 1;
+            tabControlImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.server16);
+            trackersTabPage.ImageIndex = 2;
+            tabControlImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.pipe16);
+            speedTabPage.ImageIndex = 3;
+            tabControlImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.info16);
+            generalTabPage.ImageIndex = 4;
             mainVerticalSplitContainer.Panel1Collapsed = torrentAndTabsSplitContainer.Panel2Collapsed = true;
             this.peersTabPageSaved = this.peersTabPage;
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
@@ -75,6 +85,7 @@ namespace TransmissionRemoteDotnet
             });
             stateListBox.SuspendLayout();
             ImageList stateListBoxImageList = new ImageList();
+            stateListBoxImageList.ColorDepth = ColorDepth.Depth24Bit;
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledblue);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.down16);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.player_pause16);
@@ -657,7 +668,7 @@ namespace TransmissionRemoteDotnet
                         foreach (KeyValuePair<int, Torrent> pair in Program.torrentIndex)
                         {
                             Torrent t = pair.Value;
-                            if (t.Percentage >= 100)
+                            if (t.Percentage >= 100 || t.StatusCode == ProtocolConstants.STATUS_SEEDING)
                             {
                                 t.Show();
                             }
