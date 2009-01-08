@@ -142,6 +142,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.speedGraph = new CustomUIControls.Graphing.C2DPushGraph();
+            this.tabControlImageList = new System.Windows.Forms.ImageList(this.components);
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
@@ -165,7 +166,6 @@
             this.filesTimer = new System.Windows.Forms.Timer(this.components);
             this.filesWorker = new System.ComponentModel.BackgroundWorker();
             this.refreshElapsedTimer = new System.Windows.Forms.Timer(this.components);
-            this.tabControlImageList = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -520,10 +520,10 @@
             // generalTabPage
             // 
             this.generalTabPage.Controls.Add(this.splitContainer3);
-            this.generalTabPage.Location = new System.Drawing.Point(4, 22);
+            this.generalTabPage.Location = new System.Drawing.Point(4, 23);
             this.generalTabPage.Name = "generalTabPage";
             this.generalTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.generalTabPage.Size = new System.Drawing.Size(940, 219);
+            this.generalTabPage.Size = new System.Drawing.Size(940, 218);
             this.generalTabPage.TabIndex = 0;
             this.generalTabPage.Text = "General";
             this.generalTabPage.UseVisualStyleBackColor = true;
@@ -545,7 +545,7 @@
             // 
             this.splitContainer3.Panel2.AutoScroll = true;
             this.splitContainer3.Panel2.Controls.Add(this.generalTorrentNameGroupBox);
-            this.splitContainer3.Size = new System.Drawing.Size(934, 213);
+            this.splitContainer3.Size = new System.Drawing.Size(934, 212);
             this.splitContainer3.SplitterDistance = 25;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -987,10 +987,10 @@
             // trackersTabPage
             // 
             this.trackersTabPage.Controls.Add(this.trackersTorrentNameGroupBox);
-            this.trackersTabPage.Location = new System.Drawing.Point(4, 22);
+            this.trackersTabPage.Location = new System.Drawing.Point(4, 23);
             this.trackersTabPage.Name = "trackersTabPage";
             this.trackersTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.trackersTabPage.Size = new System.Drawing.Size(940, 219);
+            this.trackersTabPage.Size = new System.Drawing.Size(940, 218);
             this.trackersTabPage.TabIndex = 1;
             this.trackersTabPage.Text = "Trackers";
             this.trackersTabPage.UseVisualStyleBackColor = true;
@@ -1001,7 +1001,7 @@
             this.trackersTorrentNameGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.trackersTorrentNameGroupBox.Location = new System.Drawing.Point(3, 3);
             this.trackersTorrentNameGroupBox.Name = "trackersTorrentNameGroupBox";
-            this.trackersTorrentNameGroupBox.Size = new System.Drawing.Size(934, 213);
+            this.trackersTorrentNameGroupBox.Size = new System.Drawing.Size(934, 212);
             this.trackersTorrentNameGroupBox.TabIndex = 1;
             this.trackersTorrentNameGroupBox.TabStop = false;
             this.trackersTorrentNameGroupBox.Text = "groupBox1";
@@ -1016,7 +1016,7 @@
             this.trackersListView.FullRowSelect = true;
             this.trackersListView.Location = new System.Drawing.Point(3, 16);
             this.trackersListView.Name = "trackersListView";
-            this.trackersListView.Size = new System.Drawing.Size(928, 194);
+            this.trackersListView.Size = new System.Drawing.Size(928, 193);
             this.trackersListView.TabIndex = 0;
             this.trackersListView.UseCompatibleStateImageBehavior = false;
             this.trackersListView.View = System.Windows.Forms.View.Details;
@@ -1040,10 +1040,10 @@
             // filesTabPage
             // 
             this.filesTabPage.Controls.Add(this.filesTorrentNameGroupBox);
-            this.filesTabPage.Location = new System.Drawing.Point(4, 22);
+            this.filesTabPage.Location = new System.Drawing.Point(4, 23);
             this.filesTabPage.Name = "filesTabPage";
             this.filesTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.filesTabPage.Size = new System.Drawing.Size(940, 219);
+            this.filesTabPage.Size = new System.Drawing.Size(940, 218);
             this.filesTabPage.TabIndex = 2;
             this.filesTabPage.Text = "Files";
             this.filesTabPage.UseVisualStyleBackColor = true;
@@ -1054,7 +1054,7 @@
             this.filesTorrentNameGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.filesTorrentNameGroupBox.Location = new System.Drawing.Point(3, 3);
             this.filesTorrentNameGroupBox.Name = "filesTorrentNameGroupBox";
-            this.filesTorrentNameGroupBox.Size = new System.Drawing.Size(934, 213);
+            this.filesTorrentNameGroupBox.Size = new System.Drawing.Size(934, 212);
             this.filesTorrentNameGroupBox.TabIndex = 1;
             this.filesTorrentNameGroupBox.TabStop = false;
             this.filesTorrentNameGroupBox.Text = "groupBox1";
@@ -1074,7 +1074,7 @@
             this.filesListView.Location = new System.Drawing.Point(3, 16);
             this.filesListView.Name = "filesListView";
             this.filesListView.ShowItemToolTips = true;
-            this.filesListView.Size = new System.Drawing.Size(928, 194);
+            this.filesListView.Size = new System.Drawing.Size(928, 193);
             this.filesListView.TabIndex = 0;
             this.filesListView.UseCompatibleStateImageBehavior = false;
             this.filesListView.View = System.Windows.Forms.View.Details;
@@ -1114,10 +1114,10 @@
             // peersTabPage
             // 
             this.peersTabPage.Controls.Add(this.peersTorrentNameGroupBox);
-            this.peersTabPage.Location = new System.Drawing.Point(4, 22);
+            this.peersTabPage.Location = new System.Drawing.Point(4, 23);
             this.peersTabPage.Name = "peersTabPage";
             this.peersTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.peersTabPage.Size = new System.Drawing.Size(940, 219);
+            this.peersTabPage.Size = new System.Drawing.Size(940, 218);
             this.peersTabPage.TabIndex = 3;
             this.peersTabPage.Text = "Peers";
             this.peersTabPage.UseVisualStyleBackColor = true;
@@ -1128,7 +1128,7 @@
             this.peersTorrentNameGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.peersTorrentNameGroupBox.Location = new System.Drawing.Point(3, 3);
             this.peersTorrentNameGroupBox.Name = "peersTorrentNameGroupBox";
-            this.peersTorrentNameGroupBox.Size = new System.Drawing.Size(934, 213);
+            this.peersTorrentNameGroupBox.Size = new System.Drawing.Size(934, 212);
             this.peersTorrentNameGroupBox.TabIndex = 1;
             this.peersTorrentNameGroupBox.TabStop = false;
             this.peersTorrentNameGroupBox.Text = "groupBox1";
@@ -1148,7 +1148,7 @@
             this.peersListView.Location = new System.Drawing.Point(3, 16);
             this.peersListView.Name = "peersListView";
             this.peersListView.ShowItemToolTips = true;
-            this.peersListView.Size = new System.Drawing.Size(928, 194);
+            this.peersListView.Size = new System.Drawing.Size(928, 193);
             this.peersListView.TabIndex = 0;
             this.peersListView.UseCompatibleStateImageBehavior = false;
             this.peersListView.View = System.Windows.Forms.View.Details;
@@ -1193,10 +1193,10 @@
             // speedTabPage
             // 
             this.speedTabPage.Controls.Add(this.groupBox1);
-            this.speedTabPage.Location = new System.Drawing.Point(4, 22);
+            this.speedTabPage.Location = new System.Drawing.Point(4, 23);
             this.speedTabPage.Name = "speedTabPage";
             this.speedTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.speedTabPage.Size = new System.Drawing.Size(940, 219);
+            this.speedTabPage.Size = new System.Drawing.Size(940, 218);
             this.speedTabPage.TabIndex = 4;
             this.speedTabPage.Text = "Speed";
             this.speedTabPage.UseVisualStyleBackColor = true;
@@ -1207,7 +1207,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(934, 213);
+            this.groupBox1.Size = new System.Drawing.Size(934, 212);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Overall bandwidth utilisation";
@@ -1229,7 +1229,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.label20);
             this.splitContainer1.Panel2.Controls.Add(this.label19);
             this.splitContainer1.Panel2.Controls.Add(this.speedGraph);
-            this.splitContainer1.Size = new System.Drawing.Size(928, 194);
+            this.splitContainer1.Size = new System.Drawing.Size(928, 193);
             this.splitContainer1.SplitterDistance = 30;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -1315,10 +1315,16 @@
             this.speedGraph.Name = "speedGraph";
             this.speedGraph.ShowGrid = true;
             this.speedGraph.ShowLabels = true;
-            this.speedGraph.Size = new System.Drawing.Size(928, 160);
+            this.speedGraph.Size = new System.Drawing.Size(928, 159);
             this.speedGraph.TabIndex = 0;
             this.speedGraph.Text = "c2DPushGraph1";
             this.speedGraph.TextColor = System.Drawing.Color.White;
+            // 
+            // tabControlImageList
+            // 
+            this.tabControlImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.tabControlImageList.ImageSize = new System.Drawing.Size(16, 16);
+            this.tabControlImageList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // statusStrip
             // 
@@ -1524,12 +1530,6 @@
             // 
             this.refreshElapsedTimer.Interval = 1000;
             this.refreshElapsedTimer.Tick += new System.EventHandler(this.refreshElapsedTimer_Tick);
-            // 
-            // tabControlImageList
-            // 
-            this.tabControlImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth24Bit;
-            this.tabControlImageList.ImageSize = new System.Drawing.Size(16, 16);
-            this.tabControlImageList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // MainWindow
             // 

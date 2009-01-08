@@ -85,7 +85,7 @@ namespace TransmissionRemoteDotnet
             });
             stateListBox.SuspendLayout();
             ImageList stateListBoxImageList = new ImageList();
-            stateListBoxImageList.ColorDepth = ColorDepth.Depth24Bit;
+            stateListBoxImageList.ColorDepth = ColorDepth.Depth32Bit;
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledblue);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.down16);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.player_pause16);
@@ -454,14 +454,14 @@ namespace TransmissionRemoteDotnet
 
         private void localConfigureButton_Click(object sender, EventArgs e)
         {
-            //LocalSettingsDialog dialog = new LocalSettingsDialog();
-            //dialog.Show();
             LocalSettingsDialog.Instance.Show();
+            LocalSettingsDialog.Instance.BringToFront();
         }
 
         private void remoteConfigureButton_Click(object sender, EventArgs e)
         {
             RemoteSettingsDialog.Instance.Show();
+            RemoteSettingsDialog.Instance.BringToFront();
         }
 
         private void torrentListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -580,6 +580,7 @@ namespace TransmissionRemoteDotnet
             else if (e.Control && e.KeyCode == Keys.O)
             {
                 LocalSettingsDialog.Instance.Show();
+                LocalSettingsDialog.Instance.BringToFront();
             }
             else if (e.Control && e.KeyCode == Keys.P)
             {
