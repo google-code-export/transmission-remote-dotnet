@@ -1119,7 +1119,7 @@ namespace TransmissionRemoteDotnet
             {
                 foreach (ListViewItem peer in peersListView.Items)
                 {
-                    if (peer.SubItems[0].Text.Equals(address) && peer.SubItems[2].Text.Equals(clientName))
+                    if (peer.SubItems[0].Text.Equals(address))
                     {
                         return peer;
                     }

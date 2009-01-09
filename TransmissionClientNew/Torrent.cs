@@ -172,14 +172,13 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                JsonArray trackers = this.Trackers;
-                if (trackers.Count > 0)
+                try
                 {
-                    JsonObject tracker = (JsonObject)trackers[0];
+                    JsonObject tracker = (JsonObject)this.Trackers[0];
                     Uri announceUrl = new Uri((string)tracker["announce"]);
                     return announceUrl.Host;
                 }
-                else
+                catch
                 {
                     return "";
                 }
