@@ -11,7 +11,7 @@
 Name "Transmission Remote"
 
 ; The file to write
-OutFile "transmission-remote-3.0rc1-installer.exe"
+OutFile "transmission-remote-3.3-installer.exe"
 
 ; The default installation directory
 InstallDir "$PROGRAMFILES\Transmission Remote"
@@ -48,6 +48,8 @@ Section "Transmission Remote (required)"
   File "Transmission Remote.exe"
   File "Jayrock.dll"
   File "Jayrock.Json.dll"
+  File "README.txt"
+  File "LICENCE.txt"
   
   ; Write the installation path into the registry
   WriteRegStr HKLM SOFTWARE\NSIS_Example2 "Install_Dir" "$INSTDIR"
@@ -67,10 +69,13 @@ Section "Start Menu Shortcuts"
 
   CreateDirectory "$SMPROGRAMS\Transmission Remote"
   CreateShortCut "$SMPROGRAMS\Transmission Remote\Uninstall.lnk" "$INSTDIR\uninstall.exe" "" "$INSTDIR\uninstall.exe" 0
-  CreateShortCut "$SMPROGRAMS\Transmission Remote\Transmission Remote.lnk" "$INSTDIR\Transmission Remote.exe" "" "$INSTDIR\Transmission Remote.exe" 0
+  CreateShortCut "$SMPROGRAMS\Transmission Remote\Transmission Remote.lnk" "$INSTDIR\Transmission Remote.exe" "" "$INSTDIR\Transmission Remote.exe" 0 
   
 SectionEnd
 
+Section "GeoIP Database"
+  File "GeoIP.dat"
+SectionEnd
 ;--------------------------------
 
 ; Uninstaller
@@ -78,7 +83,6 @@ SectionEnd
 Section "Uninstall"
   
   ; Remove registry keys
-  DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Example2"
   DeleteRegKey HKLM SOFTWARE\TransmissionRemote
 
   ; Remove files and uninstaller
@@ -86,6 +90,9 @@ Section "Uninstall"
   Delete "$INSTDIR\Jayrock.dll"
   Delete "$INSTDIR\Jayrock.Json.dll"
   Delete "$INSTDIR\uninstall.exe"
+  Delete "$INSTDIR\GeoIP.dat"
+  Delete "$INSTDIR\README.txt"
+  Delete "$INSTDIR\LICENCE.txt"
 
   ; Remove shortcuts, if any
   Delete "$SMPROGRAMS\Transmission Remote\*.*"

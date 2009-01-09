@@ -706,7 +706,7 @@ namespace TransmissionRemoteDotnet
                     {
                         ShowTorrentIfStatus(ProtocolConstants.STATUS_SEEDING);
                     }
-                    else if (box.SelectedIndex > 7)
+                    else if (box.SelectedIndex > 6)
                     {
                         foreach (KeyValuePair<int, Torrent> pair in Program.torrentIndex)
                         {
