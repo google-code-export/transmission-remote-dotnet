@@ -26,8 +26,8 @@ namespace TransmissionRemoteDotnet
             item.SubItems.Add(this.Status);
             item.SubItems.Add(this.Seeders + " (" + this.PeersSendingToUs + ")");
             item.SubItems.Add(this.Leechers + " (" + this.PeersGettingFromUs + ")");
-            item.SubItems.Add(percentage >= 100 ? "N/A" : this.DownloadRate);
-            item.SubItems.Add(this.UploadRate);
+            item.SubItems.Add(this.StatusCode == ProtocolConstants.STATUS_DOWNLOADING && this.Percentage <= 100 ? this.DownloadRate : "N/A");
+            item.SubItems.Add(this.StatusCode == ProtocolConstants.STATUS_SEEDING || this.StatusCode == ProtocolConstants.STATUS_DOWNLOADING ? this.UploadRate : "N/A");
             item.SubItems.Add(this.GetShortETA());
             item.SubItems.Add(this.UploadedString);
             item.SubItems.Add(this.RatioString);
@@ -85,35 +85,43 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-
+        public delegate void UpdateDelegate(JsonObject info);
         public void Update(JsonObject info)
         {
             MainWindow form = Program.form;
-            if (Program.form.notifyIcon.Visible == true
-                && ((JsonNumber)this.info[ProtocolConstants.FIELD_STATUS]).ToInt16() == ProtocolConstants.STATUS_DOWNLOADING
-                && ((JsonNumber)this.info[ProtocolConstants.FIELD_LEFTUNTILDONE]).ToInt64() > 0
-                && ((JsonNumber)info[ProtocolConstants.FIELD_LEFTUNTILDONE]).ToInt64() == 0)
+            if (form.InvokeRequired)
             {
-                Program.form.notifyIcon.ShowBalloonTip(LocalSettingsSingleton.COMPLETED_BALOON_TIMEOUT, this.Name, "This torrent has finished downloading.", ToolTipIcon.Info);
-                item.SubItems[12].Text = DateTime.Now.ToString();
+                form.Invoke(new UpdateDelegate(this.Update), info);
             }
-            this.info = info;
-            item.SubItems[0].Text = this.Name;
-            item.SubItems[1].Text = this.TotalSizeString;
-            decimal percentage = this.Percentage;
-            item.SubItems[2].Text = percentage.ToString() + "%";
-            item.SubItems[3].Text = this.Status;
-            item.SubItems[4].Text = this.Seeders + " (" + this.PeersSendingToUs + ")";
-            item.SubItems[5].Text = this.Leechers + " (" + this.PeersGettingFromUs + ")";
-            item.SubItems[6].Text = percentage >= 100 ? "N/A" : this.DownloadRate;
-            item.SubItems[7].Text = this.UploadRate;
-            item.SubItems[8].Text = this.GetShortETA();
-            item.SubItems[9].Text = this.UploadedString;
-            item.SubItems[10].Text = this.RatioString;
-            item.SubItems[11].Text = this.Added.ToString();
-            //completed
-            this.updateSerial = Program.updateSerial;
-            LogError();
+            else
+            {
+                if (Program.form.notifyIcon.Visible == true
+                    && ((JsonNumber)this.info[ProtocolConstants.FIELD_STATUS]).ToInt16() == ProtocolConstants.STATUS_DOWNLOADING
+                    && ((JsonNumber)this.info[ProtocolConstants.FIELD_LEFTUNTILDONE]).ToInt64() > 0
+                    && (((JsonNumber)info[ProtocolConstants.FIELD_LEFTUNTILDONE]).ToInt64() == 0
+                        || ((JsonNumber)info[ProtocolConstants.FIELD_STATUS]).ToInt16() == ProtocolConstants.STATUS_SEEDING))
+                {
+                    Program.form.notifyIcon.ShowBalloonTip(LocalSettingsSingleton.COMPLETED_BALOON_TIMEOUT, this.Name, "This torrent has finished downloading.", ToolTipIcon.Info);
+                    item.SubItems[12].Text = DateTime.Now.ToString();
+                }
+                this.info = info;
+                item.SubItems[0].Text = this.Name;
+                item.SubItems[1].Text = this.TotalSizeString;
+                decimal percentage = this.Percentage;
+                item.SubItems[2].Text = percentage.ToString() + "%";
+                item.SubItems[3].Text = this.Status;
+                item.SubItems[4].Text = this.Seeders + " (" + this.PeersSendingToUs + ")";
+                item.SubItems[5].Text = this.Leechers + " (" + this.PeersGettingFromUs + ")";
+                item.SubItems[6].Text = this.StatusCode == ProtocolConstants.STATUS_DOWNLOADING && this.Percentage <= 100 ? this.DownloadRate : "N/A";
+                item.SubItems[7].Text = this.StatusCode == ProtocolConstants.STATUS_SEEDING || this.StatusCode == ProtocolConstants.STATUS_DOWNLOADING ? this.UploadRate : "N/A";
+                item.SubItems[8].Text = this.GetShortETA();
+                item.SubItems[9].Text = this.UploadedString;
+                item.SubItems[10].Text = this.RatioString;
+                item.SubItems[11].Text = this.Added.ToString();
+                //completed
+                this.updateSerial = Program.updateSerial;
+                LogError();
+            }
         }
 
         public JsonArray Peers

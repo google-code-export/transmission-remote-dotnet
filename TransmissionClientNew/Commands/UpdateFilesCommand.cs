@@ -94,8 +94,11 @@ namespace TransmissionRemoteDotnet.Commmands
                 {
                     form.filesListView.Enabled = true;
                 }
-                form.filesListView.Sort();
-                Toolbox.StripeListView(form.filesListView);
+                if (form.filesListView.SelectedItems.Count < 1)
+                {
+                    form.filesListView.Sort();
+                    Toolbox.StripeListView(form.filesListView);
+                }
                 form.filesListView.ResumeLayout();
             }
             form.filesTimer.Enabled = true;

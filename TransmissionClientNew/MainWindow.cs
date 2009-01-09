@@ -138,7 +138,10 @@ namespace TransmissionRemoteDotnet
                 refreshTimer.Enabled = true;
             }
             FilterByState();
-            torrentListView.Sort();
+            if (torrentListView.SelectedItems.Count < 1)
+            {
+                torrentListView.Sort();
+            }
             Toolbox.StripeListView(torrentListView);
         }
 
@@ -1031,8 +1034,11 @@ namespace TransmissionRemoteDotnet
                             peersListView.Items.Remove(item);
                         }
                     }
-                    peersListView.Sort();
-                    Toolbox.StripeListView(peersListView);
+                    if (peersListView.SelectedItems.Count < 1)
+                    {
+                        peersListView.Sort();
+                        Toolbox.StripeListView(peersListView);
+                    }
                     peersListView.ResumeLayout();
                 }
             }

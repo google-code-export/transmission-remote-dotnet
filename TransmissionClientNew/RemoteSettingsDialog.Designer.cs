@@ -48,8 +48,8 @@
             this.EncryptionCombobox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.LimitUploadValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LimitDownloadValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IncomingPortValue)).BeginInit();
@@ -222,9 +222,9 @@
             this.PortForward.AutoSize = true;
             this.PortForward.Location = new System.Drawing.Point(201, 52);
             this.PortForward.Name = "PortForward";
-            this.PortForward.Size = new System.Drawing.Size(86, 17);
+            this.PortForward.Size = new System.Drawing.Size(78, 17);
             this.PortForward.TabIndex = 11;
-            this.PortForward.Text = "Port Forward";
+            this.PortForward.Text = "Use UPNP";
             this.PortForward.UseVisualStyleBackColor = true;
             // 
             // EncryptionCombobox
@@ -237,7 +237,7 @@
             "required"});
             this.EncryptionCombobox.Location = new System.Drawing.Point(111, 79);
             this.EncryptionCombobox.Name = "EncryptionCombobox";
-            this.EncryptionCombobox.Size = new System.Drawing.Size(176, 21);
+            this.EncryptionCombobox.Size = new System.Drawing.Size(102, 21);
             this.EncryptionCombobox.TabIndex = 10;
             // 
             // label3
@@ -264,15 +264,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Global speed limit";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(182, 28);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "KB/s";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -281,6 +272,15 @@
             this.label6.Size = new System.Drawing.Size(31, 13);
             this.label6.TabIndex = 8;
             this.label6.Text = "KB/s";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(182, 28);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "KB/s";
             // 
             // RemoteSettingsDialog
             // 
