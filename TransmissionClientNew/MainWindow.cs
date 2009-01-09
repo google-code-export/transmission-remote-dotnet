@@ -97,7 +97,7 @@ namespace TransmissionRemoteDotnet
             stateListBox.Items.Add(new GListBoxItem("All", 0));
             stateListBox.Items.Add(new GListBoxItem("Downloading", 1));
             stateListBox.Items.Add(new GListBoxItem("Paused", 2));
-            stateListBox.Items.Add(new GListBoxItem("Rechecking", 5));
+            stateListBox.Items.Add(new GListBoxItem("Checking", 5));
             stateListBox.Items.Add(new GListBoxItem("Complete", 3));
             stateListBox.Items.Add(new GListBoxItem("Seeding", 4));
             stateListBox.Items.Add(new GListBoxItem(""));
