@@ -26,6 +26,7 @@ namespace TransmissionRemoteDotnet
             METHOD_TORRENTSTOP = "torrent-stop",
             METHOD_SESSIONGET = "session-get",
             FIELD_CLIENTNAME = "clientName",
+            METHOD_TORRENTVERIFY = "torrent-verify",
             FIELD_HAVEUNCHECKED = "haveUnchecked",
             FIELD_LEFTUNTILDONE = "leftUntilDone",
             FIELD_COMMENT = "comment",
@@ -56,6 +57,7 @@ namespace TransmissionRemoteDotnet
             FIELD_TRACKERS = "trackers",
             FIELD_PEERS = "peers",
             FIELD_LENGTH = "length",
-            FIELD_BYTESCOMPLETED = "bytesCompleted";
+            FIELD_BYTESCOMPLETED = "bytesCompleted",
+            FIELD_RECHECKPROGRESS = "recheckProgress";
     }
 }

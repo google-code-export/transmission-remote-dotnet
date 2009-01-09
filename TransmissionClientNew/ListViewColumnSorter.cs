@@ -52,7 +52,7 @@ namespace TransmissionRemoteDotnet
                         ObjectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_TOTALSIZE);
                         break;
                     case 2:
-                        ObjectCompare = new ListViewTorrentProgressComparer();
+                        ObjectCompare = new ListViewItemDecimalComparer(value);
                         break;
                     case 4:
                         ObjectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_SEEDERS);

@@ -76,6 +76,7 @@ namespace TransmissionRemoteDotnet
                 ProtocolConstants.FIELD_HAVEVALID,
                 ProtocolConstants.FIELD_HAVEUNCHECKED,
                 ProtocolConstants.FIELD_ETA,
+                ProtocolConstants.FIELD_RECHECKPROGRESS,
                 ProtocolConstants.FIELD_LEECHERS,
                 ProtocolConstants.FIELD_RATEDOWNLOAD,
                 ProtocolConstants.FIELD_RATEUPLOAD,

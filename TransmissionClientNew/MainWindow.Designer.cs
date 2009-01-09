@@ -153,6 +153,7 @@
             this.addWebTorrentButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.removeTorrentButton = new System.Windows.Forms.ToolStripButton();
+            this.recheckTorrentButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.startTorrentButton = new System.Windows.Forms.ToolStripButton();
             this.pauseTorrentButton = new System.Windows.Forms.ToolStripButton();
@@ -166,6 +167,7 @@
             this.filesTimer = new System.Windows.Forms.Timer(this.components);
             this.filesWorker = new System.ComponentModel.BackgroundWorker();
             this.refreshElapsedTimer = new System.Windows.Forms.Timer(this.components);
+            this.columnHeader30 = new System.Windows.Forms.ColumnHeader();
             this.menuStrip.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -429,7 +431,8 @@
             this.columnHeader15,
             this.columnHeader16,
             this.columnHeader18,
-            this.columnHeader19});
+            this.columnHeader19,
+            this.columnHeader30});
             this.torrentListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.torrentListView.Enabled = false;
             this.torrentListView.FullRowSelect = true;
@@ -1353,6 +1356,7 @@
             this.addWebTorrentButton,
             this.toolStripSeparator1,
             this.removeTorrentButton,
+            this.recheckTorrentButton,
             this.toolStripSeparator2,
             this.startTorrentButton,
             this.pauseTorrentButton,
@@ -1435,6 +1439,20 @@
             this.removeTorrentButton.Text = "Remove torrent(s)";
             this.removeTorrentButton.Visible = false;
             this.removeTorrentButton.Click += new System.EventHandler(this.removeTorrentButton_Click);
+            // 
+            // recheckTorrentButton
+            // 
+            this.recheckTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.recheckTorrentButton.Enabled = false;
+            this.recheckTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.player_reload;
+            this.recheckTorrentButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.recheckTorrentButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.recheckTorrentButton.Name = "recheckTorrentButton";
+            this.recheckTorrentButton.Size = new System.Drawing.Size(36, 36);
+            this.recheckTorrentButton.Text = "Recheck torrent(s)";
+            this.recheckTorrentButton.ToolTipText = "Recheck torrent(s)";
+            this.recheckTorrentButton.Visible = false;
+            this.recheckTorrentButton.Click += new System.EventHandler(this.recheckTorrentButton_Click);
             // 
             // toolStripSeparator2
             // 
@@ -1530,6 +1548,11 @@
             // 
             this.refreshElapsedTimer.Interval = 1000;
             this.refreshElapsedTimer.Tick += new System.EventHandler(this.refreshElapsedTimer_Tick);
+            // 
+            // columnHeader30
+            // 
+            this.columnHeader30.Text = "Tracker";
+            this.columnHeader30.Width = 140;
             // 
             // MainWindow
             // 
@@ -1742,5 +1765,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader28;
         private System.Windows.Forms.ColumnHeader columnHeader29;
         private System.Windows.Forms.ImageList tabControlImageList;
+        private System.Windows.Forms.ToolStripButton recheckTorrentButton;
+        private System.Windows.Forms.ColumnHeader columnHeader30;
     }
 }

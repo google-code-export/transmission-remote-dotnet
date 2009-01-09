@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Jayrock.Json;
+using System.Collections;
 
 namespace TransmissionRemoteDotnet
 {
@@ -15,14 +16,16 @@ namespace TransmissionRemoteDotnet
 
         public Torrent(JsonObject info)
         {
+            MainWindow form = Program.form;
             this.updateSerial = Program.updateSerial;
             this.info = info;
             item = new ListViewItem(this.Name);
             item.ToolTipText = item.Name;
             item.Tag = this;
             item.SubItems.Add(this.TotalSizeString);
-            decimal percentage = this.Percentage;
+            decimal percentage = this.StatusCode == ProtocolConstants.STATUS_CHECKING ? this.RecheckPercentage : this.Percentage;
             item.SubItems.Add(percentage.ToString() + "%");
+            item.SubItems[2].Tag = percentage;
             item.SubItems.Add(this.Status);
             item.SubItems.Add(this.Seeders + " (" + this.PeersSendingToUs + ")");
             item.SubItems.Add(this.Leechers + " (" + this.PeersGettingFromUs + ")");
@@ -32,10 +35,35 @@ namespace TransmissionRemoteDotnet
             item.SubItems.Add(this.UploadedString);
             item.SubItems.Add(this.RatioString);
             item.SubItems.Add(this.Added.ToString());
-            item.SubItems.Add(percentage >= 100 ? "Unknown" : "N/A");
+            item.SubItems.Add(percentage >= 100 || this.StatusCode == ProtocolConstants.STATUS_SEEDING ? "Unknown" : "N/A");
+            item.SubItems.Add(this.FirstTracker);
             Program.torrentIndex[this.Id] = this;
             Add();
-            LogError();
+        }
+
+        private delegate void AddDelegate();
+        private void Add()
+        {
+            MainWindow form = Program.form;
+            if (form.InvokeRequired)
+            {
+                form.Invoke(new AddDelegate(this.Add));
+            }
+            else
+            {
+                lock (form.torrentListView)
+                {
+                    form.torrentListView.Items.Add(item);
+                }
+                lock (form.stateListBox)
+                {
+                    if (!form.stateListBox.Items.Contains(item.SubItems[13].Text))
+                    {
+                        form.stateListBox.Items.Add(item.SubItems[13].Text);
+                    }
+                }
+                LogError();
+            }
         }
 
         private void LogError()
@@ -62,25 +90,33 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        private void Add()
-        {
-            MainWindow form = Program.form;
-            lock (form.torrentListView)
-            {
-                form.torrentListView.Items.Add(item);
-            }
-            LogError();
-        }
-
         public void Remove()
         {
             MainWindow form = Program.form;
+            int matchingTrackers = 0;
             lock (form.torrentListView)
             {
                 ListView.ListViewItemCollection itemCollection = form.torrentListView.Items;
                 if (itemCollection.Contains(item))
                 {
                     itemCollection.Remove(item);
+                }
+            }
+            lock (Program.torrentIndex)
+            {
+                foreach (KeyValuePair<int, Torrent> pair in Program.torrentIndex)
+                {
+                    if (this.item.SubItems[13].Text.Equals(pair.Value.item.SubItems[13].Text))
+                    {
+                        matchingTrackers++;
+                    }
+                }
+            }
+            if (matchingTrackers <= 0)
+            {
+                lock (form.stateListBox)
+                {
+                    form.stateListBox.Items.Remove(item.SubItems[13].Text);
                 }
             }
         }
@@ -95,19 +131,20 @@ namespace TransmissionRemoteDotnet
             }
             else
             {
-                if (Program.form.notifyIcon.Visible == true
-                    && ((JsonNumber)this.info[ProtocolConstants.FIELD_STATUS]).ToInt16() == ProtocolConstants.STATUS_DOWNLOADING
+                if (form.notifyIcon.Visible == true
+                    && this.StatusCode == ProtocolConstants.STATUS_DOWNLOADING
                     && ((JsonNumber)this.info[ProtocolConstants.FIELD_LEFTUNTILDONE]).ToInt64() > 0
                     && (((JsonNumber)info[ProtocolConstants.FIELD_LEFTUNTILDONE]).ToInt64() == 0
                         || ((JsonNumber)info[ProtocolConstants.FIELD_STATUS]).ToInt16() == ProtocolConstants.STATUS_SEEDING))
                 {
-                    Program.form.notifyIcon.ShowBalloonTip(LocalSettingsSingleton.COMPLETED_BALOON_TIMEOUT, this.Name, "This torrent has finished downloading.", ToolTipIcon.Info);
+                    form.notifyIcon.ShowBalloonTip(LocalSettingsSingleton.COMPLETED_BALOON_TIMEOUT, this.Name, "This torrent has finished downloading.", ToolTipIcon.Info);
                     item.SubItems[12].Text = DateTime.Now.ToString();
                 }
                 this.info = info;
                 item.SubItems[0].Text = this.Name;
                 item.SubItems[1].Text = this.TotalSizeString;
-                decimal percentage = this.Percentage;
+                decimal percentage = this.StatusCode == ProtocolConstants.STATUS_CHECKING ? this.RecheckPercentage : this.Percentage;
+                item.SubItems[2].Tag = percentage;
                 item.SubItems[2].Text = percentage.ToString() + "%";
                 item.SubItems[3].Text = this.Status;
                 item.SubItems[4].Text = this.Seeders + " (" + this.PeersSendingToUs + ")";
@@ -118,7 +155,6 @@ namespace TransmissionRemoteDotnet
                 item.SubItems[9].Text = this.UploadedString;
                 item.SubItems[10].Text = this.RatioString;
                 item.SubItems[11].Text = this.Added.ToString();
-                //completed
                 this.updateSerial = Program.updateSerial;
                 LogError();
             }
@@ -129,6 +165,24 @@ namespace TransmissionRemoteDotnet
             get
             {
                 return (JsonArray)info[ProtocolConstants.FIELD_PEERS];
+            }
+        }
+
+        public string FirstTracker
+        {
+            get
+            {
+                JsonArray trackers = this.Trackers;
+                if (trackers.Count > 0)
+                {
+                    JsonObject tracker = (JsonObject)trackers[0];
+                    Uri announceUrl = new Uri((string)tracker["announce"]);
+                    return announceUrl.Host;
+                }
+                else
+                {
+                    return "";
+                }
             }
         }
 
@@ -269,6 +323,14 @@ namespace TransmissionRemoteDotnet
                 {
                     return "Unknown";
                 }
+            }
+        }
+
+        public decimal RecheckPercentage
+        {
+            get
+            {
+                return Toolbox.ParseProgress((string)info[ProtocolConstants.FIELD_RECHECKPROGRESS]);
             }
         }
 

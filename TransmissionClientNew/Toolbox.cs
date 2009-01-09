@@ -7,12 +7,26 @@ using System.Drawing;
 using Jayrock.Json;
 using System.Net;
 using System.IO;
+using System.Globalization;
 
 namespace TransmissionRemoteDotnet
 {
-    class Toolbox
+    public class Toolbox
     {
         private const int STRIPE_OFFSET = 15;
+        private static IFormatProvider numberFormat = (new CultureInfo("en-US")).NumberFormat;
+
+        public static decimal ParseProgress(string s)
+        {
+            try
+            {
+                return Math.Round(Decimal.Parse(s, numberFormat) * 100, 2);
+            }
+            catch
+            {
+                return new decimal(0);
+            }
+        }
 
         public static void CopyListViewToClipboard(ListView listView)
         {

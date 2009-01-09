@@ -87,7 +87,6 @@
     <Compile Include="Comparers\ListViewTextInsensitiveReverseComparer.cs" />
     <Compile Include="Comparers\ListViewTorrentInt32Comparer.cs" />
     <Compile Include="Comparers\ListViewTorrentInt64Comparer.cs" />
-    <Compile Include="Comparers\ListViewTorrentProgressComparer.cs" />
     <Compile Include="Comparers\ListViewTorrentRatioComparer.cs" />
     <Compile Include="ErrorLogWindow.cs">
       <SubType>Form</SubType>
@@ -248,6 +247,8 @@
     <None Include="Resources\peer16.png" />
     <None Include="Resources\info16.png" />
     <None Include="Resources\pipe16.png" />
+    <None Include="Resources\player_reload.png" />
+    <None Include="Resources\player_reload16.png" />
     <Content Include="transmission_large.ico" />
   </ItemGroup>
   <ItemGroup>

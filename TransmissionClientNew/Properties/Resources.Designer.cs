@@ -207,6 +207,20 @@ namespace TransmissionRemoteDotnet.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap player_reload {
+            get {
+                object obj = ResourceManager.GetObject("player_reload", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap player_reload16 {
+            get {
+                object obj = ResourceManager.GetObject("player_reload16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap server16 {
             get {
                 object obj = ResourceManager.GetObject("server16", resourceCulture);
