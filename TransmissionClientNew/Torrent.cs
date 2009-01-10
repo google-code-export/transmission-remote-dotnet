@@ -27,8 +27,8 @@ namespace TransmissionRemoteDotnet
             item.SubItems.Add(percentage.ToString() + "%");
             item.SubItems[2].Tag = percentage;
             item.SubItems.Add(this.Status);
-            item.SubItems.Add(this.Seeders + " (" + this.PeersSendingToUs + ")");
-            item.SubItems.Add(this.Leechers + " (" + this.PeersGettingFromUs + ")");
+            item.SubItems.Add((this.Seeders < 0 ? "?" : this.Seeders.ToString()) + " (" + this.PeersSendingToUs + ")");
+            item.SubItems.Add((this.Leechers < 0 ? "?" : this.Leechers.ToString()) + " (" + this.PeersGettingFromUs + ")");
             item.SubItems.Add(this.StatusCode == ProtocolConstants.STATUS_DOWNLOADING && this.Percentage <= 100 ? this.DownloadRate : "N/A");
             item.SubItems.Add(this.StatusCode == ProtocolConstants.STATUS_SEEDING || this.StatusCode == ProtocolConstants.STATUS_DOWNLOADING ? this.UploadRate : "N/A");
             item.SubItems.Add(this.GetShortETA());
@@ -147,8 +147,8 @@ namespace TransmissionRemoteDotnet
                 item.SubItems[2].Tag = percentage;
                 item.SubItems[2].Text = percentage.ToString() + "%";
                 item.SubItems[3].Text = this.Status;
-                item.SubItems[4].Text = this.Seeders + " (" + this.PeersSendingToUs + ")";
-                item.SubItems[5].Text = this.Leechers + " (" + this.PeersGettingFromUs + ")";
+                item.SubItems[4].Text = (this.Seeders < 0 ? "?" : this.Seeders.ToString()) + " (" + this.PeersSendingToUs + ")";
+                item.SubItems[5].Text = (this.Leechers < 0 ? "?" : this.Leechers.ToString()) + " (" + this.PeersGettingFromUs + ")";
                 item.SubItems[6].Text = this.StatusCode == ProtocolConstants.STATUS_DOWNLOADING && this.Percentage <= 100 ? this.DownloadRate : "N/A";
                 item.SubItems[7].Text = this.StatusCode == ProtocolConstants.STATUS_SEEDING || this.StatusCode == ProtocolConstants.STATUS_DOWNLOADING ? this.UploadRate : "N/A";
                 item.SubItems[8].Text = this.GetShortETA();

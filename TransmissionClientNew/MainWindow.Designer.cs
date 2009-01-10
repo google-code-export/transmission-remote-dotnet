@@ -65,6 +65,7 @@
             this.columnHeader16 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader18 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader19 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader30 = new System.Windows.Forms.ColumnHeader();
             this.torrentTabControl = new System.Windows.Forms.TabControl();
             this.generalTabPage = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
@@ -106,7 +107,7 @@
             this.downloadedLabel = new System.Windows.Forms.Label();
             this.startedAtLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.timeElapsedLabelLabel = new System.Windows.Forms.Label();
             this.timeElapsedLabel = new System.Windows.Forms.Label();
             this.trackersTabPage = new System.Windows.Forms.TabPage();
             this.trackersTorrentNameGroupBox = new System.Windows.Forms.GroupBox();
@@ -167,7 +168,6 @@
             this.filesTimer = new System.Windows.Forms.Timer(this.components);
             this.filesWorker = new System.ComponentModel.BackgroundWorker();
             this.refreshElapsedTimer = new System.Windows.Forms.Timer(this.components);
-            this.columnHeader30 = new System.Windows.Forms.ColumnHeader();
             this.menuStrip.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -504,6 +504,11 @@
             // 
             this.columnHeader19.Text = "Completed On";
             // 
+            // columnHeader30
+            // 
+            this.columnHeader30.Text = "Tracker";
+            this.columnHeader30.Width = 140;
+            // 
             // torrentTabControl
             // 
             this.torrentTabControl.Controls.Add(this.generalTabPage);
@@ -652,7 +657,7 @@
             this.generalTorrentNameGroupBox.Controls.Add(this.downloadedLabel);
             this.generalTorrentNameGroupBox.Controls.Add(this.startedAtLabel);
             this.generalTorrentNameGroupBox.Controls.Add(this.label3);
-            this.generalTorrentNameGroupBox.Controls.Add(this.label2);
+            this.generalTorrentNameGroupBox.Controls.Add(this.timeElapsedLabelLabel);
             this.generalTorrentNameGroupBox.Controls.Add(this.timeElapsedLabel);
             this.generalTorrentNameGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.generalTorrentNameGroupBox.Location = new System.Drawing.Point(3, 11);
@@ -968,15 +973,15 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Started At:";
             // 
-            // label2
+            // timeElapsedLabelLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Time elapsed:";
+            this.timeElapsedLabelLabel.AutoSize = true;
+            this.timeElapsedLabelLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeElapsedLabelLabel.Location = new System.Drawing.Point(6, 25);
+            this.timeElapsedLabelLabel.Name = "timeElapsedLabelLabel";
+            this.timeElapsedLabelLabel.Size = new System.Drawing.Size(73, 13);
+            this.timeElapsedLabelLabel.TabIndex = 0;
+            this.timeElapsedLabelLabel.Text = "Time elapsed:";
             // 
             // timeElapsedLabel
             // 
@@ -1549,11 +1554,6 @@
             this.refreshElapsedTimer.Interval = 1000;
             this.refreshElapsedTimer.Tick += new System.EventHandler(this.refreshElapsedTimer_Tick);
             // 
-            // columnHeader30
-            // 
-            this.columnHeader30.Text = "Tracker";
-            this.columnHeader30.Width = 140;
-            // 
             // MainWindow
             // 
             this.AllowDrop = true;
@@ -1698,7 +1698,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader22;
         private System.Windows.Forms.ColumnHeader columnHeader20;
         private System.Windows.Forms.ColumnHeader columnHeader21;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label timeElapsedLabelLabel;
         private System.Windows.Forms.Timer refreshElapsedTimer;
         private System.Windows.Forms.ImageList flagsImageList;
         private System.Windows.Forms.Label timeElapsedLabel;

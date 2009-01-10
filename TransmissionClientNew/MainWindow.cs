@@ -181,7 +181,7 @@ namespace TransmissionRemoteDotnet
                 {
                     lock (this.stateListBox)
                     {
-                        for (int i = 0; i < this.stateListBox.Items.Count-7; i++)
+                        for (int i = 0; i < this.stateListBox.Items.Count-6; i++)
                         {
                             stateListBox.Items.RemoveAt(stateListBox.Items.Count - 1);
                         }
@@ -991,8 +991,8 @@ namespace TransmissionRemoteDotnet
                 uploadedLabel.Text = t.UploadedString;
                 uploadLimitLabel.Text = t.UploadLimitMode ? Toolbox.KbpsString(t.UploadLimit) : "∞";
                 uploadRateLabel.Text = t.UploadRate;
-                seedersLabel.Text = String.Format("{0} of {1} connected", t.PeersSendingToUs, t.Seeders);
-                leechersLabel.Text = String.Format("{0} of {1} connected", t.PeersGettingFromUs, t.Leechers);
+                seedersLabel.Text = String.Format("{0} of {1} connected", t.PeersSendingToUs, t.Seeders < 0 ? "?" : t.Seeders.ToString());
+                leechersLabel.Text = String.Format("{0} of {1} connected", t.PeersGettingFromUs, t.Leechers < 0 ? "?" : t.Leechers.ToString());
                 ratioLabel.Text = t.RatioString;
                 progressBar.Value = (int)t.Percentage;
                 percentageLabel.Text = t.Percentage.ToString() + "%";
@@ -1140,7 +1140,8 @@ namespace TransmissionRemoteDotnet
                 if (torrentListView.SelectedItems.Count == 1)
                 {
                     Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
-                    timeElapsedLabel.Text = Toolbox.FormatTimespanLong(DateTime.Now.Subtract(t.Added));
+                    TimeSpan ts = DateTime.Now.Subtract(t.Added);
+                    timeElapsedLabel.Text = ts.Ticks > 0 ? Toolbox.FormatTimespanLong(ts) : "Unknown (negative result)";
                 }
                 else
                 {

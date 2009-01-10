@@ -81,6 +81,7 @@ namespace TransmissionRemoteDotnet
                 }
                 this.currentProfile = value;
                 LoadCurrentProfile();
+                SaveProfileSelection();
             }
         }
 
@@ -309,17 +310,22 @@ namespace TransmissionRemoteDotnet
             }
         }
 
+        public void SaveProfileSelection()
+        {
+            RegistryKey rootKey = GetRootKey(true);
+            if (rootKey == null)
+            {
+                rootKey = Registry.CurrentUser.CreateSubKey(REGISTRY_KEY_ROOT);
+            }
+            rootKey.SetValue(REGKEY_CURRENTPROFILE, this.currentProfile);
+            rootKey.Close();
+        }
+
         public void Commit()
         {
             try
             {
-                RegistryKey rootKey = GetRootKey(true);
-                if (rootKey == null)
-                {
-                    rootKey = Registry.CurrentUser.CreateSubKey(REGISTRY_KEY_ROOT);
-                }
-                rootKey.SetValue(REGKEY_CURRENTPROFILE, this.currentProfile);
-                rootKey.Close();
+                SaveProfileSelection();
                 RegistryKey profileKey = GetCurrentProfileKey(true);
                 if (profileKey != null)
                 {

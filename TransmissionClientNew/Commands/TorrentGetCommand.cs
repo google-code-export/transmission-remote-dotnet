@@ -76,16 +76,16 @@ namespace TransmissionRemoteDotnet.Commmands
                 form.UpdateStatus(String.Format(
                     "Connected | {0} down, {1} up | {2} torrents: {3} downloading, {4} seeding | {5} / {6}",
                     new object[] {
-                    Toolbox.GetSpeed(totalDownload),
-                    Toolbox.GetSpeed(totalUpload),
-                    totalTorrents,
-                    totalDownloading,
-                    totalSeeding,
-                    Toolbox.GetFileSize(totalDownloadedSize),
-                    Toolbox.GetFileSize(totalSize)
-                }
-                    ));
-                Queue<int> removeQueue = new Queue<int>();
+                        Toolbox.GetSpeed(totalDownload),
+                        Toolbox.GetSpeed(totalUpload),
+                        totalTorrents,
+                        totalDownloading,
+                        totalSeeding,
+                        Toolbox.GetFileSize(totalDownloadedSize),
+                        Toolbox.GetFileSize(totalSize)
+                    }
+                ));
+                Queue<KeyValuePair<int, Torrent>> removeQueue = null;
                 lock (Program.torrentIndex)
                 {
                     foreach (KeyValuePair<int, Torrent> pair in Program.torrentIndex)
@@ -93,13 +93,20 @@ namespace TransmissionRemoteDotnet.Commmands
                         Torrent t = pair.Value;
                         if (t.updateSerial != Program.updateSerial)
                         {
-                            t.Remove();
-                            removeQueue.Enqueue(pair.Key);
+                            if (removeQueue == null)
+                            {
+                                removeQueue = new Queue<KeyValuePair<int, Torrent>>();
+                            }
+                            removeQueue.Enqueue(pair);
                         }
                     }
-                    foreach (int id in removeQueue)
+                    if (removeQueue != null)
                     {
-                        Program.torrentIndex.Remove(id);
+                        foreach (KeyValuePair<int, Torrent> pair in removeQueue)
+                        {
+                            Program.torrentIndex.Remove(pair.Key);
+                            pair.Value.Remove();
+                        }
                     }
                 }
                 Program.RaisePostUpdateEvent();
