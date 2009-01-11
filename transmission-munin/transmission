@@ -12,4 +12,4 @@ EOM
         exit 0;;
 esac
 
-echo '{"method":"torrent-get","tag":1,"arguments":{"fields":["rateUpload","rateDownload"]}}' | lynx -dump -post_data -auth=alan:k5uc8svb http://localhost:9091/transmission/rpc | php /etc/munin/plugins/transmission-parser.php
+echo '{"method":"torrent-get","tag":1,"arguments":{"fields":["rateUpload","rateDownload"]}}' | lynx -dump -post_data -auth=USERNAME:PASSWORD http://localhost:9091/transmission/rpc | php /etc/munin/plugins/transmission-parser.php
