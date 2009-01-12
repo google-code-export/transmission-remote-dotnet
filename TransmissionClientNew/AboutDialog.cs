@@ -14,7 +14,25 @@ namespace TransmissionRemoteDotnet
     {
         public const string PROJECT_SITE = "http://code.google.com/p/transmission-remote-dotnet/";
 
-        public AboutDialog()
+        private static AboutDialog instance = null;
+        private static readonly object padlock = new object();
+
+        public static AboutDialog Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null || instance.IsDisposed)
+                    {
+                        instance = new AboutDialog();
+                    }
+                }
+                return instance;
+            }
+        }
+
+        private AboutDialog()
         {
             InitializeComponent();
         }

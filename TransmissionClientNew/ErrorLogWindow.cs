@@ -12,9 +12,27 @@ namespace TransmissionRemoteDotnet
 {
     public partial class ErrorLogWindow : Form
     {
+        private static ErrorLogWindow instance = null;
+        private static readonly object padlock = new object();
+
+        public static ErrorLogWindow Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null || instance.IsDisposed)
+                    {
+                        instance = new ErrorLogWindow();
+                    }
+                }
+                return instance;
+            }
+        }
+
         private OnErrorDelegate onErrorDelegate;
 
-        public ErrorLogWindow()
+        private ErrorLogWindow()
         {
             Program.onError += onErrorDelegate = new OnErrorDelegate(this.OnError);
             InitializeComponent();

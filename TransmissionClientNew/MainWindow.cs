@@ -404,8 +404,8 @@ namespace TransmissionRemoteDotnet
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AboutDialog dialog = new AboutDialog();
-            dialog.Show();
+            AboutDialog.Instance.Show();
+            AboutDialog.Instance.BringToFront();
         }
 
         private delegate void InvokeShowDelegate();
@@ -1165,8 +1165,8 @@ namespace TransmissionRemoteDotnet
 
         private void showErrorLogToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ErrorLogWindow window = new ErrorLogWindow();
-            window.Show();
+            ErrorLogWindow.Instance.Show();
+            ErrorLogWindow.Instance.BringToFront();
         }
 
         private void filesListView_ColumnClick(object sender, ColumnClickEventArgs e)
