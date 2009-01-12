@@ -36,7 +36,7 @@ namespace TransmissionRemoteDotnet
             item.SubItems.Add(this.RatioString);
             item.SubItems.Add(this.Added.ToString());
             item.SubItems.Add(percentage >= 100 || this.StatusCode == ProtocolConstants.STATUS_SEEDING ? "Unknown" : "N/A");
-            item.SubItems.Add(this.FirstTracker);
+            item.SubItems.Add(GetFirstTracker(true));
             Program.torrentIndex[this.Id] = this;
             Add();
         }
@@ -168,21 +168,25 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        public string FirstTracker
+        public string GetFirstTracker(bool trim)
         {
-            get
-            {
                 try
                 {
                     JsonObject tracker = (JsonObject)this.Trackers[0];
                     Uri announceUrl = new Uri((string)tracker["announce"]);
-                    return announceUrl.Host;
+                    if (!trim)
+                    {
+                        return announceUrl.Host;
+                    }
+                    else
+                    {
+                        return announceUrl.Host.Replace("tracker.", "").Replace("www.", "");
+                    }
                 }
                 catch
                 {
                     return "";
                 }
-            }
         }
 
         public JsonArray Trackers
