@@ -25,8 +25,9 @@ namespace TransmissionRemoteDotnet
             METHOD_TORRENTSTART = "torrent-start",
             METHOD_TORRENTSTOP = "torrent-stop",
             METHOD_SESSIONGET = "session-get",
-            FIELD_CLIENTNAME = "clientName",
+            METHOD_TORRENTREMOVE = "torrent-remove",
             METHOD_TORRENTVERIFY = "torrent-verify",
+            FIELD_CLIENTNAME = "clientName",
             FIELD_HAVEUNCHECKED = "haveUnchecked",
             FIELD_LEFTUNTILDONE = "leftUntilDone",
             FIELD_COMMENT = "comment",
@@ -58,6 +59,7 @@ namespace TransmissionRemoteDotnet
             FIELD_PEERS = "peers",
             FIELD_LENGTH = "length",
             FIELD_BYTESCOMPLETED = "bytesCompleted",
+            FIELD_DELETELOCALDATA = "delete-local-data",
             FIELD_RECHECKPROGRESS = "recheckProgress";
     }
 }

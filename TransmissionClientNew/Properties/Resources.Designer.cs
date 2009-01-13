@@ -221,6 +221,13 @@ namespace TransmissionRemoteDotnet.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap remove_and_delete {
+            get {
+                object obj = ResourceManager.GetObject("remove_and_delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap server16 {
             get {
                 object obj = ResourceManager.GetObject("server16", resourceCulture);

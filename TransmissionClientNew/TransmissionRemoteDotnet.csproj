@@ -249,6 +249,7 @@
     <None Include="Resources\pipe16.png" />
     <None Include="Resources\player_reload.png" />
     <None Include="Resources\player_reload16.png" />
+    <None Include="Resources\remove_and_delete.png" />
     <Content Include="transmission_large.ico" />
   </ItemGroup>
   <ItemGroup>

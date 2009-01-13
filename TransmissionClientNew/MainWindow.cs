@@ -61,15 +61,19 @@ namespace TransmissionRemoteDotnet
             this.noTorrentSelectionMenu = torrentListView.ContextMenu = new ContextMenu(new MenuItem[] {
                 new MenuItem("Select All", new EventHandler(this.SelectAllTorrentsHandler))
             });
-            this.torrentSelectionMenu = new ContextMenu(new MenuItem[] {
-                new MenuItem("Start", new EventHandler(this.startTorrentButton_Click)),
-                new MenuItem("Pause", new EventHandler(this.pauseTorrentButton_Click)),
-                new MenuItem("Remove", new EventHandler(this.removeTorrentButton_Click)),
-                new MenuItem("Recheck", new EventHandler(this.recheckTorrentButton_Click)),
-                new MenuItem("-"),
-                new MenuItem("Properties", new EventHandler(this.ShowTorrentPropsHandler)),
-                new MenuItem("Copy as CSV", new EventHandler(this.TorrentsToClipboardHandler))
-            });
+            this.torrentSelectionMenu = new ContextMenu();
+            this.torrentSelectionMenu.MenuItems.Add(new MenuItem("Start", new EventHandler(this.startTorrentButton_Click)));
+            this.torrentSelectionMenu.MenuItems.Add(new MenuItem("Pause", new EventHandler(this.pauseTorrentButton_Click)));
+            this.torrentSelectionMenu.MenuItems.Add(new MenuItem("Remove", new EventHandler(this.removeTorrentButton_Click)));
+            if (Program.transmissionVersion >= 1.50)
+            {
+                this.torrentSelectionMenu.MenuItems.Add(new MenuItem("Remove and delete", new EventHandler(this.removeAndDeleteButton_Click)));
+            }
+            this.torrentSelectionMenu.MenuItems.Add(new MenuItem("Recheck", new EventHandler(this.recheckTorrentButton_Click)));
+            this.torrentSelectionMenu.MenuItems.Add(new MenuItem("-"));
+            this.torrentSelectionMenu.MenuItems.Add(new MenuItem("Properties", new EventHandler(this.ShowTorrentPropsHandler)));
+            this.torrentSelectionMenu.MenuItems.Add(new MenuItem("Copy as CSV", new EventHandler(this.TorrentsToClipboardHandler)));
+
             this.fileSelectionMenu = new ContextMenu(new MenuItem[] {
                 new MenuItem("High Priority", new EventHandler(this.SetHighPriorityHandler)),
                 new MenuItem("Normal Priority", new EventHandler(this.SetNormalPriorityHandler)),
@@ -181,7 +185,7 @@ namespace TransmissionRemoteDotnet
                 {
                     lock (this.stateListBox)
                     {
-                        for (int i = 0; i < this.stateListBox.Items.Count-6; i++)
+                        for (int i = 0; i < this.stateListBox.Items.Count - 6; i++)
                         {
                             stateListBox.Items.RemoveAt(stateListBox.Items.Count - 1);
                         }
@@ -204,6 +208,7 @@ namespace TransmissionRemoteDotnet
                 = addTorrentFromUrlToolStripMenuItem.Visible = startTorrentButton.Visible
                 = refreshTimer.Enabled = recheckTorrentButton.Visible
                 = connected;
+            removeAndDeleteButton.Visible = connected && Program.transmissionVersion >= 1.50;
         }
 
         public void TorrentsToClipboardHandler(object sender, EventArgs e)
@@ -377,20 +382,37 @@ namespace TransmissionRemoteDotnet
             if (torrentListView.SelectedItems.Count == 1
                 && MessageBox.Show("Do you want to remove " + torrentListView.SelectedItems[0].Text + "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                RemoveTorrents();
+                RemoveTorrents(false);
             }
             else if (torrentListView.SelectedItems.Count > 1
                 && MessageBox.Show("You have selected " + torrentListView.SelectedItems.Count + " torrents for removal. Are you sure?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                RemoveTorrents();
+                RemoveTorrents(false);
             }
         }
 
-        private void RemoveTorrents()
+        private void RemoveAndDeleteTorrentsPrompt()
+        {
+            if (Program.transmissionVersion >= 1.50)
+            {
+                if (torrentListView.SelectedItems.Count == 1
+                    && MessageBox.Show("Do you want to remove " + torrentListView.SelectedItems[0].Text + "?\r\n\r\nALL THE DATA FROM THIS TORRENT WILL BE REMOVED.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    RemoveTorrents(true);
+                }
+                else if (torrentListView.SelectedItems.Count > 1
+                    && MessageBox.Show("You have selected " + torrentListView.SelectedItems.Count + " torrents for removal. Are you sure?\r\n\r\nALL THE DATA FROM THESE TORRENTS WILL BE REMOVED.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    RemoveTorrents(true);
+                }
+            }
+        }
+
+        private void RemoveTorrents(bool delete)
         {
             if (torrentListView.SelectedItems.Count > 0)
             {
-                CreateActionWorker().RunWorkerAsync(Requests.Generic("torrent-remove", BuildIdArray()));
+                CreateActionWorker().RunWorkerAsync(Requests.RemoveTorrent(BuildIdArray(), delete));
             }
         }
 
@@ -491,6 +513,7 @@ namespace TransmissionRemoteDotnet
                 torrentListView.ContextMenu = oneOrMore ? this.torrentSelectionMenu : this.noTorrentSelectionMenu;
                 startTorrentButton.Enabled = pauseTorrentButton.Enabled
                     = removeTorrentButton.Enabled = recheckTorrentButton.Enabled
+                    = removeAndDeleteButton.Enabled
                     = oneOrMore;
                 lock (filesListView)
                 {
@@ -675,60 +698,60 @@ namespace TransmissionRemoteDotnet
             torrentListView.SuspendLayout();
             lock (Program.torrentIndex)
             {
-                    if (box.SelectedIndex == 1)
+                if (box.SelectedIndex == 1)
+                {
+                    ShowTorrentIfStatus(ProtocolConstants.STATUS_DOWNLOADING);
+                }
+                else if (box.SelectedIndex == 2)
+                {
+                    ShowTorrentIfStatus(ProtocolConstants.STATUS_STOPPED);
+                }
+                else if (box.SelectedIndex == 3)
+                {
+                    ShowTorrentIfStatus(ProtocolConstants.STATUS_CHECKING | ProtocolConstants.STATUS_WAITING_TO_CHECK);
+                }
+                else if (box.SelectedIndex == 4)
+                {
+                    foreach (KeyValuePair<int, Torrent> pair in Program.torrentIndex)
                     {
-                        ShowTorrentIfStatus(ProtocolConstants.STATUS_DOWNLOADING);
-                    }
-                    else if (box.SelectedIndex == 2)
-                    {
-                        ShowTorrentIfStatus(ProtocolConstants.STATUS_STOPPED);
-                    }
-                    else if (box.SelectedIndex == 3)
-                    {
-                        ShowTorrentIfStatus(ProtocolConstants.STATUS_CHECKING | ProtocolConstants.STATUS_WAITING_TO_CHECK);
-                    }
-                    else if (box.SelectedIndex == 4)
-                    {
-                        foreach (KeyValuePair<int, Torrent> pair in Program.torrentIndex)
+                        Torrent t = pair.Value;
+                        if (t.Percentage >= 100 || t.StatusCode == ProtocolConstants.STATUS_SEEDING)
                         {
-                            Torrent t = pair.Value;
-                            if (t.Percentage >= 100 || t.StatusCode == ProtocolConstants.STATUS_SEEDING)
-                            {
-                                t.Show();
-                            }
-                            else
-                            {
-                                t.Remove();
-                            }
-                        }
-                    }
-                    else if (box.SelectedIndex == 5)
-                    {
-                        ShowTorrentIfStatus(ProtocolConstants.STATUS_SEEDING);
-                    }
-                    else if (box.SelectedIndex > 6)
-                    {
-                        foreach (KeyValuePair<int, Torrent> pair in Program.torrentIndex)
-                        {
-                            Torrent t = pair.Value;
-                            if (t.item.SubItems[13].Text.Equals(box.SelectedItem.ToString()))
-                            {
-                                t.Show();
-                            }
-                            else
-                            {
-                                t.Remove();
-                            }
-                        }
-                    }
-                    else
-                    {
-                        foreach (KeyValuePair<int, Torrent> pair in Program.torrentIndex)
-                        {
-                            Torrent t = pair.Value;
                             t.Show();
                         }
+                        else
+                        {
+                            t.Remove();
+                        }
                     }
+                }
+                else if (box.SelectedIndex == 5)
+                {
+                    ShowTorrentIfStatus(ProtocolConstants.STATUS_SEEDING);
+                }
+                else if (box.SelectedIndex > 6)
+                {
+                    foreach (KeyValuePair<int, Torrent> pair in Program.torrentIndex)
+                    {
+                        Torrent t = pair.Value;
+                        if (t.item.SubItems[13].Text.Equals(box.SelectedItem.ToString()))
+                        {
+                            t.Show();
+                        }
+                        else
+                        {
+                            t.Remove();
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (KeyValuePair<int, Torrent> pair in Program.torrentIndex)
+                    {
+                        Torrent t = pair.Value;
+                        t.Show();
+                    }
+                }
             }
             torrentListView.ResumeLayout();
         }
@@ -1004,6 +1027,7 @@ namespace TransmissionRemoteDotnet
                 RefreshElapsedTimer();
                 if (t.Peers != null)
                 {
+                    peersListView.Enabled = t.StatusCode == ProtocolConstants.STATUS_DOWNLOADING || t.StatusCode == ProtocolConstants.STATUS_SEEDING;
                     peersListView.Tag = (int)peersListView.Tag + 1;
                     peersListView.SuspendLayout();
                     foreach (JsonObject peer in t.Peers)
@@ -1221,7 +1245,11 @@ namespace TransmissionRemoteDotnet
 
         private void torrentListView_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Delete)
+            if (e.KeyCode == Keys.Delete && e.Shift)
+            {
+                RemoveAndDeleteTorrentsPrompt();
+            }
+            else if (e.KeyCode == Keys.Delete)
             {
                 RemoveTorrentsPrompt();
             }
@@ -1260,6 +1288,11 @@ namespace TransmissionRemoteDotnet
             {
                 CreateActionWorker().RunWorkerAsync(Requests.Generic(ProtocolConstants.METHOD_TORRENTVERIFY, BuildIdArray()));
             }
+        }
+
+        private void removeAndDeleteButton_Click(object sender, EventArgs e)
+        {
+            RemoveAndDeleteTorrentsPrompt();
         }
     }
 }

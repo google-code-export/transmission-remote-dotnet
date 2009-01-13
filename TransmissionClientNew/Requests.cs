@@ -32,6 +32,21 @@ namespace TransmissionRemoteDotnet
             return request;
         }
 
+        public static JsonObject RemoveTorrent(JsonArray ids, bool delete)
+        {
+            JsonObject request = new JsonObject();
+            request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTREMOVE);
+            JsonObject arguments = new JsonObject();
+            if (delete && Program.transmissionVersion >= 1.50)
+            {
+                arguments.Put(ProtocolConstants.FIELD_DELETELOCALDATA, true);
+            }
+            arguments.Put(ProtocolConstants.KEY_IDS, ids);
+            request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
+            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
+            return request;
+        }
+
         public static JsonObject Files(int id)
         {
             return Files(id, false);
