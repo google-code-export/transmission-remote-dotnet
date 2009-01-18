@@ -40,7 +40,7 @@ namespace TransmissionRemoteDotnet
                 }
                 else
                 {
-                    sb.Append("\r\n");
+                    sb.Append(System.Environment.NewLine);
                 }
             }
             lock (listView)
@@ -57,7 +57,7 @@ namespace TransmissionRemoteDotnet
                         }
                         else
                         {
-                            sb.Append("\r\n");
+                            sb.Append(System.Environment.NewLine);
                         }
                     }
                 }

@@ -12,16 +12,32 @@ namespace TransmissionRemoteDotnet.Commmands
     {
         public const double DEFAULT_T_VERSION = 1.41;
 
-        private double ParseVersionString(string str)
+        private void ParseVersionAndRevisionResponse(string str)
         {
-            for (int i = 0; i < str.Length; i++)
+            try
             {
-                if ((str[i] < (int)'0' || str[i] > (int)'9') && str[i] != (int)'.')
+                for (int i = 0; i < str.Length; i++)
                 {
-                    return Double.Parse(str.Substring(0, i));
+                    if ((str[i] < (int)'0' || str[i] > (int)'9') && str[i] != (int)'.')
+                    {
+                        Program.transmissionVersion = Double.Parse(str.Substring(0, i));
+                    }
                 }
+                throw new FormatException("Unable to parse: " + str);
             }
-            throw new FormatException("Unable to parse: " + str);
+            catch
+            {
+                Program.transmissionVersion = DEFAULT_T_VERSION;
+            }
+            try
+            {
+                int spaceIndex = str.IndexOf(' ');
+                Program.transmissionRevision = Int32.Parse(str.Substring(spaceIndex + 2, str.Length - spaceIndex - 3));
+            }
+            catch
+            {
+                Program.transmissionRevision = -1;
+            }
         }
 
         public SessionCommand(JsonObject response, WebHeaderCollection headers)
@@ -32,14 +48,7 @@ namespace TransmissionRemoteDotnet.Commmands
             JsonObject arguments = (JsonObject)response["arguments"];
             if (arguments.Contains("version"))
             {
-                try
-                {
-                    Program.transmissionVersion = ParseVersionString((string)arguments["version"]);
-                }
-                catch
-                {
-                    Program.transmissionVersion = DEFAULT_T_VERSION;
-                }
+                ParseVersionAndRevisionResponse((string)arguments["version"]);
             }
             else if (headers.Get("Server") != null)
             {

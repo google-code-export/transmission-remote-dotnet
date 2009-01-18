@@ -38,7 +38,15 @@ namespace TransmissionRemoteDotnet
 
         private void button1_Click(object sender, EventArgs e)
         {
-            downloadAndUploadTorrentWorker.RunWorkerAsync(this.currentUri);
+            if (Program.transmissionRevision >= 7744)
+            {
+                Program.form.CreateActionWorker().RunWorkerAsync(Requests.TorrentAdd(this.textBox1.Text));
+                this.Close();
+            }
+            else
+            {
+                downloadAndUploadTorrentWorker.RunWorkerAsync(this.currentUri);
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using Jayrock.Json;
 using System.Collections;
+using System.Drawing;
 
 namespace TransmissionRemoteDotnet
 {
@@ -20,6 +21,10 @@ namespace TransmissionRemoteDotnet
             this.updateSerial = Program.updateSerial;
             this.info = info;
             item = new ListViewItem(this.Name);
+            if (this.HasError)
+            {
+                item.ForeColor = Color.Red;
+            }
             item.ToolTipText = item.Name;
             item.Tag = this;
             item.SubItems.Add(this.TotalSizeString);
@@ -68,7 +73,7 @@ namespace TransmissionRemoteDotnet
 
         private void LogError()
         {
-            if (this.ErrorString != null && !this.ErrorString.Equals(""))
+            if (this.HasError)
             {
                 List<ListViewItem> logItems = Program.logItems;
                 if (logItems.Count <= 0 || (logItems.Count > 0 && !Program.logItems[Program.logItems.Count - 1].SubItems[1].Text.Equals(this.Name)))
@@ -142,6 +147,7 @@ namespace TransmissionRemoteDotnet
                 }
                 this.info = info;
                 item.SubItems[0].Text = this.Name;
+                item.ForeColor = this.HasError ? Color.Red : SystemColors.WindowText;
                 item.SubItems[1].Text = this.TotalSizeString;
                 decimal percentage = this.StatusCode == ProtocolConstants.STATUS_CHECKING ? this.RecheckPercentage : this.Percentage;
                 item.SubItems[2].Tag = percentage;
@@ -170,23 +176,23 @@ namespace TransmissionRemoteDotnet
 
         public string GetFirstTracker(bool trim)
         {
-                try
+            try
+            {
+                JsonObject tracker = (JsonObject)this.Trackers[0];
+                Uri announceUrl = new Uri((string)tracker["announce"]);
+                if (!trim)
                 {
-                    JsonObject tracker = (JsonObject)this.Trackers[0];
-                    Uri announceUrl = new Uri((string)tracker["announce"]);
-                    if (!trim)
-                    {
-                        return announceUrl.Host;
-                    }
-                    else
-                    {
-                        return announceUrl.Host.Replace("tracker.", "").Replace("www.", "");
-                    }
+                    return announceUrl.Host;
                 }
-                catch
+                else
                 {
-                    return "";
+                    return announceUrl.Host.Replace("tracker.", "").Replace("www.", "");
                 }
+            }
+            catch
+            {
+                return "";
+            }
         }
 
         public JsonArray Trackers
@@ -272,6 +278,14 @@ namespace TransmissionRemoteDotnet
             get
             {
                 return ((JsonNumber)info[ProtocolConstants.FIELD_UPLOADLIMITMODE]).ToBoolean();
+            }
+        }
+
+        public bool HasError
+        {
+            get
+            {
+                return this.ErrorString != null && !this.ErrorString.Equals("");
             }
         }
 

@@ -79,6 +79,18 @@ namespace TransmissionRemoteDotnet
             return Files(id, true);
         }
 
+        public static JsonObject TorrentAdd(string filenameOrUrl)
+        {
+            JsonObject request = new JsonObject();
+            request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTADD);
+            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
+            JsonObject arguments = new JsonObject();
+            arguments.Put(ProtocolConstants.FIELD_FILENAME, filenameOrUrl);
+            arguments.Put(ProtocolConstants.FIELD_PAUSED, LocalSettingsSingleton.Instance.startPaused);
+            request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
+            return request;
+        }
+
         public static JsonObject TorrentGet()
         {
             JsonObject request = new JsonObject();
