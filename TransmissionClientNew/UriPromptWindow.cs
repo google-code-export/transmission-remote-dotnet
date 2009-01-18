@@ -87,6 +87,19 @@ namespace TransmissionRemoteDotnet
             try
             {
                 WebClient webClient = new WebClient();
+                LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
+                if (settings.proxyEnabled == 1)
+                {
+                    webClient.Proxy = new WebProxy(settings.proxyHost, settings.proxyPort);
+                    if (settings.proxyAuth)
+                    {
+                        webClient.Proxy.Credentials = new NetworkCredential(settings.proxyUser, settings.proxyPass);
+                    }
+                }
+                else if (settings.proxyEnabled == 2)
+                {
+                    webClient.Proxy = null;
+                }
                 webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(webClient_DownloadProgressChanged);
                 webClient.DownloadFile(this.currentUri, target);
             }
