@@ -1372,7 +1372,7 @@
             this.remoteConfigureButton});
             this.toolStrip.Location = new System.Drawing.Point(3, 0);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(454, 39);
+            this.toolStrip.Size = new System.Drawing.Size(81, 39);
             this.toolStrip.TabIndex = 0;
             // 
             // connectButton

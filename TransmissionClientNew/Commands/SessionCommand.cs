@@ -21,9 +21,9 @@ namespace TransmissionRemoteDotnet.Commmands
                     if ((str[i] < (int)'0' || str[i] > (int)'9') && str[i] != (int)'.')
                     {
                         Program.transmissionVersion = Double.Parse(str.Substring(0, i));
+                        break;
                     }
                 }
-                throw new FormatException("Unable to parse: " + str);
             }
             catch
             {
