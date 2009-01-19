@@ -9,26 +9,26 @@ namespace TransmissionRemoteDotnet.Comparers
 {
     public class FilesListViewItemSorter : IComparer
     {
-        private int ColumnToSort;
-        private SortOrder OrderOfSort;
-        private IComparer ObjectCompare;
+        private int columnToSort;
+        private SortOrder orderOfSort;
+        private IComparer objectCompare;
 
         public FilesListViewItemSorter()
         {
-            ColumnToSort = 0;
-            OrderOfSort = SortOrder.None;
-            ObjectCompare = new ListViewTextInsensitiveComparer(0);
+            columnToSort = 0;
+            orderOfSort = SortOrder.None;
+            objectCompare = new ListViewTextComparer(0, true);
         }
 
         public int Compare(object x, object y)
         {
             int compareResult;
-            compareResult = ObjectCompare.Compare(x, y);
-            if (OrderOfSort == SortOrder.Ascending)
+            compareResult = objectCompare.Compare(x, y);
+            if (orderOfSort == SortOrder.Ascending)
             {
                 return compareResult;
             }
-            else if (OrderOfSort == SortOrder.Descending)
+            else if (orderOfSort == SortOrder.Descending)
             {
                 return (-compareResult);
             }
@@ -44,26 +44,26 @@ namespace TransmissionRemoteDotnet.Comparers
         {
             set
             {
-                ColumnToSort = value;
-                switch (ColumnToSort)
+                columnToSort = value;
+                switch (columnToSort)
                 {
                     case 1:
-                        ObjectCompare = new ListViewItemInt64Comparer(value);
+                        objectCompare = new ListViewItemInt64Comparer(value);
                         break;
                     case 2:
-                        ObjectCompare = new ListViewItemInt64Comparer(value);
+                        objectCompare = new ListViewItemInt64Comparer(value);
                         break;
                     case 3:
-                        ObjectCompare = new ListViewItemDecimalComparer(value);
+                        objectCompare = new ListViewItemDecimalComparer(value);
                         break;
                     default:
-                        ObjectCompare = new ListViewTextInsensitiveComparer(ColumnToSort);
+                        objectCompare = new ListViewTextComparer(columnToSort, true);
                         break;
                 }
             }
             get
             {
-                return ColumnToSort;
+                return columnToSort;
             }
         }
 
@@ -71,11 +71,11 @@ namespace TransmissionRemoteDotnet.Comparers
         {
             set
             {
-                OrderOfSort = value;
+                orderOfSort = value;
             }
             get
             {
-                return OrderOfSort;
+                return orderOfSort;
             }
         }
     }

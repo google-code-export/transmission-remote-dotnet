@@ -24,6 +24,11 @@ namespace TransmissionRemoteDotnet.Commmands
             this.body = ex.Message;
         }
 
+        private void ShowErrorBox(string title, string body)
+        {
+            MessageBox.Show(body.Length > MAX_MESSAGE_LENGTH ? body.Substring(0, MAX_MESSAGE_LENGTH) + "..." : body, title, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+        }
+
         public void Execute()
         {
             MainWindow form = Program.form;
@@ -31,14 +36,14 @@ namespace TransmissionRemoteDotnet.Commmands
             if (!Program.Connected)
             {
                 form.toolStripStatusLabel.Text = "Unable to connect (" + this.title + ")";
-                MessageBox.Show(this.body.Length > MAX_MESSAGE_LENGTH ? this.body.Substring(0, MAX_MESSAGE_LENGTH) + "..." : this.body, this.title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ShowErrorBox(this.title, this.body);
             }
             else if (++Program.failCount > LocalSettingsSingleton.Instance.retryLimit)
             {
                 Program.Connected = false;
                 form.toolStripStatusLabel.Text = "Disconnected. Exceeded maximum number of failed requests.";
                 Program.Log(this.title, this.body);
-                MessageBox.Show(this.body.Length > MAX_MESSAGE_LENGTH ? this.body.Substring(0, MAX_MESSAGE_LENGTH) + "..." : this.body, this.title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ShowErrorBox(this.title, this.body);
             }
             else
             {

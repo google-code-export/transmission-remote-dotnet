@@ -28,6 +28,7 @@ namespace TransmissionRemoteDotnet
             METHOD_TORRENTREMOVE = "torrent-remove",
             METHOD_TORRENTVERIFY = "torrent-verify",
             METHOD_TORRENTADD = "torrent-add",
+            FIELD_FLAGSTR = "flagStr",
             FIELD_CLIENTNAME = "clientName",
             FIELD_HAVEUNCHECKED = "haveUnchecked",
             FIELD_LEFTUNTILDONE = "leftUntilDone",

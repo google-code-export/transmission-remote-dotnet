@@ -1060,17 +1060,18 @@ namespace TransmissionRemoteDotnet
                             {
                                 item.SubItems.Add("");
                             }
-                            item.SubItems.Add((string)peer[ProtocolConstants.FIELD_CLIENTNAME]); // 2
+                            item.SubItems.Add((string)peer[ProtocolConstants.FIELD_FLAGSTR]);
+                            item.SubItems.Add((string)peer[ProtocolConstants.FIELD_CLIENTNAME]);
                             item.ToolTipText = item.SubItems[0].Text;
                             decimal progress = Toolbox.ParseProgress((string)peer[ProtocolConstants.FIELD_PROGRESS]);
-                            item.SubItems.Add(progress + "%"); // 3
-                            item.SubItems[4].Tag = progress;
+                            item.SubItems.Add(progress + "%");
+                            item.SubItems[5].Tag = progress;
                             long rateToClient = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOCLIENT]).ToInt64();
-                            item.SubItems.Add(Toolbox.GetSpeed(rateToClient)); // 4
-                            item.SubItems[5].Tag = rateToClient;
+                            item.SubItems.Add(Toolbox.GetSpeed(rateToClient));
+                            item.SubItems[6].Tag = rateToClient;
                             long rateToPeer = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOPEER]).ToInt64();
-                            item.SubItems.Add(Toolbox.GetSpeed(rateToPeer)); // 5
-                            item.SubItems[6].Tag = rateToPeer;
+                            item.SubItems.Add(Toolbox.GetSpeed(rateToPeer));
+                            item.SubItems[7].Tag = rateToPeer;
                             peersListView.Items.Add(item);
                             Toolbox.StripeListView(peersListView);
                             if (countryIndex >= 0)
@@ -1082,13 +1083,14 @@ namespace TransmissionRemoteDotnet
                         else
                         {
                             decimal progress = Toolbox.ParseProgress((string)peer[ProtocolConstants.FIELD_PROGRESS]);
-                            item.SubItems[4].Text = progress + "%";
+                            item.SubItems[3].Text = (string)peer[ProtocolConstants.FIELD_FLAGSTR];
+                            item.SubItems[5].Text = progress + "%";
                             long rateToClient = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOCLIENT]).ToInt64();
-                            item.SubItems[5].Text = Toolbox.GetSpeed(rateToClient);
-                            item.SubItems[5].Tag = rateToClient;
+                            item.SubItems[6].Text = Toolbox.GetSpeed(rateToClient);
+                            item.SubItems[6].Tag = rateToClient;
                             long rateToPeer = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOPEER]).ToInt64();
-                            item.SubItems[6].Text = Toolbox.GetSpeed(rateToPeer);
-                            item.SubItems[6].Tag = rateToPeer;
+                            item.SubItems[7].Text = Toolbox.GetSpeed(rateToPeer);
+                            item.SubItems[7].Tag = rateToPeer;
                         }
                         item.Tag = peersListView.Tag;
                     }

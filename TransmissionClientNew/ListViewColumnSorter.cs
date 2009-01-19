@@ -10,26 +10,26 @@ namespace TransmissionRemoteDotnet
 {
     public class ListViewItemSorter : IComparer
     {
-        private int ColumnToSort;
-        private SortOrder OrderOfSort;
-        private IComparer ObjectCompare;
+        private int columnToSort;
+        private SortOrder orderOfSort;
+        private IComparer objectCompare;
         
         public ListViewItemSorter()
         {
-            ColumnToSort = 0;
-            OrderOfSort = SortOrder.None;
-            ObjectCompare = new ListViewTextInsensitiveComparer(0);
+            columnToSort = 0;
+            orderOfSort = SortOrder.None;
+            objectCompare = new ListViewTextComparer(0, false);
         }
 
         public int Compare(object x, object y)
         {
             int compareResult;
-            compareResult = ObjectCompare.Compare(x, y);
-            if (OrderOfSort == SortOrder.Ascending)
+            compareResult = objectCompare.Compare(x, y);
+            if (orderOfSort == SortOrder.Ascending)
             {
                 return compareResult;
             }
-            else if (OrderOfSort == SortOrder.Descending)
+            else if (orderOfSort == SortOrder.Descending)
             {
                 return (-compareResult);
             }
@@ -45,47 +45,50 @@ namespace TransmissionRemoteDotnet
         {
             set
             {
-                ColumnToSort = value;
-                switch (ColumnToSort)
+                columnToSort = value;
+                switch (columnToSort)
                 {
+                    case 0:
+                        objectCompare = new ListViewTextComparer(0, false);
+                        break;
                     case 1:
-                        ObjectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_TOTALSIZE);
+                        objectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_TOTALSIZE);
                         break;
                     case 2:
-                        ObjectCompare = new ListViewItemDecimalComparer(value);
+                        objectCompare = new ListViewItemDecimalComparer(value);
                         break;
                     case 4:
-                        ObjectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_SEEDERS);
+                        objectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_SEEDERS);
                         break;
                     case 5:
-                        ObjectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_LEECHERS);
+                        objectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_LEECHERS);
                         break;
                     case 6:
-                        ObjectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_RATEDOWNLOAD);
+                        objectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_RATEDOWNLOAD);
                         break;
                     case 7:
-                        ObjectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_RATEUPLOAD);
+                        objectCompare = new ListViewTorrentInt32Comparer(ProtocolConstants.FIELD_RATEUPLOAD);
                         break;
                     case 8:
-                        ObjectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_ETA);
+                        objectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_ETA);
                         break;
                     case 9:
-                        ObjectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_UPLOADEDEVER);
+                        objectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_UPLOADEDEVER);
                         break;
                     case 10:
-                        ObjectCompare = new ListViewTorrentRatioComparer();
+                        objectCompare = new ListViewTorrentRatioComparer();
                         break;
                     case 11:
-                        ObjectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_ADDEDDATE);
+                        objectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_ADDEDDATE);
                         break;
                     default:
-                        ObjectCompare = new ListViewTextInsensitiveComparer(ColumnToSort);
+                        objectCompare = new ListViewTextComparer(columnToSort, true);
                         break;
                 }
             }
             get
             {
-                return ColumnToSort;
+                return columnToSort;
             }
         }
 
@@ -93,11 +96,11 @@ namespace TransmissionRemoteDotnet
         {
             set
             {
-                OrderOfSort = value;
+                orderOfSort = value;
             }
             get
             {
-                return OrderOfSort;
+                return orderOfSort;
             }
         }
     }
