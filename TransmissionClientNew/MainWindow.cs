@@ -65,7 +65,7 @@ namespace TransmissionRemoteDotnet
             this.torrentSelectionMenu.MenuItems.Add(new MenuItem("Start", new EventHandler(this.startTorrentButton_Click)));
             this.torrentSelectionMenu.MenuItems.Add(new MenuItem("Pause", new EventHandler(this.pauseTorrentButton_Click)));
             this.torrentSelectionMenu.MenuItems.Add(new MenuItem("Remove", new EventHandler(this.removeTorrentButton_Click)));
-            if (Program.transmissionVersion >= 1.50)
+            if (Program.transmissionRevision >= 7331)
             {
                 this.torrentSelectionMenu.MenuItems.Add(new MenuItem("Remove and delete", new EventHandler(this.removeAndDeleteButton_Click)));
             }
@@ -208,7 +208,7 @@ namespace TransmissionRemoteDotnet
                 = addTorrentFromUrlToolStripMenuItem.Visible = startTorrentButton.Visible
                 = refreshTimer.Enabled = recheckTorrentButton.Visible
                 = connected;
-            removeAndDeleteButton.Visible = connected && Program.transmissionVersion >= 1.50;
+            removeAndDeleteButton.Visible = connected && Program.transmissionRevision >= 7331;
         }
 
         public void TorrentsToClipboardHandler(object sender, EventArgs e)
@@ -393,7 +393,7 @@ namespace TransmissionRemoteDotnet
 
         private void RemoveAndDeleteTorrentsPrompt()
         {
-            if (Program.transmissionVersion >= 1.50)
+            if (Program.transmissionRevision >= 7331)
             {
                 if (torrentListView.SelectedItems.Count == 1
                     && MessageBox.Show("Do you want to remove " + torrentListView.SelectedItems[0].Text + "?\r\n\r\nALL THE DATA FROM THIS TORRENT WILL BE REMOVED.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

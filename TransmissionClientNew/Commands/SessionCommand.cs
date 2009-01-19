@@ -66,6 +66,7 @@ namespace TransmissionRemoteDotnet.Commmands
         {
             if (!Program.Connected)
             {
+                Program.Log("(Info) Connected to version", String.Format("Version={0}, Revision={1}", Program.transmissionVersion, Program.transmissionRevision));
                 Program.Connected = true;
                 Program.form.RefreshIfNotRefreshing();
                 if (Program.uploadArgs != null)
