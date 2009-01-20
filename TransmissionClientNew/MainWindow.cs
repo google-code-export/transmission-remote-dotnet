@@ -179,8 +179,7 @@ namespace TransmissionRemoteDotnet
                 trayMenu.MenuItems.Add("Connect", new EventHandler(this.connectButton_Click));
                 this.toolStripStatusLabel.Text = "Disconnected.";
                 this.Text = MainWindow.DEFAULT_WINDOW_TITLE;
-                this.torrentAndTabsSplitContainer.Panel2Collapsed = true;
-                this.mainVerticalSplitContainer.Panel1Collapsed = true;
+                this.torrentAndTabsSplitContainer.Panel2Collapsed = this.mainVerticalSplitContainer.Panel1Collapsed = true;
                 if (this.stateListBox.Items.Count > 7)
                 {
                     lock (this.stateListBox)
@@ -345,22 +344,30 @@ namespace TransmissionRemoteDotnet
 
         private void UploadWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            foreach (string file in (string[])e.Argument)
+            try
             {
-                if ((e.Result = Toolbox.UploadFile(file, false)) != null)
+                foreach (string file in (string[])e.Argument)
                 {
-                    /* An exception occured, so display it. */
-                    return;
+                    if ((e.Result = CommandFactory.Request(Requests.TorrentAddByFile(file, false))).GetType() == typeof(ErrorCommand))
+                    {
+                        /* An exception occured, so display it. */
+                        return;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                ErrorCommand command = new ErrorCommand(ex);
+                command.showDontCount = true;
+                e.Result = command;
             }
         }
 
         private void UploadWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (e.Result != null)
-            {
-                MessageBox.Show(((Exception)e.Result).Message, "Error while uploading torrent", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            TransmissionCommand command = (TransmissionCommand)e.Result;
+            command.Execute();
+            RefreshIfNotRefreshing();
         }
 
         private JsonArray BuildIdArray()
@@ -538,9 +545,9 @@ namespace TransmissionRemoteDotnet
                     Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
                     CreateActionWorker().RunWorkerAsync(Requests.FilesAndPriorities(t.Id));
                 }
+                UpdateInfoPanel(true);
                 torrentAndTabsSplitContainer.Panel2Collapsed = !one;
                 refreshElapsedTimer.Enabled = filesTimer.Enabled = one;
-                UpdateInfoPanel(true);
             }
         }
 

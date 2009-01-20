@@ -65,46 +65,6 @@ namespace TransmissionRemoteDotnet
             Clipboard.SetText(sb.ToString());
         }
 
-        public static Exception UploadFile(string file, bool deleteAfter)
-        {
-            return UploadFile(file, deleteAfter, null);
-        }
-
-        public static Exception UploadFile(string file, bool deleteAfter, UploadProgressChangedEventHandler progressHandler)
-        {
-            LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-            Exception exception = null;
-            if (!Program.Connected || file == null || !File.Exists(file))
-            {
-                return null;
-            }
-            try
-            {
-                using (TransmissionWebClient wc = new TransmissionWebClient())
-                {
-                    if (progressHandler != null)
-                    {
-                        wc.UploadProgressChanged += progressHandler;
-                    }
-                    wc.UploadFile(settings.URL + "upload?paused=" + (settings.startPaused ? "true" : "false"), file);
-                }
-                Program.form.RefreshIfNotRefreshing();
-            }
-            catch (Exception ex)
-            {
-                exception = ex;
-            }
-            if (deleteAfter && File.Exists(file))
-            {
-                try
-                {
-                    File.Delete(file);
-                }
-                catch { }
-            }
-            return exception;
-        }
-
         public static void StripeListView(ListView list)
         {
             Color window = SystemColors.Window;

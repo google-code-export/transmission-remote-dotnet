@@ -9,8 +9,9 @@ namespace TransmissionRemoteDotnet.Commmands
     public class ErrorCommand : TransmissionCommand
     {
         private const int MAX_MESSAGE_LENGTH = 500;
-        public string title;
-        public string body;
+        private string title;
+        private string body;
+        public bool showDontCount = false;
 
         public ErrorCommand(string title, string body)
         {
@@ -29,26 +30,37 @@ namespace TransmissionRemoteDotnet.Commmands
             MessageBox.Show(body.Length > MAX_MESSAGE_LENGTH ? body.Substring(0, MAX_MESSAGE_LENGTH) + "..." : body, title, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
         }
 
+        private delegate void ExecuteDelegate();
         public void Execute()
         {
             MainWindow form = Program.form;
-            Program.uploadArgs = null;
-            if (!Program.Connected)
+            if (Program.form.InvokeRequired)
             {
-                form.toolStripStatusLabel.Text = "Unable to connect (" + this.title + ")";
-                ShowErrorBox(this.title, this.body);
-            }
-            else if (++Program.failCount > LocalSettingsSingleton.Instance.retryLimit)
-            {
-                Program.Connected = false;
-                form.toolStripStatusLabel.Text = "Disconnected. Exceeded maximum number of failed requests.";
-                Program.Log(this.title, this.body);
-                ShowErrorBox(this.title, this.body);
+                form.Invoke(new ExecuteDelegate(this.Execute));
             }
             else
             {
+                Program.uploadArgs = null;
+                if (!Program.Connected)
+                {
+                    form.toolStripStatusLabel.Text = "Unable to connect (" + this.title + ")";
+                    ShowErrorBox(this.title, this.body);
+                }
+                else if (showDontCount)
+                {
+                    ShowErrorBox(this.title, this.body);
+                }
+                else if (++Program.failCount > LocalSettingsSingleton.Instance.retryLimit)
+                {
+                    Program.Connected = false;
+                    form.toolStripStatusLabel.Text = "Disconnected. Exceeded maximum number of failed requests.";
+                    ShowErrorBox(this.title, this.body);
+                }
+                else
+                {
+                    form.toolStripStatusLabel.Text = "Failed request #" + Program.failCount + ": " + this.title;
+                }
                 Program.Log(this.title, this.body);
-                form.toolStripStatusLabel.Text = "Failed request #" + Program.failCount + ": " + this.title;
             }
         }
     }

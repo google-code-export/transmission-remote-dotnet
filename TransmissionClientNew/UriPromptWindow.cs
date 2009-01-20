@@ -15,9 +15,7 @@ namespace TransmissionRemoteDotnet
     public enum DownloadAndUploadTorrentState
     {
         Downloading,
-        Uploading,
         DownloadFailed,
-        UploadFailed,
         Complete
     }
 
@@ -40,7 +38,7 @@ namespace TransmissionRemoteDotnet
         {
             if (Program.transmissionRevision >= 7744)
             {
-                Program.form.CreateActionWorker().RunWorkerAsync(Requests.TorrentAdd(this.textBox1.Text));
+                Program.form.CreateActionWorker().RunWorkerAsync(Requests.TorrentAddByUrl(this.textBox1.Text));
                 this.Close();
             }
             else
@@ -102,6 +100,7 @@ namespace TransmissionRemoteDotnet
                 }
                 webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(webClient_DownloadProgressChanged);
                 webClient.DownloadFile(this.currentUri, target);
+                Program.form.CreateActionWorker().RunWorkerAsync(Requests.TorrentAddByFile(target, true));
             }
             catch (Exception ex)
             {
@@ -109,23 +108,11 @@ namespace TransmissionRemoteDotnet
                 downloadAndUploadTorrentWorker.ReportProgress(0, DownloadAndUploadTorrentState.DownloadFailed);
                 return;
             }
-            downloadAndUploadTorrentWorker.ReportProgress(50, DownloadAndUploadTorrentState.Uploading);
-            if ((lastException = Toolbox.UploadFile(target, true, new UploadProgressChangedEventHandler(webClient_UploadProgressChanged))) != null)
-            {
-                downloadAndUploadTorrentWorker.ReportProgress(50, DownloadAndUploadTorrentState.UploadFailed);
-                return;
-            }
-            downloadAndUploadTorrentWorker.ReportProgress(100, DownloadAndUploadTorrentState.Complete);
         }
 
         private void webClient_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
-            downloadAndUploadTorrentWorker.ReportProgress(e.ProgressPercentage / 2, DownloadAndUploadTorrentState.Downloading);
-        }
-
-        private void webClient_UploadProgressChanged(object sender, UploadProgressChangedEventArgs e)
-        {
-            downloadAndUploadTorrentWorker.ReportProgress((e.ProgressPercentage / 2) + 50, DownloadAndUploadTorrentState.Uploading);
+            downloadAndUploadTorrentWorker.ReportProgress(e.ProgressPercentage, DownloadAndUploadTorrentState.Downloading);
         }
 
         private void downloadAndUploadTorrentWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -136,18 +123,9 @@ namespace TransmissionRemoteDotnet
                     toolStripStatusLabel1.Text = "Downloading...";
                     toolStripProgressBar1.Visible = true;
                     break;
-                case DownloadAndUploadTorrentState.Uploading:
-                    toolStripStatusLabel1.Text = "Uploading...";
-                    break;
                 case DownloadAndUploadTorrentState.DownloadFailed:
                     MessageBox.Show(lastException.Message,
                         toolStripStatusLabel1.Text = String.Format("Download failed ({0})", lastException.GetType().ToString()),
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    ResetToolStrip();
-                    break;
-                case DownloadAndUploadTorrentState.UploadFailed:
-                    MessageBox.Show(lastException.Message,
-                        toolStripStatusLabel1.Text = String.Format("Upload failed ({0})", lastException.GetType().ToString()),
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     ResetToolStrip();
                     break;

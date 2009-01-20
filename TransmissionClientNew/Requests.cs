@@ -73,19 +73,45 @@ namespace TransmissionRemoteDotnet
             request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
             return request;
         }
-        
+
         public static JsonObject FilesAndPriorities(int id)
         {
             return Files(id, true);
         }
 
-        public static JsonObject TorrentAdd(string filenameOrUrl)
+        public static JsonObject TorrentAddByFile(string file, bool deleteAfter)
+        {
+            FileStream inFile = new FileStream(file,
+                    FileMode.Open,
+                    FileAccess.Read);
+            byte[] binaryData = new Byte[inFile.Length];
+            long bytesRead = inFile.Read(binaryData, 0, (int)inFile.Length);
+            inFile.Close();
+            JsonObject request = new JsonObject();
+            JsonObject arguments = new JsonObject();
+            arguments.Put(ProtocolConstants.FIELD_METAINFO, Convert.ToBase64String(binaryData, 0, binaryData.Length) + "\n");
+            arguments.Put(ProtocolConstants.FIELD_PAUSED, LocalSettingsSingleton.Instance.startPaused);
+            request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
+            request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTADD);
+            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
+            if (deleteAfter && File.Exists(file))
+            {
+                try
+                {
+                    File.Delete(file);
+                }
+                catch { }
+            }
+            return request;
+        }
+
+        public static JsonObject TorrentAddByUrl(string url)
         {
             JsonObject request = new JsonObject();
             request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTADD);
             request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
             JsonObject arguments = new JsonObject();
-            arguments.Put(ProtocolConstants.FIELD_FILENAME, filenameOrUrl);
+            arguments.Put(ProtocolConstants.FIELD_FILENAME, url);
             arguments.Put(ProtocolConstants.FIELD_PAUSED, LocalSettingsSingleton.Instance.startPaused);
             request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
             return request;
