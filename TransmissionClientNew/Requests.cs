@@ -116,6 +116,14 @@ namespace TransmissionRemoteDotnet
             request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
             return request;
         }
+        
+        public static JsonObject SessionStats()
+        {
+            JsonObject request = new JsonObject();
+            request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_SESSIONSTATS);
+            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.SessionStats);
+            return request;
+        }
 
         public static JsonObject TorrentGet()
         {

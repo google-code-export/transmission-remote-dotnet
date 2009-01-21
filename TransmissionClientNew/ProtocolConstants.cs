@@ -28,6 +28,7 @@ namespace TransmissionRemoteDotnet
             METHOD_TORRENTREMOVE = "torrent-remove",
             METHOD_TORRENTVERIFY = "torrent-verify",
             METHOD_TORRENTADD = "torrent-add",
+            METHOD_SESSIONSTATS = "session-stats",
             FIELD_FLAGSTR = "flagStr",
             FIELD_METAINFO = "metainfo",
             FIELD_CLIENTNAME = "clientName",

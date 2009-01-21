@@ -11,18 +11,20 @@ namespace TransmissionRemoteDotnet.Commmands
         private const int MAX_MESSAGE_LENGTH = 500;
         private string title;
         private string body;
-        public bool showDontCount = false;
+        private bool showDontCount;
 
-        public ErrorCommand(string title, string body)
+        public ErrorCommand(string title, string body, bool showDontCount)
         {
             this.title = title;
             this.body = body;
+            this.showDontCount = showDontCount;
         }
 
-        public ErrorCommand(Exception ex)
+        public ErrorCommand(Exception ex, bool showDontCount)
         {
             this.title = ex.GetType().ToString();
             this.body = ex.Message;
+            this.showDontCount = showDontCount;
         }
 
         private void ShowErrorBox(string title, string body)

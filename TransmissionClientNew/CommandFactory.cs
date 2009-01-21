@@ -35,16 +35,18 @@ namespace TransmissionRemoteDotnet
                 str_response = stIn.ReadToEnd();
                 stIn.Close();
                 JsonObject jsonResponse = (JsonObject)JsonConvert.Import(str_response);
-                if (jsonResponse["result"].ToString() != "success")
+                if ((string)jsonResponse["result"] != "success")
                 {
-                    return new ErrorCommand("Unsuccessful request", str_response);
+                    return new ErrorCommand("Unsuccessful request", (string)jsonResponse["result"], true);
                 }
                 switch (((JsonNumber)jsonResponse[ProtocolConstants.KEY_TAG]).ToInt16())
                 {
-                    case (short)ResponseTag.SessionGet:
-                        return new SessionCommand(jsonResponse, webResponse.Headers);
                     case (short)ResponseTag.TorrentGet:
                         return new TorrentGetCommand(jsonResponse);
+                    case (short)ResponseTag.SessionGet:
+                        return new SessionCommand(jsonResponse, webResponse.Headers);
+                    case (short)ResponseTag.SessionStats:
+                        return new SessionStatsCommand(jsonResponse);
                     case (short)ResponseTag.UpdateFiles:
                         return new UpdateFilesCommand(jsonResponse);
                     case (short)ResponseTag.DoNothing:
@@ -53,17 +55,17 @@ namespace TransmissionRemoteDotnet
             }
             catch (InvalidCastException)
             {
-                return new ErrorCommand("Unable to parse the server response (possible protocol violation)", str_response != null ? str_response : "Null");
+                return new ErrorCommand("Unable to parse the server response (possible protocol violation)", str_response != null ? str_response : "Null", false);
             }
             catch (JsonException ex)
             {
-                return new ErrorCommand("Unable to parse the server response (" + ex.Message + ")", str_response);
+                return new ErrorCommand("Unable to parse the server response (" + ex.Message + ")", str_response, false);
             }
             catch (Exception ex)
             {
-                return new ErrorCommand(ex);
+                return new ErrorCommand(ex, false);
             }
-            return new ErrorCommand("Unknown response tag", str_response);
+            return new ErrorCommand("Unknown response tag", str_response, false);
         }
     }
 }

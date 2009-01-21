@@ -80,6 +80,7 @@
     <Compile Include="CommandFactory.cs" />
     <Compile Include="Commands\ErrorCommand.cs" />
     <Compile Include="Commands\ResolveHostCommand.cs" />
+    <Compile Include="Commands\SessionStatsCommand.cs" />
     <Compile Include="Comparers\ListViewItemIPComparer.cs" />
     <Compile Include="Comparers\ListViewItemDecimalComparer.cs" />
     <Compile Include="Comparers\ListViewItemInt64Comparer.cs" />
@@ -136,6 +137,9 @@
       <DependentUpon>RemoteSettingsDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="StatsDialog.resx">
+      <DependentUpon>StatsDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TorrentPropertiesDialog.resx">
       <DependentUpon>TorrentPropertiesDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +172,12 @@
       <DependentUpon>RemoteSettingsDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="SingleInstance.cs" />
+    <Compile Include="StatsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatsDialog.Designer.cs">
+      <DependentUpon>StatsDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Toolbox.cs" />
     <Compile Include="Torrent.cs" />
     <Compile Include="Commands\TorrentGetCommand.cs" />
@@ -250,6 +260,7 @@
     <None Include="Resources\player_reload.png" />
     <None Include="Resources\player_reload16.png" />
     <None Include="Resources\remove_and_delete.png" />
+    <None Include="Resources\xmag.png" />
     <Content Include="transmission_large.ico" />
   </ItemGroup>
   <ItemGroup>

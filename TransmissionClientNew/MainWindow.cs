@@ -208,6 +208,7 @@ namespace TransmissionRemoteDotnet
                 = refreshTimer.Enabled = recheckTorrentButton.Visible
                 = connected;
             removeAndDeleteButton.Visible = connected && Program.transmissionRevision >= 7331;
+            sessionStatsButton.Visible = connected && Program.transmissionRevision >= 7751;
         }
 
         public void TorrentsToClipboardHandler(object sender, EventArgs e)
@@ -357,16 +358,13 @@ namespace TransmissionRemoteDotnet
             }
             catch (Exception ex)
             {
-                ErrorCommand command = new ErrorCommand(ex);
-                command.showDontCount = true;
-                e.Result = command;
+                e.Result = new ErrorCommand(ex, true);
             }
         }
 
         private void UploadWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            TransmissionCommand command = (TransmissionCommand)e.Result;
-            command.Execute();
+            ((TransmissionCommand)e.Result).Execute();
             RefreshIfNotRefreshing();
         }
 
@@ -466,8 +464,7 @@ namespace TransmissionRemoteDotnet
             if (this.connectWorker != null && this.connectWorker.Equals(senderBW))
             {
                 this.connectWorker = null;
-                TransmissionCommand command = (TransmissionCommand)e.Result;
-                command.Execute();
+                ((TransmissionCommand)e.Result).Execute();
             }
         }
 
@@ -803,8 +800,7 @@ namespace TransmissionRemoteDotnet
 
         private void filesWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            TransmissionCommand command = (TransmissionCommand)e.Result;
-            command.Execute();
+            ((TransmissionCommand)e.Result).Execute();
         }
 
         private void SetHighPriorityHandler(object sender, EventArgs e)
@@ -1039,7 +1035,7 @@ namespace TransmissionRemoteDotnet
                     peersListView.SuspendLayout();
                     foreach (JsonObject peer in t.Peers)
                     {
-                        ListViewItem item = FindPeerItem(peer["address"].ToString(), peer["clientName"].ToString());
+                        ListViewItem item = FindPeerItem(peer["address"].ToString());
                         if (item == null)
                         {
                             item = new ListViewItem((string)peer["address"]); // 0
@@ -1136,8 +1132,7 @@ namespace TransmissionRemoteDotnet
 
         private void resolveHostWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            TransmissionCommand command = (TransmissionCommand)e.Result;
-            command.Execute();
+            ((TransmissionCommand)e.Result).Execute();
         }
 
         private void resolveHostWorker_DoWork(object sender, DoWorkEventArgs e)
@@ -1146,7 +1141,7 @@ namespace TransmissionRemoteDotnet
             e.Result = new ResolveHostCommand((ListViewItem)args[0], (IPAddress)args[1]);
         }
 
-        private ListViewItem FindPeerItem(string address, string clientName)
+        private ListViewItem FindPeerItem(string address)
         {
             lock (peersListView)
             {
@@ -1287,8 +1282,7 @@ namespace TransmissionRemoteDotnet
 
         private void refreshWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            TransmissionCommand command = (TransmissionCommand)e.Result;
-            command.Execute();
+            ((TransmissionCommand)e.Result).Execute();
         }
 
         private void recheckTorrentButton_Click(object sender, EventArgs e)
@@ -1302,6 +1296,12 @@ namespace TransmissionRemoteDotnet
         private void removeAndDeleteButton_Click(object sender, EventArgs e)
         {
             RemoveAndDeleteTorrentsPrompt();
+        }
+
+        private void sessionStatsButton_Click(object sender, EventArgs e)
+        {
+            StatsDialog.Instance.Show();
+            StatsDialog.Instance.BringToFront();
         }
     }
 }

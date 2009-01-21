@@ -22,6 +22,7 @@ namespace TransmissionRemoteDotnet
         public static Dictionary<int, Torrent> torrentIndex = new Dictionary<int, Torrent>();
         public static long updateSerial = 0;
         public static JsonObject sessionData;
+        public static JsonObject sessionStats;
         public static string[] uploadArgs;
         public static int failCount = 0;
         public static double transmissionVersion = SessionCommand.DEFAULT_T_VERSION;

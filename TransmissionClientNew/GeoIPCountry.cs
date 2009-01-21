@@ -26,25 +26,6 @@ using System.Net;
 
 namespace MaxMind
 {
-	/// <summary>
-	/// Allows for looking up a country based on an IP address.  See www.maxmind.com for more details.
-	/// </summary>
-	/// <example>
-	///		static void Main(string[] args)
-	///		{
-	///			using(GeoIPCountry geo = new GeoIPCountry("GeoIP.dat"))
-	///			{
-	///				try
-	///				{
-	///					Console.WriteLine("Country code of IP address 67.15.94.80: " + geo.GetCountryCode("67.15.94.80"));
-	///				}
-	///				catch(Exception ex)
-	///				{
-	///					Console.WriteLine(ex.ToString());
-	///				}
-	///			}
-	///		}
-	/// </example>
 	public sealed class GeoIPCountry : IDisposable
 	{
 		Stream _geodata;
@@ -118,15 +99,6 @@ namespace MaxMind
 			"Jersey","Saint Barthelemy","Saint Martin"
 		};
 
-		//
-		// Constructor
-		//
-
-		/// <summary>
-		/// Initialises a new instance of this class, using an on-disk database.
-		/// </summary>
-		/// <param name="filename">Path to database file.</param>
-		/// <remarks>The file will be closed when this class is disposed.</remarks>
 		public GeoIPCountry(string filename)
 		{
 			FileStream fs = new FileStream(filename, FileMode.Open);
