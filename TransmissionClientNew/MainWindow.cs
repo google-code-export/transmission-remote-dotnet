@@ -370,6 +370,10 @@ namespace TransmissionRemoteDotnet
             {
                 foreach (string file in (string[])e.Argument)
                 {
+                    if (file == null)
+                    {
+                        continue;
+                    }
                     if ((e.Result = CommandFactory.Request(Requests.TorrentAddByFile(file, false))).GetType() == typeof(ErrorCommand))
                     {
                         /* An exception occured, so display it. */

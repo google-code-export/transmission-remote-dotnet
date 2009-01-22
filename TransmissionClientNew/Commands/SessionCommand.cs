@@ -66,7 +66,7 @@ namespace TransmissionRemoteDotnet.Commmands
             if (!Program.Connected)
             {
                 TransmissionDaemonDescriptor descriptor = Program.DaemonDescriptor;
-                Program.Log("(Info) Connected to version", String.Format("Version={0}, Revision={1}, TransmissionRpcVersion={2}, TransmissionRpcVersionMinimum={3}", descriptor.Version, descriptor.Revision, descriptor.RpcVersion, descriptor.RpcVersionMin));
+                Program.Log("(Info) Connected to version", String.Format("Version={0}, Revision={1}, RpcVersion={2}, RpcVersionMinimum={3}", descriptor.Version, descriptor.Revision, descriptor.RpcVersion, descriptor.RpcVersionMin));
                 Program.Connected = true;
                 Program.Form.RefreshIfNotRefreshing();
                 if (Program.UploadArgs != null)
