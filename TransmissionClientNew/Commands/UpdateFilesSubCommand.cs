@@ -63,15 +63,15 @@ namespace TransmissionRemoteDotnet.Commands
             item.SubItems[3].Tag = progress;
             item.SubItems.Add(wanted ? "No" : "Yes");
             item.SubItems.Add(FormatPriority(priority));
-            lock (Program.form.fileItems)
+            lock (Program.Form.FileItems)
             {
-                Program.form.fileItems.Add(item);
+                Program.Form.FileItems.Add(item);
             }
         }
 
         public void Execute()
         {
-            Program.form.filesListView.Items.Add(item);
+            Program.Form.filesListView.Items.Add(item);
         }
 
         private string FormatPriority(JsonNumber n)

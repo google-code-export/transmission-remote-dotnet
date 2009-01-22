@@ -11,14 +11,32 @@ namespace TransmissionRemoteDotnet
 {
     public class Torrent
     {
-        public ListViewItem item;
-        public JsonObject info;
-        public long updateSerial;
+        private ListViewItem item;
+
+        public ListViewItem Item
+        {
+            get { return item; }
+            set { item = value; }
+        }
+        private JsonObject info;
+
+        public JsonObject Info
+        {
+            get { return info; }
+            set { info = value; }
+        }
+        private long updateSerial;
+
+        public long UpdateSerial
+        {
+            get { return updateSerial; }
+            set { updateSerial = value; }
+        }
 
         public Torrent(JsonObject info)
         {
-            MainWindow form = Program.form;
-            this.updateSerial = Program.updateSerial;
+            MainWindow form = Program.Form;
+            this.updateSerial = Program.DaemonDescriptor.UpdateSerial;
             this.info = info;
             item = new ListViewItem(this.Name);
             if (this.HasError)
@@ -42,14 +60,14 @@ namespace TransmissionRemoteDotnet
             item.SubItems.Add(this.Added.ToString());
             item.SubItems.Add(percentage >= 100 || this.StatusCode == ProtocolConstants.STATUS_SEEDING ? "Unknown" : "N/A");
             item.SubItems.Add(GetFirstTracker(true));
-            Program.torrentIndex[this.Id] = this;
+            Program.TorrentIndex[this.Id] = this;
             Add();
         }
 
         private delegate void AddDelegate();
         private void Add()
         {
-            MainWindow form = Program.form;
+            MainWindow form = Program.Form;
             if (form.InvokeRequired)
             {
                 form.Invoke(new AddDelegate(this.Add));
@@ -75,8 +93,8 @@ namespace TransmissionRemoteDotnet
         {
             if (this.HasError)
             {
-                List<ListViewItem> logItems = Program.logItems;
-                if (logItems.Count <= 0 || (logItems.Count > 0 && !Program.logItems[Program.logItems.Count - 1].SubItems[1].Text.Equals(this.Name)))
+                List<ListViewItem> logItems = Program.LogItems;
+                if (logItems.Count <= 0 || (logItems.Count > 0 && !Program.LogItems[Program.LogItems.Count - 1].SubItems[1].Text.Equals(this.Name)))
                 {
                     Program.Log(this.Name, this.ErrorString);
                 }
@@ -85,8 +103,8 @@ namespace TransmissionRemoteDotnet
 
         public void Show()
         {
-            ListView.ListViewItemCollection itemCollection = Program.form.torrentListView.Items;
-            lock (Program.form.torrentListView)
+            ListView.ListViewItemCollection itemCollection = Program.Form.torrentListView.Items;
+            lock (Program.Form.torrentListView)
             {
                 if (!itemCollection.Contains(item))
                 {
@@ -97,7 +115,7 @@ namespace TransmissionRemoteDotnet
 
         public void Remove()
         {
-            MainWindow form = Program.form;
+            MainWindow form = Program.Form;
             int matchingTrackers = 0;
             lock (form.torrentListView)
             {
@@ -107,9 +125,9 @@ namespace TransmissionRemoteDotnet
                     itemCollection.Remove(item);
                 }
             }
-            lock (Program.torrentIndex)
+            lock (Program.TorrentIndex)
             {
-                foreach (KeyValuePair<int, Torrent> pair in Program.torrentIndex)
+                foreach (KeyValuePair<int, Torrent> pair in Program.TorrentIndex)
                 {
                     if (this.item.SubItems[13].Text.Equals(pair.Value.item.SubItems[13].Text))
                     {
@@ -129,7 +147,7 @@ namespace TransmissionRemoteDotnet
         public delegate void UpdateDelegate(JsonObject info);
         public void Update(JsonObject info)
         {
-            MainWindow form = Program.form;
+            MainWindow form = Program.Form;
             if (form.InvokeRequired)
             {
                 form.Invoke(new UpdateDelegate(this.Update), info);
@@ -161,7 +179,7 @@ namespace TransmissionRemoteDotnet
                 item.SubItems[9].Text = this.UploadedString;
                 item.SubItems[10].Text = this.RatioString;
                 item.SubItems[11].Text = this.Added.ToString();
-                this.updateSerial = Program.updateSerial;
+                this.updateSerial = Program.DaemonDescriptor.UpdateSerial;
                 LogError();
             }
         }

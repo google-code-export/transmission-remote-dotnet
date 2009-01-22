@@ -190,6 +190,7 @@
       <DependentUpon>TorrentPropertiesDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="TransmissionCommand.cs" />
+    <Compile Include="TransmissionDaemonDescriptor.cs" />
     <Compile Include="TransmissionWebClient.cs">
       <SubType>Component</SubType>
     </Compile>

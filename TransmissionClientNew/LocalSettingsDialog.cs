@@ -98,7 +98,7 @@ namespace TransmissionRemoteDotnet
             settings.authEnabled = EnableAuthCheckBox.Checked;
             settings.user = UserField.Text;
             settings.pass = PassField.Text;
-            Program.form.notifyIcon.Visible = settings.minToTray = MinToTrayCheckBox.Checked;
+            Program.Form.notifyIcon.Visible = settings.minToTray = MinToTrayCheckBox.Checked;
             settings.proxyEnabled = EnableProxyCombo.SelectedIndex;
             settings.proxyHost = ProxyHostField.Text;
             settings.proxyPort = (int)ProxyPortField.Value;
@@ -117,7 +117,7 @@ namespace TransmissionRemoteDotnet
             if (Program.Connected && (settings.host != originalHost || settings.port != originalPort))
             {
                 Program.Connected = false;
-                Program.form.Connect();
+                Program.Form.Connect();
             }
             this.Close();
         }
@@ -145,7 +145,7 @@ namespace TransmissionRemoteDotnet
             {
                 Program.Connected = false;
             }
-            Program.form.Connect();
+            Program.Form.Connect();
             this.Close();
         }
 
@@ -163,7 +163,7 @@ namespace TransmissionRemoteDotnet
                     LoadCurrentProfile();
                     if (settings.autoConnect)
                     {
-                        Program.form.Connect();
+                        Program.Form.Connect();
                     }
                 }
             }

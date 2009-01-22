@@ -23,8 +23,8 @@ namespace TransmissionRemoteDotnet.Comparers
             ListViewItem ly = (ListViewItem)y;
             Torrent tx = (Torrent)lx.Tag;
             Torrent ty = (Torrent)ly.Tag;
-            long nx = ((JsonNumber)tx.info[jsonKey]).ToInt64();
-            long ny = ((JsonNumber)ty.info[jsonKey]).ToInt64();
+            long nx = ((JsonNumber)tx.Info[jsonKey]).ToInt64();
+            long ny = ((JsonNumber)ty.Info[jsonKey]).ToInt64();
             return nx.CompareTo(ny);
         }
     }

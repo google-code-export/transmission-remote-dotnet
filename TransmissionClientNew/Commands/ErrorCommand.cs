@@ -35,14 +35,14 @@ namespace TransmissionRemoteDotnet.Commmands
         private delegate void ExecuteDelegate();
         public void Execute()
         {
-            MainWindow form = Program.form;
-            if (Program.form.InvokeRequired)
+            MainWindow form = Program.Form;
+            if (Program.Form.InvokeRequired)
             {
                 form.Invoke(new ExecuteDelegate(this.Execute));
             }
             else
             {
-                Program.uploadArgs = null;
+                Program.UploadArgs = null;
                 if (!Program.Connected)
                 {
                     form.toolStripStatusLabel.Text = "Unable to connect (" + this.title + ")";
@@ -52,7 +52,7 @@ namespace TransmissionRemoteDotnet.Commmands
                 {
                     ShowErrorBox(this.title, this.body);
                 }
-                else if (++Program.failCount > LocalSettingsSingleton.Instance.retryLimit)
+                else if (++Program.DaemonDescriptor.FailCount > LocalSettingsSingleton.Instance.retryLimit)
                 {
                     Program.Connected = false;
                     form.toolStripStatusLabel.Text = "Disconnected. Exceeded maximum number of failed requests.";
@@ -60,7 +60,7 @@ namespace TransmissionRemoteDotnet.Commmands
                 }
                 else
                 {
-                    form.toolStripStatusLabel.Text = "Failed request #" + Program.failCount + ": " + this.title;
+                    form.toolStripStatusLabel.Text = "Failed request #" + Program.DaemonDescriptor.FailCount + ": " + this.title;
                 }
                 Program.Log(this.title, this.body);
             }

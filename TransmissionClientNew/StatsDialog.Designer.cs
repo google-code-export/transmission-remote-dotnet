@@ -80,9 +80,9 @@ namespace TransmissionRemoteDotnet
             // CloseFormButton
             // 
             this.CloseFormButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CloseFormButton.Location = new System.Drawing.Point(372, 178);
+            this.CloseFormButton.Location = new System.Drawing.Point(365, 178);
             this.CloseFormButton.Name = "CloseFormButton";
-            this.CloseFormButton.Size = new System.Drawing.Size(75, 23);
+            this.CloseFormButton.Size = new System.Drawing.Size(106, 23);
             this.CloseFormButton.TabIndex = 9;
             this.CloseFormButton.Text = "Close";
             this.CloseFormButton.UseVisualStyleBackColor = true;
@@ -105,17 +105,17 @@ namespace TransmissionRemoteDotnet
             this.groupBox1.Controls.Add(this.filesAddedLabel2);
             this.groupBox1.Controls.Add(this.downloadedBytesLabel2);
             this.groupBox1.Controls.Add(this.uploadedBytesLabel2);
-            this.groupBox1.Location = new System.Drawing.Point(231, 5);
+            this.groupBox1.Location = new System.Drawing.Point(243, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(216, 167);
+            this.groupBox1.Size = new System.Drawing.Size(228, 167);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Global";
+            this.groupBox1.Text = "Cumulative Stats";
             // 
             // secondsActiveValue2
             // 
             this.secondsActiveValue2.AutoSize = true;
-            this.secondsActiveValue2.Location = new System.Drawing.Point(128, 138);
+            this.secondsActiveValue2.Location = new System.Drawing.Point(119, 138);
             this.secondsActiveValue2.Name = "secondsActiveValue2";
             this.secondsActiveValue2.Size = new System.Drawing.Size(58, 13);
             this.secondsActiveValue2.TabIndex = 18;
@@ -124,7 +124,7 @@ namespace TransmissionRemoteDotnet
             // sessionCountValue2
             // 
             this.sessionCountValue2.AutoSize = true;
-            this.sessionCountValue2.Location = new System.Drawing.Point(128, 110);
+            this.sessionCountValue2.Location = new System.Drawing.Point(119, 110);
             this.sessionCountValue2.Name = "sessionCountValue2";
             this.sessionCountValue2.Size = new System.Drawing.Size(58, 13);
             this.sessionCountValue2.TabIndex = 17;
@@ -133,7 +133,7 @@ namespace TransmissionRemoteDotnet
             // filesAddedValue2
             // 
             this.filesAddedValue2.AutoSize = true;
-            this.filesAddedValue2.Location = new System.Drawing.Point(128, 82);
+            this.filesAddedValue2.Location = new System.Drawing.Point(119, 82);
             this.filesAddedValue2.Name = "filesAddedValue2";
             this.filesAddedValue2.Size = new System.Drawing.Size(58, 13);
             this.filesAddedValue2.TabIndex = 16;
@@ -142,7 +142,7 @@ namespace TransmissionRemoteDotnet
             // uploadedBytesValue2
             // 
             this.uploadedBytesValue2.AutoSize = true;
-            this.uploadedBytesValue2.Location = new System.Drawing.Point(128, 53);
+            this.uploadedBytesValue2.Location = new System.Drawing.Point(119, 53);
             this.uploadedBytesValue2.Name = "uploadedBytesValue2";
             this.uploadedBytesValue2.Size = new System.Drawing.Size(58, 13);
             this.uploadedBytesValue2.TabIndex = 15;
@@ -151,7 +151,7 @@ namespace TransmissionRemoteDotnet
             // downloadedBytesValue2
             // 
             this.downloadedBytesValue2.AutoSize = true;
-            this.downloadedBytesValue2.Location = new System.Drawing.Point(128, 25);
+            this.downloadedBytesValue2.Location = new System.Drawing.Point(119, 25);
             this.downloadedBytesValue2.Name = "downloadedBytesValue2";
             this.downloadedBytesValue2.Size = new System.Drawing.Size(58, 13);
             this.downloadedBytesValue2.TabIndex = 14;
@@ -203,15 +203,15 @@ namespace TransmissionRemoteDotnet
             this.groupBox2.Controls.Add(this.uploadedBytesLabel1);
             this.groupBox2.Location = new System.Drawing.Point(9, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(216, 167);
+            this.groupBox2.Size = new System.Drawing.Size(228, 167);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Current Session";
+            this.groupBox2.Text = "Current Session Stats";
             // 
             // secondsActiveValue1
             // 
             this.secondsActiveValue1.AutoSize = true;
-            this.secondsActiveValue1.Location = new System.Drawing.Point(128, 138);
+            this.secondsActiveValue1.Location = new System.Drawing.Point(119, 138);
             this.secondsActiveValue1.Name = "secondsActiveValue1";
             this.secondsActiveValue1.Size = new System.Drawing.Size(58, 13);
             this.secondsActiveValue1.TabIndex = 18;
@@ -220,7 +220,7 @@ namespace TransmissionRemoteDotnet
             // sessionCountValue1
             // 
             this.sessionCountValue1.AutoSize = true;
-            this.sessionCountValue1.Location = new System.Drawing.Point(128, 110);
+            this.sessionCountValue1.Location = new System.Drawing.Point(119, 110);
             this.sessionCountValue1.Name = "sessionCountValue1";
             this.sessionCountValue1.Size = new System.Drawing.Size(58, 13);
             this.sessionCountValue1.TabIndex = 17;
@@ -229,7 +229,7 @@ namespace TransmissionRemoteDotnet
             // filesAddedValue1
             // 
             this.filesAddedValue1.AutoSize = true;
-            this.filesAddedValue1.Location = new System.Drawing.Point(128, 82);
+            this.filesAddedValue1.Location = new System.Drawing.Point(119, 82);
             this.filesAddedValue1.Name = "filesAddedValue1";
             this.filesAddedValue1.Size = new System.Drawing.Size(58, 13);
             this.filesAddedValue1.TabIndex = 16;
@@ -238,7 +238,7 @@ namespace TransmissionRemoteDotnet
             // uploadedBytesValue1
             // 
             this.uploadedBytesValue1.AutoSize = true;
-            this.uploadedBytesValue1.Location = new System.Drawing.Point(128, 53);
+            this.uploadedBytesValue1.Location = new System.Drawing.Point(119, 53);
             this.uploadedBytesValue1.Name = "uploadedBytesValue1";
             this.uploadedBytesValue1.Size = new System.Drawing.Size(58, 13);
             this.uploadedBytesValue1.TabIndex = 15;
@@ -247,7 +247,7 @@ namespace TransmissionRemoteDotnet
             // downloadedBytesValue1
             // 
             this.downloadedBytesValue1.AutoSize = true;
-            this.downloadedBytesValue1.Location = new System.Drawing.Point(128, 25);
+            this.downloadedBytesValue1.Location = new System.Drawing.Point(119, 25);
             this.downloadedBytesValue1.Name = "downloadedBytesValue1";
             this.downloadedBytesValue1.Size = new System.Drawing.Size(58, 13);
             this.downloadedBytesValue1.TabIndex = 14;
@@ -304,7 +304,7 @@ namespace TransmissionRemoteDotnet
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CloseFormButton;
-            this.ClientSize = new System.Drawing.Size(458, 211);
+            this.ClientSize = new System.Drawing.Size(481, 208);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CloseFormButton);

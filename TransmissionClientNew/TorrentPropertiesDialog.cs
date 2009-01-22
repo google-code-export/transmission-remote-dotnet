@@ -33,7 +33,7 @@ namespace TransmissionRemoteDotnet
             arguments.Put("speed-limit-down", downloadLimitField.Value);
             request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
             request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
-            Program.form.CreateActionWorker().RunWorkerAsync(request);
+            Program.Form.CreateActionWorker().RunWorkerAsync(request);
             this.Close();
         }
 

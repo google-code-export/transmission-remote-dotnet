@@ -349,8 +349,8 @@ namespace TransmissionRemoteDotnet
                     profileKey.Close();
                 }
                 RefreshUrlCache();
-                Program.form.refreshTimer.Interval = refreshRate * 1000;
-                Program.form.filesTimer.Interval = refreshRate * 1000 * FILES_REFRESH_MULTIPLICANT;
+                Program.Form.refreshTimer.Interval = refreshRate * 1000;
+                Program.Form.filesTimer.Interval = refreshRate * 1000 * FILES_REFRESH_MULTIPLICANT;
             }
             catch (Exception ex)
             {

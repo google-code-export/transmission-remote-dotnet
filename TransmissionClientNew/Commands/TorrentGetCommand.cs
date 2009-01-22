@@ -14,13 +14,13 @@ namespace TransmissionRemoteDotnet.Commmands
         public TorrentGetCommand(JsonObject response)
         {
             this.response = response;
-            Program.ResetFailCount();
+            Program.DaemonDescriptor.ResetFailCount();
         }
 
         private delegate void ExecuteDelegate();
         public void Execute()
         {
-            MainWindow form = Program.form;
+            MainWindow form = Program.Form;
             if (form.InvokeRequired)
             {
                 form.Invoke(new ExecuteDelegate(this.Execute));
@@ -40,7 +40,7 @@ namespace TransmissionRemoteDotnet.Commmands
                 long totalDownloadedSize = 0;
                 JsonObject arguments = (JsonObject)response[ProtocolConstants.KEY_ARGUMENTS];
                 JsonArray torrents = (JsonArray)arguments[ProtocolConstants.KEY_TORRENTS];
-                Program.updateSerial++;
+                Program.DaemonDescriptor.UpdateSerial++;
                 form.SuspendTorrentListView();
                 foreach (JsonObject torrent in torrents)
                 {
@@ -59,15 +59,15 @@ namespace TransmissionRemoteDotnet.Commmands
                     {
                         totalSeeding++;
                     }
-                    lock (Program.torrentIndex)
+                    lock (Program.TorrentIndex)
                     {
-                        if (Program.torrentIndex.ContainsKey(id))
+                        if (Program.TorrentIndex.ContainsKey(id))
                         {
-                            Program.torrentIndex[id].Update(torrent);
+                            Program.TorrentIndex[id].Update(torrent);
                         }
                         else
                         {
-                            Program.torrentIndex[id] = new Torrent(torrent);
+                            Program.TorrentIndex[id] = new Torrent(torrent);
                         }
                     }
                 }
@@ -86,12 +86,12 @@ namespace TransmissionRemoteDotnet.Commmands
                     }
                 ));
                 Queue<KeyValuePair<int, Torrent>> removeQueue = null;
-                lock (Program.torrentIndex)
+                lock (Program.TorrentIndex)
                 {
-                    foreach (KeyValuePair<int, Torrent> pair in Program.torrentIndex)
+                    foreach (KeyValuePair<int, Torrent> pair in Program.TorrentIndex)
                     {
                         Torrent t = pair.Value;
-                        if (t.updateSerial != Program.updateSerial)
+                        if (t.UpdateSerial != Program.DaemonDescriptor.UpdateSerial)
                         {
                             if (removeQueue == null)
                             {
@@ -104,7 +104,7 @@ namespace TransmissionRemoteDotnet.Commmands
                     {
                         foreach (KeyValuePair<int, Torrent> pair in removeQueue)
                         {
-                            Program.torrentIndex.Remove(pair.Key);
+                            Program.TorrentIndex.Remove(pair.Key);
                             pair.Value.Remove();
                         }
                     }

@@ -44,7 +44,7 @@ namespace TransmissionRemoteDotnet
         {
             try
             {
-                JsonObject settings = (JsonObject)Program.sessionData[ProtocolConstants.KEY_ARGUMENTS];
+                JsonObject settings = (JsonObject)Program.DaemonDescriptor.SessionData;
                 DownloadToField.Text = (string)settings["download-dir"];
                 LimitDownloadValue.Enabled = LimitDownloadCheckBox.Checked = ((JsonNumber)settings["speed-limit-down-enabled"]).ToBoolean();
                 SetLimitField(((JsonNumber)settings["speed-limit-down"]).ToInt32(), LimitDownloadValue);
@@ -71,7 +71,7 @@ namespace TransmissionRemoteDotnet
 
         private void SetLimitField(int limit, NumericUpDown field)
         {
-            if (Program.transmissionVersion < 1.40)
+            if (Program.DaemonDescriptor.Version < 1.40)
             {
                 field.Value = limit >= 1024 && limit <= field.Maximum ? limit / 1024 : 0;
             }
@@ -131,7 +131,7 @@ namespace TransmissionRemoteDotnet
         private void SettingsWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             TransmissionCommand command = (TransmissionCommand)e.Result;
-            Program.form.CreateActionWorker().RunWorkerAsync(Requests.SessionGet());
+            Program.Form.CreateActionWorker().RunWorkerAsync(Requests.SessionGet());
             command.Execute();
         }
     }

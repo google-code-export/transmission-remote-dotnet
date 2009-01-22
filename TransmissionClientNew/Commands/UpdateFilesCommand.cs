@@ -15,8 +15,8 @@ namespace TransmissionRemoteDotnet.Commmands
 
         public UpdateFilesCommand(JsonObject response)
         {
-            Program.ResetFailCount();
-            MainWindow form = Program.form;
+            Program.DaemonDescriptor.ResetFailCount();
+            MainWindow form = Program.Form;
             JsonObject arguments = (JsonObject)response[ProtocolConstants.KEY_ARGUMENTS];
             JsonArray torrents = (JsonArray)arguments[ProtocolConstants.KEY_TORRENTS];
             if (torrents.Count != 1)
@@ -63,11 +63,11 @@ namespace TransmissionRemoteDotnet.Commmands
                 }
                 else
                 {
-                    lock (form.fileItems)
+                    lock (form.FileItems)
                     {
-                        if (i < form.fileItems.Count)
+                        if (i < form.FileItems.Count)
                         {
-                            ListViewItem item = form.fileItems[i];
+                            ListViewItem item = form.FileItems[i];
                             UpdateFilesUpdateSubCommand subCommand = new UpdateFilesUpdateSubCommand(item, bytesCompleted);
                             uiUpdateBatch.Add((TransmissionCommand)subCommand);
                         }
@@ -82,7 +82,7 @@ namespace TransmissionRemoteDotnet.Commmands
             {
                 return;
             }
-            MainWindow form = Program.form;
+            MainWindow form = Program.Form;
             lock (form.filesListView)
             {
                 form.filesListView.SuspendLayout();
@@ -94,11 +94,8 @@ namespace TransmissionRemoteDotnet.Commmands
                 {
                     form.filesListView.Enabled = true;
                 }
-                if (form.filesListView.SelectedItems.Count < 1)
-                {
-                    form.filesListView.Sort();
-                    Toolbox.StripeListView(form.filesListView);
-                }
+                form.filesListView.Sort();
+                Toolbox.StripeListView(form.filesListView);
                 form.filesListView.ResumeLayout();
             }
             form.filesTimer.Enabled = true;

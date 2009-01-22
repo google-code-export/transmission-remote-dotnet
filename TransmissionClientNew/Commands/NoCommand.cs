@@ -9,7 +9,7 @@ namespace TransmissionRemoteDotnet.Commmands
     {
         public NoCommand()
         {
-            Program.ResetFailCount();
+            Program.DaemonDescriptor.ResetFailCount();
         }
 
         public void Execute()

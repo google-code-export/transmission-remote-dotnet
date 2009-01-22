@@ -9,17 +9,18 @@ namespace TransmissionRemoteDotnet.Commmands
 {
     class SessionStatsCommand : TransmissionCommand
     {
+        private JsonObject stats;
+
         public SessionStatsCommand(JsonObject response)
         {
-            Program.sessionStats = (JsonObject)response[ProtocolConstants.KEY_ARGUMENTS];
-            Program.ResetFailCount();
+            this.stats = (JsonObject)response[ProtocolConstants.KEY_ARGUMENTS];
+            Program.DaemonDescriptor.ResetFailCount();
         }
 
         public void Execute()
         {
-            /*
-             * there is a bug: http://trac.transmissionbt.com/ticket/1655 */
-            //JsonObject stats = (JsonObject)arguments[ProtocolConstants.METHOD_SESSIONSTATS];
+            StatsDialog.StaticUpdateStats(this.stats);
+            //there is a bug: http://trac.transmissionbt.com/ticket/1655
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TransmissionRemoteDotnet.Commmands
     {
         public const double DEFAULT_T_VERSION = 1.41;
 
-        private void ParseVersionAndRevisionResponse(string str)
+        private void ParseVersionAndRevisionResponse(string str, TransmissionDaemonDescriptor descriptor)
         {
             try
             {
@@ -20,24 +20,18 @@ namespace TransmissionRemoteDotnet.Commmands
                 {
                     if ((str[i] < (int)'0' || str[i] > (int)'9') && str[i] != (int)'.')
                     {
-                        Program.transmissionVersion = Double.Parse(str.Substring(0, i));
+                        descriptor.Version = Double.Parse(str.Substring(0, i));
                         break;
                     }
                 }
             }
-            catch
-            {
-                Program.transmissionVersion = DEFAULT_T_VERSION;
-            }
+            catch { }
             try
             {
                 int spaceIndex = str.IndexOf(' ');
-                Program.transmissionRevision = Int32.Parse(str.Substring(spaceIndex + 2, str.Length - spaceIndex - 3));
+                descriptor.Revision = Int32.Parse(str.Substring(spaceIndex + 2, str.Length - spaceIndex - 3));
             }
-            catch
-            {
-                Program.transmissionRevision = -1;
-            }
+            catch { }
         }
 
         public SessionCommand(JsonObject response, WebHeaderCollection headers)
@@ -45,34 +39,40 @@ namespace TransmissionRemoteDotnet.Commmands
             /* I'm not exactly sure if the version numbers here are correct
              * but for the purposes of what it's used for these heuristics
              * work fine at the moment. */
+            TransmissionDaemonDescriptor descriptor = new TransmissionDaemonDescriptor();
             JsonObject arguments = (JsonObject)response["arguments"];
             if (arguments.Contains("version"))
             {
-                ParseVersionAndRevisionResponse((string)arguments["version"]);
+                ParseVersionAndRevisionResponse((string)arguments["version"], descriptor);
             }
             else if (headers.Get("Server") != null)
             {
-                Program.transmissionVersion = 1.40;
+                descriptor.Version = 1.40;
             }
             else
             {
-                Program.transmissionVersion = 1.39;
+                descriptor.Version = 1.39;
             }
-            Program.sessionData = response;
-            Program.ResetFailCount();
+            if (arguments.Contains("rpc-version"))
+                descriptor.RpcVersion = ((JsonNumber)arguments["rpc-version"]).ToInt32();
+            if (arguments.Contains("rpc-version-minimum"))
+                descriptor.RpcVersionMin = ((JsonNumber)arguments["rpc-version"]).ToInt32();
+            descriptor.SessionData = (JsonObject)response[ProtocolConstants.KEY_ARGUMENTS];
+            Program.DaemonDescriptor = descriptor;
         }
 
         public void Execute()
         {
             if (!Program.Connected)
             {
-                Program.Log("(Info) Connected to version", String.Format("Version={0}, Revision={1}", Program.transmissionVersion, Program.transmissionRevision));
+                TransmissionDaemonDescriptor descriptor = Program.DaemonDescriptor;
+                Program.Log("(Info) Connected to version", String.Format("Version={0}, Revision={1}, TransmissionRpcVersion={2}, TransmissionRpcVersionMinimum={3}", descriptor.Version, descriptor.Revision, descriptor.RpcVersion, descriptor.RpcVersionMin));
                 Program.Connected = true;
-                Program.form.RefreshIfNotRefreshing();
-                if (Program.uploadArgs != null)
+                Program.Form.RefreshIfNotRefreshing();
+                if (Program.UploadArgs != null)
                 {
-                    Program.form.CreateUploadWorker().RunWorkerAsync(Program.uploadArgs);
-                    Program.uploadArgs = null;
+                    Program.Form.CreateUploadWorker().RunWorkerAsync(Program.UploadArgs);
+                    Program.UploadArgs = null;
                 }
             }
         }

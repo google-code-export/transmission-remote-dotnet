@@ -36,9 +36,9 @@ namespace TransmissionRemoteDotnet
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Program.transmissionRevision >= 7744)
+            if (Program.DaemonDescriptor.Revision >= 7744)
             {
-                Program.form.CreateActionWorker().RunWorkerAsync(Requests.TorrentAddByUrl(this.textBox1.Text));
+                Program.Form.CreateActionWorker().RunWorkerAsync(Requests.TorrentAddByUrl(this.textBox1.Text));
                 this.Close();
             }
             else
@@ -100,7 +100,7 @@ namespace TransmissionRemoteDotnet
                 }
                 webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(webClient_DownloadProgressChanged);
                 webClient.DownloadFile(this.currentUri, target);
-                Program.form.CreateActionWorker().RunWorkerAsync(Requests.TorrentAddByFile(target, true));
+                Program.Form.CreateActionWorker().RunWorkerAsync(Requests.TorrentAddByFile(target, true));
             }
             catch (Exception ex)
             {
@@ -130,7 +130,7 @@ namespace TransmissionRemoteDotnet
                     ResetToolStrip();
                     break;
                 case DownloadAndUploadTorrentState.Complete:
-                    Program.form.RefreshIfNotRefreshing();
+                    Program.Form.RefreshIfNotRefreshing();
                     this.Close();
                     return;
             }

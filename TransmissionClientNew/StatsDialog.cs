@@ -40,12 +40,20 @@ namespace TransmissionRemoteDotnet
             this.Close();
         }
 
-        public void UpdateStats()
+        public static void StaticUpdateStats(JsonObject stats)
+        {
+            if (instance != null && !instance.IsDisposed)
+            {
+                instance.UpdateStats(stats);
+            }
+        }
+
+        public void UpdateStats(JsonObject stats)
         {
             try
             {
-                JsonObject sessionstats = (JsonObject)Program.sessionStats["current-stats"];
-                JsonObject cumulativestats = (JsonObject)Program.sessionStats["cumulative-stats"];
+                JsonObject sessionstats = (JsonObject)stats["current-stats"];
+                JsonObject cumulativestats = (JsonObject)stats["cumulative-stats"];
                 TimeSpan ts = TimeSpan.FromSeconds(((JsonNumber)sessionstats["secondsActive"]).ToInt32());
                 downloadedBytesValue1.Text = Toolbox.GetFileSize(((JsonNumber)sessionstats["downloadedBytes"]).ToInt64());
                 uploadedBytesValue1.Text = Toolbox.GetFileSize(((JsonNumber)sessionstats["uploadedBytes"]).ToInt64());
@@ -57,7 +65,7 @@ namespace TransmissionRemoteDotnet
                 uploadedBytesValue2.Text = Toolbox.GetFileSize(((JsonNumber)cumulativestats["uploadedBytes"]).ToInt64());
                 filesAddedValue2.Text = ((JsonNumber)cumulativestats["filesAdded"]).ToString();
                 sessionCountValue2.Text = ((JsonNumber)cumulativestats["sessionCount"]).ToString();
-                secondsActiveValue2.Text = Toolbox.FormatTimespanLong(ts);
+                secondsActiveValue2.Text = ts.Ticks < 0 ? "Unknown (negative)" : Toolbox.FormatTimespanLong(ts);
             }
             catch (Exception ex)
             {
@@ -68,12 +76,12 @@ namespace TransmissionRemoteDotnet
 
         private void StatsWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            CommandFactory.Request((JsonObject)e.Argument);
+            e.Result = CommandFactory.Request((JsonObject)e.Argument);
         }
 
         private void StatsWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            UpdateStats();
+            ((TransmissionCommand)e.Result).Execute();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -87,7 +95,6 @@ namespace TransmissionRemoteDotnet
         private void StatsDialog_FormClosing(object sender, FormClosingEventArgs e)
         {
             timer1.Enabled = false;
-            Program.sessionStats = null;
         }
 
         private void StatsDialog_Load(object sender, EventArgs e)

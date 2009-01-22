@@ -40,11 +40,11 @@ namespace TransmissionRemoteDotnet
 
         private void ErrorLogWindow_Load(object sender, EventArgs e)
         {
-            lock (Program.logItems)
+            lock (Program.LogItems)
             {
                 lock (errorListView)
                 {
-                    foreach (ListViewItem item in Program.logItems)
+                    foreach (ListViewItem item in Program.LogItems)
                     {
                         errorListView.Items.Add((ListViewItem)item.Clone());
                     }
@@ -63,9 +63,9 @@ namespace TransmissionRemoteDotnet
             {
                 errorListView.Items.Clear();
             }
-            lock (Program.logItems)
+            lock (Program.LogItems)
             {
-                Program.logItems.Clear();
+                Program.LogItems.Clear();
             }
         }
 
@@ -77,11 +77,11 @@ namespace TransmissionRemoteDotnet
         private void OnError()
         {
             errorListView.SuspendLayout();
-            lock (Program.logItems)
+            lock (Program.LogItems)
             {
                 lock (errorListView)
                 {
-                    List<ListViewItem> logItems = Program.logItems;
+                    List<ListViewItem> logItems = Program.LogItems;
                     if (logItems.Count > errorListView.Items.Count)
                     {
                         for (int i = errorListView.Items.Count; i < logItems.Count; i++)

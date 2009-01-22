@@ -18,16 +18,41 @@ namespace TransmissionRemoteDotnet
         public static event OnErrorDelegate onError;
 
         private static Boolean connected = false;
-        public static MainWindow form;
-        public static Dictionary<int, Torrent> torrentIndex = new Dictionary<int, Torrent>();
-        public static long updateSerial = 0;
-        public static JsonObject sessionData;
-        public static JsonObject sessionStats;
-        public static string[] uploadArgs;
-        public static int failCount = 0;
-        public static double transmissionVersion = SessionCommand.DEFAULT_T_VERSION;
-        public static int transmissionRevision = -1;
-        public static List<ListViewItem> logItems = new List<ListViewItem>();
+        private static MainWindow form;
+
+        public static MainWindow Form
+        {
+            get { return Program.form; }
+            set { Program.form = value; }
+        }
+        private static Dictionary<int, Torrent> torrentIndex = new Dictionary<int, Torrent>();
+
+        public static Dictionary<int, Torrent> TorrentIndex
+        {
+            get { return Program.torrentIndex; }
+            set { Program.torrentIndex = value; }
+        }
+        private static TransmissionDaemonDescriptor daemonDescriptor = new TransmissionDaemonDescriptor();
+
+        public static TransmissionDaemonDescriptor DaemonDescriptor
+        {
+            get { return Program.daemonDescriptor; }
+            set { Program.daemonDescriptor = value; }
+        }
+        private static List<ListViewItem> logItems = new List<ListViewItem>();
+
+        public static List<ListViewItem> LogItems
+        {
+            get { return Program.logItems; }
+            set { Program.logItems = value; }
+        }
+        private static string[] uploadArgs;
+
+        public static string[] UploadArgs
+        {
+            get { return Program.uploadArgs; }
+            set { Program.uploadArgs = value; }
+        }
 
         [STAThread]
         static void Main(string[] args)
@@ -91,11 +116,6 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        public static void ResetFailCount()
-        {
-            failCount = 0;
-        }
-
         public static void RaisePostUpdateEvent()
         {
             if (onTorrentsUpdated != null)
@@ -109,11 +129,7 @@ namespace TransmissionRemoteDotnet
             set
             {
                 connected = value;
-                if (connected)
-                {
-                    updateSerial = 0;
-                }
-                else
+                if (!connected)
                 {
                     lock (torrentIndex)
                     {
