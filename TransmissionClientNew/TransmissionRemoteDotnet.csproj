@@ -96,6 +96,7 @@
       <DependentUpon>ErrorLogWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Comparers\FilesListViewColumnSorter.cs" />
+    <Compile Include="ErrorsListViewColumnSorter.cs" />
     <Compile Include="GeoIPCountry.cs" />
     <Compile Include="GListBox.cs">
       <SubType>Component</SubType>

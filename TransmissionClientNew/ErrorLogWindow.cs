@@ -12,6 +12,8 @@ namespace TransmissionRemoteDotnet
 {
     public partial class ErrorLogWindow : Form
     {
+        private ErrorsListViewColumnSorter lvwColumnSorter;
+
         private static ErrorLogWindow instance = null;
         private static readonly object padlock = new object();
 
@@ -36,10 +38,12 @@ namespace TransmissionRemoteDotnet
         {
             Program.onError += onErrorDelegate = new OnErrorDelegate(this.OnError);
             InitializeComponent();
+            errorListView.ListViewItemSorter = lvwColumnSorter = new ErrorsListViewColumnSorter();
         }
 
         private void ErrorLogWindow_Load(object sender, EventArgs e)
         {
+            errorListView.SuspendLayout();
             lock (Program.LogItems)
             {
                 lock (errorListView)
@@ -50,6 +54,9 @@ namespace TransmissionRemoteDotnet
                     }
                 }
             }
+            errorListView.Sort();
+            Toolbox.StripeListView(errorListView);
+            errorListView.ResumeLayout();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -91,6 +98,8 @@ namespace TransmissionRemoteDotnet
                     }
                 }
             }
+            errorListView.Sort();
+            Toolbox.StripeListView(errorListView);
             errorListView.ResumeLayout();
         }
 
@@ -103,6 +112,21 @@ namespace TransmissionRemoteDotnet
                     Clipboard.SetText(errorListView.SelectedItems[0].SubItems[2].Text);
                 }
             }
+        }
+
+        private void errorListView_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            if (e.Column == lvwColumnSorter.SortColumn)
+            {
+                lvwColumnSorter.Order = (lvwColumnSorter.Order == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending);
+            }
+            else
+            {
+                lvwColumnSorter.SortColumn = e.Column;
+                lvwColumnSorter.Order = SortOrder.Ascending;
+            }
+            this.errorListView.Sort();
+            Toolbox.StripeListView(errorListView);
         }
     }
 }

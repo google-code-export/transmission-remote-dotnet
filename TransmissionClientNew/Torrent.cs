@@ -429,7 +429,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ((JsonNumber)info["peersSendingToUs"]).ToInt32();
+                return ((JsonNumber)info[ProtocolConstants.FIELD_PEERSSENDINGTOUS]).ToInt32();
             }
         }
 
@@ -437,7 +437,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ((JsonNumber)info["peersGettingFromUs"]).ToInt32();
+                return ((JsonNumber)info[ProtocolConstants.FIELD_PEERSGETTINGFROMUS]).ToInt32();
             }
         }
 

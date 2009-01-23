@@ -154,10 +154,12 @@ namespace TransmissionRemoteDotnet
                 ProtocolConstants.FIELD_NAME,
                 ProtocolConstants.FIELD_ERRORSTRING,
                 ProtocolConstants.FIELD_PEERS,
+                ProtocolConstants.FIELD_PEERSGETTINGFROMUS,
+                ProtocolConstants.FIELD_PEERSSENDINGTOUS,
                 "sizeWhenDone","swarmSpeed", "isPrivate",
                 "comment","creator","dateCreated",
                 "hashString", "error","trackers",
-                "peersGettingFromUs","peersKnown","peersSendingToUs"});
+                "peersKnown"});
             arguments.Put(ProtocolConstants.KEY_FIELDS, fields);
             request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
             return request;
