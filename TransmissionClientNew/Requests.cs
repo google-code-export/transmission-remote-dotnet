@@ -89,7 +89,7 @@ namespace TransmissionRemoteDotnet
             inFile.Close();
             JsonObject request = new JsonObject();
             JsonObject arguments = new JsonObject();
-            arguments.Put(ProtocolConstants.FIELD_METAINFO, Convert.ToBase64String(binaryData, 0, binaryData.Length) + "\n");
+            arguments.Put(ProtocolConstants.FIELD_METAINFO, Convert.ToBase64String(binaryData, 0, binaryData.Length));
             arguments.Put(ProtocolConstants.FIELD_PAUSED, LocalSettingsSingleton.Instance.startPaused);
             request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
             request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTADD);
