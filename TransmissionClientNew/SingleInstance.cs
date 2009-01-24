@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
+#if !MONO
 using System.IO.Pipes;
+#endif
 using System.Threading;
 using System.Collections.Generic;
 
@@ -42,9 +44,11 @@ namespace TransmissionRemoteDotnet
         /// <returns>Return true if the operation succeded, false otherwise.</returns>
         public Boolean PassArgumentsToFirstInstance(String[] arguments)
         {
+            #if MONO
+            throw new InvalidOperationException("This is the first instance.");
+            #else
             if (IsFirstInstance)
                 throw new InvalidOperationException("This is the first instance.");
-
             try
             {
                 using (NamedPipeClientStream client = new NamedPipeClientStream(identifier.ToString()))
@@ -63,6 +67,7 @@ namespace TransmissionRemoteDotnet
             { } //Pipe was broken
 
             return false;
+#endif
         }
 
         /// <summary>
@@ -81,6 +86,7 @@ namespace TransmissionRemoteDotnet
         /// <param name="state">State object required by WaitCallback delegate.</param>
         private void ListenForArguments(Object state)
         {
+            #if !MONO
             try
             {
                 using (NamedPipeServerStream server = new NamedPipeServerStream(identifier.ToString()))
@@ -100,6 +106,7 @@ namespace TransmissionRemoteDotnet
             {
                 ListenForArguments(null);
             }
+            #endif
         }
 
         /// <summary>

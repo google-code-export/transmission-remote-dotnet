@@ -10,8 +10,6 @@ namespace TransmissionRemoteDotnet.Commmands
 {
     public class SessionCommand : TransmissionCommand
     {
-        public const double DEFAULT_T_VERSION = 1.41;
-
         private void ParseVersionAndRevisionResponse(string str, TransmissionDaemonDescriptor descriptor)
         {
             try
