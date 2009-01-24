@@ -201,13 +201,13 @@ namespace TransmissionRemoteDotnet
                 this.toolStripStatusLabel.Text = "Disconnected.";
                 this.Text = MainWindow.DEFAULT_WINDOW_TITLE;
                 this.torrentAndTabsSplitContainer.Panel2Collapsed = this.mainVerticalSplitContainer.Panel1Collapsed = true;
-                if (this.stateListBox.Items.Count > 7)
+                if (this.stateListBox.Items.Count > 6)
                 {
                     lock (this.stateListBox)
                     {
-                        for (int i = 0; i < this.stateListBox.Items.Count - 6; i++)
+                        for (int i = this.stateListBox.Items.Count-1; i > 6; i--)
                         {
-                            stateListBox.Items.RemoveAt(stateListBox.Items.Count - 1);
+                            stateListBox.Items.RemoveAt(i);
                         }
                     }
                 }
