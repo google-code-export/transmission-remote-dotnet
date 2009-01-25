@@ -562,18 +562,14 @@ namespace TransmissionRemoteDotnet
                 }
                 if (one)
                 {
+                    filesListView.Enabled = false;
+                    peersListView.Tag = 0;
                     Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
-                    if (torrentAndTabsSplitContainer.Tag == null || (int)torrentAndTabsSplitContainer.Tag != t.Id)
-                    {
-                        filesListView.Enabled = false;
-                        peersListView.Tag = 0;
-                        CreateActionWorker().RunWorkerAsync(Requests.FilesAndPriorities(t.Id));
-                        UpdateInfoPanel(true);
-                        torrentAndTabsSplitContainer.Panel2Collapsed = !one;
-                        refreshElapsedTimer.Enabled = filesTimer.Enabled = one;
-                    }
+                    CreateActionWorker().RunWorkerAsync(Requests.FilesAndPriorities(t.Id));
                 }
-                torrentAndTabsSplitContainer.Tag = one ? ((Torrent)torrentListView.SelectedItems[0].Tag).Id : -1;
+                UpdateInfoPanel(true);
+                torrentAndTabsSplitContainer.Panel2Collapsed = !one;
+                refreshElapsedTimer.Enabled = filesTimer.Enabled = one;
             }
         }
 
