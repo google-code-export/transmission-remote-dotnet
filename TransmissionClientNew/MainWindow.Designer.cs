@@ -1294,11 +1294,11 @@
             // 
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.MidnightBlue;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.Green;
-            this.label20.Location = new System.Drawing.Point(-2, 140);
+            this.label20.Location = new System.Drawing.Point(1, 84);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(54, 20);
+            this.label20.Size = new System.Drawing.Size(51, 18);
             this.label20.TabIndex = 1;
             this.label20.Text = "Down";
             // 
@@ -1306,11 +1306,11 @@
             // 
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.MidnightBlue;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Yellow;
-            this.label19.Location = new System.Drawing.Point(20, 110);
+            this.label19.Location = new System.Drawing.Point(23, 54);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(32, 20);
+            this.label19.Size = new System.Drawing.Size(29, 18);
             this.label19.TabIndex = 1;
             this.label19.Text = "Up";
             // 
@@ -1465,7 +1465,7 @@
             this.removeAndDeleteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.removeAndDeleteButton.Name = "removeAndDeleteButton";
             this.removeAndDeleteButton.Size = new System.Drawing.Size(36, 36);
-            this.removeAndDeleteButton.Text = "Remove and delete";
+            this.removeAndDeleteButton.Text = "Remove and delete torrent(s)";
             this.removeAndDeleteButton.Visible = false;
             this.removeAndDeleteButton.Click += new System.EventHandler(this.removeAndDeleteButton_Click);
             // 

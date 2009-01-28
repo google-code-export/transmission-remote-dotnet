@@ -335,7 +335,7 @@ namespace TransmissionRemoteDotnet
 
         private string GetETA(bool small)
         {
-            if (this.Percentage >= 100)
+            if (this.Percentage >= 100 || this.StatusCode == ProtocolConstants.STATUS_SEEDING)
             {
                 return "N/A";
             }
