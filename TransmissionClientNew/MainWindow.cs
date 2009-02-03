@@ -540,40 +540,39 @@ namespace TransmissionRemoteDotnet
         {
             lock (torrentListView)
             {
-                int count = torrentListView.SelectedItems.Count;
-                bool oneOrMore = count > 0;
-                bool one = count == 1;
+                bool oneOrMore = torrentListView.SelectedItems.Count > 0;
+                bool one = torrentListView.SelectedItems.Count == 1;
                 torrentListView.ContextMenu = oneOrMore ? this.torrentSelectionMenu : this.noTorrentSelectionMenu;
                 startTorrentButton.Enabled = pauseTorrentButton.Enabled
                     = removeTorrentButton.Enabled = recheckTorrentButton.Enabled
                     = removeAndDeleteButton.Enabled
                     = oneOrMore;
-                lock (filesListView)
-                {
-                    filesListView.Items.Clear();
-                }
-                lock (fileItems)
-                {
-                    fileItems.Clear();
-                }
-                lock (peersListView)
-                {
-                    peersListView.Items.Clear();
-                }
-                lock (trackersListView)
-                {
-                    trackersListView.Items.Clear();
-                }
                 if (one)
                 {
-                    filesListView.Enabled = false;
                     peersListView.Tag = 0;
+                    UpdateInfoPanel(true);
+                    filesListView.Enabled = false;
                     Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
                     CreateActionWorker().RunWorkerAsync(Requests.FilesAndPriorities(t.Id));
                 }
-                UpdateInfoPanel(true);
                 torrentAndTabsSplitContainer.Panel2Collapsed = !one;
                 refreshElapsedTimer.Enabled = filesTimer.Enabled = one;
+            }
+            lock (filesListView)
+            {
+                filesListView.Items.Clear();
+            }
+            lock (fileItems)
+            {
+                fileItems.Clear();
+            }
+            lock (peersListView)
+            {
+                peersListView.Items.Clear();
+            }
+            lock (trackersListView)
+            {
+                trackersListView.Items.Clear();
             }
         }
 
@@ -925,79 +924,80 @@ namespace TransmissionRemoteDotnet
             }
             lock (fileItems)
             {
-                foreach (ListViewItem item in fileItems)
+                for (int i = 0; i < fileItems.Count; i++)
                 {
+                    ListViewItem item = fileItems[i];
                     if (item.SubItems[4].Text.Equals("Yes"))
                     {
-                        unwanted.Add(item.Index);
+                        unwanted.Add(i);
                     }
                     else
                     {
-                        wanted.Add(item.Index);
+                        wanted.Add(i);
                     }
                     switch (item.SubItems[5].Text)
                     {
                         case "High":
-                            high.Add(item.Index);
+                            high.Add(i);
                             break;
                         case "Normal":
-                            normal.Add(item.Index);
+                            normal.Add(i);
                             break;
                         case "Low":
-                            low.Add(item.Index);
+                            low.Add(i);
                             break;
                     }
                 }
             }
             JsonObject request = new JsonObject();
-            request.Put(ProtocolConstants.KEY_METHOD, "torrent-set");
+            request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTSET);
             JsonObject arguments = new JsonObject();
             JsonArray ids = new JsonArray();
             ids.Put(t.Id);
             arguments.Put(ProtocolConstants.KEY_IDS, ids);
-            if (high.Count > 0)
-            {
-                arguments.Put("priority-high", high);
-            }
-            else if (high.Count == fileItems.Count)
+            if (high.Count == fileItems.Count)
             {
                 arguments.Put("priority-high", new JsonArray());
             }
-
-            if (normal.Count > 0)
+            else if (high.Count > 0)
             {
-                arguments.Put("priority-normal", normal);
+                arguments.Put("priority-high", high);
             }
-            else if (normal.Count == fileItems.Count)
+
+            if (normal.Count == fileItems.Count)
             {
                 arguments.Put("priority-normal", new JsonArray());
             }
-
-            if (low.Count > 0)
+            else if (normal.Count > 0)
             {
-                arguments.Put("priority-low", low);
+                arguments.Put("priority-normal", normal);
             }
-            else if (low.Count == fileItems.Count)
+
+            if (low.Count == fileItems.Count)
             {
                 arguments.Put("priority-low", new JsonArray());
             }
-
-            if (wanted.Count > 0)
+            else if (low.Count > 0)
             {
-                arguments.Put("files-wanted", wanted);
+                arguments.Put("priority-low", low);
             }
-            else if (wanted.Count == fileItems.Count)
+
+            if (wanted.Count == fileItems.Count)
             {
                 arguments.Put("files-wanted", new JsonArray());
             }
-
-            if (unwanted.Count > 0)
+            else if (wanted.Count > 0)
             {
-                arguments.Put("files-unwanted", unwanted);
+                arguments.Put("files-wanted", wanted);
             }
-            else if (unwanted.Count == fileItems.Count)
+
+            if (unwanted.Count == fileItems.Count)
             {
                 arguments.Put("files-unwanted", new JsonArray());
+            }
+            else if (unwanted.Count > 0)
+            {
+                arguments.Put("files-unwanted", unwanted);
             }
 
             request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);

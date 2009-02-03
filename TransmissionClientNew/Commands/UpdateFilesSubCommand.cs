@@ -52,8 +52,7 @@ namespace TransmissionRemoteDotnet.Commands
                 }
             }
             this.item = new ListViewItem(name);
-            item.Name = name;
-            item.ToolTipText = name;
+            item.Name = item.ToolTipText = name;
             item.SubItems.Add(Toolbox.GetFileSize(length));
             item.SubItems[1].Tag = length;
             item.SubItems.Add(Toolbox.GetFileSize(bytesCompleted));

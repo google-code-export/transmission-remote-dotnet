@@ -24,6 +24,7 @@ namespace TransmissionRemoteDotnet
             METHOD_TORRENTGET = "torrent-get",
             METHOD_TORRENTSTART = "torrent-start",
             METHOD_TORRENTSTOP = "torrent-stop",
+            METHOD_TORRENTSET = "torrent-set",
             METHOD_SESSIONGET = "session-get",
             METHOD_TORRENTREMOVE = "torrent-remove",
             METHOD_TORRENTVERIFY = "torrent-verify",
