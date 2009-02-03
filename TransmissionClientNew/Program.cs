@@ -23,14 +23,12 @@ namespace TransmissionRemoteDotnet
         public static MainWindow Form
         {
             get { return Program.form; }
-            set { Program.form = value; }
         }
         private static Dictionary<int, Torrent> torrentIndex = new Dictionary<int, Torrent>();
 
         public static Dictionary<int, Torrent> TorrentIndex
         {
             get { return Program.torrentIndex; }
-            set { Program.torrentIndex = value; }
         }
         private static TransmissionDaemonDescriptor daemonDescriptor = new TransmissionDaemonDescriptor();
 
@@ -44,7 +42,6 @@ namespace TransmissionRemoteDotnet
         public static List<ListViewItem> LogItems
         {
             get { return Program.logItems; }
-            set { Program.logItems = value; }
         }
         private static string[] uploadArgs;
 
@@ -57,30 +54,27 @@ namespace TransmissionRemoteDotnet
         [STAThread]
         static void Main(string[] args)
         {
-            Guid guid = new Guid("{1a4ec788-d8f8-46b4-bb6b-598bc39f6307}");
-            using (SingleInstance singleInstance = new SingleInstance(guid))
+            SingleInstance singleInstance = new SingleInstance(new Guid("{1a4ec788-d8f8-46b4-bb6b-598bc39f6307}"));
+            if (singleInstance.IsFirstInstance)
             {
-                if (singleInstance.IsFirstInstance)
+                ServicePointManager.Expect100Continue = false;
+#if !MONO
+                ServicePointManager.ServerCertificateValidationCallback = TransmissionWebClient.ValidateServerCertificate;
+#endif
+                /* Store a list of torrents to upload after connect? */
+                if (LocalSettingsSingleton.Instance.autoConnect && args.Length > 0)
                 {
-                    ServicePointManager.Expect100Continue = false;
-                    #if !MONO
-                    ServicePointManager.ServerCertificateValidationCallback = TransmissionWebClient.ValidateServerCertificate;
-                    #endif
-                    /* Store a list of torrents to upload after connect? */
-                    if (LocalSettingsSingleton.Instance.autoConnect && args.Length > 0)
-                    {
-                        Program.uploadArgs = args;
-                    }
-                    singleInstance.ArgumentsReceived += singleInstance_ArgumentsReceived;
-                    singleInstance.ListenForArgumentsFromSuccessiveInstances();
-                    Application.EnableVisualStyles();
-                    Application.SetCompatibleTextRenderingDefault(false);
-                    Application.Run(form = new MainWindow());
+                    Program.uploadArgs = args;
                 }
-                else
-                {
-                    singleInstance.PassArgumentsToFirstInstance(args);
-                }
+                singleInstance.ArgumentsReceived += singleInstance_ArgumentsReceived;
+                singleInstance.ListenForArgumentsFromSuccessiveInstances();
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(form = new MainWindow());
+            }
+            else
+            {
+                singleInstance.PassArgumentsToFirstInstance(args);
             }
         }
 
@@ -108,7 +102,7 @@ namespace TransmissionRemoteDotnet
                     }
                     else
                     {
-                        form.ShowMustBeConnectedDialog();
+                        form.ShowMustBeConnectedDialog(uploadArgs = e.Args);
                     }
                 }
                 else

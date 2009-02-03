@@ -59,18 +59,27 @@ namespace TransmissionRemoteDotnet.Commmands
             Program.DaemonDescriptor = descriptor;
         }
 
+        private delegate void ExecuteDelegate();
         public void Execute()
         {
-            if (!Program.Connected)
+            MainWindow form = Program.Form;
+            if (form.InvokeRequired)
             {
-                TransmissionDaemonDescriptor descriptor = Program.DaemonDescriptor;
-                Program.Log("(Info) Connected to", String.Format("Host={0}, Version={1}, Revision={2}, RpcVersion={3}, RpcVersionMinimum={4}", new object[]{ LocalSettingsSingleton.Instance.host, descriptor.Version, descriptor.Revision, descriptor.RpcVersion, descriptor.RpcVersionMin }));
-                Program.Connected = true;
-                Program.Form.RefreshIfNotRefreshing();
-                if (Program.UploadArgs != null)
+                form.Invoke(new ExecuteDelegate(this.Execute));
+            }
+            else
+            {
+                if (!Program.Connected)
                 {
-                    Program.Form.CreateUploadWorker().RunWorkerAsync(Program.UploadArgs);
-                    Program.UploadArgs = null;
+                    TransmissionDaemonDescriptor descriptor = Program.DaemonDescriptor;
+                    Program.Log("(Info) Connected to", String.Format("Host={0}, Version={1}, Revision={2}, RpcVersion={3}, RpcVersionMinimum={4}", new object[] { LocalSettingsSingleton.Instance.host, descriptor.Version, descriptor.Revision, descriptor.RpcVersion, descriptor.RpcVersionMin }));
+                    Program.Connected = true;
+                    form.RefreshIfNotRefreshing();
+                    if (Program.UploadArgs != null)
+                    {
+                        form.CreateUploadWorker().RunWorkerAsync(Program.UploadArgs);
+                        Program.UploadArgs = null;
+                    }
                 }
             }
         }

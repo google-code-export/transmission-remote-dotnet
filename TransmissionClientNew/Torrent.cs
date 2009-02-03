@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Jayrock.Json;
@@ -16,21 +15,18 @@ namespace TransmissionRemoteDotnet
         public ListViewItem Item
         {
             get { return item; }
-            set { item = value; }
         }
         private JsonObject info;
 
         public JsonObject Info
         {
             get { return info; }
-            set { info = value; }
         }
         private long updateSerial;
 
         public long UpdateSerial
         {
             get { return updateSerial; }
-            set { updateSerial = value; }
         }
 
         public Torrent(JsonObject info)
@@ -104,11 +100,14 @@ namespace TransmissionRemoteDotnet
         public void Show()
         {
             ListView.ListViewItemCollection itemCollection = Program.Form.torrentListView.Items;
-            lock (Program.Form.torrentListView)
+            if (!itemCollection.Contains(item))
             {
-                if (!itemCollection.Contains(item))
+                lock (Program.Form.torrentListView)
                 {
-                    itemCollection.Add(item);
+                    if (!itemCollection.Contains(item))
+                    {
+                        itemCollection.Add(item);
+                    }
                 }
             }
         }
@@ -117,13 +116,20 @@ namespace TransmissionRemoteDotnet
         {
             MainWindow form = Program.Form;
             int matchingTrackers = 0;
-            lock (form.torrentListView)
+            ListView.ListViewItemCollection itemCollection = form.torrentListView.Items;
+            if (itemCollection.Contains(item))
             {
-                ListView.ListViewItemCollection itemCollection = form.torrentListView.Items;
-                if (itemCollection.Contains(item))
+                lock (form.torrentListView)
                 {
-                    itemCollection.Remove(item);
+                    if (itemCollection.Contains(item))
+                    {
+                        itemCollection.Remove(item);
+                    }
                 }
+            }
+            else
+            {
+                return;
             }
             lock (Program.TorrentIndex)
             {

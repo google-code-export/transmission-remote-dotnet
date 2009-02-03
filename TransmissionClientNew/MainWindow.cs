@@ -36,7 +36,6 @@ namespace TransmissionRemoteDotnet
         public List<ListViewItem> FileItems
         {
             get { return fileItems; }
-            set { fileItems = value; }
         }
 
         public MainWindow()
@@ -136,7 +135,12 @@ namespace TransmissionRemoteDotnet
         {
             try
             {
-                geo = new GeoIPCountry(GEOIP_DATABASE_FILE);
+                geo = new GeoIPCountry(
+                    Path.Combine(
+                        Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location),
+                        GEOIP_DATABASE_FILE
+                    )
+                );
                 for (int i = 1; i < GeoIPCountry.CountryCodes.Length; i++)
                 {
                     string flagname = "flags_" + GeoIPCountry.CountryCodes[i].ToLower();
@@ -205,7 +209,7 @@ namespace TransmissionRemoteDotnet
                 {
                     lock (this.stateListBox)
                     {
-                        for (int i = this.stateListBox.Items.Count-1; i > 6; i--)
+                        for (int i = this.stateListBox.Items.Count - 1; i > 6; i--)
                         {
                             stateListBox.Items.RemoveAt(i);
                         }
@@ -319,15 +323,15 @@ namespace TransmissionRemoteDotnet
             }
             else
             {
-                ShowMustBeConnectedDialog();
+                ShowMustBeConnectedDialog((string[])e.Data.GetData(DataFormats.FileDrop));
             }
         }
 
-        public void ShowMustBeConnectedDialog()
+        public void ShowMustBeConnectedDialog(string[] args)
         {
-            if (MessageBox.Show("You must be connected to add torrents. Would you like to connect now?", "Not connected", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-                == DialogResult.Yes)
+            if (MessageBox.Show("You must be connected to add torrents. Would you like to connect now?", "Not connected", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                Program.UploadArgs = args;
                 Connect();
             }
         }

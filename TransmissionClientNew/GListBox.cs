@@ -63,11 +63,10 @@ namespace TransmissionRemoteDotnet
         {
             e.DrawBackground();
             e.DrawFocusRectangle();
-            GListBoxItem item;
             Rectangle bounds = e.Bounds;
             try
             {
-                item = (GListBoxItem)Items[e.Index];
+                GListBoxItem item = (GListBoxItem)Items[e.Index];
                 if (item.ImageIndex != -1)
                 {
                     Size imageSize = _myImageList.ImageSize;
