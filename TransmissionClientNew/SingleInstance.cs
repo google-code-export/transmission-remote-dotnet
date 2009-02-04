@@ -1,8 +1,7 @@
-﻿using System;
+﻿#if !MONO
+using System;
 using System.IO;
-#if !MONO
 using System.IO.Pipes;
-#endif
 using System.Threading;
 using System.Collections.Generic;
 
@@ -160,3 +159,4 @@ namespace TransmissionRemoteDotnet
         #endregion
     }
 }
+#endif

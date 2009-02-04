@@ -45,6 +45,7 @@ namespace TransmissionRemoteDotnet
         }
         private static string[] uploadArgs;
 
+ 
         public static string[] UploadArgs
         {
             get { return Program.uploadArgs; }
@@ -54,13 +55,13 @@ namespace TransmissionRemoteDotnet
         [STAThread]
         static void Main(string[] args)
         {
+#if !MONO
             SingleInstance singleInstance = new SingleInstance(new Guid("{1a4ec788-d8f8-46b4-bb6b-598bc39f6307}"));
             if (singleInstance.IsFirstInstance)
             {
                 ServicePointManager.Expect100Continue = false;
-#if !MONO
+
                 ServicePointManager.ServerCertificateValidationCallback = TransmissionWebClient.ValidateServerCertificate;
-#endif
                 /* Store a list of torrents to upload after connect? */
                 if (LocalSettingsSingleton.Instance.autoConnect && args.Length > 0)
                 {
@@ -68,14 +69,17 @@ namespace TransmissionRemoteDotnet
                 }
                 singleInstance.ArgumentsReceived += singleInstance_ArgumentsReceived;
                 singleInstance.ListenForArgumentsFromSuccessiveInstances();
+#endif
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(form = new MainWindow());
+#if !MONO
             }
             else
             {
                 singleInstance.PassArgumentsToFirstInstance(args);
             }
+#endif
         }
 
         public static void Log(string title, string body)
@@ -90,6 +94,7 @@ namespace TransmissionRemoteDotnet
             }
         }
 
+#if !MONO
         static void singleInstance_ArgumentsReceived(object sender, ArgumentsReceivedEventArgs e)
         {
             if (form != null)
@@ -111,6 +116,7 @@ namespace TransmissionRemoteDotnet
                 }
             }
         }
+#endif
 
         public static void RaisePostUpdateEvent()
         {

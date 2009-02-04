@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Net;
@@ -1287,9 +1286,22 @@ namespace TransmissionRemoteDotnet
             {
                 Toolbox.SelectAll(torrentListView);
             }
+            else if (e.Control && e.Shift && e.KeyCode == Keys.C)
+            {
+                TorrentJsonToClipboard();
+            }
             else if (e.Control && e.KeyCode == Keys.C)
             {
                 Toolbox.CopyListViewToClipboard(torrentListView);
+            }
+        }
+
+        private void TorrentJsonToClipboard()
+        {
+            if (torrentListView.SelectedItems.Count == 1)
+            {
+                Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
+                Clipboard.SetText(t.Info.ToString());
             }
         }
 
