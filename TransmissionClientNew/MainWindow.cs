@@ -549,6 +549,22 @@ namespace TransmissionRemoteDotnet
                 if (one)
                 {
                     peersListView.Tag = 0;
+                    lock (filesListView)
+                    {
+                        filesListView.Items.Clear();
+                    }
+                    lock (fileItems)
+                    {
+                        fileItems.Clear();
+                    }
+                    lock (peersListView)
+                    {
+                        peersListView.Items.Clear();
+                    }
+                    lock (trackersListView)
+                    {
+                        trackersListView.Items.Clear();
+                    }
                     UpdateInfoPanel(true);
                     filesListView.Enabled = false;
                     Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
@@ -556,22 +572,6 @@ namespace TransmissionRemoteDotnet
                 }
                 torrentAndTabsSplitContainer.Panel2Collapsed = !one;
                 refreshElapsedTimer.Enabled = filesTimer.Enabled = one;
-            }
-            lock (filesListView)
-            {
-                filesListView.Items.Clear();
-            }
-            lock (fileItems)
-            {
-                fileItems.Clear();
-            }
-            lock (peersListView)
-            {
-                peersListView.Items.Clear();
-            }
-            lock (trackersListView)
-            {
-                trackersListView.Items.Clear();
             }
         }
 

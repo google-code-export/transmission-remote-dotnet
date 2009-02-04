@@ -43,7 +43,8 @@ namespace TransmissionRemoteDotnet
 
         private void AboutDialog_Load(object sender, EventArgs e)
         {
-            label1.Text = label1.Text + " " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            label1.Text = "Transmission Remote " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            label3.Text = String.Format("Author: Alan F <{0}>", Encoding.ASCII.GetString(Convert.FromBase64String("YWxhbkBldGgwLm9yZy51aw==")));
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
