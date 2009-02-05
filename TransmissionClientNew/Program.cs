@@ -56,28 +56,30 @@ namespace TransmissionRemoteDotnet
         static void Main(string[] args)
         {
 #if !MONO
-            SingleInstance singleInstance = new SingleInstance(new Guid("{1a4ec788-d8f8-46b4-bb6b-598bc39f6307}"));
-            if (singleInstance.IsFirstInstance)
+            using (SingleInstance singleInstance = new SingleInstance(new Guid("{1a4ec788-d8f8-46b4-bb6b-598bc39f6307}")))
             {
-                ServicePointManager.Expect100Continue = false;
-
-                ServicePointManager.ServerCertificateValidationCallback = TransmissionWebClient.ValidateServerCertificate;
-                /* Store a list of torrents to upload after connect? */
-                if (LocalSettingsSingleton.Instance.autoConnect && args.Length > 0)
+                if (singleInstance.IsFirstInstance)
                 {
-                    Program.uploadArgs = args;
-                }
-                singleInstance.ArgumentsReceived += singleInstance_ArgumentsReceived;
-                singleInstance.ListenForArgumentsFromSuccessiveInstances();
+                    ServicePointManager.Expect100Continue = false;
+
+                    ServicePointManager.ServerCertificateValidationCallback = TransmissionWebClient.ValidateServerCertificate;
+                    /* Store a list of torrents to upload after connect? */
+                    if (LocalSettingsSingleton.Instance.autoConnect && args.Length > 0)
+                    {
+                        Program.uploadArgs = args;
+                    }
+                    singleInstance.ArgumentsReceived += singleInstance_ArgumentsReceived;
+                    singleInstance.ListenForArgumentsFromSuccessiveInstances();
 #endif
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(form = new MainWindow());
+                    Application.EnableVisualStyles();
+                    Application.SetCompatibleTextRenderingDefault(false);
+                    Application.Run(form = new MainWindow());
 #if !MONO
-            }
-            else
-            {
-                singleInstance.PassArgumentsToFirstInstance(args);
+                }
+                else
+                {
+                    singleInstance.PassArgumentsToFirstInstance(args);
+                }
             }
 #endif
         }
