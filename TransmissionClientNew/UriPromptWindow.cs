@@ -54,18 +54,11 @@ namespace TransmissionRemoteDotnet
                 {
                     currentUri = new Uri(textBox1.Text);
                 }
-                catch
+                catch (Exception ex)
                 {
-                    try
-                    {
-                        currentUri = new Uri("http://" + textBox1.Text);
-                    }
-                    catch (Exception ex)
-                    {
-                        button1.Enabled = false;
-                        toolStripStatusLabel1.Text = ex.Message;
-                        return;
-                    }
+                    button1.Enabled = false;
+                    toolStripStatusLabel1.Text = ex.Message;
+                    return;
                 }
                 toolStripStatusLabel1.Text = "Input accepted.";
                 button1.Enabled = true;
@@ -83,20 +76,8 @@ namespace TransmissionRemoteDotnet
             downloadAndUploadTorrentWorker.ReportProgress(0, DownloadAndUploadTorrentState.Downloading);
             try
             {
-                WebClient webClient = new WebClient();
+                WebClient webClient = new TransmissionWebClient(false);
                 LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-                if (settings.proxyEnabled == 1)
-                {
-                    webClient.Proxy = new WebProxy(settings.proxyHost, settings.proxyPort);
-                    if (settings.proxyAuth)
-                    {
-                        webClient.Proxy.Credentials = new NetworkCredential(settings.proxyUser, settings.proxyPass);
-                    }
-                }
-                else if (settings.proxyEnabled == 2)
-                {
-                    webClient.Proxy = null;
-                }
                 webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(webClient_DownloadProgressChanged);
                 webClient.DownloadFile(this.currentUri, target);
                 Program.Form.CreateActionWorker().RunWorkerAsync(Requests.TorrentAddByFile(target, true));

@@ -20,8 +20,8 @@ namespace TransmissionRemoteDotnet
             string str_response = null;
             try
             {
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(LocalSettingsSingleton.Instance.URL + "rpc");
-                TransmissionWebClient.SetupWebRequest(request);
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(LocalSettingsSingleton.Instance.RpcUrl);
+                TransmissionWebClient.SetupWebRequest(request, true);
                 request.Method = "POST";
                 request.ContentType = "application/json";
                 string json = data.ToString();

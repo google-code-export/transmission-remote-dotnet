@@ -359,10 +359,10 @@ namespace TransmissionRemoteDotnet
 
         public void RefreshUrlCache()
         {
-            this.urlCache = (useSSL ? "https" : "http") + "://" + this.host + ":" + this.port + (this.customPath == null ? "/transmission/" : this.customPath);
+            this.urlCache = (useSSL ? "https" : "http") + "://" + this.host + ":" + this.port + (this.customPath == null ? "/transmission/" : this.customPath) + "rpc";
         }
 
-        public string URL
+        public string RpcUrl
         {
             get
             {

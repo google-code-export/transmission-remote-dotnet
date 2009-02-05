@@ -60,14 +60,15 @@ namespace TransmissionRemoteDotnet
             {
                 if (singleInstance.IsFirstInstance)
                 {
-                    ServicePointManager.Expect100Continue = false;
-
                     ServicePointManager.ServerCertificateValidationCallback = TransmissionWebClient.ValidateServerCertificate;
+#endif
+                    ServicePointManager.Expect100Continue = false;
                     /* Store a list of torrents to upload after connect? */
                     if (LocalSettingsSingleton.Instance.autoConnect && args.Length > 0)
                     {
                         Program.uploadArgs = args;
                     }
+#if !MONO
                     singleInstance.ArgumentsReceived += singleInstance_ArgumentsReceived;
                     singleInstance.ListenForArgumentsFromSuccessiveInstances();
 #endif

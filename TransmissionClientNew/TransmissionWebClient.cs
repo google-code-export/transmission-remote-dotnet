@@ -9,6 +9,13 @@ namespace TransmissionRemoteDotnet
 {
     class TransmissionWebClient : WebClient
     {
+        private bool authenticate;
+
+        public TransmissionWebClient(bool authenticate)
+        {
+            this.authenticate = authenticate;
+        }
+
         public static bool ValidateServerCertificate(
                     object sender,
                     X509Certificate certificate,
@@ -23,19 +30,17 @@ namespace TransmissionRemoteDotnet
             WebRequest request = base.GetWebRequest(address);
             if (request.GetType() == typeof(HttpWebRequest))
             {
-                SetupWebRequest((HttpWebRequest)request);
+                SetupWebRequest((HttpWebRequest)request, authenticate);
             }
             return request;
         }
 
-        public static void SetupWebRequest(HttpWebRequest request)
+        public static void SetupWebRequest(HttpWebRequest request, bool authenticate)
         {
-            /* Resolves a bug in shttpd (older T versions). */
-            //request.KeepAlive = !(Program.transmissionVersion < 1.40);
             request.KeepAlive = false;
             request.UserAgent = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)";
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-            if (settings.authEnabled)
+            if (settings.authEnabled && authenticate)
             {
                 request.Credentials = new NetworkCredential(settings.user, settings.pass);
                 request.PreAuthenticate = Program.DaemonDescriptor.Version < 1.40;

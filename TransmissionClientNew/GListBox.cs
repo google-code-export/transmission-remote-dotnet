@@ -59,41 +59,54 @@ namespace TransmissionRemoteDotnet
             base.OnPaint(e);
         }
 
-        protected override void OnDrawItem(System.Windows.Forms.DrawItemEventArgs e)
+        protected override void OnDrawItem(DrawItemEventArgs e)
         {
             e.DrawBackground();
             e.DrawFocusRectangle();
-            Rectangle bounds = e.Bounds;
-            try
+            if (Items[e.Index].GetType() == typeof(GListBoxItem))
             {
-                GListBoxItem item = (GListBoxItem)Items[e.Index];
-                if (item.ImageIndex != -1)
+                try
                 {
-                    Size imageSize = _myImageList.ImageSize;
-                    _myImageList.Draw(e.Graphics, bounds.Left, bounds.Top, item.ImageIndex);
-                    e.Graphics.DrawString(item.Text, e.Font, new SolidBrush(e.ForeColor),
-                        bounds.Left + imageSize.Width, bounds.Top);
+                    Rectangle bounds = e.Bounds;
+                    GListBoxItem item = (GListBoxItem)Items[e.Index];
+                    if (item.ImageIndex != -1)
+                    {
+                        Size imageSize = _myImageList.ImageSize;
+                        _myImageList.Draw(e.Graphics, bounds.Left, bounds.Top, item.ImageIndex);
+                        e.Graphics.DrawString(item.Text, e.Font, new SolidBrush(e.ForeColor),
+                            bounds.Left + imageSize.Width, bounds.Top);
+                    }
+                    else
+                    {
+                        e.Graphics.DrawString(item.Text, e.Font, new SolidBrush(e.ForeColor),
+                            bounds.Left, bounds.Top);
+                    }
                 }
-                else
+                catch
                 {
-                    e.Graphics.DrawString(item.Text, e.Font, new SolidBrush(e.ForeColor),
-                        bounds.Left, bounds.Top);
+                    DrawStringItem(e);
                 }
             }
-            catch
+            else
             {
-                if (e.Index != -1 && Items.Count > e.Index)
-                {
-                    e.Graphics.DrawString(Items[e.Index].ToString(), e.Font,
-                        new SolidBrush(e.ForeColor), bounds.Left, bounds.Top);
-                }
-                else
-                {
-                    e.Graphics.DrawString(Text, e.Font, new SolidBrush(e.ForeColor),
-                        bounds.Left, bounds.Top);
-                }
+                DrawStringItem(e);
             }
             base.OnDrawItem(e);
+        }
+
+        private void DrawStringItem(DrawItemEventArgs e)
+        {
+            Rectangle bounds = e.Bounds;
+            if (e.Index != -1 && Items.Count > e.Index)
+            {
+                e.Graphics.DrawString(Items[e.Index].ToString(), e.Font,
+                    new SolidBrush(e.ForeColor), bounds.Left, bounds.Top);
+            }
+            else
+            {
+                e.Graphics.DrawString(Text, e.Font, new SolidBrush(e.ForeColor),
+                    bounds.Left, bounds.Top);
+            }
         }
     }
 }
