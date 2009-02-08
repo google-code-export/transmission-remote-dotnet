@@ -60,6 +60,8 @@ namespace TransmissionRemoteDotnet
             {
                 if (singleInstance.IsFirstInstance)
                 {
+#endif
+#if !MONO
                     ServicePointManager.ServerCertificateValidationCallback = TransmissionWebClient.ValidateServerCertificate;
 #endif
                     ServicePointManager.Expect100Continue = false;

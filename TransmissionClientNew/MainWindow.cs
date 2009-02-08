@@ -69,8 +69,8 @@ namespace TransmissionRemoteDotnet
 
         private void InitStateListBox()
         {
+#if !HIDESTATELB
             stateListBox.SuspendLayout();
-#if !MONO
             ImageList stateListBoxImageList = new ImageList();
             stateListBoxImageList.ColorDepth = ColorDepth.Depth32Bit;
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledblue);
@@ -80,8 +80,6 @@ namespace TransmissionRemoteDotnet
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.up16);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.player_reload16);
             stateListBox.ImageList = stateListBoxImageList;
-#endif
-#if !MONO
             stateListBox.Items.Add(new GListBoxItem("All", 0));
             stateListBox.Items.Add(new GListBoxItem("Downloading", 1));
             stateListBox.Items.Add(new GListBoxItem("Paused", 2));
@@ -89,16 +87,8 @@ namespace TransmissionRemoteDotnet
             stateListBox.Items.Add(new GListBoxItem("Complete", 3));
             stateListBox.Items.Add(new GListBoxItem("Seeding", 4));
             stateListBox.Items.Add(new GListBoxItem(""));
-#else
-            stateListBox.Items.Add("All");
-            stateListBox.Items.Add("Downloading");
-            stateListBox.Items.Add("Paused");
-            stateListBox.Items.Add("Checking");
-            stateListBox.Items.Add("Complete");
-            stateListBox.Items.Add("Seeding");
-            stateListBox.Items.Add("");
-#endif
             stateListBox.ResumeLayout();
+#endif
         }
 
         private void InitStaticContextMenus()
@@ -175,7 +165,7 @@ namespace TransmissionRemoteDotnet
             {
                 UpdateInfoPanel(false);
                 torrentListView.Enabled = true;
-#if !MONO || KEEPSTATELV
+#if !HIDESTATELB
                 mainVerticalSplitContainer.Panel1Collapsed = false;
 #endif
             }
@@ -741,24 +731,23 @@ namespace TransmissionRemoteDotnet
 
         private void FilterByStateOrTracker()
         {
-            #if !MONO || KEEPSTATELV
-            ListBox box = stateListBox;
+#if !HIDESTATELB
             torrentListView.SuspendLayout();
             lock (Program.TorrentIndex)
             {
-                if (box.SelectedIndex == 1)
+                if (stateListBox.SelectedIndex == 1)
                 {
                     ShowTorrentIfStatus(ProtocolConstants.STATUS_DOWNLOADING);
                 }
-                else if (box.SelectedIndex == 2)
+                else if (stateListBox.SelectedIndex == 2)
                 {
                     ShowTorrentIfStatus(ProtocolConstants.STATUS_STOPPED);
                 }
-                else if (box.SelectedIndex == 3)
+                else if (stateListBox.SelectedIndex == 3)
                 {
                     ShowTorrentIfStatus(ProtocolConstants.STATUS_CHECKING | ProtocolConstants.STATUS_WAITING_TO_CHECK);
                 }
-                else if (box.SelectedIndex == 4)
+                else if (stateListBox.SelectedIndex == 4)
                 {
                     foreach (KeyValuePair<int, Torrent> pair in Program.TorrentIndex)
                     {
@@ -773,16 +762,16 @@ namespace TransmissionRemoteDotnet
                         }
                     }
                 }
-                else if (box.SelectedIndex == 5)
+                else if (stateListBox.SelectedIndex == 5)
                 {
                     ShowTorrentIfStatus(ProtocolConstants.STATUS_SEEDING);
                 }
-                else if (box.SelectedIndex > 6)
+                else if (stateListBox.SelectedIndex > 6)
                 {
                     foreach (KeyValuePair<int, Torrent> pair in Program.TorrentIndex)
                     {
                         Torrent t = pair.Value;
-                        if (t.Item.SubItems[13].Text.Equals(box.SelectedItem.ToString()))
+                        if (t.Item.SubItems[13].Text.Equals(stateListBox.SelectedItem.ToString()))
                         {
                             t.Show();
                         }

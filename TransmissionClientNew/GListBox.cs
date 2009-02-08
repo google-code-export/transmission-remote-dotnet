@@ -1,6 +1,5 @@
 ﻿/* http://www.codeproject.com/KB/combobox/glistbox.aspx
  * + some of my fixes. */
-#if !MONO
 using System.Windows.Forms;
 using System.Drawing;
 
@@ -27,6 +26,7 @@ namespace TransmissionRemoteDotnet
 
         protected override void OnPaint(PaintEventArgs e)
         {
+#if !HIDESTATELB
             Region iRegion = new Region(e.ClipRectangle);
             e.Graphics.FillRegion(new SolidBrush(this.BackColor), iRegion);
             if (this.Items.Count > 0)
@@ -57,10 +57,12 @@ namespace TransmissionRemoteDotnet
                 }
             }
             base.OnPaint(e);
+#endif
         }
 
         protected override void OnDrawItem(DrawItemEventArgs e)
         {
+#if !HIDESTATELB
             e.DrawBackground();
             e.DrawFocusRectangle();
             if (Items[e.Index].GetType() == typeof(GListBoxItem))
@@ -92,6 +94,7 @@ namespace TransmissionRemoteDotnet
                 DrawStringItem(e);
             }
             base.OnDrawItem(e);
+#endif
         }
 
         private void DrawStringItem(DrawItemEventArgs e)
@@ -110,4 +113,3 @@ namespace TransmissionRemoteDotnet
         }
     }
 }
-#endif

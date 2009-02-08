@@ -1,4 +1,4 @@
-﻿#if !MONO
+﻿#if !MONO && !DOTNET2
 using System;
 using System.IO;
 using System.IO.Pipes;
