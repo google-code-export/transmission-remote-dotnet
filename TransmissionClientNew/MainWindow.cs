@@ -194,6 +194,8 @@ namespace TransmissionRemoteDotnet
             }
             else
             {
+                StatsDialog.CloseIfOpen();
+                RemoteSettingsDialog.CloseIfOpen();
                 torrentListView.Enabled = false;
                 torrentListView.ContextMenu = this.torrentSelectionMenu = null;
                 lock (this.torrentListView)

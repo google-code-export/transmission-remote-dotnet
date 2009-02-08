@@ -20,7 +20,7 @@ namespace TransmissionRemoteDotnet
             {
                 lock (padlock)
                 {
-                    if (instance == null || instance.IsDisposed)
+                    if (!IsActive())
                     {
                         instance = new StatsDialog();
                     }
@@ -39,9 +39,22 @@ namespace TransmissionRemoteDotnet
             this.Close();
         }
 
+        public static void CloseIfOpen()
+        {
+            if (IsActive())
+            {
+                instance.Close();
+            }
+        }
+
+        private static bool IsActive()
+        {
+            return instance != null && !instance.IsDisposed;
+        }
+
         public static void StaticUpdateStats(JsonObject stats)
         {
-            if (instance != null && !instance.IsDisposed)
+            if (IsActive())
             {
                 instance.UpdateStats(stats);
             }

@@ -20,12 +20,25 @@ namespace TransmissionRemoteDotnet
             {
                 lock (padlock)
                 {
-                    if (instance == null || instance.IsDisposed)
+                    if (!IsActive())
                     {
                         instance = new RemoteSettingsDialog();
                     }
                 }
                 return instance;
+            }
+        }
+
+        private static bool IsActive()
+        {
+            return instance != null && !instance.IsDisposed;
+        }
+
+        public static void CloseIfOpen()
+        {
+            if (IsActive())
+            {
+                instance.Close();
             }
         }
 
