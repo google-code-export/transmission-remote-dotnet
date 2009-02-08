@@ -175,7 +175,9 @@ namespace TransmissionRemoteDotnet
             {
                 UpdateInfoPanel(false);
                 torrentListView.Enabled = true;
+#if !MONO || KEEPSTATELV
                 mainVerticalSplitContainer.Panel1Collapsed = false;
+#endif
             }
             refreshTimer.Enabled = true;
             FilterByStateOrTracker();
@@ -739,6 +741,7 @@ namespace TransmissionRemoteDotnet
 
         private void FilterByStateOrTracker()
         {
+            #if !MONO || KEEPSTATELV
             ListBox box = stateListBox;
             torrentListView.SuspendLayout();
             lock (Program.TorrentIndex)
@@ -799,6 +802,7 @@ namespace TransmissionRemoteDotnet
                 }
             }
             torrentListView.ResumeLayout();
+#endif
         }
 
         private void ShowTorrentIfStatus(short statusCode)

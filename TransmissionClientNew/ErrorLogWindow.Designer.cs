@@ -78,6 +78,7 @@
             this.errorListView.UseCompatibleStateImageBehavior = false;
             this.errorListView.View = System.Windows.Forms.View.Details;
             this.errorListView.DoubleClick += new System.EventHandler(this.errorListView_DoubleClick);
+            this.errorListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.errorListView_ColumnClick);
             // 
             // columnHeader1
             // 

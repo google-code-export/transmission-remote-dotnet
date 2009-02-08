@@ -416,7 +416,9 @@
             this.stateListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.stateListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stateListBox.FormattingEnabled = true;
+#if !MONO
             this.stateListBox.ImageList = null;
+#endif
             this.stateListBox.ItemHeight = 18;
             this.stateListBox.Location = new System.Drawing.Point(0, 0);
             this.stateListBox.Name = "stateListBox";

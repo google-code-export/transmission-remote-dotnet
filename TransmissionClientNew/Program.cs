@@ -55,7 +55,7 @@ namespace TransmissionRemoteDotnet
         [STAThread]
         static void Main(string[] args)
         {
-#if !MONO
+#if !MONO && !DOTNET2
             using (SingleInstance singleInstance = new SingleInstance(new Guid("{1a4ec788-d8f8-46b4-bb6b-598bc39f6307}")))
             {
                 if (singleInstance.IsFirstInstance)
@@ -68,14 +68,14 @@ namespace TransmissionRemoteDotnet
                     {
                         Program.uploadArgs = args;
                     }
-#if !MONO
+#if !MONO && !DOTNET2
                     singleInstance.ArgumentsReceived += singleInstance_ArgumentsReceived;
                     singleInstance.ListenForArgumentsFromSuccessiveInstances();
 #endif
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
                     Application.Run(form = new MainWindow());
-#if !MONO
+#if !MONO && !DOTNET2
                 }
                 else
                 {
@@ -97,7 +97,7 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-#if !MONO
+#if !MONO && !DOTNET2
         static void singleInstance_ArgumentsReceived(object sender, ArgumentsReceivedEventArgs e)
         {
             if (form != null)

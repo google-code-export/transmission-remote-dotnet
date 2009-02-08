@@ -77,7 +77,6 @@ namespace TransmissionRemoteDotnet
             try
             {
                 WebClient webClient = new TransmissionWebClient(false);
-                LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
                 webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(webClient_DownloadProgressChanged);
                 webClient.DownloadFile(this.currentUri, target);
                 Program.Form.CreateActionWorker().RunWorkerAsync(Requests.TorrentAddByFile(target, true));

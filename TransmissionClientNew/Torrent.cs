@@ -31,7 +31,6 @@ namespace TransmissionRemoteDotnet
 
         public Torrent(JsonObject info)
         {
-            MainWindow form = Program.Form;
             this.updateSerial = Program.DaemonDescriptor.UpdateSerial;
             this.info = info;
             item = new ListViewItem(this.Name);

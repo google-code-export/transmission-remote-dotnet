@@ -84,7 +84,10 @@ namespace TransmissionRemoteDotnet
                     FileMode.Open,
                     FileAccess.Read);
             byte[] binaryData = new Byte[inFile.Length];
-            long bytesRead = inFile.Read(binaryData, 0, (int)inFile.Length);
+            if (inFile.Read(binaryData, 0, (int)inFile.Length) < 1)
+            {
+                throw new Exception("Empty file");
+            }
             inFile.Close();
             JsonObject request = new JsonObject();
             JsonObject arguments = new JsonObject();
