@@ -50,7 +50,11 @@
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.torrentAndTabsSplitContainer = new System.Windows.Forms.SplitContainer();
             this.mainVerticalSplitContainer = new System.Windows.Forms.SplitContainer();
+#if !MONO
             this.stateListBox = new TransmissionRemoteDotnet.GListBox();
+#else
+            this.stateListBox = new System.Windows.Forms.ListBox();
+#endif
             this.torrentListView = new TransmissionRemoteDotnet.ListViewNF();
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
@@ -1718,7 +1722,11 @@
         public ListViewNF torrentListView;
         private System.Windows.Forms.ToolStripMenuItem localSettingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem remoteSettingsToolStripMenuItem;
+#if !MONO
         public TransmissionRemoteDotnet.GListBox stateListBox;
+#else
+        public System.Windows.Forms.ListBox stateListBox;
+#endif
         private System.ComponentModel.BackgroundWorker filesWorker;
         public TransmissionRemoteDotnet.ListViewNF filesListView;
         public System.Windows.Forms.Timer filesTimer;

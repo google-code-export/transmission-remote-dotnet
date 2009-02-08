@@ -1,6 +1,6 @@
 ﻿/* http://www.codeproject.com/KB/combobox/glistbox.aspx
  * + some of my fixes. */
-
+#if !MONO
 using System.Windows.Forms;
 
 namespace TransmissionRemoteDotnet
@@ -36,3 +36,4 @@ namespace TransmissionRemoteDotnet
         }
     }
 }
+#endif

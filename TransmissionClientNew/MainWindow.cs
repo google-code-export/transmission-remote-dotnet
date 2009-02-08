@@ -70,6 +70,7 @@ namespace TransmissionRemoteDotnet
         private void InitStateListBox()
         {
             stateListBox.SuspendLayout();
+#if !MONO
             ImageList stateListBoxImageList = new ImageList();
             stateListBoxImageList.ColorDepth = ColorDepth.Depth32Bit;
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledblue);
@@ -79,6 +80,8 @@ namespace TransmissionRemoteDotnet
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.up16);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.player_reload16);
             stateListBox.ImageList = stateListBoxImageList;
+#endif
+#if !MONO
             stateListBox.Items.Add(new GListBoxItem("All", 0));
             stateListBox.Items.Add(new GListBoxItem("Downloading", 1));
             stateListBox.Items.Add(new GListBoxItem("Paused", 2));
@@ -86,6 +89,15 @@ namespace TransmissionRemoteDotnet
             stateListBox.Items.Add(new GListBoxItem("Complete", 3));
             stateListBox.Items.Add(new GListBoxItem("Seeding", 4));
             stateListBox.Items.Add(new GListBoxItem(""));
+#else
+            stateListBox.Items.Add("All");
+            stateListBox.Items.Add("Downloading");
+            stateListBox.Items.Add("Paused");
+            stateListBox.Items.Add("Checking");
+            stateListBox.Items.Add("Complete");
+            stateListBox.Items.Add("Seeding");
+            stateListBox.Items.Add("");
+#endif
             stateListBox.ResumeLayout();
         }
 
