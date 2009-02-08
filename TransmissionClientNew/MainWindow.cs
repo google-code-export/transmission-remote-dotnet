@@ -69,7 +69,6 @@ namespace TransmissionRemoteDotnet
 
         private void InitStateListBox()
         {
-#if !HIDESTATELB
             stateListBox.SuspendLayout();
             ImageList stateListBoxImageList = new ImageList();
             stateListBoxImageList.ColorDepth = ColorDepth.Depth32Bit;
@@ -88,7 +87,6 @@ namespace TransmissionRemoteDotnet
             stateListBox.Items.Add(new GListBoxItem("Seeding", 4));
             stateListBox.Items.Add(new GListBoxItem(""));
             stateListBox.ResumeLayout();
-#endif
         }
 
         private void InitStaticContextMenus()
@@ -165,9 +163,7 @@ namespace TransmissionRemoteDotnet
             {
                 UpdateInfoPanel(false);
                 torrentListView.Enabled = true;
-#if !HIDESTATELB
                 mainVerticalSplitContainer.Panel1Collapsed = false;
-#endif
             }
             refreshTimer.Enabled = true;
             FilterByStateOrTracker();
@@ -731,7 +727,6 @@ namespace TransmissionRemoteDotnet
 
         private void FilterByStateOrTracker()
         {
-#if !HIDESTATELB
             torrentListView.SuspendLayout();
             lock (Program.TorrentIndex)
             {
@@ -791,7 +786,6 @@ namespace TransmissionRemoteDotnet
                 }
             }
             torrentListView.ResumeLayout();
-#endif
         }
 
         private void ShowTorrentIfStatus(short statusCode)

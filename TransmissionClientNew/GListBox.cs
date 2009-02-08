@@ -26,7 +26,6 @@ namespace TransmissionRemoteDotnet
 
         protected override void OnPaint(PaintEventArgs e)
         {
-#if !HIDESTATELB
             Region iRegion = new Region(e.ClipRectangle);
             e.Graphics.FillRegion(new SolidBrush(this.BackColor), iRegion);
             if (this.Items.Count > 0)
@@ -52,17 +51,17 @@ namespace TransmissionRemoteDotnet
                                 DrawItemState.Default, this.ForeColor,
                                 this.BackColor));
                         }
+#if !MONO
                         iRegion.Complement(irect);
+#endif
                     }
                 }
             }
             base.OnPaint(e);
-#endif
         }
 
         protected override void OnDrawItem(DrawItemEventArgs e)
         {
-#if !HIDESTATELB
             e.DrawBackground();
             e.DrawFocusRectangle();
             if (Items[e.Index].GetType() == typeof(GListBoxItem))
@@ -94,13 +93,12 @@ namespace TransmissionRemoteDotnet
                 DrawStringItem(e);
             }
             base.OnDrawItem(e);
-#endif
         }
 
         private void DrawStringItem(DrawItemEventArgs e)
         {
             Rectangle bounds = e.Bounds;
-            if (e.Index != -1 && Items.Count > e.Index)
+            if (Items.Count > e.Index)
             {
                 e.Graphics.DrawString(Items[e.Index].ToString(), e.Font,
                     new SolidBrush(e.ForeColor), bounds.Left, bounds.Top);
