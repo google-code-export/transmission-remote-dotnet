@@ -86,7 +86,7 @@ namespace TransmissionRemoteDotnet
                     while (server.IsConnected)
                     {
                         string line = reader.ReadLine();
-                        if (line.Length > 0)
+                        if (line != null && line.Length > 0)
                         {
                             arguments.Add(line);
                         }

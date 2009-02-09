@@ -63,7 +63,7 @@ namespace TransmissionRemoteDotnet
                 List<string> arguments = new List<string>();
                 foreach (string arg in (JsonArray)JsonConvert.Import((new ASCIIEncoding()).GetString(response)))
                 {
-                    if (arg.Length > 0)
+                    if (arg != null && arg.Length > 0)
                     {
                         arguments.Add(arg);
                     }
