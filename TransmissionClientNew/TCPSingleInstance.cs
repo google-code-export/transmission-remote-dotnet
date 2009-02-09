@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if MONO || DOTNET2
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -62,7 +63,10 @@ namespace TransmissionRemoteDotnet
                 List<string> arguments = new List<string>();
                 foreach (string arg in (JsonArray)JsonConvert.Import((new ASCIIEncoding()).GetString(response)))
                 {
-                    arguments.Add(arg);
+                    if (arg.Length > 0)
+                    {
+                        arguments.Add(arg);
+                    }
                 }
                 ThreadPool.QueueUserWorkItem(new WaitCallback(CallOnArgumentsReceived), arguments.ToArray());
             }
@@ -129,3 +133,4 @@ namespace TransmissionRemoteDotnet
         #endregion
     }
 }
+#endif

@@ -55,10 +55,11 @@ namespace TransmissionRemoteDotnet
         [STAThread]
         static void Main(string[] args)
         {
-#if !MONO && !DOTNET2
-            using (ISingleInstance singleInstance = new SingleInstance(new Guid("{1a4ec788-d8f8-46b4-bb6b-598bc39f6307}")))
+            using (ISingleInstance singleInstance =
+#if MONO || DOTNET2
+                new TCPSingleInstance(24452))
 #else
-            using (ISingleInstance singleInstance = new TCPSingleInstance(24452))
+                new SingleInstance(new Guid("{1a4ec788-d8f8-46b4-bb6b-598bc39f6307}")))
 #endif
             {
                 if (singleInstance.IsFirstInstance)
@@ -103,7 +104,7 @@ namespace TransmissionRemoteDotnet
         {
             if (form != null)
             {
-                if (e.Args.Length > 1)
+                if (e.Args.Length > 0)
                 {
                     if (connected)
                     {

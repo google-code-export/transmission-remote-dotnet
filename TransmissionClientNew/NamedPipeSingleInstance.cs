@@ -47,7 +47,6 @@ namespace TransmissionRemoteDotnet
                 using (StreamWriter writer = new StreamWriter(client))
                 {
                     client.Connect(200);
-
                     foreach (String argument in arguments)
                         writer.WriteLine(argument);
                 }
@@ -85,7 +84,13 @@ namespace TransmissionRemoteDotnet
                     server.WaitForConnection();
                     List<String> arguments = new List<String>();
                     while (server.IsConnected)
-                        arguments.Add(reader.ReadLine());
+                    {
+                        string line = reader.ReadLine();
+                        if (line.Length > 0)
+                        {
+                            arguments.Add(line);
+                        }
+                    }
 
                     ThreadPool.QueueUserWorkItem(new WaitCallback(CallOnArgumentsReceived), arguments.ToArray());
                 }

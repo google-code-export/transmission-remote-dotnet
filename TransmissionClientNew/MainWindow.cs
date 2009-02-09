@@ -375,7 +375,7 @@ namespace TransmissionRemoteDotnet
             {
                 foreach (string file in (string[])e.Argument)
                 {
-                    if (file == null)
+                    if (file == null || file.Length < 1)
                     {
                         continue;
                     }
