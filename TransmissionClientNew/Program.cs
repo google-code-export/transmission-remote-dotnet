@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Jayrock.Json;
 using System.Net;
-using TransmissionRemoteDotnet.Commmands;
+using TransmissionRemoteDotnet.Commands;
 
 namespace TransmissionRemoteDotnet
 {
@@ -56,35 +56,35 @@ namespace TransmissionRemoteDotnet
         static void Main(string[] args)
         {
 #if !MONO && !DOTNET2
-            using (SingleInstance singleInstance = new SingleInstance(new Guid("{1a4ec788-d8f8-46b4-bb6b-598bc39f6307}")))
+            using (ISingleInstance singleInstance = new SingleInstance(new Guid("{1a4ec788-d8f8-46b4-bb6b-598bc39f6307}")))
+#else
+            using (ISingleInstance singleInstance = new TCPSingleInstance(24452))
+#endif
             {
                 if (singleInstance.IsFirstInstance)
                 {
-#endif
-#if !MONO
-                    ServicePointManager.ServerCertificateValidationCallback = TransmissionWebClient.ValidateServerCertificate;
-#endif
+                    try
+                    {
+                        ServicePointManager.ServerCertificateValidationCallback = TransmissionWebClient.ValidateServerCertificate;
+                    }
+                    catch { }
                     ServicePointManager.Expect100Continue = false;
                     /* Store a list of torrents to upload after connect? */
                     if (LocalSettingsSingleton.Instance.autoConnect && args.Length > 0)
                     {
                         Program.uploadArgs = args;
                     }
-#if !MONO && !DOTNET2
                     singleInstance.ArgumentsReceived += singleInstance_ArgumentsReceived;
                     singleInstance.ListenForArgumentsFromSuccessiveInstances();
-#endif
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
                     Application.Run(form = new MainWindow());
-#if !MONO && !DOTNET2
                 }
                 else
                 {
                     singleInstance.PassArgumentsToFirstInstance(args);
                 }
             }
-#endif
         }
 
         public static void Log(string title, string body)
@@ -99,7 +99,6 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-#if !MONO && !DOTNET2
         static void singleInstance_ArgumentsReceived(object sender, ArgumentsReceivedEventArgs e)
         {
             if (form != null)
@@ -121,7 +120,6 @@ namespace TransmissionRemoteDotnet
                 }
             }
         }
-#endif
 
         public static void RaisePostUpdateEvent()
         {

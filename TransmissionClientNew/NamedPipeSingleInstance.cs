@@ -7,14 +7,10 @@ using System.Collections.Generic;
 
 namespace TransmissionRemoteDotnet
 {
-    public class ArgumentsReceivedEventArgs : EventArgs
-    {
-        public String[] Args { get; set; }
-    }
     /// <summary>
     /// Enforces single instance for an application.
     /// </summary>
-    public class SingleInstance : IDisposable
+    public class SingleInstance : IDisposable, ISingleInstance
     {
         private Mutex mutex = null;
         private Boolean ownsMutex = false;
@@ -39,7 +35,7 @@ namespace TransmissionRemoteDotnet
         /// <summary>
         /// Passes the given arguments to the first running instance of the application.
         /// </summary>
-        /// <param name=ProtocolConstants.KEY_ARGUMENTS>The arguments to pass.</param>
+        /// <param name=arguments>The arguments to pass.</param>
         /// <returns>Return true if the operation succeded, false otherwise.</returns>
         public Boolean PassArgumentsToFirstInstance(String[] arguments)
         {

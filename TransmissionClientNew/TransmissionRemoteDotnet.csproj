@@ -46,7 +46,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;DOTNET2</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoStdLib>false</NoStdLib>
@@ -62,6 +62,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="2DPushGraph.cs">
@@ -73,10 +74,16 @@
     <Compile Include="AboutDialog.Designer.cs">
       <DependentUpon>AboutDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="ArgumentsReceivedEventArgs.cs" />
     <Compile Include="CommandFactory.cs" />
     <Compile Include="Commands\ErrorCommand.cs" />
+    <Compile Include="Commands\NoCommand.cs" />
     <Compile Include="Commands\ResolveHostCommand.cs" />
+    <Compile Include="Commands\SessionCommand.cs" />
     <Compile Include="Commands\SessionStatsCommand.cs" />
+    <Compile Include="Commands\TorrentGetCommand.cs" />
+    <Compile Include="Commands\UpdateFilesCommand.cs" />
+    <Compile Include="Commands\UpdateFilesSubCommand.cs" />
     <Compile Include="Comparers\ListViewItemIPComparer.cs" />
     <Compile Include="Comparers\ListViewItemDecimalComparer.cs" />
     <Compile Include="Comparers\ListViewItemInt64Comparer.cs" />
@@ -98,6 +105,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="GListBoxItem.cs" />
+    <Compile Include="ISingleInstance.cs" />
     <Compile Include="ListViewColumnSorter.cs" />
     <Compile Include="ListViewNF.cs">
       <SubType>Component</SubType>
@@ -108,7 +116,6 @@
     <Compile Include="LocalSettingsDialog.Designer.cs">
       <DependentUpon>LocalSettingsDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Commands\NoCommand.cs" />
     <Compile Include="LocalSettingsSingleton.cs" />
     <Compile Include="Comparers\PeersListViewColumnSorter.cs" />
     <Compile Include="Program.cs" />
@@ -168,18 +175,17 @@
     <Compile Include="RemoteSettingsDialog.Designer.cs">
       <DependentUpon>RemoteSettingsDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="SingleInstance.cs" />
+    <Compile Include="NamedPipeSingleInstance.cs" />
     <Compile Include="StatsDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StatsDialog.Designer.cs">
       <DependentUpon>StatsDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="TCPSingleInstance.cs" />
     <Compile Include="Toolbox.cs" />
     <Compile Include="Torrent.cs" />
-    <Compile Include="Commands\TorrentGetCommand.cs" />
     <Compile Include="Requests.cs" />
-    <Compile Include="Commands\SessionCommand.cs" />
     <Compile Include="TorrentPropertiesDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,8 +197,6 @@
     <Compile Include="TransmissionWebClient.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Commands\UpdateFilesCommand.cs" />
-    <Compile Include="Commands\UpdateFilesSubCommand.cs" />
     <Compile Include="UriPromptWindow.cs">
       <SubType>Form</SubType>
     </Compile>
