@@ -148,7 +148,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.connectButton = new System.Windows.Forms.ToolStripButton();
+            this.connectButton = new System.Windows.Forms.ToolStripSplitButton();
             this.disconnectButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.addTorrentButton = new System.Windows.Forms.ToolStripButton();
@@ -233,20 +233,20 @@
             this.fileMenuItemSeperator1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // connectToolStripMenuItem
             // 
             this.connectToolStripMenuItem.Name = "connectToolStripMenuItem";
-            this.connectToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.connectToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.connectToolStripMenuItem.Text = "Connect";
             this.connectToolStripMenuItem.Click += new System.EventHandler(this.connectButton_Click);
             // 
             // disconnectToolStripMenuItem
             // 
             this.disconnectToolStripMenuItem.Name = "disconnectToolStripMenuItem";
-            this.disconnectToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.disconnectToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.disconnectToolStripMenuItem.Text = "Disconnect";
             this.disconnectToolStripMenuItem.Visible = false;
             this.disconnectToolStripMenuItem.Click += new System.EventHandler(this.disconnectButton_Click);
@@ -254,12 +254,12 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(190, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(178, 6);
             // 
             // addTorrentToolStripMenuItem
             // 
             this.addTorrentToolStripMenuItem.Name = "addTorrentToolStripMenuItem";
-            this.addTorrentToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.addTorrentToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.addTorrentToolStripMenuItem.Text = "Add Torrent";
             this.addTorrentToolStripMenuItem.Visible = false;
             this.addTorrentToolStripMenuItem.Click += new System.EventHandler(this.addTorrentButton_Click);
@@ -267,7 +267,7 @@
             // addTorrentFromUrlToolStripMenuItem
             // 
             this.addTorrentFromUrlToolStripMenuItem.Name = "addTorrentFromUrlToolStripMenuItem";
-            this.addTorrentFromUrlToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.addTorrentFromUrlToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.addTorrentFromUrlToolStripMenuItem.Text = "Add Torrent From URL";
             this.addTorrentFromUrlToolStripMenuItem.Visible = false;
             this.addTorrentFromUrlToolStripMenuItem.Click += new System.EventHandler(this.addWebTorrentButton_Click);
@@ -275,13 +275,13 @@
             // fileMenuItemSeperator1
             // 
             this.fileMenuItemSeperator1.Name = "fileMenuItemSeperator1";
-            this.fileMenuItemSeperator1.Size = new System.Drawing.Size(190, 6);
+            this.fileMenuItemSeperator1.Size = new System.Drawing.Size(178, 6);
             this.fileMenuItemSeperator1.Visible = false;
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -291,20 +291,20 @@
             this.localSettingsToolStripMenuItem,
             this.remoteSettingsToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.optionsToolStripMenuItem.Text = "Options";
             // 
             // localSettingsToolStripMenuItem
             // 
             this.localSettingsToolStripMenuItem.Name = "localSettingsToolStripMenuItem";
-            this.localSettingsToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.localSettingsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.localSettingsToolStripMenuItem.Text = "Local Settings";
             this.localSettingsToolStripMenuItem.Click += new System.EventHandler(this.localConfigureButton_Click);
             // 
             // remoteSettingsToolStripMenuItem
             // 
             this.remoteSettingsToolStripMenuItem.Name = "remoteSettingsToolStripMenuItem";
-            this.remoteSettingsToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.remoteSettingsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.remoteSettingsToolStripMenuItem.Text = "Remote Settings";
             this.remoteSettingsToolStripMenuItem.Visible = false;
             this.remoteSettingsToolStripMenuItem.Click += new System.EventHandler(this.remoteConfigureButton_Click);
@@ -317,32 +317,32 @@
             this.projectSiteToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // showErrorLogToolStripMenuItem
             // 
             this.showErrorLogToolStripMenuItem.Name = "showErrorLogToolStripMenuItem";
-            this.showErrorLogToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.showErrorLogToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.showErrorLogToolStripMenuItem.Text = "Show Error Log";
             this.showErrorLogToolStripMenuItem.Click += new System.EventHandler(this.showErrorLogToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(221, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(204, 6);
             // 
             // projectSiteToolStripMenuItem
             // 
             this.projectSiteToolStripMenuItem.Name = "projectSiteToolStripMenuItem";
-            this.projectSiteToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.projectSiteToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.projectSiteToolStripMenuItem.Text = "Project site";
             this.projectSiteToolStripMenuItem.Click += new System.EventHandler(this.projectSiteToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.aboutToolStripMenuItem.Text = "About Transmission Remote";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -1381,7 +1381,7 @@
             this.sessionStatsButton});
             this.toolStrip.Location = new System.Drawing.Point(3, 0);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(81, 39);
+            this.toolStrip.Size = new System.Drawing.Size(502, 39);
             this.toolStrip.TabIndex = 0;
             // 
             // connectButton
@@ -1391,9 +1391,9 @@
             this.connectButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.connectButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.connectButton.Name = "connectButton";
-            this.connectButton.Size = new System.Drawing.Size(36, 36);
+            this.connectButton.Size = new System.Drawing.Size(48, 36);
             this.connectButton.Text = "Connect";
-            this.connectButton.Click += new System.EventHandler(this.connectButton_Click);
+            this.connectButton.ButtonClick += new System.EventHandler(this.connectButton_Click);
             // 
             // disconnectButton
             // 
@@ -1710,7 +1710,7 @@
         private System.Windows.Forms.ToolStripMenuItem addTorrentFromUrlToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator fileMenuItemSeperator1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        public System.Windows.Forms.ToolStripButton connectButton;
+        public System.Windows.Forms.ToolStripSplitButton connectButton;
         public System.Windows.Forms.Timer refreshTimer;
         public System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         public System.Windows.Forms.NotifyIcon notifyIcon;

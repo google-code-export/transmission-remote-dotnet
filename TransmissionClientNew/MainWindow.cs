@@ -67,6 +67,11 @@ namespace TransmissionRemoteDotnet
             speedResComboBox.SelectedIndex = 2;
         }
 
+        public ToolStripMenuItem CreateProfileMenuItem(string name)
+        {
+            return connectButton.DropDownItems.Add(name, null, new EventHandler(this.connectButtonprofile_SelectedIndexChanged)) as ToolStripMenuItem;
+        }
+
         private void InitStateListBox()
         {
             stateListBox.SuspendLayout();
@@ -286,10 +291,39 @@ namespace TransmissionRemoteDotnet
                     }
                 }
             }
+            List<string> profiles = settings.Profiles;
+            for (int i = 0; i < profiles.Count; i++)
+            {
+                ToolStripMenuItem profile = CreateProfileMenuItem(profiles[i]);
+                if (profiles[i].Equals(settings.CurrentProfile))
+                {
+                    profile.Checked = true;
+                }
+            }
             OpenGeoipDatabase();
             if (settings.autoConnect)
             {
                 Connect();
+            }
+        }
+
+        private void connectButtonprofile_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
+            ToolStripMenuItem profile = (sender as ToolStripMenuItem);
+            foreach (ToolStripMenuItem item in connectButton.DropDownItems)
+            {
+                item.Checked = false;
+            }
+            profile.Checked = true;
+            string selectedProfile = profile.ToString();
+            if (!selectedProfile.Equals(settings.CurrentProfile))
+            {
+                settings.CurrentProfile = selectedProfile;
+                if (settings.autoConnect)
+                {
+                    Program.Form.Connect();
+                }
             }
         }
 
@@ -375,14 +409,13 @@ namespace TransmissionRemoteDotnet
             {
                 foreach (string file in (string[])e.Argument)
                 {
-                    if (file == null || file.Length < 1)
+                    if (file != null && file.Length > 0)
                     {
-                        continue;
-                    }
-                    if ((e.Result = CommandFactory.Request(Requests.TorrentAddByFile(file, false))).GetType() == typeof(ErrorCommand))
-                    {
-                        /* An exception occured, so display it. */
-                        return;
+                        if ((e.Result = CommandFactory.Request(Requests.TorrentAddByFile(file, false))).GetType() == typeof(ErrorCommand))
+                        {
+                            /* An exception occured, so display it. */
+                            return;
+                        }
                     }
                 }
             }

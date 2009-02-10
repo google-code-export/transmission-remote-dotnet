@@ -155,11 +155,21 @@ namespace TransmissionRemoteDotnet
             {
                 LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
                 string selectedProfile = profileComboBox.SelectedItem.ToString();
+                foreach (ToolStripMenuItem item in Program.Form.connectButton.DropDownItems)
+                {
+                    if (selectedProfile.Equals(item.ToString()))
+                    {
+                        item.Checked = true;
+                    }
+                    else
+                    {
+                        item.Checked = false;
+                    }
+                }
                 if (!selectedProfile.Equals(settings.CurrentProfile))
                 {
                     SaveSettings();
                     settings.CurrentProfile = selectedProfile;
-                    LoadCurrentProfile();
                     if (settings.autoConnect)
                     {
                         Program.Form.Connect();
@@ -176,6 +186,12 @@ namespace TransmissionRemoteDotnet
         private void button2_Click(object sender, EventArgs e)
         {
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
+            ToolStripMenuItem profile = Program.Form.CreateProfileMenuItem(textBox1.Text);
+            foreach (ToolStripMenuItem item in Program.Form.connectButton.DropDownItems)
+            {
+                item.Checked = false;
+            }
+            profile.Checked = true;
             ignoreProfileIndexChanged = true;
             settings.CreateProfile(textBox1.Text);
             profileComboBox.SelectedIndex = profileComboBox.Items.Add(textBox1.Text);
