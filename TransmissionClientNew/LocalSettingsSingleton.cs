@@ -81,6 +81,10 @@ namespace TransmissionRemoteDotnet
                 this.currentProfile = value;
                 LoadCurrentProfile();
                 SaveProfileSelection();
+                if (Program.Form != null && autoConnect)
+                {
+                    Program.Form.Connect();
+                }
             }
         }
 

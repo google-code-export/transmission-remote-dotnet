@@ -170,10 +170,6 @@ namespace TransmissionRemoteDotnet
                 {
                     SaveSettings();
                     settings.CurrentProfile = selectedProfile;
-                    if (settings.autoConnect)
-                    {
-                        Program.Form.Connect();
-                    }
                 }
             }
         }

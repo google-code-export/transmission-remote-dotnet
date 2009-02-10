@@ -20,7 +20,6 @@ namespace TransmissionRemoteDotnet
 
         public TCPSingleInstance(int port)
         {
-            this.port = port;
             try
             {
                 this.listener = new TcpListener(IPAddress.Parse("127.0.0.1"), port);
@@ -29,6 +28,7 @@ namespace TransmissionRemoteDotnet
             }
             catch
             {
+                this.port = port;
                 this.isFirstInstance = false;
             }
         }
@@ -83,8 +83,11 @@ namespace TransmissionRemoteDotnet
             if (ArgumentsReceived != null)
                 ArgumentsReceived(this, new ArgumentsReceivedEventArgs() { Args = (string[])state });
         }
+
         public bool PassArgumentsToFirstInstance(string[] arguments)
         {
+            if (isFirstInstance)
+                throw new InvalidOperationException("This is not the first instance.");
             try
             {
                 TcpClient client = new TcpClient();

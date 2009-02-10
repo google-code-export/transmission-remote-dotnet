@@ -37,7 +37,7 @@ namespace TransmissionRemoteDotnet
         /// </summary>
         /// <param name=arguments>The arguments to pass.</param>
         /// <returns>Return true if the operation succeded, false otherwise.</returns>
-        public Boolean PassArgumentsToFirstInstance(String[] arguments)
+        public Boolean PassArgumentsToFirstInstance(string[] arguments)
         {
             if (IsFirstInstance)
                 throw new InvalidOperationException("This is the first instance.");

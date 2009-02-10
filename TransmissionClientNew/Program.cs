@@ -13,6 +13,9 @@ namespace TransmissionRemoteDotnet
 
     static class Program
     {
+        private const int TCP_SINGLE_INSTANCE_PORT = 24452;
+        private const string APPLICATION_GUID = "{1a4ec788-d8f8-46b4-bb6b-598bc39f6999}";
+
         public static event ConnStatusChangedDelegate onConnStatusChanged;
         public static event TorrentsUpdatedDelegate onTorrentsUpdated;
         public static event OnErrorDelegate onError;
@@ -42,6 +45,7 @@ namespace TransmissionRemoteDotnet
         public static List<ListViewItem> LogItems
         {
             get { return Program.logItems; }
+        
         }
         private static string[] uploadArgs;
 
@@ -57,9 +61,9 @@ namespace TransmissionRemoteDotnet
         {
             using (ISingleInstance singleInstance =
 #if MONO || DOTNET2
-                new TCPSingleInstance(24452))
+                new TCPSingleInstance(TCP_SINGLE_INSTANCE_PORT))
 #else
-                new SingleInstance(new Guid("{1a4ec788-d8f8-46b4-bb6b-598bc39f6307}")))
+                new SingleInstance(new Guid(APPLICATION_GUID)))
 #endif
             {
                 if (singleInstance.IsFirstInstance)
@@ -68,7 +72,14 @@ namespace TransmissionRemoteDotnet
                     {
                         ServicePointManager.ServerCertificateValidationCallback = TransmissionWebClient.ValidateServerCertificate;
                     }
-                    catch { }
+                    catch
+                    {
+#if MONO
+#pragma warning disable 618
+                        ServicePointManager.CertificatePolicy = new PromiscuousCertificatePolicy();
+#pragma warning restore 618
+#endif
+                    }
                     ServicePointManager.Expect100Continue = false;
                     /* Store a list of torrents to upload after connect? */
                     if (LocalSettingsSingleton.Instance.autoConnect && args.Length > 0)

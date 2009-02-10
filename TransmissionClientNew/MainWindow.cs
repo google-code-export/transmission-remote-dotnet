@@ -300,11 +300,11 @@ namespace TransmissionRemoteDotnet
                     profile.Checked = true;
                 }
             }
-            OpenGeoipDatabase();
             if (settings.autoConnect)
             {
                 Connect();
             }
+            OpenGeoipDatabase();
         }
 
         private void connectButtonprofile_SelectedIndexChanged(object sender, EventArgs e)
@@ -320,10 +320,6 @@ namespace TransmissionRemoteDotnet
             if (!selectedProfile.Equals(settings.CurrentProfile))
             {
                 settings.CurrentProfile = selectedProfile;
-                if (settings.autoConnect)
-                {
-                    Program.Form.Connect();
-                }
             }
         }
 
