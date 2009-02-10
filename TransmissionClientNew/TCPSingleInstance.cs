@@ -56,12 +56,11 @@ namespace TransmissionRemoteDotnet
         {
             try
             {
-                Socket sock = listener.AcceptSocket();
-                //NetworkStream stream = listener.AcceptTcpClient().GetStream();
-                byte[] response = new byte[2048];
-                sock.Receive(response);
+                StreamReader reader = new StreamReader(listener.AcceptTcpClient().GetStream());
                 List<string> arguments = new List<string>();
-                foreach (string arg in (JsonArray)JsonConvert.Import((new ASCIIEncoding()).GetString(response)))
+                string response = reader.ReadLine();
+                reader.Close();
+                foreach (string arg in (JsonArray)JsonConvert.Import(response))
                 {
                     if (arg != null && arg.Length > 0)
                     {
@@ -81,15 +80,9 @@ namespace TransmissionRemoteDotnet
 
         private void CallOnArgumentsReceived(Object state)
         {
-            OnArgumentsReceived((String[])state);
-        }
-
-        private void OnArgumentsReceived(String[] arguments)
-        {
             if (ArgumentsReceived != null)
-                ArgumentsReceived(this, new ArgumentsReceivedEventArgs() { Args = arguments });
+                ArgumentsReceived(this, new ArgumentsReceivedEventArgs() { Args = (string[])state });
         }
-
         public bool PassArgumentsToFirstInstance(string[] arguments)
         {
             try
