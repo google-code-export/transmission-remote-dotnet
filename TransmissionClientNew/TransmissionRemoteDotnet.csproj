@@ -265,6 +265,8 @@
     <None Include="Resources\player_reload16.png" />
     <None Include="Resources\remove_and_delete.png" />
     <None Include="Resources\xmag.png" />
+    <None Include="Resources\16x16_ledred.png" />
+    <None Include="Resources\messagebox_warning.png" />
     <Content Include="transmission_large.ico" />
   </ItemGroup>
   <ItemGroup>

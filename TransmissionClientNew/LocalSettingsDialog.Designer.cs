@@ -72,9 +72,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.removeProfileButton = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.addProfileButton = new System.Windows.Forms.Button();
-            this.removeProfileButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PortField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RefreshRateValue)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -105,7 +105,7 @@
             // 
             this.HostField.Location = new System.Drawing.Point(88, 22);
             this.HostField.Name = "HostField";
-            this.HostField.Size = new System.Drawing.Size(196, 20);
+            this.HostField.Size = new System.Drawing.Size(156, 20);
             this.HostField.TabIndex = 1;
             // 
             // label2
@@ -141,9 +141,9 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(13, 242);
+            this.SaveButton.Location = new System.Drawing.Point(13, 244);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(103, 23);
+            this.SaveButton.Size = new System.Drawing.Size(130, 23);
             this.SaveButton.TabIndex = 4;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -152,9 +152,9 @@
             // CloseDialogButton
             // 
             this.CloseDialogButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CloseDialogButton.Location = new System.Drawing.Point(227, 242);
+            this.CloseDialogButton.Location = new System.Drawing.Point(285, 244);
             this.CloseDialogButton.Name = "CloseDialogButton";
-            this.CloseDialogButton.Size = new System.Drawing.Size(103, 23);
+            this.CloseDialogButton.Size = new System.Drawing.Size(130, 23);
             this.CloseDialogButton.TabIndex = 5;
             this.CloseDialogButton.Text = "Cancel";
             this.CloseDialogButton.UseVisualStyleBackColor = true;
@@ -163,7 +163,7 @@
             // AutoConnectCheckBox
             // 
             this.AutoConnectCheckBox.AutoSize = true;
-            this.AutoConnectCheckBox.Location = new System.Drawing.Point(201, 79);
+            this.AutoConnectCheckBox.Location = new System.Drawing.Point(274, 53);
             this.AutoConnectCheckBox.Name = "AutoConnectCheckBox";
             this.AutoConnectCheckBox.Size = new System.Drawing.Size(90, 17);
             this.AutoConnectCheckBox.TabIndex = 4;
@@ -215,14 +215,14 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(5, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(300, 130);
+            this.groupBox2.Size = new System.Drawing.Size(383, 130);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
             // UseSSLCheckBox
             // 
             this.UseSSLCheckBox.AutoSize = true;
-            this.UseSSLCheckBox.Location = new System.Drawing.Point(201, 51);
+            this.UseSSLCheckBox.Location = new System.Drawing.Point(274, 25);
             this.UseSSLCheckBox.Name = "UseSSLCheckBox";
             this.UseSSLCheckBox.Size = new System.Drawing.Size(89, 17);
             this.UseSSLCheckBox.TabIndex = 3;
@@ -269,14 +269,14 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Location = new System.Drawing.Point(5, 5);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(300, 130);
+            this.groupBox3.Size = new System.Drawing.Size(383, 130);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             // 
             // ProxyAuthEnableCheckBox
             // 
             this.ProxyAuthEnableCheckBox.AutoSize = true;
-            this.ProxyAuthEnableCheckBox.Location = new System.Drawing.Point(202, 78);
+            this.ProxyAuthEnableCheckBox.Location = new System.Drawing.Point(275, 73);
             this.ProxyAuthEnableCheckBox.Name = "ProxyAuthEnableCheckBox";
             this.ProxyAuthEnableCheckBox.Size = new System.Drawing.Size(86, 17);
             this.ProxyAuthEnableCheckBox.TabIndex = 7;
@@ -292,7 +292,7 @@
             "Auto",
             "Enabled",
             "Disabled"});
-            this.EnableProxyCombo.Location = new System.Drawing.Point(201, 49);
+            this.EnableProxyCombo.Location = new System.Drawing.Point(274, 44);
             this.EnableProxyCombo.Name = "EnableProxyCombo";
             this.EnableProxyCombo.Size = new System.Drawing.Size(83, 21);
             this.EnableProxyCombo.TabIndex = 4;
@@ -309,29 +309,29 @@
             // 
             // ProxyPassField
             // 
-            this.ProxyPassField.Location = new System.Drawing.Point(87, 101);
+            this.ProxyPassField.Location = new System.Drawing.Point(88, 101);
             this.ProxyPassField.Name = "ProxyPassField";
             this.ProxyPassField.PasswordChar = '*';
-            this.ProxyPassField.Size = new System.Drawing.Size(109, 20);
+            this.ProxyPassField.Size = new System.Drawing.Size(156, 20);
             this.ProxyPassField.TabIndex = 9;
             // 
             // ProxyUserField
             // 
-            this.ProxyUserField.Location = new System.Drawing.Point(87, 75);
+            this.ProxyUserField.Location = new System.Drawing.Point(88, 75);
             this.ProxyUserField.Name = "ProxyUserField";
-            this.ProxyUserField.Size = new System.Drawing.Size(109, 20);
+            this.ProxyUserField.Size = new System.Drawing.Size(156, 20);
             this.ProxyUserField.TabIndex = 6;
             // 
             // ProxyHostField
             // 
-            this.ProxyHostField.Location = new System.Drawing.Point(87, 22);
+            this.ProxyHostField.Location = new System.Drawing.Point(88, 22);
             this.ProxyHostField.Name = "ProxyHostField";
-            this.ProxyHostField.Size = new System.Drawing.Size(109, 20);
+            this.ProxyHostField.Size = new System.Drawing.Size(156, 20);
             this.ProxyHostField.TabIndex = 1;
             // 
             // ProxyPortField
             // 
-            this.ProxyPortField.Location = new System.Drawing.Point(87, 48);
+            this.ProxyPortField.Location = new System.Drawing.Point(88, 48);
             this.ProxyPortField.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -394,13 +394,13 @@
             this.groupBox4.Controls.Add(this.StartPausedCheckBox);
             this.groupBox4.Location = new System.Drawing.Point(5, 5);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(300, 130);
+            this.groupBox4.Size = new System.Drawing.Size(383, 130);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             // 
             // UserField
             // 
-            this.UserField.Location = new System.Drawing.Point(85, 47);
+            this.UserField.Location = new System.Drawing.Point(85, 22);
             this.UserField.Name = "UserField";
             this.UserField.Size = new System.Drawing.Size(109, 20);
             this.UserField.TabIndex = 1;
@@ -408,7 +408,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 50);
+            this.label4.Location = new System.Drawing.Point(8, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 0;
@@ -416,7 +416,7 @@
             // 
             // PassField
             // 
-            this.PassField.Location = new System.Drawing.Point(85, 73);
+            this.PassField.Location = new System.Drawing.Point(85, 48);
             this.PassField.Name = "PassField";
             this.PassField.PasswordChar = '*';
             this.PassField.Size = new System.Drawing.Size(109, 20);
@@ -425,7 +425,7 @@
             // EnableAuthCheckBox
             // 
             this.EnableAuthCheckBox.AutoSize = true;
-            this.EnableAuthCheckBox.Location = new System.Drawing.Point(9, 19);
+            this.EnableAuthCheckBox.Location = new System.Drawing.Point(231, 25);
             this.EnableAuthCheckBox.Name = "EnableAuthCheckBox";
             this.EnableAuthCheckBox.Size = new System.Drawing.Size(129, 17);
             this.EnableAuthCheckBox.TabIndex = 2;
@@ -436,7 +436,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 77);
+            this.label5.Location = new System.Drawing.Point(8, 51);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 13);
             this.label5.TabIndex = 3;
@@ -451,7 +451,7 @@
             this.groupBox1.Controls.Add(this.UserField);
             this.groupBox1.Location = new System.Drawing.Point(5, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(300, 130);
+            this.groupBox1.Size = new System.Drawing.Size(383, 130);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
@@ -464,7 +464,7 @@
             this.tabControl1.Location = new System.Drawing.Point(13, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(321, 167);
+            this.tabControl1.Size = new System.Drawing.Size(402, 167);
             this.tabControl1.TabIndex = 6;
             // 
             // tabPage1
@@ -473,7 +473,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(313, 141);
+            this.tabPage1.Size = new System.Drawing.Size(394, 141);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Server";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -483,7 +483,7 @@
             this.tabPage4.Controls.Add(this.groupBox4);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(313, 141);
+            this.tabPage4.Size = new System.Drawing.Size(394, 141);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "General";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -494,7 +494,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(313, 141);
+            this.tabPage2.Size = new System.Drawing.Size(394, 141);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Authentication";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -504,16 +504,16 @@
             this.tabPage3.Controls.Add(this.groupBox3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(313, 141);
+            this.tabPage3.Size = new System.Drawing.Size(394, 141);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Proxy";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(119, 242);
+            this.button1.Location = new System.Drawing.Point(149, 244);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 23);
+            this.button1.Size = new System.Drawing.Size(130, 23);
             this.button1.TabIndex = 7;
             this.button1.Text = "Save and Connect";
             this.button1.UseVisualStyleBackColor = true;
@@ -525,7 +525,7 @@
             this.profileComboBox.FormattingEnabled = true;
             this.profileComboBox.Location = new System.Drawing.Point(6, 19);
             this.profileComboBox.Name = "profileComboBox";
-            this.profileComboBox.Size = new System.Drawing.Size(120, 21);
+            this.profileComboBox.Size = new System.Drawing.Size(133, 21);
             this.profileComboBox.TabIndex = 8;
             this.profileComboBox.SelectedIndexChanged += new System.EventHandler(this.profileComboBox_SelectedIndexChanged);
             // 
@@ -541,7 +541,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(6, 20);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(98, 20);
+            this.textBox1.Size = new System.Drawing.Size(131, 20);
             this.textBox1.TabIndex = 10;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -552,18 +552,29 @@
             this.groupBox5.Controls.Add(this.profileComboBox);
             this.groupBox5.Location = new System.Drawing.Point(13, 185);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(166, 51);
+            this.groupBox5.Size = new System.Drawing.Size(190, 51);
             this.groupBox5.TabIndex = 12;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Current profile";
+            // 
+            // removeProfileButton
+            // 
+            this.removeProfileButton.Enabled = false;
+            this.removeProfileButton.Image = global::TransmissionRemoteDotnet.Properties.Resources._16x16_remove;
+            this.removeProfileButton.Location = new System.Drawing.Point(150, 13);
+            this.removeProfileButton.Name = "removeProfileButton";
+            this.removeProfileButton.Size = new System.Drawing.Size(30, 30);
+            this.removeProfileButton.TabIndex = 10;
+            this.removeProfileButton.UseVisualStyleBackColor = true;
+            this.removeProfileButton.Click += new System.EventHandler(this.removeProfileButton_Click);
             // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.addProfileButton);
             this.groupBox6.Controls.Add(this.textBox1);
-            this.groupBox6.Location = new System.Drawing.Point(185, 185);
+            this.groupBox6.Location = new System.Drawing.Point(225, 185);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(147, 51);
+            this.groupBox6.Size = new System.Drawing.Size(190, 51);
             this.groupBox6.TabIndex = 13;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "New profile";
@@ -572,23 +583,12 @@
             // 
             this.addProfileButton.Enabled = false;
             this.addProfileButton.Image = global::TransmissionRemoteDotnet.Properties.Resources._16x16_add;
-            this.addProfileButton.Location = new System.Drawing.Point(111, 17);
+            this.addProfileButton.Location = new System.Drawing.Point(150, 13);
             this.addProfileButton.Name = "addProfileButton";
-            this.addProfileButton.Size = new System.Drawing.Size(30, 25);
+            this.addProfileButton.Size = new System.Drawing.Size(30, 30);
             this.addProfileButton.TabIndex = 11;
             this.addProfileButton.UseVisualStyleBackColor = true;
             this.addProfileButton.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // removeProfileButton
-            // 
-            this.removeProfileButton.Enabled = false;
-            this.removeProfileButton.Image = global::TransmissionRemoteDotnet.Properties.Resources._16x16_remove;
-            this.removeProfileButton.Location = new System.Drawing.Point(132, 17);
-            this.removeProfileButton.Name = "removeProfileButton";
-            this.removeProfileButton.Size = new System.Drawing.Size(30, 25);
-            this.removeProfileButton.TabIndex = 10;
-            this.removeProfileButton.UseVisualStyleBackColor = true;
-            this.removeProfileButton.Click += new System.EventHandler(this.removeProfileButton_Click);
             // 
             // LocalSettingsDialog
             // 
@@ -596,7 +596,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CloseDialogButton;
-            this.ClientSize = new System.Drawing.Size(346, 275);
+            this.ClientSize = new System.Drawing.Size(427, 280);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.button1);

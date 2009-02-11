@@ -83,6 +83,7 @@ namespace TransmissionRemoteDotnet
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.apply16);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.up16);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.player_reload16);
+            stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.warning);
             stateListBox.ImageList = stateListBoxImageList;
             stateListBox.Items.Add(new GListBoxItem("All", 0));
             stateListBox.Items.Add(new GListBoxItem("Downloading", 1));
@@ -90,6 +91,7 @@ namespace TransmissionRemoteDotnet
             stateListBox.Items.Add(new GListBoxItem("Checking", 5));
             stateListBox.Items.Add(new GListBoxItem("Complete", 3));
             stateListBox.Items.Add(new GListBoxItem("Seeding", 4));
+            stateListBox.Items.Add(new GListBoxItem("Broken", 6));
             stateListBox.Items.Add(new GListBoxItem(""));
             stateListBox.ResumeLayout();
         }
@@ -211,11 +213,11 @@ namespace TransmissionRemoteDotnet
                 this.toolStripStatusLabel.Text = "Disconnected.";
                 this.Text = MainWindow.DEFAULT_WINDOW_TITLE;
                 this.torrentAndTabsSplitContainer.Panel2Collapsed = this.mainVerticalSplitContainer.Panel1Collapsed = true;
-                if (this.stateListBox.Items.Count > 6)
+                if (this.stateListBox.Items.Count > 7)
                 {
                     lock (this.stateListBox)
                     {
-                        for (int i = this.stateListBox.Items.Count - 1; i > 6; i--)
+                        for (int i = this.stateListBox.Items.Count - 1; i > 7; i--)
                         {
                             stateListBox.Items.RemoveAt(i);
                         }
@@ -790,7 +792,22 @@ namespace TransmissionRemoteDotnet
                 {
                     ShowTorrentIfStatus(ProtocolConstants.STATUS_SEEDING);
                 }
-                else if (stateListBox.SelectedIndex > 6)
+                else if (stateListBox.SelectedIndex == 6)
+                {
+                    foreach (KeyValuePair<int, Torrent> pair in Program.TorrentIndex)
+                    {
+                        Torrent t = pair.Value;
+                        if (t.HasError)
+                        {
+                            t.Show();
+                        }
+                        else
+                        {
+                            t.Remove();
+                        }
+                    }
+                }
+                else if (stateListBox.SelectedIndex > 7)
                 {
                     foreach (KeyValuePair<int, Torrent> pair in Program.TorrentIndex)
                     {

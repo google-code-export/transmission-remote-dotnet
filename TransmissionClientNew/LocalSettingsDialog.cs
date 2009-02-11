@@ -170,6 +170,7 @@ namespace TransmissionRemoteDotnet
                 {
                     SaveSettings();
                     settings.CurrentProfile = selectedProfile;
+                    LoadCurrentProfile();
                 }
             }
         }
