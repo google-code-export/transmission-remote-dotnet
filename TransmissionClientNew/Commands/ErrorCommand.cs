@@ -21,7 +21,7 @@ namespace TransmissionRemoteDotnet.Commmands
 
         public ErrorCommand(Exception ex, bool showDontCount)
         {
-            this.title = ex.GetType().ToString();
+            this.title = "Error";
             this.body = ex.Message;
             this.showDontCount = showDontCount;
         }

@@ -101,10 +101,19 @@ namespace TransmissionRemoteDotnet
 
         public static void Log(string title, string body)
         {
+            Log(title, body, null);
+        }
+
+        public static void Log(string title, string body, object tag)
+        {
             ListViewItem logItem = new ListViewItem(DateTime.Now.ToString());
+            logItem.Tag = tag;
             logItem.SubItems.Add(title);
             logItem.SubItems.Add(body);
-            logItems.Add(logItem);
+            lock (logItems)
+            {
+                logItems.Add(logItem);
+            }
             if (onError != null)
             {
                 onError();

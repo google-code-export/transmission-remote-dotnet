@@ -54,7 +54,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(270, 154);
+            this.tabControl1.Size = new System.Drawing.Size(257, 144);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPage1
@@ -70,31 +70,31 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(262, 128);
+            this.tabPage1.Size = new System.Drawing.Size(249, 118);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // peerLimitValue
             // 
-            this.peerLimitValue.Location = new System.Drawing.Point(143, 68);
+            this.peerLimitValue.Location = new System.Drawing.Point(131, 75);
             this.peerLimitValue.Name = "peerLimitValue";
-            this.peerLimitValue.Size = new System.Drawing.Size(57, 20);
+            this.peerLimitValue.Size = new System.Drawing.Size(56, 20);
             this.peerLimitValue.TabIndex = 11;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 75);
+            this.label3.Location = new System.Drawing.Point(24, 76);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.Size = new System.Drawing.Size(80, 13);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Peer limit";
+            this.label3.Text = "Maximum peers";
             // 
             // uploadLimitEnableField
             // 
             this.uploadLimitEnableField.AutoSize = true;
-            this.uploadLimitEnableField.Location = new System.Drawing.Point(16, 17);
+            this.uploadLimitEnableField.Location = new System.Drawing.Point(6, 18);
             this.uploadLimitEnableField.Name = "uploadLimitEnableField";
             this.uploadLimitEnableField.Size = new System.Drawing.Size(103, 17);
             this.uploadLimitEnableField.TabIndex = 6;
@@ -104,7 +104,7 @@
             // 
             // downloadLimitField
             // 
-            this.downloadLimitField.Location = new System.Drawing.Point(144, 42);
+            this.downloadLimitField.Location = new System.Drawing.Point(131, 46);
             this.downloadLimitField.Maximum = new decimal(new int[] {
             1048576,
             0,
@@ -117,7 +117,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(207, 17);
+            this.label1.Location = new System.Drawing.Point(194, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 13);
             this.label1.TabIndex = 4;
@@ -125,7 +125,7 @@
             // 
             // uploadLimitField
             // 
-            this.uploadLimitField.Location = new System.Drawing.Point(144, 13);
+            this.uploadLimitField.Location = new System.Drawing.Point(131, 17);
             this.uploadLimitField.Maximum = new decimal(new int[] {
             1048576,
             0,
@@ -138,7 +138,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(207, 46);
+            this.label2.Location = new System.Drawing.Point(194, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 13);
             this.label2.TabIndex = 4;
@@ -147,7 +147,7 @@
             // downloadLimitEnableField
             // 
             this.downloadLimitEnableField.AutoSize = true;
-            this.downloadLimitEnableField.Location = new System.Drawing.Point(16, 46);
+            this.downloadLimitEnableField.Location = new System.Drawing.Point(6, 47);
             this.downloadLimitEnableField.Name = "downloadLimitEnableField";
             this.downloadLimitEnableField.Size = new System.Drawing.Size(117, 17);
             this.downloadLimitEnableField.TabIndex = 7;
@@ -158,7 +158,7 @@
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(209, 172);
+            this.button2.Location = new System.Drawing.Point(197, 162);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(72, 22);
             this.button2.TabIndex = 0;
@@ -168,7 +168,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(131, 172);
+            this.button1.Location = new System.Drawing.Point(119, 162);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(72, 22);
             this.button1.TabIndex = 0;
@@ -182,7 +182,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.button2;
-            this.ClientSize = new System.Drawing.Size(294, 205);
+            this.ClientSize = new System.Drawing.Size(282, 195);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button1);

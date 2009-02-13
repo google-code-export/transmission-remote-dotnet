@@ -84,35 +84,26 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        private bool WasLogged(string title)
-        {
-            List<ListViewItem> logItems = Program.LogItems;
-            lock (logItems)
-            {
-                if (logItems.Count > 0)
-                {
-                    DateTime lastErrorTime = (DateTime)logItems[logItems.Count - 1].Tag;
-                    foreach (ListViewItem item in logItems)
-                    {
-                        if (lastErrorTime.Equals((DateTime)item.Tag) && item.SubItems[1].Text.Equals(title))
-                        {
-                            return true;
-                        }
-                    }
-                }
-                return false;
-            }
-        }
-
         private void LogError()
         {
             if (this.HasError)
             {
                 List<ListViewItem> logItems = Program.LogItems;
-                if (!WasLogged(this.Name))
+                lock (logItems)
                 {
-                    Program.Log(this.Name, this.ErrorString);
+                    if (logItems.Count > 0)
+                    {
+                        foreach (ListViewItem item in logItems)
+                        {
+                            if (item.Tag != null && this.updateSerial-(long)item.Tag < 2 && item.SubItems[1].Text.Equals(this.Name) && item.SubItems[2].Text.Equals(this.ErrorString))
+                            {
+                                item.Tag = this.updateSerial;
+                                return;
+                            }
+                        }
+                    }
                 }
+                Program.Log(this.Name, this.ErrorString, this.updateSerial);
             }
         }
 
