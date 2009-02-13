@@ -363,7 +363,7 @@ namespace TransmissionRemoteDotnet
 
         public void RefreshUrlCache()
         {
-            this.urlCache = (useSSL ? "https" : "http") + "://" + this.host + ":" + this.port + (this.customPath == null ? "/transmission/" : this.customPath) + "rpc";
+            this.urlCache = String.Format("{0}://{1}:{2}{3}rpc", new object[]{useSSL ? "https" : "http", host, port, customPath == null ? "/transmission/" : customPath});
         }
 
         public string RpcUrl

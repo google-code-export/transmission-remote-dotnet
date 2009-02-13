@@ -235,7 +235,7 @@ namespace TransmissionRemoteDotnet
                 = remoteConfigureButton.Visible = pauseTorrentButton.Visible
                 = removeTorrentButton.Visible = toolStripSeparator4.Visible
                 = toolStripSeparator1.Visible = disconnectToolStripMenuItem.Visible
-                = toolStripSeparator2.Visible = torrentTabControl.Enabled
+                = toolStripButton1.Visible = torrentTabControl.Enabled
                 = remoteSettingsToolStripMenuItem.Visible = fileMenuItemSeperator1.Visible
                 = addTorrentFromUrlToolStripMenuItem.Visible = startTorrentButton.Visible
                 = refreshTimer.Enabled = recheckTorrentButton.Visible
@@ -577,7 +577,7 @@ namespace TransmissionRemoteDotnet
                 torrentListView.ContextMenu = oneOrMore ? this.torrentSelectionMenu : this.noTorrentSelectionMenu;
                 startTorrentButton.Enabled = pauseTorrentButton.Enabled
                     = removeTorrentButton.Enabled = recheckTorrentButton.Enabled
-                    = removeAndDeleteButton.Enabled
+                    = removeAndDeleteButton.Enabled = toolStripButton1.Enabled
                     = oneOrMore;
                 if (one)
                 {
@@ -612,12 +612,8 @@ namespace TransmissionRemoteDotnet
         {
             lock (torrentListView)
             {
-                foreach (ListViewItem item in torrentListView.SelectedItems)
-                {
-                    Torrent t = (Torrent)item.Tag;
-                    TorrentPropertiesDialog dialog = new TorrentPropertiesDialog(t);
-                    dialog.Show();
-                }
+                TorrentPropertiesDialog dialog = new TorrentPropertiesDialog(torrentListView.SelectedItems);
+                dialog.Show();
             }
         }
 

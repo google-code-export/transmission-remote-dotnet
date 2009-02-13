@@ -158,10 +158,16 @@ namespace TransmissionRemoteDotnet
                 ProtocolConstants.FIELD_PEERS,
                 ProtocolConstants.FIELD_PEERSGETTINGFROMUS,
                 ProtocolConstants.FIELD_PEERSSENDINGTOUS,
-                "sizeWhenDone","swarmSpeed", "isPrivate",
-                "comment","creator","dateCreated",
-                "hashString", "error","trackers",
-                "peersKnown"});
+                ProtocolConstants.FIELD_MAXCONNECTEDPEERS,
+                ProtocolConstants.FIELD_COMMENT,
+                ProtocolConstants.FIELD_SWARMSPEED,
+                ProtocolConstants.FIELD_DATECREATED,
+                ProtocolConstants.FIELD_CREATOR,
+                ProtocolConstants.FIELD_TRACKERS
+                /*"sizeWhenDone",, "isPrivate",
+                "hashString", "error",,
+                "peersKnown"*/
+            });
             arguments.Put(ProtocolConstants.KEY_FIELDS, fields);
             request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
             return request;

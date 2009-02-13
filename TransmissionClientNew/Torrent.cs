@@ -84,12 +84,32 @@ namespace TransmissionRemoteDotnet
             }
         }
 
+        private bool WasLogged(string title)
+        {
+            List<ListViewItem> logItems = Program.LogItems;
+            lock (logItems)
+            {
+                if (logItems.Count > 0)
+                {
+                    DateTime lastErrorTime = (DateTime)logItems[logItems.Count - 1].Tag;
+                    foreach (ListViewItem item in logItems)
+                    {
+                        if (lastErrorTime.Equals((DateTime)item.Tag) && item.SubItems[1].Text.Equals(title))
+                        {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+        }
+
         private void LogError()
         {
             if (this.HasError)
             {
                 List<ListViewItem> logItems = Program.LogItems;
-                if (logItems.Count <= 0 || (logItems.Count > 0 && !Program.LogItems[Program.LogItems.Count - 1].SubItems[1].Text.Equals(this.Name)))
+                if (!WasLogged(this.Name))
                 {
                     Program.Log(this.Name, this.ErrorString);
                 }
@@ -218,6 +238,14 @@ namespace TransmissionRemoteDotnet
             }
         }
 
+        public int MaxConnectedPeers
+        {
+            get
+            {
+                return ((JsonNumber)this.info[ProtocolConstants.FIELD_MAXCONNECTEDPEERS]).ToInt32();
+            }
+        }
+
         public JsonArray Trackers
         {
             get
@@ -324,7 +352,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return (string)info["creator"];
+                return (string)info[ProtocolConstants.FIELD_CREATOR];
             }
         }
 
@@ -402,7 +430,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return Toolbox.GetSpeed(((JsonNumber)info["swarmSpeed"]).ToInt64());
+                return Toolbox.GetSpeed(((JsonNumber)info[ProtocolConstants.FIELD_SWARMSPEED]).ToInt64());
             }
         }
 
@@ -450,7 +478,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return Toolbox.DateFromEpoch(((JsonNumber)info["dateCreated"]).ToDouble()).ToString();
+                return Toolbox.DateFromEpoch(((JsonNumber)info[ProtocolConstants.FIELD_DATECREATED]).ToDouble()).ToString();
             }
         }
 

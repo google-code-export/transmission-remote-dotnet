@@ -137,9 +137,23 @@ namespace TransmissionRemoteDotnet.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap hwinfo {
+            get {
+                object obj = ResourceManager.GetObject("hwinfo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap info16 {
             get {
                 object obj = ResourceManager.GetObject("info16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap kgpg_edit {
+            get {
+                object obj = ResourceManager.GetObject("kgpg_edit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -245,13 +259,6 @@ namespace TransmissionRemoteDotnet.Properties {
         internal static System.Drawing.Bitmap warning {
             get {
                 object obj = ResourceManager.GetObject("warning", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap xmag {
-            get {
-                object obj = ResourceManager.GetObject("xmag", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

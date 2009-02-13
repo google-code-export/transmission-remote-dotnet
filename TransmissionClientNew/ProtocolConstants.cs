@@ -68,6 +68,10 @@ namespace TransmissionRemoteDotnet
             FIELD_LENGTH = "length",
             FIELD_BYTESCOMPLETED = "bytesCompleted",
             FIELD_DELETELOCALDATA = "delete-local-data",
+            FIELD_MAXCONNECTEDPEERS = "maxConnectedPeers",
+            FIELD_CREATOR = "creator",
+            FIELD_SWARMSPEED = "swarmSpeed",
+            FIELD_DATECREATED = "dateCreated",
             FIELD_RECHECKPROGRESS = "recheckProgress";
     }
 }
