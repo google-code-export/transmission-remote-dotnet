@@ -221,7 +221,7 @@ namespace TransmissionRemoteDotnet
                 }
                 else
                 {
-                    return Regex.Replace(Regex.Replace(Regex.Replace(announceUrl.Host, "^tracker.", ""), "^www.", ""), "^torrent.", "");
+                    return Regex.Replace(Regex.Replace(Regex.Replace(announceUrl.Host, @"^tracker\.", ""), @"^www\.", ""), @"^torrent\.", "");
                 }
             }
             catch
