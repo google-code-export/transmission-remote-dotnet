@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if !FILECONF
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.Win32;
@@ -375,3 +376,4 @@ namespace TransmissionRemoteDotnet
         }
     }
 }
+#endif

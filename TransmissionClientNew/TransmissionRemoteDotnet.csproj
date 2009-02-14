@@ -100,6 +100,7 @@
     </Compile>
     <Compile Include="Comparers\FilesListViewColumnSorter.cs" />
     <Compile Include="ErrorsListViewColumnSorter.cs" />
+    <Compile Include="FileLocalSettingsSingleton.cs" />
     <Compile Include="GeoIPCountry.cs" />
     <Compile Include="GListBox.cs">
       <SubType>Component</SubType>
@@ -116,7 +117,7 @@
     <Compile Include="LocalSettingsDialog.Designer.cs">
       <DependentUpon>LocalSettingsDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="LocalSettingsSingleton.cs" />
+    <Compile Include="RegistryLocalSettingsSingleton.cs" />
     <Compile Include="Comparers\PeersListViewColumnSorter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="PromiscuousCertificatePolicy.cs" />
@@ -264,7 +265,6 @@
     <None Include="Resources\player_reload.png" />
     <None Include="Resources\player_reload16.png" />
     <None Include="Resources\remove_and_delete.png" />
-    <None Include="Resources\16x16_ledred.png" />
     <None Include="Resources\messagebox_warning.png" />
     <None Include="Resources\hwinfo.png" />
     <None Include="Resources\kgpg_edit.png" />

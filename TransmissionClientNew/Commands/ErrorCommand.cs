@@ -7,7 +7,9 @@ namespace TransmissionRemoteDotnet.Commmands
 {
     public class ErrorCommand : TransmissionCommand
     {
-        private const int MAX_MESSAGE_LENGTH = 500;
+        private const int MAX_MESSAGE_DIALOG_LENGTH = 500;
+        private const int MAX_MESSAGE_STATUSBAR_LENGTH = 50;
+
         private string title;
         private string body;
         private bool showDontCount;
@@ -28,7 +30,7 @@ namespace TransmissionRemoteDotnet.Commmands
 
         private void ShowErrorBox(string title, string body)
         {
-            MessageBox.Show(body.Length > MAX_MESSAGE_LENGTH ? body.Substring(0, MAX_MESSAGE_LENGTH) + "..." : body, title, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            MessageBox.Show(TrimText(body, MAX_MESSAGE_DIALOG_LENGTH), title, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
         }
 
         private delegate void ExecuteDelegate();
@@ -44,7 +46,7 @@ namespace TransmissionRemoteDotnet.Commmands
                 Program.UploadArgs = null;
                 if (!Program.Connected)
                 {
-                    form.toolStripStatusLabel.Text = "Unable to connect (" + this.title + ")";
+                    form.toolStripStatusLabel.Text = this.StatusBarMessage;
                     ShowErrorBox(this.title, this.body);
                 }
                 else if (showDontCount)
@@ -59,10 +61,23 @@ namespace TransmissionRemoteDotnet.Commmands
                 }
                 else
                 {
-                    form.toolStripStatusLabel.Text = "Failed request #" + Program.DaemonDescriptor.FailCount + ": " + this.title;
+                    form.toolStripStatusLabel.Text = String.Format("Failed request #{0}: {1}", Program.DaemonDescriptor.FailCount, this.StatusBarMessage);
                 }
                 Program.Log(this.title, this.body);
             }
+        }
+
+        private string StatusBarMessage
+        {
+            get
+            {
+                return !this.title.Equals("Error") ? this.title : TrimText(this.body, MAX_MESSAGE_STATUSBAR_LENGTH);
+            }
+        }
+
+        private string TrimText(string s, int len)
+        {
+            return s.Length < len ? s : s.Substring(0, len) + "...";
         }
     }
 }

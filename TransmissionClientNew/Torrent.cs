@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using Jayrock.Json;
 using System.Collections;
 using System.Drawing;
+using System.Text.RegularExpressions;
 
 namespace TransmissionRemoteDotnet
 {
@@ -220,7 +221,7 @@ namespace TransmissionRemoteDotnet
                 }
                 else
                 {
-                    return announceUrl.Host.Replace("tracker.", "").Replace("www.", "");
+                    return Regex.Replace(Regex.Replace(Regex.Replace(announceUrl.Host, "^tracker.", ""), "^www.", ""), "^torrent.", "");
                 }
             }
             catch
