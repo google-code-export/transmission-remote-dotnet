@@ -210,6 +210,7 @@ namespace TransmissionRemoteDotnet
                     this.torrentListView.Items.Clear();
                 }
                 OneOrMoreTorrentsSelected(false);
+                OneTorrentsSelected(false);
                 trayMenu.MenuItems.Add("Connect", new EventHandler(this.connectButton_Click));
                 this.toolStripStatusLabel.Text = "Disconnected.";
                 this.Text = MainWindow.DEFAULT_WINDOW_TITLE;
@@ -230,17 +231,18 @@ namespace TransmissionRemoteDotnet
             trayMenu.MenuItems.Add("Exit", new EventHandler(this.exitToolStripMenuItem_Click));
             this.notifyIcon.ContextMenu = trayMenu;
             connectButton.Visible = connectToolStripMenuItem.Visible
+                = torrentAndTabsSplitContainer.Panel2Collapsed
                 = !connected;
             disconnectButton.Visible = addTorrentToolStripMenuItem.Visible
                 = addTorrentButton.Visible = addWebTorrentButton.Visible
                 = remoteConfigureButton.Visible = pauseTorrentButton.Visible
                 = removeTorrentButton.Visible = toolStripSeparator4.Visible
                 = toolStripSeparator1.Visible = disconnectToolStripMenuItem.Visible
-                = configureTorrentButton.Visible = torrentTabControl.Enabled
+                = configureTorrentButton.Visible = torrentToolStripMenuItem.Visible
                 = remoteSettingsToolStripMenuItem.Visible = fileMenuItemSeperator1.Visible
                 = addTorrentFromUrlToolStripMenuItem.Visible = startTorrentButton.Visible
                 = refreshTimer.Enabled = recheckTorrentButton.Visible
-                = torrentToolStripMenuItem.Visible = connected;
+                = connected;
             removeAndDeleteButton.Visible = connected && Program.DaemonDescriptor.Revision >= 7331;
             sessionStatsButton.Visible = connected && Program.DaemonDescriptor.RpcVersion >= 4;
         }
@@ -580,6 +582,46 @@ namespace TransmissionRemoteDotnet
                 = oneOrMore;
         }
 
+        private void OneTorrentsSelected(bool one)
+        {
+            if (!one)
+            {
+                lock (filesListView)
+                {
+                    filesListView.Items.Clear();
+                }
+                lock (fileItems)
+                {
+                    fileItems.Clear();
+                }
+                lock (peersListView)
+                {
+                    peersListView.Items.Clear();
+                }
+                lock (trackersListView)
+                {
+                    trackersListView.Items.Clear();
+                }
+                timeElapsedLabel.Text = downloadedLabel.Text = downloadSpeedLabel.Text
+                    = downloadLimitLabel.Text = statusLabel.Text = commentLabel.Text
+                    = remainingLabel.Text = uploadedLabel.Text = uploadRateLabel.Text
+                    = uploadLimitLabel.Text = startedAtLabel.Text = seedersLabel.Text
+                    = leechersLabel.Text = ratioLabel.Text = createdAtLabel.Text
+                    = createdByLabel.Text = errorLabel.Text = generalTorrentNameGroupBox.Text
+                    = trackersTorrentNameGroupBox.Text = peersTorrentNameGroupBox.Text
+                    = filesTorrentNameGroupBox.Text = percentageLabel.Text = "";
+                progressBar.Value = 0;
+                labelForErrorLabel.Visible = errorLabel.Visible
+                    = filesListView.Enabled = false;
+            }
+            trackersListView.Enabled = generalTorrentNameGroupBox.Enabled
+                    = label1.Enabled = refreshElapsedTimer.Enabled
+                    = filesTimer.Enabled = progressBar.Enabled
+                    = trackersListView.Enabled = peersListView.Enabled
+                    = generalTorrentNameGroupBox.Enabled = label1.Enabled
+                    = one;
+        }
+
         private void torrentListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             lock (torrentListView)
@@ -588,32 +630,14 @@ namespace TransmissionRemoteDotnet
                 bool one = torrentListView.SelectedItems.Count == 1;
                 torrentListView.ContextMenu = oneOrMore ? this.torrentSelectionMenu : this.noTorrentSelectionMenu;
                 OneOrMoreTorrentsSelected(oneOrMore);
+                OneTorrentsSelected(one);
+                peersListView.Tag = 0;
                 if (one)
                 {
-                    peersListView.Tag = 0;
-                    lock (filesListView)
-                    {
-                        filesListView.Items.Clear();
-                    }
-                    lock (fileItems)
-                    {
-                        fileItems.Clear();
-                    }
-                    lock (peersListView)
-                    {
-                        peersListView.Items.Clear();
-                    }
-                    lock (trackersListView)
-                    {
-                        trackersListView.Items.Clear();
-                    }
                     UpdateInfoPanel(true);
-                    filesListView.Enabled = false;
                     Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
                     CreateActionWorker().RunWorkerAsync(Requests.FilesAndPriorities(t.Id));
                 }
-                torrentAndTabsSplitContainer.Panel2Collapsed = !one;
-                refreshElapsedTimer.Enabled = filesTimer.Enabled = one;
             }
         }
 
