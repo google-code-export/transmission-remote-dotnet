@@ -163,7 +163,8 @@ namespace TransmissionRemoteDotnet
                 ProtocolConstants.FIELD_SWARMSPEED,
                 ProtocolConstants.FIELD_DATECREATED,
                 ProtocolConstants.FIELD_CREATOR,
-                ProtocolConstants.FIELD_TRACKERS
+                ProtocolConstants.FIELD_TRACKERS,
+                ProtocolConstants.FIELD_HASHSTRING,
                 /*"sizeWhenDone",, "isPrivate",
                 "hashString", "error",,
                 "peersKnown"*/

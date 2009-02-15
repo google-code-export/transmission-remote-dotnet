@@ -56,7 +56,7 @@ namespace TransmissionRemoteDotnet
             item.SubItems.Add(this.Added.ToString());
             item.SubItems.Add(percentage >= 100 || this.StatusCode == ProtocolConstants.STATUS_SEEDING ? "Unknown" : "N/A");
             item.SubItems.Add(GetFirstTracker(true));
-            Program.TorrentIndex[this.Id] = this;
+            Program.TorrentIndex[this.Hash] = this;
             Add();
         }
 
@@ -144,7 +144,7 @@ namespace TransmissionRemoteDotnet
             }
             lock (Program.TorrentIndex)
             {
-                foreach (KeyValuePair<int, Torrent> pair in Program.TorrentIndex)
+                foreach (KeyValuePair<string, Torrent> pair in Program.TorrentIndex)
                 {
                     if (this.item.SubItems[13].Text.Equals(pair.Value.item.SubItems[13].Text))
                     {
@@ -221,7 +221,7 @@ namespace TransmissionRemoteDotnet
                 }
                 else
                 {
-                    return Regex.Replace(Regex.Replace(Regex.Replace(announceUrl.Host, @"^tracker\.", ""), @"^www\.", ""), @"^torrent\.", "");
+                    return Regex.Replace(Regex.Replace(Regex.Replace(announceUrl.Host, @"^tracker\.", "", RegexOptions.IgnoreCase), @"^www\.", "", RegexOptions.IgnoreCase), @"^torrent\.", "", RegexOptions.IgnoreCase);
                 }
             }
             catch
@@ -251,6 +251,14 @@ namespace TransmissionRemoteDotnet
             get
             {
                 return (string)info[ProtocolConstants.FIELD_NAME];
+            }
+        }
+
+        public string Hash
+        {
+            get
+            {
+                return (string)info[ProtocolConstants.FIELD_HASHSTRING];
             }
         }
 

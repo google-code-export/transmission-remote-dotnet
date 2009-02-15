@@ -43,7 +43,7 @@ namespace TransmissionRemoteDotnet.Commmands
                 form.SuspendTorrentListView();
                 foreach (JsonObject torrent in torrents)
                 {
-                    int id = ((JsonNumber)torrent[ProtocolConstants.FIELD_ID]).ToInt32();
+                    string hash = (string)torrent[ProtocolConstants.FIELD_HASHSTRING];
                     totalUpload += ((JsonNumber)torrent[ProtocolConstants.FIELD_RATEUPLOAD]).ToInt64();
                     totalDownload += ((JsonNumber)torrent[ProtocolConstants.FIELD_RATEDOWNLOAD]).ToInt64();
                     totalSize += ((JsonNumber)torrent[ProtocolConstants.FIELD_TOTALSIZE]).ToInt64();
@@ -60,13 +60,13 @@ namespace TransmissionRemoteDotnet.Commmands
                     }
                     lock (Program.TorrentIndex)
                     {
-                        if (Program.TorrentIndex.ContainsKey(id))
+                        if (Program.TorrentIndex.ContainsKey(hash))
                         {
-                            Program.TorrentIndex[id].Update(torrent);
+                            Program.TorrentIndex[hash].Update(torrent);
                         }
                         else
                         {
-                            Program.TorrentIndex[id] = new Torrent(torrent);
+                            Program.TorrentIndex[hash] = new Torrent(torrent);
                         }
                     }
                 }
@@ -84,24 +84,24 @@ namespace TransmissionRemoteDotnet.Commmands
                         Toolbox.GetFileSize(totalSize)
                     }
                 ));
-                Queue<KeyValuePair<int, Torrent>> removeQueue = null;
+                Queue<KeyValuePair<string, Torrent>> removeQueue = null;
                 lock (Program.TorrentIndex)
                 {
-                    foreach (KeyValuePair<int, Torrent> pair in Program.TorrentIndex)
+                    foreach (KeyValuePair<string, Torrent> pair in Program.TorrentIndex)
                     {
                         Torrent t = pair.Value;
                         if (t.UpdateSerial != Program.DaemonDescriptor.UpdateSerial)
                         {
                             if (removeQueue == null)
                             {
-                                removeQueue = new Queue<KeyValuePair<int, Torrent>>();
+                                removeQueue = new Queue<KeyValuePair<string, Torrent>>();
                             }
                             removeQueue.Enqueue(pair);
                         }
                     }
                     if (removeQueue != null)
                     {
-                        foreach (KeyValuePair<int, Torrent> pair in removeQueue)
+                        foreach (KeyValuePair<string, Torrent> pair in removeQueue)
                         {
                             Program.TorrentIndex.Remove(pair.Key);
                             pair.Value.Remove();

@@ -8,7 +8,8 @@ namespace TransmissionRemoteDotnet.Commmands
     public class ErrorCommand : TransmissionCommand
     {
         private const int MAX_MESSAGE_DIALOG_LENGTH = 500;
-        private const int MAX_MESSAGE_STATUSBAR_LENGTH = 50;
+        private const int MAX_MESSAGE_STATUSBAR_LENGTH = 120;
+        private const string DEFAULT_ERROR_TITLE = "Error";
 
         private string title;
         private string body;
@@ -23,7 +24,7 @@ namespace TransmissionRemoteDotnet.Commmands
 
         public ErrorCommand(Exception ex, bool showDontCount)
         {
-            this.title = "Error";
+            this.title = DEFAULT_ERROR_TITLE;
             this.body = ex.Message;
             this.showDontCount = showDontCount;
         }
@@ -71,7 +72,7 @@ namespace TransmissionRemoteDotnet.Commmands
         {
             get
             {
-                return !this.title.Equals("Error") ? this.title : TrimText(this.body, MAX_MESSAGE_STATUSBAR_LENGTH);
+                return !this.title.Equals(DEFAULT_ERROR_TITLE) ? this.title : TrimText(this.body, MAX_MESSAGE_STATUSBAR_LENGTH);
             }
         }
 

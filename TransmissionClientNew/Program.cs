@@ -16,9 +16,9 @@ namespace TransmissionRemoteDotnet
         private const int TCP_SINGLE_INSTANCE_PORT = 24452;
         private const string APPLICATION_GUID = "{1a4ec788-d8f8-46b4-bb6b-598bc39f6999}";
 
-        public static event ConnStatusChangedDelegate onConnStatusChanged;
-        public static event TorrentsUpdatedDelegate onTorrentsUpdated;
-        public static event OnErrorDelegate onError;
+        public static event ConnStatusChangedDelegate OnConnStatusChanged;
+        public static event TorrentsUpdatedDelegate OnTorrentsUpdated;
+        public static event OnErrorDelegate OnError;
 
         private static Boolean connected = false;
         private static MainWindow form;
@@ -27,9 +27,9 @@ namespace TransmissionRemoteDotnet
         {
             get { return Program.form; }
         }
-        private static Dictionary<int, Torrent> torrentIndex = new Dictionary<int, Torrent>();
+        private static Dictionary<string, Torrent> torrentIndex = new Dictionary<string, Torrent>();
 
-        public static Dictionary<int, Torrent> TorrentIndex
+        public static Dictionary<string, Torrent> TorrentIndex
         {
             get { return Program.torrentIndex; }
         }
@@ -114,9 +114,9 @@ namespace TransmissionRemoteDotnet
             {
                 logItems.Add(logItem);
             }
-            if (onError != null)
+            if (OnError != null)
             {
-                onError();
+                OnError();
             }
         }
 
@@ -144,9 +144,9 @@ namespace TransmissionRemoteDotnet
 
         public static void RaisePostUpdateEvent()
         {
-            if (onTorrentsUpdated != null)
+            if (OnTorrentsUpdated != null)
             {
-                onTorrentsUpdated();
+                OnTorrentsUpdated();
             }
         }
 
@@ -162,9 +162,9 @@ namespace TransmissionRemoteDotnet
                         torrentIndex.Clear();
                     }
                 }
-                if (onConnStatusChanged != null)
+                if (OnConnStatusChanged != null)
                 {
-                    onConnStatusChanged(connected);
+                    OnConnStatusChanged(connected);
                 }
             }
             get

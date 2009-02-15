@@ -39,8 +39,8 @@ namespace TransmissionRemoteDotnet
 
         public MainWindow()
         {
-            Program.onConnStatusChanged += new ConnStatusChangedDelegate(Program_connStatusChanged);
-            Program.onTorrentsUpdated += new TorrentsUpdatedDelegate(Program_onTorrentsUpdated);
+            Program.OnConnStatusChanged += new ConnStatusChangedDelegate(Program_connStatusChanged);
+            Program.OnTorrentsUpdated += new TorrentsUpdatedDelegate(Program_onTorrentsUpdated);
             InitializeComponent();
             tabControlImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.folder16);
             filesTabPage.ImageIndex = 0;
@@ -209,6 +209,7 @@ namespace TransmissionRemoteDotnet
                 {
                     this.torrentListView.Items.Clear();
                 }
+                OneOrMoreTorrentsSelected(false);
                 trayMenu.MenuItems.Add("Connect", new EventHandler(this.connectButton_Click));
                 this.toolStripStatusLabel.Text = "Disconnected.";
                 this.Text = MainWindow.DEFAULT_WINDOW_TITLE;
@@ -239,7 +240,7 @@ namespace TransmissionRemoteDotnet
                 = remoteSettingsToolStripMenuItem.Visible = fileMenuItemSeperator1.Visible
                 = addTorrentFromUrlToolStripMenuItem.Visible = startTorrentButton.Visible
                 = refreshTimer.Enabled = recheckTorrentButton.Visible
-                = connected;
+                = torrentToolStripMenuItem.Visible = connected;
             removeAndDeleteButton.Visible = connected && Program.DaemonDescriptor.Revision >= 7331;
             sessionStatsButton.Visible = connected && Program.DaemonDescriptor.RpcVersion >= 4;
         }
@@ -568,6 +569,17 @@ namespace TransmissionRemoteDotnet
             RemoteSettingsDialog.Instance.BringToFront();
         }
 
+        private void OneOrMoreTorrentsSelected(bool oneOrMore)
+        {
+            startTorrentButton.Enabled = pauseTorrentButton.Enabled
+                = removeTorrentButton.Enabled = recheckTorrentButton.Enabled
+                = removeAndDeleteButton.Enabled = configureTorrentButton.Enabled
+                = startToolStripMenuItem.Enabled = pauseToolStripMenuItem.Enabled
+                = recheckToolStripMenuItem.Enabled = propertiesToolStripMenuItem.Enabled
+                = removeDeleteToolStripMenuItem.Enabled = removeToolStripMenuItem.Enabled
+                = oneOrMore;
+        }
+
         private void torrentListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             lock (torrentListView)
@@ -575,10 +587,7 @@ namespace TransmissionRemoteDotnet
                 bool oneOrMore = torrentListView.SelectedItems.Count > 0;
                 bool one = torrentListView.SelectedItems.Count == 1;
                 torrentListView.ContextMenu = oneOrMore ? this.torrentSelectionMenu : this.noTorrentSelectionMenu;
-                startTorrentButton.Enabled = pauseTorrentButton.Enabled
-                    = removeTorrentButton.Enabled = recheckTorrentButton.Enabled
-                    = removeAndDeleteButton.Enabled = configureTorrentButton.Enabled
-                    = oneOrMore;
+                OneOrMoreTorrentsSelected(oneOrMore);
                 if (one)
                 {
                     peersListView.Tag = 0;
@@ -612,8 +621,11 @@ namespace TransmissionRemoteDotnet
         {
             lock (torrentListView)
             {
-                TorrentPropertiesDialog dialog = new TorrentPropertiesDialog(torrentListView.SelectedItems);
-                dialog.Show();
+                if (torrentListView.SelectedItems.Count > 0)
+                {
+                    TorrentPropertiesDialog dialog = new TorrentPropertiesDialog(torrentListView.SelectedItems);
+                    dialog.Show();
+                }
             }
         }
 
@@ -771,7 +783,7 @@ namespace TransmissionRemoteDotnet
                 }
                 else if (stateListBox.SelectedIndex == 4)
                 {
-                    foreach (KeyValuePair<int, Torrent> pair in Program.TorrentIndex)
+                    foreach (KeyValuePair<string, Torrent> pair in Program.TorrentIndex)
                     {
                         Torrent t = pair.Value;
                         if (t.Percentage >= 100 || t.StatusCode == ProtocolConstants.STATUS_SEEDING)
@@ -790,7 +802,7 @@ namespace TransmissionRemoteDotnet
                 }
                 else if (stateListBox.SelectedIndex == 6)
                 {
-                    foreach (KeyValuePair<int, Torrent> pair in Program.TorrentIndex)
+                    foreach (KeyValuePair<string, Torrent> pair in Program.TorrentIndex)
                     {
                         Torrent t = pair.Value;
                         if (t.HasError)
@@ -805,7 +817,7 @@ namespace TransmissionRemoteDotnet
                 }
                 else if (stateListBox.SelectedIndex > 7)
                 {
-                    foreach (KeyValuePair<int, Torrent> pair in Program.TorrentIndex)
+                    foreach (KeyValuePair<string, Torrent> pair in Program.TorrentIndex)
                     {
                         Torrent t = pair.Value;
                         if (t.Item.SubItems[13].Text.Equals(stateListBox.SelectedItem.ToString()))
@@ -820,7 +832,7 @@ namespace TransmissionRemoteDotnet
                 }
                 else
                 {
-                    foreach (KeyValuePair<int, Torrent> pair in Program.TorrentIndex)
+                    foreach (KeyValuePair<string, Torrent> pair in Program.TorrentIndex)
                     {
                         Torrent t = pair.Value;
                         t.Show();
@@ -832,7 +844,7 @@ namespace TransmissionRemoteDotnet
 
         private void ShowTorrentIfStatus(short statusCode)
         {
-            foreach (KeyValuePair<int, Torrent> pair in Program.TorrentIndex)
+            foreach (KeyValuePair<string, Torrent> pair in Program.TorrentIndex)
             {
                 Torrent t = pair.Value;
                 if ((t.StatusCode & statusCode) > 0)

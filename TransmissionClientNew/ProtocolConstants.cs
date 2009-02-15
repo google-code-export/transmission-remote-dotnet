@@ -72,6 +72,7 @@ namespace TransmissionRemoteDotnet
             FIELD_CREATOR = "creator",
             FIELD_SWARMSPEED = "swarmSpeed",
             FIELD_DATECREATED = "dateCreated",
+            FIELD_HASHSTRING = "hashString",
             FIELD_RECHECKPROGRESS = "recheckProgress";
     }
 }

@@ -35,7 +35,7 @@ namespace TransmissionRemoteDotnet
 
         private ErrorLogWindow()
         {
-            Program.onError += onErrorDelegate = new OnErrorDelegate(this.OnError);
+            Program.OnError += onErrorDelegate = new OnErrorDelegate(this.OnError);
             InitializeComponent();
             errorListView.ListViewItemSorter = lvwColumnSorter = new ErrorsListViewColumnSorter();
         }
@@ -77,7 +77,7 @@ namespace TransmissionRemoteDotnet
 
         private void ErrorLogWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Program.onError -= onErrorDelegate;
+            Program.OnError -= onErrorDelegate;
         }
 
         private void OnError()
