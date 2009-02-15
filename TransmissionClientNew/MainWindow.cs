@@ -511,7 +511,7 @@ namespace TransmissionRemoteDotnet
                 this.Show();
                 if (this.WindowState == FormWindowState.Minimized)
                 {
-                    this.WindowState = FormWindowState.Normal;
+                    this.WindowState = this.notifyIcon.Tag != null ? (FormWindowState)this.notifyIcon.Tag : FormWindowState.Normal;
                 }
                 this.Activate();
             }
@@ -616,9 +616,9 @@ namespace TransmissionRemoteDotnet
             }
             trackersListView.Enabled = generalTorrentNameGroupBox.Enabled
                     = label1.Enabled = refreshElapsedTimer.Enabled
-                    = filesTimer.Enabled = progressBar.Enabled
+                    = filesTimer.Enabled = label1.Enabled
                     = trackersListView.Enabled = peersListView.Enabled
-                    = generalTorrentNameGroupBox.Enabled = label1.Enabled
+                    = generalTorrentNameGroupBox.Enabled
                     = one;
         }
 
@@ -630,7 +630,6 @@ namespace TransmissionRemoteDotnet
                 bool one = torrentListView.SelectedItems.Count == 1;
                 torrentListView.ContextMenu = oneOrMore ? this.torrentSelectionMenu : this.noTorrentSelectionMenu;
                 OneOrMoreTorrentsSelected(oneOrMore);
-                OneTorrentsSelected(one);
                 peersListView.Tag = 0;
                 if (one)
                 {
@@ -638,6 +637,7 @@ namespace TransmissionRemoteDotnet
                     Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
                     CreateActionWorker().RunWorkerAsync(Requests.FilesAndPriorities(t.Id));
                 }
+                OneTorrentsSelected(one);
             }
         }
 
@@ -1284,9 +1284,16 @@ namespace TransmissionRemoteDotnet
 
         private void MainWindow_Resize(object sender, EventArgs e)
         {
-            if (notifyIcon.Visible && FormWindowState.Minimized == this.WindowState)
+            if (notifyIcon.Visible)
             {
-                this.Hide();
+                if (this.WindowState == FormWindowState.Minimized)
+                {
+                    this.Hide();
+                }
+                else
+                {
+                    this.notifyIcon.Tag = this.WindowState;
+                }
             }
         }
 

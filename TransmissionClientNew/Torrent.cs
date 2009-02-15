@@ -48,13 +48,13 @@ namespace TransmissionRemoteDotnet
             item.SubItems.Add(this.Status);
             item.SubItems.Add((this.Seeders < 0 ? "?" : this.Seeders.ToString()) + " (" + this.PeersSendingToUs + ")");
             item.SubItems.Add((this.Leechers < 0 ? "?" : this.Leechers.ToString()) + " (" + this.PeersGettingFromUs + ")");
-            item.SubItems.Add(this.StatusCode == ProtocolConstants.STATUS_DOWNLOADING && this.Percentage <= 100 ? this.DownloadRate : "N/A");
-            item.SubItems.Add(this.StatusCode == ProtocolConstants.STATUS_SEEDING || this.StatusCode == ProtocolConstants.STATUS_DOWNLOADING ? this.UploadRate : "N/A");
+            item.SubItems.Add(this.StatusCode == ProtocolConstants.STATUS_DOWNLOADING && this.Percentage <= 100 ? this.DownloadRate : "");
+            item.SubItems.Add(this.StatusCode == ProtocolConstants.STATUS_SEEDING || this.StatusCode == ProtocolConstants.STATUS_DOWNLOADING ? this.UploadRate : "");
             item.SubItems.Add(this.GetShortETA());
             item.SubItems.Add(this.UploadedString);
             item.SubItems.Add(this.RatioString);
             item.SubItems.Add(this.Added.ToString());
-            item.SubItems.Add(percentage >= 100 || this.StatusCode == ProtocolConstants.STATUS_SEEDING ? "Unknown" : "N/A");
+            item.SubItems.Add(percentage >= 100 || this.StatusCode == ProtocolConstants.STATUS_SEEDING ? "Unknown" : "");
             item.SubItems.Add(GetFirstTracker(true));
             Program.TorrentIndex[this.Hash] = this;
             Add();
@@ -190,8 +190,8 @@ namespace TransmissionRemoteDotnet
                 item.SubItems[3].Text = this.Status;
                 item.SubItems[4].Text = (this.Seeders < 0 ? "?" : this.Seeders.ToString()) + " (" + this.PeersSendingToUs + ")";
                 item.SubItems[5].Text = (this.Leechers < 0 ? "?" : this.Leechers.ToString()) + " (" + this.PeersGettingFromUs + ")";
-                item.SubItems[6].Text = this.StatusCode == ProtocolConstants.STATUS_DOWNLOADING && this.Percentage <= 100 ? this.DownloadRate : "N/A";
-                item.SubItems[7].Text = this.StatusCode == ProtocolConstants.STATUS_SEEDING || this.StatusCode == ProtocolConstants.STATUS_DOWNLOADING ? this.UploadRate : "N/A";
+                item.SubItems[6].Text = this.StatusCode == ProtocolConstants.STATUS_DOWNLOADING && this.Percentage <= 100 ? this.DownloadRate : "";
+                item.SubItems[7].Text = this.StatusCode == ProtocolConstants.STATUS_SEEDING || this.StatusCode == ProtocolConstants.STATUS_DOWNLOADING ? this.UploadRate : "";
                 item.SubItems[8].Text = this.GetShortETA();
                 item.SubItems[9].Text = this.UploadedString;
                 item.SubItems[10].Text = this.RatioString;
@@ -370,7 +370,7 @@ namespace TransmissionRemoteDotnet
         {
             if (this.Percentage >= 100 || this.StatusCode == ProtocolConstants.STATUS_SEEDING)
             {
-                return "N/A";
+                return "";
             }
             else
             {
@@ -389,7 +389,7 @@ namespace TransmissionRemoteDotnet
                 }
                 else
                 {
-                    return "Unknown";
+                    return "";
                 }
             }
         }

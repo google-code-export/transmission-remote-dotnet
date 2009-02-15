@@ -1443,6 +1443,7 @@
             // 
             // torrentListView
             // 
+            this.torrentListView.AllowColumnReorder = true;
             this.torrentListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader6,
             this.columnHeader7,
@@ -1536,6 +1537,7 @@
             // 
             // trackersListView
             // 
+            this.trackersListView.AllowColumnReorder = true;
             this.trackersListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader22,
             this.columnHeader20,
@@ -1568,6 +1570,7 @@
             // 
             // filesListView
             // 
+            this.filesListView.AllowColumnReorder = true;
             this.filesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
@@ -1620,6 +1623,7 @@
             // 
             // peersListView
             // 
+            this.peersListView.AllowColumnReorder = true;
             this.peersListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader23,
             this.columnHeader24,
