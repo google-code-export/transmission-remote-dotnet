@@ -278,6 +278,8 @@ namespace TransmissionRemoteDotnet
         private void MainWindow_Load(object sender, EventArgs e)
         {
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
+            if (settings.GetObject("mainwindow-width") != null && settings.GetObject("mainwindow-height") != null)
+                this.Size = new Size((int)settings.GetObject("mainwindow-width"), (int)settings.GetObject("mainwindow-height"));
             if (notifyIcon.Visible = settings.MinToTray)
             {
                 foreach (string arg in Environment.GetCommandLineArgs())
@@ -1288,6 +1290,8 @@ namespace TransmissionRemoteDotnet
                     this.notifyIcon.Tag = this.WindowState;
                 }
             }
+            LocalSettingsSingleton.Instance.SetObject("mainwindow-height", this.Size.Height);
+            LocalSettingsSingleton.Instance.SetObject("mainwindow-width", this.Size.Width);
         }
 
         private void projectSiteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1419,6 +1423,11 @@ namespace TransmissionRemoteDotnet
         {
             StatsDialog.Instance.Show();
             StatsDialog.Instance.BringToFront();
+        }
+
+        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            LocalSettingsSingleton.Instance.Commit();
         }
     }
 }

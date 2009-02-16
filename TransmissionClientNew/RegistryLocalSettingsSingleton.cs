@@ -79,6 +79,16 @@ namespace TransmissionRemoteDotnet
             }
             key.Close();
         }
+        
+        public object GetObject(string key)
+        {
+            return this.confMap.ContainsKey(key) ? this.confMap[key] : null;
+        }
+
+        public void SetObject(string key, object value)
+        {
+            this.confMap[key] = value;
+        }
 
         public void LoadCurrentProfile()
         {
@@ -301,12 +311,12 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        private bool IntToBool(object o)
+        private static bool IntToBool(object o)
         {
             return (int)o == 1;
         }
 
-        private int BoolToInt(bool b)
+        private static int BoolToInt(bool b)
         {
             return b ? 1 : 0;
         }
