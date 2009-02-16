@@ -89,7 +89,6 @@ namespace TransmissionRemoteDotnet
                 this.confMap[subKey] = key.GetValue(subKey);
             }
             key.Close();
-            RefreshUrlCache();
         }
 
         private RegistryKey GetCurrentProfileKey(bool writeable)
@@ -146,11 +145,6 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        public void RefreshUrlCache()
-        {
-            this.urlCache = String.Format("{0}://{1}:{2}{3}rpc", new object[] { UseSSL ? "https" : "http", Host, Port, CustomPath == null ? "/transmission/" : CustomPath });
-        }
-
         public void CreateProfile(string name)
         {
             RegistryKey root = GetRootKey(true);
@@ -179,7 +173,16 @@ namespace TransmissionRemoteDotnet
                     Program.Connected = false;
                 }
                 this.currentProfile = value;
-                LoadCurrentProfile();
+                try
+                {
+                    LoadCurrentProfile();
+                }
+                catch
+                {
+                    if (!value.Equals("Default"))
+                        this.CurrentProfile = "Default";
+                    return;
+                }
                 SaveProfileSelection();
                 if (Program.Form != null && AutoConnect)
                 {
@@ -335,7 +338,7 @@ namespace TransmissionRemoteDotnet
             }
             set
             {
-                this.confMap[REGKEY_PROXYENABLED] = value;
+                this.confMap[REGKEY_PROXYENABLED] = (int)value;
             }
         }
 
@@ -431,13 +434,11 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        private string urlCache;
-
         public string RpcUrl
         {
             get
             {
-                return this.urlCache;
+                return String.Format("{0}://{1}:{2}{3}rpc", new object[] { UseSSL ? "https" : "http", Host, Port, CustomPath == null ? "/transmission/" : CustomPath });
             }
         }
     }
