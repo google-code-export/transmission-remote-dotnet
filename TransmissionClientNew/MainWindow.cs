@@ -711,6 +711,10 @@ namespace TransmissionRemoteDotnet
             {
                 Program.Connected = false;
             }
+            else if (e.KeyCode == Keys.F5)
+            {
+                torrentAndTabsSplitContainer.Panel2Collapsed = !torrentAndTabsSplitContainer.Panel2Collapsed;
+            }
             else if (e.Control && e.KeyCode == Keys.O)
             {
                 LocalSettingsDialog.Instance.Show();
@@ -1440,14 +1444,13 @@ namespace TransmissionRemoteDotnet
             checkVersionWorker.RunWorkerAsync();
         }
 
-        void checkVersionWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void checkVersionWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if (e.Result.GetType() == typeof(Exception))
             {
                 Exception ex = (Exception)e.Result;
                 MessageBox.Show(ex.Message, "Latest version check failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            
+            }            
             else if (e.Result.GetType() == typeof(Version))
             {
                 Version latestVersion = (Version)e.Result;
@@ -1467,7 +1470,7 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        void checkVersionWorker_DoWork(object sender, DoWorkEventArgs e)
+        private void checkVersionWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             try
             {
