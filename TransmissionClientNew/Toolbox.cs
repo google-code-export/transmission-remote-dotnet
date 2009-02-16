@@ -173,17 +173,5 @@ namespace TransmissionRemoteDotnet
                 lv.ResumeLayout();
             }
         }
-
-        public static Version MostRecentVersion()
-        {
-            TransmissionWebClient client = new TransmissionWebClient(false);
-            string response = client.DownloadString("http://transmission-remote-dotnet.googlecode.com/svn/wiki/latest_version.txt");
-            if (!response.StartsWith("#LATESTVERSION#"))
-                throw new FormatException("Response didn't contain the identification prefix.");
-            string[] thisVersion = Assembly.GetEntryAssembly().GetName().Version.ToString().Split('.');
-            if (thisVersion.Length != 4)
-                throw new FormatException("Incorrect number format");
-            return new Version(Int32.Parse(thisVersion[0]), Int32.Parse(thisVersion[1]), Int32.Parse(thisVersion[2]), Int32.Parse(thisVersion[3]));
-        }
     }
 }

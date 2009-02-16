@@ -16,8 +16,10 @@ namespace TransmissionRemoteDotnet
 {
     public partial class MainWindow : Form
     {
-        private const string DEFAULT_WINDOW_TITLE = "Transmission Remote";
-        private const string GEOIP_DATABASE_FILE = "GeoIP.dat";
+        private const string DEFAULT_WINDOW_TITLE = "Transmission Remote",
+            GEOIP_DATABASE_FILE = "GeoIP.dat",
+            CONFKEY_MAINWINDOW_HEIGHT = "mainwindow-height",
+            CONFKEY_MAINWINDOW_WIDTH = "mainwindow-width";
 
         private Boolean minimise = false;
         private ListViewItemSorter lvwColumnSorter;
@@ -278,8 +280,8 @@ namespace TransmissionRemoteDotnet
         private void MainWindow_Load(object sender, EventArgs e)
         {
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-            if (settings.GetObject("mainwindow-width") != null && settings.GetObject("mainwindow-height") != null)
-                this.Size = new Size((int)settings.GetObject("mainwindow-width"), (int)settings.GetObject("mainwindow-height"));
+            if (settings.GetObject(CONFKEY_MAINWINDOW_WIDTH) != null && settings.GetObject(CONFKEY_MAINWINDOW_HEIGHT) != null)
+                this.Size = new Size((int)settings.GetObject(CONFKEY_MAINWINDOW_WIDTH), (int)settings.GetObject(CONFKEY_MAINWINDOW_HEIGHT));
             if (notifyIcon.Visible = settings.MinToTray)
             {
                 foreach (string arg in Environment.GetCommandLineArgs())
@@ -1445,6 +1447,7 @@ namespace TransmissionRemoteDotnet
                 Exception ex = (Exception)e.Result;
                 MessageBox.Show(ex.Message, "Latest version check failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
             else if (e.Result.GetType() == typeof(Version))
             {
                 Version latestVersion = (Version)e.Result;
@@ -1468,7 +1471,14 @@ namespace TransmissionRemoteDotnet
         {
             try
             {
-                e.Result = Toolbox.MostRecentVersion();
+                TransmissionWebClient client = new TransmissionWebClient(false);
+                string response = client.DownloadString("http://transmission-remote-dotnet.googlecode.com/svn/wiki/latest_version.txt");
+                if (!response.StartsWith("#LATESTVERSION#"))
+                    throw new FormatException("Response didn't contain the identification prefix.");
+                string[] thisVersion = response.Substring(15, response.Length - 15).Split('.');
+                if (thisVersion.Length != 4)
+                    throw new FormatException("Incorrect number format");
+                e.Result = new Version(Int32.Parse(thisVersion[0]), Int32.Parse(thisVersion[1]), Int32.Parse(thisVersion[2]), Int32.Parse(thisVersion[3]));
             }
             catch (Exception ex)
             {
