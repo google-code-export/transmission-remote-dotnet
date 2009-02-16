@@ -12,6 +12,7 @@ namespace TransmissionRemoteDotnet
     public partial class AboutDialog : Form
     {
         public const string PROJECT_SITE = "http://code.google.com/p/transmission-remote-dotnet/";
+        
 
         private static AboutDialog instance = null;
         private static readonly object padlock = new object();
@@ -43,7 +44,8 @@ namespace TransmissionRemoteDotnet
 
         private void AboutDialog_Load(object sender, EventArgs e)
         {
-            label1.Text = "Transmission Remote " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            Version version = Assembly.GetEntryAssembly().GetName().Version;
+            label1.Text = String.Format("Transmission Remote v{0}.{1}", version.Major, version.Minor);
             label3.Text = String.Format("Author: Alan F <{0}>", Encoding.ASCII.GetString(Convert.FromBase64String("YWxhbkBldGgwLm9yZy51aw==")));
         }
 

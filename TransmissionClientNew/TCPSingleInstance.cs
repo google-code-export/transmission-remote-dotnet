@@ -98,8 +98,10 @@ namespace TransmissionRemoteDotnet
                 client.Close();
                 return true;
             }
-            catch { }
-            return false;
+            catch
+            {
+                return false;
+            }
         }
 
         #endregion

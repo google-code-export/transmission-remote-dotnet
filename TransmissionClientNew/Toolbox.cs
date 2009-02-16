@@ -7,6 +7,7 @@ using Jayrock.Json;
 using System.Net;
 using System.IO;
 using System.Globalization;
+using System.Reflection;
 
 namespace TransmissionRemoteDotnet
 {
@@ -157,7 +158,7 @@ namespace TransmissionRemoteDotnet
 
         public static string SupportFilePath(string file)
         {
-            return Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location), file);
+            return Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), file);
         }
 
         public static void SelectAll(ListView lv)
@@ -171,6 +172,18 @@ namespace TransmissionRemoteDotnet
                 }
                 lv.ResumeLayout();
             }
+        }
+
+        public static Version MostRecentVersion()
+        {
+            TransmissionWebClient client = new TransmissionWebClient(false);
+            string response = client.DownloadString("http://transmission-remote-dotnet.googlecode.com/svn/wiki/latest_version.txt");
+            if (!response.StartsWith("#LATESTVERSION#"))
+                throw new FormatException("Response didn't contain the identification prefix.");
+            string[] thisVersion = Assembly.GetEntryAssembly().GetName().Version.ToString().Split('.');
+            if (thisVersion.Length != 4)
+                throw new FormatException("Incorrect number format");
+            return new Version(Int32.Parse(thisVersion[0]), Int32.Parse(thisVersion[1]), Int32.Parse(thisVersion[2]), Int32.Parse(thisVersion[3]));
         }
     }
 }

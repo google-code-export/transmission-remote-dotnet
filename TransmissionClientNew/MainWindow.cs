@@ -1429,5 +1429,51 @@ namespace TransmissionRemoteDotnet
         {
             LocalSettingsSingleton.Instance.Commit();
         }
+
+        private void checkForNewVersionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BackgroundWorker checkVersionWorker = new BackgroundWorker();
+            checkVersionWorker.DoWork += new DoWorkEventHandler(checkVersionWorker_DoWork);
+            checkVersionWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(checkVersionWorker_RunWorkerCompleted);
+            checkVersionWorker.RunWorkerAsync();
+        }
+
+        void checkVersionWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (e.Result.GetType() == typeof(Exception))
+            {
+                Exception ex = (Exception)e.Result;
+                MessageBox.Show(ex.Message, "Latest version check failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (e.Result.GetType() == typeof(Version))
+            {
+                Version latestVersion = (Version)e.Result;
+                Version thisVersion = System.Reflection.Assembly.GetEntryAssembly().GetName().Version;
+                if (latestVersion > thisVersion)
+                {
+                    if (MessageBox.Show(String.Format("There is a newer version ({0}.{1}) available. Would you like to visit the downloads page?", latestVersion.Major, latestVersion.Minor), "Upgrade available", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
+                        == DialogResult.Yes)
+                    {
+                        System.Diagnostics.Process.Start("http://code.google.com/p/transmission-remote-dotnet/downloads/list");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(String.Format("You are using the latest version ({0}.{1}).", thisVersion.Major, thisVersion.Minor), "No upgrade available", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        void checkVersionWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+                e.Result = Toolbox.MostRecentVersion();
+            }
+            catch (Exception ex)
+            {
+                e.Result = ex;
+            }
+        }
     }
 }
