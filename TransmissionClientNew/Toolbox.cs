@@ -155,6 +155,11 @@ namespace TransmissionRemoteDotnet
             }
         }
 
+        public static string SupportFilePath(string file)
+        {
+            return Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location), file);
+        }
+
         public static void SelectAll(ListView lv)
         {
             lock (lv)

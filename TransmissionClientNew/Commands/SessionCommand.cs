@@ -73,7 +73,7 @@ namespace TransmissionRemoteDotnet.Commmands
                     TransmissionDaemonDescriptor descriptor = Program.DaemonDescriptor;
                     Program.Log("(Info) Connected to", String.Format("Host={0}, Version={1}, Revision={2}, RpcVersion={3}, RpcVersionMinimum={4}",
                         new object[] {
-                            LocalSettingsSingleton.Instance.host,
+                            LocalSettingsSingleton.Instance.Host,
                             descriptor.Version, descriptor.Revision,
                             descriptor.RpcVersion > 0 ? descriptor.RpcVersion.ToString() : "unspecified",
                             descriptor.RpcVersionMin > 0 ? descriptor.RpcVersionMin.ToString() : "unspecified"

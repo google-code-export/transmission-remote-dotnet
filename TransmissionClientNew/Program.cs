@@ -82,7 +82,7 @@ namespace TransmissionRemoteDotnet
                     }
                     ServicePointManager.Expect100Continue = false;
                     /* Store a list of torrents to upload after connect? */
-                    if (LocalSettingsSingleton.Instance.autoConnect && args.Length > 0)
+                    if (LocalSettingsSingleton.Instance.AutoConnect && args.Length > 0)
                     {
                         Program.uploadArgs = args;
                     }

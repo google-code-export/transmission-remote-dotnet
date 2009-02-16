@@ -40,20 +40,20 @@ namespace TransmissionRemoteDotnet
             request.KeepAlive = false;
             request.UserAgent = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)";
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-            if (settings.authEnabled && authenticate)
+            if (settings.AuthEnabled && authenticate)
             {
-                request.Credentials = new NetworkCredential(settings.user, settings.pass);
+                request.Credentials = new NetworkCredential(settings.User, settings.Pass);
                 request.PreAuthenticate = Program.DaemonDescriptor.Version < 1.40;
             }
-            if (settings.proxyEnabled == 1)
+            if (settings.ProxyMode == ProxyMode.Enabled)
             {
-                request.Proxy = new WebProxy(settings.proxyHost, settings.proxyPort);
-                if (settings.proxyAuth)
+                request.Proxy = new WebProxy(settings.ProxyHost, settings.ProxyPort);
+                if (settings.ProxyAuth)
                 {
-                    request.Proxy.Credentials = new NetworkCredential(settings.proxyUser, settings.proxyPass);
+                    request.Proxy.Credentials = new NetworkCredential(settings.ProxyUser, settings.ProxyPass);
                 }
             }
-            else if (settings.proxyEnabled == 2)
+            else if (settings.ProxyMode == ProxyMode.Disabled)
             {
                 request.Proxy = null;
             }

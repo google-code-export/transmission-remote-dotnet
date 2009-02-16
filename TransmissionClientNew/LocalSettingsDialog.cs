@@ -40,25 +40,25 @@ namespace TransmissionRemoteDotnet
         private void LoadCurrentProfile()
         {
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-            HostField.Text = originalHost = settings.host;
-            PortField.Value = originalPort = settings.port;
-            RefreshRateValue.Value = settings.refreshRate;
-            UseSSLCheckBox.Checked = settings.useSSL;
-            AutoConnectCheckBox.Checked = settings.autoConnect;
-            PassField.Enabled = UserField.Enabled = EnableAuthCheckBox.Checked = settings.authEnabled;
-            UserField.Text = settings.user;
-            PassField.Text = settings.pass;
-            MinToTrayCheckBox.Checked = settings.minToTray;
-            EnableProxyCombo.SelectedIndex = settings.proxyEnabled;
-            ProxyPortField.Enabled = ProxyHostField.Enabled = settings.proxyEnabled == 1;
-            ProxyHostField.Text = settings.proxyHost;
-            ProxyPortField.Value = settings.proxyPort;
-            ProxyAuthEnableCheckBox.Checked = settings.proxyAuth;
-            ProxyUserField.Enabled = ProxyPassField.Enabled = (settings.proxyAuth && settings.proxyEnabled == 1);
-            ProxyUserField.Text = settings.proxyUser;
-            ProxyPassField.Text = settings.proxyPass;
-            StartPausedCheckBox.Checked = settings.startPaused;
-            RetryLimitValue.Value = settings.retryLimit;
+            HostField.Text = originalHost = settings.Host;
+            PortField.Value = originalPort = settings.Port;
+            RefreshRateValue.Value = settings.RefreshRate;
+            UseSSLCheckBox.Checked = settings.UseSSL;
+            AutoConnectCheckBox.Checked = settings.AutoConnect;
+            PassField.Enabled = UserField.Enabled = EnableAuthCheckBox.Checked = settings.AuthEnabled;
+            UserField.Text = settings.User;
+            PassField.Text = settings.Pass;
+            MinToTrayCheckBox.Checked = settings.MinToTray;
+            EnableProxyCombo.SelectedIndex = (int)settings.ProxyMode;
+            ProxyPortField.Enabled = ProxyHostField.Enabled = settings.ProxyMode == ProxyMode.Enabled;
+            ProxyHostField.Text = settings.ProxyHost;
+            ProxyPortField.Value = settings.ProxyPort;
+            ProxyAuthEnableCheckBox.Checked = settings.ProxyAuth;
+            ProxyUserField.Enabled = ProxyPassField.Enabled = (settings.ProxyAuth && settings.ProxyMode == ProxyMode.Enabled);
+            ProxyUserField.Text = settings.ProxyUser;
+            ProxyPassField.Text = settings.ProxyPass;
+            StartPausedCheckBox.Checked = settings.StartPaused;
+            RetryLimitValue.Value = settings.RetryLimit;
         }
 
         private void LocalSettingsDialog_Load(object sender, EventArgs e)
@@ -89,23 +89,23 @@ namespace TransmissionRemoteDotnet
         private void SaveSettings()
         {
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-            settings.host = HostField.Text;
-            settings.port = (int)PortField.Value;
-            settings.useSSL = UseSSLCheckBox.Checked;
-            settings.autoConnect = AutoConnectCheckBox.Checked;
-            settings.refreshRate = (int)RefreshRateValue.Value;
-            settings.authEnabled = EnableAuthCheckBox.Checked;
-            settings.user = UserField.Text;
-            settings.pass = PassField.Text;
-            Program.Form.notifyIcon.Visible = settings.minToTray = MinToTrayCheckBox.Checked;
-            settings.proxyEnabled = EnableProxyCombo.SelectedIndex;
-            settings.proxyHost = ProxyHostField.Text;
-            settings.proxyPort = (int)ProxyPortField.Value;
-            settings.proxyAuth = ProxyAuthEnableCheckBox.Checked;
-            settings.proxyUser = ProxyUserField.Text;
-            settings.proxyPass = ProxyPassField.Text;
-            settings.startPaused = StartPausedCheckBox.Checked;
-            settings.retryLimit = (int)RetryLimitValue.Value;
+            settings.Host = HostField.Text;
+            settings.Port = (int)PortField.Value;
+            settings.UseSSL = UseSSLCheckBox.Checked;
+            settings.AutoConnect = AutoConnectCheckBox.Checked;
+            settings.RefreshRate = (int)RefreshRateValue.Value;
+            settings.AuthEnabled = EnableAuthCheckBox.Checked;
+            settings.User = UserField.Text;
+            settings.Pass = PassField.Text;
+            Program.Form.notifyIcon.Visible = settings.MinToTray = MinToTrayCheckBox.Checked;
+            settings.ProxyMode = (ProxyMode)EnableProxyCombo.SelectedIndex;
+            settings.ProxyHost = ProxyHostField.Text;
+            settings.ProxyPort = (int)ProxyPortField.Value;
+            settings.ProxyAuth = ProxyAuthEnableCheckBox.Checked;
+            settings.ProxyUser = ProxyUserField.Text;
+            settings.ProxyPass = ProxyPassField.Text;
+            settings.StartPaused = StartPausedCheckBox.Checked;
+            settings.RetryLimit = (int)RetryLimitValue.Value;
             settings.Commit();
         }
 
@@ -113,7 +113,7 @@ namespace TransmissionRemoteDotnet
         {
             SaveSettings();
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-            if (Program.Connected && (settings.host != originalHost || settings.port != originalPort))
+            if (Program.Connected && (settings.Host != originalHost || settings.Port != originalPort))
             {
                 Program.Connected = false;
                 Program.Form.Connect();

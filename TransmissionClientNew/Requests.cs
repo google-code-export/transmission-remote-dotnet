@@ -80,9 +80,7 @@ namespace TransmissionRemoteDotnet
 
         public static JsonObject TorrentAddByFile(string file, bool deleteAfter)
         {
-            FileStream inFile = new FileStream(file,
-                    FileMode.Open,
-                    FileAccess.Read);
+            FileStream inFile = new FileStream(file, FileMode.Open, FileAccess.Read);
             byte[] binaryData = new Byte[inFile.Length];
             if (inFile.Read(binaryData, 0, (int)inFile.Length) < 1)
             {
@@ -92,7 +90,7 @@ namespace TransmissionRemoteDotnet
             JsonObject request = new JsonObject();
             JsonObject arguments = new JsonObject();
             arguments.Put(ProtocolConstants.FIELD_METAINFO, Convert.ToBase64String(binaryData, 0, binaryData.Length));
-            arguments.Put(ProtocolConstants.FIELD_PAUSED, LocalSettingsSingleton.Instance.startPaused);
+            arguments.Put(ProtocolConstants.FIELD_PAUSED, LocalSettingsSingleton.Instance.StartPaused);
             request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
             request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTADD);
             request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
@@ -114,7 +112,7 @@ namespace TransmissionRemoteDotnet
             request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
             JsonObject arguments = new JsonObject();
             arguments.Put(ProtocolConstants.FIELD_FILENAME, url);
-            arguments.Put(ProtocolConstants.FIELD_PAUSED, LocalSettingsSingleton.Instance.startPaused);
+            arguments.Put(ProtocolConstants.FIELD_PAUSED, LocalSettingsSingleton.Instance.StartPaused);
             request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
             return request;
         }

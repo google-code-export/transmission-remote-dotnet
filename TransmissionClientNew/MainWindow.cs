@@ -52,11 +52,11 @@ namespace TransmissionRemoteDotnet
             speedTabPage.ImageIndex = 3;
             tabControlImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.info16);
             generalTabPage.ImageIndex = 4;
-            mainVerticalSplitContainer.Panel1Collapsed = torrentAndTabsSplitContainer.Panel2Collapsed = true;
+            mainVerticalSplitContainer.Panel1Collapsed = true;
             this.peersTabPageSaved = this.peersTabPage;
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-            refreshTimer.Interval = settings.refreshRate * 1000;
-            filesTimer.Interval = settings.refreshRate * 1000 * LocalSettingsSingleton.FILES_REFRESH_MULTIPLICANT;
+            refreshTimer.Interval = settings.RefreshRate * 1000;
+            filesTimer.Interval = settings.RefreshRate * 1000 * LocalSettingsSingleton.FILES_REFRESH_MULTIPLICANT;
             torrentListView.ListViewItemSorter = lvwColumnSorter = new ListViewItemSorter();
             filesListView.ListViewItemSorter = filesLvwColumnSorter = new FilesListViewItemSorter();
             peersListView.ListViewItemSorter = peersLvwColumnSorter = new PeersListViewItemSorter();
@@ -141,12 +141,7 @@ namespace TransmissionRemoteDotnet
         {
             try
             {
-                geo = new GeoIPCountry(
-                    Path.Combine(
-                        Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location),
-                        GEOIP_DATABASE_FILE
-                    )
-                );
+                geo = new GeoIPCountry(Toolbox.SupportFilePath(GEOIP_DATABASE_FILE));
                 for (int i = 1; i < GeoIPCountry.CountryCodes.Length; i++)
                 {
                     string flagname = "flags_" + GeoIPCountry.CountryCodes[i].ToLower();
@@ -193,7 +188,7 @@ namespace TransmissionRemoteDotnet
                 }
                 trayMenu.MenuItems.Add("Disconnect", new EventHandler(this.disconnectButton_Click));
                 this.toolStripStatusLabel.Text = "Connected. Getting torrent information...";
-                this.Text = MainWindow.DEFAULT_WINDOW_TITLE + " - " + LocalSettingsSingleton.Instance.host;
+                this.Text = MainWindow.DEFAULT_WINDOW_TITLE + " - " + LocalSettingsSingleton.Instance.Host;
                 speedGraph.GetLineHandle("Download").Clear();
                 speedGraph.GetLineHandle("Upload").Clear();
                 speedGraph.Push(0, "Download");
@@ -214,7 +209,6 @@ namespace TransmissionRemoteDotnet
                 trayMenu.MenuItems.Add("Connect", new EventHandler(this.connectButton_Click));
                 this.toolStripStatusLabel.Text = "Disconnected.";
                 this.Text = MainWindow.DEFAULT_WINDOW_TITLE;
-                this.torrentAndTabsSplitContainer.Panel2Collapsed = this.mainVerticalSplitContainer.Panel1Collapsed = true;
                 if (this.stateListBox.Items.Count > 7)
                 {
                     lock (this.stateListBox)
@@ -231,8 +225,7 @@ namespace TransmissionRemoteDotnet
             trayMenu.MenuItems.Add("Exit", new EventHandler(this.exitToolStripMenuItem_Click));
             this.notifyIcon.ContextMenu = trayMenu;
             connectButton.Visible = connectToolStripMenuItem.Visible
-                = torrentAndTabsSplitContainer.Panel2Collapsed
-                = !connected;
+                = mainVerticalSplitContainer.Panel1Collapsed = !connected;
             disconnectButton.Visible = addTorrentToolStripMenuItem.Visible
                 = addTorrentButton.Visible = addWebTorrentButton.Visible
                 = remoteConfigureButton.Visible = pauseTorrentButton.Visible
@@ -285,7 +278,7 @@ namespace TransmissionRemoteDotnet
         private void MainWindow_Load(object sender, EventArgs e)
         {
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-            if (notifyIcon.Visible = settings.minToTray)
+            if (notifyIcon.Visible = settings.MinToTray)
             {
                 foreach (string arg in Environment.GetCommandLineArgs())
                 {
@@ -305,7 +298,7 @@ namespace TransmissionRemoteDotnet
                     profile.Checked = true;
                 }
             }
-            if (settings.autoConnect)
+            if (settings.AutoConnect)
             {
                 Connect();
             }
@@ -722,19 +715,19 @@ namespace TransmissionRemoteDotnet
             else if (e.Control && e.KeyCode == Keys.P)
             {
                 LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-                if (settings.proxyEnabled == 0 && settings.proxyHost.Length > 0)
+                if (settings.ProxyMode == ProxyMode.Auto && settings.ProxyHost.Length > 0)
                 {
-                    settings.proxyEnabled = 1;
+                    settings.ProxyMode = ProxyMode.Enabled;
                     toolStripStatusLabel.Text = "Proxy enabled.";
                 }
-                else if (settings.proxyEnabled <= 1)
+                else if (settings.ProxyMode == ProxyMode.Enabled || settings.ProxyMode == ProxyMode.Auto)
                 {
-                    settings.proxyEnabled = 2;
+                    settings.ProxyMode = ProxyMode.Disabled;
                     toolStripStatusLabel.Text = "Proxy disabled.";
                 }
                 else
                 {
-                    settings.proxyEnabled = 0;
+                    settings.ProxyMode = ProxyMode.Auto;
                     toolStripStatusLabel.Text = "Proxy dependent on IE settings.";
                 }
                 settings.Commit();

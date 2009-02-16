@@ -54,7 +54,7 @@ namespace TransmissionRemoteDotnet.Commmands
                 {
                     ShowErrorBox(this.title, this.body);
                 }
-                else if (++Program.DaemonDescriptor.FailCount > LocalSettingsSingleton.Instance.retryLimit)
+                else if (++Program.DaemonDescriptor.FailCount > LocalSettingsSingleton.Instance.RetryLimit)
                 {
                     Program.Connected = false;
                     form.toolStripStatusLabel.Text = "Disconnected. Exceeded maximum number of failed requests.";
