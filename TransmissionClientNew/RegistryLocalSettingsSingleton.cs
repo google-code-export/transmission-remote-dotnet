@@ -65,10 +65,6 @@ namespace TransmissionRemoteDotnet
         private LocalSettingsSingleton()
         {
             RegistryKey key = GetRootKey(false);
-            if (key == null)
-            {
-                key = Registry.CurrentUser.CreateSubKey(REGISTRY_KEY_ROOT);
-            }
             if (key.GetValue(REGKEY_CURRENTPROFILE) != null)
             {
                 this.CurrentProfile = (string)key.GetValue(REGKEY_CURRENTPROFILE);
@@ -79,7 +75,7 @@ namespace TransmissionRemoteDotnet
             }
             key.Close();
         }
-        
+
         public object GetObject(string key)
         {
             return this.confMap.ContainsKey(key) ? this.confMap[key] : null;
@@ -90,26 +86,15 @@ namespace TransmissionRemoteDotnet
             this.confMap[key] = value;
         }
 
-        public void LoadCurrentProfile()
+        private RegistryKey GetProfileKey(string name, bool writeable)
         {
-            RegistryKey key = GetCurrentProfileKey(false);
-            this.confMap.Clear();
-            foreach (string subKey in key.GetValueNames())
-            {
-                this.confMap[subKey] = key.GetValue(subKey);
-            }
-            key.Close();
-        }
-
-        private RegistryKey GetCurrentProfileKey(bool writeable)
-        {
-            if (currentProfile.Equals("Default"))
+            if (name.Equals("Default"))
             {
                 return GetRootKey(writeable);
             }
             else
             {
-                return GetRootKey(false).OpenSubKey(currentProfile, writeable);
+                return GetRootKey(false).OpenSubKey(name, writeable);
             }
         }
 
@@ -125,26 +110,19 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        public void SaveProfileSelection()
-        {
-            RegistryKey rootKey = GetRootKey(true);
-            if (rootKey == null)
-            {
-                rootKey = Registry.CurrentUser.CreateSubKey(REGISTRY_KEY_ROOT);
-            }
-            rootKey.SetValue(REGKEY_CURRENTPROFILE, this.currentProfile);
-            rootKey.Close();
-        }
-
         public void Commit()
         {
+            RegistryKey profileKey = null;
             try
             {
-                SaveProfileSelection();
-                RegistryKey profileKey = GetCurrentProfileKey(true);
-                foreach (KeyValuePair<string, object> pair in this.confMap)
+                profileKey = GetProfileKey(this.CurrentProfile, true);
+                if (profileKey != null)
                 {
-                    profileKey.SetValue(pair.Key, pair.Value);
+                    foreach (KeyValuePair<string, object> pair in this.confMap)
+                    {
+                        if (pair.Key != null && pair.Value != null)
+                            profileKey.SetValue(pair.Key, pair.Value);
+                    }
                 }
                 Program.Form.refreshTimer.Interval = RefreshRate * 1000;
                 Program.Form.filesTimer.Interval = RefreshRate * 1000 * FILES_REFRESH_MULTIPLICANT;
@@ -152,6 +130,11 @@ namespace TransmissionRemoteDotnet
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error writing settings to registry", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (profileKey != null)
+                    profileKey.Close();
             }
         }
 
@@ -163,56 +146,71 @@ namespace TransmissionRemoteDotnet
             this.CurrentProfile = name;
         }
 
-        private string currentProfile;
-
         private RegistryKey GetRootKey(bool writeable)
         {
-            return Registry.CurrentUser.OpenSubKey(REGISTRY_KEY_ROOT, writeable);
+            RegistryKey key = Registry.CurrentUser.OpenSubKey(REGISTRY_KEY_ROOT, writeable);
+            if (key == null)
+                key = Registry.CurrentUser.CreateSubKey(REGISTRY_KEY_ROOT);
+            return key;
         }
 
         public string CurrentProfile
         {
             get
             {
-                return this.currentProfile;
+                RegistryKey rootKey = GetRootKey(false);
+                if (rootKey.GetValue(REGKEY_CURRENTPROFILE) != null)
+                {
+                    return (string)rootKey.GetValue(REGKEY_CURRENTPROFILE);
+                }
+                else
+                {
+                    return "Default";
+                }
             }
             set
             {
+                RegistryKey profileKey = null;
+                RegistryKey rootKey = null;
                 if (Program.Connected)
                 {
                     Program.Connected = false;
                 }
-                this.currentProfile = value;
                 try
                 {
-                    LoadCurrentProfile();
+                    rootKey = GetRootKey(true);
+                    rootKey.SetValue(REGKEY_CURRENTPROFILE, value);
+                    rootKey.Close();
+                    profileKey = GetProfileKey(value, false);
+                    this.confMap.Clear();
+                    foreach (string subKey in profileKey.GetValueNames())
+                    {
+                        this.confMap[subKey] = profileKey.GetValue(subKey);
+                    }
+                    profileKey.Close();
+                    if (Program.Form != null && AutoConnect)
+                        Program.Form.Connect();
                 }
                 catch
                 {
                     if (!value.Equals("Default"))
                         this.CurrentProfile = "Default";
-                    return;
                 }
-                SaveProfileSelection();
-                if (Program.Form != null && AutoConnect)
+                finally
                 {
-                    Program.Form.Connect();
+                    if (profileKey != null)
+                        profileKey.Close();
+                    if (rootKey != null)
+                        rootKey.Close();
                 }
             }
         }
 
         public void RemoveProfile(string name)
         {
-            try
-            {
-                RegistryKey key = GetRootKey(true);
-                key.DeleteSubKeyTree(name);
-                key.Close();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            RegistryKey key = GetRootKey(true);
+            key.DeleteSubKeyTree(name);
+            key.Close();
         }
 
         public string Host

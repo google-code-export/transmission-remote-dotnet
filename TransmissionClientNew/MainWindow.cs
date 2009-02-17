@@ -604,17 +604,19 @@ namespace TransmissionRemoteDotnet
                     = remainingLabel.Text = uploadedLabel.Text = uploadRateLabel.Text
                     = uploadLimitLabel.Text = startedAtLabel.Text = seedersLabel.Text
                     = leechersLabel.Text = ratioLabel.Text = createdAtLabel.Text
-                    = createdByLabel.Text = errorLabel.Text = generalTorrentNameGroupBox.Text
-                    = trackersTorrentNameGroupBox.Text = peersTorrentNameGroupBox.Text
-                    = filesTorrentNameGroupBox.Text = percentageLabel.Text = "";
+                    = createdByLabel.Text = errorLabel.Text = percentageLabel.Text
+                    = generalTorrentNameGroupBox.Text = "";
+                 trackersTorrentNameGroupBox.Text
+                    = peersTorrentNameGroupBox.Text = filesTorrentNameGroupBox.Text
+                    = "N/A";
                 progressBar.Value = 0;
                 labelForErrorLabel.Visible = errorLabel.Visible
-                    = filesListView.Enabled = false;
+                    = filesListView.Enabled = peersListView.Enabled
+                    = trackersListView.Enabled = false;
             }
-            trackersListView.Enabled = generalTorrentNameGroupBox.Enabled
+            generalTorrentNameGroupBox.Enabled
                     = label1.Enabled = refreshElapsedTimer.Enabled
                     = filesTimer.Enabled = label1.Enabled
-                    = trackersListView.Enabled = peersListView.Enabled
                     = generalTorrentNameGroupBox.Enabled
                     = one;
         }
@@ -713,7 +715,7 @@ namespace TransmissionRemoteDotnet
             }
             else if (e.KeyCode == Keys.F5)
             {
-                torrentAndTabsSplitContainer.Panel2Collapsed = !torrentAndTabsSplitContainer.Panel2Collapsed;
+                ToggleTorrentDetailPanel();
             }
             else if (e.Control && e.KeyCode == Keys.O)
             {
@@ -1120,6 +1122,8 @@ namespace TransmissionRemoteDotnet
                     }
                     Toolbox.StripeListView(trackersListView);
                     trackersListView.ResumeLayout();
+                    peersListView.Enabled = trackersListView.Enabled
+                        = true;
                 }
                 remainingLabel.Text = t.GetLongETA();
                 uploadedLabel.Text = t.UploadedString;
@@ -1163,14 +1167,14 @@ namespace TransmissionRemoteDotnet
                                 }
                                 else
                                 {
-                                    countryIndex = geo.FindIndex(ip);
-                                }
-                                item.SubItems.Add(GeoIPCountry.CountryNames[countryIndex]);
+                                    try
+                                    {
+                                        countryIndex = geo.FindIndex(ip);
+                                    }
+                                    catch { }
+                                }   
                             }
-                            else
-                            {
-                                item.SubItems.Add("");
-                            }
+                            item.SubItems.Add(countryIndex >= 0 ? GeoIPCountry.CountryNames[countryIndex] : "");
                             item.SubItems.Add((string)peer[ProtocolConstants.FIELD_FLAGSTR]);
                             item.SubItems.Add((string)peer[ProtocolConstants.FIELD_CLIENTNAME]);
                             item.ToolTipText = item.SubItems[0].Text;
@@ -1487,6 +1491,17 @@ namespace TransmissionRemoteDotnet
             {
                 e.Result = ex;
             }
+        }
+
+        private void showDetailsPanelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToggleTorrentDetailPanel();
+        }
+
+        private void ToggleTorrentDetailPanel()
+        {
+            torrentAndTabsSplitContainer.Panel2Collapsed = !torrentAndTabsSplitContainer.Panel2Collapsed;
+            showDetailsPanelToolStripMenuItem.Checked = !torrentAndTabsSplitContainer.Panel2Collapsed;
         }
     }
 }

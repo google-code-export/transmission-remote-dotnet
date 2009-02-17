@@ -58,16 +58,21 @@ namespace TransmissionRemoteDotnet.Commmands
                     {
                         totalSeeding++;
                     }
+                    Torrent t = null;
                     lock (Program.TorrentIndex)
                     {
                         if (Program.TorrentIndex.ContainsKey(hash))
                         {
-                            Program.TorrentIndex[hash].Update(torrent);
+                            t = Program.TorrentIndex[hash];
                         }
-                        else
-                        {
-                            Program.TorrentIndex[hash] = new Torrent(torrent);
-                        }
+                    }
+                    if (t == null)
+                    {
+                        t = new Torrent(torrent);
+                    }
+                    else
+                    {
+                        t.Update(torrent);
                     }
                 }
                 form.ResumeTorrentListView();

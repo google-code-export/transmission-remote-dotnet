@@ -30,7 +30,6 @@ namespace TransmissionRemoteDotnet
 
         private string originalHost;
         private int originalPort;
-        private bool ignoreProfileIndexChanged = true;
 
         private LocalSettingsDialog()
         {
@@ -78,7 +77,6 @@ namespace TransmissionRemoteDotnet
                 profileComboBox.SelectedIndex = 0;
             }
             LoadCurrentProfile();
-            ignoreProfileIndexChanged = false;
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -151,27 +149,17 @@ namespace TransmissionRemoteDotnet
         private void profileComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             removeProfileButton.Enabled = !profileComboBox.SelectedItem.ToString().Equals("Default");
-            if (!ignoreProfileIndexChanged)
+            LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
+            string selectedProfile = profileComboBox.SelectedItem.ToString();
+            foreach (ToolStripMenuItem item in Program.Form.connectButton.DropDownItems)
             {
-                LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-                string selectedProfile = profileComboBox.SelectedItem.ToString();
-                foreach (ToolStripMenuItem item in Program.Form.connectButton.DropDownItems)
-                {
-                    if (selectedProfile.Equals(item.ToString()))
-                    {
-                        item.Checked = true;
-                    }
-                    else
-                    {
-                        item.Checked = false;
-                    }
-                }
-                if (!selectedProfile.Equals(settings.CurrentProfile))
-                {
-                    SaveSettings();
-                    settings.CurrentProfile = selectedProfile;
-                    LoadCurrentProfile();
-                }
+                item.Checked = selectedProfile.Equals(item.ToString());
+            }
+            if (!selectedProfile.Equals(settings.CurrentProfile))
+            {
+                SaveSettings();
+                settings.CurrentProfile = selectedProfile;
+                LoadCurrentProfile();
             }
         }
 
@@ -189,10 +177,8 @@ namespace TransmissionRemoteDotnet
                 item.Checked = false;
             }
             profile.Checked = true;
-            ignoreProfileIndexChanged = true;
             settings.CreateProfile(textBox1.Text);
             profileComboBox.SelectedIndex = profileComboBox.Items.Add(textBox1.Text);
-            ignoreProfileIndexChanged = false;
             textBox1.Text = "";
             LoadCurrentProfile();
         }
@@ -205,6 +191,7 @@ namespace TransmissionRemoteDotnet
                 object selectedItem = profileComboBox.SelectedItem;
                 settings.RemoveProfile(selectedItem.ToString());
                 profileComboBox.SelectedIndex = 0;
+                settings.CurrentProfile = "Default";
                 profileComboBox.Items.Remove(selectedItem);
             }
             catch (Exception ex)

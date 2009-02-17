@@ -56,7 +56,10 @@ namespace TransmissionRemoteDotnet
             item.SubItems.Add(this.Added.ToString());
             item.SubItems.Add(percentage >= 100 || this.StatusCode == ProtocolConstants.STATUS_SEEDING ? "Unknown" : "");
             item.SubItems.Add(GetFirstTracker(true));
-            Program.TorrentIndex[this.Hash] = this;
+            lock (Program.TorrentIndex)
+            {
+                Program.TorrentIndex[this.Hash] = this;
+            }
             Add();
         }
 

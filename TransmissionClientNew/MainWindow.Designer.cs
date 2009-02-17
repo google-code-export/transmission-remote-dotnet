@@ -52,10 +52,13 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.startAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showDetailsPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showErrorLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.projectSiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkForNewVersionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.torrentAndTabsSplitContainer = new System.Windows.Forms.SplitContainer();
@@ -184,7 +187,6 @@
             this.filesTimer = new System.Windows.Forms.Timer(this.components);
             this.filesWorker = new System.ComponentModel.BackgroundWorker();
             this.refreshElapsedTimer = new System.Windows.Forms.Timer(this.components);
-            this.checkForNewVersionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -230,6 +232,7 @@
             this.fileToolStripMenuItem,
             this.optionsToolStripMenuItem,
             this.torrentToolStripMenuItem,
+            this.viewToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
@@ -405,8 +408,25 @@
             // 
             this.stopAllToolStripMenuItem.Name = "stopAllToolStripMenuItem";
             this.stopAllToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.stopAllToolStripMenuItem.Text = "Stop All";
+            this.stopAllToolStripMenuItem.Text = "Pause All";
             this.stopAllToolStripMenuItem.Click += new System.EventHandler(this.stopAllMenuItem_Click);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showDetailsPanelToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // showDetailsPanelToolStripMenuItem
+            // 
+            this.showDetailsPanelToolStripMenuItem.Checked = true;
+            this.showDetailsPanelToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.showDetailsPanelToolStripMenuItem.Name = "showDetailsPanelToolStripMenuItem";
+            this.showDetailsPanelToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.showDetailsPanelToolStripMenuItem.Text = "Details panel";
+            this.showDetailsPanelToolStripMenuItem.Click += new System.EventHandler(this.showDetailsPanelToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -438,6 +458,13 @@
             this.projectSiteToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.projectSiteToolStripMenuItem.Text = "Project site";
             this.projectSiteToolStripMenuItem.Click += new System.EventHandler(this.projectSiteToolStripMenuItem_Click);
+            // 
+            // checkForNewVersionToolStripMenuItem
+            // 
+            this.checkForNewVersionToolStripMenuItem.Name = "checkForNewVersionToolStripMenuItem";
+            this.checkForNewVersionToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.checkForNewVersionToolStripMenuItem.Text = "Check for new version";
+            this.checkForNewVersionToolStripMenuItem.Click += new System.EventHandler(this.checkForNewVersionToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -1710,13 +1737,6 @@
             this.refreshElapsedTimer.Interval = 1000;
             this.refreshElapsedTimer.Tick += new System.EventHandler(this.refreshElapsedTimer_Tick);
             // 
-            // checkForNewVersionToolStripMenuItem
-            // 
-            this.checkForNewVersionToolStripMenuItem.Name = "checkForNewVersionToolStripMenuItem";
-            this.checkForNewVersionToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.checkForNewVersionToolStripMenuItem.Text = "Check for new version";
-            this.checkForNewVersionToolStripMenuItem.Click += new System.EventHandler(this.checkForNewVersionToolStripMenuItem_Click);
-            // 
             // MainWindow
             // 
             this.AllowDrop = true;
@@ -1948,5 +1968,7 @@
         private System.Windows.Forms.ToolStripSplitButton pauseTorrentButton;
         private System.Windows.Forms.ToolStripMenuItem pauseAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem checkForNewVersionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showDetailsPanelToolStripMenuItem;
     }
 }
