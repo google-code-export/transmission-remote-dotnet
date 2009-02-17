@@ -425,8 +425,11 @@ namespace TransmissionRemoteDotnet
 
         private void UploadWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            ((TransmissionCommand)e.Result).Execute();
-            RefreshIfNotRefreshing();
+            if (e.Result != null)
+            {
+                ((TransmissionCommand)e.Result).Execute();
+                RefreshIfNotRefreshing();
+            }
         }
 
         private JsonArray BuildIdArray()
