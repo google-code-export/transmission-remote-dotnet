@@ -177,8 +177,7 @@ namespace TransmissionRemoteDotnet
                 if (form.notifyIcon.Visible == true
                     && this.StatusCode == ProtocolConstants.STATUS_DOWNLOADING
                     && ((JsonNumber)this.info[ProtocolConstants.FIELD_LEFTUNTILDONE]).ToInt64() > 0
-                    && (((JsonNumber)info[ProtocolConstants.FIELD_LEFTUNTILDONE]).ToInt64() == 0
-                        || ((JsonNumber)info[ProtocolConstants.FIELD_STATUS]).ToInt16() == ProtocolConstants.STATUS_SEEDING))
+                    && (((JsonNumber)info[ProtocolConstants.FIELD_LEFTUNTILDONE]).ToInt64() == 0))
                 {
                     form.notifyIcon.ShowBalloonTip(LocalSettingsSingleton.COMPLETED_BALOON_TIMEOUT, this.Name, "This torrent has finished downloading.", ToolTipIcon.Info);
                     item.SubItems[12].Text = DateTime.Now.ToString();
@@ -371,7 +370,7 @@ namespace TransmissionRemoteDotnet
 
         private string GetETA(bool small)
         {
-            if (this.Percentage >= 100 || this.StatusCode == ProtocolConstants.STATUS_SEEDING)
+            if (this.IsFinished)
             {
                 return "";
             }
@@ -521,7 +520,15 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.Percentage >= 100 || this.StatusCode == ProtocolConstants.STATUS_SEEDING;
+                return this.LeftUntilDone <= 0;
+            }
+        }
+
+        public long LeftUntilDone
+        {
+            get
+            {
+                return ((JsonNumber)info[ProtocolConstants.FIELD_LEFTUNTILDONE]).ToInt64();
             }
         }
 

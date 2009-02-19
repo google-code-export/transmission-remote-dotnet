@@ -848,7 +848,7 @@ namespace TransmissionRemoteDotnet
                     foreach (KeyValuePair<string, Torrent> pair in Program.TorrentIndex)
                     {
                         Torrent t = pair.Value;
-                        if (t.Percentage >= 100 || t.StatusCode == ProtocolConstants.STATUS_SEEDING)
+                        if (t.IsFinished)
                         {
                             t.Show();
                         }
