@@ -19,7 +19,11 @@ namespace TransmissionRemoteDotnet
         private const string DEFAULT_WINDOW_TITLE = "Transmission Remote",
             GEOIP_DATABASE_FILE = "GeoIP.dat",
             CONFKEY_MAINWINDOW_HEIGHT = "mainwindow-height",
-            CONFKEY_MAINWINDOW_WIDTH = "mainwindow-width";
+            CONFKEY_MAINWINDOW_WIDTH = "mainwindow-width",
+            CONFKEY_MAINWINDOW_LOCATION_X = "mainwindow-loc-x",
+            CONFKEY_MAINWINDOW_LOCATION_Y = "mainwindow-loc-y",
+            CONFKEY_SPLITTERDISTANCE = "mainwindow-splitterdistance",
+            CONFKEY_MAINWINDOW_STATE = "mainwindow-state";
 
         private Boolean minimise = false;
         private ListViewItemSorter lvwColumnSorter;
@@ -211,9 +215,9 @@ namespace TransmissionRemoteDotnet
                 trayMenu.MenuItems.Add("Connect", new EventHandler(this.connectButton_Click));
                 this.toolStripStatusLabel.Text = "Disconnected.";
                 this.Text = MainWindow.DEFAULT_WINDOW_TITLE;
-                if (this.stateListBox.Items.Count > 7)
+                lock (this.stateListBox)
                 {
-                    lock (this.stateListBox)
+                    if (this.stateListBox.Items.Count > 7)
                     {
                         for (int i = this.stateListBox.Items.Count - 1; i > 7; i--)
                         {
@@ -277,11 +281,39 @@ namespace TransmissionRemoteDotnet
             torrentListView.ResumeLayout();
         }
 
+        public void RestoreFormProperties()
+        {
+            try
+            {
+                LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
+                object mainWindowState = settings.GetObject(CONFKEY_MAINWINDOW_STATE);
+                object mainWindowLocationX = settings.GetObject(CONFKEY_MAINWINDOW_LOCATION_X);
+                object mainWindowLocationY = settings.GetObject(CONFKEY_MAINWINDOW_LOCATION_Y);
+                object mainWindowWidth = settings.GetObject(CONFKEY_MAINWINDOW_WIDTH);
+                object mainWindowHeight = settings.GetObject(CONFKEY_MAINWINDOW_HEIGHT);
+                object splitterDistance = settings.GetObject(CONFKEY_SPLITTERDISTANCE);
+                if (mainWindowWidth != null && mainWindowHeight != null)
+                    this.Size = new Size((int)mainWindowWidth, (int)mainWindowHeight);
+                if (mainWindowLocationX != null && mainWindowLocationY != null)
+                    this.Location = new Point((int)mainWindowLocationX, (int)mainWindowLocationY);
+                if (splitterDistance != null)
+                    this.torrentAndTabsSplitContainer.SplitterDistance = (int)splitterDistance;
+                if (mainWindowState != null)
+                {
+                    FormWindowState _mainWindowState = (FormWindowState)((int)mainWindowState);
+                    if (_mainWindowState != FormWindowState.Minimized)
+                    {
+                        this.WindowState = _mainWindowState;
+                    }
+                }
+            }
+            catch { }
+        }
+
         private void MainWindow_Load(object sender, EventArgs e)
         {
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-            if (settings.GetObject(CONFKEY_MAINWINDOW_WIDTH) != null && settings.GetObject(CONFKEY_MAINWINDOW_HEIGHT) != null)
-                this.Size = new Size((int)settings.GetObject(CONFKEY_MAINWINDOW_WIDTH), (int)settings.GetObject(CONFKEY_MAINWINDOW_HEIGHT));
+            RestoreFormProperties();
             if (notifyIcon.Visible = settings.MinToTray)
             {
                 foreach (string arg in Environment.GetCommandLineArgs())
@@ -584,7 +616,13 @@ namespace TransmissionRemoteDotnet
 
         private void OneTorrentsSelected(bool one)
         {
-            if (!one)
+            if (one)
+            {
+                UpdateInfoPanel(true);
+                Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
+                CreateActionWorker().RunWorkerAsync(Requests.FilesAndPriorities(t.Id));
+            }
+            else
             {
                 lock (filesListView)
                 {
@@ -609,9 +647,9 @@ namespace TransmissionRemoteDotnet
                     = leechersLabel.Text = ratioLabel.Text = createdAtLabel.Text
                     = createdByLabel.Text = errorLabel.Text = percentageLabel.Text
                     = generalTorrentNameGroupBox.Text = "";
-                 trackersTorrentNameGroupBox.Text
-                    = peersTorrentNameGroupBox.Text = filesTorrentNameGroupBox.Text
-                    = "N/A";
+                trackersTorrentNameGroupBox.Text
+                   = peersTorrentNameGroupBox.Text = filesTorrentNameGroupBox.Text
+                   = "N/A";
                 progressBar.Value = 0;
                 labelForErrorLabel.Visible = errorLabel.Visible
                     = filesListView.Enabled = peersListView.Enabled
@@ -633,12 +671,6 @@ namespace TransmissionRemoteDotnet
                 torrentListView.ContextMenu = oneOrMore ? this.torrentSelectionMenu : this.noTorrentSelectionMenu;
                 OneOrMoreTorrentsSelected(oneOrMore);
                 peersListView.Tag = 0;
-                if (one)
-                {
-                    UpdateInfoPanel(true);
-                    Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
-                    CreateActionWorker().RunWorkerAsync(Requests.FilesAndPriorities(t.Id));
-                }
                 OneTorrentsSelected(one);
             }
         }
@@ -1175,7 +1207,7 @@ namespace TransmissionRemoteDotnet
                                         countryIndex = geo.FindIndex(ip);
                                     }
                                     catch { }
-                                }   
+                                }
                             }
                             item.SubItems.Add(countryIndex >= 0 ? GeoIPCountry.CountryNames[countryIndex] : "");
                             item.SubItems.Add((string)peer[ProtocolConstants.FIELD_FLAGSTR]);
@@ -1303,8 +1335,6 @@ namespace TransmissionRemoteDotnet
                     this.notifyIcon.Tag = this.WindowState;
                 }
             }
-            LocalSettingsSingleton.Instance.SetObject("mainwindow-height", this.Size.Height);
-            LocalSettingsSingleton.Instance.SetObject("mainwindow-width", this.Size.Width);
         }
 
         private void projectSiteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1440,7 +1470,20 @@ namespace TransmissionRemoteDotnet
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            LocalSettingsSingleton.Instance.Commit();
+            if (this.WindowState != FormWindowState.Minimized)
+            {
+                LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
+                settings.SetObject(CONFKEY_MAINWINDOW_STATE, (int)this.WindowState);
+                if (this.WindowState != FormWindowState.Maximized)
+                {
+                    settings.SetObject(CONFKEY_MAINWINDOW_LOCATION_X, this.Location.X);
+                    settings.SetObject(CONFKEY_MAINWINDOW_LOCATION_Y, this.Location.Y);
+                    settings.SetObject(CONFKEY_SPLITTERDISTANCE, this.torrentAndTabsSplitContainer.SplitterDistance);
+                    settings.SetObject(CONFKEY_MAINWINDOW_HEIGHT, this.Size.Height);
+                    settings.SetObject(CONFKEY_MAINWINDOW_WIDTH, this.Size.Width);
+                }
+                settings.Commit();
+            }
         }
 
         private void checkForNewVersionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1457,7 +1500,7 @@ namespace TransmissionRemoteDotnet
             {
                 Exception ex = (Exception)e.Result;
                 MessageBox.Show(ex.Message, "Latest version check failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }            
+            }
             else if (e.Result.GetType() == typeof(Version))
             {
                 Version latestVersion = (Version)e.Result;
