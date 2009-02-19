@@ -54,7 +54,7 @@ namespace TransmissionRemoteDotnet
             item.SubItems.Add(this.UploadedString);
             item.SubItems.Add(this.RatioString);
             item.SubItems.Add(this.Added.ToString());
-            item.SubItems.Add(percentage >= 100 || this.StatusCode == ProtocolConstants.STATUS_SEEDING ? "?" : "");
+            item.SubItems.Add(this.IsFinished ? "?" : "");
             item.SubItems.Add(GetFirstTracker(true));
             lock (Program.TorrentIndex)
             {
@@ -509,7 +509,23 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        public string HaveValidString
+        public long HaveValid
+        {
+            get
+            {
+                return ((JsonNumber)info[ProtocolConstants.FIELD_HAVEVALID]).ToInt64();
+            }
+        }
+
+        public bool IsFinished
+        {
+            get
+            {
+                return this.Percentage >= 100 || this.StatusCode == ProtocolConstants.STATUS_SEEDING;
+            }
+        }
+
+        public string HaveTotalString
         {
             get
             {

@@ -1169,7 +1169,14 @@ namespace TransmissionRemoteDotnet
                 ratioLabel.Text = t.RatioString;
                 progressBar.Value = (int)t.Percentage;
                 percentageLabel.Text = t.Percentage.ToString() + "%";
-                downloadedLabel.Text = t.HaveValidString;
+                if (t.IsFinished)
+                {
+                    downloadedLabel.Text = t.HaveTotalString;
+                }
+                else
+                {
+                    downloadedLabel.Text = String.Format("{0} ({1} valid)", t.HaveTotalString, Toolbox.GetFileSize(t.HaveValid));
+                }
                 downloadSpeedLabel.Text = t.DownloadRate;
                 downloadLimitLabel.Text = t.DownloadLimitMode ? Toolbox.KbpsString(t.DownloadLimit) : "∞";
                 statusLabel.Text = t.Status;
@@ -1528,7 +1535,7 @@ namespace TransmissionRemoteDotnet
                 string response = client.DownloadString("http://transmission-remote-dotnet.googlecode.com/svn/wiki/latest_version.txt");
                 if (!response.StartsWith("#LATESTVERSION#"))
                     throw new FormatException("Response didn't contain the identification prefix.");
-                string[] thisVersion = response.Substring(15, response.Length - 15).Split('.');
+                string[] thisVersion = response.Remove(0, 15).Split('.');
                 if (thisVersion.Length != 4)
                     throw new FormatException("Incorrect number format");
                 e.Result = new Version(Int32.Parse(thisVersion[0]), Int32.Parse(thisVersion[1]), Int32.Parse(thisVersion[2]), Int32.Parse(thisVersion[3]));
