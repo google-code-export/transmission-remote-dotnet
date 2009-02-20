@@ -23,7 +23,8 @@ namespace TransmissionRemoteDotnet
             CONFKEY_MAINWINDOW_LOCATION_X = "mainwindow-loc-x",
             CONFKEY_MAINWINDOW_LOCATION_Y = "mainwindow-loc-y",
             CONFKEY_SPLITTERDISTANCE = "mainwindow-splitterdistance",
-            CONFKEY_MAINWINDOW_STATE = "mainwindow-state";
+            CONFKEY_MAINWINDOW_STATE = "mainwindow-state",
+            LATEST_VERSION = "http://transmission-remote-dotnet.googlecode.com/svn/wiki/latest_version.txt";
 
         private Boolean minimise = false;
         private ListViewItemSorter lvwColumnSorter;
@@ -165,6 +166,11 @@ namespace TransmissionRemoteDotnet
             }
         }
 
+        private void Program_onTorrentCompleted(Torrent t)
+        {
+            notifyIcon.ShowBalloonTip(LocalSettingsSingleton.COMPLETED_BALOON_TIMEOUT, t.Name, "This torrent has finished downloading.", ToolTipIcon.Info);
+        }
+
         private void Program_onTorrentsUpdated()
         {
             lock (torrentListView)
@@ -286,21 +292,15 @@ namespace TransmissionRemoteDotnet
             try
             {
                 LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-                object mainWindowState = settings.GetObject(CONFKEY_MAINWINDOW_STATE);
-                object mainWindowLocationX = settings.GetObject(CONFKEY_MAINWINDOW_LOCATION_X);
-                object mainWindowLocationY = settings.GetObject(CONFKEY_MAINWINDOW_LOCATION_Y);
-                object mainWindowWidth = settings.GetObject(CONFKEY_MAINWINDOW_WIDTH);
-                object mainWindowHeight = settings.GetObject(CONFKEY_MAINWINDOW_HEIGHT);
-                object splitterDistance = settings.GetObject(CONFKEY_SPLITTERDISTANCE);
-                if (mainWindowWidth != null && mainWindowHeight != null)
-                    this.Size = new Size((int)mainWindowWidth, (int)mainWindowHeight);
-                if (mainWindowLocationX != null && mainWindowLocationY != null)
-                    this.Location = new Point((int)mainWindowLocationX, (int)mainWindowLocationY);
-                if (splitterDistance != null)
-                    this.torrentAndTabsSplitContainer.SplitterDistance = (int)splitterDistance;
-                if (mainWindowState != null)
+                if (settings.ContainsKey(CONFKEY_MAINWINDOW_HEIGHT) && settings.ContainsKey(CONFKEY_MAINWINDOW_WIDTH))
+                    this.Size = new Size((int)settings.GetObject(CONFKEY_MAINWINDOW_WIDTH), (int)settings.GetObject(CONFKEY_MAINWINDOW_HEIGHT));
+                if (settings.ContainsKey(CONFKEY_MAINWINDOW_LOCATION_X) && settings.ContainsKey(CONFKEY_MAINWINDOW_LOCATION_Y))
+                    this.Location = new Point((int)settings.GetObject(CONFKEY_MAINWINDOW_LOCATION_X), (int)settings.GetObject(CONFKEY_MAINWINDOW_LOCATION_Y));
+                if (settings.ContainsKey(CONFKEY_SPLITTERDISTANCE))
+                    this.torrentAndTabsSplitContainer.SplitterDistance = (int)settings.GetObject(CONFKEY_SPLITTERDISTANCE);
+                if (settings.ContainsKey(CONFKEY_MAINWINDOW_STATE))
                 {
-                    FormWindowState _mainWindowState = (FormWindowState)((int)mainWindowState);
+                    FormWindowState _mainWindowState = (FormWindowState)((int)settings.GetObject(CONFKEY_MAINWINDOW_STATE));
                     if (_mainWindowState != FormWindowState.Minimized)
                     {
                         this.WindowState = _mainWindowState;
@@ -828,7 +828,7 @@ namespace TransmissionRemoteDotnet
 
         private void FilterByStateOrTracker()
         {
-            torrentListView.SuspendLayout();
+            SuspendTorrentListView();
             lock (Program.TorrentIndex)
             {
                 if (stateListBox.SelectedIndex == 1)
@@ -901,7 +901,7 @@ namespace TransmissionRemoteDotnet
                     }
                 }
             }
-            torrentListView.ResumeLayout();
+            ResumeTorrentListView();
         }
 
         private void ShowTorrentIfStatus(short statusCode)
@@ -1532,7 +1532,7 @@ namespace TransmissionRemoteDotnet
             try
             {
                 TransmissionWebClient client = new TransmissionWebClient(false);
-                string response = client.DownloadString("http://transmission-remote-dotnet.googlecode.com/svn/wiki/latest_version.txt");
+                string response = client.DownloadString(LATEST_VERSION);
                 if (!response.StartsWith("#LATESTVERSION#"))
                     throw new FormatException("Response didn't contain the identification prefix.");
                 string[] thisVersion = response.Remove(0, 15).Split('.');

@@ -99,6 +99,16 @@ namespace TransmissionRemoteDotnet
             }
         }
 
+        public bool ContainsKey(string key, bool root)
+        {
+            return (root ? rootConfMap : profileConfMap).ContainsKey(key);
+        }
+
+        public bool ContainsKey(string key)
+        {
+            return this.ContainsKey(key, true);
+        }
+
         public void SetObject(string key, object value)
         {
             this.SetObject(key, value, true);

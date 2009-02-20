@@ -21,7 +21,6 @@ namespace TransmissionRemoteDotnet
     public partial class UriPromptWindow : Form
     {
         private Uri currentUri;
-        private Exception lastException;
 
         public UriPromptWindow()
         {
@@ -42,8 +41,30 @@ namespace TransmissionRemoteDotnet
             }
             else
             {
-                downloadAndUploadTorrentWorker.RunWorkerAsync(this.currentUri);
+                try
+                {
+                    string target = Path.GetTempFileName();
+                    toolStripStatusLabel1.Text = "Downloading...";
+                    toolStripProgressBar1.Visible = true;
+                    toolStripProgressBar1.Value = 0;
+                    button1.Enabled = false;
+                    WebClient webClient = new TransmissionWebClient(false);
+                    webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(webClient_DownloadProgressChanged);
+                    webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(webClient_DownloadFileCompleted);
+                    webClient.DownloadFileAsync(this.currentUri, target, target);
+                }
+                catch (Exception ex)
+                {
+                    HandleException(ex);
+                }
             }
+        }
+
+        private void HandleException(Exception ex)
+        {
+            toolStripProgressBar1.Visible = false;
+            toolStripStatusLabel1.Text = ex.Message;
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -52,16 +73,15 @@ namespace TransmissionRemoteDotnet
             {
                 try
                 {
-                    currentUri = new Uri(textBox1.Text);
+                    this.currentUri = new Uri(textBox1.Text);
+                    toolStripStatusLabel1.Text = "Input accepted.";
+                    button1.Enabled = true;
                 }
                 catch (Exception ex)
                 {
                     button1.Enabled = false;
                     toolStripStatusLabel1.Text = ex.Message;
-                    return;
                 }
-                toolStripStatusLabel1.Text = "Input accepted.";
-                button1.Enabled = true;
             }
             else
             {
@@ -70,63 +90,24 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        private void downloadTorrentWorker_DoWork(object sender, DoWorkEventArgs e)
+        private void webClient_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
         {
-            string target = Path.GetTempFileName();
-            downloadAndUploadTorrentWorker.ReportProgress(0, DownloadAndUploadTorrentState.Downloading);
-            try
+            if (e.Error != null)
             {
-                WebClient webClient = new TransmissionWebClient(false);
-                webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(webClient_DownloadProgressChanged);
-                webClient.DownloadFile(this.currentUri, target);
-                Program.Form.CreateActionWorker().RunWorkerAsync(Requests.TorrentAddByFile(target, true));
+                HandleException(e.Error);
+                button1.Enabled = true;
             }
-            catch (Exception ex)
+            else
             {
-                lastException = ex;
-                downloadAndUploadTorrentWorker.ReportProgress(0, DownloadAndUploadTorrentState.DownloadFailed);
-                return;
+                Program.Form.CreateActionWorker().RunWorkerAsync(Requests.TorrentAddByFile((string)e.UserState, true));
+                this.Close();
             }
         }
 
         private void webClient_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
-            downloadAndUploadTorrentWorker.ReportProgress(e.ProgressPercentage, DownloadAndUploadTorrentState.Downloading);
-        }
-
-        private void downloadAndUploadTorrentWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            switch ((DownloadAndUploadTorrentState)e.UserState)
-            {
-                case DownloadAndUploadTorrentState.Downloading:
-                    toolStripStatusLabel1.Text = "Downloading...";
-                    toolStripProgressBar1.Visible = true;
-                    break;
-                case DownloadAndUploadTorrentState.DownloadFailed:
-                    MessageBox.Show(lastException.Message,
-                        toolStripStatusLabel1.Text = String.Format("Download failed ({0})", lastException.GetType().ToString()),
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    ResetToolStrip();
-                    break;
-                case DownloadAndUploadTorrentState.Complete:
-                    Program.Form.RefreshIfNotRefreshing();
-                    this.Close();
-                    return;
-            }
-            try
-            {
-                toolStripProgressBar1.Value = e.ProgressPercentage;
-            }
-            catch { }
-        }
-
-        private void ResetToolStrip()
-        {
-            try
-            {
-                toolStripProgressBar1.Visible = false;
-            }
-            catch { }
+            toolStripProgressBar1.Value = e.ProgressPercentage;
+            toolStripStatusLabel1.Text = String.Format("Downloading ({0}%)...", e.ProgressPercentage);
         }
     }
 }

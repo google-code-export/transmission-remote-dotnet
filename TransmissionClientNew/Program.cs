@@ -21,35 +21,34 @@ namespace TransmissionRemoteDotnet
         public static event OnErrorDelegate OnError;
 
         private static Boolean connected = false;
-        private static MainWindow form;
 
+        private static MainWindow form;
         public static MainWindow Form
         {
             get { return Program.form; }
         }
-        private static Dictionary<string, Torrent> torrentIndex = new Dictionary<string, Torrent>();
 
+        private static Dictionary<string, Torrent> torrentIndex = new Dictionary<string, Torrent>();
         public static Dictionary<string, Torrent> TorrentIndex
         {
             get { return Program.torrentIndex; }
         }
-        private static TransmissionDaemonDescriptor daemonDescriptor = new TransmissionDaemonDescriptor();
 
+        private static TransmissionDaemonDescriptor daemonDescriptor = new TransmissionDaemonDescriptor();
         public static TransmissionDaemonDescriptor DaemonDescriptor
         {
             get { return Program.daemonDescriptor; }
             set { Program.daemonDescriptor = value; }
         }
-        private static List<ListViewItem> logItems = new List<ListViewItem>();
 
+        private static List<ListViewItem> logItems = new List<ListViewItem>();
         public static List<ListViewItem> LogItems
         {
             get { return Program.logItems; }
         
         }
-        private static string[] uploadArgs;
 
- 
+        private static string[] uploadArgs; 
         public static string[] UploadArgs
         {
             get { return Program.uploadArgs; }
@@ -94,7 +93,14 @@ namespace TransmissionRemoteDotnet
                 }
                 else
                 {
-                    singleInstance.PassArgumentsToFirstInstance(args);
+                    try
+                    {
+                        singleInstance.PassArgumentsToFirstInstance(args);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Unable to communicate with first instance", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }

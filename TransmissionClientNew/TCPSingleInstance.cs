@@ -54,26 +54,28 @@ namespace TransmissionRemoteDotnet
 
         private void ListenForArguments(Object state)
         {
+            StreamWriter writer = null;
+            StreamReader reader = null;
             try
             {
-                StreamReader reader = new StreamReader(listener.AcceptTcpClient().GetStream());
+                Stream clientStream = listener.AcceptTcpClient().GetStream();
+                reader = new StreamReader(clientStream);
                 List<string> arguments = new List<string>();
-                string response = reader.ReadLine();
-                reader.Close();
-                foreach (string arg in (JsonArray)JsonConvert.Import(response))
+                foreach (string arg in (JsonArray)JsonConvert.Import(reader.ReadLine()))
                 {
                     if (arg != null && arg.Length > 0)
-                    {
                         arguments.Add(arg);
-                    }
                 }
                 ThreadPool.QueueUserWorkItem(new WaitCallback(CallOnArgumentsReceived), arguments.ToArray());
             }
             catch
-            {
-            }
+            { }
             finally
             {
+                if (writer != null)
+                    writer.Close();
+                if (reader != null)
+                    reader.Close();
                 ListenForArguments(null);
             }
         }
@@ -87,21 +89,13 @@ namespace TransmissionRemoteDotnet
         public bool PassArgumentsToFirstInstance(string[] arguments)
         {
             if (isFirstInstance)
-                throw new InvalidOperationException("This is not the first instance.");
-            try
-            {
-                TcpClient client = new TcpClient();
-                client.Connect("127.0.0.1", this.port);
-                NetworkStream stream = client.GetStream();
-                byte[] data = (new ASCIIEncoding()).GetBytes((new JsonArray(arguments)).ToString());
-                stream.Write(data, 0, data.Length);
-                client.Close();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+                throw new InvalidOperationException("This is the first instance.");
+            TcpClient client = new TcpClient();
+            client.Connect("127.0.0.1", this.port);
+            StreamWriter writer = new StreamWriter(client.GetStream());
+            writer.WriteLine((new JsonArray(arguments)).ToString());
+            writer.Close();
+            return true;
         }
 
         #endregion
