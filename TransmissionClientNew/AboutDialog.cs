@@ -45,7 +45,7 @@ namespace TransmissionRemoteDotnet
         private void AboutDialog_Load(object sender, EventArgs e)
         {
             Version version = Assembly.GetEntryAssembly().GetName().Version;
-            label1.Text = String.Format("Transmission Remote v{0}.{1}", version.Major, version.Minor);
+            label1.Text = String.Format("Transmission Remote v{0}.{1} (build {2})", version.Major, version.Minor, version.Build);
             label3.Text = String.Format("Author: Alan F <{0}>", Encoding.ASCII.GetString(Convert.FromBase64String("YWxhbkBldGgwLm9yZy51aw==")));
         }
 

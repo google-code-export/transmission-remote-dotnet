@@ -11,13 +11,6 @@ using TransmissionRemoteDotnet.Commmands;
 
 namespace TransmissionRemoteDotnet
 {
-    public enum DownloadAndUploadTorrentState
-    {
-        Downloading,
-        DownloadFailed,
-        Complete
-    }
-
     public partial class UriPromptWindow : Form
     {
         private Uri currentUri;
@@ -45,8 +38,8 @@ namespace TransmissionRemoteDotnet
                 {
                     string target = Path.GetTempFileName();
                     toolStripStatusLabel1.Text = "Downloading...";
-                    toolStripProgressBar1.Visible = true;
                     toolStripProgressBar1.Value = 0;
+                    toolStripProgressBar1.Visible = true;
                     button1.Enabled = false;
                     WebClient webClient = new TransmissionWebClient(false);
                     webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(webClient_DownloadProgressChanged);

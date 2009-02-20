@@ -11,6 +11,7 @@ using TransmissionRemoteDotnet.Comparers;
 using Jayrock.Json;
 using MaxMind;
 using System.IO;
+using System.Diagnostics;
 
 namespace TransmissionRemoteDotnet
 {
@@ -134,7 +135,7 @@ namespace TransmissionRemoteDotnet
             this.torrentSelectionMenu.MenuItems.Add(new MenuItem("Start", new EventHandler(this.startTorrentButton_Click)));
             this.torrentSelectionMenu.MenuItems.Add(new MenuItem("Pause", new EventHandler(this.pauseTorrentButton_Click)));
             this.torrentSelectionMenu.MenuItems.Add(new MenuItem("Remove", new EventHandler(this.removeTorrentButton_Click)));
-            if (Program.DaemonDescriptor.Revision >= 7331)
+            if (Program.DaemonDescriptor.Version >= 1.5)
             {
                 this.torrentSelectionMenu.MenuItems.Add(new MenuItem("Remove and delete", new EventHandler(this.removeAndDeleteButton_Click)));
             }
@@ -248,7 +249,7 @@ namespace TransmissionRemoteDotnet
                 = addTorrentFromUrlToolStripMenuItem.Visible = startTorrentButton.Visible
                 = refreshTimer.Enabled = recheckTorrentButton.Visible
                 = connected;
-            removeAndDeleteButton.Visible = connected && Program.DaemonDescriptor.Revision >= 7331;
+            removeAndDeleteButton.Visible = connected && Program.DaemonDescriptor.Version >= 1.5;
             sessionStatsButton.Visible = connected && Program.DaemonDescriptor.RpcVersion >= 4;
         }
 
@@ -494,7 +495,7 @@ namespace TransmissionRemoteDotnet
 
         private void RemoveAndDeleteTorrentsPrompt()
         {
-            if (Program.DaemonDescriptor.Revision >= 7331)
+            if (Program.DaemonDescriptor.Version >= 1.5)
             {
                 if (torrentListView.SelectedItems.Count == 1
                     && MessageBox.Show("Do you want to remove " + torrentListView.SelectedItems[0].Text + "?\r\n\r\nALL THE DATA FROM THIS TORRENT WILL BE REMOVED.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -1517,7 +1518,7 @@ namespace TransmissionRemoteDotnet
                     if (MessageBox.Show(String.Format("There is a newer version ({0}.{1}) available. Would you like to visit the downloads page?", latestVersion.Major, latestVersion.Minor), "Upgrade available", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
                         == DialogResult.Yes)
                     {
-                        System.Diagnostics.Process.Start("http://code.google.com/p/transmission-remote-dotnet/downloads/list");
+                        Process.Start("http://code.google.com/p/transmission-remote-dotnet/downloads/list");
                     }
                 }
                 else
@@ -1535,10 +1536,10 @@ namespace TransmissionRemoteDotnet
                 string response = client.DownloadString(LATEST_VERSION);
                 if (!response.StartsWith("#LATESTVERSION#"))
                     throw new FormatException("Response didn't contain the identification prefix.");
-                string[] thisVersion = response.Remove(0, 15).Split('.');
-                if (thisVersion.Length != 4)
+                string[] latestVersion = response.Remove(0, 15).Split('.');
+                if (latestVersion.Length != 4)
                     throw new FormatException("Incorrect number format");
-                e.Result = new Version(Int32.Parse(thisVersion[0]), Int32.Parse(thisVersion[1]), Int32.Parse(thisVersion[2]), Int32.Parse(thisVersion[3]));
+                e.Result = new Version(Int32.Parse(latestVersion[0]), Int32.Parse(latestVersion[1]), Int32.Parse(latestVersion[2]), Int32.Parse(latestVersion[3]));
             }
             catch (Exception ex)
             {

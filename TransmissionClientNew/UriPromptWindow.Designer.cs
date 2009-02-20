@@ -73,7 +73,7 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripProgressBar1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 86);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 82);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(427, 22);
             this.statusStrip1.TabIndex = 3;
@@ -82,8 +82,8 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(106, 17);
-            this.toolStripStatusLabel1.Text = "Waiting for input...";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(99, 17);
+            this.toolStripStatusLabel1.Text = "Waiting for URL...";
             // 
             // toolStripProgressBar1
             // 
@@ -97,7 +97,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.button2;
-            this.ClientSize = new System.Drawing.Size(427, 108);
+            this.ClientSize = new System.Drawing.Size(427, 104);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
