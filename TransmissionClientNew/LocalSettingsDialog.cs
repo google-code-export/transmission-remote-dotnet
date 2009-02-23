@@ -58,6 +58,7 @@ namespace TransmissionRemoteDotnet
             ProxyPassField.Text = settings.ProxyPass;
             StartPausedCheckBox.Checked = settings.StartPaused;
             RetryLimitValue.Value = settings.RetryLimit;
+            showNotifyOnStartCheckBox.Checked = settings.StartedBalloon;
         }
 
         private void LocalSettingsDialog_Load(object sender, EventArgs e)
@@ -104,6 +105,7 @@ namespace TransmissionRemoteDotnet
             settings.ProxyPass = ProxyPassField.Text;
             settings.StartPaused = StartPausedCheckBox.Checked;
             settings.RetryLimit = (int)RetryLimitValue.Value;
+            settings.StartedBalloon = showNotifyOnStartCheckBox.Checked;
             settings.Commit();
         }
 

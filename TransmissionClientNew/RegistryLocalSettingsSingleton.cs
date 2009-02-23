@@ -18,7 +18,7 @@ namespace TransmissionRemoteDotnet
     {
         /* Some unconfigurable variables. */
         private const string REGISTRY_KEY_ROOT = @"Software\TransmissionRemote";
-        public const int COMPLETED_BALOON_TIMEOUT = 4;
+        public const int BALLOON_TIMEOUT = 4;
         public const int FILES_REFRESH_MULTIPLICANT = 3;
 
         private Dictionary<string, object> profileConfMap = new Dictionary<string, object>();
@@ -43,6 +43,7 @@ namespace TransmissionRemoteDotnet
             REGKEY_MINTOTRAY = "minToTray",
             REGKEY_REFRESHRATE = "refreshRate",
             REGKEY_CURRENTPROFILE = "currentProfile",
+            REGKEY_STARTEDBALLOON = "startedBalloon",
             REGKEY_CUSTOMPATH = "customPath";
 
         private static LocalSettingsSingleton instance = null;
@@ -494,6 +495,18 @@ namespace TransmissionRemoteDotnet
             get
             {
                 return String.Format("{0}://{1}:{2}{3}rpc", new object[] { UseSSL ? "https" : "http", Host, Port, CustomPath == null ? "/transmission/" : CustomPath });
+            }
+        }
+
+        public bool StartedBalloon
+        {
+            get
+            {
+                return this.profileConfMap.ContainsKey(REGKEY_STARTEDBALLOON) ? IntToBool(this.profileConfMap[REGKEY_STARTEDBALLOON]) : false;
+            }
+            set
+            {
+                this.profileConfMap[REGKEY_STARTEDBALLOON] = BoolToInt(value);
             }
         }
     }

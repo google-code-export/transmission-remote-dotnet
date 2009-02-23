@@ -75,6 +75,7 @@
             this.removeProfileButton = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.addProfileButton = new System.Windows.Forms.Button();
+            this.showNotifyOnStartCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.PortField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RefreshRateValue)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -390,6 +391,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.showNotifyOnStartCheckBox);
             this.groupBox4.Controls.Add(this.MinToTrayCheckBox);
             this.groupBox4.Controls.Add(this.StartPausedCheckBox);
             this.groupBox4.Location = new System.Drawing.Point(5, 5);
@@ -590,6 +592,16 @@
             this.addProfileButton.UseVisualStyleBackColor = true;
             this.addProfileButton.Click += new System.EventHandler(this.button2_Click);
             // 
+            // showNotifyOnStartCheckBox
+            // 
+            this.showNotifyOnStartCheckBox.AutoSize = true;
+            this.showNotifyOnStartCheckBox.Location = new System.Drawing.Point(12, 66);
+            this.showNotifyOnStartCheckBox.Name = "showNotifyOnStartCheckBox";
+            this.showNotifyOnStartCheckBox.Size = new System.Drawing.Size(178, 17);
+            this.showNotifyOnStartCheckBox.TabIndex = 2;
+            this.showNotifyOnStartCheckBox.Text = "Show notification on torrent start";
+            this.showNotifyOnStartCheckBox.UseVisualStyleBackColor = true;
+            // 
             // LocalSettingsDialog
             // 
             this.AcceptButton = this.SaveButton;
@@ -682,5 +694,6 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button removeProfileButton;
+        private System.Windows.Forms.CheckBox showNotifyOnStartCheckBox;
     }
 }

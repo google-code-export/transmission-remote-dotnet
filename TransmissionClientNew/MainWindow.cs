@@ -169,7 +169,7 @@ namespace TransmissionRemoteDotnet
 
         private void Program_onTorrentCompleted(Torrent t)
         {
-            notifyIcon.ShowBalloonTip(LocalSettingsSingleton.COMPLETED_BALOON_TIMEOUT, t.Name, "This torrent has finished downloading.", ToolTipIcon.Info);
+            notifyIcon.ShowBalloonTip(LocalSettingsSingleton.BALLOON_TIMEOUT, t.Name, "This torrent has finished downloading.", ToolTipIcon.Info);
         }
 
         private void Program_onTorrentsUpdated()

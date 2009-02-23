@@ -84,6 +84,10 @@ namespace TransmissionRemoteDotnet
                         form.stateListBox.Items.Add(item.SubItems[13].Text);
                     }
                 }
+                if (LocalSettingsSingleton.Instance.StartedBalloon && this.updateSerial > 1)
+                {
+                    Program.Form.notifyIcon.ShowBalloonTip(LocalSettingsSingleton.BALLOON_TIMEOUT, this.Name, String.Format("New torrent with a total size of {0} is currently {1}.", this.TotalSizeString, this.Status.ToLower()), ToolTipIcon.Info);
+                }
                 LogError();
             }
         }
@@ -179,7 +183,7 @@ namespace TransmissionRemoteDotnet
                     && ((JsonNumber)this.info[ProtocolConstants.FIELD_LEFTUNTILDONE]).ToInt64() > 0
                     && (((JsonNumber)info[ProtocolConstants.FIELD_LEFTUNTILDONE]).ToInt64() == 0))
                 {
-                    form.notifyIcon.ShowBalloonTip(LocalSettingsSingleton.COMPLETED_BALOON_TIMEOUT, this.Name, "This torrent has finished downloading.", ToolTipIcon.Info);
+                    form.notifyIcon.ShowBalloonTip(LocalSettingsSingleton.BALLOON_TIMEOUT, this.Name, "This torrent has finished downloading.", ToolTipIcon.Info);
                     item.SubItems[12].Text = DateTime.Now.ToString();
                 }
                 this.info = info;
