@@ -10,6 +10,10 @@ namespace TransmissionRemoteDotnet.Comparers
 {
     public class ListViewItemIPComparer : IComparer
     {
+        private const char
+            IPV4_DELIMITER = '.',
+            IPV6_DELIMITER = ':';
+
         int columnIndex;
 
         public ListViewItemIPComparer(int columnIndex)
@@ -21,19 +25,26 @@ namespace TransmissionRemoteDotnet.Comparers
         {
             ListViewItem lx = (ListViewItem)x;
             ListViewItem ly = (ListViewItem)y;
-            char splitChar = '.';
-            string[] qx = lx.SubItems[columnIndex].Text.Split(splitChar);
-            string[] qy = ly.SubItems[columnIndex].Text.Split(splitChar);
-            for (int i = 0; i < qx.Length; i++)
+            string sx = lx.SubItems[columnIndex].Text;
+            string sy = ly.SubItems[columnIndex].Text;
+            if (sx.IndexOf(IPV4_DELIMITER) > 0 && sy.IndexOf(IPV4_DELIMITER) > 0)
             {
-                int qpx = Int32.Parse(qx[i]);
-                int qpy = Int32.Parse(qy[i]);
-                if (!qpx.Equals(qpy))
-                {
-                    return qpx.CompareTo(qpy);
-                }
+                IComparer cmp = new IPv4StringComparer();
+                return cmp.Compare(sx, sy);
             }
-            return 0;
+            else if (sx.IndexOf(IPV6_DELIMITER) >= 0 && sy.IndexOf(IPV6_DELIMITER) >= 0)
+            {
+                IComparer cmp = new IPv6StringComparer();
+                return cmp.Compare(sx, sy);
+            }
+            else if (sx.IndexOf(IPV4_DELIMITER) > 0)
+            {
+                return -1;
+            }
+            else
+            {
+                return 1;
+            }
         }
     }
 }
