@@ -54,7 +54,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(257, 144);
+            this.tabControl1.Size = new System.Drawing.Size(349, 144);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPage1
@@ -70,7 +70,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(249, 118);
+            this.tabPage1.Size = new System.Drawing.Size(341, 118);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -158,7 +158,7 @@
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(197, 162);
+            this.button2.Location = new System.Drawing.Point(288, 164);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(72, 22);
             this.button2.TabIndex = 0;
@@ -168,7 +168,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(119, 162);
+            this.button1.Location = new System.Drawing.Point(210, 164);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(72, 22);
             this.button1.TabIndex = 0;
@@ -182,11 +182,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.button2;
-            this.ClientSize = new System.Drawing.Size(282, 195);
+            this.ClientSize = new System.Drawing.Size(373, 195);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "TorrentPropertiesDialog";
             this.Text = "TorrentPropertiesDialog";
             this.Load += new System.EventHandler(this.TorrentPropertiesDialog_Load);
