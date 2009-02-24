@@ -58,7 +58,10 @@ namespace TransmissionRemoteDotnet
             ProxyPassField.Text = settings.ProxyPass;
             StartPausedCheckBox.Checked = settings.StartPaused;
             RetryLimitValue.Value = settings.RetryLimit;
-            showNotifyOnStartCheckBox.Checked = settings.StartedBalloon;
+            notificationOnAdditionCheckBox.Checked = settings.StartedBalloon;
+            notificationOnCompletionCheckBox.Checked = settings.CompletedBaloon;
+            minimizeOnCloseCheckBox.Checked = settings.MinOnClose;
+            minimizeOnCloseCheckBox.Enabled = MinToTrayCheckBox.Checked;
         }
 
         private void LocalSettingsDialog_Load(object sender, EventArgs e)
@@ -105,7 +108,9 @@ namespace TransmissionRemoteDotnet
             settings.ProxyPass = ProxyPassField.Text;
             settings.StartPaused = StartPausedCheckBox.Checked;
             settings.RetryLimit = (int)RetryLimitValue.Value;
-            settings.StartedBalloon = showNotifyOnStartCheckBox.Checked;
+            settings.StartedBalloon = notificationOnAdditionCheckBox.Checked;
+            settings.CompletedBaloon = notificationOnCompletionCheckBox.Checked;
+            settings.MinOnClose = minimizeOnCloseCheckBox.Checked;
             settings.Commit();
         }
 
@@ -200,6 +205,11 @@ namespace TransmissionRemoteDotnet
             {
                 MessageBox.Show(ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void MinToTrayCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            minimizeOnCloseCheckBox.Enabled = MinToTrayCheckBox.Checked;
         }
     }
 }

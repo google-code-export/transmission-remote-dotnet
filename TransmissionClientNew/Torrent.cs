@@ -86,7 +86,7 @@ namespace TransmissionRemoteDotnet
                 }
                 if (LocalSettingsSingleton.Instance.StartedBalloon && this.updateSerial > 1)
                 {
-                    Program.Form.notifyIcon.ShowBalloonTip(LocalSettingsSingleton.BALLOON_TIMEOUT, this.Name, String.Format("New torrent with a total size of {0} is currently {1}.", this.TotalSizeString, this.Status.ToLower()), ToolTipIcon.Info);
+                    Program.Form.notifyIcon.ShowBalloonTip(LocalSettingsSingleton.BALLOON_TIMEOUT, this.Name, String.Format("New torrent {0}.", this.Status.ToLower()), ToolTipIcon.Info);
                 }
                 LogError();
             }
@@ -178,9 +178,10 @@ namespace TransmissionRemoteDotnet
             }
             else
             {
-                if (form.notifyIcon.Visible == true
+                if (LocalSettingsSingleton.Instance.CompletedBaloon
+                    && form.notifyIcon.Visible == true
                     && this.StatusCode == ProtocolConstants.STATUS_DOWNLOADING
-                    && ((JsonNumber)this.info[ProtocolConstants.FIELD_LEFTUNTILDONE]).ToInt64() > 0
+                    && this.LeftUntilDone > 0
                     && (((JsonNumber)info[ProtocolConstants.FIELD_LEFTUNTILDONE]).ToInt64() == 0))
                 {
                     form.notifyIcon.ShowBalloonTip(LocalSettingsSingleton.BALLOON_TIMEOUT, this.Name, "This torrent has finished downloading.", ToolTipIcon.Info);

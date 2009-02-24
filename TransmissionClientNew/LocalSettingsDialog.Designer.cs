@@ -38,12 +38,10 @@
             this.AutoConnectCheckBox = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.RefreshRateValue = new System.Windows.Forms.NumericUpDown();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.UseSSLCheckBox = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.RetryLimitValue = new System.Windows.Forms.NumericUpDown();
             this.MinToTrayCheckBox = new System.Windows.Forms.CheckBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.ProxyAuthEnableCheckBox = new System.Windows.Forms.CheckBox();
             this.EnableProxyCombo = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -55,17 +53,17 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.StartPausedCheckBox = new System.Windows.Forms.CheckBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.UserField = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.PassField = new System.Windows.Forms.TextBox();
-            this.EnableAuthCheckBox = new System.Windows.Forms.CheckBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.notificationOnAdditionCheckBox = new System.Windows.Forms.CheckBox();
+            this.notificationOnCompletionCheckBox = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.EnableAuthCheckBox = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.PassField = new System.Windows.Forms.TextBox();
+            this.UserField = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.profileComboBox = new System.Windows.Forms.ComboBox();
@@ -75,15 +73,11 @@
             this.removeProfileButton = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.addProfileButton = new System.Windows.Forms.Button();
-            this.showNotifyOnStartCheckBox = new System.Windows.Forms.CheckBox();
+            this.minimizeOnCloseCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.PortField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RefreshRateValue)).BeginInit();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RetryLimitValue)).BeginInit();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProxyPortField)).BeginInit();
-            this.groupBox4.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -96,7 +90,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 25);
+            this.label1.Location = new System.Drawing.Point(7, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 0;
@@ -104,7 +98,7 @@
             // 
             // HostField
             // 
-            this.HostField.Location = new System.Drawing.Point(88, 22);
+            this.HostField.Location = new System.Drawing.Point(87, 18);
             this.HostField.Name = "HostField";
             this.HostField.Size = new System.Drawing.Size(156, 20);
             this.HostField.TabIndex = 1;
@@ -112,7 +106,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 50);
+            this.label2.Location = new System.Drawing.Point(7, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.TabIndex = 2;
@@ -120,7 +114,7 @@
             // 
             // PortField
             // 
-            this.PortField.Location = new System.Drawing.Point(87, 48);
+            this.PortField.Location = new System.Drawing.Point(86, 44);
             this.PortField.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -164,7 +158,7 @@
             // AutoConnectCheckBox
             // 
             this.AutoConnectCheckBox.AutoSize = true;
-            this.AutoConnectCheckBox.Location = new System.Drawing.Point(274, 53);
+            this.AutoConnectCheckBox.Location = new System.Drawing.Point(273, 49);
             this.AutoConnectCheckBox.Name = "AutoConnectCheckBox";
             this.AutoConnectCheckBox.Size = new System.Drawing.Size(90, 17);
             this.AutoConnectCheckBox.TabIndex = 4;
@@ -174,7 +168,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 78);
+            this.label3.Location = new System.Drawing.Point(7, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 13);
             this.label3.TabIndex = 5;
@@ -182,7 +176,7 @@
             // 
             // RefreshRateValue
             // 
-            this.RefreshRateValue.Location = new System.Drawing.Point(87, 76);
+            this.RefreshRateValue.Location = new System.Drawing.Point(86, 72);
             this.RefreshRateValue.Maximum = new decimal(new int[] {
             600,
             0,
@@ -202,28 +196,10 @@
             0,
             0});
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.UseSSLCheckBox);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.RetryLimitValue);
-            this.groupBox2.Controls.Add(this.AutoConnectCheckBox);
-            this.groupBox2.Controls.Add(this.RefreshRateValue);
-            this.groupBox2.Controls.Add(this.PortField);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.HostField);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(5, 5);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(383, 130);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            // 
             // UseSSLCheckBox
             // 
             this.UseSSLCheckBox.AutoSize = true;
-            this.UseSSLCheckBox.Location = new System.Drawing.Point(274, 25);
+            this.UseSSLCheckBox.Location = new System.Drawing.Point(273, 21);
             this.UseSSLCheckBox.Name = "UseSSLCheckBox";
             this.UseSSLCheckBox.Size = new System.Drawing.Size(89, 17);
             this.UseSSLCheckBox.TabIndex = 3;
@@ -233,7 +209,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(8, 104);
+            this.label10.Location = new System.Drawing.Point(7, 100);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(55, 13);
             this.label10.TabIndex = 8;
@@ -241,7 +217,7 @@
             // 
             // RetryLimitValue
             // 
-            this.RetryLimitValue.Location = new System.Drawing.Point(87, 104);
+            this.RetryLimitValue.Location = new System.Drawing.Point(86, 100);
             this.RetryLimitValue.Name = "RetryLimitValue";
             this.RetryLimitValue.Size = new System.Drawing.Size(64, 20);
             this.RetryLimitValue.TabIndex = 7;
@@ -249,35 +225,18 @@
             // MinToTrayCheckBox
             // 
             this.MinToTrayCheckBox.AutoSize = true;
-            this.MinToTrayCheckBox.Location = new System.Drawing.Point(12, 19);
+            this.MinToTrayCheckBox.Location = new System.Drawing.Point(10, 18);
             this.MinToTrayCheckBox.Name = "MinToTrayCheckBox";
             this.MinToTrayCheckBox.Size = new System.Drawing.Size(102, 17);
             this.MinToTrayCheckBox.TabIndex = 0;
             this.MinToTrayCheckBox.Text = "Enable tray icon";
             this.MinToTrayCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.ProxyAuthEnableCheckBox);
-            this.groupBox3.Controls.Add(this.EnableProxyCombo);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.ProxyPassField);
-            this.groupBox3.Controls.Add(this.ProxyUserField);
-            this.groupBox3.Controls.Add(this.ProxyHostField);
-            this.groupBox3.Controls.Add(this.ProxyPortField);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Location = new System.Drawing.Point(5, 5);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(383, 130);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
+            this.MinToTrayCheckBox.CheckedChanged += new System.EventHandler(this.MinToTrayCheckBox_CheckedChanged);
             // 
             // ProxyAuthEnableCheckBox
             // 
             this.ProxyAuthEnableCheckBox.AutoSize = true;
-            this.ProxyAuthEnableCheckBox.Location = new System.Drawing.Point(275, 73);
+            this.ProxyAuthEnableCheckBox.Location = new System.Drawing.Point(274, 68);
             this.ProxyAuthEnableCheckBox.Name = "ProxyAuthEnableCheckBox";
             this.ProxyAuthEnableCheckBox.Size = new System.Drawing.Size(86, 17);
             this.ProxyAuthEnableCheckBox.TabIndex = 7;
@@ -293,7 +252,7 @@
             "Auto",
             "Enabled",
             "Disabled"});
-            this.EnableProxyCombo.Location = new System.Drawing.Point(274, 44);
+            this.EnableProxyCombo.Location = new System.Drawing.Point(273, 39);
             this.EnableProxyCombo.Name = "EnableProxyCombo";
             this.EnableProxyCombo.Size = new System.Drawing.Size(83, 21);
             this.EnableProxyCombo.TabIndex = 4;
@@ -302,7 +261,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 52);
+            this.label7.Location = new System.Drawing.Point(6, 47);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 13);
             this.label7.TabIndex = 2;
@@ -310,7 +269,7 @@
             // 
             // ProxyPassField
             // 
-            this.ProxyPassField.Location = new System.Drawing.Point(88, 101);
+            this.ProxyPassField.Location = new System.Drawing.Point(87, 96);
             this.ProxyPassField.Name = "ProxyPassField";
             this.ProxyPassField.PasswordChar = '*';
             this.ProxyPassField.Size = new System.Drawing.Size(156, 20);
@@ -318,21 +277,21 @@
             // 
             // ProxyUserField
             // 
-            this.ProxyUserField.Location = new System.Drawing.Point(88, 75);
+            this.ProxyUserField.Location = new System.Drawing.Point(87, 70);
             this.ProxyUserField.Name = "ProxyUserField";
             this.ProxyUserField.Size = new System.Drawing.Size(156, 20);
             this.ProxyUserField.TabIndex = 6;
             // 
             // ProxyHostField
             // 
-            this.ProxyHostField.Location = new System.Drawing.Point(88, 22);
+            this.ProxyHostField.Location = new System.Drawing.Point(87, 17);
             this.ProxyHostField.Name = "ProxyHostField";
             this.ProxyHostField.Size = new System.Drawing.Size(156, 20);
             this.ProxyHostField.TabIndex = 1;
             // 
             // ProxyPortField
             // 
-            this.ProxyPortField.Location = new System.Drawing.Point(88, 48);
+            this.ProxyPortField.Location = new System.Drawing.Point(87, 43);
             this.ProxyPortField.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -355,7 +314,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(8, 104);
+            this.label9.Location = new System.Drawing.Point(7, 99);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(56, 13);
             this.label9.TabIndex = 8;
@@ -364,7 +323,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(8, 78);
+            this.label8.Location = new System.Drawing.Point(7, 73);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(32, 13);
             this.label8.TabIndex = 5;
@@ -373,7 +332,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 25);
+            this.label6.Location = new System.Drawing.Point(7, 20);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 13);
             this.label6.TabIndex = 0;
@@ -382,80 +341,12 @@
             // StartPausedCheckBox
             // 
             this.StartPausedCheckBox.AutoSize = true;
-            this.StartPausedCheckBox.Location = new System.Drawing.Point(12, 42);
+            this.StartPausedCheckBox.Location = new System.Drawing.Point(10, 41);
             this.StartPausedCheckBox.Name = "StartPausedCheckBox";
             this.StartPausedCheckBox.Size = new System.Drawing.Size(124, 17);
             this.StartPausedCheckBox.TabIndex = 1;
             this.StartPausedCheckBox.Text = "Start torrents paused";
             this.StartPausedCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.showNotifyOnStartCheckBox);
-            this.groupBox4.Controls.Add(this.MinToTrayCheckBox);
-            this.groupBox4.Controls.Add(this.StartPausedCheckBox);
-            this.groupBox4.Location = new System.Drawing.Point(5, 5);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(383, 130);
-            this.groupBox4.TabIndex = 0;
-            this.groupBox4.TabStop = false;
-            // 
-            // UserField
-            // 
-            this.UserField.Location = new System.Drawing.Point(85, 22);
-            this.UserField.Name = "UserField";
-            this.UserField.Size = new System.Drawing.Size(109, 20);
-            this.UserField.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 25);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "User:";
-            // 
-            // PassField
-            // 
-            this.PassField.Location = new System.Drawing.Point(85, 48);
-            this.PassField.Name = "PassField";
-            this.PassField.PasswordChar = '*';
-            this.PassField.Size = new System.Drawing.Size(109, 20);
-            this.PassField.TabIndex = 4;
-            // 
-            // EnableAuthCheckBox
-            // 
-            this.EnableAuthCheckBox.AutoSize = true;
-            this.EnableAuthCheckBox.Location = new System.Drawing.Point(231, 25);
-            this.EnableAuthCheckBox.Name = "EnableAuthCheckBox";
-            this.EnableAuthCheckBox.Size = new System.Drawing.Size(129, 17);
-            this.EnableAuthCheckBox.TabIndex = 2;
-            this.EnableAuthCheckBox.Text = "Enable authentication";
-            this.EnableAuthCheckBox.UseVisualStyleBackColor = true;
-            this.EnableAuthCheckBox.CheckedChanged += new System.EventHandler(this.EnableAuthCheckBox_CheckedChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 51);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 13);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Password:";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.EnableAuthCheckBox);
-            this.groupBox1.Controls.Add(this.PassField);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.UserField);
-            this.groupBox1.Location = new System.Drawing.Point(5, 5);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(383, 130);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
             // 
             // tabControl1
             // 
@@ -471,7 +362,16 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.UseSSLCheckBox);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.HostField);
+            this.tabPage1.Controls.Add(this.label10);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.RetryLimitValue);
+            this.tabPage1.Controls.Add(this.PortField);
+            this.tabPage1.Controls.Add(this.RefreshRateValue);
+            this.tabPage1.Controls.Add(this.AutoConnectCheckBox);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -482,7 +382,11 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.groupBox4);
+            this.tabPage4.Controls.Add(this.minimizeOnCloseCheckBox);
+            this.tabPage4.Controls.Add(this.notificationOnAdditionCheckBox);
+            this.tabPage4.Controls.Add(this.notificationOnCompletionCheckBox);
+            this.tabPage4.Controls.Add(this.MinToTrayCheckBox);
+            this.tabPage4.Controls.Add(this.StartPausedCheckBox);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(394, 141);
@@ -490,9 +394,33 @@
             this.tabPage4.Text = "General";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // notificationOnAdditionCheckBox
+            // 
+            this.notificationOnAdditionCheckBox.AutoSize = true;
+            this.notificationOnAdditionCheckBox.Location = new System.Drawing.Point(10, 64);
+            this.notificationOnAdditionCheckBox.Name = "notificationOnAdditionCheckBox";
+            this.notificationOnAdditionCheckBox.Size = new System.Drawing.Size(134, 17);
+            this.notificationOnAdditionCheckBox.TabIndex = 2;
+            this.notificationOnAdditionCheckBox.Text = "Notification on addition";
+            this.notificationOnAdditionCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // notificationOnCompletionCheckBox
+            // 
+            this.notificationOnCompletionCheckBox.AutoSize = true;
+            this.notificationOnCompletionCheckBox.Location = new System.Drawing.Point(10, 87);
+            this.notificationOnCompletionCheckBox.Name = "notificationOnCompletionCheckBox";
+            this.notificationOnCompletionCheckBox.Size = new System.Drawing.Size(148, 17);
+            this.notificationOnCompletionCheckBox.TabIndex = 4;
+            this.notificationOnCompletionCheckBox.Text = "Notification on completion";
+            this.notificationOnCompletionCheckBox.UseVisualStyleBackColor = true;
+            // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.EnableAuthCheckBox);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.PassField);
+            this.tabPage2.Controls.Add(this.UserField);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -501,9 +429,62 @@
             this.tabPage2.Text = "Authentication";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 47);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Password:";
+            // 
+            // EnableAuthCheckBox
+            // 
+            this.EnableAuthCheckBox.AutoSize = true;
+            this.EnableAuthCheckBox.Location = new System.Drawing.Point(230, 21);
+            this.EnableAuthCheckBox.Name = "EnableAuthCheckBox";
+            this.EnableAuthCheckBox.Size = new System.Drawing.Size(129, 17);
+            this.EnableAuthCheckBox.TabIndex = 2;
+            this.EnableAuthCheckBox.Text = "Enable authentication";
+            this.EnableAuthCheckBox.UseVisualStyleBackColor = true;
+            this.EnableAuthCheckBox.CheckedChanged += new System.EventHandler(this.EnableAuthCheckBox_CheckedChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "User:";
+            // 
+            // PassField
+            // 
+            this.PassField.Location = new System.Drawing.Point(84, 44);
+            this.PassField.Name = "PassField";
+            this.PassField.PasswordChar = '*';
+            this.PassField.Size = new System.Drawing.Size(109, 20);
+            this.PassField.TabIndex = 4;
+            // 
+            // UserField
+            // 
+            this.UserField.Location = new System.Drawing.Point(84, 18);
+            this.UserField.Name = "UserField";
+            this.UserField.Size = new System.Drawing.Size(109, 20);
+            this.UserField.TabIndex = 1;
+            // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.groupBox3);
+            this.tabPage3.Controls.Add(this.ProxyAuthEnableCheckBox);
+            this.tabPage3.Controls.Add(this.label6);
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.EnableProxyCombo);
+            this.tabPage3.Controls.Add(this.label9);
+            this.tabPage3.Controls.Add(this.ProxyPortField);
+            this.tabPage3.Controls.Add(this.label7);
+            this.tabPage3.Controls.Add(this.ProxyHostField);
+            this.tabPage3.Controls.Add(this.ProxyUserField);
+            this.tabPage3.Controls.Add(this.ProxyPassField);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(394, 141);
@@ -592,15 +573,15 @@
             this.addProfileButton.UseVisualStyleBackColor = true;
             this.addProfileButton.Click += new System.EventHandler(this.button2_Click);
             // 
-            // showNotifyOnStartCheckBox
+            // minimizeOnCloseCheckBox
             // 
-            this.showNotifyOnStartCheckBox.AutoSize = true;
-            this.showNotifyOnStartCheckBox.Location = new System.Drawing.Point(12, 66);
-            this.showNotifyOnStartCheckBox.Name = "showNotifyOnStartCheckBox";
-            this.showNotifyOnStartCheckBox.Size = new System.Drawing.Size(178, 17);
-            this.showNotifyOnStartCheckBox.TabIndex = 2;
-            this.showNotifyOnStartCheckBox.Text = "Show notification on torrent start";
-            this.showNotifyOnStartCheckBox.UseVisualStyleBackColor = true;
+            this.minimizeOnCloseCheckBox.AutoSize = true;
+            this.minimizeOnCloseCheckBox.Location = new System.Drawing.Point(10, 111);
+            this.minimizeOnCloseCheckBox.Name = "minimizeOnCloseCheckBox";
+            this.minimizeOnCloseCheckBox.Size = new System.Drawing.Size(109, 17);
+            this.minimizeOnCloseCheckBox.TabIndex = 5;
+            this.minimizeOnCloseCheckBox.Text = "Minimize on close";
+            this.minimizeOnCloseCheckBox.UseVisualStyleBackColor = true;
             // 
             // LocalSettingsDialog
             // 
@@ -608,7 +589,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CloseDialogButton;
-            this.ClientSize = new System.Drawing.Size(427, 280);
+            this.ClientSize = new System.Drawing.Size(431, 280);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.button1);
@@ -623,21 +604,17 @@
             this.Load += new System.EventHandler(this.LocalSettingsDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PortField)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RefreshRateValue)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RetryLimitValue)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProxyPortField)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -657,9 +634,7 @@
         private System.Windows.Forms.CheckBox AutoConnectCheckBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown RefreshRateValue;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox MinToTrayCheckBox;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox ProxyHostField;
         private System.Windows.Forms.Label label6;
@@ -674,13 +649,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown RetryLimitValue;
         private System.Windows.Forms.CheckBox UseSSLCheckBox;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox UserField;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox PassField;
-        private System.Windows.Forms.CheckBox EnableAuthCheckBox;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage1;
@@ -694,6 +662,13 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button removeProfileButton;
-        private System.Windows.Forms.CheckBox showNotifyOnStartCheckBox;
+        private System.Windows.Forms.CheckBox notificationOnAdditionCheckBox;
+        private System.Windows.Forms.CheckBox notificationOnCompletionCheckBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckBox EnableAuthCheckBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox PassField;
+        private System.Windows.Forms.TextBox UserField;
+        private System.Windows.Forms.CheckBox minimizeOnCloseCheckBox;
     }
 }

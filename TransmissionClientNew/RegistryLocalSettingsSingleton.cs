@@ -44,6 +44,8 @@ namespace TransmissionRemoteDotnet
             REGKEY_REFRESHRATE = "refreshRate",
             REGKEY_CURRENTPROFILE = "currentProfile",
             REGKEY_STARTEDBALLOON = "startedBalloon",
+            REGKEY_COMPLETEDBALLOON = "completedBalloon",
+            REGKEY_MINONCLOSE = "minOnClose",
             REGKEY_CUSTOMPATH = "customPath";
 
         private static LocalSettingsSingleton instance = null;
@@ -502,11 +504,35 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileConfMap.ContainsKey(REGKEY_STARTEDBALLOON) ? IntToBool(this.profileConfMap[REGKEY_STARTEDBALLOON]) : false;
+                return this.profileConfMap.ContainsKey(REGKEY_STARTEDBALLOON) ? IntToBool(this.profileConfMap[REGKEY_STARTEDBALLOON]) : true;
             }
             set
             {
                 this.profileConfMap[REGKEY_STARTEDBALLOON] = BoolToInt(value);
+            }
+        }
+
+        public bool CompletedBaloon
+        {
+            get
+            {
+                return this.profileConfMap.ContainsKey(REGKEY_COMPLETEDBALLOON) ? IntToBool(this.profileConfMap[REGKEY_COMPLETEDBALLOON]) : true;
+            }
+            set
+            {
+                this.profileConfMap[REGKEY_COMPLETEDBALLOON] = BoolToInt(value);
+            }
+        }
+
+        public bool MinOnClose
+        {
+            get
+            {
+                return this.profileConfMap.ContainsKey(REGKEY_MINONCLOSE) ? IntToBool(this.profileConfMap[REGKEY_MINONCLOSE]) : false;
+            }
+            set
+            {
+                this.profileConfMap[REGKEY_MINONCLOSE] = BoolToInt(value);
             }
         }
     }

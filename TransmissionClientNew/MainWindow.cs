@@ -12,6 +12,7 @@ using Jayrock.Json;
 using MaxMind;
 using System.IO;
 using System.Diagnostics;
+using System.Net.Sockets;
 
 namespace TransmissionRemoteDotnet
 {
@@ -1194,28 +1195,16 @@ namespace TransmissionRemoteDotnet
                         if (item == null)
                         {
                             item = new ListViewItem((string)peer["address"]); // 0
+                            item.SubItems[0].Tag = IPAddress.Parse(item.Text);
                             item.SubItems.Add(""); // 1
-                            IPAddress ip = null;
-                            try
-                            {
-                                ip = IPAddress.Parse(item.SubItems[0].Text);
-                            }
-                            catch { }
                             int countryIndex = -1;
                             if (geo != null)
                             {
-                                if (ip == null)
+                                try
                                 {
-                                    countryIndex = 0;
+                                    countryIndex = geo.FindIndex((IPAddress)item.SubItems[0].Tag);
                                 }
-                                else
-                                {
-                                    try
-                                    {
-                                        countryIndex = geo.FindIndex(ip);
-                                    }
-                                    catch { }
-                                }
+                                catch { }
                             }
                             item.SubItems.Add(countryIndex >= 0 ? GeoIPCountry.CountryNames[countryIndex] : "");
                             item.SubItems.Add((string)peer[ProtocolConstants.FIELD_FLAGSTR]);
@@ -1232,11 +1221,11 @@ namespace TransmissionRemoteDotnet
                             item.SubItems[7].Tag = rateToPeer;
                             peersListView.Items.Add(item);
                             Toolbox.StripeListView(peersListView);
-                            if (countryIndex >= 0)
+                            if (countryIndex > 0)
                             {
                                 item.ImageIndex = flagsImageList.Images.IndexOfKey("flags_" + GeoIPCountry.CountryCodes[countryIndex].ToLower());
                             }
-                            CreateHostnameResolutionWorker().RunWorkerAsync(new object[] { item, ip });
+                            CreateHostnameResolutionWorker().RunWorkerAsync(item);
                         }
                         else
                         {
@@ -1289,8 +1278,7 @@ namespace TransmissionRemoteDotnet
 
         private void resolveHostWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            object[] args = (object[])e.Argument;
-            e.Result = new ResolveHostCommand((ListViewItem)args[0], (IPAddress)args[1]);
+            e.Result = new ResolveHostCommand((ListViewItem)e.Argument);
         }
 
         private ListViewItem FindPeerItem(string address)
@@ -1478,9 +1466,14 @@ namespace TransmissionRemoteDotnet
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (this.WindowState != FormWindowState.Minimized)
+            LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
+            if (settings.MinToTray && settings.MinOnClose && e.CloseReason == CloseReason.UserClosing)
             {
-                LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
+                this.WindowState = FormWindowState.Minimized;
+                e.Cancel = true;
+            }
+            else if (this.WindowState != FormWindowState.Minimized)
+            {
                 settings.SetObject(CONFKEY_MAINWINDOW_STATE, (int)this.WindowState);
                 if (this.WindowState != FormWindowState.Maximized)
                 {

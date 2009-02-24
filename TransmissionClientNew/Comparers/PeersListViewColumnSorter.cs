@@ -16,7 +16,7 @@ namespace TransmissionRemoteDotnet.Comparers
         {
             columnToSort = 0;
             orderOfSort = SortOrder.None;
-            objectCompare = new ListViewItemIPComparer(0);
+            objectCompare = new ListViewItemIPComparer();
         }
 
         public int Compare(object x, object y)
@@ -47,7 +47,7 @@ namespace TransmissionRemoteDotnet.Comparers
                 switch (columnToSort)
                 {
                     case 0:
-                        objectCompare = new ListViewItemIPComparer(value);
+                        objectCompare = new ListViewItemIPComparer();
                         break;
                     case 1:
                         objectCompare = new ListViewTextInsensitiveReverseComparer(value);
