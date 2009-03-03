@@ -14,13 +14,13 @@ namespace TransmissionRemoteDotnet
     public class Toolbox
     {
         private const int STRIPE_OFFSET = 15;
-        private static IFormatProvider numberFormat = (new CultureInfo("en-US")).NumberFormat;
+        public const IFormatProvider NUMBER_FORMAT = (new CultureInfo("en-US")).NumberFormat;
 
         public static decimal ParseProgress(string s)
         {
             try
             {
-                return Math.Round(Decimal.Parse(s, numberFormat) * 100, 2);
+                return Math.Round(Decimal.Parse(s, NUMBER_FORMAT) * 100, 2);
             }
             catch
             {
