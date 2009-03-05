@@ -14,7 +14,7 @@ namespace TransmissionRemoteDotnet
     public class Toolbox
     {
         private const int STRIPE_OFFSET = 15;
-        public const IFormatProvider NUMBER_FORMAT = (new CultureInfo("en-US")).NumberFormat;
+        public static readonly IFormatProvider NUMBER_FORMAT = (new CultureInfo("en-US")).NumberFormat;
 
         public static decimal ParseProgress(string s)
         {
@@ -50,7 +50,7 @@ namespace TransmissionRemoteDotnet
                     for (int i = 0; i < item.SubItems.Count; i++)
                     {
                         System.Windows.Forms.ListViewItem.ListViewSubItem si = item.SubItems[i];
-                        sb.Append(si.Text);
+                        sb.Append(si.Text.Contains(",") ? "\""+si.Text+"\"" : si.Text);
                         if (i != item.SubItems.Count - 1)
                         {
                             sb.Append(',');
