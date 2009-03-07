@@ -216,6 +216,30 @@ namespace TransmissionRemoteDotnet
             }
         }
 
+        public int PieceCount
+        {
+            get
+            {
+                return ((JsonNumber)info[ProtocolConstants.FIELD_PIECECOUNT]).ToInt32();
+            }
+        }
+
+        public byte[] Pieces
+        {
+            get
+            {
+                if (info.Contains(ProtocolConstants.FIELD_PIECES))
+                {
+                    string pieces = (string)info[ProtocolConstants.FIELD_PIECES];
+                    return Convert.FromBase64CharArray(pieces.ToCharArray(), 0, pieces.Length); ;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
         public string GetFirstTracker(bool trim)
         {
             try

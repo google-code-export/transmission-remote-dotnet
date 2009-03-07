@@ -29,6 +29,8 @@ namespace TransmissionRemoteDotnet
             METHOD_TORRENTVERIFY = "torrent-verify",
             METHOD_TORRENTADD = "torrent-add",
             METHOD_SESSIONSTATS = "session-stats",
+            FIELD_PIECES = "pieces",
+            FIELD_PIECECOUNT = "pieceCount",
             FIELD_PEERSSENDINGTOUS = "peersSendingToUs",
             FIELD_PEERSGETTINGFROMUS = "peersGettingFromUs",
             FIELD_FLAGSTR = "flagStr",

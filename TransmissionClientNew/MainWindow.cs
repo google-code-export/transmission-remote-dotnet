@@ -207,6 +207,9 @@ namespace TransmissionRemoteDotnet
                 speedGraph.GetLineHandle("Upload").Clear();
                 speedGraph.Push(0, "Download");
                 speedGraph.Push(0, "Upload");
+                bool enablePieces = Program.DaemonDescriptor.Revision >= 8001;
+                piecesLabel.Visible = piecesGraph.Visible = enablePieces;
+                progressBar.Visible = downloadProgressLabel.Visible = !enablePieces;
             }
             else
             {
@@ -653,14 +656,16 @@ namespace TransmissionRemoteDotnet
                    = peersTorrentNameGroupBox.Text = filesTorrentNameGroupBox.Text
                    = "N/A";
                 progressBar.Value = 0;
+                piecesGraph.ClearBits();
                 labelForErrorLabel.Visible = errorLabel.Visible
                     = filesListView.Enabled = peersListView.Enabled
                     = trackersListView.Enabled = false;
             }
             generalTorrentNameGroupBox.Enabled
-                    = label1.Enabled = refreshElapsedTimer.Enabled
-                    = filesTimer.Enabled = label1.Enabled
+                    = downloadProgressLabel.Enabled = refreshElapsedTimer.Enabled
+                    = filesTimer.Enabled = downloadProgressLabel.Enabled
                     = generalTorrentNameGroupBox.Enabled
+                    = piecesLabel.Enabled
                     = one;
         }
 
@@ -1170,6 +1175,10 @@ namespace TransmissionRemoteDotnet
                 leechersLabel.Text = String.Format("{0} of {1} connected", t.PeersGettingFromUs, t.Leechers < 0 ? "?" : t.Leechers.ToString());
                 ratioLabel.Text = t.RatioString;
                 progressBar.Value = (int)t.Percentage;
+                if (t.Pieces != null)
+                {
+                    piecesGraph.ApplyBits(t.Pieces, t.PieceCount);
+                }
                 percentageLabel.Text = t.Percentage.ToString() + "%";
                 if (t.IsFinished)
                 {
