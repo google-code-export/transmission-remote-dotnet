@@ -514,7 +514,7 @@
             // 
             this.torrentAndTabsSplitContainer.Panel2.Controls.Add(this.torrentTabControl);
             this.torrentAndTabsSplitContainer.Size = new System.Drawing.Size(974, 519);
-            this.torrentAndTabsSplitContainer.SplitterDistance = 275;
+            this.torrentAndTabsSplitContainer.SplitterDistance = 274;
             this.torrentAndTabsSplitContainer.TabIndex = 0;
             // 
             // mainVerticalSplitContainer
@@ -531,7 +531,7 @@
             // mainVerticalSplitContainer.Panel2
             // 
             this.mainVerticalSplitContainer.Panel2.Controls.Add(this.torrentListView);
-            this.mainVerticalSplitContainer.Size = new System.Drawing.Size(974, 275);
+            this.mainVerticalSplitContainer.Size = new System.Drawing.Size(974, 274);
             this.mainVerticalSplitContainer.SplitterDistance = 109;
             this.mainVerticalSplitContainer.TabIndex = 1;
             // 
@@ -547,7 +547,7 @@
             this.torrentTabControl.Location = new System.Drawing.Point(0, 0);
             this.torrentTabControl.Name = "torrentTabControl";
             this.torrentTabControl.SelectedIndex = 0;
-            this.torrentTabControl.Size = new System.Drawing.Size(974, 240);
+            this.torrentTabControl.Size = new System.Drawing.Size(974, 241);
             this.torrentTabControl.TabIndex = 0;
             // 
             // generalTabPage
@@ -556,7 +556,7 @@
             this.generalTabPage.Location = new System.Drawing.Point(4, 23);
             this.generalTabPage.Name = "generalTabPage";
             this.generalTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.generalTabPage.Size = new System.Drawing.Size(966, 213);
+            this.generalTabPage.Size = new System.Drawing.Size(966, 214);
             this.generalTabPage.TabIndex = 0;
             this.generalTabPage.Text = "General";
             this.generalTabPage.UseVisualStyleBackColor = true;
@@ -577,7 +577,7 @@
             // 
             this.splitContainer3.Panel2.AutoScroll = true;
             this.splitContainer3.Panel2.Controls.Add(this.generalTorrentNameGroupBox);
-            this.splitContainer3.Size = new System.Drawing.Size(960, 207);
+            this.splitContainer3.Size = new System.Drawing.Size(960, 208);
             this.splitContainer3.SplitterDistance = 25;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -1021,7 +1021,7 @@
             this.trackersTabPage.Location = new System.Drawing.Point(4, 23);
             this.trackersTabPage.Name = "trackersTabPage";
             this.trackersTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.trackersTabPage.Size = new System.Drawing.Size(966, 213);
+            this.trackersTabPage.Size = new System.Drawing.Size(966, 197);
             this.trackersTabPage.TabIndex = 1;
             this.trackersTabPage.Text = "Trackers";
             this.trackersTabPage.UseVisualStyleBackColor = true;
@@ -1032,7 +1032,7 @@
             this.trackersTorrentNameGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.trackersTorrentNameGroupBox.Location = new System.Drawing.Point(3, 3);
             this.trackersTorrentNameGroupBox.Name = "trackersTorrentNameGroupBox";
-            this.trackersTorrentNameGroupBox.Size = new System.Drawing.Size(960, 207);
+            this.trackersTorrentNameGroupBox.Size = new System.Drawing.Size(960, 191);
             this.trackersTorrentNameGroupBox.TabIndex = 1;
             this.trackersTorrentNameGroupBox.TabStop = false;
             // 
@@ -1042,7 +1042,7 @@
             this.filesTabPage.Location = new System.Drawing.Point(4, 23);
             this.filesTabPage.Name = "filesTabPage";
             this.filesTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.filesTabPage.Size = new System.Drawing.Size(966, 213);
+            this.filesTabPage.Size = new System.Drawing.Size(966, 197);
             this.filesTabPage.TabIndex = 2;
             this.filesTabPage.Text = "Files";
             this.filesTabPage.UseVisualStyleBackColor = true;
@@ -1053,7 +1053,7 @@
             this.filesTorrentNameGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.filesTorrentNameGroupBox.Location = new System.Drawing.Point(3, 3);
             this.filesTorrentNameGroupBox.Name = "filesTorrentNameGroupBox";
-            this.filesTorrentNameGroupBox.Size = new System.Drawing.Size(960, 207);
+            this.filesTorrentNameGroupBox.Size = new System.Drawing.Size(960, 191);
             this.filesTorrentNameGroupBox.TabIndex = 1;
             this.filesTorrentNameGroupBox.TabStop = false;
             // 
@@ -1063,7 +1063,7 @@
             this.peersTabPage.Location = new System.Drawing.Point(4, 23);
             this.peersTabPage.Name = "peersTabPage";
             this.peersTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.peersTabPage.Size = new System.Drawing.Size(966, 213);
+            this.peersTabPage.Size = new System.Drawing.Size(966, 197);
             this.peersTabPage.TabIndex = 3;
             this.peersTabPage.Text = "Peers";
             this.peersTabPage.UseVisualStyleBackColor = true;
@@ -1074,7 +1074,7 @@
             this.peersTorrentNameGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.peersTorrentNameGroupBox.Location = new System.Drawing.Point(3, 3);
             this.peersTorrentNameGroupBox.Name = "peersTorrentNameGroupBox";
-            this.peersTorrentNameGroupBox.Size = new System.Drawing.Size(960, 207);
+            this.peersTorrentNameGroupBox.Size = new System.Drawing.Size(960, 191);
             this.peersTorrentNameGroupBox.TabIndex = 1;
             this.peersTorrentNameGroupBox.TabStop = false;
             // 
@@ -1084,7 +1084,7 @@
             this.speedTabPage.Location = new System.Drawing.Point(4, 23);
             this.speedTabPage.Name = "speedTabPage";
             this.speedTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.speedTabPage.Size = new System.Drawing.Size(966, 213);
+            this.speedTabPage.Size = new System.Drawing.Size(966, 197);
             this.speedTabPage.TabIndex = 4;
             this.speedTabPage.Text = "Speed";
             this.speedTabPage.UseVisualStyleBackColor = true;
@@ -1095,7 +1095,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(960, 207);
+            this.groupBox1.Size = new System.Drawing.Size(960, 191);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Overall bandwidth utilisation";
@@ -1117,7 +1117,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.label20);
             this.splitContainer1.Panel2.Controls.Add(this.label19);
             this.splitContainer1.Panel2.Controls.Add(this.speedGraph);
-            this.splitContainer1.Size = new System.Drawing.Size(954, 188);
+            this.splitContainer1.Size = new System.Drawing.Size(954, 172);
             this.splitContainer1.SplitterDistance = 30;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -1509,7 +1509,7 @@
             this.torrentListView.Location = new System.Drawing.Point(0, 0);
             this.torrentListView.Name = "torrentListView";
             this.torrentListView.ShowItemToolTips = true;
-            this.torrentListView.Size = new System.Drawing.Size(861, 275);
+            this.torrentListView.Size = new System.Drawing.Size(861, 274);
             this.torrentListView.TabIndex = 0;
             this.torrentListView.UseCompatibleStateImageBehavior = false;
             this.torrentListView.View = System.Windows.Forms.View.Details;
@@ -1584,7 +1584,7 @@
             this.piecesGraph.BackColor = System.Drawing.Color.LightSteelBlue;
             this.piecesGraph.Dock = System.Windows.Forms.DockStyle.Fill;
             this.piecesGraph.Enabled = false;
-            this.piecesGraph.ForeColor = System.Drawing.Color.DarkBlue;
+            this.piecesGraph.ForeColor = System.Drawing.Color.LimeGreen;
             this.piecesGraph.Location = new System.Drawing.Point(0, 0);
             this.piecesGraph.Name = "piecesGraph";
             this.piecesGraph.Size = new System.Drawing.Size(801, 25);
@@ -1603,7 +1603,7 @@
             this.trackersListView.FullRowSelect = true;
             this.trackersListView.Location = new System.Drawing.Point(3, 16);
             this.trackersListView.Name = "trackersListView";
-            this.trackersListView.Size = new System.Drawing.Size(954, 188);
+            this.trackersListView.Size = new System.Drawing.Size(954, 172);
             this.trackersListView.TabIndex = 0;
             this.trackersListView.UseCompatibleStateImageBehavior = false;
             this.trackersListView.View = System.Windows.Forms.View.Details;
@@ -1640,7 +1640,7 @@
             this.filesListView.Location = new System.Drawing.Point(3, 16);
             this.filesListView.Name = "filesListView";
             this.filesListView.ShowItemToolTips = true;
-            this.filesListView.Size = new System.Drawing.Size(954, 188);
+            this.filesListView.Size = new System.Drawing.Size(954, 172);
             this.filesListView.TabIndex = 0;
             this.filesListView.UseCompatibleStateImageBehavior = false;
             this.filesListView.View = System.Windows.Forms.View.Details;
@@ -1695,7 +1695,7 @@
             this.peersListView.Location = new System.Drawing.Point(3, 16);
             this.peersListView.Name = "peersListView";
             this.peersListView.ShowItemToolTips = true;
-            this.peersListView.Size = new System.Drawing.Size(954, 188);
+            this.peersListView.Size = new System.Drawing.Size(954, 172);
             this.peersListView.TabIndex = 0;
             this.peersListView.UseCompatibleStateImageBehavior = false;
             this.peersListView.View = System.Windows.Forms.View.Details;
@@ -1759,7 +1759,7 @@
             this.speedGraph.Name = "speedGraph";
             this.speedGraph.ShowGrid = true;
             this.speedGraph.ShowLabels = true;
-            this.speedGraph.Size = new System.Drawing.Size(954, 154);
+            this.speedGraph.Size = new System.Drawing.Size(954, 138);
             this.speedGraph.TabIndex = 0;
             this.speedGraph.Text = "c2DPushGraph1";
             this.speedGraph.TextColor = System.Drawing.Color.White;
