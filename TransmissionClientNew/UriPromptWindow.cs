@@ -37,7 +37,7 @@ namespace TransmissionRemoteDotnet
                 try
                 {
                     string target = Path.GetTempFileName();
-                    toolStripStatusLabel1.Text = "Downloading...";
+                    toolStripStatusLabel1.Text = OtherStrings.Downloading+"...";
                     toolStripProgressBar1.Value = 0;
                     toolStripProgressBar1.Visible = true;
                     button1.Enabled = false;
@@ -57,7 +57,7 @@ namespace TransmissionRemoteDotnet
         {
             toolStripProgressBar1.Visible = false;
             toolStripStatusLabel1.Text = ex.Message;
-            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(ex.Message, OtherStrings.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -67,7 +67,7 @@ namespace TransmissionRemoteDotnet
                 try
                 {
                     this.currentUri = new Uri(textBox1.Text);
-                    toolStripStatusLabel1.Text = "Input accepted.";
+                    toolStripStatusLabel1.Text = OtherStrings.InputAccepted;
                     button1.Enabled = true;
                 }
                 catch (Exception ex)
@@ -78,7 +78,7 @@ namespace TransmissionRemoteDotnet
             }
             else
             {
-                toolStripStatusLabel1.Text = "Waiting for input...";
+                toolStripStatusLabel1.Text = OtherStrings.WaitingForInput+"...";
                 button1.Enabled = false;
             }
         }
@@ -100,7 +100,7 @@ namespace TransmissionRemoteDotnet
         private void webClient_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             toolStripProgressBar1.Value = e.ProgressPercentage;
-            toolStripStatusLabel1.Text = String.Format("Downloading ({0}%)...", e.ProgressPercentage);
+            toolStripStatusLabel1.Text = String.Format("{0} ({1}%)...", OtherStrings.Downloading, e.ProgressPercentage);
         }
     }
 }

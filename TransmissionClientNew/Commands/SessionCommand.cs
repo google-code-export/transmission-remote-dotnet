@@ -71,13 +71,21 @@ namespace TransmissionRemoteDotnet.Commmands
                 if (!Program.Connected)
                 {
                     TransmissionDaemonDescriptor descriptor = Program.DaemonDescriptor;
-                    Program.Log("(Info) Connected to", String.Format("Host={0}, Version={1}, Revision={2}, RpcVersion={3}, RpcVersionMinimum={4}",
-                        new object[] {
-                            LocalSettingsSingleton.Instance.Host,
-                            descriptor.Version, descriptor.Revision,
-                            descriptor.RpcVersion > 0 ? descriptor.RpcVersion.ToString() : "unspecified",
-                            descriptor.RpcVersionMin > 0 ? descriptor.RpcVersionMin.ToString() : "unspecified"
-                        }));
+                    Program.Log(
+                        String.Format("({0}) {1}", OtherStrings.Info, OtherStrings.ConnectedTo),
+                        String.Format("{0}={1}, {1}={2}, {3}={4}, {5}={6}, {7}={8}",
+                            new object[] {
+                                OtherStrings.Host,
+                                LocalSettingsSingleton.Instance.Host,
+                                OtherStrings.Version,
+                                descriptor.Version,
+                                OtherStrings.Revision,
+                                descriptor.Revision,
+                                OtherStrings.RpcVersion,
+                                descriptor.RpcVersion > 0 ? descriptor.RpcVersion.ToString() : "unspecified",
+                                OtherStrings.RpcVersionMinimum,
+                                descriptor.RpcVersionMin > 0 ? descriptor.RpcVersionMin.ToString() : "unspecified"
+                            }));
                     Program.Connected = true;
                     form.RefreshIfNotRefreshing();
                     if (Program.UploadArgs != null)

@@ -9,7 +9,6 @@ namespace TransmissionRemoteDotnet.Commmands
     {
         private const int MAX_MESSAGE_DIALOG_LENGTH = 500;
         private const int MAX_MESSAGE_STATUSBAR_LENGTH = 120;
-        private const string DEFAULT_ERROR_TITLE = "Error";
 
         private string title;
         private string body;
@@ -24,7 +23,7 @@ namespace TransmissionRemoteDotnet.Commmands
 
         public ErrorCommand(Exception ex, bool showDontCount)
         {
-            this.title = DEFAULT_ERROR_TITLE;
+            this.title = OtherStrings.Error;
             this.body = ex.Message;
             this.showDontCount = showDontCount;
         }
@@ -57,12 +56,12 @@ namespace TransmissionRemoteDotnet.Commmands
                 else if (++Program.DaemonDescriptor.FailCount > LocalSettingsSingleton.Instance.RetryLimit)
                 {
                     Program.Connected = false;
-                    form.toolStripStatusLabel.Text = "Disconnected. Exceeded maximum number of failed requests.";
+                    form.toolStripStatusLabel.Text = OtherStrings.DisconnectedExceeded;
                     ShowErrorBox(this.title, this.body);
                 }
                 else
                 {
-                    form.toolStripStatusLabel.Text = String.Format("Failed request #{0}: {1}", Program.DaemonDescriptor.FailCount, this.StatusBarMessage);
+                    form.toolStripStatusLabel.Text = String.Format("{0} #{1}: {2}", OtherStrings.FailedRequest, Program.DaemonDescriptor.FailCount, this.StatusBarMessage);
                 }
                 Program.Log(this.title, this.body);
             }
@@ -72,7 +71,7 @@ namespace TransmissionRemoteDotnet.Commmands
         {
             get
             {
-                return !this.title.Equals(DEFAULT_ERROR_TITLE) ? this.title : TrimText(this.body, MAX_MESSAGE_STATUSBAR_LENGTH);
+                return !this.title.Equals(OtherStrings.Error) ? this.title : TrimText(this.body, MAX_MESSAGE_STATUSBAR_LENGTH);
             }
         }
 

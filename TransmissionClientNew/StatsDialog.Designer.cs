@@ -61,30 +61,19 @@ namespace TransmissionRemoteDotnet
             // 
             // downloadedBytesLabel2
             // 
-            this.downloadedBytesLabel2.AutoSize = true;
-            this.downloadedBytesLabel2.Location = new System.Drawing.Point(6, 25);
+            resources.ApplyResources(this.downloadedBytesLabel2, "downloadedBytesLabel2");
             this.downloadedBytesLabel2.Name = "downloadedBytesLabel2";
-            this.downloadedBytesLabel2.Size = new System.Drawing.Size(98, 13);
-            this.downloadedBytesLabel2.TabIndex = 0;
-            this.downloadedBytesLabel2.Text = "Downloaded bytes:";
             // 
             // uploadedBytesLabel2
             // 
-            this.uploadedBytesLabel2.AutoSize = true;
-            this.uploadedBytesLabel2.Location = new System.Drawing.Point(6, 53);
+            resources.ApplyResources(this.uploadedBytesLabel2, "uploadedBytesLabel2");
             this.uploadedBytesLabel2.Name = "uploadedBytesLabel2";
-            this.uploadedBytesLabel2.Size = new System.Drawing.Size(84, 13);
-            this.uploadedBytesLabel2.TabIndex = 2;
-            this.uploadedBytesLabel2.Text = "Uploaded bytes:";
             // 
             // CloseFormButton
             // 
             this.CloseFormButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CloseFormButton.Location = new System.Drawing.Point(365, 178);
+            resources.ApplyResources(this.CloseFormButton, "CloseFormButton");
             this.CloseFormButton.Name = "CloseFormButton";
-            this.CloseFormButton.Size = new System.Drawing.Size(106, 23);
-            this.CloseFormButton.TabIndex = 9;
-            this.CloseFormButton.Text = "Close";
             this.CloseFormButton.UseVisualStyleBackColor = true;
             this.CloseFormButton.Click += new System.EventHandler(this.CloseFormButton_Click);
             // 
@@ -105,84 +94,49 @@ namespace TransmissionRemoteDotnet
             this.groupBox1.Controls.Add(this.filesAddedLabel2);
             this.groupBox1.Controls.Add(this.downloadedBytesLabel2);
             this.groupBox1.Controls.Add(this.uploadedBytesLabel2);
-            this.groupBox1.Location = new System.Drawing.Point(243, 5);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(228, 167);
-            this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cumulative Stats";
             // 
             // secondsActiveValue2
             // 
-            this.secondsActiveValue2.AutoSize = true;
-            this.secondsActiveValue2.Location = new System.Drawing.Point(119, 138);
+            resources.ApplyResources(this.secondsActiveValue2, "secondsActiveValue2");
             this.secondsActiveValue2.Name = "secondsActiveValue2";
-            this.secondsActiveValue2.Size = new System.Drawing.Size(58, 13);
-            this.secondsActiveValue2.TabIndex = 18;
-            this.secondsActiveValue2.Text = "Querying...";
             // 
             // sessionCountValue2
             // 
-            this.sessionCountValue2.AutoSize = true;
-            this.sessionCountValue2.Location = new System.Drawing.Point(119, 110);
+            resources.ApplyResources(this.sessionCountValue2, "sessionCountValue2");
             this.sessionCountValue2.Name = "sessionCountValue2";
-            this.sessionCountValue2.Size = new System.Drawing.Size(58, 13);
-            this.sessionCountValue2.TabIndex = 17;
-            this.sessionCountValue2.Text = "Querying...";
             // 
             // filesAddedValue2
             // 
-            this.filesAddedValue2.AutoSize = true;
-            this.filesAddedValue2.Location = new System.Drawing.Point(119, 82);
+            resources.ApplyResources(this.filesAddedValue2, "filesAddedValue2");
             this.filesAddedValue2.Name = "filesAddedValue2";
-            this.filesAddedValue2.Size = new System.Drawing.Size(58, 13);
-            this.filesAddedValue2.TabIndex = 16;
-            this.filesAddedValue2.Text = "Querying...";
             // 
             // uploadedBytesValue2
             // 
-            this.uploadedBytesValue2.AutoSize = true;
-            this.uploadedBytesValue2.Location = new System.Drawing.Point(119, 53);
+            resources.ApplyResources(this.uploadedBytesValue2, "uploadedBytesValue2");
             this.uploadedBytesValue2.Name = "uploadedBytesValue2";
-            this.uploadedBytesValue2.Size = new System.Drawing.Size(58, 13);
-            this.uploadedBytesValue2.TabIndex = 15;
-            this.uploadedBytesValue2.Text = "Querying...";
             // 
             // downloadedBytesValue2
             // 
-            this.downloadedBytesValue2.AutoSize = true;
-            this.downloadedBytesValue2.Location = new System.Drawing.Point(119, 25);
+            resources.ApplyResources(this.downloadedBytesValue2, "downloadedBytesValue2");
             this.downloadedBytesValue2.Name = "downloadedBytesValue2";
-            this.downloadedBytesValue2.Size = new System.Drawing.Size(58, 13);
-            this.downloadedBytesValue2.TabIndex = 14;
-            this.downloadedBytesValue2.Text = "Querying...";
             // 
             // secondsActiveLabel2
             // 
-            this.secondsActiveLabel2.AutoSize = true;
-            this.secondsActiveLabel2.Location = new System.Drawing.Point(6, 138);
+            resources.ApplyResources(this.secondsActiveLabel2, "secondsActiveLabel2");
             this.secondsActiveLabel2.Name = "secondsActiveLabel2";
-            this.secondsActiveLabel2.Size = new System.Drawing.Size(81, 13);
-            this.secondsActiveLabel2.TabIndex = 13;
-            this.secondsActiveLabel2.Text = "Seconds active";
             // 
             // sessionCountLabel2
             // 
-            this.sessionCountLabel2.AutoSize = true;
-            this.sessionCountLabel2.Location = new System.Drawing.Point(6, 110);
+            resources.ApplyResources(this.sessionCountLabel2, "sessionCountLabel2");
             this.sessionCountLabel2.Name = "sessionCountLabel2";
-            this.sessionCountLabel2.Size = new System.Drawing.Size(75, 13);
-            this.sessionCountLabel2.TabIndex = 12;
-            this.sessionCountLabel2.Text = "Session Count";
             // 
             // filesAddedLabel2
             // 
-            this.filesAddedLabel2.AutoSize = true;
-            this.filesAddedLabel2.Location = new System.Drawing.Point(6, 82);
+            resources.ApplyResources(this.filesAddedLabel2, "filesAddedLabel2");
             this.filesAddedLabel2.Name = "filesAddedLabel2";
-            this.filesAddedLabel2.Size = new System.Drawing.Size(64, 13);
-            this.filesAddedLabel2.TabIndex = 9;
-            this.filesAddedLabel2.Text = "Files added:";
             // 
             // timer1
             // 
@@ -201,118 +155,72 @@ namespace TransmissionRemoteDotnet
             this.groupBox2.Controls.Add(this.filesAddedLabel1);
             this.groupBox2.Controls.Add(this.downloadedBytesLabel1);
             this.groupBox2.Controls.Add(this.uploadedBytesLabel1);
-            this.groupBox2.Location = new System.Drawing.Point(9, 5);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(228, 167);
-            this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Current Session Stats";
             // 
             // secondsActiveValue1
             // 
-            this.secondsActiveValue1.AutoSize = true;
-            this.secondsActiveValue1.Location = new System.Drawing.Point(119, 138);
+            resources.ApplyResources(this.secondsActiveValue1, "secondsActiveValue1");
             this.secondsActiveValue1.Name = "secondsActiveValue1";
-            this.secondsActiveValue1.Size = new System.Drawing.Size(58, 13);
-            this.secondsActiveValue1.TabIndex = 18;
-            this.secondsActiveValue1.Text = "Querying...";
             // 
             // sessionCountValue1
             // 
-            this.sessionCountValue1.AutoSize = true;
-            this.sessionCountValue1.Location = new System.Drawing.Point(119, 110);
+            resources.ApplyResources(this.sessionCountValue1, "sessionCountValue1");
             this.sessionCountValue1.Name = "sessionCountValue1";
-            this.sessionCountValue1.Size = new System.Drawing.Size(58, 13);
-            this.sessionCountValue1.TabIndex = 17;
-            this.sessionCountValue1.Text = "Querying...";
             // 
             // filesAddedValue1
             // 
-            this.filesAddedValue1.AutoSize = true;
-            this.filesAddedValue1.Location = new System.Drawing.Point(119, 82);
+            resources.ApplyResources(this.filesAddedValue1, "filesAddedValue1");
             this.filesAddedValue1.Name = "filesAddedValue1";
-            this.filesAddedValue1.Size = new System.Drawing.Size(58, 13);
-            this.filesAddedValue1.TabIndex = 16;
-            this.filesAddedValue1.Text = "Querying...";
             // 
             // uploadedBytesValue1
             // 
-            this.uploadedBytesValue1.AutoSize = true;
-            this.uploadedBytesValue1.Location = new System.Drawing.Point(119, 53);
+            resources.ApplyResources(this.uploadedBytesValue1, "uploadedBytesValue1");
             this.uploadedBytesValue1.Name = "uploadedBytesValue1";
-            this.uploadedBytesValue1.Size = new System.Drawing.Size(58, 13);
-            this.uploadedBytesValue1.TabIndex = 15;
-            this.uploadedBytesValue1.Text = "Querying...";
             // 
             // downloadedBytesValue1
             // 
-            this.downloadedBytesValue1.AutoSize = true;
-            this.downloadedBytesValue1.Location = new System.Drawing.Point(119, 25);
+            resources.ApplyResources(this.downloadedBytesValue1, "downloadedBytesValue1");
             this.downloadedBytesValue1.Name = "downloadedBytesValue1";
-            this.downloadedBytesValue1.Size = new System.Drawing.Size(58, 13);
-            this.downloadedBytesValue1.TabIndex = 14;
-            this.downloadedBytesValue1.Text = "Querying...";
             // 
             // secondsActiveLabel1
             // 
-            this.secondsActiveLabel1.AutoSize = true;
-            this.secondsActiveLabel1.Location = new System.Drawing.Point(6, 138);
+            resources.ApplyResources(this.secondsActiveLabel1, "secondsActiveLabel1");
             this.secondsActiveLabel1.Name = "secondsActiveLabel1";
-            this.secondsActiveLabel1.Size = new System.Drawing.Size(81, 13);
-            this.secondsActiveLabel1.TabIndex = 13;
-            this.secondsActiveLabel1.Text = "Seconds active";
             // 
             // sessionCountLabel1
             // 
-            this.sessionCountLabel1.AutoSize = true;
-            this.sessionCountLabel1.Location = new System.Drawing.Point(6, 110);
+            resources.ApplyResources(this.sessionCountLabel1, "sessionCountLabel1");
             this.sessionCountLabel1.Name = "sessionCountLabel1";
-            this.sessionCountLabel1.Size = new System.Drawing.Size(75, 13);
-            this.sessionCountLabel1.TabIndex = 12;
-            this.sessionCountLabel1.Text = "Session Count";
             // 
             // filesAddedLabel1
             // 
-            this.filesAddedLabel1.AutoSize = true;
-            this.filesAddedLabel1.Location = new System.Drawing.Point(6, 82);
+            resources.ApplyResources(this.filesAddedLabel1, "filesAddedLabel1");
             this.filesAddedLabel1.Name = "filesAddedLabel1";
-            this.filesAddedLabel1.Size = new System.Drawing.Size(64, 13);
-            this.filesAddedLabel1.TabIndex = 9;
-            this.filesAddedLabel1.Text = "Files added:";
             // 
             // downloadedBytesLabel1
             // 
-            this.downloadedBytesLabel1.AutoSize = true;
-            this.downloadedBytesLabel1.Location = new System.Drawing.Point(6, 25);
+            resources.ApplyResources(this.downloadedBytesLabel1, "downloadedBytesLabel1");
             this.downloadedBytesLabel1.Name = "downloadedBytesLabel1";
-            this.downloadedBytesLabel1.Size = new System.Drawing.Size(98, 13);
-            this.downloadedBytesLabel1.TabIndex = 0;
-            this.downloadedBytesLabel1.Text = "Downloaded bytes:";
             // 
             // uploadedBytesLabel1
             // 
-            this.uploadedBytesLabel1.AutoSize = true;
-            this.uploadedBytesLabel1.Location = new System.Drawing.Point(6, 53);
+            resources.ApplyResources(this.uploadedBytesLabel1, "uploadedBytesLabel1");
             this.uploadedBytesLabel1.Name = "uploadedBytesLabel1";
-            this.uploadedBytesLabel1.Size = new System.Drawing.Size(84, 13);
-            this.uploadedBytesLabel1.TabIndex = 2;
-            this.uploadedBytesLabel1.Text = "Uploaded bytes:";
             // 
             // StatsDialog
             // 
             this.AcceptButton = this.CloseFormButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CloseFormButton;
-            this.ClientSize = new System.Drawing.Size(481, 208);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CloseFormButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "StatsDialog";
-            this.Text = "Transmission Daemon Statistics";
             this.Load += new System.EventHandler(this.StatsDialog_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.StatsDialog_FormClosing);
             this.groupBox1.ResumeLayout(false);

@@ -56,6 +56,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.minimizeOnCloseCheckBox = new System.Windows.Forms.CheckBox();
             this.notificationOnAdditionCheckBox = new System.Windows.Forms.CheckBox();
             this.notificationOnCompletionCheckBox = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -73,7 +74,6 @@
             this.removeProfileButton = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.addProfileButton = new System.Windows.Forms.Button();
-            this.minimizeOnCloseCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.PortField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RefreshRateValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RetryLimitValue)).BeginInit();
@@ -89,32 +89,22 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 21);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Host:";
             // 
             // HostField
             // 
-            this.HostField.Location = new System.Drawing.Point(87, 18);
+            resources.ApplyResources(this.HostField, "HostField");
             this.HostField.Name = "HostField";
-            this.HostField.Size = new System.Drawing.Size(156, 20);
-            this.HostField.TabIndex = 1;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 46);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Port:";
             // 
             // PortField
             // 
-            this.PortField.Location = new System.Drawing.Point(86, 44);
+            resources.ApplyResources(this.PortField, "PortField");
             this.PortField.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -126,8 +116,6 @@
             0,
             0});
             this.PortField.Name = "PortField";
-            this.PortField.Size = new System.Drawing.Size(64, 20);
-            this.PortField.TabIndex = 2;
             this.PortField.Value = new decimal(new int[] {
             1,
             0,
@@ -136,47 +124,33 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(13, 244);
+            resources.ApplyResources(this.SaveButton, "SaveButton");
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(130, 23);
-            this.SaveButton.TabIndex = 4;
-            this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // CloseDialogButton
             // 
             this.CloseDialogButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CloseDialogButton.Location = new System.Drawing.Point(285, 244);
+            resources.ApplyResources(this.CloseDialogButton, "CloseDialogButton");
             this.CloseDialogButton.Name = "CloseDialogButton";
-            this.CloseDialogButton.Size = new System.Drawing.Size(130, 23);
-            this.CloseDialogButton.TabIndex = 5;
-            this.CloseDialogButton.Text = "Cancel";
             this.CloseDialogButton.UseVisualStyleBackColor = true;
             this.CloseDialogButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // AutoConnectCheckBox
             // 
-            this.AutoConnectCheckBox.AutoSize = true;
-            this.AutoConnectCheckBox.Location = new System.Drawing.Point(273, 49);
+            resources.ApplyResources(this.AutoConnectCheckBox, "AutoConnectCheckBox");
             this.AutoConnectCheckBox.Name = "AutoConnectCheckBox";
-            this.AutoConnectCheckBox.Size = new System.Drawing.Size(90, 17);
-            this.AutoConnectCheckBox.TabIndex = 4;
-            this.AutoConnectCheckBox.Text = "Auto connect";
             this.AutoConnectCheckBox.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 74);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Refresh Rate:";
             // 
             // RefreshRateValue
             // 
-            this.RefreshRateValue.Location = new System.Drawing.Point(86, 72);
+            resources.ApplyResources(this.RefreshRateValue, "RefreshRateValue");
             this.RefreshRateValue.Maximum = new decimal(new int[] {
             600,
             0,
@@ -188,8 +162,6 @@
             0,
             0});
             this.RefreshRateValue.Name = "RefreshRateValue";
-            this.RefreshRateValue.Size = new System.Drawing.Size(64, 20);
-            this.RefreshRateValue.TabIndex = 6;
             this.RefreshRateValue.Value = new decimal(new int[] {
             1,
             0,
@@ -198,49 +170,31 @@
             // 
             // UseSSLCheckBox
             // 
-            this.UseSSLCheckBox.AutoSize = true;
-            this.UseSSLCheckBox.Location = new System.Drawing.Point(273, 21);
+            resources.ApplyResources(this.UseSSLCheckBox, "UseSSLCheckBox");
             this.UseSSLCheckBox.Name = "UseSSLCheckBox";
-            this.UseSSLCheckBox.Size = new System.Drawing.Size(89, 17);
-            this.UseSSLCheckBox.TabIndex = 3;
-            this.UseSSLCheckBox.Text = "Secure (SSL)";
             this.UseSSLCheckBox.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(7, 100);
+            resources.ApplyResources(this.label10, "label10");
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(55, 13);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "Retry limit:";
             // 
             // RetryLimitValue
             // 
-            this.RetryLimitValue.Location = new System.Drawing.Point(86, 100);
+            resources.ApplyResources(this.RetryLimitValue, "RetryLimitValue");
             this.RetryLimitValue.Name = "RetryLimitValue";
-            this.RetryLimitValue.Size = new System.Drawing.Size(64, 20);
-            this.RetryLimitValue.TabIndex = 7;
             // 
             // MinToTrayCheckBox
             // 
-            this.MinToTrayCheckBox.AutoSize = true;
-            this.MinToTrayCheckBox.Location = new System.Drawing.Point(10, 18);
+            resources.ApplyResources(this.MinToTrayCheckBox, "MinToTrayCheckBox");
             this.MinToTrayCheckBox.Name = "MinToTrayCheckBox";
-            this.MinToTrayCheckBox.Size = new System.Drawing.Size(102, 17);
-            this.MinToTrayCheckBox.TabIndex = 0;
-            this.MinToTrayCheckBox.Text = "Enable tray icon";
             this.MinToTrayCheckBox.UseVisualStyleBackColor = true;
             this.MinToTrayCheckBox.CheckedChanged += new System.EventHandler(this.MinToTrayCheckBox_CheckedChanged);
             // 
             // ProxyAuthEnableCheckBox
             // 
-            this.ProxyAuthEnableCheckBox.AutoSize = true;
-            this.ProxyAuthEnableCheckBox.Location = new System.Drawing.Point(274, 68);
+            resources.ApplyResources(this.ProxyAuthEnableCheckBox, "ProxyAuthEnableCheckBox");
             this.ProxyAuthEnableCheckBox.Name = "ProxyAuthEnableCheckBox";
-            this.ProxyAuthEnableCheckBox.Size = new System.Drawing.Size(86, 17);
-            this.ProxyAuthEnableCheckBox.TabIndex = 7;
-            this.ProxyAuthEnableCheckBox.Text = "Authenticate";
             this.ProxyAuthEnableCheckBox.UseVisualStyleBackColor = true;
             this.ProxyAuthEnableCheckBox.CheckedChanged += new System.EventHandler(this.ProxyAuthEnableCheckBox_CheckedChanged);
             // 
@@ -249,49 +203,36 @@
             this.EnableProxyCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.EnableProxyCombo.FormattingEnabled = true;
             this.EnableProxyCombo.Items.AddRange(new object[] {
-            "Auto",
-            "Enabled",
-            "Disabled"});
-            this.EnableProxyCombo.Location = new System.Drawing.Point(273, 39);
+            resources.GetString("EnableProxyCombo.Items"),
+            resources.GetString("EnableProxyCombo.Items1"),
+            resources.GetString("EnableProxyCombo.Items2")});
+            resources.ApplyResources(this.EnableProxyCombo, "EnableProxyCombo");
             this.EnableProxyCombo.Name = "EnableProxyCombo";
-            this.EnableProxyCombo.Size = new System.Drawing.Size(83, 21);
-            this.EnableProxyCombo.TabIndex = 4;
             this.EnableProxyCombo.SelectedIndexChanged += new System.EventHandler(this.EnableProxyCombo_SelectedIndexChanged);
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 47);
+            resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(29, 13);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Port:";
             // 
             // ProxyPassField
             // 
-            this.ProxyPassField.Location = new System.Drawing.Point(87, 96);
+            resources.ApplyResources(this.ProxyPassField, "ProxyPassField");
             this.ProxyPassField.Name = "ProxyPassField";
-            this.ProxyPassField.PasswordChar = '*';
-            this.ProxyPassField.Size = new System.Drawing.Size(156, 20);
-            this.ProxyPassField.TabIndex = 9;
             // 
             // ProxyUserField
             // 
-            this.ProxyUserField.Location = new System.Drawing.Point(87, 70);
+            resources.ApplyResources(this.ProxyUserField, "ProxyUserField");
             this.ProxyUserField.Name = "ProxyUserField";
-            this.ProxyUserField.Size = new System.Drawing.Size(156, 20);
-            this.ProxyUserField.TabIndex = 6;
             // 
             // ProxyHostField
             // 
-            this.ProxyHostField.Location = new System.Drawing.Point(87, 17);
+            resources.ApplyResources(this.ProxyHostField, "ProxyHostField");
             this.ProxyHostField.Name = "ProxyHostField";
-            this.ProxyHostField.Size = new System.Drawing.Size(156, 20);
-            this.ProxyHostField.TabIndex = 1;
             // 
             // ProxyPortField
             // 
-            this.ProxyPortField.Location = new System.Drawing.Point(87, 43);
+            resources.ApplyResources(this.ProxyPortField, "ProxyPortField");
             this.ProxyPortField.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -303,8 +244,6 @@
             0,
             0});
             this.ProxyPortField.Name = "ProxyPortField";
-            this.ProxyPortField.Size = new System.Drawing.Size(64, 20);
-            this.ProxyPortField.TabIndex = 3;
             this.ProxyPortField.Value = new decimal(new int[] {
             8080,
             0,
@@ -313,39 +252,23 @@
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(7, 99);
+            resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 13);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Password:";
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(7, 73);
+            resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(32, 13);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "User:";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 20);
+            resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Host:";
             // 
             // StartPausedCheckBox
             // 
-            this.StartPausedCheckBox.AutoSize = true;
-            this.StartPausedCheckBox.Location = new System.Drawing.Point(10, 41);
+            resources.ApplyResources(this.StartPausedCheckBox, "StartPausedCheckBox");
             this.StartPausedCheckBox.Name = "StartPausedCheckBox";
-            this.StartPausedCheckBox.Size = new System.Drawing.Size(124, 17);
-            this.StartPausedCheckBox.TabIndex = 1;
-            this.StartPausedCheckBox.Text = "Start torrents paused";
             this.StartPausedCheckBox.UseVisualStyleBackColor = true;
             // 
             // tabControl1
@@ -354,11 +277,9 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(13, 12);
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(402, 167);
-            this.tabControl1.TabIndex = 6;
             // 
             // tabPage1
             // 
@@ -372,12 +293,8 @@
             this.tabPage1.Controls.Add(this.PortField);
             this.tabPage1.Controls.Add(this.RefreshRateValue);
             this.tabPage1.Controls.Add(this.AutoConnectCheckBox);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(394, 141);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Server";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage4
@@ -387,31 +304,26 @@
             this.tabPage4.Controls.Add(this.notificationOnCompletionCheckBox);
             this.tabPage4.Controls.Add(this.MinToTrayCheckBox);
             this.tabPage4.Controls.Add(this.StartPausedCheckBox);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tabPage4, "tabPage4");
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(394, 141);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "General";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // minimizeOnCloseCheckBox
+            // 
+            resources.ApplyResources(this.minimizeOnCloseCheckBox, "minimizeOnCloseCheckBox");
+            this.minimizeOnCloseCheckBox.Name = "minimizeOnCloseCheckBox";
+            this.minimizeOnCloseCheckBox.UseVisualStyleBackColor = true;
             // 
             // notificationOnAdditionCheckBox
             // 
-            this.notificationOnAdditionCheckBox.AutoSize = true;
-            this.notificationOnAdditionCheckBox.Location = new System.Drawing.Point(10, 64);
+            resources.ApplyResources(this.notificationOnAdditionCheckBox, "notificationOnAdditionCheckBox");
             this.notificationOnAdditionCheckBox.Name = "notificationOnAdditionCheckBox";
-            this.notificationOnAdditionCheckBox.Size = new System.Drawing.Size(134, 17);
-            this.notificationOnAdditionCheckBox.TabIndex = 2;
-            this.notificationOnAdditionCheckBox.Text = "Notification on addition";
             this.notificationOnAdditionCheckBox.UseVisualStyleBackColor = true;
             // 
             // notificationOnCompletionCheckBox
             // 
-            this.notificationOnCompletionCheckBox.AutoSize = true;
-            this.notificationOnCompletionCheckBox.Location = new System.Drawing.Point(10, 87);
+            resources.ApplyResources(this.notificationOnCompletionCheckBox, "notificationOnCompletionCheckBox");
             this.notificationOnCompletionCheckBox.Name = "notificationOnCompletionCheckBox";
-            this.notificationOnCompletionCheckBox.Size = new System.Drawing.Size(148, 17);
-            this.notificationOnCompletionCheckBox.TabIndex = 4;
-            this.notificationOnCompletionCheckBox.Text = "Notification on completion";
             this.notificationOnCompletionCheckBox.UseVisualStyleBackColor = true;
             // 
             // tabPage2
@@ -421,57 +333,36 @@
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.PassField);
             this.tabPage2.Controls.Add(this.UserField);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(394, 141);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Authentication";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 47);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 13);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Password:";
             // 
             // EnableAuthCheckBox
             // 
-            this.EnableAuthCheckBox.AutoSize = true;
-            this.EnableAuthCheckBox.Location = new System.Drawing.Point(230, 21);
+            resources.ApplyResources(this.EnableAuthCheckBox, "EnableAuthCheckBox");
             this.EnableAuthCheckBox.Name = "EnableAuthCheckBox";
-            this.EnableAuthCheckBox.Size = new System.Drawing.Size(129, 17);
-            this.EnableAuthCheckBox.TabIndex = 2;
-            this.EnableAuthCheckBox.Text = "Enable authentication";
             this.EnableAuthCheckBox.UseVisualStyleBackColor = true;
             this.EnableAuthCheckBox.CheckedChanged += new System.EventHandler(this.EnableAuthCheckBox_CheckedChanged);
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 21);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "User:";
             // 
             // PassField
             // 
-            this.PassField.Location = new System.Drawing.Point(84, 44);
+            resources.ApplyResources(this.PassField, "PassField");
             this.PassField.Name = "PassField";
-            this.PassField.PasswordChar = '*';
-            this.PassField.Size = new System.Drawing.Size(109, 20);
-            this.PassField.TabIndex = 4;
             // 
             // UserField
             // 
-            this.UserField.Location = new System.Drawing.Point(84, 18);
+            resources.ApplyResources(this.UserField, "UserField");
             this.UserField.Name = "UserField";
-            this.UserField.Size = new System.Drawing.Size(109, 20);
-            this.UserField.TabIndex = 1;
             // 
             // tabPage3
             // 
@@ -485,20 +376,14 @@
             this.tabPage3.Controls.Add(this.ProxyHostField);
             this.tabPage3.Controls.Add(this.ProxyUserField);
             this.tabPage3.Controls.Add(this.ProxyPassField);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(394, 141);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Proxy";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(149, 244);
+            resources.ApplyResources(this.button1, "button1");
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Save and Connect";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -506,26 +391,19 @@
             // 
             this.profileComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.profileComboBox.FormattingEnabled = true;
-            this.profileComboBox.Location = new System.Drawing.Point(6, 19);
+            resources.ApplyResources(this.profileComboBox, "profileComboBox");
             this.profileComboBox.Name = "profileComboBox";
-            this.profileComboBox.Size = new System.Drawing.Size(133, 21);
-            this.profileComboBox.TabIndex = 8;
             this.profileComboBox.SelectedIndexChanged += new System.EventHandler(this.profileComboBox_SelectedIndexChanged);
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(11, 16);
+            resources.ApplyResources(this.label11, "label11");
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(0, 13);
-            this.label11.TabIndex = 9;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 20);
+            resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(131, 20);
-            this.textBox1.TabIndex = 10;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // groupBox5
@@ -533,21 +411,15 @@
             this.groupBox5.Controls.Add(this.removeProfileButton);
             this.groupBox5.Controls.Add(this.label11);
             this.groupBox5.Controls.Add(this.profileComboBox);
-            this.groupBox5.Location = new System.Drawing.Point(13, 185);
+            resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(190, 51);
-            this.groupBox5.TabIndex = 12;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Current profile";
             // 
             // removeProfileButton
             // 
-            this.removeProfileButton.Enabled = false;
+            resources.ApplyResources(this.removeProfileButton, "removeProfileButton");
             this.removeProfileButton.Image = global::TransmissionRemoteDotnet.Properties.Resources._16x16_remove;
-            this.removeProfileButton.Location = new System.Drawing.Point(150, 13);
             this.removeProfileButton.Name = "removeProfileButton";
-            this.removeProfileButton.Size = new System.Drawing.Size(30, 30);
-            this.removeProfileButton.TabIndex = 10;
             this.removeProfileButton.UseVisualStyleBackColor = true;
             this.removeProfileButton.Click += new System.EventHandler(this.removeProfileButton_Click);
             // 
@@ -555,41 +427,24 @@
             // 
             this.groupBox6.Controls.Add(this.addProfileButton);
             this.groupBox6.Controls.Add(this.textBox1);
-            this.groupBox6.Location = new System.Drawing.Point(225, 185);
+            resources.ApplyResources(this.groupBox6, "groupBox6");
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(190, 51);
-            this.groupBox6.TabIndex = 13;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "New profile";
             // 
             // addProfileButton
             // 
-            this.addProfileButton.Enabled = false;
+            resources.ApplyResources(this.addProfileButton, "addProfileButton");
             this.addProfileButton.Image = global::TransmissionRemoteDotnet.Properties.Resources._16x16_add;
-            this.addProfileButton.Location = new System.Drawing.Point(150, 13);
             this.addProfileButton.Name = "addProfileButton";
-            this.addProfileButton.Size = new System.Drawing.Size(30, 30);
-            this.addProfileButton.TabIndex = 11;
             this.addProfileButton.UseVisualStyleBackColor = true;
             this.addProfileButton.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // minimizeOnCloseCheckBox
-            // 
-            this.minimizeOnCloseCheckBox.AutoSize = true;
-            this.minimizeOnCloseCheckBox.Location = new System.Drawing.Point(10, 111);
-            this.minimizeOnCloseCheckBox.Name = "minimizeOnCloseCheckBox";
-            this.minimizeOnCloseCheckBox.Size = new System.Drawing.Size(109, 17);
-            this.minimizeOnCloseCheckBox.TabIndex = 5;
-            this.minimizeOnCloseCheckBox.Text = "Minimize on close";
-            this.minimizeOnCloseCheckBox.UseVisualStyleBackColor = true;
             // 
             // LocalSettingsDialog
             // 
             this.AcceptButton = this.SaveButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CloseDialogButton;
-            this.ClientSize = new System.Drawing.Size(431, 280);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.button1);
@@ -597,10 +452,8 @@
             this.Controls.Add(this.CloseDialogButton);
             this.Controls.Add(this.SaveButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "LocalSettingsDialog";
-            this.Text = "Local Settings";
             this.Load += new System.EventHandler(this.LocalSettingsDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PortField)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RefreshRateValue)).EndInit();

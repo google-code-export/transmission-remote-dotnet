@@ -78,13 +78,18 @@ namespace TransmissionRemoteDotnet.Commmands
                 form.ResumeTorrentListView();
                 form.UpdateGraph((int)totalDownload, (int)totalUpload);
                 form.UpdateStatus(String.Format(
-                    "{0} down, {1} up | {2} torrents: {3} downloading, {4} seeding | {5} / {6}",
+                    "{0} {1}, {2} {3} | {4} {5}: {6} {7}, {8} {9} | {10} / {11}",
                     new object[] {
                         Toolbox.GetSpeed(totalDownload),
+                        OtherStrings.Down.ToLower(),
                         Toolbox.GetSpeed(totalUpload),
+                        OtherStrings.Up.ToLower(),
                         totalTorrents,
+                        OtherStrings.Torrents.ToLower(),
                         totalDownloading,
+                        OtherStrings.Downloading.ToLower(),
                         totalSeeding,
+                        OtherStrings.Seeding.ToLower(),
                         Toolbox.GetFileSize(totalDownloadedSize),
                         Toolbox.GetFileSize(totalSize)
                     }

@@ -26,7 +26,8 @@ namespace TransmissionRemoteDotnet
             CONFKEY_MAINWINDOW_LOCATION_Y = "mainwindow-loc-y",
             CONFKEY_SPLITTERDISTANCE = "mainwindow-splitterdistance",
             CONFKEY_MAINWINDOW_STATE = "mainwindow-state",
-            LATEST_VERSION = "http://transmission-remote-dotnet.googlecode.com/svn/wiki/latest_version.txt";
+            LATEST_VERSION = "http://transmission-remote-dotnet.googlecode.com/svn/wiki/latest_version.txt",
+            DOWNLOADS_PAGE = "http://code.google.com/p/transmission-remote-dotnet/downloads/list";
 
         private Boolean minimise = false;
         private ListViewItemSorter lvwColumnSorter;
@@ -94,13 +95,13 @@ namespace TransmissionRemoteDotnet
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.player_reload16);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.warning);
             stateListBox.ImageList = stateListBoxImageList;
-            stateListBox.Items.Add(new GListBoxItem("All", 0));
-            stateListBox.Items.Add(new GListBoxItem("Downloading", 1));
-            stateListBox.Items.Add(new GListBoxItem("Paused", 2));
-            stateListBox.Items.Add(new GListBoxItem("Checking", 5));
-            stateListBox.Items.Add(new GListBoxItem("Complete", 3));
-            stateListBox.Items.Add(new GListBoxItem("Seeding", 4));
-            stateListBox.Items.Add(new GListBoxItem("Broken", 6));
+            stateListBox.Items.Add(new GListBoxItem(OtherStrings.All, 0));
+            stateListBox.Items.Add(new GListBoxItem(OtherStrings.Downloading, 1));
+            stateListBox.Items.Add(new GListBoxItem(OtherStrings.Paused, 2));
+            stateListBox.Items.Add(new GListBoxItem(OtherStrings.Checking, 5));
+            stateListBox.Items.Add(new GListBoxItem(OtherStrings.Complete, 3));
+            stateListBox.Items.Add(new GListBoxItem(OtherStrings.Seeding, 4));
+            stateListBox.Items.Add(new GListBoxItem(OtherStrings.Broken, 6));
             stateListBox.Items.Add(new GListBoxItem(""));
             stateListBox.ResumeLayout();
         }
@@ -108,42 +109,42 @@ namespace TransmissionRemoteDotnet
         private void InitStaticContextMenus()
         {
             this.peersListView.ContextMenu = new ContextMenu(new MenuItem[]{
-                new MenuItem("Select All", new EventHandler(this.SelectAllPeersHandler)),
-                new MenuItem("Copy as CSV", new EventHandler(this.PeersToClipboardHandler))
+                new MenuItem(OtherStrings.SelectAll, new EventHandler(this.SelectAllPeersHandler)),
+                new MenuItem(OtherStrings.CopyAsCSV, new EventHandler(this.PeersToClipboardHandler))
             });
             this.noTorrentSelectionMenu = torrentListView.ContextMenu = new ContextMenu(new MenuItem[] {
-                new MenuItem("Select All", new EventHandler(this.SelectAllTorrentsHandler))
+                new MenuItem(OtherStrings.SelectAll, new EventHandler(this.SelectAllTorrentsHandler))
             });
             this.fileSelectionMenu = new ContextMenu(new MenuItem[] {
-                new MenuItem("High Priority", new EventHandler(this.SetHighPriorityHandler)),
-                new MenuItem("Normal Priority", new EventHandler(this.SetNormalPriorityHandler)),
-                new MenuItem("Low Priority", new EventHandler(this.SetLowPriorityHandler)),
+                new MenuItem(OtherStrings.HighPriority, new EventHandler(this.SetHighPriorityHandler)),
+                new MenuItem(OtherStrings.NormalPriority, new EventHandler(this.SetNormalPriorityHandler)),
+                new MenuItem(OtherStrings.LowPriority, new EventHandler(this.SetLowPriorityHandler)),
                 new MenuItem("-"),
-                new MenuItem("Download", new EventHandler(this.SetWantedHandler)),
-                new MenuItem("Skip", new EventHandler(this.SetUnwantedHandler)),
+                new MenuItem(OtherStrings.Download, new EventHandler(this.SetWantedHandler)),
+                new MenuItem(OtherStrings.Skip, new EventHandler(this.SetUnwantedHandler)),
                 new MenuItem("-"),
-                new MenuItem("Select All", new EventHandler(this.SelectAllFilesHandler)),
-                new MenuItem("Copy as CSV", new EventHandler(this.FilesToClipboardHandler))
+                new MenuItem(OtherStrings.SelectAll, new EventHandler(this.SelectAllFilesHandler)),
+                new MenuItem(OtherStrings.CopyAsCSV, new EventHandler(this.FilesToClipboardHandler))
             });
             this.noFileSelectionMenu = this.filesListView.ContextMenu = new ContextMenu(new MenuItem[] {
-                new MenuItem("Select All", new EventHandler(this.SelectAllFilesHandler))
+                new MenuItem(OtherStrings.SelectAll, new EventHandler(this.SelectAllFilesHandler))
             });
         }
 
         private void CreateTorrentSelectionContextMenu()
         {
             this.torrentSelectionMenu = new ContextMenu();
-            this.torrentSelectionMenu.MenuItems.Add(new MenuItem("Start", new EventHandler(this.startTorrentButton_Click)));
-            this.torrentSelectionMenu.MenuItems.Add(new MenuItem("Pause", new EventHandler(this.pauseTorrentButton_Click)));
-            this.torrentSelectionMenu.MenuItems.Add(new MenuItem("Remove", new EventHandler(this.removeTorrentButton_Click)));
+            this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Start, new EventHandler(this.startTorrentButton_Click)));
+            this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Pause, new EventHandler(this.pauseTorrentButton_Click)));
+            this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Remove, new EventHandler(this.removeTorrentButton_Click)));
             if (Program.DaemonDescriptor.Version >= 1.5)
             {
-                this.torrentSelectionMenu.MenuItems.Add(new MenuItem("Remove and delete", new EventHandler(this.removeAndDeleteButton_Click)));
+                this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.RemoveAndDelete, new EventHandler(this.removeAndDeleteButton_Click)));
             }
-            this.torrentSelectionMenu.MenuItems.Add(new MenuItem("Recheck", new EventHandler(this.recheckTorrentButton_Click)));
+            this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Recheck, new EventHandler(this.recheckTorrentButton_Click)));
             this.torrentSelectionMenu.MenuItems.Add(new MenuItem("-"));
-            this.torrentSelectionMenu.MenuItems.Add(new MenuItem("Properties", new EventHandler(this.ShowTorrentPropsHandler)));
-            this.torrentSelectionMenu.MenuItems.Add(new MenuItem("Copy as CSV", new EventHandler(this.TorrentsToClipboardHandler)));
+            this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Properties, new EventHandler(this.ShowTorrentPropsHandler)));
+            this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.CopyAsCSV, new EventHandler(this.TorrentsToClipboardHandler)));
         }
 
         private void OpenGeoipDatabase()
@@ -170,7 +171,7 @@ namespace TransmissionRemoteDotnet
 
         private void Program_onTorrentCompleted(Torrent t)
         {
-            notifyIcon.ShowBalloonTip(LocalSettingsSingleton.BALLOON_TIMEOUT, t.Name, "This torrent has finished downloading.", ToolTipIcon.Info);
+            notifyIcon.ShowBalloonTip(LocalSettingsSingleton.BALLOON_TIMEOUT, t.Name, OtherStrings.TheTorrentHasFinishedDownloading, ToolTipIcon.Info);
         }
 
         private void Program_onTorrentsUpdated()
@@ -193,15 +194,15 @@ namespace TransmissionRemoteDotnet
             if (connected)
             {
                 CreateTorrentSelectionContextMenu();
-                trayMenu.MenuItems.Add("Start all", new EventHandler(this.startAllMenuItem_Click));
-                trayMenu.MenuItems.Add("Stop all", new EventHandler(this.stopAllMenuItem_Click));
+                trayMenu.MenuItems.Add(OtherStrings.StartAll, new EventHandler(this.startAllMenuItem_Click));
+                trayMenu.MenuItems.Add(OtherStrings.PauseAll, new EventHandler(this.stopAllMenuItem_Click));
                 trayMenu.MenuItems.Add("-");
                 if (Program.DaemonDescriptor.RpcVersion >= 4)
                 {
-                    trayMenu.MenuItems.Add("Display Statistics", new EventHandler(this.sessionStatsButton_Click));
+                    trayMenu.MenuItems.Add(OtherStrings.DisplayStatistics, new EventHandler(this.sessionStatsButton_Click));
                 }
-                trayMenu.MenuItems.Add("Disconnect", new EventHandler(this.disconnectButton_Click));
-                this.toolStripStatusLabel.Text = "Connected. Getting torrent information...";
+                trayMenu.MenuItems.Add(OtherStrings.Disconnect, new EventHandler(this.disconnectButton_Click));
+                this.toolStripStatusLabel.Text = OtherStrings.ConnectedGettingInfo;
                 this.Text = MainWindow.DEFAULT_WINDOW_TITLE + " - " + LocalSettingsSingleton.Instance.Host;
                 speedGraph.GetLineHandle("Download").Clear();
                 speedGraph.GetLineHandle("Upload").Clear();
@@ -223,8 +224,8 @@ namespace TransmissionRemoteDotnet
                 }
                 OneOrMoreTorrentsSelected(false);
                 OneTorrentsSelected(false);
-                trayMenu.MenuItems.Add("Connect", new EventHandler(this.connectButton_Click));
-                this.toolStripStatusLabel.Text = "Disconnected.";
+                trayMenu.MenuItems.Add(OtherStrings.Connect, new EventHandler(this.connectButton_Click));
+                this.toolStripStatusLabel.Text = OtherStrings.Disconnected;
                 this.Text = MainWindow.DEFAULT_WINDOW_TITLE;
                 lock (this.stateListBox)
                 {
@@ -399,7 +400,7 @@ namespace TransmissionRemoteDotnet
 
         public void ShowMustBeConnectedDialog(string[] args)
         {
-            if (MessageBox.Show("You must be connected to add torrents. Would you like to connect now?", "Not connected", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show(OtherStrings.MustBeConnected, OtherStrings.NotConnected, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Program.UploadArgs = args;
                 Connect();
@@ -486,12 +487,12 @@ namespace TransmissionRemoteDotnet
         private void RemoveTorrentsPrompt()
         {
             if (torrentListView.SelectedItems.Count == 1
-                && MessageBox.Show("Do you want to remove " + torrentListView.SelectedItems[0].Text + "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                && MessageBox.Show(String.Format(OtherStrings.ConfirmSingleRemove, torrentListView.SelectedItems[0].Text), OtherStrings.Confirm, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 RemoveTorrents(false);
             }
             else if (torrentListView.SelectedItems.Count > 1
-                && MessageBox.Show("You have selected " + torrentListView.SelectedItems.Count + " torrents for removal. Are you sure?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                && MessageBox.Show(String.Format(OtherStrings.ConfirmMultipleRemove, torrentListView.SelectedItems.Count), OtherStrings.Confirm, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 RemoveTorrents(false);
             }
@@ -502,12 +503,12 @@ namespace TransmissionRemoteDotnet
             if (Program.DaemonDescriptor.Version >= 1.5)
             {
                 if (torrentListView.SelectedItems.Count == 1
-                    && MessageBox.Show("Do you want to remove " + torrentListView.SelectedItems[0].Text + "?\r\n\r\nALL THE DATA FROM THIS TORRENT WILL BE REMOVED.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    && MessageBox.Show(String.Format(OtherStrings.ConfirmSingleRemoveAndDelete, torrentListView.SelectedItems[0].Text), OtherStrings.Confirm, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     RemoveTorrents(true);
                 }
                 else if (torrentListView.SelectedItems.Count > 1
-                    && MessageBox.Show("You have selected " + torrentListView.SelectedItems.Count + " torrents for removal. Are you sure?\r\n\r\nALL THE DATA FROM THESE TORRENTS WILL BE REMOVED.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    && MessageBox.Show(String.Format(OtherStrings.ConfirmSingleRemoveAndDelete, torrentListView.SelectedItems.Count), OtherStrings.Confirm, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     RemoveTorrents(true);
                 }
@@ -573,7 +574,7 @@ namespace TransmissionRemoteDotnet
         {
             if (Program.Connected)
                 Program.Connected = false;
-            toolStripStatusLabel.Text = "Connecting...";
+            toolStripStatusLabel.Text = OtherStrings.Connecting + "...";
             BackgroundWorker connectWorker = this.connectWorker = new BackgroundWorker();
             connectWorker.DoWork += new DoWorkEventHandler(connectWorker_DoWork);
             connectWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(connectWorker_RunWorkerCompleted);
@@ -738,7 +739,7 @@ namespace TransmissionRemoteDotnet
         private void addTorrentButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Filter = "BitTorrent Metafile (*.torrent)|*.torrent|All Files (*.*)|*.*";
+            openFile.Filter = OtherStrings.OpenFileFilter;
             openFile.RestoreDirectory = true;
             openFile.Multiselect = true;
             if (openFile.ShowDialog() == DialogResult.OK)
@@ -766,25 +767,10 @@ namespace TransmissionRemoteDotnet
                 LocalSettingsDialog.Instance.Show();
                 LocalSettingsDialog.Instance.BringToFront();
             }
-            else if (e.Control && e.KeyCode == Keys.P)
+            else if (e.Control && e.KeyCode == Keys.R && Program.Connected)
             {
-                LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-                if (settings.ProxyMode == ProxyMode.Auto && settings.ProxyHost.Length > 0)
-                {
-                    settings.ProxyMode = ProxyMode.Enabled;
-                    toolStripStatusLabel.Text = "Proxy enabled.";
-                }
-                else if (settings.ProxyMode == ProxyMode.Enabled || settings.ProxyMode == ProxyMode.Auto)
-                {
-                    settings.ProxyMode = ProxyMode.Disabled;
-                    toolStripStatusLabel.Text = "Proxy disabled.";
-                }
-                else
-                {
-                    settings.ProxyMode = ProxyMode.Auto;
-                    toolStripStatusLabel.Text = "Proxy dependent on IE settings.";
-                }
-                settings.Commit();
+                RemoteSettingsDialog.Instance.Show();
+                RemoteSettingsDialog.Instance.BringToFront();
             }
         }
 
@@ -963,7 +949,7 @@ namespace TransmissionRemoteDotnet
                 filesListView.SuspendLayout();
                 foreach (ListViewItem item in filesListView.SelectedItems)
                 {
-                    item.SubItems[5].Text = "High";
+                    item.SubItems[5].Text = OtherStrings.High;
                 }
                 filesListView.ResumeLayout();
             }
@@ -977,7 +963,7 @@ namespace TransmissionRemoteDotnet
                 filesListView.SuspendLayout();
                 foreach (ListViewItem item in filesListView.SelectedItems)
                 {
-                    item.SubItems[5].Text = "Low";
+                    item.SubItems[5].Text = OtherStrings.Low;
                 }
                 filesListView.ResumeLayout();
             }
@@ -991,7 +977,7 @@ namespace TransmissionRemoteDotnet
                 filesListView.SuspendLayout();
                 foreach (ListViewItem item in filesListView.SelectedItems)
                 {
-                    item.SubItems[5].Text = "Normal";
+                    item.SubItems[5].Text = OtherStrings.Normal;
                 }
                 filesListView.ResumeLayout();
             }
@@ -1005,7 +991,7 @@ namespace TransmissionRemoteDotnet
                 filesListView.SuspendLayout();
                 foreach (ListViewItem item in filesListView.SelectedItems)
                 {
-                    item.SubItems[4].Text = "Yes";
+                    item.SubItems[4].Text = OtherStrings.Yes;
                 }
                 filesListView.ResumeLayout();
             }
@@ -1019,7 +1005,7 @@ namespace TransmissionRemoteDotnet
                 filesListView.SuspendLayout();
                 foreach (ListViewItem item in filesListView.SelectedItems)
                 {
-                    item.SubItems[4].Text = "No";
+                    item.SubItems[4].Text = OtherStrings.No;
                 }
                 filesListView.ResumeLayout();
             }
@@ -1052,7 +1038,7 @@ namespace TransmissionRemoteDotnet
                 for (int i = 0; i < fileItems.Count; i++)
                 {
                     ListViewItem item = fileItems[i];
-                    if (item.SubItems[4].Text.Equals("Yes"))
+                    if (item.SubItems[4].Text.Equals(OtherStrings.Yes))
                     {
                         unwanted.Add(i);
                     }
@@ -1060,17 +1046,17 @@ namespace TransmissionRemoteDotnet
                     {
                         wanted.Add(i);
                     }
-                    switch (item.SubItems[5].Text)
+                    if (item.SubItems[5].Text.Equals(OtherStrings.High))
                     {
-                        case "High":
-                            high.Add(i);
-                            break;
-                        case "Normal":
-                            normal.Add(i);
-                            break;
-                        case "Low":
-                            low.Add(i);
-                            break;
+                        high.Add(i);
+                    }
+                    else if (item.SubItems[5].Text.Equals(OtherStrings.Normal))
+                    {
+                        normal.Add(i);
+                    }
+                    else if (item.SubItems[5].Text.Equals(OtherStrings.Low))
+                    {
+                        low.Add(i);
                     }
                 }
             }
@@ -1173,8 +1159,8 @@ namespace TransmissionRemoteDotnet
                 uploadedLabel.Text = t.UploadedString;
                 uploadLimitLabel.Text = t.UploadLimitMode ? Toolbox.KbpsString(t.UploadLimit) : "∞";
                 uploadRateLabel.Text = t.UploadRate;
-                seedersLabel.Text = String.Format("{0} of {1} connected", t.PeersSendingToUs, t.Seeders < 0 ? "?" : t.Seeders.ToString());
-                leechersLabel.Text = String.Format("{0} of {1} connected", t.PeersGettingFromUs, t.Leechers < 0 ? "?" : t.Leechers.ToString());
+                seedersLabel.Text = String.Format(OtherStrings.XOfYConnected, t.PeersSendingToUs, t.Seeders < 0 ? "?" : t.Seeders.ToString());
+                leechersLabel.Text = String.Format(OtherStrings.XOfYConnected, t.PeersGettingFromUs, t.Leechers < 0 ? "?" : t.Leechers.ToString());
                 ratioLabel.Text = t.RatioString;
                 progressBar.Value = (int)t.Percentage;
                 if (t.Pieces != null)
@@ -1188,7 +1174,7 @@ namespace TransmissionRemoteDotnet
                 }
                 else
                 {
-                    downloadedLabel.Text = String.Format("{0} ({1} valid)", t.HaveTotalString, Toolbox.GetFileSize(t.HaveValid));
+                    downloadedLabel.Text = String.Format(OtherStrings.DownloadedValid, t.HaveTotalString, Toolbox.GetFileSize(t.HaveValid));
                 }
                 downloadSpeedLabel.Text = t.DownloadRate;
                 downloadLimitLabel.Text = t.DownloadLimitMode ? Toolbox.KbpsString(t.DownloadLimit) : "∞";
@@ -1320,7 +1306,7 @@ namespace TransmissionRemoteDotnet
                 {
                     Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
                     TimeSpan ts = DateTime.Now.Subtract(t.Added);
-                    timeElapsedLabel.Text = ts.Ticks > 0 ? Toolbox.FormatTimespanLong(ts) : "Unknown (negative result)";
+                    timeElapsedLabel.Text = ts.Ticks > 0 ? Toolbox.FormatTimespanLong(ts) : OtherStrings.UnknownNegativeResult;
                 }
                 else
                 {
@@ -1511,7 +1497,7 @@ namespace TransmissionRemoteDotnet
             if (e.Result.GetType() == typeof(Exception))
             {
                 Exception ex = (Exception)e.Result;
-                MessageBox.Show(ex.Message, "Latest version check failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, OtherStrings.LatestVersionCheckFailed, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (e.Result.GetType() == typeof(Version))
             {
@@ -1519,15 +1505,15 @@ namespace TransmissionRemoteDotnet
                 Version thisVersion = System.Reflection.Assembly.GetEntryAssembly().GetName().Version;
                 if (latestVersion > thisVersion)
                 {
-                    if (MessageBox.Show(String.Format("There is a newer version ({0}.{1}) available. Would you like to visit the downloads page?", latestVersion.Major, latestVersion.Minor), "Upgrade available", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
+                    if (MessageBox.Show(String.Format(OtherStrings.NewerVersion, latestVersion.Major, latestVersion.Minor), OtherStrings.UpgradeAvailable, MessageBoxButtons.YesNo, MessageBoxIcon.Information)
                         == DialogResult.Yes)
                     {
-                        Process.Start("http://code.google.com/p/transmission-remote-dotnet/downloads/list");
+                        Process.Start(DOWNLOADS_PAGE);
                     }
                 }
                 else
                 {
-                    MessageBox.Show(String.Format("You are using the latest version ({0}.{1}).", thisVersion.Major, thisVersion.Minor), "No upgrade available", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(String.Format(OtherStrings.LatestVersion, thisVersion.Major, thisVersion.Minor), OtherStrings.NoUpgradeAvailable, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

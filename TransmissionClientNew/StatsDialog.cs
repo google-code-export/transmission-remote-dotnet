@@ -77,7 +77,7 @@ namespace TransmissionRemoteDotnet
                 uploadedBytesValue2.Text = Toolbox.GetFileSize(((JsonNumber)cumulativestats["uploadedBytes"]).ToInt64());
                 filesAddedValue2.Text = ((JsonNumber)cumulativestats["filesAdded"]).ToString();
                 sessionCountValue2.Text = ((JsonNumber)cumulativestats["sessionCount"]).ToString();
-                secondsActiveValue2.Text = ts.Ticks < 0 ? "Unknown (negative)" : Toolbox.FormatTimespanLong(ts);
+                secondsActiveValue2.Text = ts.Ticks < 0 ? OtherStrings.UnknownNegativeResult : Toolbox.FormatTimespanLong(ts);
             }
             catch (Exception ex)
             {

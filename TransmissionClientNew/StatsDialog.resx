@@ -117,16 +117,638 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="downloadedBytesLabel2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="downloadedBytesLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="downloadedBytesLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 13</value>
+  </data>
+  <data name="downloadedBytesLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="downloadedBytesLabel2.Text" xml:space="preserve">
+    <value>Downloaded bytes:</value>
+  </data>
+  <data name="&gt;&gt;downloadedBytesLabel2.Name" xml:space="preserve">
+    <value>downloadedBytesLabel2</value>
+  </data>
+  <data name="&gt;&gt;downloadedBytesLabel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;downloadedBytesLabel2.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;downloadedBytesLabel2.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="uploadedBytesLabel2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="uploadedBytesLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 53</value>
+  </data>
+  <data name="uploadedBytesLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 13</value>
+  </data>
+  <data name="uploadedBytesLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="uploadedBytesLabel2.Text" xml:space="preserve">
+    <value>Uploaded bytes:</value>
+  </data>
+  <data name="&gt;&gt;uploadedBytesLabel2.Name" xml:space="preserve">
+    <value>uploadedBytesLabel2</value>
+  </data>
+  <data name="&gt;&gt;uploadedBytesLabel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;uploadedBytesLabel2.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;uploadedBytesLabel2.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="CloseFormButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>365, 178</value>
+  </data>
+  <data name="CloseFormButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 23</value>
+  </data>
+  <data name="CloseFormButton.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="CloseFormButton.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="&gt;&gt;CloseFormButton.Name" xml:space="preserve">
+    <value>CloseFormButton</value>
+  </data>
+  <data name="&gt;&gt;CloseFormButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CloseFormButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CloseFormButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="statsWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="secondsActiveValue2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="secondsActiveValue2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 138</value>
+  </data>
+  <data name="secondsActiveValue2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="secondsActiveValue2.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="secondsActiveValue2.Text" xml:space="preserve">
+    <value>Querying...</value>
+  </data>
+  <data name="&gt;&gt;secondsActiveValue2.Name" xml:space="preserve">
+    <value>secondsActiveValue2</value>
+  </data>
+  <data name="&gt;&gt;secondsActiveValue2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;secondsActiveValue2.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;secondsActiveValue2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="sessionCountValue2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="sessionCountValue2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 110</value>
+  </data>
+  <data name="sessionCountValue2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="sessionCountValue2.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="sessionCountValue2.Text" xml:space="preserve">
+    <value>Querying...</value>
+  </data>
+  <data name="&gt;&gt;sessionCountValue2.Name" xml:space="preserve">
+    <value>sessionCountValue2</value>
+  </data>
+  <data name="&gt;&gt;sessionCountValue2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sessionCountValue2.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;sessionCountValue2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="filesAddedValue2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="filesAddedValue2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 82</value>
+  </data>
+  <data name="filesAddedValue2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="filesAddedValue2.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="filesAddedValue2.Text" xml:space="preserve">
+    <value>Querying...</value>
+  </data>
+  <data name="&gt;&gt;filesAddedValue2.Name" xml:space="preserve">
+    <value>filesAddedValue2</value>
+  </data>
+  <data name="&gt;&gt;filesAddedValue2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;filesAddedValue2.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;filesAddedValue2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="uploadedBytesValue2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="uploadedBytesValue2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 53</value>
+  </data>
+  <data name="uploadedBytesValue2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="uploadedBytesValue2.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="uploadedBytesValue2.Text" xml:space="preserve">
+    <value>Querying...</value>
+  </data>
+  <data name="&gt;&gt;uploadedBytesValue2.Name" xml:space="preserve">
+    <value>uploadedBytesValue2</value>
+  </data>
+  <data name="&gt;&gt;uploadedBytesValue2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;uploadedBytesValue2.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;uploadedBytesValue2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="downloadedBytesValue2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="downloadedBytesValue2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 25</value>
+  </data>
+  <data name="downloadedBytesValue2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="downloadedBytesValue2.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="downloadedBytesValue2.Text" xml:space="preserve">
+    <value>Querying...</value>
+  </data>
+  <data name="&gt;&gt;downloadedBytesValue2.Name" xml:space="preserve">
+    <value>downloadedBytesValue2</value>
+  </data>
+  <data name="&gt;&gt;downloadedBytesValue2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;downloadedBytesValue2.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;downloadedBytesValue2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="secondsActiveLabel2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="secondsActiveLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 138</value>
+  </data>
+  <data name="secondsActiveLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 13</value>
+  </data>
+  <data name="secondsActiveLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="secondsActiveLabel2.Text" xml:space="preserve">
+    <value>Seconds active</value>
+  </data>
+  <data name="&gt;&gt;secondsActiveLabel2.Name" xml:space="preserve">
+    <value>secondsActiveLabel2</value>
+  </data>
+  <data name="&gt;&gt;secondsActiveLabel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;secondsActiveLabel2.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;secondsActiveLabel2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="sessionCountLabel2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="sessionCountLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 110</value>
+  </data>
+  <data name="sessionCountLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="sessionCountLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="sessionCountLabel2.Text" xml:space="preserve">
+    <value>Session Count</value>
+  </data>
+  <data name="&gt;&gt;sessionCountLabel2.Name" xml:space="preserve">
+    <value>sessionCountLabel2</value>
+  </data>
+  <data name="&gt;&gt;sessionCountLabel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sessionCountLabel2.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;sessionCountLabel2.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="filesAddedLabel2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="filesAddedLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 82</value>
+  </data>
+  <data name="filesAddedLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 13</value>
+  </data>
+  <data name="filesAddedLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="filesAddedLabel2.Text" xml:space="preserve">
+    <value>Files added:</value>
+  </data>
+  <data name="&gt;&gt;filesAddedLabel2.Name" xml:space="preserve">
+    <value>filesAddedLabel2</value>
+  </data>
+  <data name="&gt;&gt;filesAddedLabel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;filesAddedLabel2.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;filesAddedLabel2.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>243, 5</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 167</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Cumulative Stats</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>134, 17</value>
+  </metadata>
+  <data name="secondsActiveValue1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="secondsActiveValue1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 138</value>
+  </data>
+  <data name="secondsActiveValue1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="secondsActiveValue1.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="secondsActiveValue1.Text" xml:space="preserve">
+    <value>Querying...</value>
+  </data>
+  <data name="&gt;&gt;secondsActiveValue1.Name" xml:space="preserve">
+    <value>secondsActiveValue1</value>
+  </data>
+  <data name="&gt;&gt;secondsActiveValue1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;secondsActiveValue1.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;secondsActiveValue1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="sessionCountValue1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="sessionCountValue1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 110</value>
+  </data>
+  <data name="sessionCountValue1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="sessionCountValue1.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="sessionCountValue1.Text" xml:space="preserve">
+    <value>Querying...</value>
+  </data>
+  <data name="&gt;&gt;sessionCountValue1.Name" xml:space="preserve">
+    <value>sessionCountValue1</value>
+  </data>
+  <data name="&gt;&gt;sessionCountValue1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sessionCountValue1.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;sessionCountValue1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="filesAddedValue1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="filesAddedValue1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 82</value>
+  </data>
+  <data name="filesAddedValue1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="filesAddedValue1.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="filesAddedValue1.Text" xml:space="preserve">
+    <value>Querying...</value>
+  </data>
+  <data name="&gt;&gt;filesAddedValue1.Name" xml:space="preserve">
+    <value>filesAddedValue1</value>
+  </data>
+  <data name="&gt;&gt;filesAddedValue1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;filesAddedValue1.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;filesAddedValue1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="uploadedBytesValue1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="uploadedBytesValue1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 53</value>
+  </data>
+  <data name="uploadedBytesValue1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="uploadedBytesValue1.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="uploadedBytesValue1.Text" xml:space="preserve">
+    <value>Querying...</value>
+  </data>
+  <data name="&gt;&gt;uploadedBytesValue1.Name" xml:space="preserve">
+    <value>uploadedBytesValue1</value>
+  </data>
+  <data name="&gt;&gt;uploadedBytesValue1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;uploadedBytesValue1.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;uploadedBytesValue1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="downloadedBytesValue1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="downloadedBytesValue1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 25</value>
+  </data>
+  <data name="downloadedBytesValue1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="downloadedBytesValue1.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="downloadedBytesValue1.Text" xml:space="preserve">
+    <value>Querying...</value>
+  </data>
+  <data name="&gt;&gt;downloadedBytesValue1.Name" xml:space="preserve">
+    <value>downloadedBytesValue1</value>
+  </data>
+  <data name="&gt;&gt;downloadedBytesValue1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;downloadedBytesValue1.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;downloadedBytesValue1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="secondsActiveLabel1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="secondsActiveLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 138</value>
+  </data>
+  <data name="secondsActiveLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 13</value>
+  </data>
+  <data name="secondsActiveLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="secondsActiveLabel1.Text" xml:space="preserve">
+    <value>Seconds active</value>
+  </data>
+  <data name="&gt;&gt;secondsActiveLabel1.Name" xml:space="preserve">
+    <value>secondsActiveLabel1</value>
+  </data>
+  <data name="&gt;&gt;secondsActiveLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;secondsActiveLabel1.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;secondsActiveLabel1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="sessionCountLabel1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="sessionCountLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 110</value>
+  </data>
+  <data name="sessionCountLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="sessionCountLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="sessionCountLabel1.Text" xml:space="preserve">
+    <value>Session Count</value>
+  </data>
+  <data name="&gt;&gt;sessionCountLabel1.Name" xml:space="preserve">
+    <value>sessionCountLabel1</value>
+  </data>
+  <data name="&gt;&gt;sessionCountLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sessionCountLabel1.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;sessionCountLabel1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="filesAddedLabel1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="filesAddedLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 82</value>
+  </data>
+  <data name="filesAddedLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 13</value>
+  </data>
+  <data name="filesAddedLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="filesAddedLabel1.Text" xml:space="preserve">
+    <value>Files added:</value>
+  </data>
+  <data name="&gt;&gt;filesAddedLabel1.Name" xml:space="preserve">
+    <value>filesAddedLabel1</value>
+  </data>
+  <data name="&gt;&gt;filesAddedLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;filesAddedLabel1.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;filesAddedLabel1.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="downloadedBytesLabel1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="downloadedBytesLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="downloadedBytesLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 13</value>
+  </data>
+  <data name="downloadedBytesLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="downloadedBytesLabel1.Text" xml:space="preserve">
+    <value>Downloaded bytes:</value>
+  </data>
+  <data name="&gt;&gt;downloadedBytesLabel1.Name" xml:space="preserve">
+    <value>downloadedBytesLabel1</value>
+  </data>
+  <data name="&gt;&gt;downloadedBytesLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;downloadedBytesLabel1.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;downloadedBytesLabel1.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="uploadedBytesLabel1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="uploadedBytesLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 53</value>
+  </data>
+  <data name="uploadedBytesLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 13</value>
+  </data>
+  <data name="uploadedBytesLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="uploadedBytesLabel1.Text" xml:space="preserve">
+    <value>Uploaded bytes:</value>
+  </data>
+  <data name="&gt;&gt;uploadedBytesLabel1.Name" xml:space="preserve">
+    <value>uploadedBytesLabel1</value>
+  </data>
+  <data name="&gt;&gt;uploadedBytesLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;uploadedBytesLabel1.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;uploadedBytesLabel1.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 5</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 167</value>
+  </data>
+  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Current Session Stats</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>481, 208</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
@@ -150,5 +772,26 @@
         lWIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIABAAD4HwAAgAEAAIAB
         AACAAQAAgAEAAA==
 </value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Transmission Daemon Statistics</value>
+  </data>
+  <data name="&gt;&gt;statsWorker.Name" xml:space="preserve">
+    <value>statsWorker</value>
+  </data>
+  <data name="&gt;&gt;statsWorker.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timer1.Name" xml:space="preserve">
+    <value>timer1</value>
+  </data>
+  <data name="&gt;&gt;timer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>StatsDialog</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

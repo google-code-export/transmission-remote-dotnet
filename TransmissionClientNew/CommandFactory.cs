@@ -36,7 +36,7 @@ namespace TransmissionRemoteDotnet
                 JsonObject jsonResponse = (JsonObject)JsonConvert.Import(str_response);
                 if ((string)jsonResponse["result"] != "success")
                 {
-                    return new ErrorCommand("Unsuccessful request", (string)jsonResponse["result"], true);
+                    return new ErrorCommand(OtherStrings.UnsuccessfulRequest, (string)jsonResponse["result"], true);
                 }
                 switch (((JsonNumber)jsonResponse[ProtocolConstants.KEY_TAG]).ToInt16())
                 {
@@ -54,11 +54,11 @@ namespace TransmissionRemoteDotnet
             }
             catch (InvalidCastException)
             {
-                return new ErrorCommand("Unable to parse the server response (possible protocol violation)", str_response != null ? str_response : "Null", false);
+                return new ErrorCommand(OtherStrings.UnableToParse, str_response != null ? str_response : "Null", false);
             }
             catch (JsonException ex)
             {
-                return new ErrorCommand("Unable to parse the server response (" + ex.Message + ")", str_response, false);
+                return new ErrorCommand(String.Format("{0} ({1})", OtherStrings.UnableToParse, ex.GetType()), str_response, false);
             }
             catch (Exception ex)
             {

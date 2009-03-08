@@ -59,7 +59,7 @@ namespace TransmissionRemoteDotnet.Commands
             decimal progress = Toolbox.CalcPercentage(bytesCompleted, length);
             item.SubItems.Add(progress + "%");
             item.SubItems[3].Tag = progress;
-            item.SubItems.Add(wanted ? "No" : "Yes");
+            item.SubItems.Add(wanted ? OtherStrings.No : OtherStrings.Yes);
             item.SubItems.Add(FormatPriority(priority));
             lock (Program.Form.FileItems)
             {
@@ -77,15 +77,15 @@ namespace TransmissionRemoteDotnet.Commands
             short s = n.ToInt16();
             if (s < 0)
             {
-                return "Low";
+                return OtherStrings.Low;
             }
             else if (s > 0)
             {
-                return "High";
+                return OtherStrings.High;
             }
             else
             {
-                return "Normal";
+                return OtherStrings.Normal;
             }
         }
     }

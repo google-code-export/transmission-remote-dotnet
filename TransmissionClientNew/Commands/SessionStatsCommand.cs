@@ -19,7 +19,6 @@ namespace TransmissionRemoteDotnet.Commmands
         public void Execute()
         {
             StatsDialog.StaticUpdateStats(this.stats);
-            //there is a bug: http://trac.transmissionbt.com/ticket/1655
         }
     }
 }

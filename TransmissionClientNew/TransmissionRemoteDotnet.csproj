@@ -117,6 +117,11 @@
     <Compile Include="LocalSettingsDialog.Designer.cs">
       <DependentUpon>LocalSettingsDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="OtherStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OtherStrings.resx</DependentUpon>
+    </Compile>
     <Compile Include="RegistryLocalSettingsSingleton.cs" />
     <Compile Include="Comparers\PeersListViewColumnSorter.cs" />
     <Compile Include="PiecesGraph.cs">
@@ -135,6 +140,10 @@
     <EmbeddedResource Include="LocalSettingsDialog.resx">
       <DependentUpon>LocalSettingsDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OtherStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Flags.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">

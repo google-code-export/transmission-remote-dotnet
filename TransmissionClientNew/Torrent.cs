@@ -300,15 +300,15 @@ namespace TransmissionRemoteDotnet
                 switch (this.StatusCode)
                 {
                     case 1:
-                        return "Waiting to check";
+                        return OtherStrings.WaitingToCheck;
                     case 2:
-                        return "Checking";
+                        return OtherStrings.Checking;
                     case 4:
-                        return "Downloading";
+                        return OtherStrings.Downloading;
                     case 8:
-                        return "Seeding";
+                        return OtherStrings.Seeding;
                     case 16:
-                        return "Paused";
+                        return OtherStrings.Paused;
                     default:
                         return "Unknown";
                 }

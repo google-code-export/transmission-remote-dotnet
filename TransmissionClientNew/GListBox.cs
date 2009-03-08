@@ -36,8 +36,8 @@ namespace TransmissionRemoteDotnet
                     if (e.ClipRectangle.IntersectsWith(irect))
                     {
                         if ((this.SelectionMode == SelectionMode.One && this.SelectedIndex == i)
-                       || (this.SelectionMode == SelectionMode.MultiSimple && this.SelectedIndices.Contains(i))
-                        || (this.SelectionMode == SelectionMode.MultiExtended && this.SelectedIndices.Contains(i)))
+                          || (this.SelectionMode == SelectionMode.MultiSimple && this.SelectedIndices.Contains(i))
+                          || (this.SelectionMode == SelectionMode.MultiExtended && this.SelectedIndices.Contains(i)))
                         {
                             OnDrawItem(new DrawItemEventArgs(e.Graphics, this.Font,
                                 irect, i,
