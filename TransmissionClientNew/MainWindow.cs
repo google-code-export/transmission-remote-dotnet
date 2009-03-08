@@ -571,6 +571,8 @@ namespace TransmissionRemoteDotnet
 
         public void Connect()
         {
+            if (Program.Connected)
+                Program.Connected = false;
             toolStripStatusLabel.Text = "Connecting...";
             BackgroundWorker connectWorker = this.connectWorker = new BackgroundWorker();
             connectWorker.DoWork += new DoWorkEventHandler(connectWorker_DoWork);
