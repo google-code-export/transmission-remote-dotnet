@@ -133,7 +133,7 @@ namespace TransmissionRemoteDotnet {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You have selected {0} torrents for removal. Are you sure?\r\n\r\nALL THE DATA FROM THESE TORRENTS WILL BE REMOVED.&quot;.
+        ///   Looks up a localized string similar to You have selected {0} torrents for removal. Are you sure?{1}ALL THE DATA FROM THESE TORRENTS WILL BE REMOVED.&quot;.
         /// </summary>
         internal static string ConfirmMultipleRemoveAndDelete {
             get {
@@ -151,7 +151,7 @@ namespace TransmissionRemoteDotnet {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you want to remove {0}?\r\n\r\nALL THE DATA FROM THIS TORRENT WILL BE REMOVED.&quot;.
+        ///   Looks up a localized string similar to Do you want to remove and delete {0}?{1}ALL THE DATA FROM THIS TORRENT WILL BE REMOVED.&quot;.
         /// </summary>
         internal static string ConfirmSingleRemoveAndDelete {
             get {
