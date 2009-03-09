@@ -176,12 +176,16 @@ namespace TransmissionRemoteDotnet
 
         private void Program_onTorrentsUpdated()
         {
+            Torrent t = null;
             lock (torrentListView)
             {
-                UpdateInfoPanel(false);
-                torrentListView.Enabled = true;
-                mainVerticalSplitContainer.Panel1Collapsed = false;
+                if (torrentListView.SelectedItems.Count == 1)
+                    t = (Torrent)torrentListView.SelectedItems[0].Tag;
             }
+            if (t != null)
+                UpdateInfoPanel(false, t);
+            torrentListView.Enabled = true;
+            mainVerticalSplitContainer.Panel1Collapsed = false;
             refreshTimer.Enabled = true;
             FilterByStateOrTracker();
             torrentListView.Sort();
@@ -223,7 +227,7 @@ namespace TransmissionRemoteDotnet
                     this.torrentListView.Items.Clear();
                 }
                 OneOrMoreTorrentsSelected(false);
-                OneTorrentsSelected(false);
+                OneTorrentsSelected(false, null);
                 trayMenu.MenuItems.Add(OtherStrings.Connect, new EventHandler(this.connectButton_Click));
                 this.toolStripStatusLabel.Text = OtherStrings.Disconnected;
                 this.Text = MainWindow.DEFAULT_WINDOW_TITLE;
@@ -622,12 +626,11 @@ namespace TransmissionRemoteDotnet
                 = oneOrMore;
         }
 
-        private void OneTorrentsSelected(bool one)
+        private void OneTorrentsSelected(bool one, Torrent t)
         {
             if (one)
             {
-                UpdateInfoPanel(true);
-                Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
+                UpdateInfoPanel(true, t);
                 CreateActionWorker().RunWorkerAsync(Requests.FilesAndPriorities(t.Id));
             }
             else
@@ -674,15 +677,18 @@ namespace TransmissionRemoteDotnet
 
         private void torrentListView_SelectedIndexChanged(object sender, EventArgs e)
         {
+            bool one, oneOrMore;
+            Torrent t = null;
             lock (torrentListView)
             {
-                bool oneOrMore = torrentListView.SelectedItems.Count > 0;
-                bool one = torrentListView.SelectedItems.Count == 1;
-                torrentListView.ContextMenu = oneOrMore ? this.torrentSelectionMenu : this.noTorrentSelectionMenu;
-                OneOrMoreTorrentsSelected(oneOrMore);
-                peersListView.Tag = 0;
-                OneTorrentsSelected(one);
+                if (oneOrMore = torrentListView.SelectedItems.Count > 0)
+                    t = (Torrent)torrentListView.SelectedItems[0].Tag;
+                one = torrentListView.SelectedItems.Count == 1;
             }
+            peersListView.Tag = 0;
+            torrentListView.ContextMenu = oneOrMore ? this.torrentSelectionMenu : this.noTorrentSelectionMenu;
+            OneOrMoreTorrentsSelected(oneOrMore);
+            OneTorrentsSelected(one, t);
         }
 
         private void ShowTorrentPropsHandler(object sender, EventArgs e)
@@ -1117,11 +1123,8 @@ namespace TransmissionRemoteDotnet
         }
 
         // lock torrentListView BEFORE calling this method
-        public void UpdateInfoPanel(bool first)
+        public void UpdateInfoPanel(bool first, Torrent t)
         {
-            if (torrentListView.SelectedItems.Count == 1)
-            {
-                Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
                 if (first)
                 {
                     generalTorrentNameGroupBox.Text = peersTorrentNameGroupBox.Text
@@ -1238,26 +1241,30 @@ namespace TransmissionRemoteDotnet
                         }
                         item.Tag = peersListView.Tag;
                     }
-                    Queue<ListViewItem> removalQueue = new Queue<ListViewItem>();
                     lock (peersListView)
                     {
+                        Queue<ListViewItem> removalQueue = null;
                         foreach (ListViewItem item in peersListView.Items)
                         {
                             if ((int)item.Tag != (int)peersListView.Tag)
                             {
+                                if (removalQueue == null)
+                                    removalQueue = new Queue<ListViewItem>();
                                 removalQueue.Enqueue(item);
                             }
                         }
-                        foreach (ListViewItem item in removalQueue)
+                        if (removalQueue != null)
                         {
-                            peersListView.Items.Remove(item);
+                            foreach (ListViewItem item in removalQueue)
+                            {
+                                peersListView.Items.Remove(item);
+                            }
                         }
                     }
                     peersListView.Sort();
                     Toolbox.StripeListView(peersListView);
                     peersListView.ResumeLayout();
                 }
-            }
         }
 
         private BackgroundWorker CreateHostnameResolutionWorker()
