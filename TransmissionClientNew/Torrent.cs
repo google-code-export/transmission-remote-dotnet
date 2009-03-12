@@ -335,7 +335,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_DOWNLOADLIMIT]).ToInt32();
+                return ((JsonNumber)info[Program.DaemonDescriptor.Revision >= 8021 ? ProtocolConstants.FIELD_SPEEDLIMITDOWN : ProtocolConstants.FIELD_DOWNLOADLIMIT]).ToInt32();
             }
         }
 
@@ -343,7 +343,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_DOWNLOADLIMITMODE]).ToBoolean();
+                return ((JsonNumber)info[Program.DaemonDescriptor.Revision >= 8021 ? ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED : ProtocolConstants.FIELD_DOWNLOADLIMITMODE]).ToBoolean();
             }
         }
 
@@ -351,7 +351,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_UPLOADLIMIT]).ToInt32();
+                return ((JsonNumber)info[Program.DaemonDescriptor.Revision >= 8021 ? ProtocolConstants.FIELD_SPEEDLIMITUP : ProtocolConstants.FIELD_UPLOADLIMIT]).ToInt32();
             }
         }
 
@@ -359,7 +359,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_UPLOADLIMITMODE]).ToBoolean();
+                return ((JsonNumber)info[Program.DaemonDescriptor.Revision >= 8021 ? ProtocolConstants.FIELD_SPEEDLIMITUPENABLED : ProtocolConstants.FIELD_UPLOADLIMITMODE]).ToBoolean();
             }
         }
 

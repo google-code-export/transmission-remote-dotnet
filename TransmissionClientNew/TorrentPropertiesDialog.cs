@@ -31,11 +31,11 @@ namespace TransmissionRemoteDotnet
                 ids.Put(t.Id);
             }
             arguments.Put(ProtocolConstants.KEY_IDS, ids);
-            arguments.Put("speed-limit-up-enabled", uploadLimitEnableField.Checked);
-            arguments.Put("speed-limit-up", uploadLimitField.Value);
-            arguments.Put("speed-limit-down-enabled", downloadLimitEnableField.Checked);
-            arguments.Put("speed-limit-down", downloadLimitField.Value);
-            arguments.Put("peer-limit", peerLimitValue.Value);
+            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITUPENABLED, uploadLimitEnableField.Checked);
+            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITUP, uploadLimitField.Value);
+            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED, downloadLimitEnableField.Checked);
+            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITDOWN, downloadLimitField.Value);
+            arguments.Put(ProtocolConstants.FIELD_PEERLIMIT, peerLimitValue.Value);
             request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
             request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
             Program.Form.CreateActionWorker().RunWorkerAsync(request);

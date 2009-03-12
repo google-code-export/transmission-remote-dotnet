@@ -111,7 +111,7 @@ namespace TransmissionRemoteDotnet
             arguments.Put("port", IncomingPortValue.Value);
             arguments.Put("port-forwarding-enabled", PortForward.Checked);
             arguments.Put("pex-allowed", PEXcheckBox.Checked);
-            arguments.Put("peer-limit", PeerLimitValue.Value);
+            arguments.Put(ProtocolConstants.FIELD_PEERLIMIT, PeerLimitValue.Value);
             switch (EncryptionCombobox.SelectedIndex)
             {
                 case 1:
@@ -124,10 +124,10 @@ namespace TransmissionRemoteDotnet
                     arguments.Put("encryption", "tolerated");
                     break;
             }
-            arguments.Put("speed-limit-up-enabled", LimitUploadCheckBox.Checked);
-            arguments.Put("speed-limit-up", LimitUploadValue.Value);
-            arguments.Put("speed-limit-down-enabled", LimitDownloadCheckBox.Checked);
-            arguments.Put("speed-limit-down", LimitDownloadValue.Value);
+            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITUPENABLED, LimitUploadCheckBox.Checked);
+            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITUP, LimitUploadValue.Value);
+            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED, LimitDownloadCheckBox.Checked);
+            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITDOWN, LimitDownloadValue.Value);
             arguments.Put("download-dir", DownloadToField.Text);
             request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
             request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
