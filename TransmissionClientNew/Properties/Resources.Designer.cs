@@ -249,6 +249,13 @@ namespace TransmissionRemoteDotnet.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap unrar {
+            get {
+                object obj = ResourceManager.GetObject("unrar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap up16 {
             get {
                 object obj = ResourceManager.GetObject("up16", resourceCulture);

@@ -387,6 +387,14 @@ namespace TransmissionRemoteDotnet
             }
         }
 
+        public string DownloadDir
+        {
+            get
+            {
+                return (string)info[ProtocolConstants.FIELD_DOWNLOADDIR];
+            }
+        }
+
         public string GetShortETA()
         {
             return GetETA(true);

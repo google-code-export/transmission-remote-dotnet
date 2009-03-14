@@ -169,6 +169,7 @@ namespace TransmissionRemoteDotnet
                 ProtocolConstants.FIELD_CREATOR,
                 ProtocolConstants.FIELD_TRACKERS,
                 ProtocolConstants.FIELD_HASHSTRING,
+                ProtocolConstants.FIELD_DOWNLOADDIR,
                 /*"sizeWhenDone",, "isPrivate",
                 "hashString", "error",,
                 "peersKnown"*/

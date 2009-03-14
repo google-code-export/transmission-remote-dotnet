@@ -80,6 +80,7 @@ namespace TransmissionRemoteDotnet
             FIELD_SWARMSPEED = "swarmSpeed",
             FIELD_DATECREATED = "dateCreated",
             FIELD_HASHSTRING = "hashString",
+            FIELD_DOWNLOADDIR = "downloadDir",
             FIELD_RECHECKPROGRESS = "recheckProgress";
     }
 }

@@ -147,8 +147,8 @@
             this.configureTorrentButton = new System.Windows.Forms.ToolStripButton();
             this.removeTorrentButton = new System.Windows.Forms.ToolStripButton();
             this.removeAndDeleteButton = new System.Windows.Forms.ToolStripButton();
+            this.extractButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.localConfigureButton = new System.Windows.Forms.ToolStripButton();
             this.remoteConfigureButton = new System.Windows.Forms.ToolStripButton();
             this.sessionStatsButton = new System.Windows.Forms.ToolStripButton();
@@ -962,8 +962,8 @@
             this.configureTorrentButton,
             this.removeTorrentButton,
             this.removeAndDeleteButton,
+            this.extractButton,
             this.toolStripSeparator2,
-            this.toolStripSeparator3,
             this.localConfigureButton,
             this.remoteConfigureButton,
             this.sessionStatsButton});
@@ -1065,15 +1065,18 @@
             this.removeAndDeleteButton.Name = "removeAndDeleteButton";
             this.removeAndDeleteButton.Click += new System.EventHandler(this.removeAndDeleteButton_Click);
             // 
+            // extractButton
+            // 
+            this.extractButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.extractButton, "extractButton");
+            this.extractButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.unrar;
+            this.extractButton.Name = "extractButton";
+            this.extractButton.Click += new System.EventHandler(this.extractButton_Click);
+            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             // 
             // localConfigureButton
             // 
@@ -1410,6 +1413,7 @@
 
         #endregion
 
+        private System.Windows.Forms.ToolStripButton extractButton;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
@@ -1445,7 +1449,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton removeTorrentButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton localConfigureButton;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton remoteConfigureButton;

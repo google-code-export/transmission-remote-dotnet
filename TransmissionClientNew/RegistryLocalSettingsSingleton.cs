@@ -46,7 +46,10 @@ namespace TransmissionRemoteDotnet
             REGKEY_STARTEDBALLOON = "startedBalloon",
             REGKEY_COMPLETEDBALLOON = "completedBalloon",
             REGKEY_MINONCLOSE = "minOnClose",
+            REGKEY_PLINKPATH = "plinkPath",
+            REGKEY_PLINKCMD = "plinkCmd",
             REGKEY_CUSTOMPATH = "customPath";
+            
 
         private static LocalSettingsSingleton instance = null;
         private static readonly object padlock = new object();
@@ -409,6 +412,30 @@ namespace TransmissionRemoteDotnet
             set
             {
                 this.profileConfMap[REGKEY_PROXYHOST] = value;
+            }
+        }
+
+        public string PlinkPath
+        {
+            get
+            {
+                return this.rootConfMap.ContainsKey(REGKEY_PLINKPATH) ? (string)this.rootConfMap[REGKEY_PLINKPATH] : @"c:\Program Files\PuTTY\plink.exe";
+            }
+            set
+            {
+                this.rootConfMap[REGKEY_PLINKPATH] = value;
+            }
+        }
+
+        public string PlinkCmd
+        {
+            get
+            {
+                return rootConfMap.ContainsKey(REGKEY_PLINKCMD) ? (string)rootConfMap[REGKEY_PLINKCMD] : null;
+            }
+            set
+            {
+                rootConfMap[REGKEY_PLINKCMD] = value;
             }
         }
 

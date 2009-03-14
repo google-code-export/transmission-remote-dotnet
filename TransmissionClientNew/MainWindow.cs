@@ -257,7 +257,8 @@ namespace TransmissionRemoteDotnet
                 = remoteSettingsToolStripMenuItem.Visible = fileMenuItemSeperator1.Visible
                 = addTorrentFromUrlToolStripMenuItem.Visible = startTorrentButton.Visible
                 = refreshTimer.Enabled = recheckTorrentButton.Visible
-                = speedGraph.Enabled = connected;
+                = speedGraph.Enabled = toolStripSeparator2.Visible = connected;
+            extractButton.Visible = connected && LocalSettingsSingleton.Instance.PlinkCmd != null;
             removeAndDeleteButton.Visible = connected && Program.DaemonDescriptor.Version >= 1.5;
             sessionStatsButton.Visible = connected && Program.DaemonDescriptor.RpcVersion >= 4;
         }
@@ -672,6 +673,7 @@ namespace TransmissionRemoteDotnet
                     = filesTimer.Enabled = downloadProgressLabel.Enabled
                     = generalTorrentNameGroupBox.Enabled
                     = piecesLabel.Enabled
+                    = extractButton.Enabled
                     = one;
         }
 
@@ -1553,6 +1555,22 @@ namespace TransmissionRemoteDotnet
         {
             torrentAndTabsSplitContainer.Panel2Collapsed = !torrentAndTabsSplitContainer.Panel2Collapsed;
             showDetailsPanelToolStripMenuItem.Checked = !torrentAndTabsSplitContainer.Panel2Collapsed;
+        }
+
+        private void extractButton_Click(object sender, EventArgs e)
+        {
+            if (torrentListView.SelectedItems.Count > 0)
+            {
+                try
+                {
+                    PlinkCmd pu = new PlinkCmd((Torrent)torrentListView.SelectedItems[0].Tag);
+                    pu.Start();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Unable to run plink", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

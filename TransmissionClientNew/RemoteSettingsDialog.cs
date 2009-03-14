@@ -58,10 +58,10 @@ namespace TransmissionRemoteDotnet
             {
                 JsonObject settings = (JsonObject)Program.DaemonDescriptor.SessionData;
                 DownloadToField.Text = (string)settings["download-dir"];
-                LimitDownloadValue.Enabled = LimitDownloadCheckBox.Checked = ((JsonNumber)settings["speed-limit-down-enabled"]).ToBoolean();
-                SetLimitField(((JsonNumber)settings["speed-limit-down"]).ToInt32(), LimitDownloadValue);
-                LimitUploadValue.Enabled = LimitUploadCheckBox.Checked = ((JsonNumber)settings["speed-limit-up-enabled"]).ToBoolean();
-                SetLimitField(((JsonNumber)settings["speed-limit-up"]).ToInt32(), LimitUploadValue);
+                LimitDownloadValue.Enabled = LimitDownloadCheckBox.Checked = ((JsonNumber)settings[ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED]).ToBoolean();
+                SetLimitField(((JsonNumber)settings[ProtocolConstants.FIELD_SPEEDLIMITDOWN]).ToInt32(), LimitDownloadValue);
+                LimitUploadValue.Enabled = LimitUploadCheckBox.Checked = ((JsonNumber)settings[ProtocolConstants.FIELD_SPEEDLIMITUPENABLED]).ToBoolean();
+                SetLimitField(((JsonNumber)settings[ProtocolConstants.FIELD_SPEEDLIMITUP]).ToInt32(), LimitUploadValue);
                 IncomingPortValue.Value = ((JsonNumber)settings["port"]).ToInt32();
                 PortForward.Checked = ((JsonNumber)settings["port-forwarding-enabled"]).ToBoolean();
                 string enc = settings["encryption"] as string;

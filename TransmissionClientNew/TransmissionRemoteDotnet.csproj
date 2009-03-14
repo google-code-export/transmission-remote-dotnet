@@ -122,6 +122,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OtherStrings.resx</DependentUpon>
     </Compile>
+    <Compile Include="PlinkCmd.cs" />
     <Compile Include="RegistryLocalSettingsSingleton.cs" />
     <Compile Include="Comparers\PeersListViewColumnSorter.cs" />
     <Compile Include="PiecesGraph.cs">
@@ -280,6 +281,7 @@
     <None Include="Resources\messagebox_warning.png" />
     <None Include="Resources\hwinfo.png" />
     <None Include="Resources\kgpg_edit.png" />
+    <None Include="Resources\tar.png" />
     <Content Include="transmission_large.ico" />
   </ItemGroup>
   <ItemGroup>
