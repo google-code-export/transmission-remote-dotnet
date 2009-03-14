@@ -11,14 +11,16 @@ namespace TransmissionRemoteDotnet
     {
         public static void Start(Torrent t)
         {
-            string fullPath = String.Format("{0}/{1}", t.DownloadDir, t.Name);
             Process.Start(
                 // plink path
                 LocalSettingsSingleton.Instance.PlinkPath,
                 // arguments
-                String.Format("\"{0}\" \"{1}\"",
+                String.Format(
+                    "\"{0}\" \"{1}\"",
                     LocalSettingsSingleton.Instance.Host,
-                    String.Format(LocalSettingsSingleton.Instance.PlinkCmd, fullPath)
+                    String.Format(
+                        LocalSettingsSingleton.Instance.PlinkCmd.Replace("$DATA", "\\\"{0}\\\""),
+                        String.Format("{0}{1}{2}", t.DownloadDir, !t.DownloadDir.EndsWith("/") ? "/" : null, t.Name))
                 )
             );
         }
