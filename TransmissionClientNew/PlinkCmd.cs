@@ -9,16 +9,18 @@ namespace TransmissionRemoteDotnet
 {
     class PlinkCmd
     {
-        private Torrent t;
-
-        public PlinkCmd(Torrent t)
+        public static void Start(Torrent t)
         {
-            this.t = t;
-        }
-
-        public void Start()
-        {
-            Process.Start(LocalSettingsSingleton.Instance.PlinkPath, String.Format("\"{0}\" \"{1}\" \"{2}\"", LocalSettingsSingleton.Instance.Host, LocalSettingsSingleton.Instance.PlinkCmd, String.Format("{0}/{1}", this.t.DownloadDir, this.t.Name)));
+            string fullPath = String.Format("{0}/{1}", t.DownloadDir, t.Name);
+            Process.Start(
+                // plink path
+                LocalSettingsSingleton.Instance.PlinkPath,
+                // arguments
+                String.Format("\"{0}\" \"{1}\"",
+                    LocalSettingsSingleton.Instance.Host,
+                    String.Format(LocalSettingsSingleton.Instance.PlinkCmd, fullPath)
+                )
+            );
         }
     }
 }

@@ -281,7 +281,7 @@
     <None Include="Resources\messagebox_warning.png" />
     <None Include="Resources\hwinfo.png" />
     <None Include="Resources\kgpg_edit.png" />
-    <None Include="Resources\tar.png" />
+    <None Include="Resources\openterm.png" />
     <Content Include="transmission_large.ico" />
   </ItemGroup>
   <ItemGroup>

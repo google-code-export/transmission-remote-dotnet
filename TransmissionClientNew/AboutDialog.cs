@@ -11,8 +11,6 @@ namespace TransmissionRemoteDotnet
 {
     public partial class AboutDialog : Form
     {
-        public const string PROJECT_SITE = "http://code.google.com/p/transmission-remote-dotnet/";
-
         private static AboutDialog instance = null;
         private static readonly object padlock = new object();
 
@@ -51,7 +49,7 @@ namespace TransmissionRemoteDotnet
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             linkLabel1.LinkVisited = true;
-            System.Diagnostics.Process.Start(PROJECT_SITE);
+            System.Diagnostics.Process.Start(linkLabel1.Text);
         }
     }
 }

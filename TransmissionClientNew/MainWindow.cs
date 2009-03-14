@@ -26,6 +26,7 @@ namespace TransmissionRemoteDotnet
             CONFKEY_MAINWINDOW_LOCATION_Y = "mainwindow-loc-y",
             CONFKEY_SPLITTERDISTANCE = "mainwindow-splitterdistance",
             CONFKEY_MAINWINDOW_STATE = "mainwindow-state",
+            PROJECT_SITE = "http://code.google.com/p/transmission-remote-dotnet/",
             LATEST_VERSION = "http://transmission-remote-dotnet.googlecode.com/svn/wiki/latest_version.txt",
             DOWNLOADS_PAGE = "http://code.google.com/p/transmission-remote-dotnet/downloads/list";
 
@@ -258,9 +259,15 @@ namespace TransmissionRemoteDotnet
                 = addTorrentFromUrlToolStripMenuItem.Visible = startTorrentButton.Visible
                 = refreshTimer.Enabled = recheckTorrentButton.Visible
                 = speedGraph.Enabled = toolStripSeparator2.Visible = connected;
-            extractButton.Visible = connected && LocalSettingsSingleton.Instance.PlinkCmd != null;
+            SetRemoteCmdButtonVisible(connected);
             removeAndDeleteButton.Visible = connected && Program.DaemonDescriptor.Version >= 1.5;
             sessionStatsButton.Visible = connected && Program.DaemonDescriptor.RpcVersion >= 4;
+        }
+
+        public void SetRemoteCmdButtonVisible(bool connected)
+        {
+            LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
+            remoteCmdButton.Visible = connected && settings.PlinkEnable && settings.PlinkCmd != null && settings.PlinkPath != null && File.Exists(settings.PlinkPath);
         }
 
         public void TorrentsToClipboardHandler(object sender, EventArgs e)
@@ -672,8 +679,7 @@ namespace TransmissionRemoteDotnet
                     = downloadProgressLabel.Enabled = refreshElapsedTimer.Enabled
                     = filesTimer.Enabled = downloadProgressLabel.Enabled
                     = generalTorrentNameGroupBox.Enabled
-                    = piecesLabel.Enabled
-                    = extractButton.Enabled
+                    = piecesLabel.Enabled = remoteCmdButton.Enabled
                     = one;
         }
 
@@ -1341,7 +1347,7 @@ namespace TransmissionRemoteDotnet
 
         private void projectSiteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(AboutDialog.PROJECT_SITE);
+            System.Diagnostics.Process.Start(PROJECT_SITE);
         }
 
         private void showErrorLogToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1557,14 +1563,13 @@ namespace TransmissionRemoteDotnet
             showDetailsPanelToolStripMenuItem.Checked = !torrentAndTabsSplitContainer.Panel2Collapsed;
         }
 
-        private void extractButton_Click(object sender, EventArgs e)
+        private void runCmdButton_Click(object sender, EventArgs e)
         {
             if (torrentListView.SelectedItems.Count > 0)
             {
                 try
                 {
-                    PlinkCmd pu = new PlinkCmd((Torrent)torrentListView.SelectedItems[0].Tag);
-                    pu.Start();
+                    PlinkCmd.Start((Torrent)torrentListView.SelectedItems[0].Tag);
                 }
                 catch (Exception ex)
                 {

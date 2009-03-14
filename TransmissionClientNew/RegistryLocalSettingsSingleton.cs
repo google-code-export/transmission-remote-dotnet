@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.Win32;
 using System.Windows.Forms;
+using Jayrock.Json;
+using Jayrock.Json.Conversion;
 
 namespace TransmissionRemoteDotnet
 {
@@ -48,8 +50,8 @@ namespace TransmissionRemoteDotnet
             REGKEY_MINONCLOSE = "minOnClose",
             REGKEY_PLINKPATH = "plinkPath",
             REGKEY_PLINKCMD = "plinkCmd",
+            REGKEY_PLINKENABLE = "plinkEnable",
             REGKEY_CUSTOMPATH = "customPath";
-            
 
         private static LocalSettingsSingleton instance = null;
         private static readonly object padlock = new object();
@@ -419,7 +421,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.rootConfMap.ContainsKey(REGKEY_PLINKPATH) ? (string)this.rootConfMap[REGKEY_PLINKPATH] : @"c:\Program Files\PuTTY\plink.exe";
+                return this.rootConfMap.ContainsKey(REGKEY_PLINKPATH) ? (string)this.rootConfMap[REGKEY_PLINKPATH] : null;
             }
             set
             {
@@ -431,11 +433,23 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return rootConfMap.ContainsKey(REGKEY_PLINKCMD) ? (string)rootConfMap[REGKEY_PLINKCMD] : null;
+                return profileConfMap.ContainsKey(REGKEY_PLINKCMD) ? (string)profileConfMap[REGKEY_PLINKCMD] : "$HOME/unpack.pl {0}";
             }
             set
             {
-                rootConfMap[REGKEY_PLINKCMD] = value;
+                profileConfMap[REGKEY_PLINKCMD] = value;
+            }
+        }
+
+        public bool PlinkEnable
+        {
+            get
+            {
+                return profileConfMap.ContainsKey(REGKEY_PLINKENABLE) ? IntToBool(profileConfMap[REGKEY_PLINKENABLE]) : false;
+            }
+            set
+            {
+                this.profileConfMap[REGKEY_PLINKENABLE] = BoolToInt(value);
             }
         }
 

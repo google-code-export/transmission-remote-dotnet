@@ -186,6 +186,13 @@ namespace TransmissionRemoteDotnet.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap openterm {
+            get {
+                object obj = ResourceManager.GetObject("openterm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap peer16 {
             get {
                 object obj = ResourceManager.GetObject("peer16", resourceCulture);
@@ -245,13 +252,6 @@ namespace TransmissionRemoteDotnet.Properties {
         internal static System.Drawing.Bitmap server16 {
             get {
                 object obj = ResourceManager.GetObject("server16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap unrar {
-            get {
-                object obj = ResourceManager.GetObject("unrar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

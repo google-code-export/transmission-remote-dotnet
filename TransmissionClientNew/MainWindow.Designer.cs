@@ -147,7 +147,7 @@
             this.configureTorrentButton = new System.Windows.Forms.ToolStripButton();
             this.removeTorrentButton = new System.Windows.Forms.ToolStripButton();
             this.removeAndDeleteButton = new System.Windows.Forms.ToolStripButton();
-            this.extractButton = new System.Windows.Forms.ToolStripButton();
+            this.remoteCmdButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.localConfigureButton = new System.Windows.Forms.ToolStripButton();
             this.remoteConfigureButton = new System.Windows.Forms.ToolStripButton();
@@ -962,7 +962,7 @@
             this.configureTorrentButton,
             this.removeTorrentButton,
             this.removeAndDeleteButton,
-            this.extractButton,
+            this.remoteCmdButton,
             this.toolStripSeparator2,
             this.localConfigureButton,
             this.remoteConfigureButton,
@@ -1065,13 +1065,13 @@
             this.removeAndDeleteButton.Name = "removeAndDeleteButton";
             this.removeAndDeleteButton.Click += new System.EventHandler(this.removeAndDeleteButton_Click);
             // 
-            // extractButton
+            // remoteCmdButton
             // 
-            this.extractButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.extractButton, "extractButton");
-            this.extractButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.unrar;
-            this.extractButton.Name = "extractButton";
-            this.extractButton.Click += new System.EventHandler(this.extractButton_Click);
+            this.remoteCmdButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.remoteCmdButton, "remoteCmdButton");
+            this.remoteCmdButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.openterm;
+            this.remoteCmdButton.Name = "remoteCmdButton";
+            this.remoteCmdButton.Click += new System.EventHandler(this.runCmdButton_Click);
             // 
             // toolStripSeparator2
             // 
@@ -1413,7 +1413,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ToolStripButton extractButton;
+        private System.Windows.Forms.ToolStripButton remoteCmdButton;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;

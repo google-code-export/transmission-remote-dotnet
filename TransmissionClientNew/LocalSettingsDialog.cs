@@ -62,6 +62,9 @@ namespace TransmissionRemoteDotnet
             notificationOnCompletionCheckBox.Checked = settings.CompletedBaloon;
             minimizeOnCloseCheckBox.Checked = settings.MinOnClose;
             minimizeOnCloseCheckBox.Enabled = MinToTrayCheckBox.Checked;
+            textBox2.Text = settings.PlinkPath;
+            checkBox1.Checked = settings.PlinkEnable;
+            textBox3.Text = settings.PlinkCmd;
         }
 
         private void LocalSettingsDialog_Load(object sender, EventArgs e)
@@ -111,6 +114,10 @@ namespace TransmissionRemoteDotnet
             settings.StartedBalloon = notificationOnAdditionCheckBox.Checked;
             settings.CompletedBaloon = notificationOnCompletionCheckBox.Checked;
             settings.MinOnClose = minimizeOnCloseCheckBox.Checked;
+            settings.PlinkCmd = textBox3.Text;
+            settings.PlinkEnable = checkBox1.Checked;
+            settings.PlinkPath = textBox2.Text;
+            Program.Form.SetRemoteCmdButtonVisible(Program.Connected);
             settings.Commit();
         }
 
@@ -210,6 +217,25 @@ namespace TransmissionRemoteDotnet
         private void MinToTrayCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             minimizeOnCloseCheckBox.Enabled = MinToTrayCheckBox.Checked;
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                textBox2.Text = openFileDialog1.FileName;
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            button2.Enabled = textBox3.Enabled = ((CheckBox)sender).Checked;
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            linkLabel1.LinkVisited = true;
+            System.Diagnostics.Process.Start(linkLabel1.Text);
         }
     }
 }
