@@ -747,6 +747,21 @@
   <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="minimizeOnCloseCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="minimizeOnCloseCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 111</value>
+  </data>
+  <data name="minimizeOnCloseCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 17</value>
+  </data>
+  <data name="minimizeOnCloseCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="minimizeOnCloseCheckBox.Text" xml:space="preserve">
+    <value>Minimize on close</value>
+  </data>
   <data name="&gt;&gt;minimizeOnCloseCheckBox.Name" xml:space="preserve">
     <value>minimizeOnCloseCheckBox</value>
   </data>
@@ -759,6 +774,21 @@
   <data name="&gt;&gt;minimizeOnCloseCheckBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="notificationOnAdditionCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="notificationOnAdditionCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 64</value>
+  </data>
+  <data name="notificationOnAdditionCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 17</value>
+  </data>
+  <data name="notificationOnAdditionCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="notificationOnAdditionCheckBox.Text" xml:space="preserve">
+    <value>Notification on addition</value>
+  </data>
   <data name="&gt;&gt;notificationOnAdditionCheckBox.Name" xml:space="preserve">
     <value>notificationOnAdditionCheckBox</value>
   </data>
@@ -770,6 +800,21 @@
   </data>
   <data name="&gt;&gt;notificationOnAdditionCheckBox.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="notificationOnCompletionCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="notificationOnCompletionCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 87</value>
+  </data>
+  <data name="notificationOnCompletionCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 17</value>
+  </data>
+  <data name="notificationOnCompletionCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="notificationOnCompletionCheckBox.Text" xml:space="preserve">
+    <value>Notification on completion</value>
   </data>
   <data name="&gt;&gt;notificationOnCompletionCheckBox.Name" xml:space="preserve">
     <value>notificationOnCompletionCheckBox</value>
@@ -807,6 +852,21 @@
   <data name="&gt;&gt;tabPage4.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 47</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
   </data>
@@ -818,6 +878,21 @@
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="EnableAuthCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EnableAuthCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 21</value>
+  </data>
+  <data name="EnableAuthCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 17</value>
+  </data>
+  <data name="EnableAuthCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="EnableAuthCheckBox.Text" xml:space="preserve">
+    <value>Enable authentication</value>
   </data>
   <data name="&gt;&gt;EnableAuthCheckBox.Name" xml:space="preserve">
     <value>EnableAuthCheckBox</value>
@@ -831,6 +906,21 @@
   <data name="&gt;&gt;EnableAuthCheckBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 21</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>User:</value>
+  </data>
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
   </data>
@@ -843,6 +933,18 @@
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="PassField.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 44</value>
+  </data>
+  <data name="PassField.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="PassField.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 20</value>
+  </data>
+  <data name="PassField.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
   <data name="&gt;&gt;PassField.Name" xml:space="preserve">
     <value>PassField</value>
   </data>
@@ -854,6 +956,15 @@
   </data>
   <data name="&gt;&gt;PassField.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="UserField.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 18</value>
+  </data>
+  <data name="UserField.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 20</value>
+  </data>
+  <data name="UserField.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;UserField.Name" xml:space="preserve">
     <value>UserField</value>
@@ -1081,13 +1192,13 @@
     <value>8, 41</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 13</value>
+    <value>52, 13</value>
   </data>
   <data name="label12.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
-    <value>pink.exe:</value>
+    <value>plink.exe:</value>
   </data>
   <data name="&gt;&gt;label12.Name" xml:space="preserve">
     <value>label12</value>
@@ -1194,213 +1305,6 @@
   <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="minimizeOnCloseCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="minimizeOnCloseCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 111</value>
-  </data>
-  <data name="minimizeOnCloseCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 17</value>
-  </data>
-  <data name="minimizeOnCloseCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="minimizeOnCloseCheckBox.Text" xml:space="preserve">
-    <value>Minimize on close</value>
-  </data>
-  <data name="&gt;&gt;minimizeOnCloseCheckBox.Name" xml:space="preserve">
-    <value>minimizeOnCloseCheckBox</value>
-  </data>
-  <data name="&gt;&gt;minimizeOnCloseCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;minimizeOnCloseCheckBox.Parent" xml:space="preserve">
-    <value>tabPage4</value>
-  </data>
-  <data name="&gt;&gt;minimizeOnCloseCheckBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="notificationOnAdditionCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="notificationOnAdditionCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 64</value>
-  </data>
-  <data name="notificationOnAdditionCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 17</value>
-  </data>
-  <data name="notificationOnAdditionCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="notificationOnAdditionCheckBox.Text" xml:space="preserve">
-    <value>Notification on addition</value>
-  </data>
-  <data name="&gt;&gt;notificationOnAdditionCheckBox.Name" xml:space="preserve">
-    <value>notificationOnAdditionCheckBox</value>
-  </data>
-  <data name="&gt;&gt;notificationOnAdditionCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;notificationOnAdditionCheckBox.Parent" xml:space="preserve">
-    <value>tabPage4</value>
-  </data>
-  <data name="&gt;&gt;notificationOnAdditionCheckBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="notificationOnCompletionCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="notificationOnCompletionCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 87</value>
-  </data>
-  <data name="notificationOnCompletionCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 17</value>
-  </data>
-  <data name="notificationOnCompletionCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="notificationOnCompletionCheckBox.Text" xml:space="preserve">
-    <value>Notification on completion</value>
-  </data>
-  <data name="&gt;&gt;notificationOnCompletionCheckBox.Name" xml:space="preserve">
-    <value>notificationOnCompletionCheckBox</value>
-  </data>
-  <data name="&gt;&gt;notificationOnCompletionCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;notificationOnCompletionCheckBox.Parent" xml:space="preserve">
-    <value>tabPage4</value>
-  </data>
-  <data name="&gt;&gt;notificationOnCompletionCheckBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 47</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 13</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Password:</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="EnableAuthCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EnableAuthCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 21</value>
-  </data>
-  <data name="EnableAuthCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 17</value>
-  </data>
-  <data name="EnableAuthCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="EnableAuthCheckBox.Text" xml:space="preserve">
-    <value>Enable authentication</value>
-  </data>
-  <data name="&gt;&gt;EnableAuthCheckBox.Name" xml:space="preserve">
-    <value>EnableAuthCheckBox</value>
-  </data>
-  <data name="&gt;&gt;EnableAuthCheckBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EnableAuthCheckBox.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;EnableAuthCheckBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 21</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 13</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>User:</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="PassField.Location" type="System.Drawing.Point, System.Drawing">
-    <value>84, 44</value>
-  </data>
-  <data name="PassField.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
-    <value>*</value>
-  </data>
-  <data name="PassField.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 20</value>
-  </data>
-  <data name="PassField.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;PassField.Name" xml:space="preserve">
-    <value>PassField</value>
-  </data>
-  <data name="&gt;&gt;PassField.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PassField.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;PassField.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="UserField.Location" type="System.Drawing.Point, System.Drawing">
-    <value>84, 18</value>
-  </data>
-  <data name="UserField.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 20</value>
-  </data>
-  <data name="UserField.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;UserField.Name" xml:space="preserve">
-    <value>UserField</value>
-  </data>
-  <data name="&gt;&gt;UserField.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;UserField.Parent" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;UserField.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
     <value>149, 244</value>
   </data>
@@ -1491,6 +1395,18 @@
   <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="removeProfileButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="removeProfileButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>150, 13</value>
+  </data>
+  <data name="removeProfileButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 30</value>
+  </data>
+  <data name="removeProfileButton.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
   <data name="&gt;&gt;removeProfileButton.Name" xml:space="preserve">
     <value>removeProfileButton</value>
   </data>
@@ -1527,29 +1443,17 @@
   <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="removeProfileButton.Enabled" type="System.Boolean, mscorlib">
+  <data name="addProfileButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="removeProfileButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="addProfileButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>150, 13</value>
   </data>
-  <data name="removeProfileButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="addProfileButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 30</value>
   </data>
-  <data name="removeProfileButton.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;removeProfileButton.Name" xml:space="preserve">
-    <value>removeProfileButton</value>
-  </data>
-  <data name="&gt;&gt;removeProfileButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;removeProfileButton.Parent" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="&gt;&gt;removeProfileButton.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="addProfileButton.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
   <data name="&gt;&gt;addProfileButton.Name" xml:space="preserve">
     <value>addProfileButton</value>
@@ -1585,30 +1489,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupBox6.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="addProfileButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="addProfileButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>150, 13</value>
-  </data>
-  <data name="addProfileButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 30</value>
-  </data>
-  <data name="addProfileButton.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;addProfileButton.Name" xml:space="preserve">
-    <value>addProfileButton</value>
-  </data>
-  <data name="&gt;&gt;addProfileButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addProfileButton.Parent" xml:space="preserve">
-    <value>groupBox6</value>
-  </data>
-  <data name="&gt;&gt;addProfileButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
