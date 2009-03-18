@@ -95,12 +95,14 @@ namespace TransmissionRemoteDotnet
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.up16);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.player_reload16);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.warning);
+            stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.incomplete);
             stateListBox.ImageList = stateListBoxImageList;
             stateListBox.Items.Add(new GListBoxItem(OtherStrings.All, 0));
             stateListBox.Items.Add(new GListBoxItem(OtherStrings.Downloading, 1));
             stateListBox.Items.Add(new GListBoxItem(OtherStrings.Paused, 2));
             stateListBox.Items.Add(new GListBoxItem(OtherStrings.Checking, 5));
             stateListBox.Items.Add(new GListBoxItem(OtherStrings.Complete, 3));
+            stateListBox.Items.Add(new GListBoxItem(OtherStrings.Incomplete, 7));
             stateListBox.Items.Add(new GListBoxItem(OtherStrings.Seeding, 4));
             stateListBox.Items.Add(new GListBoxItem(OtherStrings.Broken, 6));
             stateListBox.Items.Add(new GListBoxItem(""));
@@ -234,9 +236,9 @@ namespace TransmissionRemoteDotnet
                 this.Text = MainWindow.DEFAULT_WINDOW_TITLE;
                 lock (this.stateListBox)
                 {
-                    if (this.stateListBox.Items.Count > 7)
+                    if (this.stateListBox.Items.Count > 8)
                     {
-                        for (int i = this.stateListBox.Items.Count - 1; i > 7; i--)
+                        for (int i = this.stateListBox.Items.Count - 1; i > 8; i--)
                         {
                             stateListBox.Items.RemoveAt(i);
                         }
@@ -852,12 +854,12 @@ namespace TransmissionRemoteDotnet
                 {
                     ShowTorrentIfStatus(ProtocolConstants.STATUS_CHECKING | ProtocolConstants.STATUS_WAITING_TO_CHECK);
                 }
-                else if (stateListBox.SelectedIndex == 4)
+                else if (stateListBox.SelectedIndex == 4 || stateListBox.SelectedIndex == 5)
                 {
                     foreach (KeyValuePair<string, Torrent> pair in Program.TorrentIndex)
                     {
                         Torrent t = pair.Value;
-                        if (t.IsFinished)
+                        if (stateListBox.SelectedIndex == 5 ? !t.IsFinished : t.IsFinished)
                         {
                             t.Show();
                         }
@@ -867,11 +869,11 @@ namespace TransmissionRemoteDotnet
                         }
                     }
                 }
-                else if (stateListBox.SelectedIndex == 5)
+                else if (stateListBox.SelectedIndex == 6)
                 {
                     ShowTorrentIfStatus(ProtocolConstants.STATUS_SEEDING);
                 }
-                else if (stateListBox.SelectedIndex == 6)
+                else if (stateListBox.SelectedIndex == 7)
                 {
                     foreach (KeyValuePair<string, Torrent> pair in Program.TorrentIndex)
                     {
@@ -885,8 +887,9 @@ namespace TransmissionRemoteDotnet
                             t.Remove();
                         }
                     }
+
                 }
-                else if (stateListBox.SelectedIndex > 7)
+                else if (stateListBox.SelectedIndex > 8)
                 {
                     foreach (KeyValuePair<string, Torrent> pair in Program.TorrentIndex)
                     {

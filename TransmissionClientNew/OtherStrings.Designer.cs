@@ -322,6 +322,15 @@ namespace TransmissionRemoteDotnet {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Incomplete.
+        /// </summary>
+        internal static string Incomplete {
+            get {
+                return ResourceManager.GetString("Incomplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Info.
         /// </summary>
         internal static string Info {

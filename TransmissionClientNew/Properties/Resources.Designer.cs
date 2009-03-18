@@ -144,6 +144,13 @@ namespace TransmissionRemoteDotnet.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap incomplete {
+            get {
+                object obj = ResourceManager.GetObject("incomplete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap info16 {
             get {
                 object obj = ResourceManager.GetObject("info16", resourceCulture);

@@ -282,6 +282,7 @@
     <None Include="Resources\hwinfo.png" />
     <None Include="Resources\kgpg_edit.png" />
     <None Include="Resources\openterm.png" />
+    <None Include="Resources\incomplete.png" />
     <Content Include="transmission_large.ico" />
   </ItemGroup>
   <ItemGroup>
