@@ -118,130 +118,130 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="All" xml:space="preserve">
-    <value>All</value>
+    <value>Tous</value>
   </data>
   <data name="Author" xml:space="preserve">
-    <value>Author</value>
+    <value>Auteur</value>
   </data>
   <data name="Broken" xml:space="preserve">
-    <value>Broken</value>
+    <value>Cassé</value>
   </data>
   <data name="Build" xml:space="preserve">
     <value>Build</value>
   </data>
   <data name="Checking" xml:space="preserve">
-    <value>Checking</value>
+    <value>En cours de vérification</value>
   </data>
   <data name="Complete" xml:space="preserve">
-    <value>Complete</value>
+    <value>Terminé</value>
   </data>
   <data name="Confirm" xml:space="preserve">
-    <value>Confirm</value>
+    <value>Confirmer</value>
   </data>
   <data name="ConfirmMultipleRemove" xml:space="preserve">
-    <value>You have selected {0} torrents for removal. Are you sure?</value>
+    <value>Vous avez selectionné {0} torrents pour les retirer. Etes-vous sûre ?</value>
   </data>
   <data name="ConfirmMultipleRemoveAndDelete" xml:space="preserve">
-    <value>You have selected {0} torrents for removal. Are you sure?{1}ALL THE DATA FROM THESE TORRENTS WILL BE REMOVED."</value>
+    <value>Vous avez selectionné {0} torrents pour les retirer. Etes-vous sûre ?{1}Toutes les données de ces torrents seront supprimées."</value>
   </data>
   <data name="ConfirmSingleRemove" xml:space="preserve">
-    <value>Do you want to remove {0}?</value>
+    <value>Voulez vous retirer {0} ?</value>
   </data>
   <data name="ConfirmSingleRemoveAndDelete" xml:space="preserve">
-    <value>Do you want to remove and delete {0}?{1}ALL THE DATA FROM THIS TORRENT WILL BE REMOVED."</value>
+    <value>Voulez vous retirer et effacer {0} ?{1} Toutes les données de ce torrent seront supprimées."</value>
   </data>
   <data name="Connect" xml:space="preserve">
-    <value>Connect</value>
+    <value>Se connecter</value>
   </data>
   <data name="ConnectedGettingInfo" xml:space="preserve">
-    <value>Connected. Getting torrent information...</value>
+    <value>Connecté. Récupération des informations sur les torrents en cours...</value>
   </data>
   <data name="ConnectedTo" xml:space="preserve">
-    <value>Connected to</value>
+    <value>Connecté</value>
   </data>
   <data name="Connecting" xml:space="preserve">
-    <value>Connecting</value>
+    <value>En cours de connection</value>
   </data>
   <data name="CopyAsCSV" xml:space="preserve">
-    <value>Copy as CSV</value>
+    <value>Copier en tant que CSV</value>
   </data>
   <data name="Disconnect" xml:space="preserve">
-    <value>Disconnect</value>
+    <value>Se déconnecter</value>
   </data>
   <data name="Disconnected" xml:space="preserve">
-    <value>Disconnected</value>
+    <value>Déconnecté</value>
   </data>
   <data name="DisconnectedExceeded" xml:space="preserve">
-    <value>Disconnected. Exceeded maximum number of failed requests.</value>
+    <value>Déconnecté. Le nombre maxmial de tentatives a été depassé.</value>
   </data>
   <data name="DisplayStatistics" xml:space="preserve">
-    <value>Display statistics</value>
+    <value>Afficher les statistiques</value>
   </data>
   <data name="Down" xml:space="preserve">
-    <value>Down</value>
+    <value>Réception</value>
   </data>
   <data name="Download" xml:space="preserve">
-    <value>Download</value>
+    <value>Réception</value>
   </data>
   <data name="DownloadedValid" xml:space="preserve">
-    <value>{0} ({1} valid)</value>
+    <value>{0} ({1} valide)</value>
   </data>
   <data name="Downloading" xml:space="preserve">
-    <value>Downloading</value>
+    <value>En cours de réception</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Error</value>
+    <value>Erreur</value>
   </data>
   <data name="FailedRequest" xml:space="preserve">
-    <value>Failed request</value>
+    <value>Requête en échec</value>
   </data>
   <data name="High" xml:space="preserve">
-    <value>High</value>
+    <value>Haute</value>
   </data>
   <data name="HighPriority" xml:space="preserve">
-    <value>High priority</value>
+    <value>Priorité haute</value>
   </data>
   <data name="Host" xml:space="preserve">
-    <value>Host</value>
+    <value>Hôte</value>
   </data>
   <data name="Info" xml:space="preserve">
     <value>Info</value>
   </data>
   <data name="InputAccepted" xml:space="preserve">
-    <value>Input accepted</value>
+    <value>Entrée acceptée</value>
   </data>
   <data name="LatestVersion" xml:space="preserve">
-    <value>You are using the latest version ({0}.{1}).</value>
+    <value>Vous utilisez la dernière version ({0}.{1}).</value>
   </data>
   <data name="LatestVersionCheckFailed" xml:space="preserve">
-    <value>Latest version check failed</value>
+    <value>Echec de vérification de la dernière version</value>
   </data>
   <data name="Low" xml:space="preserve">
-    <value>Low</value>
+    <value>Basse</value>
   </data>
   <data name="LowPriority" xml:space="preserve">
-    <value>Low priority</value>
+    <value>Priorité basse</value>
   </data>
   <data name="MustBeConnected" xml:space="preserve">
-    <value>You must be connected to add torrents. Would you like to connect now?</value>
+    <value>Pour ajouter des torrents, vous devez être connectés. Voulez vous vous connecter ?</value>
   </data>
   <data name="NewerVersion" xml:space="preserve">
-    <value>There is a newer version ({0}.{1}) available. Would you like to visit the downloads page?</value>
+    <value>Une version plus récente ({0}.{1}) est disponible. Voulez vous ouvrir la page de téléchargement ?</value>
   </data>
   <data name="No" xml:space="preserve">
-    <value>No</value>
+    <value>Non</value>
   </data>
   <data name="Normal" xml:space="preserve">
     <value>Normal</value>
   </data>
   <data name="NormalPriority" xml:space="preserve">
-    <value>Normal priority</value>
+    <value>Priorité normale</value>
   </data>
   <data name="NotConnected" xml:space="preserve">
-    <value>Not connected</value>
+    <value>Non connecté</value>
   </data>
   <data name="NoUpgradeAvailable" xml:space="preserve">
-    <value>No upgrade available</value>
+    <value>Aucune mise à jour n'est disponible</value>
   </data>
   <data name="OpenFileFilter" xml:space="preserve">
     <value>BitTorrent Metafile (*.torrent)|*.torrent|All Files (*.*)|*.*</value>
@@ -250,25 +250,25 @@
     <value>Pause</value>
   </data>
   <data name="PauseAll" xml:space="preserve">
-    <value>Pause all</value>
+    <value>Tous en pause</value>
   </data>
   <data name="Paused" xml:space="preserve">
-    <value>Paused</value>
+    <value>En pause</value>
   </data>
   <data name="Properties" xml:space="preserve">
-    <value>Properties</value>
+    <value>Propriétés</value>
   </data>
   <data name="Recheck" xml:space="preserve">
-    <value>Recheck</value>
+    <value>Re-vérifier</value>
   </data>
   <data name="Remove" xml:space="preserve">
-    <value>Remove</value>
+    <value>Retirer</value>
   </data>
   <data name="RemoveAndDelete" xml:space="preserve">
-    <value>Remove and delete</value>
+    <value>Retirer et effacer</value>
   </data>
   <data name="Revision" xml:space="preserve">
-    <value>Revision</value>
+    <value>Révision</value>
   </data>
   <data name="RpcVersion" xml:space="preserve">
     <value>RpcVersion</value>
@@ -277,97 +277,69 @@
     <value>RpcVersionMinimum</value>
   </data>
   <data name="Seeding" xml:space="preserve">
-    <value>Seeding</value>
+    <value>En partage</value>
   </data>
   <data name="SelectAll" xml:space="preserve">
-    <value>Select all</value>
+    <value>Tout selectionner</value>
   </data>
   <data name="Skip" xml:space="preserve">
-    <value>Skip</value>
+    <value>Passer</value>
   </data>
   <data name="Start" xml:space="preserve">
-    <value>Start</value>
+    <value>Démarrer</value>
   </data>
   <data name="StartAll" xml:space="preserve">
-    <value>Start all</value>
+    <value>Tout démarrer</value>
   </data>
   <data name="TheTorrentHasFinishedDownloading" xml:space="preserve">
-    <value>This torrent is now complete</value>
+    <value>Ce torrent est téléchargé</value>
   </data>
   <data name="Torrents" xml:space="preserve">
     <value>Torrents</value>
   </data>
   <data name="UnableToParse" xml:space="preserve">
-    <value>Unable to parse the server response</value>
+    <value>Impossible d'analyser la réponse du serveur</value>
   </data>
   <data name="UnknownNegativeResult" xml:space="preserve">
-    <value>Unknown (negative)</value>
+    <value>Inconnu (négatif)</value>
   </data>
   <data name="UnsuccessfulRequest" xml:space="preserve">
-    <value>Unsuccessful request</value>
+    <value>Requête échouée</value>
   </data>
   <data name="Up" xml:space="preserve">
-    <value>Up</value>
+    <value>Emission</value>
   </data>
   <data name="UpgradeAvailable" xml:space="preserve">
-    <value>Upgrade available</value>
+    <value>Mise à jour disponible</value>
   </data>
   <data name="Version" xml:space="preserve">
     <value>Version</value>
   </data>
   <data name="WaitingForInput" xml:space="preserve">
-    <value>Waiting for input</value>
+    <value>En attente d'entrée</value>
   </data>
   <data name="WaitingToCheck" xml:space="preserve">
-    <value>Waiting to check</value>
+    <value>En attente de vérification</value>
   </data>
   <data name="XOfYConnected" xml:space="preserve">
-    <value>{0} of {1} connected</value>
+    <value>{0} sur {1} est connecté</value>
   </data>
   <data name="Yes" xml:space="preserve">
-    <value>Yes</value>
+    <value>Oui</value>
   </data>
   <data name="Incomplete" xml:space="preserve">
-    <value>Incomplete</value>
+    <value>Incomplet</value>
   </data>
-  <data name="LanguageUpdated" xml:space="preserve">
-    <value>Language updated</value>
+  <data name="BytesPerSecondShort" xml:space="preserve">
+    <value>O/s</value>
   </data>
-  <data name="LanguageUpdateDetail" xml:space="preserve">
-    <value>Your language choice has been updated. A restart of the application is required for it to take full effect.</value>
-  </data>
-  <data name="Byte" xml:space="preserve">
-    <value>Byte</value>
-  </data>
-  <data name="Day" xml:space="preserve">
-    <value>Day</value>
-  </data>
-  <data name="Gigabyte" xml:space="preserve">
-    <value>Gigabyte</value>
-  </data>
-  <data name="GigabyteShort" xml:space="preserve">
-    <value>GB</value>
-  </data>
-  <data name="Hour" xml:space="preserve">
-    <value>Hour</value>
-  </data>
-  <data name="Kilobyte" xml:space="preserve">
-    <value>Kilobyte</value>
-    <comment>b</comment>
-  </data>
-  <data name="KilobyteShort" xml:space="preserve">
-    <value>KB</value>
+  <data name="KilobytesPerSecondShort" xml:space="preserve">
+    <value>kO/s</value>
   </data>
   <data name="Megabyte" xml:space="preserve">
-    <value>Megabyte</value>
+    <value>Mégaoctet</value>
   </data>
   <data name="MegabyteShort" xml:space="preserve">
-    <value>MB</value>
-  </data>
-  <data name="Minute" xml:space="preserve">
-    <value>Minute</value>
-  </data>
-  <data name="Second" xml:space="preserve">
-    <value>Second</value>
+    <value>MO</value>
   </data>
 </root>

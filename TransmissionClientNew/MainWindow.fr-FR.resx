@@ -169,7 +169,7 @@
     <value>stateListBox</value>
   </data>
   <data name="&gt;&gt;stateListBox.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.GListBox, Transmission Remote, Version=3.6.3369.30403, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.GListBox, Transmission Remote, Version=3.6.3369.21203, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;stateListBox.Parent" xml:space="preserve">
     <value>mainVerticalSplitContainer.Panel1</value>
@@ -190,46 +190,46 @@
     <value>0</value>
   </data>
   <data name="columnHeader6.Text" xml:space="preserve">
-    <value>Name</value>
+    <value>Nom</value>
   </data>
   <data name="columnHeader6.Width" type="System.Int32, mscorlib">
     <value>200</value>
   </data>
   <data name="columnHeader7.Text" xml:space="preserve">
-    <value>Size</value>
+    <value>Taille</value>
   </data>
   <data name="columnHeader7.Width" type="System.Int32, mscorlib">
     <value>80</value>
   </data>
   <data name="columnHeader8.Text" xml:space="preserve">
-    <value>Done</value>
+    <value>Terminé</value>
   </data>
   <data name="columnHeader9.Text" xml:space="preserve">
-    <value>Status</value>
+    <value>Etat</value>
   </data>
   <data name="columnHeader10.Text" xml:space="preserve">
-    <value>Seeds</value>
+    <value>Sources</value>
   </data>
   <data name="columnHeader11.Text" xml:space="preserve">
-    <value>Leechers</value>
+    <value>Clients</value>
   </data>
   <data name="columnHeader12.Text" xml:space="preserve">
-    <value>Down Speed</value>
+    <value>Réception</value>
   </data>
   <data name="columnHeader12.Width" type="System.Int32, mscorlib">
     <value>80</value>
   </data>
   <data name="columnHeader13.Text" xml:space="preserve">
-    <value>Up Speed</value>
+    <value>Emission</value>
   </data>
   <data name="columnHeader13.Width" type="System.Int32, mscorlib">
     <value>80</value>
   </data>
   <data name="columnHeader14.Text" xml:space="preserve">
-    <value>ETA</value>
+    <value>Estimé</value>
   </data>
   <data name="columnHeader15.Text" xml:space="preserve">
-    <value>Uploaded</value>
+    <value>Envoyé</value>
   </data>
   <data name="columnHeader15.Width" type="System.Int32, mscorlib">
     <value>90</value>
@@ -238,10 +238,10 @@
     <value>Ratio</value>
   </data>
   <data name="columnHeader18.Text" xml:space="preserve">
-    <value>Added On</value>
+    <value>Ajouté le</value>
   </data>
   <data name="columnHeader19.Text" xml:space="preserve">
-    <value>Completed On</value>
+    <value>Complété le</value>
   </data>
   <data name="columnHeader30.Text" xml:space="preserve">
     <value>Tracker</value>
@@ -268,7 +268,7 @@
     <value>torrentListView</value>
   </data>
   <data name="&gt;&gt;torrentListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.6.3369.30403, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.6.3369.21203, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;torrentListView.Parent" xml:space="preserve">
     <value>mainVerticalSplitContainer.Panel2</value>
@@ -355,13 +355,13 @@
     <value>34, 10</value>
   </data>
   <data name="piecesLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 13</value>
+    <value>60, 13</value>
   </data>
   <data name="piecesLabel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="piecesLabel.Text" xml:space="preserve">
-    <value>Pieces:</value>
+    <value>Morceaux :</value>
   </data>
   <data name="piecesLabel.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -394,13 +394,13 @@
     <value>9, 10</value>
   </data>
   <data name="downloadProgressLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 13</value>
+    <value>67, 13</value>
   </data>
   <data name="downloadProgressLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="downloadProgressLabel.Text" xml:space="preserve">
-    <value>Downloaded:</value>
+    <value>Téléchargé :</value>
   </data>
   <data name="&gt;&gt;downloadProgressLabel.Name" xml:space="preserve">
     <value>downloadProgressLabel</value>
@@ -457,7 +457,7 @@
     <value>piecesGraph</value>
   </data>
   <data name="&gt;&gt;piecesGraph.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.PiecesGraph, Transmission Remote, Version=3.6.3369.30403, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.PiecesGraph, Transmission Remote, Version=3.6.3369.21203, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;piecesGraph.Parent" xml:space="preserve">
     <value>splitContainer5.Panel1</value>
@@ -658,13 +658,13 @@
     <value>555, 118</value>
   </data>
   <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
+    <value>53, 13</value>
   </data>
   <data name="label17.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
-    <value>Created by:</value>
+    <value>Créé par :</value>
   </data>
   <data name="&gt;&gt;label17.Name" xml:space="preserve">
     <value>label17</value>
@@ -718,13 +718,13 @@
     <value>555, 94</value>
   </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 13</value>
+    <value>46, 13</value>
   </data>
   <data name="label16.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
   </data>
   <data name="label16.Text" xml:space="preserve">
-    <value>Created at:</value>
+    <value>Créé le :</value>
   </data>
   <data name="&gt;&gt;label16.Name" xml:space="preserve">
     <value>label16</value>
@@ -781,13 +781,13 @@
     <value>555, 143</value>
   </data>
   <data name="labelForErrorLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 13</value>
+    <value>41, 13</value>
   </data>
   <data name="labelForErrorLabel.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
   </data>
   <data name="labelForErrorLabel.Text" xml:space="preserve">
-    <value>Error:</value>
+    <value>Erreur :</value>
   </data>
   <data name="labelForErrorLabel.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -844,13 +844,13 @@
     <value>6, 143</value>
   </data>
   <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 13</value>
+    <value>74, 13</value>
   </data>
   <data name="label15.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
   </data>
   <data name="label15.Text" xml:space="preserve">
-    <value>Comment:</value>
+    <value>Commentaire :</value>
   </data>
   <data name="&gt;&gt;label15.Name" xml:space="preserve">
     <value>label15</value>
@@ -904,13 +904,13 @@
     <value>555, 71</value>
   </data>
   <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 13</value>
+    <value>38, 13</value>
   </data>
   <data name="label14.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
   </data>
   <data name="label14.Text" xml:space="preserve">
-    <value>Ratio:</value>
+    <value>Ratio :</value>
   </data>
   <data name="&gt;&gt;label14.Name" xml:space="preserve">
     <value>label14</value>
@@ -991,13 +991,13 @@
     <value>555, 49</value>
   </data>
   <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 13</value>
+    <value>44, 13</value>
   </data>
   <data name="label13.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
-    <value>Leechers:</value>
+    <value>Clients :</value>
   </data>
   <data name="&gt;&gt;label13.Name" xml:space="preserve">
     <value>label13</value>
@@ -1024,13 +1024,13 @@
     <value>555, 25</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 13</value>
+    <value>52, 13</value>
   </data>
   <data name="label10.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
-    <value>Seeds:</value>
+    <value>Sources :</value>
   </data>
   <data name="&gt;&gt;label10.Name" xml:space="preserve">
     <value>label10</value>
@@ -1084,13 +1084,13 @@
     <value>287, 94</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 13</value>
+    <value>77, 13</value>
   </data>
   <data name="label12.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
-    <value>Upload limit:</value>
+    <value>Limite d'envoi :</value>
   </data>
   <data name="&gt;&gt;label12.Name" xml:space="preserve">
     <value>label12</value>
@@ -1144,13 +1144,13 @@
     <value>287, 71</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 13</value>
+    <value>74, 13</value>
   </data>
   <data name="label8.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
-    <value>Upload rate:</value>
+    <value>Taux d'envoi :</value>
   </data>
   <data name="&gt;&gt;label8.Name" xml:space="preserve">
     <value>label8</value>
@@ -1204,13 +1204,13 @@
     <value>288, 49</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 13</value>
+    <value>49, 13</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Uploaded:</value>
+    <value>Envoyé :</value>
   </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
@@ -1264,13 +1264,13 @@
     <value>287, 25</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
+    <value>41, 13</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Remaining:</value>
+    <value>Reste :</value>
   </data>
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
@@ -1324,13 +1324,13 @@
     <value>6, 119</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 13</value>
+    <value>32, 13</value>
   </data>
   <data name="label11.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
-    <value>Status:</value>
+    <value>Etat :</value>
   </data>
   <data name="&gt;&gt;label11.Name" xml:space="preserve">
     <value>label11</value>
@@ -1384,13 +1384,13 @@
     <value>6, 94</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 13</value>
+    <value>102, 13</value>
   </data>
   <data name="label9.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
-    <value>Download limit:</value>
+    <value>Limite de réception :</value>
   </data>
   <data name="&gt;&gt;label9.Name" xml:space="preserve">
     <value>label9</value>
@@ -1444,13 +1444,13 @@
     <value>6, 71</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 13</value>
+    <value>99, 13</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>Download rate:</value>
+    <value>Taux de réception :</value>
   </data>
   <data name="&gt;&gt;label7.Name" xml:space="preserve">
     <value>label7</value>
@@ -1477,13 +1477,13 @@
     <value>6, 49</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 13</value>
+    <value>39, 13</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Downloaded:</value>
+    <value>Reçu :</value>
   </data>
   <data name="&gt;&gt;label6.Name" xml:space="preserve">
     <value>label6</value>
@@ -1564,13 +1564,13 @@
     <value>287, 119</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 13</value>
+    <value>64, 13</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Started At:</value>
+    <value>Démarré le :</value>
   </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -1597,13 +1597,13 @@
     <value>6, 25</value>
   </data>
   <data name="timeElapsedLabelLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 13</value>
+    <value>80, 13</value>
   </data>
   <data name="timeElapsedLabelLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="timeElapsedLabelLabel.Text" xml:space="preserve">
-    <value>Time elapsed:</value>
+    <value>Temps écoulé :</value>
   </data>
   <data name="&gt;&gt;timeElapsedLabelLabel.Name" xml:space="preserve">
     <value>timeElapsedLabelLabel</value>
@@ -1717,7 +1717,7 @@
     <value>0</value>
   </data>
   <data name="generalTabPage.Text" xml:space="preserve">
-    <value>General</value>
+    <value>Général</value>
   </data>
   <data name="&gt;&gt;generalTabPage.Name" xml:space="preserve">
     <value>generalTabPage</value>
@@ -1732,19 +1732,19 @@
     <value>0</value>
   </data>
   <data name="columnHeader22.Text" xml:space="preserve">
-    <value>Tier</value>
+    <value>Tiers</value>
   </data>
   <data name="columnHeader22.Width" type="System.Int32, mscorlib">
     <value>40</value>
   </data>
   <data name="columnHeader20.Text" xml:space="preserve">
-    <value>Announce URL</value>
+    <value>URL d'annonce</value>
   </data>
   <data name="columnHeader20.Width" type="System.Int32, mscorlib">
     <value>300</value>
   </data>
   <data name="columnHeader21.Text" xml:space="preserve">
-    <value>Scrape URL</value>
+    <value>URL détaillée</value>
   </data>
   <data name="columnHeader21.Width" type="System.Int32, mscorlib">
     <value>300</value>
@@ -1768,7 +1768,7 @@
     <value>trackersListView</value>
   </data>
   <data name="&gt;&gt;trackersListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.6.3369.30403, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.6.3369.21203, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;trackersListView.Parent" xml:space="preserve">
     <value>trackersTorrentNameGroupBox</value>
@@ -1828,19 +1828,19 @@
     <value>1</value>
   </data>
   <data name="columnHeader1.Text" xml:space="preserve">
-    <value>Path</value>
+    <value>Chemin</value>
   </data>
   <data name="columnHeader1.Width" type="System.Int32, mscorlib">
     <value>500</value>
   </data>
   <data name="columnHeader2.Text" xml:space="preserve">
-    <value>Size</value>
+    <value>Taille</value>
   </data>
   <data name="columnHeader2.Width" type="System.Int32, mscorlib">
     <value>70</value>
   </data>
   <data name="columnHeader3.Text" xml:space="preserve">
-    <value>Done</value>
+    <value>Terminé</value>
   </data>
   <data name="columnHeader3.Width" type="System.Int32, mscorlib">
     <value>70</value>
@@ -1849,13 +1849,13 @@
     <value>%</value>
   </data>
   <data name="columnHeader17.Text" xml:space="preserve">
-    <value>Skip</value>
+    <value>Passer</value>
   </data>
   <data name="columnHeader17.Width" type="System.Int32, mscorlib">
     <value>55</value>
   </data>
   <data name="columnHeader5.Text" xml:space="preserve">
-    <value>Priority</value>
+    <value>Priorité</value>
   </data>
   <data name="columnHeader5.Width" type="System.Int32, mscorlib">
     <value>50</value>
@@ -1879,7 +1879,7 @@
     <value>filesListView</value>
   </data>
   <data name="&gt;&gt;filesListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.6.3369.30403, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.6.3369.21203, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;filesListView.Parent" xml:space="preserve">
     <value>filesTorrentNameGroupBox</value>
@@ -1924,7 +1924,7 @@
     <value>2</value>
   </data>
   <data name="filesTabPage.Text" xml:space="preserve">
-    <value>Files</value>
+    <value>Fichiers</value>
   </data>
   <data name="&gt;&gt;filesTabPage.Name" xml:space="preserve">
     <value>filesTabPage</value>
@@ -1939,19 +1939,19 @@
     <value>2</value>
   </data>
   <data name="columnHeader23.Text" xml:space="preserve">
-    <value>IP Address</value>
+    <value>Adresse IP</value>
   </data>
   <data name="columnHeader23.Width" type="System.Int32, mscorlib">
     <value>115</value>
   </data>
   <data name="columnHeader24.Text" xml:space="preserve">
-    <value>Hostname</value>
+    <value>Nom d'hôte</value>
   </data>
   <data name="columnHeader24.Width" type="System.Int32, mscorlib">
     <value>280</value>
   </data>
   <data name="columnHeader25.Text" xml:space="preserve">
-    <value>Country</value>
+    <value>Pays</value>
   </data>
   <data name="columnHeader25.Width" type="System.Int32, mscorlib">
     <value>100</value>
@@ -1966,19 +1966,19 @@
     <value>130</value>
   </data>
   <data name="columnHeader27.Text" xml:space="preserve">
-    <value>Progress</value>
+    <value>Avancement</value>
   </data>
   <data name="columnHeader27.Width" type="System.Int32, mscorlib">
     <value>70</value>
   </data>
   <data name="columnHeader28.Text" xml:space="preserve">
-    <value>Down Rate</value>
+    <value>Taux de réception</value>
   </data>
   <data name="columnHeader28.Width" type="System.Int32, mscorlib">
     <value>80</value>
   </data>
   <data name="columnHeader29.Text" xml:space="preserve">
-    <value>Up Rate</value>
+    <value>Taux d'émission</value>
   </data>
   <data name="columnHeader29.Width" type="System.Int32, mscorlib">
     <value>80</value>
@@ -2002,7 +2002,7 @@
     <value>peersListView</value>
   </data>
   <data name="&gt;&gt;peersListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.6.3369.30403, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.6.3369.21203, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;peersListView.Parent" xml:space="preserve">
     <value>peersTorrentNameGroupBox</value>
@@ -2047,7 +2047,7 @@
     <value>3</value>
   </data>
   <data name="peersTabPage.Text" xml:space="preserve">
-    <value>Peers</value>
+    <value>Sources</value>
   </data>
   <data name="&gt;&gt;peersTabPage.Name" xml:space="preserve">
     <value>peersTabPage</value>
@@ -2101,13 +2101,13 @@
     <value>3, 9</value>
   </data>
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
+    <value>63, 13</value>
   </data>
   <data name="label18.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="label18.Text" xml:space="preserve">
-    <value>Resolution:</value>
+    <value>Résolution :</value>
   </data>
   <data name="&gt;&gt;label18.Name" xml:space="preserve">
     <value>label18</value>
@@ -2212,13 +2212,13 @@
     <value>1, 84</value>
   </data>
   <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 18</value>
+    <value>84, 18</value>
   </data>
   <data name="label20.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="label20.Text" xml:space="preserve">
-    <value>Down</value>
+    <value>Réception</value>
   </data>
   <data name="&gt;&gt;label20.Name" xml:space="preserve">
     <value>label20</value>
@@ -2245,13 +2245,13 @@
     <value>23, 54</value>
   </data>
   <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 18</value>
+    <value>50, 18</value>
   </data>
   <data name="label19.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="label19.Text" xml:space="preserve">
-    <value>Up</value>
+    <value>Envoi</value>
   </data>
   <data name="&gt;&gt;label19.Name" xml:space="preserve">
     <value>label19</value>
@@ -2284,7 +2284,7 @@
     <value>speedGraph</value>
   </data>
   <data name="&gt;&gt;speedGraph.Type" xml:space="preserve">
-    <value>CustomUIControls.Graphing.C2DPushGraph, Transmission Remote, Version=3.6.3369.30403, Culture=neutral, PublicKeyToken=null</value>
+    <value>CustomUIControls.Graphing.C2DPushGraph, Transmission Remote, Version=3.6.3369.21203, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;speedGraph.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -2338,7 +2338,7 @@
     <value>0</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Overall bandwidth utilisation</value>
+    <value>Usage global de la bande passante</value>
   </data>
   <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
     <value>groupBox1</value>
@@ -2365,7 +2365,7 @@
     <value>4</value>
   </data>
   <data name="speedTabPage.Text" xml:space="preserve">
-    <value>Speed</value>
+    <value>Vitesse</value>
   </data>
   <data name="&gt;&gt;speedTabPage.Name" xml:space="preserve">
     <value>speedTabPage</value>
@@ -2382,9 +2382,9 @@
   <data name="torrentTabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <metadata name="tabControlImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="tabControlImageList.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>396, 56</value>
-  </metadata>
+  </data>
   <data name="tabControlImageList.ImageSize" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
   </data>
@@ -2442,9 +2442,9 @@
   <data name="&gt;&gt;torrentAndTabsSplitContainer.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>0, 519</value>
-  </metadata>
+  </data>
   <data name="toolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 17</value>
   </data>
@@ -2529,9 +2529,9 @@
   <data name="toolStripContainer1.TopToolStripPanel.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
   </data>
-  <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>3, 0</value>
-  </metadata>
+  </data>
   <data name="toolStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
   </data>
@@ -2574,47 +2574,47 @@
     <value>48, 36</value>
   </data>
   <data name="connectButton.Text" xml:space="preserve">
-    <value>Connect</value>
+    <value>Connection</value>
   </data>
   <data name="disconnectButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
-        rkJggg==
+        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
+        RK5CYII=
 </value>
   </data>
   <data name="disconnectButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -2627,7 +2627,7 @@
     <value>36, 36</value>
   </data>
   <data name="disconnectButton.Text" xml:space="preserve">
-    <value>Disconnect</value>
+    <value>Déconnection</value>
   </data>
   <data name="disconnectButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2680,7 +2680,7 @@
     <value>36, 36</value>
   </data>
   <data name="addTorrentButton.Text" xml:space="preserve">
-    <value>Add Torrent</value>
+    <value>Ajouter un Torrent</value>
   </data>
   <data name="addTorrentButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2688,45 +2688,45 @@
   <data name="addWebTorrentButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        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
+        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
 </value>
   </data>
   <data name="addWebTorrentButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -2739,7 +2739,7 @@
     <value>36, 36</value>
   </data>
   <data name="addWebTorrentButton.Text" xml:space="preserve">
-    <value>Add Torrent from URL</value>
+    <value>Ajouter un Torrent à partir d'une URL</value>
   </data>
   <data name="addWebTorrentButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2751,10 +2751,10 @@
     <value>False</value>
   </data>
   <data name="startAllToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 22</value>
+    <value>154, 22</value>
   </data>
   <data name="startAllToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Start All</value>
+    <value>Tout démarrer</value>
   </data>
   <data name="startTorrentButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2797,16 +2797,16 @@
     <value>48, 36</value>
   </data>
   <data name="startTorrentButton.Text" xml:space="preserve">
-    <value>Start torrent(s)</value>
+    <value>Démarrer le(s) torrent(s)</value>
   </data>
   <data name="startTorrentButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="pauseAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 22</value>
+    <value>155, 22</value>
   </data>
   <data name="pauseAllToolStripMenuItem.Text" xml:space="preserve">
-    <value>Pause All</value>
+    <value>Tous en pause</value>
   </data>
   <data name="pauseTorrentButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2845,7 +2845,7 @@
     <value>48, 36</value>
   </data>
   <data name="pauseTorrentButton.Text" xml:space="preserve">
-    <value>Pause torrent(s)</value>
+    <value>Pause le(s) torrent(s)</value>
   </data>
   <data name="pauseTorrentButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2897,10 +2897,10 @@
     <value>36, 36</value>
   </data>
   <data name="recheckTorrentButton.Text" xml:space="preserve">
-    <value>Recheck torrent(s)</value>
+    <value>Re-vérifier le(s) torrent(s)</value>
   </data>
   <data name="recheckTorrentButton.ToolTipText" xml:space="preserve">
-    <value>Recheck torrent(s)</value>
+    <value>Re-vérifier le(s) torrent(s)</value>
   </data>
   <data name="recheckTorrentButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2941,10 +2941,10 @@
     <value>36, 36</value>
   </data>
   <data name="configureTorrentButton.Text" xml:space="preserve">
-    <value>Set torrent(s) properties</value>
+    <value>Définir les propriétés de(s) torrent(s)</value>
   </data>
   <data name="configureTorrentButton.ToolTipText" xml:space="preserve">
-    <value>Set torrent(s) properties</value>
+    <value>Définir les propriétés de(s) torrent(s)</value>
   </data>
   <data name="configureTorrentButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3000,7 +3000,7 @@
     <value>36, 36</value>
   </data>
   <data name="removeTorrentButton.Text" xml:space="preserve">
-    <value>Remove torrent(s)</value>
+    <value>Retirer le(s) torrent(s)</value>
   </data>
   <data name="removeTorrentButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3065,7 +3065,7 @@
     <value>36, 36</value>
   </data>
   <data name="removeAndDeleteButton.Text" xml:space="preserve">
-    <value>Remove and delete torrent(s)</value>
+    <value>Retirer et effacer le(s) torrent(s)</value>
   </data>
   <data name="removeAndDeleteButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3091,29 +3091,29 @@
   <data name="localConfigureButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAABQ9JREFUWEftlmtM
+        k3cUxoHBYmKyiYmQEDJnZBM1YcIISkxALuFSWmEoMZlRggrKuDqKBJ0ksH0hwX1YYpYZjQajTAgXZcoY
+        8zZEBOTWSqVcSim30lJ6gRYol2fn/wpmRt2Xt92nNXnTy9ue8zvPec7518Hh/8d7FAgPD/cICws7HRER
+        XRYXl9AWH3+wNTo65iZ9lkH3PrG7cLGx8XXFxT+jqqoBDx8+p6ude11cfBEHDnwtDwkJOWpXCKFQ9PvV
+        qzUYHp5Ga2s/nj7tRVvbAKRSFRobJRCLv1shNQrtBkEVbhUK93ddvlyOFy9GcP9+Jxoa2vH4cTe9H0Z3
+        txICwYFl+l68TSCioqI8RaKv7ggEojssOQsaHBz8Kb1vLC2tgUSiwpMnUlJCRor0YmBgAo8etVM7DklD
+        Q0PdeUOQnN9euPALbtyoRUxMTAdBbF6F8GRKXLtWRZWr0N7eTzAKyOUjGBrSorCwBGFh+w7xBmBuLy+v
+        x8TEDFiyqChhEyngyQIT3OcxMbHNt27dQ1/fGGSyYSgU4/RdPcrKahEREXGRN0BcXFxbXd1TtLTI0ds7
+        htLSaoKIbg8KCvqMBd+92z+lqKiEEmvpmsDoqBY63Qz5ogUi0f76HTt2fMgLQih8BdDUJMODB10k8zCu
+        XKlg1XX4+X2RRm2QVlb+SVOhwciIFhqNHkajBffuNSEyUlCdkJDwAS8A6nnZzZt38eyZnHN7Y6MUXV1D
+        pMRtFBQUo6LiD/T3j3OVq9V6GAyzmJmZw/XrNQgMDKzilZz9OCDgy/Sioh/x/PkAjZoEzc09nOFkshFy
+        /CSUSg2XfHJSD73eBItlgTwwjZ4eJbKy8qy7dvmIeUH4+vpujowUDdbXt6CzU0EgfZzbX75UcT1nsqvV
+        05ieNmF+3oqpKRN5RUVKmDE2pkNoqGB5586dubwgfHx8jp48mU3VyynxKDmejRoz3BRXudE4i7m5BUpu
+        pOTDnCIGwwzYg6mRkZGL7du3neUFQVUUHT+evsLMJZezynVkOBPJbqbLApVKQ21RriafhdW6yAGwh1pt
+        QHp6jtXLy+sML4ht27wO7t27T5KTU4BLl35Fbe1fdD0GW8vMG1qtESaT+Y3kaxDsXmamGFu3bvmeFwRV
+        scnLa0sCKfKTv/+e3wICAioJrPrEibQVZsylpdeFv/WCQWRkiOHp6ZnDC2Ltx6tLxpk2ozMFFdPzslw+
+        9n4CusNadupUFjw8PAoojqNNQNaCuLu75yYlpZJJx98JsbCwSO1ZIu8YkZqaDTc3t3M2BWDB3N035Scm
+        pqwMDk6+AWGxzNPEGGhSDDQxi7SuzQgPFyxv3LiR33S8qwJXV9e8Y8e+oUWl5iDM5jmaEi3thVdjy8bV
+        al1ebUcmNmz46LytlXBydf34B9YOhYKdETrulGRLi0FoNAZucS0uLtOzGcnJ6Uvr16+3jTH/WQkLeuTI
+        iSW2vNhhxZbXGoRUOohuST8W5pe4wyst7TSoHfm2VsJh3bp15xMTk8mYE9QGHUGoCUIDSbcC5eUPIO9T
+        vV5Wfn57FDYHYAGdnZ3OshFlnmBKKEmJjo4+3K1rxti4DkbDPP2ZPQfyjv3+zBLHOWoHHd1MCS2dKUqu
+        HTqdBdnZeaD7bEM62UWB1aBs6RQcPpxEhpyk88GE8XEDHdln4OjoWGLzpfQvleQkJaWQEmo6G3LXKrdn
+        4W/HdnJyyPf29pa5uLgU2Vv2/7YyW2b7G8FyAJkpbsiZAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="localConfigureButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -3126,52 +3126,52 @@
     <value>36, 36</value>
   </data>
   <data name="localConfigureButton.Text" xml:space="preserve">
-    <value>Local Settings</value>
+    <value>Paramètres locaux</value>
   </data>
   <data name="remoteConfigureButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
-        Wfb8J7fffwElWhqDcZkBQwAAAABJRU5ErkJggg==
+        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
 </value>
   </data>
   <data name="remoteConfigureButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -3184,7 +3184,7 @@
     <value>36, 36</value>
   </data>
   <data name="remoteConfigureButton.Text" xml:space="preserve">
-    <value>Remote Settings</value>
+    <value>Paramètres distants</value>
   </data>
   <data name="remoteConfigureButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3192,50 +3192,50 @@
   <data name="sessionStatsButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
-        RK5CYII=
+        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
+        TkSuQmCC
 </value>
   </data>
   <data name="sessionStatsButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -3248,7 +3248,7 @@
     <value>36, 36</value>
   </data>
   <data name="sessionStatsButton.Text" xml:space="preserve">
-    <value>Display Statistics</value>
+    <value>Afficher les statistiques</value>
   </data>
   <data name="sessionStatsButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3298,95 +3298,80 @@
   <data name="&gt;&gt;toolStripContainer1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
-  </metadata>
+  </data>
   <data name="connectToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
+    <value>192, 22</value>
   </data>
   <data name="connectToolStripMenuItem.Text" xml:space="preserve">
-    <value>Connect</value>
+    <value>Connection</value>
   </data>
   <data name="disconnectToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
+    <value>192, 22</value>
   </data>
   <data name="disconnectToolStripMenuItem.Text" xml:space="preserve">
-    <value>Disconnect</value>
+    <value>Déconnection</value>
   </data>
   <data name="disconnectToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 6</value>
+    <value>189, 6</value>
   </data>
   <data name="addTorrentToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
+    <value>192, 22</value>
   </data>
   <data name="addTorrentToolStripMenuItem.Text" xml:space="preserve">
-    <value>Add Torrent</value>
+    <value>Ajouter un Torrent</value>
   </data>
   <data name="addTorrentToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="addTorrentFromUrlToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
+    <value>192, 22</value>
   </data>
   <data name="addTorrentFromUrlToolStripMenuItem.Text" xml:space="preserve">
-    <value>Add Torrent From URL</value>
+    <value>Ajouter un Torrent à partir d'une URL</value>
   </data>
   <data name="addTorrentFromUrlToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="fileMenuItemSeperator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 6</value>
+    <value>189, 6</value>
   </data>
   <data name="fileMenuItemSeperator1.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
+    <value>192, 22</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
-    <value>Exit</value>
+    <value>Sortir</value>
   </data>
   <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
+    <value>50, 20</value>
   </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>File</value>
+    <value>Fichier</value>
   </data>
   <data name="localSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 22</value>
+    <value>181, 22</value>
   </data>
   <data name="localSettingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Local Settings</value>
+    <value>Paramètres locaux</value>
   </data>
   <data name="remoteSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 22</value>
+    <value>181, 22</value>
   </data>
   <data name="remoteSettingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Remote Settings</value>
+    <value>Paramètres distants</value>
   </data>
   <data name="remoteSettingsToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 6</value>
-  </data>
-  <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 22</value>
-  </data>
-  <data name="englishToolStripMenuItem.Text" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 22</value>
-  </data>
-  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
-    <value>Language</value>
-  </data>
   <data name="optionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 20</value>
+    <value>56, 20</value>
   </data>
   <data name="optionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Options</value>
@@ -3395,16 +3380,16 @@
     <value>False</value>
   </data>
   <data name="startToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="startToolStripMenuItem.Text" xml:space="preserve">
-    <value>Start</value>
+    <value>Démarrer</value>
   </data>
   <data name="pauseToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="pauseToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="pauseToolStripMenuItem.Text" xml:space="preserve">
     <value>Pause</value>
@@ -3413,55 +3398,55 @@
     <value>False</value>
   </data>
   <data name="recheckToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="recheckToolStripMenuItem.Text" xml:space="preserve">
-    <value>Recheck</value>
+    <value>Re-vérifier</value>
   </data>
   <data name="propertiesToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="propertiesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="propertiesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Properties</value>
+    <value>Propriétés</value>
   </data>
   <data name="removeToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="removeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="removeToolStripMenuItem.Text" xml:space="preserve">
-    <value>Remove</value>
+    <value>Retirer</value>
   </data>
   <data name="removeDeleteToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="removeDeleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="removeDeleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Remove and Delete</value>
+    <value>Retirer et effacer</value>
   </data>
   <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 6</value>
+    <value>166, 6</value>
   </data>
   <data name="startAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="startAllToolStripMenuItem.Text" xml:space="preserve">
-    <value>Start All</value>
+    <value>Tout démarrer</value>
   </data>
   <data name="stopAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 22</value>
+    <value>169, 22</value>
   </data>
   <data name="stopAllToolStripMenuItem.Text" xml:space="preserve">
-    <value>Pause All</value>
+    <value>Tous en pause</value>
   </data>
   <data name="torrentToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 20</value>
+    <value>55, 20</value>
   </data>
   <data name="torrentToolStripMenuItem.Text" xml:space="preserve">
     <value>Torrent</value>
@@ -3470,49 +3455,49 @@
     <value>False</value>
   </data>
   <data name="showDetailsPanelToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 22</value>
+    <value>181, 22</value>
   </data>
   <data name="showDetailsPanelToolStripMenuItem.Text" xml:space="preserve">
-    <value>Details panel</value>
+    <value>Panneau des détails</value>
   </data>
   <data name="viewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
+    <value>37, 20</value>
   </data>
   <data name="viewToolStripMenuItem.Text" xml:space="preserve">
-    <value>View</value>
+    <value>Vue</value>
   </data>
   <data name="showErrorLogToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 22</value>
+    <value>228, 22</value>
   </data>
   <data name="showErrorLogToolStripMenuItem.Text" xml:space="preserve">
-    <value>Show Error Log</value>
+    <value>Afficher le journal des erreurs</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 6</value>
+    <value>225, 6</value>
   </data>
   <data name="projectSiteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 22</value>
+    <value>228, 22</value>
   </data>
   <data name="projectSiteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Project site</value>
+    <value>Site du projet</value>
   </data>
   <data name="checkForNewVersionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 22</value>
+    <value>228, 22</value>
   </data>
   <data name="checkForNewVersionToolStripMenuItem.Text" xml:space="preserve">
-    <value>Check for new version</value>
+    <value>Vérifier les mises à jour</value>
   </data>
   <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 22</value>
+    <value>228, 22</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
-    <value>About Transmission Remote</value>
+    <value>A propos de Transmission Remote</value>
   </data>
   <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
+    <value>40, 20</value>
   </data>
   <data name="helpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Help</value>
+    <value>Aide</value>
   </data>
   <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -3538,18 +3523,18 @@
   <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="flagsImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="flagsImageList.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>17, 17</value>
-  </metadata>
+  </data>
   <data name="flagsImageList.ImageSize" type="System.Drawing.Size, System.Drawing">
     <value>16, 12</value>
   </data>
-  <metadata name="refreshWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="refreshWorker.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>461, 17</value>
-  </metadata>
-  <metadata name="notifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="notifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>590, 17</value>
-  </metadata>
+  </data>
   <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
@@ -3577,24 +3562,24 @@
   <data name="notifyIcon.Text" xml:space="preserve">
     <value>Transmission Remote</value>
   </data>
-  <metadata name="refreshTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="refreshTimer.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>696, 17</value>
-  </metadata>
-  <metadata name="filesTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="filesTimer.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>17, 56</value>
-  </metadata>
-  <metadata name="filesWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="filesWorker.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>121, 56</value>
-  </metadata>
-  <metadata name="refreshElapsedTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="refreshElapsedTimer.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>234, 56</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  </data>
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  </data>
+  <data name="$this.TrayHeight" type="System.Int32, mscorlib">
     <value>109</value>
-  </metadata>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -4006,24 +3991,6 @@
   <data name="&gt;&gt;remoteSettingsToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripMenuItem3.Name" xml:space="preserve">
-    <value>toolStripMenuItem3</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;languageToolStripMenuItem.Name" xml:space="preserve">
-    <value>languageToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;languageToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;englishToolStripMenuItem.Name" xml:space="preserve">
-    <value>englishToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;englishToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;torrentToolStripMenuItem.Name" xml:space="preserve">
     <value>torrentToolStripMenuItem</value>
   </data>
@@ -4179,5 +4146,8 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Langue</value>
   </data>
 </root>

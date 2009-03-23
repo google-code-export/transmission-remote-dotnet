@@ -97,6 +97,15 @@ namespace TransmissionRemoteDotnet {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Byte.
+        /// </summary>
+        internal static string Byte {
+            get {
+                return ResourceManager.GetString("Byte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Checking.
         /// </summary>
         internal static string Checking {
@@ -205,6 +214,15 @@ namespace TransmissionRemoteDotnet {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Day.
+        /// </summary>
+        internal static string Day {
+            get {
+                return ResourceManager.GetString("Day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Disconnect.
         /// </summary>
         internal static string Disconnect {
@@ -295,6 +313,24 @@ namespace TransmissionRemoteDotnet {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gigabyte.
+        /// </summary>
+        internal static string Gigabyte {
+            get {
+                return ResourceManager.GetString("Gigabyte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GB.
+        /// </summary>
+        internal static string GigabyteShort {
+            get {
+                return ResourceManager.GetString("GigabyteShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to High.
         /// </summary>
         internal static string High {
@@ -322,6 +358,15 @@ namespace TransmissionRemoteDotnet {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hour.
+        /// </summary>
+        internal static string Hour {
+            get {
+                return ResourceManager.GetString("Hour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Incomplete.
         /// </summary>
         internal static string Incomplete {
@@ -345,6 +390,24 @@ namespace TransmissionRemoteDotnet {
         internal static string InputAccepted {
             get {
                 return ResourceManager.GetString("InputAccepted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kilobyte.
+        /// </summary>
+        internal static string Kilobyte {
+            get {
+                return ResourceManager.GetString("Kilobyte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to KB.
+        /// </summary>
+        internal static string KilobyteShort {
+            get {
+                return ResourceManager.GetString("KilobyteShort", resourceCulture);
             }
         }
         
@@ -399,6 +462,33 @@ namespace TransmissionRemoteDotnet {
         internal static string LowPriority {
             get {
                 return ResourceManager.GetString("LowPriority", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Megabyte.
+        /// </summary>
+        internal static string Megabyte {
+            get {
+                return ResourceManager.GetString("Megabyte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MB.
+        /// </summary>
+        internal static string MegabyteShort {
+            get {
+                return ResourceManager.GetString("MegabyteShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minute.
+        /// </summary>
+        internal static string Minute {
+            get {
+                return ResourceManager.GetString("Minute", resourceCulture);
             }
         }
         
@@ -561,6 +651,15 @@ namespace TransmissionRemoteDotnet {
         internal static string RpcVersionMinimum {
             get {
                 return ResourceManager.GetString("RpcVersionMinimum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Second.
+        /// </summary>
+        internal static string Second {
+            get {
+                return ResourceManager.GetString("Second", resourceCulture);
             }
         }
         

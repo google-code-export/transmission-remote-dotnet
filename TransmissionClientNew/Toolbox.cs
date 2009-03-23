@@ -14,7 +14,7 @@ namespace TransmissionRemoteDotnet
     public class Toolbox
     {
         private const int STRIPE_OFFSET = 15;
-        public static readonly IFormatProvider NUMBER_FORMAT = (new CultureInfo("en-US")).NumberFormat;
+        public static readonly IFormatProvider NUMBER_FORMAT = (new CultureInfo("en-GB")).NumberFormat;
 
         public static decimal ParseProgress(string s)
         {
@@ -115,17 +115,17 @@ namespace TransmissionRemoteDotnet
 
         public static string KbpsString(int rate)
         {
-            return rate + " KB/s";
+            return String.Format("{0} {1}/{2}", rate, OtherStrings.KilobyteShort, OtherStrings.Second.ToLower()[0]);
         }
 
         public static string FormatTimespanLong(TimeSpan span)
         {
-            return String.Format("{0}d {1}h {2}m {3}s", new object[] { span.Days, span.Hours, span.Minutes, span.Seconds });
+            return String.Format("{0}{1} {2}{3} {4}{5} {6}{7}", new object[] { span.Days, OtherStrings.Day.ToLower()[0], span.Hours, OtherStrings.Hour.ToLower()[0], span.Minutes, OtherStrings.Minute.ToLower()[0], span.Seconds, OtherStrings.Second.ToLower()[0] });
         }
 
         public static string GetSpeed(long bytes)
         {
-            return GetFileSize(bytes) + "/s";
+            return String.Format("{0}/{1}", GetFileSize(bytes), OtherStrings.Second.ToLower()[0]);
         }
 
         public static string GetFileSize(long bytes)
@@ -133,26 +133,26 @@ namespace TransmissionRemoteDotnet
             if (bytes >= 1073741824)
             {
                 Decimal size = Decimal.Divide(bytes, 1073741824);
-                return String.Format("{0:##.##} GB", size);
+                return String.Format("{0:##.##} {1}", size, OtherStrings.GigabyteShort);
             }
             else if (bytes >= 1048576)
             {
                 Decimal size = Decimal.Divide(bytes, 1048576);
-                return String.Format("{0:##.##} MB", size);
+                return String.Format("{0:##.##} {1}", size, OtherStrings.MegabyteShort);
             }
             else if (bytes >= 1024)
             {
                 Decimal size = Decimal.Divide(bytes, 1024);
-                return String.Format("{0:##.##} KB", size);
+                return String.Format("{0:##.##} {1]", size, OtherStrings.KilobyteShort);
             }
             else if (bytes > 0 & bytes < 1024)
             {
                 Decimal size = bytes;
-                return String.Format("{0:##.##} B", size);
+                return String.Format("{0:##.##} {1}", size, OtherStrings.Byte.ToLower()[0]);
             }
             else
             {
-                return "0 B";
+                return "0 " + OtherStrings.Byte.ToLower()[0];
             }
         }
 

@@ -15,6 +15,7 @@ using System.Drawing.Drawing2D;
 using System.Data;
 using System.Windows.Forms;
 using System.Text;
+using TransmissionRemoteDotnet;
 
 namespace CustomUIControls
 {
@@ -646,9 +647,9 @@ namespace CustomUIControls
             {
                 string PeekStr;
                 if (m_MaxPeek > 1024)
-                    PeekStr = String.Format("{0} kB/s", m_MaxPeek / 1024);
+                    PeekStr = String.Format("{0} {1}/{2}", m_MaxPeek / 1024, OtherStrings.Kilobyte[0], OtherStrings.Second.ToLower()[0]);
                 else
-                    PeekStr = String.Format("{0} B/s", m_MaxPeek);
+                    PeekStr = String.Format("{0} {1}/{2}", m_MaxPeek, OtherStrings.Byte[0], OtherStrings.Second.ToLower()[0]);
                 SizeF maxSize = g.MeasureString(m_MaxLabel, Font);
                 SizeF minSize = g.MeasureString(m_MinLabel, Font);
                 SizeF peekSize = g.MeasureString(PeekStr, Font);
