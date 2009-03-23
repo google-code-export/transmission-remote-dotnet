@@ -11,7 +11,7 @@
 Name "Transmission Remote"
 
 ; The file to write
-OutFile "transmission-remote-dotnet-3.5-installer.exe"
+OutFile "transmission-remote-dotnet-3.7-installer.exe"
 
 ; The default installation directory
 InstallDir "$PROGRAMFILES\Transmission Remote"
@@ -38,7 +38,6 @@ UninstPage instfiles
 
 ; The stuff to install
 Section "Transmission Remote (required)"
-
   SectionIn RO
   
   ; Set output path to the installation directory.
@@ -52,7 +51,7 @@ Section "Transmission Remote (required)"
   File "LICENCE.txt"
   
   ; Write the installation path into the registry
-  WriteRegStr HKLM SOFTWARE\NSIS_Example2 "Install_Dir" "$INSTDIR"
+  WriteRegStr HKLM "SOFTWARE\TransmissionRemote" "Install_Dir" "$INSTDIR"
   
   ; Write the uninstall keys for Windows
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Transmission Remote" "DisplayName" "Transmission Remote"
@@ -66,16 +65,25 @@ SectionEnd
 
 ; Optional section (can be disabled by the user)
 Section "Start Menu Shortcuts"
-
   CreateDirectory "$SMPROGRAMS\Transmission Remote"
   CreateShortCut "$SMPROGRAMS\Transmission Remote\Uninstall.lnk" "$INSTDIR\uninstall.exe" "" "$INSTDIR\uninstall.exe" 0
   CreateShortCut "$SMPROGRAMS\Transmission Remote\Transmission Remote.lnk" "$INSTDIR\Transmission Remote.exe" "" "$INSTDIR\Transmission Remote.exe" 0 
-  
 SectionEnd
 
+Section "Desktop Shortcut"
+  CreateShortCut "$DESKTOP\Transmission Remote.lnk" "$INSTDIR\Transmission Remote.exe" "" "$INSTDIR\Transmission Remote.exe" 0
+SectionEnd
+  
 Section "GeoIP Database"
   File "GeoIP.dat"
 SectionEnd
+
+Section "French translation"
+  CreateDirectory "$INSTDIR\fr-FR"
+  SetOutPath "$INSTDIR\fr-FR"
+  File "fr-FR\Transmission Remote.resources.dll"
+SectionEnd
+
 ;--------------------------------
 
 ; Uninstaller
