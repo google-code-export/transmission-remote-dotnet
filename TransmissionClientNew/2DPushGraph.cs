@@ -647,7 +647,7 @@ namespace CustomUIControls
             {
                 string PeekStr;
                 if (m_MaxPeek > 1024)
-                    PeekStr = String.Format("{0} {1}/{2}", m_MaxPeek / 1024, OtherStrings.Kilobyte[0], OtherStrings.Second.ToLower()[0]);
+                    PeekStr = String.Format("{0} {1}/{2}", m_MaxPeek / 1024, OtherStrings.KilobyteShort, OtherStrings.Second.ToLower()[0]);
                 else
                     PeekStr = String.Format("{0} {1}/{2}", m_MaxPeek, OtherStrings.Byte[0], OtherStrings.Second.ToLower()[0]);
                 SizeF maxSize = g.MeasureString(m_MaxLabel, Font);

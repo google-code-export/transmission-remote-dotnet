@@ -143,12 +143,12 @@ namespace TransmissionRemoteDotnet
             else if (bytes >= 1024)
             {
                 Decimal size = Decimal.Divide(bytes, 1024);
-                return String.Format("{0:##.##} {1]", size, OtherStrings.KilobyteShort);
+                return String.Format("{0:##.##} {1}", size, OtherStrings.KilobyteShort);
             }
             else if (bytes > 0 & bytes < 1024)
             {
                 Decimal size = bytes;
-                return String.Format("{0:##.##} {1}", size, OtherStrings.Byte.ToLower()[0]);
+                return String.Format("{0:##.##} {1}", size, OtherStrings.Byte[0]);
             }
             else
             {
