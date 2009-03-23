@@ -382,7 +382,6 @@ namespace TransmissionRemoteDotnet
                         ToolStripMenuItem ti = new ToolStripMenuItem(ci.EnglishName);
                         ti.Click += new EventHandler(this.ChangeUICulture);
                         ti.Tag = cultureId;
-                        ti.Checked = cultureId.Equals(settings.Locale);
                         languageToolStripMenuItem.DropDownItems.Add(ti);
                     }
                     catch (Exception ex)
@@ -391,6 +390,8 @@ namespace TransmissionRemoteDotnet
                     }
                 }
             }
+            foreach (ToolStripMenuItem mi in languageToolStripMenuItem.DropDownItems)
+                mi.Checked = settings.Locale.Equals((string)mi.Tag);
         }
 
         private void ChangeUICulture(object sender, EventArgs e)

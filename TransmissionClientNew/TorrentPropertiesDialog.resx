@@ -117,18 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="tabControl1.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="tabPage1.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="peerLimitValue.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="peerLimitValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>131, 75</value>
+    <value>194, 75</value>
   </data>
   <data name="peerLimitValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -149,9 +140,6 @@
   <data name="&gt;&gt;peerLimitValue.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="label3.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -179,9 +167,6 @@
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="uploadLimitEnableField.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="uploadLimitEnableField.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -209,11 +194,8 @@
   <data name="&gt;&gt;uploadLimitEnableField.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="downloadLimitField.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="downloadLimitField.Location" type="System.Drawing.Point, System.Drawing">
-    <value>131, 46</value>
+    <value>194, 46</value>
   </data>
   <data name="downloadLimitField.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -233,14 +215,11 @@
   <data name="&gt;&gt;downloadLimitField.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="label1.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>194, 19</value>
+    <value>257, 19</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 13</value>
@@ -263,11 +242,8 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <metadata name="uploadLimitField.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="uploadLimitField.Location" type="System.Drawing.Point, System.Drawing">
-    <value>131, 17</value>
+    <value>194, 17</value>
   </data>
   <data name="uploadLimitField.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 20</value>
@@ -287,14 +263,11 @@
   <data name="&gt;&gt;uploadLimitField.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <metadata name="label2.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>194, 48</value>
+    <value>257, 48</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 13</value>
@@ -317,9 +290,6 @@
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <metadata name="downloadLimitEnableField.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="downloadLimitEnableField.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -396,9 +366,6 @@
   <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="button2.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
     <value>288, 164</value>
   </data>
@@ -423,9 +390,6 @@
   <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="button1.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
     <value>210, 164</value>
   </data>
@@ -451,9 +415,6 @@
     <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
