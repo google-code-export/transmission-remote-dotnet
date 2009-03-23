@@ -446,7 +446,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return profileConfMap.ContainsKey(REGKEY_PLINKCMD) ? (string)profileConfMap[REGKEY_PLINKCMD] : "ls -l $DATA; read";
+                return profileConfMap.ContainsKey(REGKEY_PLINKCMD) ? (string)profileConfMap[REGKEY_PLINKCMD] : "ls -lh \"$DATA\"|less";
             }
             set
             {

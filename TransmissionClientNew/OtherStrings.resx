@@ -292,7 +292,7 @@
     <value>Start all</value>
   </data>
   <data name="TheTorrentHasFinishedDownloading" xml:space="preserve">
-    <value>The torrent has finished downloading</value>
+    <value>This torrent is now complete</value>
   </data>
   <data name="Torrents" xml:space="preserve">
     <value>Torrents</value>
@@ -329,5 +329,11 @@
   </data>
   <data name="Incomplete" xml:space="preserve">
     <value>Incomplete</value>
+  </data>
+  <data name="LanguageUpdated" xml:space="preserve">
+    <value>Language updated</value>
+  </data>
+  <data name="LanguageUpdateDetail" xml:space="preserve">
+    <value>Your language choice has been updated. A restart of the application is required for it to take full effect.</value>
   </data>
 </root>

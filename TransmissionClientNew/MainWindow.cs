@@ -373,7 +373,6 @@ namespace TransmissionRemoteDotnet
                 string dn = subdi.Name;
                 if (dn.IndexOf('-') == 2 && dn.Length == 5)
                 {
-                    Console.WriteLine(dn);
                     string cultureId = null;
                     try
                     {
@@ -404,8 +403,8 @@ namespace TransmissionRemoteDotnet
                     mi.Checked = false;
                 senderMI.Checked = true;
                 settings.Locale = (string)senderMI.Tag;
-                //Console.WriteLine("Changing to " + settings.Locale);
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo(settings.Locale);
+                MessageBox.Show(OtherStrings.LanguageUpdateDetail, OtherStrings.LanguageUpdated, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {
