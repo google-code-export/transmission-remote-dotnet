@@ -44,3 +44,6 @@ C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet-3
 C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet-3.0-src\TransmissionClientNew\obj\Release\Transmission Remote.exe
 C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet-3.0-src\TransmissionClientNew\obj\Release\Transmission Remote.pdb
 C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet-3.0-src\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.OtherStrings.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet-3.0-src\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentPropertiesDialog.fr-FR.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet-3.0-src\TransmissionClientNew\bin\Release\fr-FR\Transmission Remote.resources.dll
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet-3.0-src\TransmissionClientNew\obj\Release\fr-FR\Transmission Remote.resources.dll

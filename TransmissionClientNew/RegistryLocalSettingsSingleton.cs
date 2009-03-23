@@ -51,6 +51,7 @@ namespace TransmissionRemoteDotnet
             REGKEY_PLINKPATH = "plinkPath",
             REGKEY_PLINKCMD = "plinkCmd",
             REGKEY_PLINKENABLE = "plinkEnable",
+            REGKEY_LOCALE = "locale",
             REGKEY_CUSTOMPATH = "customPath";
 
         private static LocalSettingsSingleton instance = null;
@@ -426,6 +427,18 @@ namespace TransmissionRemoteDotnet
             set
             {
                 this.rootConfMap[REGKEY_PLINKPATH] = value;
+            }
+        }
+
+        public string Locale
+        {
+            get
+            {
+                return rootConfMap.ContainsKey(REGKEY_LOCALE) ? (string)rootConfMap[REGKEY_LOCALE] : "en-GB";
+            }
+            set
+            {
+                rootConfMap[REGKEY_LOCALE] = value;
             }
         }
 

@@ -13,6 +13,9 @@ using MaxMind;
 using System.IO;
 using System.Diagnostics;
 using System.Net.Sockets;
+using System.Reflection;
+using System.Globalization;
+using System.Threading;
 
 namespace TransmissionRemoteDotnet
 {
@@ -50,6 +53,12 @@ namespace TransmissionRemoteDotnet
 
         public MainWindow()
         {
+            LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
+            try
+            {
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(settings.Locale);
+            }
+            catch { }
             Program.OnConnStatusChanged += new ConnStatusChangedDelegate(Program_connStatusChanged);
             Program.OnTorrentsUpdated += new TorrentsUpdatedDelegate(Program_onTorrentsUpdated);
             InitializeComponent();
@@ -65,7 +74,6 @@ namespace TransmissionRemoteDotnet
             generalTabPage.ImageIndex = 4;
             mainVerticalSplitContainer.Panel1Collapsed = true;
             this.peersTabPageSaved = this.peersTabPage;
-            LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
             refreshTimer.Interval = settings.RefreshRate * 1000;
             filesTimer.Interval = settings.RefreshRate * 1000 * LocalSettingsSingleton.FILES_REFRESH_MULTIPLICANT;
             torrentListView.ListViewItemSorter = lvwColumnSorter = new ListViewItemSorter();
@@ -359,6 +367,49 @@ namespace TransmissionRemoteDotnet
                 Connect();
             }
             OpenGeoipDatabase();
+            DirectoryInfo di = new DirectoryInfo(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+            foreach (DirectoryInfo subdi in di.GetDirectories())
+            {
+                string dn = subdi.Name;
+                if (dn.IndexOf('-') == 2 && dn.Length == 5)
+                {
+                    Console.WriteLine(dn);
+                    string cultureId = null;
+                    try
+                    {
+                        cultureId = dn.Substring(0, 2).ToLower() + "-" + dn.Substring(3, 2).ToUpper();
+                        CultureInfo ci = new CultureInfo(cultureId);
+                        ToolStripMenuItem ti = new ToolStripMenuItem(ci.EnglishName);
+                        ti.Click += new EventHandler(this.ChangeUICulture);
+                        ti.Tag = cultureId;
+                        ti.Checked = cultureId.Equals(settings.Locale);
+                        languageToolStripMenuItem.DropDownItems.Add(ti);
+                    }
+                    catch (Exception ex)
+                    {
+                        Program.Log(String.Format("Could not load pack {0}", cultureId), String.Format("{0}: {1}", ex.GetType(), ex.Message));
+                    }
+                }
+            }
+        }
+
+        private void ChangeUICulture(object sender, EventArgs e)
+        {
+            try
+            {
+                LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
+                ToolStripMenuItem senderMI = sender as ToolStripMenuItem;
+                foreach (ToolStripMenuItem mi in languageToolStripMenuItem.DropDownItems)
+                    mi.Checked = false;
+                senderMI.Checked = true;
+                settings.Locale = (string)senderMI.Tag;
+                //Console.WriteLine("Changing to " + settings.Locale);
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(settings.Locale);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Unable to load language pack", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void connectButtonprofile_SelectedIndexChanged(object sender, EventArgs e)

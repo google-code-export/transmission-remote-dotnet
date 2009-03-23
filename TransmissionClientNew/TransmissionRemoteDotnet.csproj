@@ -159,6 +159,9 @@
     <EmbeddedResource Include="StatsDialog.resx">
       <DependentUpon>StatsDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TorrentPropertiesDialog.fr-FR.resx">
+      <DependentUpon>TorrentPropertiesDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TorrentPropertiesDialog.resx">
       <DependentUpon>TorrentPropertiesDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +170,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Flags.Designer.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
