@@ -122,176 +122,29 @@
     <value>True</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 13</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Télécharger vers :</value>
-  </data>
-  <data name="DownloadToField.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 24</value>
-  </data>
-  <data name="DownloadToField.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 20</value>
-  </data>
-  <data name="DownloadToField.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="LimitUploadCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LimitUploadCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 24</value>
-  </data>
-  <data name="LimitUploadCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 17</value>
-  </data>
-  <data name="LimitUploadCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
   </data>
   <data name="LimitUploadCheckBox.Text" xml:space="preserve">
     <value>Limite d'envoi</value>
   </data>
-  <data name="LimitUploadValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 23</value>
-  </data>
-  <data name="LimitUploadValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
-  </data>
-  <data name="LimitUploadValue.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="LimitDownloadCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LimitDownloadCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 50</value>
-  </data>
-  <data name="LimitDownloadCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 17</value>
-  </data>
-  <data name="LimitDownloadCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
   <data name="LimitDownloadCheckBox.Text" xml:space="preserve">
     <value>Limite de réception</value>
-  </data>
-  <data name="LimitDownloadValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 49</value>
-  </data>
-  <data name="LimitDownloadValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
-  </data>
-  <data name="LimitDownloadValue.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 53</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 13</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Port entrant :</value>
   </data>
-  <data name="IncomingPortValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 51</value>
-  </data>
-  <data name="IncomingPortValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
-  </data>
-  <data name="IncomingPortValue.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="SaveButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>158, 266</value>
-  </data>
-  <data name="SaveButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="SaveButton.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
   <data name="SaveButton.Text" xml:space="preserve">
     <value>Sauvegarder</value>
-  </data>
-  <data name="CloseFormButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>239, 266</value>
-  </data>
-  <data name="CloseFormButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="CloseFormButton.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
   </data>
   <data name="CloseFormButton.Text" xml:space="preserve">
     <value>Fermer</value>
   </data>
-  <data name="SettingsWorker.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>17, 17</value>
-  </data>
-  <data name="PeerLimitValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 108</value>
-  </data>
-  <data name="PeerLimitValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
-  </data>
-  <data name="PeerLimitValue.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="PEXcheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="PEXcheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 138</value>
-  </data>
-  <data name="PEXcheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 17</value>
-  </data>
-  <data name="PEXcheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
   <data name="PEXcheckBox.Text" xml:space="preserve">
     <value>Autoriser l'échange de sources</value>
   </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 110</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 13</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Limite du nombre de sources :</value>
-  </data>
-  <data name="PortForward.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="PortForward.Location" type="System.Drawing.Point, System.Drawing">
-    <value>201, 52</value>
-  </data>
-  <data name="PortForward.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 17</value>
-  </data>
-  <data name="PortForward.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
   </data>
   <data name="PortForward.Text" xml:space="preserve">
     <value>Utiliser UPNP</value>
@@ -305,95 +158,20 @@
   <data name="EncryptionCombobox.Items2" xml:space="preserve">
     <value>requis</value>
   </data>
-  <data name="EncryptionCombobox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>111, 79</value>
-  </data>
-  <data name="EncryptionCombobox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 21</value>
-  </data>
-  <data name="EncryptionCombobox.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 82</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Encryption :</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 5</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>303, 167</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>General</value>
   </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>182, 54</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 13</value>
-  </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Ko/s</value>
-  </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>182, 28</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>31, 13</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>KO/s</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Ko/s</value>
-  </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 178</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>303, 82</value>
-  </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>KO/s</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Global speed limit</value>
-  </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="$this.Locked" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>326, 297</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

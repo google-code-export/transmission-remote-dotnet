@@ -20,7 +20,7 @@ CREDITS AND ACKNOWLEDGEMENTS
  * All icons are the creation of David Vignoni in his Nuvola theme. http://www.icon-king.com/
  * Elbandi has made a number of notable contributions including SSL, speed graphs and GeoIP support.
  * Thank you to all the following users kind enough to translate this application
-    * romacir - French
+    * Romaric R. for the French translation
 	
 ABOUT
 ----------------------------

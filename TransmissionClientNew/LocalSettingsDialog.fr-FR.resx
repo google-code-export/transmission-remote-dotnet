@@ -118,183 +118,32 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 21</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 13</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Hôte :</value>
-  </data>
-  <data name="HostField.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 18</value>
-  </data>
-  <data name="HostField.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 20</value>
-  </data>
-  <data name="HostField.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 46</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 13</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Port :</value>
   </data>
-  <data name="PortField.Location" type="System.Drawing.Point, System.Drawing">
-    <value>86, 44</value>
-  </data>
-  <data name="PortField.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
-  </data>
-  <data name="PortField.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="SaveButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 244</value>
-  </data>
-  <data name="SaveButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 23</value>
-  </data>
-  <data name="SaveButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
   <data name="SaveButton.Text" xml:space="preserve">
     <value>Sauvegarder</value>
-  </data>
-  <data name="CloseDialogButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>285, 244</value>
-  </data>
-  <data name="CloseDialogButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 23</value>
-  </data>
-  <data name="CloseDialogButton.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
   </data>
   <data name="CloseDialogButton.Text" xml:space="preserve">
     <value>Annuler</value>
   </data>
-  <data name="AutoConnectCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="AutoConnectCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>273, 49</value>
-  </data>
-  <data name="AutoConnectCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 17</value>
-  </data>
-  <data name="AutoConnectCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
   <data name="AutoConnectCheckBox.Text" xml:space="preserve">
     <value>Auto-connection</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 74</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 13</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Taux de rafraîchissement :</value>
   </data>
-  <data name="RefreshRateValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>86, 72</value>
-  </data>
-  <data name="RefreshRateValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
-  </data>
-  <data name="RefreshRateValue.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="UseSSLCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UseSSLCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>273, 21</value>
-  </data>
-  <data name="UseSSLCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 17</value>
-  </data>
-  <data name="UseSSLCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
   <data name="UseSSLCheckBox.Text" xml:space="preserve">
     <value>Sécurisé (SSL)</value>
-  </data>
-  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 100</value>
-  </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 13</value>
-  </data>
-  <data name="label10.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>Limite d'essais :</value>
   </data>
-  <data name="RetryLimitValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>86, 100</value>
-  </data>
-  <data name="RetryLimitValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
-  </data>
-  <data name="RetryLimitValue.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="MinToTrayCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="MinToTrayCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 18</value>
-  </data>
-  <data name="MinToTrayCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 17</value>
-  </data>
-  <data name="MinToTrayCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="MinToTrayCheckBox.Text" xml:space="preserve">
     <value>Minimiser dans la barre des tâches</value>
-  </data>
-  <data name="ProxyAuthEnableCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ProxyAuthEnableCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>274, 68</value>
-  </data>
-  <data name="ProxyAuthEnableCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 17</value>
-  </data>
-  <data name="ProxyAuthEnableCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
   </data>
   <data name="ProxyAuthEnableCheckBox.Text" xml:space="preserve">
     <value>Authentifier</value>
@@ -308,543 +157,84 @@
   <data name="EnableProxyCombo.Items2" xml:space="preserve">
     <value>Desactivé</value>
   </data>
-  <data name="EnableProxyCombo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>273, 39</value>
-  </data>
-  <data name="EnableProxyCombo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 21</value>
-  </data>
-  <data name="EnableProxyCombo.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 47</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 13</value>
-  </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Port :</value>
-  </data>
-  <data name="ProxyPassField.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 96</value>
-  </data>
-  <data name="ProxyPassField.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
-    <value>*</value>
-  </data>
-  <data name="ProxyPassField.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 20</value>
-  </data>
-  <data name="ProxyPassField.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="ProxyUserField.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 70</value>
-  </data>
-  <data name="ProxyUserField.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 20</value>
-  </data>
-  <data name="ProxyUserField.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="ProxyHostField.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 17</value>
-  </data>
-  <data name="ProxyHostField.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 20</value>
-  </data>
-  <data name="ProxyHostField.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="ProxyPortField.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 43</value>
-  </data>
-  <data name="ProxyPortField.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
-  </data>
-  <data name="ProxyPortField.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 99</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 13</value>
-  </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Mot de passe :</value>
   </data>
-  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 73</value>
-  </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 13</value>
-  </data>
-  <data name="label8.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
   <data name="label8.Text" xml:space="preserve">
     <value>Utilisateur :</value>
-  </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 20</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 13</value>
-  </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Hôte :</value>
   </data>
-  <data name="StartPausedCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="StartPausedCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 41</value>
-  </data>
-  <data name="StartPausedCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 17</value>
-  </data>
-  <data name="StartPausedCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="StartPausedCheckBox.Text" xml:space="preserve">
     <value>Démarrer les torrents en pause</value>
-  </data>
-  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>394, 141</value>
-  </data>
-  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Serveur</value>
-  </data>
-  <data name="minimizeOnCloseCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="minimizeOnCloseCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 111</value>
-  </data>
-  <data name="minimizeOnCloseCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 17</value>
-  </data>
-  <data name="minimizeOnCloseCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
   </data>
   <data name="minimizeOnCloseCheckBox.Text" xml:space="preserve">
     <value>Minimiser à la fermeture</value>
   </data>
-  <data name="notificationOnAdditionCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="notificationOnAdditionCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 64</value>
-  </data>
-  <data name="notificationOnAdditionCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 17</value>
-  </data>
-  <data name="notificationOnAdditionCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="notificationOnAdditionCheckBox.Text" xml:space="preserve">
     <value>Notifier à l'ajout</value>
-  </data>
-  <data name="notificationOnCompletionCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="notificationOnCompletionCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 87</value>
-  </data>
-  <data name="notificationOnCompletionCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 17</value>
-  </data>
-  <data name="notificationOnCompletionCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
   </data>
   <data name="notificationOnCompletionCheckBox.Text" xml:space="preserve">
     <value>Notifier à la complétion</value>
   </data>
-  <data name="tabPage4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabPage4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>394, 141</value>
-  </data>
-  <data name="tabPage4.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
   <data name="tabPage4.Text" xml:space="preserve">
     <value>Général</value>
-  </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 47</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 13</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Mot de passe :</value>
   </data>
-  <data name="EnableAuthCheckBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="EnableAuthCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 21</value>
-  </data>
-  <data name="EnableAuthCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 17</value>
-  </data>
-  <data name="EnableAuthCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="EnableAuthCheckBox.Text" xml:space="preserve">
     <value>Activer l'authentification</value>
-  </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 21</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 13</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Utilisateur :</value>
   </data>
-  <data name="PassField.Location" type="System.Drawing.Point, System.Drawing">
-    <value>84, 44</value>
-  </data>
-  <data name="PassField.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
-    <value>*</value>
-  </data>
-  <data name="PassField.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 20</value>
-  </data>
-  <data name="PassField.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="UserField.Location" type="System.Drawing.Point, System.Drawing">
-    <value>84, 18</value>
-  </data>
-  <data name="UserField.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 20</value>
-  </data>
-  <data name="UserField.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>394, 141</value>
-  </data>
-  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="tabPage2.Text" xml:space="preserve">
     <value>Authentification</value>
-  </data>
-  <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>394, 141</value>
-  </data>
-  <data name="tabPage3.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
   </data>
   <data name="tabPage3.Text" xml:space="preserve">
     <value>Proxy</value>
   </data>
-  <data name="label15.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 97</value>
-  </data>
-  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 13</value>
-  </data>
-  <data name="label15.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
   <data name="label15.Text" xml:space="preserve">
     <value>Aide : </value>
-  </data>
-  <data name="linkLabel1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 97</value>
-  </data>
-  <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 13</value>
-  </data>
-  <data name="linkLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
     <value>http://code.google.com/p/transmission-remote-dotnet/wiki/SSH</value>
   </data>
-  <data name="label14.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 97</value>
-  </data>
-  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="label14.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="label13.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 68</value>
-  </data>
-  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
-  </data>
-  <data name="label13.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
   <data name="label13.Text" xml:space="preserve">
     <value>Commande : </value>
-  </data>
-  <data name="textBox3.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="textBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 65</value>
-  </data>
-  <data name="textBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 20</value>
-  </data>
-  <data name="textBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="checkBox1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 13</value>
-  </data>
-  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 17</value>
-  </data>
-  <data name="checkBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
   </data>
   <data name="checkBox1.Text" xml:space="preserve">
     <value>Afficher le bouton de commande à distance</value>
   </data>
-  <data name="label12.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 41</value>
-  </data>
-  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 13</value>
-  </data>
-  <data name="label12.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="label12.Text" xml:space="preserve">
     <value>plink.exe:</value>
-  </data>
-  <data name="button2.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>302, 36</value>
-  </data>
-  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="button2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
   </data>
   <data name="button2.Text" xml:space="preserve">
     <value>Parcourir</value>
   </data>
-  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 38</value>
-  </data>
-  <data name="textBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 20</value>
-  </data>
-  <data name="textBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tabPage5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabPage5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>394, 141</value>
-  </data>
-  <data name="tabPage5.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
   <data name="tabPage5.Text" xml:space="preserve">
     <value>SSH</value>
-  </data>
-  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 12</value>
-  </data>
-  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>402, 167</value>
-  </data>
-  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>149, 244</value>
-  </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 23</value>
-  </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Sauvegarder et se connecter</value>
   </data>
-  <data name="profileComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="profileComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 21</value>
-  </data>
-  <data name="profileComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 16</value>
-  </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="label11.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 20</value>
-  </data>
-  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 20</value>
-  </data>
-  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="removeProfileButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="removeProfileButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>150, 13</value>
-  </data>
-  <data name="removeProfileButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 30</value>
-  </data>
-  <data name="removeProfileButton.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="groupBox5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 185</value>
-  </data>
-  <data name="groupBox5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 51</value>
-  </data>
-  <data name="groupBox5.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
   <data name="groupBox5.Text" xml:space="preserve">
     <value>Profil actuel</value>
   </data>
-  <data name="addProfileButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="addProfileButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>150, 13</value>
-  </data>
-  <data name="addProfileButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 30</value>
-  </data>
-  <data name="addProfileButton.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="groupBox6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>225, 185</value>
-  </data>
-  <data name="groupBox6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 51</value>
-  </data>
-  <data name="groupBox6.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
   <data name="groupBox6.Text" xml:space="preserve">
     <value>Nouveau profil</value>
-  </data>
-  <data name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>17, 17</value>
-  </data>
-  <data name="openFileDialog1.Filter" xml:space="preserve">
-    <value>plink.exe|plink.exe</value>
-  </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>431, 280</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
