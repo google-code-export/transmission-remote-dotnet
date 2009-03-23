@@ -117,18 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.Name" xml:space="preserve">
-    <value>toolStripContainer1.BottomToolStripPanel</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.Parent" xml:space="preserve">
-    <value>toolStripContainer1</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.BottomToolStripPanel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="torrentAndTabsSplitContainer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -163,30 +151,6 @@
     <value>109, 400</value>
   </data>
   <data name="stateListBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;stateListBox.Name" xml:space="preserve">
-    <value>stateListBox</value>
-  </data>
-  <data name="&gt;&gt;stateListBox.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.GListBox, Transmission Remote, Version=3.6.3369.21203, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;stateListBox.Parent" xml:space="preserve">
-    <value>mainVerticalSplitContainer.Panel1</value>
-  </data>
-  <data name="&gt;&gt;stateListBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;mainVerticalSplitContainer.Panel1.Name" xml:space="preserve">
-    <value>mainVerticalSplitContainer.Panel1</value>
-  </data>
-  <data name="&gt;&gt;mainVerticalSplitContainer.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mainVerticalSplitContainer.Panel1.Parent" xml:space="preserve">
-    <value>mainVerticalSplitContainer</value>
-  </data>
-  <data name="&gt;&gt;mainVerticalSplitContainer.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="columnHeader6.Text" xml:space="preserve">
@@ -264,30 +228,6 @@
   <data name="torrentListView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;torrentListView.Name" xml:space="preserve">
-    <value>torrentListView</value>
-  </data>
-  <data name="&gt;&gt;torrentListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.6.3369.21203, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;torrentListView.Parent" xml:space="preserve">
-    <value>mainVerticalSplitContainer.Panel2</value>
-  </data>
-  <data name="&gt;&gt;torrentListView.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;mainVerticalSplitContainer.Panel2.Name" xml:space="preserve">
-    <value>mainVerticalSplitContainer.Panel2</value>
-  </data>
-  <data name="&gt;&gt;mainVerticalSplitContainer.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mainVerticalSplitContainer.Panel2.Parent" xml:space="preserve">
-    <value>mainVerticalSplitContainer</value>
-  </data>
-  <data name="&gt;&gt;mainVerticalSplitContainer.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="mainVerticalSplitContainer.Size" type="System.Drawing.Size, System.Drawing">
     <value>974, 416</value>
   </data>
@@ -296,30 +236,6 @@
   </data>
   <data name="mainVerticalSplitContainer.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;mainVerticalSplitContainer.Name" xml:space="preserve">
-    <value>mainVerticalSplitContainer</value>
-  </data>
-  <data name="&gt;&gt;mainVerticalSplitContainer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mainVerticalSplitContainer.Parent" xml:space="preserve">
-    <value>torrentAndTabsSplitContainer.Panel1</value>
-  </data>
-  <data name="&gt;&gt;mainVerticalSplitContainer.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;torrentAndTabsSplitContainer.Panel1.Name" xml:space="preserve">
-    <value>torrentAndTabsSplitContainer.Panel1</value>
-  </data>
-  <data name="&gt;&gt;torrentAndTabsSplitContainer.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;torrentAndTabsSplitContainer.Panel1.Parent" xml:space="preserve">
-    <value>torrentAndTabsSplitContainer</value>
-  </data>
-  <data name="&gt;&gt;torrentAndTabsSplitContainer.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="splitContainer3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -363,18 +279,6 @@
   <data name="piecesLabel.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;piecesLabel.Name" xml:space="preserve">
-    <value>piecesLabel</value>
-  </data>
-  <data name="&gt;&gt;piecesLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;piecesLabel.Parent" xml:space="preserve">
-    <value>splitContainer4.Panel1</value>
-  </data>
-  <data name="&gt;&gt;piecesLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="downloadProgressLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -398,30 +302,6 @@
   </data>
   <data name="downloadProgressLabel.Text" xml:space="preserve">
     <value>Téléchargé :</value>
-  </data>
-  <data name="&gt;&gt;downloadProgressLabel.Name" xml:space="preserve">
-    <value>downloadProgressLabel</value>
-  </data>
-  <data name="&gt;&gt;downloadProgressLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;downloadProgressLabel.Parent" xml:space="preserve">
-    <value>splitContainer4.Panel1</value>
-  </data>
-  <data name="&gt;&gt;downloadProgressLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer4.Panel1.Name" xml:space="preserve">
-    <value>splitContainer4.Panel1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer4.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainer4.Panel1.Parent" xml:space="preserve">
-    <value>splitContainer4</value>
-  </data>
-  <data name="&gt;&gt;splitContainer4.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="splitContainer5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -450,18 +330,6 @@
   <data name="piecesGraph.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;piecesGraph.Name" xml:space="preserve">
-    <value>piecesGraph</value>
-  </data>
-  <data name="&gt;&gt;piecesGraph.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.PiecesGraph, Transmission Remote, Version=3.6.3369.21203, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;piecesGraph.Parent" xml:space="preserve">
-    <value>splitContainer5.Panel1</value>
-  </data>
-  <data name="&gt;&gt;piecesGraph.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="progressBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -480,30 +348,6 @@
   <data name="progressBar.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;progressBar.Name" xml:space="preserve">
-    <value>progressBar</value>
-  </data>
-  <data name="&gt;&gt;progressBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;progressBar.Parent" xml:space="preserve">
-    <value>splitContainer5.Panel1</value>
-  </data>
-  <data name="&gt;&gt;progressBar.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer5.Panel1.Name" xml:space="preserve">
-    <value>splitContainer5.Panel1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer5.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainer5.Panel1.Parent" xml:space="preserve">
-    <value>splitContainer5</value>
-  </data>
-  <data name="&gt;&gt;splitContainer5.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="percentageLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -519,30 +363,6 @@
   <data name="percentageLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;percentageLabel.Name" xml:space="preserve">
-    <value>percentageLabel</value>
-  </data>
-  <data name="&gt;&gt;percentageLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;percentageLabel.Parent" xml:space="preserve">
-    <value>splitContainer5.Panel2</value>
-  </data>
-  <data name="&gt;&gt;percentageLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;splitContainer5.Panel2.Name" xml:space="preserve">
-    <value>splitContainer5.Panel2</value>
-  </data>
-  <data name="&gt;&gt;splitContainer5.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainer5.Panel2.Parent" xml:space="preserve">
-    <value>splitContainer5</value>
-  </data>
-  <data name="&gt;&gt;splitContainer5.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="splitContainer5.Size" type="System.Drawing.Size, System.Drawing">
     <value>877, 25</value>
   </data>
@@ -552,30 +372,6 @@
   <data name="splitContainer5.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;splitContainer5.Name" xml:space="preserve">
-    <value>splitContainer5</value>
-  </data>
-  <data name="&gt;&gt;splitContainer5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainer5.Parent" xml:space="preserve">
-    <value>splitContainer4.Panel2</value>
-  </data>
-  <data name="&gt;&gt;splitContainer5.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;splitContainer4.Panel2.Name" xml:space="preserve">
-    <value>splitContainer4.Panel2</value>
-  </data>
-  <data name="&gt;&gt;splitContainer4.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainer4.Panel2.Parent" xml:space="preserve">
-    <value>splitContainer4</value>
-  </data>
-  <data name="&gt;&gt;splitContainer4.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="splitContainer4.Size" type="System.Drawing.Size, System.Drawing">
     <value>960, 25</value>
   </data>
@@ -583,30 +379,6 @@
     <value>79</value>
   </data>
   <data name="splitContainer4.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;splitContainer4.Name" xml:space="preserve">
-    <value>splitContainer4</value>
-  </data>
-  <data name="&gt;&gt;splitContainer4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainer4.Parent" xml:space="preserve">
-    <value>splitContainer3.Panel1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;splitContainer3.Panel1.Name" xml:space="preserve">
-    <value>splitContainer3.Panel1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer3.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainer3.Panel1.Parent" xml:space="preserve">
-    <value>splitContainer3</value>
-  </data>
-  <data name="&gt;&gt;splitContainer3.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="splitContainer3.Panel2.AutoScroll" type="System.Boolean, mscorlib">
@@ -630,18 +402,6 @@
   <data name="createdByLabel.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
   </data>
-  <data name="&gt;&gt;createdByLabel.Name" xml:space="preserve">
-    <value>createdByLabel</value>
-  </data>
-  <data name="&gt;&gt;createdByLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;createdByLabel.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;createdByLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="label17.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -663,18 +423,6 @@
   <data name="label17.Text" xml:space="preserve">
     <value>Créé par :</value>
   </data>
-  <data name="&gt;&gt;label17.Name" xml:space="preserve">
-    <value>label17</value>
-  </data>
-  <data name="&gt;&gt;label17.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="createdAtLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -689,18 +437,6 @@
   </data>
   <data name="createdAtLabel.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
-  </data>
-  <data name="&gt;&gt;createdAtLabel.Name" xml:space="preserve">
-    <value>createdAtLabel</value>
-  </data>
-  <data name="&gt;&gt;createdAtLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;createdAtLabel.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;createdAtLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="label16.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -723,18 +459,6 @@
   <data name="label16.Text" xml:space="preserve">
     <value>Créé le :</value>
   </data>
-  <data name="&gt;&gt;label16.Name" xml:space="preserve">
-    <value>label16</value>
-  </data>
-  <data name="&gt;&gt;label16.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="errorLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -752,18 +476,6 @@
   </data>
   <data name="errorLabel.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="&gt;&gt;errorLabel.Name" xml:space="preserve">
-    <value>errorLabel</value>
-  </data>
-  <data name="&gt;&gt;errorLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;errorLabel.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;errorLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="labelForErrorLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -789,18 +501,6 @@
   <data name="labelForErrorLabel.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;labelForErrorLabel.Name" xml:space="preserve">
-    <value>labelForErrorLabel</value>
-  </data>
-  <data name="&gt;&gt;labelForErrorLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelForErrorLabel.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;labelForErrorLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="commentLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -815,18 +515,6 @@
   </data>
   <data name="commentLabel.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
-  </data>
-  <data name="&gt;&gt;commentLabel.Name" xml:space="preserve">
-    <value>commentLabel</value>
-  </data>
-  <data name="&gt;&gt;commentLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;commentLabel.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;commentLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="label15.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -849,18 +537,6 @@
   <data name="label15.Text" xml:space="preserve">
     <value>Commentaire :</value>
   </data>
-  <data name="&gt;&gt;label15.Name" xml:space="preserve">
-    <value>label15</value>
-  </data>
-  <data name="&gt;&gt;label15.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="ratioLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -875,18 +551,6 @@
   </data>
   <data name="ratioLabel.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
-  </data>
-  <data name="&gt;&gt;ratioLabel.Name" xml:space="preserve">
-    <value>ratioLabel</value>
-  </data>
-  <data name="&gt;&gt;ratioLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ratioLabel.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ratioLabel.ZOrder" xml:space="preserve">
-    <value>8</value>
   </data>
   <data name="label14.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -909,18 +573,6 @@
   <data name="label14.Text" xml:space="preserve">
     <value>Ratio :</value>
   </data>
-  <data name="&gt;&gt;label14.Name" xml:space="preserve">
-    <value>label14</value>
-  </data>
-  <data name="&gt;&gt;label14.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label14.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
   <data name="leechersLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -936,18 +588,6 @@
   <data name="leechersLabel.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
-  <data name="&gt;&gt;leechersLabel.Name" xml:space="preserve">
-    <value>leechersLabel</value>
-  </data>
-  <data name="&gt;&gt;leechersLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;leechersLabel.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;leechersLabel.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
   <data name="seedersLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -962,18 +602,6 @@
   </data>
   <data name="seedersLabel.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
-  </data>
-  <data name="&gt;&gt;seedersLabel.Name" xml:space="preserve">
-    <value>seedersLabel</value>
-  </data>
-  <data name="&gt;&gt;seedersLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;seedersLabel.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;seedersLabel.ZOrder" xml:space="preserve">
-    <value>11</value>
   </data>
   <data name="label13.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -996,18 +624,6 @@
   <data name="label13.Text" xml:space="preserve">
     <value>Clients :</value>
   </data>
-  <data name="&gt;&gt;label13.Name" xml:space="preserve">
-    <value>label13</value>
-  </data>
-  <data name="&gt;&gt;label13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1029,18 +645,6 @@
   <data name="label10.Text" xml:space="preserve">
     <value>Sources :</value>
   </data>
-  <data name="&gt;&gt;label10.Name" xml:space="preserve">
-    <value>label10</value>
-  </data>
-  <data name="&gt;&gt;label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
   <data name="uploadLimitLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1055,18 +659,6 @@
   </data>
   <data name="uploadLimitLabel.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
-  </data>
-  <data name="&gt;&gt;uploadLimitLabel.Name" xml:space="preserve">
-    <value>uploadLimitLabel</value>
-  </data>
-  <data name="&gt;&gt;uploadLimitLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;uploadLimitLabel.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;uploadLimitLabel.ZOrder" xml:space="preserve">
-    <value>14</value>
   </data>
   <data name="label12.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1089,18 +681,6 @@
   <data name="label12.Text" xml:space="preserve">
     <value>Limite d'envoi :</value>
   </data>
-  <data name="&gt;&gt;label12.Name" xml:space="preserve">
-    <value>label12</value>
-  </data>
-  <data name="&gt;&gt;label12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
   <data name="uploadRateLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1115,18 +695,6 @@
   </data>
   <data name="uploadRateLabel.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
-  </data>
-  <data name="&gt;&gt;uploadRateLabel.Name" xml:space="preserve">
-    <value>uploadRateLabel</value>
-  </data>
-  <data name="&gt;&gt;uploadRateLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;uploadRateLabel.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;uploadRateLabel.ZOrder" xml:space="preserve">
-    <value>16</value>
   </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1149,18 +717,6 @@
   <data name="label8.Text" xml:space="preserve">
     <value>Taux d'envoi :</value>
   </data>
-  <data name="&gt;&gt;label8.Name" xml:space="preserve">
-    <value>label8</value>
-  </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
   <data name="uploadedLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1175,18 +731,6 @@
   </data>
   <data name="uploadedLabel.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
-  </data>
-  <data name="&gt;&gt;uploadedLabel.Name" xml:space="preserve">
-    <value>uploadedLabel</value>
-  </data>
-  <data name="&gt;&gt;uploadedLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;uploadedLabel.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;uploadedLabel.ZOrder" xml:space="preserve">
-    <value>18</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1209,18 +753,6 @@
   <data name="label5.Text" xml:space="preserve">
     <value>Envoyé :</value>
   </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
   <data name="remainingLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1235,18 +767,6 @@
   </data>
   <data name="remainingLabel.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
-  </data>
-  <data name="&gt;&gt;remainingLabel.Name" xml:space="preserve">
-    <value>remainingLabel</value>
-  </data>
-  <data name="&gt;&gt;remainingLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;remainingLabel.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;remainingLabel.ZOrder" xml:space="preserve">
-    <value>20</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1269,18 +789,6 @@
   <data name="label4.Text" xml:space="preserve">
     <value>Reste :</value>
   </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>21</value>
-  </data>
   <data name="statusLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1295,18 +803,6 @@
   </data>
   <data name="statusLabel.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
-  </data>
-  <data name="&gt;&gt;statusLabel.Name" xml:space="preserve">
-    <value>statusLabel</value>
-  </data>
-  <data name="&gt;&gt;statusLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;statusLabel.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;statusLabel.ZOrder" xml:space="preserve">
-    <value>22</value>
   </data>
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1329,18 +825,6 @@
   <data name="label11.Text" xml:space="preserve">
     <value>Etat :</value>
   </data>
-  <data name="&gt;&gt;label11.Name" xml:space="preserve">
-    <value>label11</value>
-  </data>
-  <data name="&gt;&gt;label11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>23</value>
-  </data>
   <data name="downloadLimitLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1355,18 +839,6 @@
   </data>
   <data name="downloadLimitLabel.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
-  </data>
-  <data name="&gt;&gt;downloadLimitLabel.Name" xml:space="preserve">
-    <value>downloadLimitLabel</value>
-  </data>
-  <data name="&gt;&gt;downloadLimitLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;downloadLimitLabel.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;downloadLimitLabel.ZOrder" xml:space="preserve">
-    <value>24</value>
   </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1389,18 +861,6 @@
   <data name="label9.Text" xml:space="preserve">
     <value>Limite de réception :</value>
   </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
-  </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>25</value>
-  </data>
   <data name="downloadSpeedLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1415,18 +875,6 @@
   </data>
   <data name="downloadSpeedLabel.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
-  </data>
-  <data name="&gt;&gt;downloadSpeedLabel.Name" xml:space="preserve">
-    <value>downloadSpeedLabel</value>
-  </data>
-  <data name="&gt;&gt;downloadSpeedLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;downloadSpeedLabel.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;downloadSpeedLabel.ZOrder" xml:space="preserve">
-    <value>26</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1449,18 +897,6 @@
   <data name="label7.Text" xml:space="preserve">
     <value>Taux de réception :</value>
   </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>27</value>
-  </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1482,18 +918,6 @@
   <data name="label6.Text" xml:space="preserve">
     <value>Reçu :</value>
   </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>28</value>
-  </data>
   <data name="downloadedLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1509,18 +933,6 @@
   <data name="downloadedLabel.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;downloadedLabel.Name" xml:space="preserve">
-    <value>downloadedLabel</value>
-  </data>
-  <data name="&gt;&gt;downloadedLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;downloadedLabel.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;downloadedLabel.ZOrder" xml:space="preserve">
-    <value>29</value>
-  </data>
   <data name="startedAtLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1535,18 +947,6 @@
   </data>
   <data name="startedAtLabel.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
-  </data>
-  <data name="&gt;&gt;startedAtLabel.Name" xml:space="preserve">
-    <value>startedAtLabel</value>
-  </data>
-  <data name="&gt;&gt;startedAtLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;startedAtLabel.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;startedAtLabel.ZOrder" xml:space="preserve">
-    <value>30</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1569,18 +969,6 @@
   <data name="label3.Text" xml:space="preserve">
     <value>Démarré le :</value>
   </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>31</value>
-  </data>
   <data name="timeElapsedLabelLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1602,18 +990,6 @@
   <data name="timeElapsedLabelLabel.Text" xml:space="preserve">
     <value>Temps écoulé :</value>
   </data>
-  <data name="&gt;&gt;timeElapsedLabelLabel.Name" xml:space="preserve">
-    <value>timeElapsedLabelLabel</value>
-  </data>
-  <data name="&gt;&gt;timeElapsedLabelLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;timeElapsedLabelLabel.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;timeElapsedLabelLabel.ZOrder" xml:space="preserve">
-    <value>32</value>
-  </data>
   <data name="timeElapsedLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1628,18 +1004,6 @@
   </data>
   <data name="timeElapsedLabel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;timeElapsedLabel.Name" xml:space="preserve">
-    <value>timeElapsedLabel</value>
-  </data>
-  <data name="&gt;&gt;timeElapsedLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;timeElapsedLabel.Parent" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;timeElapsedLabel.ZOrder" xml:space="preserve">
-    <value>33</value>
   </data>
   <data name="generalTorrentNameGroupBox.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1656,30 +1020,6 @@
   <data name="generalTorrentNameGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;generalTorrentNameGroupBox.Name" xml:space="preserve">
-    <value>generalTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;generalTorrentNameGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;generalTorrentNameGroupBox.Parent" xml:space="preserve">
-    <value>splitContainer3.Panel2</value>
-  </data>
-  <data name="&gt;&gt;generalTorrentNameGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;splitContainer3.Panel2.Name" xml:space="preserve">
-    <value>splitContainer3.Panel2</value>
-  </data>
-  <data name="&gt;&gt;splitContainer3.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainer3.Panel2.Parent" xml:space="preserve">
-    <value>splitContainer3</value>
-  </data>
-  <data name="&gt;&gt;splitContainer3.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="splitContainer3.Size" type="System.Drawing.Size, System.Drawing">
     <value>960, 66</value>
   </data>
@@ -1687,18 +1027,6 @@
     <value>25</value>
   </data>
   <data name="splitContainer3.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;splitContainer3.Name" xml:space="preserve">
-    <value>splitContainer3</value>
-  </data>
-  <data name="&gt;&gt;splitContainer3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainer3.Parent" xml:space="preserve">
-    <value>generalTabPage</value>
-  </data>
-  <data name="&gt;&gt;splitContainer3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="generalTabPage.Location" type="System.Drawing.Point, System.Drawing">
@@ -1715,18 +1043,6 @@
   </data>
   <data name="generalTabPage.Text" xml:space="preserve">
     <value>Général</value>
-  </data>
-  <data name="&gt;&gt;generalTabPage.Name" xml:space="preserve">
-    <value>generalTabPage</value>
-  </data>
-  <data name="&gt;&gt;generalTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;generalTabPage.Parent" xml:space="preserve">
-    <value>torrentTabControl</value>
-  </data>
-  <data name="&gt;&gt;generalTabPage.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="columnHeader22.Text" xml:space="preserve">
     <value>Tiers</value>
@@ -1761,18 +1077,6 @@
   <data name="trackersListView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;trackersListView.Name" xml:space="preserve">
-    <value>trackersListView</value>
-  </data>
-  <data name="&gt;&gt;trackersListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.6.3369.21203, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;trackersListView.Parent" xml:space="preserve">
-    <value>trackersTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;trackersListView.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="trackersTorrentNameGroupBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -1784,18 +1088,6 @@
   </data>
   <data name="trackersTorrentNameGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;trackersTorrentNameGroupBox.Name" xml:space="preserve">
-    <value>trackersTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;trackersTorrentNameGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;trackersTorrentNameGroupBox.Parent" xml:space="preserve">
-    <value>trackersTabPage</value>
-  </data>
-  <data name="&gt;&gt;trackersTorrentNameGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="trackersTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 23</value>
@@ -1811,18 +1103,6 @@
   </data>
   <data name="trackersTabPage.Text" xml:space="preserve">
     <value>Trackers</value>
-  </data>
-  <data name="&gt;&gt;trackersTabPage.Name" xml:space="preserve">
-    <value>trackersTabPage</value>
-  </data>
-  <data name="&gt;&gt;trackersTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;trackersTabPage.Parent" xml:space="preserve">
-    <value>torrentTabControl</value>
-  </data>
-  <data name="&gt;&gt;trackersTabPage.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="columnHeader1.Text" xml:space="preserve">
     <value>Chemin</value>
@@ -1872,18 +1152,6 @@
   <data name="filesListView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;filesListView.Name" xml:space="preserve">
-    <value>filesListView</value>
-  </data>
-  <data name="&gt;&gt;filesListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.6.3369.21203, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;filesListView.Parent" xml:space="preserve">
-    <value>filesTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;filesListView.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="filesTorrentNameGroupBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -1895,18 +1163,6 @@
   </data>
   <data name="filesTorrentNameGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;filesTorrentNameGroupBox.Name" xml:space="preserve">
-    <value>filesTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;filesTorrentNameGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;filesTorrentNameGroupBox.Parent" xml:space="preserve">
-    <value>filesTabPage</value>
-  </data>
-  <data name="&gt;&gt;filesTorrentNameGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="filesTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 23</value>
@@ -1922,18 +1178,6 @@
   </data>
   <data name="filesTabPage.Text" xml:space="preserve">
     <value>Fichiers</value>
-  </data>
-  <data name="&gt;&gt;filesTabPage.Name" xml:space="preserve">
-    <value>filesTabPage</value>
-  </data>
-  <data name="&gt;&gt;filesTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;filesTabPage.Parent" xml:space="preserve">
-    <value>torrentTabControl</value>
-  </data>
-  <data name="&gt;&gt;filesTabPage.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="columnHeader23.Text" xml:space="preserve">
     <value>Adresse IP</value>
@@ -1995,18 +1239,6 @@
   <data name="peersListView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;peersListView.Name" xml:space="preserve">
-    <value>peersListView</value>
-  </data>
-  <data name="&gt;&gt;peersListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.6.3369.21203, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;peersListView.Parent" xml:space="preserve">
-    <value>peersTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;peersListView.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="peersTorrentNameGroupBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -2018,18 +1250,6 @@
   </data>
   <data name="peersTorrentNameGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;peersTorrentNameGroupBox.Name" xml:space="preserve">
-    <value>peersTorrentNameGroupBox</value>
-  </data>
-  <data name="&gt;&gt;peersTorrentNameGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;peersTorrentNameGroupBox.Parent" xml:space="preserve">
-    <value>peersTabPage</value>
-  </data>
-  <data name="&gt;&gt;peersTorrentNameGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="peersTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 23</value>
@@ -2045,18 +1265,6 @@
   </data>
   <data name="peersTabPage.Text" xml:space="preserve">
     <value>Sources</value>
-  </data>
-  <data name="&gt;&gt;peersTabPage.Name" xml:space="preserve">
-    <value>peersTabPage</value>
-  </data>
-  <data name="&gt;&gt;peersTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;peersTabPage.Parent" xml:space="preserve">
-    <value>torrentTabControl</value>
-  </data>
-  <data name="&gt;&gt;peersTabPage.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -2076,18 +1284,6 @@
   <data name="splitContainer2.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="&gt;&gt;splitContainer2.Panel1.Name" xml:space="preserve">
-    <value>splitContainer2.Panel1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer2.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainer2.Panel1.Parent" xml:space="preserve">
-    <value>splitContainer2</value>
-  </data>
-  <data name="&gt;&gt;splitContainer2.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="label18.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2105,18 +1301,6 @@
   </data>
   <data name="label18.Text" xml:space="preserve">
     <value>Résolution :</value>
-  </data>
-  <data name="&gt;&gt;label18.Name" xml:space="preserve">
-    <value>label18</value>
-  </data>
-  <data name="&gt;&gt;label18.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label18.Parent" xml:space="preserve">
-    <value>splitContainer2.Panel2</value>
-  </data>
-  <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="speedResComboBox.Items" xml:space="preserve">
     <value>5 sec</value>
@@ -2139,30 +1323,6 @@
   <data name="speedResComboBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;speedResComboBox.Name" xml:space="preserve">
-    <value>speedResComboBox</value>
-  </data>
-  <data name="&gt;&gt;speedResComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;speedResComboBox.Parent" xml:space="preserve">
-    <value>splitContainer2.Panel2</value>
-  </data>
-  <data name="&gt;&gt;speedResComboBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer2.Panel2.Name" xml:space="preserve">
-    <value>splitContainer2.Panel2</value>
-  </data>
-  <data name="&gt;&gt;splitContainer2.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainer2.Panel2.Parent" xml:space="preserve">
-    <value>splitContainer2</value>
-  </data>
-  <data name="&gt;&gt;splitContainer2.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="splitContainer2.Size" type="System.Drawing.Size, System.Drawing">
     <value>954, 25</value>
   </data>
@@ -2170,30 +1330,6 @@
     <value>750</value>
   </data>
   <data name="splitContainer2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;splitContainer2.Name" xml:space="preserve">
-    <value>splitContainer2</value>
-  </data>
-  <data name="&gt;&gt;splitContainer2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainer2.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel1.Parent" xml:space="preserve">
-    <value>splitContainer1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="label20.AutoSize" type="System.Boolean, mscorlib">
@@ -2217,18 +1353,6 @@
   <data name="label20.Text" xml:space="preserve">
     <value>Réception</value>
   </data>
-  <data name="&gt;&gt;label20.Name" xml:space="preserve">
-    <value>label20</value>
-  </data>
-  <data name="&gt;&gt;label20.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="label19.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2250,18 +1374,6 @@
   <data name="label19.Text" xml:space="preserve">
     <value>Envoi</value>
   </data>
-  <data name="&gt;&gt;label19.Name" xml:space="preserve">
-    <value>label19</value>
-  </data>
-  <data name="&gt;&gt;label19.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label19.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="speedGraph.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -2277,30 +1389,6 @@
   <data name="speedGraph.Text" xml:space="preserve">
     <value>c2DPushGraph1</value>
   </data>
-  <data name="&gt;&gt;speedGraph.Name" xml:space="preserve">
-    <value>speedGraph</value>
-  </data>
-  <data name="&gt;&gt;speedGraph.Type" xml:space="preserve">
-    <value>CustomUIControls.Graphing.C2DPushGraph, Transmission Remote, Version=3.6.3369.21203, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;speedGraph.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;speedGraph.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.Parent" xml:space="preserve">
-    <value>splitContainer1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
     <value>954, 47</value>
   </data>
@@ -2308,18 +1396,6 @@
     <value>25</value>
   </data>
   <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Name" xml:space="preserve">
-    <value>splitContainer1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -2337,18 +1413,6 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Usage global de la bande passante</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>speedTabPage</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="speedTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 23</value>
   </data>
@@ -2363,18 +1427,6 @@
   </data>
   <data name="speedTabPage.Text" xml:space="preserve">
     <value>Vitesse</value>
-  </data>
-  <data name="&gt;&gt;speedTabPage.Name" xml:space="preserve">
-    <value>speedTabPage</value>
-  </data>
-  <data name="&gt;&gt;speedTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;speedTabPage.Parent" xml:space="preserve">
-    <value>torrentTabControl</value>
-  </data>
-  <data name="&gt;&gt;speedTabPage.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="torrentTabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -2394,30 +1446,6 @@
   <data name="torrentTabControl.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;torrentTabControl.Name" xml:space="preserve">
-    <value>torrentTabControl</value>
-  </data>
-  <data name="&gt;&gt;torrentTabControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;torrentTabControl.Parent" xml:space="preserve">
-    <value>torrentAndTabsSplitContainer.Panel2</value>
-  </data>
-  <data name="&gt;&gt;torrentTabControl.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;torrentAndTabsSplitContainer.Panel2.Name" xml:space="preserve">
-    <value>torrentAndTabsSplitContainer.Panel2</value>
-  </data>
-  <data name="&gt;&gt;torrentAndTabsSplitContainer.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;torrentAndTabsSplitContainer.Panel2.Parent" xml:space="preserve">
-    <value>torrentAndTabsSplitContainer</value>
-  </data>
-  <data name="&gt;&gt;torrentAndTabsSplitContainer.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="torrentAndTabsSplitContainer.Size" type="System.Drawing.Size, System.Drawing">
     <value>974, 519</value>
   </data>
@@ -2425,18 +1453,6 @@
     <value>416</value>
   </data>
   <data name="torrentAndTabsSplitContainer.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;torrentAndTabsSplitContainer.Name" xml:space="preserve">
-    <value>torrentAndTabsSplitContainer</value>
-  </data>
-  <data name="&gt;&gt;torrentAndTabsSplitContainer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;torrentAndTabsSplitContainer.Parent" xml:space="preserve">
-    <value>toolStripContainer1.ContentPanel</value>
-  </data>
-  <data name="&gt;&gt;torrentAndTabsSplitContainer.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing">
@@ -2457,62 +1473,14 @@
   <data name="statusStrip.Text" xml:space="preserve">
     <value>statusStrip1</value>
   </data>
-  <data name="&gt;&gt;statusStrip.Name" xml:space="preserve">
-    <value>statusStrip</value>
-  </data>
-  <data name="&gt;&gt;statusStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;statusStrip.Parent" xml:space="preserve">
-    <value>toolStripContainer1.ContentPanel</value>
-  </data>
-  <data name="&gt;&gt;statusStrip.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="toolStripContainer1.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>974, 541</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.ContentPanel.Name" xml:space="preserve">
-    <value>toolStripContainer1.ContentPanel</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.ContentPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripContentPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.ContentPanel.Parent" xml:space="preserve">
-    <value>toolStripContainer1</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.ContentPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="toolStripContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="&gt;&gt;toolStripContainer1.LeftToolStripPanel.Name" xml:space="preserve">
-    <value>toolStripContainer1.LeftToolStripPanel</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.LeftToolStripPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.LeftToolStripPanel.Parent" xml:space="preserve">
-    <value>toolStripContainer1</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.LeftToolStripPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="toolStripContainer1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 24</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.RightToolStripPanel.Name" xml:space="preserve">
-    <value>toolStripContainer1.RightToolStripPanel</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.RightToolStripPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.RightToolStripPanel.Parent" xml:space="preserve">
-    <value>toolStripContainer1</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.RightToolStripPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="toolStripContainer1.Size" type="System.Drawing.Size, System.Drawing">
     <value>974, 580</value>
@@ -3259,42 +2227,6 @@
   <data name="toolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;toolStrip.Name" xml:space="preserve">
-    <value>toolStrip</value>
-  </data>
-  <data name="&gt;&gt;toolStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStrip.Parent" xml:space="preserve">
-    <value>toolStripContainer1.TopToolStripPanel</value>
-  </data>
-  <data name="&gt;&gt;toolStrip.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.TopToolStripPanel.Name" xml:space="preserve">
-    <value>toolStripContainer1.TopToolStripPanel</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.TopToolStripPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.TopToolStripPanel.Parent" xml:space="preserve">
-    <value>toolStripContainer1</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.TopToolStripPanel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.Name" xml:space="preserve">
-    <value>toolStripContainer1</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;toolStripContainer1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -3508,18 +2440,6 @@
   <data name="menuStrip.Text" xml:space="preserve">
     <value>menuStrip1</value>
   </data>
-  <data name="&gt;&gt;menuStrip.Name" xml:space="preserve">
-    <value>menuStrip</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="flagsImageList.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>17, 17</value>
   </data>
@@ -3609,540 +2529,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Transmission Remote</value>
-  </data>
-  <data name="&gt;&gt;columnHeader6.Name" xml:space="preserve">
-    <value>columnHeader6</value>
-  </data>
-  <data name="&gt;&gt;columnHeader6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader7.Name" xml:space="preserve">
-    <value>columnHeader7</value>
-  </data>
-  <data name="&gt;&gt;columnHeader7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader8.Name" xml:space="preserve">
-    <value>columnHeader8</value>
-  </data>
-  <data name="&gt;&gt;columnHeader8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader9.Name" xml:space="preserve">
-    <value>columnHeader9</value>
-  </data>
-  <data name="&gt;&gt;columnHeader9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader10.Name" xml:space="preserve">
-    <value>columnHeader10</value>
-  </data>
-  <data name="&gt;&gt;columnHeader10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader11.Name" xml:space="preserve">
-    <value>columnHeader11</value>
-  </data>
-  <data name="&gt;&gt;columnHeader11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader12.Name" xml:space="preserve">
-    <value>columnHeader12</value>
-  </data>
-  <data name="&gt;&gt;columnHeader12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader13.Name" xml:space="preserve">
-    <value>columnHeader13</value>
-  </data>
-  <data name="&gt;&gt;columnHeader13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader14.Name" xml:space="preserve">
-    <value>columnHeader14</value>
-  </data>
-  <data name="&gt;&gt;columnHeader14.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader15.Name" xml:space="preserve">
-    <value>columnHeader15</value>
-  </data>
-  <data name="&gt;&gt;columnHeader15.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader16.Name" xml:space="preserve">
-    <value>columnHeader16</value>
-  </data>
-  <data name="&gt;&gt;columnHeader16.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader18.Name" xml:space="preserve">
-    <value>columnHeader18</value>
-  </data>
-  <data name="&gt;&gt;columnHeader18.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader19.Name" xml:space="preserve">
-    <value>columnHeader19</value>
-  </data>
-  <data name="&gt;&gt;columnHeader19.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader30.Name" xml:space="preserve">
-    <value>columnHeader30</value>
-  </data>
-  <data name="&gt;&gt;columnHeader30.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader22.Name" xml:space="preserve">
-    <value>columnHeader22</value>
-  </data>
-  <data name="&gt;&gt;columnHeader22.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader20.Name" xml:space="preserve">
-    <value>columnHeader20</value>
-  </data>
-  <data name="&gt;&gt;columnHeader20.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader21.Name" xml:space="preserve">
-    <value>columnHeader21</value>
-  </data>
-  <data name="&gt;&gt;columnHeader21.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader1.Name" xml:space="preserve">
-    <value>columnHeader1</value>
-  </data>
-  <data name="&gt;&gt;columnHeader1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader2.Name" xml:space="preserve">
-    <value>columnHeader2</value>
-  </data>
-  <data name="&gt;&gt;columnHeader2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader3.Name" xml:space="preserve">
-    <value>columnHeader3</value>
-  </data>
-  <data name="&gt;&gt;columnHeader3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader4.Name" xml:space="preserve">
-    <value>columnHeader4</value>
-  </data>
-  <data name="&gt;&gt;columnHeader4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader17.Name" xml:space="preserve">
-    <value>columnHeader17</value>
-  </data>
-  <data name="&gt;&gt;columnHeader17.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader5.Name" xml:space="preserve">
-    <value>columnHeader5</value>
-  </data>
-  <data name="&gt;&gt;columnHeader5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader23.Name" xml:space="preserve">
-    <value>columnHeader23</value>
-  </data>
-  <data name="&gt;&gt;columnHeader23.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader24.Name" xml:space="preserve">
-    <value>columnHeader24</value>
-  </data>
-  <data name="&gt;&gt;columnHeader24.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader25.Name" xml:space="preserve">
-    <value>columnHeader25</value>
-  </data>
-  <data name="&gt;&gt;columnHeader25.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader31.Name" xml:space="preserve">
-    <value>columnHeader31</value>
-  </data>
-  <data name="&gt;&gt;columnHeader31.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader26.Name" xml:space="preserve">
-    <value>columnHeader26</value>
-  </data>
-  <data name="&gt;&gt;columnHeader26.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader27.Name" xml:space="preserve">
-    <value>columnHeader27</value>
-  </data>
-  <data name="&gt;&gt;columnHeader27.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader28.Name" xml:space="preserve">
-    <value>columnHeader28</value>
-  </data>
-  <data name="&gt;&gt;columnHeader28.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader29.Name" xml:space="preserve">
-    <value>columnHeader29</value>
-  </data>
-  <data name="&gt;&gt;columnHeader29.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControlImageList.Name" xml:space="preserve">
-    <value>tabControlImageList</value>
-  </data>
-  <data name="&gt;&gt;tabControlImageList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripStatusLabel.Name" xml:space="preserve">
-    <value>toolStripStatusLabel</value>
-  </data>
-  <data name="&gt;&gt;toolStripStatusLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;connectButton.Name" xml:space="preserve">
-    <value>connectButton</value>
-  </data>
-  <data name="&gt;&gt;connectButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;disconnectButton.Name" xml:space="preserve">
-    <value>disconnectButton</value>
-  </data>
-  <data name="&gt;&gt;disconnectButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
-    <value>toolStripSeparator4</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addTorrentButton.Name" xml:space="preserve">
-    <value>addTorrentButton</value>
-  </data>
-  <data name="&gt;&gt;addTorrentButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addWebTorrentButton.Name" xml:space="preserve">
-    <value>addWebTorrentButton</value>
-  </data>
-  <data name="&gt;&gt;addWebTorrentButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
-    <value>toolStripSeparator1</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;startTorrentButton.Name" xml:space="preserve">
-    <value>startTorrentButton</value>
-  </data>
-  <data name="&gt;&gt;startTorrentButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;startAllToolStripMenuItem1.Name" xml:space="preserve">
-    <value>startAllToolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;startAllToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pauseTorrentButton.Name" xml:space="preserve">
-    <value>pauseTorrentButton</value>
-  </data>
-  <data name="&gt;&gt;pauseTorrentButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pauseAllToolStripMenuItem.Name" xml:space="preserve">
-    <value>pauseAllToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;pauseAllToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;recheckTorrentButton.Name" xml:space="preserve">
-    <value>recheckTorrentButton</value>
-  </data>
-  <data name="&gt;&gt;recheckTorrentButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;configureTorrentButton.Name" xml:space="preserve">
-    <value>configureTorrentButton</value>
-  </data>
-  <data name="&gt;&gt;configureTorrentButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;removeTorrentButton.Name" xml:space="preserve">
-    <value>removeTorrentButton</value>
-  </data>
-  <data name="&gt;&gt;removeTorrentButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;removeAndDeleteButton.Name" xml:space="preserve">
-    <value>removeAndDeleteButton</value>
-  </data>
-  <data name="&gt;&gt;removeAndDeleteButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;remoteCmdButton.Name" xml:space="preserve">
-    <value>remoteCmdButton</value>
-  </data>
-  <data name="&gt;&gt;remoteCmdButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
-    <value>toolStripSeparator2</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;localConfigureButton.Name" xml:space="preserve">
-    <value>localConfigureButton</value>
-  </data>
-  <data name="&gt;&gt;localConfigureButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;remoteConfigureButton.Name" xml:space="preserve">
-    <value>remoteConfigureButton</value>
-  </data>
-  <data name="&gt;&gt;remoteConfigureButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sessionStatsButton.Name" xml:space="preserve">
-    <value>sessionStatsButton</value>
-  </data>
-  <data name="&gt;&gt;sessionStatsButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fileToolStripMenuItem.Name" xml:space="preserve">
-    <value>fileToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;fileToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;connectToolStripMenuItem.Name" xml:space="preserve">
-    <value>connectToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;connectToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;disconnectToolStripMenuItem.Name" xml:space="preserve">
-    <value>disconnectToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;disconnectToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem2.Name" xml:space="preserve">
-    <value>toolStripMenuItem2</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addTorrentToolStripMenuItem.Name" xml:space="preserve">
-    <value>addTorrentToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;addTorrentToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addTorrentFromUrlToolStripMenuItem.Name" xml:space="preserve">
-    <value>addTorrentFromUrlToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;addTorrentFromUrlToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fileMenuItemSeperator1.Name" xml:space="preserve">
-    <value>fileMenuItemSeperator1</value>
-  </data>
-  <data name="&gt;&gt;fileMenuItemSeperator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;exitToolStripMenuItem.Name" xml:space="preserve">
-    <value>exitToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;exitToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;optionsToolStripMenuItem.Name" xml:space="preserve">
-    <value>optionsToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;optionsToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;localSettingsToolStripMenuItem.Name" xml:space="preserve">
-    <value>localSettingsToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;localSettingsToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;remoteSettingsToolStripMenuItem.Name" xml:space="preserve">
-    <value>remoteSettingsToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;remoteSettingsToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;torrentToolStripMenuItem.Name" xml:space="preserve">
-    <value>torrentToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;torrentToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;startToolStripMenuItem.Name" xml:space="preserve">
-    <value>startToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;startToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pauseToolStripMenuItem.Name" xml:space="preserve">
-    <value>pauseToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;pauseToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;recheckToolStripMenuItem.Name" xml:space="preserve">
-    <value>recheckToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;recheckToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;propertiesToolStripMenuItem.Name" xml:space="preserve">
-    <value>propertiesToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;propertiesToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;removeToolStripMenuItem.Name" xml:space="preserve">
-    <value>removeToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;removeToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;removeDeleteToolStripMenuItem.Name" xml:space="preserve">
-    <value>removeDeleteToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;removeDeleteToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator5.Name" xml:space="preserve">
-    <value>toolStripSeparator5</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;startAllToolStripMenuItem.Name" xml:space="preserve">
-    <value>startAllToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;startAllToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;stopAllToolStripMenuItem.Name" xml:space="preserve">
-    <value>stopAllToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;stopAllToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;viewToolStripMenuItem.Name" xml:space="preserve">
-    <value>viewToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;viewToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;showDetailsPanelToolStripMenuItem.Name" xml:space="preserve">
-    <value>showDetailsPanelToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;showDetailsPanelToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;helpToolStripMenuItem.Name" xml:space="preserve">
-    <value>helpToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;helpToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;showErrorLogToolStripMenuItem.Name" xml:space="preserve">
-    <value>showErrorLogToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;showErrorLogToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
-    <value>toolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;projectSiteToolStripMenuItem.Name" xml:space="preserve">
-    <value>projectSiteToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;projectSiteToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkForNewVersionToolStripMenuItem.Name" xml:space="preserve">
-    <value>checkForNewVersionToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;checkForNewVersionToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;aboutToolStripMenuItem.Name" xml:space="preserve">
-    <value>aboutToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;aboutToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flagsImageList.Name" xml:space="preserve">
-    <value>flagsImageList</value>
-  </data>
-  <data name="&gt;&gt;flagsImageList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;refreshWorker.Name" xml:space="preserve">
-    <value>refreshWorker</value>
-  </data>
-  <data name="&gt;&gt;refreshWorker.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;notifyIcon.Name" xml:space="preserve">
-    <value>notifyIcon</value>
-  </data>
-  <data name="&gt;&gt;notifyIcon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;refreshTimer.Name" xml:space="preserve">
-    <value>refreshTimer</value>
-  </data>
-  <data name="&gt;&gt;refreshTimer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;filesTimer.Name" xml:space="preserve">
-    <value>filesTimer</value>
-  </data>
-  <data name="&gt;&gt;filesTimer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;filesWorker.Name" xml:space="preserve">
-    <value>filesWorker</value>
-  </data>
-  <data name="&gt;&gt;filesWorker.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;refreshElapsedTimer.Name" xml:space="preserve">
-    <value>refreshElapsedTimer</value>
-  </data>
-  <data name="&gt;&gt;refreshElapsedTimer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>MainWindow</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="languageToolStripMenuItem.Text" xml:space="preserve">
     <value>Langue</value>

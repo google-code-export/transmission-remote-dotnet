@@ -137,18 +137,6 @@
   <data name="peerLimitValue.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="&gt;&gt;peerLimitValue.Name" xml:space="preserve">
-    <value>peerLimitValue</value>
-  </data>
-  <data name="&gt;&gt;peerLimitValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;peerLimitValue.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;peerLimitValue.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="label3.Locked" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -166,18 +154,6 @@
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Nb max de sources</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="uploadLimitEnableField.Locked" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -197,18 +173,6 @@
   <data name="uploadLimitEnableField.Text" xml:space="preserve">
     <value>Limite le taux d'émission</value>
   </data>
-  <data name="&gt;&gt;uploadLimitEnableField.Name" xml:space="preserve">
-    <value>uploadLimitEnableField</value>
-  </data>
-  <data name="&gt;&gt;uploadLimitEnableField.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;uploadLimitEnableField.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;uploadLimitEnableField.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="downloadLimitField.Locked" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -220,18 +184,6 @@
   </data>
   <data name="downloadLimitField.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
-  </data>
-  <data name="&gt;&gt;downloadLimitField.Name" xml:space="preserve">
-    <value>downloadLimitField</value>
-  </data>
-  <data name="&gt;&gt;downloadLimitField.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;downloadLimitField.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;downloadLimitField.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="label1.Locked" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -251,18 +203,6 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Ko/s</value>
   </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="uploadLimitField.Locked" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -274,18 +214,6 @@
   </data>
   <data name="uploadLimitField.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
-  </data>
-  <data name="&gt;&gt;uploadLimitField.Name" xml:space="preserve">
-    <value>uploadLimitField</value>
-  </data>
-  <data name="&gt;&gt;uploadLimitField.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;uploadLimitField.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;uploadLimitField.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="label2.Locked" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -305,18 +233,6 @@
   <data name="label2.Text" xml:space="preserve">
     <value>Ko/s</value>
   </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="downloadLimitEnableField.Locked" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -335,18 +251,6 @@
   <data name="downloadLimitEnableField.Text" xml:space="preserve">
     <value>Limite le taux de réception</value>
   </data>
-  <data name="&gt;&gt;downloadLimitEnableField.Name" xml:space="preserve">
-    <value>downloadLimitEnableField</value>
-  </data>
-  <data name="&gt;&gt;downloadLimitEnableField.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;downloadLimitEnableField.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;downloadLimitEnableField.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
@@ -363,18 +267,6 @@
   <data name="tabPage1.Text" xml:space="preserve">
     <value>General</value>
   </data>
-  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 12</value>
   </data>
@@ -383,18 +275,6 @@
   </data>
   <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
-    <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="button2.Locked" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -411,18 +291,6 @@
   <data name="button2.Text" xml:space="preserve">
     <value>Annuler</value>
   </data>
-  <data name="&gt;&gt;button2.Name" xml:space="preserve">
-    <value>button2</value>
-  </data>
-  <data name="&gt;&gt;button2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="button1.Locked" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -437,18 +305,6 @@
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>OK</value>
-  </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
-  </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -488,11 +344,5 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>TorrentPropertiesDialog</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>TorrentPropertiesDialog</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

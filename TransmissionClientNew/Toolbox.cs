@@ -152,7 +152,7 @@ namespace TransmissionRemoteDotnet
             }
             else
             {
-                return "0 " + OtherStrings.Byte.ToLower()[0];
+                return "0 " + OtherStrings.Byte[0];
             }
         }
 

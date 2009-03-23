@@ -78,7 +78,7 @@ Section "GeoIP Database"
   File "GeoIP.dat"
 SectionEnd
 
-Section "French translation"
+Section /o "French translation"
   CreateDirectory "$INSTDIR\fr-FR"
   SetOutPath "$INSTDIR\fr-FR"
   File "fr-FR\Transmission Remote.resources.dll"

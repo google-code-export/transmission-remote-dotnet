@@ -334,10 +334,22 @@
     <value>O/s</value>
   </data>
   <data name="KilobytesPerSecondShort" xml:space="preserve">
-    <value>kO/s</value>
+    <value>KO/s</value>
+  </data>
+  <data name="Gigabyte" xml:space="preserve">
+    <value>Gigaoctect</value>
+  </data>
+  <data name="GigabyteShort" xml:space="preserve">
+    <value>GO</value>
+  </data>
+  <data name="Kilobyte" xml:space="preserve">
+    <value>Kilooctect</value>
+  </data>
+  <data name="KilobyteShort" xml:space="preserve">
+    <value>KO</value>
   </data>
   <data name="Megabyte" xml:space="preserve">
-    <value>Mégaoctet</value>
+    <value>Mégaoctect</value>
   </data>
   <data name="MegabyteShort" xml:space="preserve">
     <value>MO</value>

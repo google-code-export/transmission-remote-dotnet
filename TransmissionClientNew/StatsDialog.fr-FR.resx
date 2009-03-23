@@ -134,18 +134,6 @@
   <data name="downloadedBytesLabel2.Text" xml:space="preserve">
     <value>Octets téléchargés :</value>
   </data>
-  <data name="&gt;&gt;downloadedBytesLabel2.Name" xml:space="preserve">
-    <value>downloadedBytesLabel2</value>
-  </data>
-  <data name="&gt;&gt;downloadedBytesLabel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;downloadedBytesLabel2.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;downloadedBytesLabel2.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="uploadedBytesLabel2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -161,18 +149,6 @@
   <data name="uploadedBytesLabel2.Text" xml:space="preserve">
     <value>Octets envoyés :</value>
   </data>
-  <data name="&gt;&gt;uploadedBytesLabel2.Name" xml:space="preserve">
-    <value>uploadedBytesLabel2</value>
-  </data>
-  <data name="&gt;&gt;uploadedBytesLabel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;uploadedBytesLabel2.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;uploadedBytesLabel2.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
   <data name="CloseFormButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>365, 178</value>
   </data>
@@ -184,18 +160,6 @@
   </data>
   <data name="CloseFormButton.Text" xml:space="preserve">
     <value>Fermer</value>
-  </data>
-  <data name="&gt;&gt;CloseFormButton.Name" xml:space="preserve">
-    <value>CloseFormButton</value>
-  </data>
-  <data name="&gt;&gt;CloseFormButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CloseFormButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;CloseFormButton.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="statsWorker.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>17, 17</value>
@@ -215,18 +179,6 @@
   <data name="secondsActiveValue2.Text" xml:space="preserve">
     <value>En cours d'interrogation...</value>
   </data>
-  <data name="&gt;&gt;secondsActiveValue2.Name" xml:space="preserve">
-    <value>secondsActiveValue2</value>
-  </data>
-  <data name="&gt;&gt;secondsActiveValue2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;secondsActiveValue2.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;secondsActiveValue2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="sessionCountValue2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -241,18 +193,6 @@
   </data>
   <data name="sessionCountValue2.Text" xml:space="preserve">
     <value>En cours d'interrogation...</value>
-  </data>
-  <data name="&gt;&gt;sessionCountValue2.Name" xml:space="preserve">
-    <value>sessionCountValue2</value>
-  </data>
-  <data name="&gt;&gt;sessionCountValue2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sessionCountValue2.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;sessionCountValue2.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="filesAddedValue2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -269,18 +209,6 @@
   <data name="filesAddedValue2.Text" xml:space="preserve">
     <value>En cours d'interrogation...</value>
   </data>
-  <data name="&gt;&gt;filesAddedValue2.Name" xml:space="preserve">
-    <value>filesAddedValue2</value>
-  </data>
-  <data name="&gt;&gt;filesAddedValue2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;filesAddedValue2.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;filesAddedValue2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="uploadedBytesValue2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -295,18 +223,6 @@
   </data>
   <data name="uploadedBytesValue2.Text" xml:space="preserve">
     <value>En cours d'interrogation...</value>
-  </data>
-  <data name="&gt;&gt;uploadedBytesValue2.Name" xml:space="preserve">
-    <value>uploadedBytesValue2</value>
-  </data>
-  <data name="&gt;&gt;uploadedBytesValue2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;uploadedBytesValue2.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;uploadedBytesValue2.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="downloadedBytesValue2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -323,18 +239,6 @@
   <data name="downloadedBytesValue2.Text" xml:space="preserve">
     <value>En cours d'interrogation...</value>
   </data>
-  <data name="&gt;&gt;downloadedBytesValue2.Name" xml:space="preserve">
-    <value>downloadedBytesValue2</value>
-  </data>
-  <data name="&gt;&gt;downloadedBytesValue2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;downloadedBytesValue2.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;downloadedBytesValue2.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="secondsActiveLabel2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -349,18 +253,6 @@
   </data>
   <data name="secondsActiveLabel2.Text" xml:space="preserve">
     <value>Secondes d'activité</value>
-  </data>
-  <data name="&gt;&gt;secondsActiveLabel2.Name" xml:space="preserve">
-    <value>secondsActiveLabel2</value>
-  </data>
-  <data name="&gt;&gt;secondsActiveLabel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;secondsActiveLabel2.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;secondsActiveLabel2.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="sessionCountLabel2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -377,18 +269,6 @@
   <data name="sessionCountLabel2.Text" xml:space="preserve">
     <value>Nombre de session(s)</value>
   </data>
-  <data name="&gt;&gt;sessionCountLabel2.Name" xml:space="preserve">
-    <value>sessionCountLabel2</value>
-  </data>
-  <data name="&gt;&gt;sessionCountLabel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sessionCountLabel2.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;sessionCountLabel2.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="filesAddedLabel2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -404,18 +284,6 @@
   <data name="filesAddedLabel2.Text" xml:space="preserve">
     <value>Fichiers ajoutés:</value>
   </data>
-  <data name="&gt;&gt;filesAddedLabel2.Name" xml:space="preserve">
-    <value>filesAddedLabel2</value>
-  </data>
-  <data name="&gt;&gt;filesAddedLabel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;filesAddedLabel2.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;filesAddedLabel2.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>243, 5</value>
   </data>
@@ -427,18 +295,6 @@
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Stats cumulatives</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>134, 17</value>
@@ -458,18 +314,6 @@
   <data name="secondsActiveValue1.Text" xml:space="preserve">
     <value>En cours d'interrogation...</value>
   </data>
-  <data name="&gt;&gt;secondsActiveValue1.Name" xml:space="preserve">
-    <value>secondsActiveValue1</value>
-  </data>
-  <data name="&gt;&gt;secondsActiveValue1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;secondsActiveValue1.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;secondsActiveValue1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="sessionCountValue1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -484,18 +328,6 @@
   </data>
   <data name="sessionCountValue1.Text" xml:space="preserve">
     <value>En cours d'interrogation...</value>
-  </data>
-  <data name="&gt;&gt;sessionCountValue1.Name" xml:space="preserve">
-    <value>sessionCountValue1</value>
-  </data>
-  <data name="&gt;&gt;sessionCountValue1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sessionCountValue1.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;sessionCountValue1.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="filesAddedValue1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -512,18 +344,6 @@
   <data name="filesAddedValue1.Text" xml:space="preserve">
     <value>En cours d'interrogation...</value>
   </data>
-  <data name="&gt;&gt;filesAddedValue1.Name" xml:space="preserve">
-    <value>filesAddedValue1</value>
-  </data>
-  <data name="&gt;&gt;filesAddedValue1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;filesAddedValue1.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;filesAddedValue1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="uploadedBytesValue1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -538,18 +358,6 @@
   </data>
   <data name="uploadedBytesValue1.Text" xml:space="preserve">
     <value>En cours d'interrogation...</value>
-  </data>
-  <data name="&gt;&gt;uploadedBytesValue1.Name" xml:space="preserve">
-    <value>uploadedBytesValue1</value>
-  </data>
-  <data name="&gt;&gt;uploadedBytesValue1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;uploadedBytesValue1.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;uploadedBytesValue1.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="downloadedBytesValue1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -566,18 +374,6 @@
   <data name="downloadedBytesValue1.Text" xml:space="preserve">
     <value>En cours d'interrogation...</value>
   </data>
-  <data name="&gt;&gt;downloadedBytesValue1.Name" xml:space="preserve">
-    <value>downloadedBytesValue1</value>
-  </data>
-  <data name="&gt;&gt;downloadedBytesValue1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;downloadedBytesValue1.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;downloadedBytesValue1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="secondsActiveLabel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -592,18 +388,6 @@
   </data>
   <data name="secondsActiveLabel1.Text" xml:space="preserve">
     <value>Secondes d'activité</value>
-  </data>
-  <data name="&gt;&gt;secondsActiveLabel1.Name" xml:space="preserve">
-    <value>secondsActiveLabel1</value>
-  </data>
-  <data name="&gt;&gt;secondsActiveLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;secondsActiveLabel1.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;secondsActiveLabel1.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="sessionCountLabel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -620,18 +404,6 @@
   <data name="sessionCountLabel1.Text" xml:space="preserve">
     <value>Nombre de session(s)</value>
   </data>
-  <data name="&gt;&gt;sessionCountLabel1.Name" xml:space="preserve">
-    <value>sessionCountLabel1</value>
-  </data>
-  <data name="&gt;&gt;sessionCountLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sessionCountLabel1.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;sessionCountLabel1.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="filesAddedLabel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -646,18 +418,6 @@
   </data>
   <data name="filesAddedLabel1.Text" xml:space="preserve">
     <value>Fichiers ajoutés:</value>
-  </data>
-  <data name="&gt;&gt;filesAddedLabel1.Name" xml:space="preserve">
-    <value>filesAddedLabel1</value>
-  </data>
-  <data name="&gt;&gt;filesAddedLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;filesAddedLabel1.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;filesAddedLabel1.ZOrder" xml:space="preserve">
-    <value>7</value>
   </data>
   <data name="downloadedBytesLabel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -674,18 +434,6 @@
   <data name="downloadedBytesLabel1.Text" xml:space="preserve">
     <value>Octets téléchargés :</value>
   </data>
-  <data name="&gt;&gt;downloadedBytesLabel1.Name" xml:space="preserve">
-    <value>downloadedBytesLabel1</value>
-  </data>
-  <data name="&gt;&gt;downloadedBytesLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;downloadedBytesLabel1.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;downloadedBytesLabel1.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="uploadedBytesLabel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -701,18 +449,6 @@
   <data name="uploadedBytesLabel1.Text" xml:space="preserve">
     <value>Octets envoyés :</value>
   </data>
-  <data name="&gt;&gt;uploadedBytesLabel1.Name" xml:space="preserve">
-    <value>uploadedBytesLabel1</value>
-  </data>
-  <data name="&gt;&gt;uploadedBytesLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;uploadedBytesLabel1.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;uploadedBytesLabel1.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 5</value>
   </data>
@@ -724,18 +460,6 @@
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Stats de la session en cours</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -775,23 +499,5 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Statistiques du démon de Transmission</value>
-  </data>
-  <data name="&gt;&gt;statsWorker.Name" xml:space="preserve">
-    <value>statsWorker</value>
-  </data>
-  <data name="&gt;&gt;statsWorker.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;timer1.Name" xml:space="preserve">
-    <value>timer1</value>
-  </data>
-  <data name="&gt;&gt;timer1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>StatsDialog</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
