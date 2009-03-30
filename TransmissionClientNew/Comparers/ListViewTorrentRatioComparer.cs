@@ -14,7 +14,7 @@ namespace TransmissionRemoteDotnet.Comparers
             ListViewItem ly = (ListViewItem)y;
             Torrent tx = (Torrent)lx.Tag;
             Torrent ty = (Torrent)ly.Tag;
-            return tx.Ratio.CompareTo(ty.Ratio);
+            return tx.LocalRatio.CompareTo(ty.LocalRatio);
         }
     }
 }

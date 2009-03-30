@@ -52,7 +52,7 @@ namespace TransmissionRemoteDotnet
             item.SubItems.Add(this.StatusCode == ProtocolConstants.STATUS_SEEDING || this.StatusCode == ProtocolConstants.STATUS_DOWNLOADING ? this.UploadRate : "");
             item.SubItems.Add(this.GetShortETA());
             item.SubItems.Add(this.UploadedString);
-            item.SubItems.Add(this.RatioString);
+            item.SubItems.Add(this.LocalRatioString);
             item.SubItems.Add(this.Added.ToString());
             item.SubItems.Add(this.IsFinished ? "?" : "");
             item.SubItems.Add(GetFirstTracker(true));
@@ -201,7 +201,7 @@ namespace TransmissionRemoteDotnet
                 item.SubItems[7].Text = this.StatusCode == ProtocolConstants.STATUS_SEEDING || this.StatusCode == ProtocolConstants.STATUS_DOWNLOADING ? this.UploadRate : "";
                 item.SubItems[8].Text = this.GetShortETA();
                 item.SubItems[9].Text = this.UploadedString;
-                item.SubItems[10].Text = this.RatioString;
+                item.SubItems[10].Text = this.LocalRatioString;
                 item.SubItems[11].Text = this.Added.ToString();
                 this.updateSerial = Program.DaemonDescriptor.UpdateSerial;
                 LogError();
@@ -328,38 +328,6 @@ namespace TransmissionRemoteDotnet
             get
             {
                 return ((JsonNumber)info[ProtocolConstants.FIELD_ID]).ToInt32();
-            }
-        }
-
-        public int DownloadLimit
-        {
-            get
-            {
-                return ((JsonNumber)info[Program.DaemonDescriptor.Revision >= 8021 ? ProtocolConstants.FIELD_SPEEDLIMITDOWN : ProtocolConstants.FIELD_DOWNLOADLIMIT]).ToInt32();
-            }
-        }
-
-        public bool DownloadLimitMode
-        {
-            get
-            {
-                return ((JsonNumber)info[Program.DaemonDescriptor.Revision >= 8021 ? ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED : ProtocolConstants.FIELD_DOWNLOADLIMITMODE]).ToBoolean();
-            }
-        }
-
-        public int UploadLimit
-        {
-            get
-            {
-                return ((JsonNumber)info[Program.DaemonDescriptor.Revision >= 8021 ? ProtocolConstants.FIELD_SPEEDLIMITUP : ProtocolConstants.FIELD_UPLOADLIMIT]).ToInt32();
-            }
-        }
-
-        public bool UploadLimitMode
-        {
-            get
-            {
-                return ((JsonNumber)info[Program.DaemonDescriptor.Revision >= 8021 ? ProtocolConstants.FIELD_SPEEDLIMITUPENABLED : ProtocolConstants.FIELD_UPLOADLIMITMODE]).ToBoolean();
             }
         }
 
@@ -593,7 +561,7 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        public decimal Ratio
+        public decimal LocalRatio
         {
             get
             {
@@ -601,11 +569,11 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        public string RatioString
+        public string LocalRatioString
         {
             get
             {
-                decimal ratio = this.Ratio;
+                decimal ratio = this.LocalRatio;
                 return ratio < 0 ? "∞" : ratio.ToString();
             }
         }
@@ -617,5 +585,88 @@ namespace TransmissionRemoteDotnet
                 return (string)info[ProtocolConstants.FIELD_COMMENT];
             }
         }
+
+        public bool SeedRatioMode
+        {
+            get
+            {
+                return ((JsonNumber)info[ProtocolConstants.FIELD_SEEDRATIOMODE]).ToBoolean();
+            }
+        }
+
+        public decimal SeedRatioLimit
+        {
+            get
+            {
+                return ((JsonNumber)info[ProtocolConstants.FIELD_SEEDRATIOLIMIT]).ToDecimal();
+            }
+        }
+
+        /* BEGIN CONFUSION */
+
+        public int SpeedLimitDown
+        {
+            get
+            {
+                return ((JsonNumber)info[ProtocolConstants.FIELD_SPEEDLIMITDOWN]).ToInt32();
+            }
+        }
+
+        public bool SpeedLimitDownEnabled
+        {
+            get
+            {
+                return info.Contains(ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED) ? ((JsonNumber)info[ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED]).ToBoolean() : ((JsonNumber)info[ProtocolConstants.FIELD_DOWNLOADLIMITMODE]).ToBoolean();
+            }
+        }
+
+        public int SpeedLimitUp
+        {
+            get
+            {
+                return ((JsonNumber)info[ProtocolConstants.FIELD_SPEEDLIMITUP]).ToInt32();
+            }
+        }
+
+        public bool SpeedLimitUpEnabled
+        {
+            get
+            {
+                return info.Contains(ProtocolConstants.FIELD_SPEEDLIMITUPENABLED) ? ((JsonNumber)info[ProtocolConstants.FIELD_SPEEDLIMITUPENABLED]).ToBoolean() : ((JsonNumber)info[ProtocolConstants.FIELD_UPLOADLIMITMODE]).ToBoolean();
+            }
+        }
+
+        public int DownloadLimit
+        {
+            get
+            {
+                return ((JsonNumber)info[ProtocolConstants.FIELD_DOWNLOADLIMIT]).ToInt32();
+            }
+        }
+
+        public int UploadLimit
+        {
+            get
+            {
+                return ((JsonNumber)info[ProtocolConstants.FIELD_UPLOADLIMIT]).ToInt32();
+            }
+        }
+
+        public bool DownloadLimited
+        {
+            get
+            {
+                return ((JsonNumber)info[ProtocolConstants.FIELD_DOWNLOADLIMITED]).ToBoolean();
+            }
+        }
+
+        public bool UploadLimited
+        {
+            get
+            {
+                return ((JsonNumber)info[ProtocolConstants.FIELD_UPLOADLIMITED]).ToBoolean();
+            }
+        }
+        /* END CONFUSION */
     }
 }

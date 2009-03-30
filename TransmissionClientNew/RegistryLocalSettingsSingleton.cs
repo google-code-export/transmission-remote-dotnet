@@ -78,11 +78,11 @@ namespace TransmissionRemoteDotnet
             foreach (string subKey in key.GetValueNames())
             {
                 if (subKey.StartsWith("_"))
-                    this.rootConfMap[subKey.Remove(0, 1)] = key.GetValue(subKey);
+                    rootConfMap[subKey.Remove(0, 1)] = key.GetValue(subKey);
             }
-            if (this.rootConfMap.ContainsKey(REGKEY_CURRENTPROFILE))
+            if (rootConfMap.ContainsKey(REGKEY_CURRENTPROFILE))
             {
-                this.CurrentProfile = (string)this.rootConfMap[REGKEY_CURRENTPROFILE];
+                this.CurrentProfile = (string)rootConfMap[REGKEY_CURRENTPROFILE];
             }
             else
             {
@@ -100,11 +100,11 @@ namespace TransmissionRemoteDotnet
         {
             if (root)
             {
-                return this.rootConfMap.ContainsKey(key) ? this.rootConfMap[key] : null;
+                return rootConfMap.ContainsKey(key) ? rootConfMap[key] : null;
             }
             else
             {
-                return this.profileConfMap.ContainsKey(key) ? this.profileConfMap[key] : null;
+                return profileConfMap.ContainsKey(key) ? profileConfMap[key] : null;
             }
         }
 
@@ -127,11 +127,11 @@ namespace TransmissionRemoteDotnet
         {
             if (root)
             {
-                this.rootConfMap[key] = value;
+                rootConfMap[key] = value;
             }
             else
             {
-                this.profileConfMap[key] = value;
+                profileConfMap[key] = value;
             }
         }
 
@@ -166,7 +166,7 @@ namespace TransmissionRemoteDotnet
             try
             {
                 rootKey = GetRootKey(true);
-                foreach (KeyValuePair<string, object> pair in this.rootConfMap)
+                foreach (KeyValuePair<string, object> pair in rootConfMap)
                 {
                     if (pair.Key != null && pair.Value != null)
                         rootKey.SetValue("_"+pair.Key, pair.Value);
@@ -174,7 +174,7 @@ namespace TransmissionRemoteDotnet
                 profileKey = GetProfileKey(this.CurrentProfile, true);
                 if (profileKey != null)
                 {
-                    foreach (KeyValuePair<string, object> pair in this.profileConfMap)
+                    foreach (KeyValuePair<string, object> pair in profileConfMap)
                     {
                         if (pair.Key != null && pair.Value != null)
                             profileKey.SetValue(pair.Key, pair.Value);
@@ -237,11 +237,11 @@ namespace TransmissionRemoteDotnet
                 {
                     rootConfMap[REGKEY_CURRENTPROFILE] = value;
                     profileKey = GetProfileKey(value, false);
-                    this.profileConfMap.Clear();
+                    profileConfMap.Clear();
                     foreach (string subKey in profileKey.GetValueNames())
                     {
                         if (!subKey.StartsWith("_"))
-                            this.profileConfMap[subKey] = profileKey.GetValue(subKey);
+                            profileConfMap[subKey] = profileKey.GetValue(subKey);
                     }
                     profileKey.Close();
                     if (Program.Form != null && AutoConnect)
@@ -273,11 +273,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileConfMap.ContainsKey(REGKEY_HOST) ? (string)this.profileConfMap[REGKEY_HOST] : "";
+                return profileConfMap.ContainsKey(REGKEY_HOST) ? (string)profileConfMap[REGKEY_HOST] : "";
             }
             set
             {
-                this.profileConfMap[REGKEY_HOST] = value;
+                profileConfMap[REGKEY_HOST] = value;
             }
         }
 
@@ -285,11 +285,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileConfMap.ContainsKey(REGKEY_PORT) ? (int)this.profileConfMap[REGKEY_PORT] : 9091;
+                return profileConfMap.ContainsKey(REGKEY_PORT) ? (int)profileConfMap[REGKEY_PORT] : 9091;
             }
             set
             {
-                this.profileConfMap[REGKEY_PORT] = value;
+                profileConfMap[REGKEY_PORT] = value;
             }
         }
 
@@ -297,11 +297,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileConfMap.ContainsKey(REGKEY_USESSL) ? IntToBool(this.profileConfMap[REGKEY_USESSL]) : false;
+                return profileConfMap.ContainsKey(REGKEY_USESSL) ? IntToBool(profileConfMap[REGKEY_USESSL]) : false;
             }
             set
             {
-                this.profileConfMap[REGKEY_USESSL] = BoolToInt(value);
+                profileConfMap[REGKEY_USESSL] = BoolToInt(value);
             }
         }
 
@@ -309,11 +309,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileConfMap.ContainsKey(REGKEY_REFRESHRATE) ? (int)this.profileConfMap[REGKEY_REFRESHRATE] : 3;
+                return profileConfMap.ContainsKey(REGKEY_REFRESHRATE) ? (int)profileConfMap[REGKEY_REFRESHRATE] : 3;
             }
             set
             {
-                this.profileConfMap[REGKEY_REFRESHRATE] = value;
+                profileConfMap[REGKEY_REFRESHRATE] = value;
             }
         }
 
@@ -321,11 +321,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileConfMap.ContainsKey(REGKEY_AUTOCONNECT) ? IntToBool(this.profileConfMap[REGKEY_AUTOCONNECT]) : false;
+                return profileConfMap.ContainsKey(REGKEY_AUTOCONNECT) ? IntToBool(profileConfMap[REGKEY_AUTOCONNECT]) : false;
             }
             set
             {
-                this.profileConfMap[REGKEY_AUTOCONNECT] = BoolToInt(value);
+                profileConfMap[REGKEY_AUTOCONNECT] = BoolToInt(value);
             }
         }
 
@@ -333,11 +333,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileConfMap.ContainsKey(REGKEY_USER) ? (string)this.profileConfMap[REGKEY_USER] : "";
+                return profileConfMap.ContainsKey(REGKEY_USER) ? (string)profileConfMap[REGKEY_USER] : "";
             }
             set
             {
-                this.profileConfMap[REGKEY_USER] = value;
+                profileConfMap[REGKEY_USER] = value;
             }
         }
 
@@ -345,11 +345,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileConfMap.ContainsKey(REGKEY_PASS) ? (string)this.profileConfMap[REGKEY_PASS] : "";
+                return profileConfMap.ContainsKey(REGKEY_PASS) ? (string)profileConfMap[REGKEY_PASS] : "";
             }
             set
             {
-                this.profileConfMap[REGKEY_PASS] = value;
+                profileConfMap[REGKEY_PASS] = value;
             }
         }
 
@@ -357,11 +357,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileConfMap.ContainsKey(REGKEY_AUTHENABLED) ? IntToBool(this.profileConfMap[REGKEY_AUTHENABLED]) : false;
+                return profileConfMap.ContainsKey(REGKEY_AUTHENABLED) ? IntToBool(profileConfMap[REGKEY_AUTHENABLED]) : false;
             }
             set
             {
-                this.profileConfMap[REGKEY_AUTHENABLED] = BoolToInt(value);
+                profileConfMap[REGKEY_AUTHENABLED] = BoolToInt(value);
             }
         }
 
@@ -379,11 +379,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileConfMap.ContainsKey(REGKEY_MINTOTRAY) ? IntToBool(this.profileConfMap[REGKEY_MINTOTRAY]) : false;
+                return profileConfMap.ContainsKey(REGKEY_MINTOTRAY) ? IntToBool(profileConfMap[REGKEY_MINTOTRAY]) : false;
             }
             set
             {
-                this.profileConfMap[REGKEY_MINTOTRAY] = BoolToInt(value);
+                profileConfMap[REGKEY_MINTOTRAY] = BoolToInt(value);
             }
         }
 
@@ -391,9 +391,9 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                if (this.profileConfMap.ContainsKey(REGKEY_PROXYENABLED))
+                if (profileConfMap.ContainsKey(REGKEY_PROXYENABLED))
                 {
-                    return (ProxyMode)((int)this.profileConfMap[REGKEY_PROXYENABLED]);
+                    return (ProxyMode)((int)profileConfMap[REGKEY_PROXYENABLED]);
                 }
                 else
                 {
@@ -402,7 +402,7 @@ namespace TransmissionRemoteDotnet
             }
             set
             {
-                this.profileConfMap[REGKEY_PROXYENABLED] = (int)value;
+                profileConfMap[REGKEY_PROXYENABLED] = (int)value;
             }
         }
 
@@ -410,11 +410,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileConfMap.ContainsKey(REGKEY_PROXYHOST) ? (string)this.profileConfMap[REGKEY_PROXYHOST] : "";
+                return profileConfMap.ContainsKey(REGKEY_PROXYHOST) ? (string)profileConfMap[REGKEY_PROXYHOST] : "";
             }
             set
             {
-                this.profileConfMap[REGKEY_PROXYHOST] = value;
+                profileConfMap[REGKEY_PROXYHOST] = value;
             }
         }
 
@@ -422,11 +422,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.rootConfMap.ContainsKey(REGKEY_PLINKPATH) ? (string)this.rootConfMap[REGKEY_PLINKPATH] : null;
+                return rootConfMap.ContainsKey(REGKEY_PLINKPATH) ? (string)rootConfMap[REGKEY_PLINKPATH] : null;
             }
             set
             {
-                this.rootConfMap[REGKEY_PLINKPATH] = value;
+                rootConfMap[REGKEY_PLINKPATH] = value;
             }
         }
 
@@ -446,7 +446,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return profileConfMap.ContainsKey(REGKEY_PLINKCMD) ? (string)profileConfMap[REGKEY_PLINKCMD] : "ls -lh \"$DATA\"|less";
+                return profileConfMap.ContainsKey(REGKEY_PLINKCMD) ? (string)profileConfMap[REGKEY_PLINKCMD] : "ls -lh \"$DATA\"; read";
             }
             set
             {
@@ -462,7 +462,7 @@ namespace TransmissionRemoteDotnet
             }
             set
             {
-                this.profileConfMap[REGKEY_PLINKENABLE] = BoolToInt(value);
+                profileConfMap[REGKEY_PLINKENABLE] = BoolToInt(value);
             }
         }
 
@@ -470,11 +470,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileConfMap.ContainsKey(REGKEY_PROXYPORT) ? (int)this.profileConfMap[REGKEY_PROXYPORT] : 8080;
+                return profileConfMap.ContainsKey(REGKEY_PROXYPORT) ? (int)profileConfMap[REGKEY_PROXYPORT] : 8080;
             }
             set
             {
-                this.profileConfMap[REGKEY_PROXYPORT] = value;
+                profileConfMap[REGKEY_PROXYPORT] = value;
             }
         }
 
@@ -482,11 +482,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileConfMap.ContainsKey(REGKEY_PROXYUSER) ? (string)this.profileConfMap[REGKEY_PROXYUSER] : "";
+                return profileConfMap.ContainsKey(REGKEY_PROXYUSER) ? (string)profileConfMap[REGKEY_PROXYUSER] : "";
             }
             set
             {
-                this.profileConfMap[REGKEY_PROXYUSER] = value;
+                profileConfMap[REGKEY_PROXYUSER] = value;
             }
         }
 
@@ -494,11 +494,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileConfMap.ContainsKey(REGKEY_PROXYPASS) ? (string)this.profileConfMap[REGKEY_PROXYPASS] : "";
+                return profileConfMap.ContainsKey(REGKEY_PROXYPASS) ? (string)profileConfMap[REGKEY_PROXYPASS] : "";
             }
             set
             {
-                this.profileConfMap[REGKEY_PROXYPASS] = value;
+                profileConfMap[REGKEY_PROXYPASS] = value;
             }
         }
 
@@ -506,11 +506,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileConfMap.ContainsKey(REGKEY_PROXYAUTH) ? IntToBool(this.profileConfMap[REGKEY_PROXYAUTH]) : false;
+                return profileConfMap.ContainsKey(REGKEY_PROXYAUTH) ? IntToBool(profileConfMap[REGKEY_PROXYAUTH]) : false;
             }
             set
             {
-                this.profileConfMap[REGKEY_PROXYAUTH] = BoolToInt(value);
+                profileConfMap[REGKEY_PROXYAUTH] = BoolToInt(value);
             }
         }
 
@@ -518,11 +518,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileConfMap.ContainsKey(REGKEY_STARTPAUSED) ? IntToBool(this.profileConfMap[REGKEY_STARTPAUSED]) : false;
+                return profileConfMap.ContainsKey(REGKEY_STARTPAUSED) ? IntToBool(profileConfMap[REGKEY_STARTPAUSED]) : false;
             }
             set
             {
-                this.profileConfMap[REGKEY_STARTPAUSED] = BoolToInt(value);
+                profileConfMap[REGKEY_STARTPAUSED] = BoolToInt(value);
             }
         }
 
@@ -530,11 +530,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileConfMap.ContainsKey(REGKEY_RETRYLIMIT) ? (int)this.profileConfMap[REGKEY_RETRYLIMIT] : 3;
+                return profileConfMap.ContainsKey(REGKEY_RETRYLIMIT) ? (int)profileConfMap[REGKEY_RETRYLIMIT] : 3;
             }
             set
             {
-                this.profileConfMap[REGKEY_RETRYLIMIT] = value;
+                profileConfMap[REGKEY_RETRYLIMIT] = value;
             }
         }
 
@@ -542,7 +542,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileConfMap.ContainsKey(REGKEY_CUSTOMPATH) ? (string)this.profileConfMap[REGKEY_CUSTOMPATH] : null;
+                return profileConfMap.ContainsKey(REGKEY_CUSTOMPATH) ? (string)profileConfMap[REGKEY_CUSTOMPATH] : null;
             }
         }
 
@@ -558,11 +558,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileConfMap.ContainsKey(REGKEY_STARTEDBALLOON) ? IntToBool(this.profileConfMap[REGKEY_STARTEDBALLOON]) : true;
+                return profileConfMap.ContainsKey(REGKEY_STARTEDBALLOON) ? IntToBool(profileConfMap[REGKEY_STARTEDBALLOON]) : true;
             }
             set
             {
-                this.profileConfMap[REGKEY_STARTEDBALLOON] = BoolToInt(value);
+                profileConfMap[REGKEY_STARTEDBALLOON] = BoolToInt(value);
             }
         }
 
@@ -570,11 +570,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileConfMap.ContainsKey(REGKEY_COMPLETEDBALLOON) ? IntToBool(this.profileConfMap[REGKEY_COMPLETEDBALLOON]) : true;
+                return profileConfMap.ContainsKey(REGKEY_COMPLETEDBALLOON) ? IntToBool(profileConfMap[REGKEY_COMPLETEDBALLOON]) : true;
             }
             set
             {
-                this.profileConfMap[REGKEY_COMPLETEDBALLOON] = BoolToInt(value);
+                profileConfMap[REGKEY_COMPLETEDBALLOON] = BoolToInt(value);
             }
         }
 
@@ -582,11 +582,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileConfMap.ContainsKey(REGKEY_MINONCLOSE) ? IntToBool(this.profileConfMap[REGKEY_MINONCLOSE]) : false;
+                return profileConfMap.ContainsKey(REGKEY_MINONCLOSE) ? IntToBool(profileConfMap[REGKEY_MINONCLOSE]) : false;
             }
             set
             {
-                this.profileConfMap[REGKEY_MINONCLOSE] = BoolToInt(value);
+                profileConfMap[REGKEY_MINONCLOSE] = BoolToInt(value);
             }
         }
     }

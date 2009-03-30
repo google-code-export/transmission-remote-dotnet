@@ -147,6 +147,9 @@
             this.configureTorrentButton = new System.Windows.Forms.ToolStripButton();
             this.removeTorrentButton = new System.Windows.Forms.ToolStripButton();
             this.removeAndDeleteButton = new System.Windows.Forms.ToolStripButton();
+            this.reannounceButton = new System.Windows.Forms.ToolStripSplitButton();
+            this.allToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recentlyActiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.remoteCmdButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.localConfigureButton = new System.Windows.Forms.ToolStripButton();
@@ -965,6 +968,7 @@
             this.configureTorrentButton,
             this.removeTorrentButton,
             this.removeAndDeleteButton,
+            this.reannounceButton,
             this.remoteCmdButton,
             this.toolStripSeparator2,
             this.localConfigureButton,
@@ -1067,6 +1071,29 @@
             resources.ApplyResources(this.removeAndDeleteButton, "removeAndDeleteButton");
             this.removeAndDeleteButton.Name = "removeAndDeleteButton";
             this.removeAndDeleteButton.Click += new System.EventHandler(this.removeAndDeleteButton_Click);
+            // 
+            // reannounceButton
+            // 
+            this.reannounceButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.reannounceButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.allToolStripMenuItem,
+            this.recentlyActiveToolStripMenuItem});
+            resources.ApplyResources(this.reannounceButton, "reannounceButton");
+            this.reannounceButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.reannounce;
+            this.reannounceButton.Name = "reannounceButton";
+            this.reannounceButton.ButtonClick += new System.EventHandler(this.reannounceButton_ButtonClick);
+            // 
+            // allToolStripMenuItem
+            // 
+            this.allToolStripMenuItem.Name = "allToolStripMenuItem";
+            resources.ApplyResources(this.allToolStripMenuItem, "allToolStripMenuItem");
+            this.allToolStripMenuItem.Click += new System.EventHandler(this.reannounceAllToolStripMenuItem_Click);
+            // 
+            // recentlyActiveToolStripMenuItem
+            // 
+            this.recentlyActiveToolStripMenuItem.Name = "recentlyActiveToolStripMenuItem";
+            resources.ApplyResources(this.recentlyActiveToolStripMenuItem, "recentlyActiveToolStripMenuItem");
+            this.recentlyActiveToolStripMenuItem.Click += new System.EventHandler(this.recentlyActiveToolStripMenuItem_Click);
             // 
             // remoteCmdButton
             // 
@@ -1599,5 +1626,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSplitButton reannounceButton;
+        private System.Windows.Forms.ToolStripMenuItem allToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem recentlyActiveToolStripMenuItem;
     }
 }

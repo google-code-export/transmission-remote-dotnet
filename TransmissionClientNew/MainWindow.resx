@@ -160,7 +160,7 @@
     <value>0, 0</value>
   </data>
   <data name="stateListBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 256</value>
+    <value>109, 400</value>
   </data>
   <data name="stateListBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -169,7 +169,7 @@
     <value>stateListBox</value>
   </data>
   <data name="&gt;&gt;stateListBox.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.GListBox, Transmission Remote, Version=3.6.3369.42501, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.GListBox, Transmission Remote, Version=3.6.3375.36726, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;stateListBox.Parent" xml:space="preserve">
     <value>mainVerticalSplitContainer.Panel1</value>
@@ -259,7 +259,7 @@
     <value>0, 0</value>
   </data>
   <data name="torrentListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>861, 273</value>
+    <value>861, 416</value>
   </data>
   <data name="torrentListView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -268,7 +268,7 @@
     <value>torrentListView</value>
   </data>
   <data name="&gt;&gt;torrentListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.6.3369.42501, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.6.3375.36726, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;torrentListView.Parent" xml:space="preserve">
     <value>mainVerticalSplitContainer.Panel2</value>
@@ -289,7 +289,7 @@
     <value>1</value>
   </data>
   <data name="mainVerticalSplitContainer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>974, 273</value>
+    <value>974, 416</value>
   </data>
   <data name="mainVerticalSplitContainer.SplitterDistance" type="System.Int32, mscorlib">
     <value>109</value>
@@ -457,7 +457,7 @@
     <value>piecesGraph</value>
   </data>
   <data name="&gt;&gt;piecesGraph.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.PiecesGraph, Transmission Remote, Version=3.6.3369.42501, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.PiecesGraph, Transmission Remote, Version=3.6.3375.36726, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;piecesGraph.Parent" xml:space="preserve">
     <value>splitContainer5.Panel1</value>
@@ -1684,7 +1684,7 @@
     <value>1</value>
   </data>
   <data name="splitContainer3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>960, 209</value>
+    <value>960, 66</value>
   </data>
   <data name="splitContainer3.SplitterDistance" type="System.Int32, mscorlib">
     <value>25</value>
@@ -1711,7 +1711,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="generalTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>966, 215</value>
+    <value>966, 72</value>
   </data>
   <data name="generalTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1768,7 +1768,7 @@
     <value>trackersListView</value>
   </data>
   <data name="&gt;&gt;trackersListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.6.3369.42501, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.6.3375.36726, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;trackersListView.Parent" xml:space="preserve">
     <value>trackersTorrentNameGroupBox</value>
@@ -1879,7 +1879,7 @@
     <value>filesListView</value>
   </data>
   <data name="&gt;&gt;filesListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.6.3369.42501, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.6.3375.36726, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;filesListView.Parent" xml:space="preserve">
     <value>filesTorrentNameGroupBox</value>
@@ -2002,7 +2002,7 @@
     <value>peersListView</value>
   </data>
   <data name="&gt;&gt;peersListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.6.3369.42501, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.6.3375.36726, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;peersListView.Parent" xml:space="preserve">
     <value>peersTorrentNameGroupBox</value>
@@ -2272,7 +2272,7 @@
     <value>0, 0</value>
   </data>
   <data name="speedGraph.Size" type="System.Drawing.Size, System.Drawing">
-    <value>954, 160</value>
+    <value>954, 25</value>
   </data>
   <data name="speedGraph.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2284,7 +2284,7 @@
     <value>speedGraph</value>
   </data>
   <data name="&gt;&gt;speedGraph.Type" xml:space="preserve">
-    <value>CustomUIControls.Graphing.C2DPushGraph, Transmission Remote, Version=3.6.3369.42501, Culture=neutral, PublicKeyToken=null</value>
+    <value>CustomUIControls.Graphing.C2DPushGraph, Transmission Remote, Version=3.6.3375.36726, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;speedGraph.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -2392,7 +2392,7 @@
     <value>0, 0</value>
   </data>
   <data name="torrentTabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>974, 242</value>
+    <value>974, 99</value>
   </data>
   <data name="torrentTabControl.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2425,7 +2425,7 @@
     <value>974, 519</value>
   </data>
   <data name="torrentAndTabsSplitContainer.SplitterDistance" type="System.Int32, mscorlib">
-    <value>273</value>
+    <value>416</value>
   </data>
   <data name="torrentAndTabsSplitContainer.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2688,45 +2688,45 @@
   <data name="addWebTorrentButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <data name="addWebTorrentButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -3070,6 +3070,36 @@
   <data name="removeAndDeleteButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="allToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 22</value>
+  </data>
+  <data name="allToolStripMenuItem.Text" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="recentlyActiveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 22</value>
+  </data>
+  <data name="recentlyActiveToolStripMenuItem.Text" xml:space="preserve">
+    <value>Recently Active</value>
+  </data>
+  <data name="reannounceButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="reannounceButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="reannounceButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="reannounceButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 36</value>
+  </data>
+  <data name="reannounceButton.Text" xml:space="preserve">
+    <value>Reannounce</value>
+  </data>
+  <data name="reannounceButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="remoteCmdButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -3131,47 +3161,47 @@
   <data name="remoteConfigureButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
-        Wfb8J7fffwEcvhqBKd5zaQAAAABJRU5ErkJggg==
+        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
+        suc/uf3+Cw/UGn7aozv5AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="remoteConfigureButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
@@ -3257,7 +3287,7 @@
     <value>3, 0</value>
   </data>
   <data name="toolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 39</value>
+    <value>640, 39</value>
   </data>
   <data name="toolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3909,6 +3939,24 @@
   </data>
   <data name="&gt;&gt;removeAndDeleteButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;reannounceButton.Name" xml:space="preserve">
+    <value>reannounceButton</value>
+  </data>
+  <data name="&gt;&gt;reannounceButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;allToolStripMenuItem.Name" xml:space="preserve">
+    <value>allToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;allToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;recentlyActiveToolStripMenuItem.Name" xml:space="preserve">
+    <value>recentlyActiveToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;recentlyActiveToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;remoteCmdButton.Name" xml:space="preserve">
     <value>remoteCmdButton</value>

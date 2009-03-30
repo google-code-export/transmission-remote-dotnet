@@ -122,6 +122,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OtherStrings.resx</DependentUpon>
     </Compile>
+    <Compile Include="OtherStrings.fr-FR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OtherStrings.fr-FR.resx</DependentUpon>
+    </Compile>
     <Compile Include="PlinkCmd.cs" />
     <Compile Include="RegistryLocalSettingsSingleton.cs" />
     <Compile Include="Comparers\PeersListViewColumnSorter.cs" />
@@ -154,7 +159,10 @@
     <EmbeddedResource Include="MainWindow.fr-FR.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OtherStrings.fr-FR.resx" />
+    <EmbeddedResource Include="OtherStrings.fr-FR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OtherStrings.fr-FR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="OtherStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>OtherStrings.Designer.cs</LastGenOutput>
@@ -309,6 +317,7 @@
     <None Include="Resources\kgpg_edit.png" />
     <None Include="Resources\openterm.png" />
     <None Include="Resources\incomplete.png" />
+    <None Include="Resources\reannounce.png" />
     <Content Include="transmission_large.ico" />
   </ItemGroup>
   <ItemGroup>

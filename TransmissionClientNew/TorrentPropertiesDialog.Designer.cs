@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TorrentPropertiesDialog));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.seedRatioLimitedCheckBox = new System.Windows.Forms.CheckBox();
+            this.seedRatioLimitValue = new System.Windows.Forms.NumericUpDown();
             this.peerLimitValue = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.uploadLimitEnableField = new System.Windows.Forms.CheckBox();
@@ -41,8 +43,10 @@
             this.downloadLimitEnableField = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.seedRatioLimitValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peerLimitValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.downloadLimitField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uploadLimitField)).BeginInit();
@@ -57,6 +61,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.seedRatioLimitedCheckBox);
+            this.tabPage1.Controls.Add(this.seedRatioLimitValue);
             this.tabPage1.Controls.Add(this.peerLimitValue);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.uploadLimitEnableField);
@@ -68,6 +74,17 @@
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // seedRatioLimitedCheckBox
+            // 
+            resources.ApplyResources(this.seedRatioLimitedCheckBox, "seedRatioLimitedCheckBox");
+            this.seedRatioLimitedCheckBox.Name = "seedRatioLimitedCheckBox";
+            this.seedRatioLimitedCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // seedRatioLimitValue
+            // 
+            resources.ApplyResources(this.seedRatioLimitValue, "seedRatioLimitValue");
+            this.seedRatioLimitValue.Name = "seedRatioLimitValue";
             // 
             // peerLimitValue
             // 
@@ -138,12 +155,18 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.Name = "label7";
+            // 
             // TorrentPropertiesDialog
             // 
             this.AcceptButton = this.button1;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.button2;
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button1);
@@ -155,6 +178,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.seedRatioLimitValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peerLimitValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.downloadLimitField)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uploadLimitField)).EndInit();
@@ -176,6 +200,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.NumericUpDown peerLimitValue;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown seedRatioLimitValue;
+        private System.Windows.Forms.CheckBox seedRatioLimitedCheckBox;
 
 
     }

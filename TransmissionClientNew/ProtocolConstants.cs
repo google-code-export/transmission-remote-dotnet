@@ -28,6 +28,7 @@ namespace TransmissionRemoteDotnet
             METHOD_TORRENTREMOVE = "torrent-remove",
             METHOD_TORRENTVERIFY = "torrent-verify",
             METHOD_TORRENTADD = "torrent-add",
+            METHOD_TORRENTREANNOUNCE = "torrent-reannounce",
             METHOD_SESSIONSTATS = "session-stats",
             FIELD_PIECES = "pieces",
             FIELD_PIECECOUNT = "pieceCount",
@@ -61,14 +62,6 @@ namespace TransmissionRemoteDotnet
             FIELD_FILES = "files",
             FIELD_PRIORITIES = "priorities",
             FIELD_WANTED = "wanted",
-            FIELD_DOWNLOADLIMIT = "downloadLimit", // DEPRECATED
-            FIELD_DOWNLOADLIMITMODE = "downloadLimitMode", // DEPRECATED
-            FIELD_UPLOADLIMIT = "uploadLimit", // DEPRECATED
-            FIELD_UPLOADLIMITMODE = "uploadLimitMode", // DEPRECATED
-            FIELD_SPEEDLIMITDOWNENABLED = "speed-limit-down-enabled",
-            FIELD_SPEEDLIMITUPENABLED = "speed-limit-up-enabled",
-            FIELD_SPEEDLIMITDOWN = "speed-limit-down",
-            FIELD_SPEEDLIMITUP = "speed-limit-up",
             FIELD_TRACKERS = "trackers",
             FIELD_PEERS = "peers",
             FIELD_PEERLIMIT = "peer-limit",
@@ -81,6 +74,21 @@ namespace TransmissionRemoteDotnet
             FIELD_DATECREATED = "dateCreated",
             FIELD_HASHSTRING = "hashString",
             FIELD_DOWNLOADDIR = "downloadDir",
-            FIELD_RECHECKPROGRESS = "recheckProgress";
+            FIELD_RECHECKPROGRESS = "recheckProgress",
+            FIELD_SEEDRATIOLIMIT = "seedRatioLimit",
+            FIELD_SEEDRATIOLIMITED = "seedRatioLimited",
+            FIELD_SEEDRATIOMODE = "seedRatioMode",
+            VALUE_RECENTLY_ACTIVE = "recently-active",
+            /* BEGIN CONFUSION */
+            FIELD_DOWNLOADLIMITMODE = "downloadLimitMode", // DEPRECATED
+            FIELD_UPLOADLIMITMODE = "uploadLimitMode", // DEPRECATED
+            FIELD_SPEEDLIMITDOWNENABLED = "speed-limit-down-enabled", // ALSO DEPRECATED
+            FIELD_SPEEDLIMITUPENABLED = "speed-limit-up-enabled", // ALSO DEPRECATED
+            FIELD_SPEEDLIMITDOWN = "speed-limit-down", // ALSO DEPRECATED
+            FIELD_SPEEDLIMITUP = "speed-limit-up", // ALSO DEPRECATED
+            FIELD_UPLOADLIMITED = "uploadLimited",
+            FIELD_DOWNLOADLIMITED = "downloadLimited",
+            FIELD_UPLOADLIMIT = "uploadLimit",
+            FIELD_DOWNLOADLIMIT = "downloadLimit";
     }
 }

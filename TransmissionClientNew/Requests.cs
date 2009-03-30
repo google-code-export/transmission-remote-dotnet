@@ -7,6 +7,13 @@ using System.IO;
 
 namespace TransmissionRemoteDotnet
 {
+    public enum ReannounceMode
+    {
+        All,
+        Specific,
+        RecentlyActive
+    }
+
     public class Requests
     {
         public static JsonObject SessionGet()
@@ -25,6 +32,28 @@ namespace TransmissionRemoteDotnet
             if (ids != null)
             {
                 arguments.Put(ProtocolConstants.KEY_IDS, ids);
+            }
+            request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
+            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
+            return request;
+        }
+
+        public static JsonObject Reannounce(ReannounceMode mode, JsonArray ids)
+        {
+            JsonObject request = new JsonObject();
+            request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTREANNOUNCE);
+            JsonObject arguments = new JsonObject();
+            switch (mode)
+            {
+                case ReannounceMode.RecentlyActive:
+                    arguments.Put(ProtocolConstants.KEY_IDS, ProtocolConstants.VALUE_RECENTLY_ACTIVE);
+                    break;
+                case ReannounceMode.All:
+                    arguments.Put(ProtocolConstants.KEY_IDS, new JsonArray());
+                    break;
+                case ReannounceMode.Specific:
+                    arguments.Put(ProtocolConstants.KEY_IDS, ids);
+                    break;
             }
             request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
             request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
@@ -150,8 +179,10 @@ namespace TransmissionRemoteDotnet
                 ProtocolConstants.FIELD_DOWNLOADLIMIT,
                 ProtocolConstants.FIELD_DOWNLOADLIMITMODE,
                 ProtocolConstants.FIELD_UPLOADLIMIT,
+                ProtocolConstants.FIELD_UPLOADLIMITED,
                 ProtocolConstants.FIELD_UPLOADLIMITMODE,
                 ProtocolConstants.FIELD_SPEEDLIMITDOWN,
+                ProtocolConstants.FIELD_DOWNLOADLIMITED,
                 ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED,
                 ProtocolConstants.FIELD_SPEEDLIMITUP,
                 ProtocolConstants.FIELD_SPEEDLIMITUPENABLED,
@@ -170,6 +201,8 @@ namespace TransmissionRemoteDotnet
                 ProtocolConstants.FIELD_TRACKERS,
                 ProtocolConstants.FIELD_HASHSTRING,
                 ProtocolConstants.FIELD_DOWNLOADDIR,
+                ProtocolConstants.FIELD_SEEDRATIOLIMIT,
+                ProtocolConstants.FIELD_SEEDRATIOMODE
                 /*"sizeWhenDone",, "isPrivate",
                 "hashString", "error",,
                 "peersKnown"*/

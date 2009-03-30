@@ -22,7 +22,7 @@ namespace TransmissionRemoteDotnet
         private void button1_Click(object sender, EventArgs e)
         {
             JsonObject request = new JsonObject();
-            request.Put(ProtocolConstants.KEY_METHOD, "torrent-set");
+            request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTSET);
             JsonObject arguments = new JsonObject();
             JsonArray ids = new JsonArray();
             foreach (ListViewItem item in this.selections)
@@ -31,15 +31,22 @@ namespace TransmissionRemoteDotnet
                 ids.Put(t.Id);
             }
             arguments.Put(ProtocolConstants.KEY_IDS, ids);
-            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITUPENABLED, uploadLimitEnableField.Checked);
-            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITUP, uploadLimitField.Value);
-            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED, downloadLimitEnableField.Checked);
-            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITDOWN, downloadLimitField.Value);
+            arguments.Put(GetKey(uploadLimitEnableField), uploadLimitEnableField.Checked);
+            arguments.Put(GetKey(uploadLimitField), uploadLimitField.Value);
+            arguments.Put(GetKey(downloadLimitEnableField), downloadLimitEnableField.Checked);
+            arguments.Put(GetKey(downloadLimitField), downloadLimitField.Value);
             arguments.Put(ProtocolConstants.FIELD_PEERLIMIT, peerLimitValue.Value);
+            if (seedRatioLimitValue.Enabled)
+                request.Put(ProtocolConstants.FIELD_SEEDRATIOLIMIT, seedRatioLimitValue.Value);
             request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
             request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
             Program.Form.CreateActionWorker().RunWorkerAsync(request);
             this.Close();
+        }
+
+        private string GetKey(Control c)
+        {
+            return (string)c.Tag;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -51,10 +58,28 @@ namespace TransmissionRemoteDotnet
         {
             Torrent firstTorrent = (Torrent)selections[0].Tag;
             this.Text = selections.Count == 1 ? firstTorrent.Name : "Multiple Torrent Properties";
-            uploadLimitField.Enabled = uploadLimitEnableField.Checked = firstTorrent.UploadLimitMode;
-            downloadLimitField.Enabled = downloadLimitEnableField.Checked = firstTorrent.DownloadLimitMode;
-            uploadLimitField.Value = firstTorrent.UploadLimit >= 0 && firstTorrent.UploadLimit <= uploadLimitField.Maximum ? firstTorrent.UploadLimit : 0;
-            downloadLimitField.Value = firstTorrent.DownloadLimit >= 0 && firstTorrent.DownloadLimit <= downloadLimitField.Maximum ? firstTorrent.DownloadLimit : 0;
+            try
+            {
+                uploadLimitField.Value = firstTorrent.SpeedLimitUp >= 0 && firstTorrent.SpeedLimitUp <= uploadLimitField.Maximum ? firstTorrent.SpeedLimitUp : 0;
+                downloadLimitField.Value = firstTorrent.SpeedLimitDown >= 0 && firstTorrent.SpeedLimitDown <= downloadLimitField.Maximum ? firstTorrent.SpeedLimitDown : 0;
+                uploadLimitField.Enabled = uploadLimitEnableField.Checked = firstTorrent.SpeedLimitUpEnabled;
+                downloadLimitField.Enabled = downloadLimitEnableField.Checked = firstTorrent.SpeedLimitDownEnabled;
+                uploadLimitField.Tag = ProtocolConstants.FIELD_SPEEDLIMITUP;
+                downloadLimitField.Tag = ProtocolConstants.FIELD_SPEEDLIMITDOWN;
+                uploadLimitEnableField.Tag = ProtocolConstants.FIELD_SPEEDLIMITUPENABLED;
+                downloadLimitEnableField.Tag = ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED;
+            }
+            catch
+            {
+                uploadLimitField.Value = firstTorrent.UploadLimit >= 0 && firstTorrent.UploadLimit <= uploadLimitField.Maximum ? firstTorrent.UploadLimit : 0;
+                downloadLimitField.Value = firstTorrent.DownloadLimit >= 0 && firstTorrent.DownloadLimit <= downloadLimitField.Maximum ? firstTorrent.DownloadLimit : 0;
+                uploadLimitField.Enabled = uploadLimitEnableField.Checked = firstTorrent.UploadLimited;
+                downloadLimitField.Enabled = downloadLimitEnableField.Checked = firstTorrent.DownloadLimited;
+                uploadLimitField.Tag = ProtocolConstants.FIELD_UPLOADLIMIT;
+                downloadLimitField.Tag = ProtocolConstants.FIELD_DOWNLOADLIMIT;
+                uploadLimitEnableField.Tag = ProtocolConstants.FIELD_UPLOADLIMITED;
+                downloadLimitEnableField.Tag = ProtocolConstants.FIELD_DOWNLOADLIMITED;
+            }
             peerLimitValue.Value = firstTorrent.MaxConnectedPeers;
         }
 

@@ -21,7 +21,8 @@ namespace TransmissionRemoteDotnet
 {
     public partial class MainWindow : Form
     {
-        private const string DEFAULT_WINDOW_TITLE = "Transmission Remote",
+        private const string
+            DEFAULT_WINDOW_TITLE = "Transmission Remote",
             GEOIP_DATABASE_FILE = "GeoIP.dat",
             CONFKEY_MAINWINDOW_HEIGHT = "mainwindow-height",
             CONFKEY_MAINWINDOW_WIDTH = "mainwindow-width",
@@ -270,6 +271,7 @@ namespace TransmissionRemoteDotnet
                 = refreshTimer.Enabled = recheckTorrentButton.Visible
                 = speedGraph.Enabled = toolStripSeparator2.Visible = connected;
             SetRemoteCmdButtonVisible(connected);
+            reannounceButton.Visible = connected && Program.DaemonDescriptor.Revision >= 8102;
             removeAndDeleteButton.Visible = connected && Program.DaemonDescriptor.Version >= 1.5;
             sessionStatsButton.Visible = connected && Program.DaemonDescriptor.RpcVersion >= 4;
         }
@@ -684,7 +686,7 @@ namespace TransmissionRemoteDotnet
                 = startToolStripMenuItem.Enabled = pauseToolStripMenuItem.Enabled
                 = recheckToolStripMenuItem.Enabled = propertiesToolStripMenuItem.Enabled
                 = removeDeleteToolStripMenuItem.Enabled = removeToolStripMenuItem.Enabled
-                = oneOrMore;
+                = reannounceButton.Enabled = oneOrMore;
         }
 
         private void OneTorrentsSelected(bool one, Torrent t)
@@ -1187,146 +1189,160 @@ namespace TransmissionRemoteDotnet
         // lock torrentListView BEFORE calling this method
         public void UpdateInfoPanel(bool first, Torrent t)
         {
-                if (first)
+            if (first)
+            {
+                generalTorrentNameGroupBox.Text = peersTorrentNameGroupBox.Text
+                    = trackersTorrentNameGroupBox.Text = filesTorrentNameGroupBox.Text
+                    = t.Name;
+                startedAtLabel.Text = t.Added.ToString();
+                createdAtLabel.Text = t.Created;
+                createdByLabel.Text = t.Creator;
+                commentLabel.Text = t.Comment;
+                if (t.Peers != null && !torrentTabControl.TabPages.Contains(peersTabPageSaved))
                 {
-                    generalTorrentNameGroupBox.Text = peersTorrentNameGroupBox.Text
-                        = trackersTorrentNameGroupBox.Text = filesTorrentNameGroupBox.Text
-                        = t.Name;
-                    startedAtLabel.Text = t.Added.ToString();
-                    createdAtLabel.Text = t.Created;
-                    createdByLabel.Text = t.Creator;
-                    commentLabel.Text = t.Comment;
-                    if (t.Peers != null && !torrentTabControl.TabPages.Contains(peersTabPageSaved))
-                    {
-                        torrentTabControl.TabPages.Add(peersTabPageSaved);
-                    }
-                    else if (t.Peers == null && torrentTabControl.TabPages.Contains(peersTabPageSaved))
-                    {
-                        torrentTabControl.TabPages.Remove(peersTabPageSaved);
-                    }
-                    trackersListView.SuspendLayout();
-                    foreach (JsonObject tracker in t.Trackers)
-                    {
-                        int tier = ((JsonNumber)tracker["tier"]).ToInt32();
-                        string announceUrl = (string)tracker["announce"];
-                        string scrapeUrl = (string)tracker["scrape"];
-                        ListViewItem item = new ListViewItem(tier.ToString());
-                        item.SubItems.Add(announceUrl);
-                        item.SubItems.Add(scrapeUrl);
-                        trackersListView.Items.Add(item);
-                    }
-                    Toolbox.StripeListView(trackersListView);
-                    trackersListView.ResumeLayout();
-                    peersListView.Enabled = trackersListView.Enabled
-                        = true;
+                    torrentTabControl.TabPages.Add(peersTabPageSaved);
                 }
-                remainingLabel.Text = t.GetLongETA();
-                uploadedLabel.Text = t.UploadedString;
-                uploadLimitLabel.Text = t.UploadLimitMode ? Toolbox.KbpsString(t.UploadLimit) : "∞";
-                uploadRateLabel.Text = t.UploadRate;
-                seedersLabel.Text = String.Format(OtherStrings.XOfYConnected, t.PeersSendingToUs, t.Seeders < 0 ? "?" : t.Seeders.ToString());
-                leechersLabel.Text = String.Format(OtherStrings.XOfYConnected, t.PeersGettingFromUs, t.Leechers < 0 ? "?" : t.Leechers.ToString());
-                ratioLabel.Text = t.RatioString;
-                progressBar.Value = (int)t.Percentage;
-                if (t.Pieces != null)
+                else if (t.Peers == null && torrentTabControl.TabPages.Contains(peersTabPageSaved))
                 {
-                    piecesGraph.ApplyBits(t.Pieces, t.PieceCount);
+                    torrentTabControl.TabPages.Remove(peersTabPageSaved);
                 }
-                percentageLabel.Text = t.Percentage.ToString() + "%";
-                if (t.IsFinished)
+                trackersListView.SuspendLayout();
+                foreach (JsonObject tracker in t.Trackers)
                 {
-                    downloadedLabel.Text = t.HaveTotalString;
+                    int tier = ((JsonNumber)tracker["tier"]).ToInt32();
+                    string announceUrl = (string)tracker["announce"];
+                    string scrapeUrl = (string)tracker["scrape"];
+                    ListViewItem item = new ListViewItem(tier.ToString());
+                    item.SubItems.Add(announceUrl);
+                    item.SubItems.Add(scrapeUrl);
+                    trackersListView.Items.Add(item);
                 }
-                else
+                Toolbox.StripeListView(trackersListView);
+                trackersListView.ResumeLayout();
+                peersListView.Enabled = trackersListView.Enabled
+                    = true;
+            }
+            remainingLabel.Text = t.GetLongETA();
+            uploadedLabel.Text = t.UploadedString;
+            try
+            {
+                uploadLimitLabel.Text = t.SpeedLimitUpEnabled ? Toolbox.KbpsString(t.SpeedLimitUp) : "∞";
+            }
+            catch
+            {
+                uploadLimitLabel.Text = t.UploadLimited ? Toolbox.KbpsString(t.UploadLimit) : "∞";
+            }
+            uploadRateLabel.Text = t.UploadRate;
+            seedersLabel.Text = String.Format(OtherStrings.XOfYConnected, t.PeersSendingToUs, t.Seeders < 0 ? "?" : t.Seeders.ToString());
+            leechersLabel.Text = String.Format(OtherStrings.XOfYConnected, t.PeersGettingFromUs, t.Leechers < 0 ? "?" : t.Leechers.ToString());
+            ratioLabel.Text = t.LocalRatioString;
+            progressBar.Value = (int)t.Percentage;
+            if (t.Pieces != null)
+            {
+                piecesGraph.ApplyBits(t.Pieces, t.PieceCount);
+            }
+            percentageLabel.Text = t.Percentage.ToString() + "%";
+            if (t.IsFinished)
+            {
+                downloadedLabel.Text = t.HaveTotalString;
+            }
+            else
+            {
+                downloadedLabel.Text = String.Format(OtherStrings.DownloadedValid, t.HaveTotalString, Toolbox.GetFileSize(t.HaveValid));
+            }
+            downloadSpeedLabel.Text = t.DownloadRate;
+            try
+            {
+                downloadLimitLabel.Text = t.SpeedLimitDownEnabled ? Toolbox.KbpsString(t.SpeedLimitDown) : "∞";
+            }
+            catch
+            {
+                downloadLimitLabel.Text = t.UploadLimited ? Toolbox.KbpsString(t.UploadLimit) : "∞";
+            }
+            statusLabel.Text = t.Status;
+            labelForErrorLabel.Visible = errorLabel.Visible = !(errorLabel.Text = t.ErrorString).Equals("");
+            RefreshElapsedTimer();
+            if (t.Peers != null)
+            {
+                peersListView.Enabled = t.StatusCode != ProtocolConstants.STATUS_STOPPED;
+                peersListView.Tag = (int)peersListView.Tag + 1;
+                peersListView.SuspendLayout();
+                foreach (JsonObject peer in t.Peers)
                 {
-                    downloadedLabel.Text = String.Format(OtherStrings.DownloadedValid, t.HaveTotalString, Toolbox.GetFileSize(t.HaveValid));
-                }
-                downloadSpeedLabel.Text = t.DownloadRate;
-                downloadLimitLabel.Text = t.DownloadLimitMode ? Toolbox.KbpsString(t.DownloadLimit) : "∞";
-                statusLabel.Text = t.Status;
-                labelForErrorLabel.Visible = errorLabel.Visible = !(errorLabel.Text = t.ErrorString).Equals("");
-                RefreshElapsedTimer();
-                if (t.Peers != null)
-                {
-                    peersListView.Enabled = t.StatusCode != ProtocolConstants.STATUS_STOPPED;
-                    peersListView.Tag = (int)peersListView.Tag + 1;
-                    peersListView.SuspendLayout();
-                    foreach (JsonObject peer in t.Peers)
+                    ListViewItem item = FindPeerItem(peer["address"].ToString());
+                    if (item == null)
                     {
-                        ListViewItem item = FindPeerItem(peer["address"].ToString());
-                        if (item == null)
+                        item = new ListViewItem((string)peer["address"]); // 0
+                        item.SubItems[0].Tag = IPAddress.Parse(item.Text);
+                        item.SubItems.Add(""); // 1
+                        int countryIndex = -1;
+                        if (geo != null)
                         {
-                            item = new ListViewItem((string)peer["address"]); // 0
-                            item.SubItems[0].Tag = IPAddress.Parse(item.Text);
-                            item.SubItems.Add(""); // 1
-                            int countryIndex = -1;
-                            if (geo != null)
+                            try
                             {
-                                try
-                                {
-                                    countryIndex = geo.FindIndex((IPAddress)item.SubItems[0].Tag);
-                                }
-                                catch { }
+                                countryIndex = geo.FindIndex((IPAddress)item.SubItems[0].Tag);
                             }
-                            item.SubItems.Add(countryIndex >= 0 ? GeoIPCountry.CountryNames[countryIndex] : "");
-                            item.SubItems.Add((string)peer[ProtocolConstants.FIELD_FLAGSTR]);
-                            item.SubItems.Add((string)peer[ProtocolConstants.FIELD_CLIENTNAME]);
-                            item.ToolTipText = item.SubItems[0].Text;
-                            decimal progress = Toolbox.ParseProgress((string)peer[ProtocolConstants.FIELD_PROGRESS]);
-                            item.SubItems.Add(progress + "%");
-                            item.SubItems[5].Tag = progress;
-                            long rateToClient = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOCLIENT]).ToInt64();
-                            item.SubItems.Add(Toolbox.GetSpeed(rateToClient));
-                            item.SubItems[6].Tag = rateToClient;
-                            long rateToPeer = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOPEER]).ToInt64();
-                            item.SubItems.Add(Toolbox.GetSpeed(rateToPeer));
-                            item.SubItems[7].Tag = rateToPeer;
-                            peersListView.Items.Add(item);
-                            Toolbox.StripeListView(peersListView);
-                            if (countryIndex > 0)
-                            {
-                                item.ImageIndex = flagsImageList.Images.IndexOfKey("flags_" + GeoIPCountry.CountryCodes[countryIndex].ToLower());
-                            }
-                            CreateHostnameResolutionWorker().RunWorkerAsync(item);
+                            catch { }
                         }
-                        else
+                        item.SubItems.Add(countryIndex >= 0 ? GeoIPCountry.CountryNames[countryIndex] : "");
+                        item.SubItems.Add((string)peer[ProtocolConstants.FIELD_FLAGSTR]);
+                        item.SubItems.Add((string)peer[ProtocolConstants.FIELD_CLIENTNAME]);
+                        item.ToolTipText = item.SubItems[0].Text;
+                        decimal progress = Toolbox.ParseProgress((string)peer[ProtocolConstants.FIELD_PROGRESS]);
+                        item.SubItems.Add(progress + "%");
+                        item.SubItems[5].Tag = progress;
+                        long rateToClient = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOCLIENT]).ToInt64();
+                        item.SubItems.Add(Toolbox.GetSpeed(rateToClient));
+                        item.SubItems[6].Tag = rateToClient;
+                        long rateToPeer = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOPEER]).ToInt64();
+                        item.SubItems.Add(Toolbox.GetSpeed(rateToPeer));
+                        item.SubItems[7].Tag = rateToPeer;
+                        peersListView.Items.Add(item);
+                        Toolbox.StripeListView(peersListView);
+                        if (countryIndex > 0)
                         {
-                            decimal progress = Toolbox.ParseProgress((string)peer[ProtocolConstants.FIELD_PROGRESS]);
-                            item.SubItems[3].Text = (string)peer[ProtocolConstants.FIELD_FLAGSTR];
-                            item.SubItems[5].Text = progress + "%";
-                            long rateToClient = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOCLIENT]).ToInt64();
-                            item.SubItems[6].Text = Toolbox.GetSpeed(rateToClient);
-                            item.SubItems[6].Tag = rateToClient;
-                            long rateToPeer = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOPEER]).ToInt64();
-                            item.SubItems[7].Text = Toolbox.GetSpeed(rateToPeer);
-                            item.SubItems[7].Tag = rateToPeer;
+                            item.ImageIndex = flagsImageList.Images.IndexOfKey("flags_" + GeoIPCountry.CountryCodes[countryIndex].ToLower());
                         }
-                        item.Tag = peersListView.Tag;
+                        CreateHostnameResolutionWorker().RunWorkerAsync(item);
                     }
-                    lock (peersListView)
+                    else
                     {
-                        Queue<ListViewItem> removalQueue = null;
-                        foreach (ListViewItem item in peersListView.Items)
+                        decimal progress = Toolbox.ParseProgress((string)peer[ProtocolConstants.FIELD_PROGRESS]);
+                        item.SubItems[3].Text = (string)peer[ProtocolConstants.FIELD_FLAGSTR];
+                        item.SubItems[5].Text = progress + "%";
+                        long rateToClient = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOCLIENT]).ToInt64();
+                        item.SubItems[6].Text = Toolbox.GetSpeed(rateToClient);
+                        item.SubItems[6].Tag = rateToClient;
+                        long rateToPeer = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOPEER]).ToInt64();
+                        item.SubItems[7].Text = Toolbox.GetSpeed(rateToPeer);
+                        item.SubItems[7].Tag = rateToPeer;
+                    }
+                    item.Tag = peersListView.Tag;
+                }
+                lock (peersListView)
+                {
+                    Queue<ListViewItem> removalQueue = null;
+                    foreach (ListViewItem item in peersListView.Items)
+                    {
+                        if ((int)item.Tag != (int)peersListView.Tag)
                         {
-                            if ((int)item.Tag != (int)peersListView.Tag)
-                            {
-                                if (removalQueue == null)
-                                    removalQueue = new Queue<ListViewItem>();
-                                removalQueue.Enqueue(item);
-                            }
-                        }
-                        if (removalQueue != null)
-                        {
-                            foreach (ListViewItem item in removalQueue)
-                            {
-                                peersListView.Items.Remove(item);
-                            }
+                            if (removalQueue == null)
+                                removalQueue = new Queue<ListViewItem>();
+                            removalQueue.Enqueue(item);
                         }
                     }
-                    peersListView.Sort();
-                    Toolbox.StripeListView(peersListView);
-                    peersListView.ResumeLayout();
+                    if (removalQueue != null)
+                    {
+                        foreach (ListViewItem item in removalQueue)
+                        {
+                            peersListView.Items.Remove(item);
+                        }
+                    }
                 }
+                peersListView.Sort();
+                Toolbox.StripeListView(peersListView);
+                peersListView.ResumeLayout();
+            }
         }
 
         private BackgroundWorker CreateHostnameResolutionWorker()
@@ -1630,6 +1646,26 @@ namespace TransmissionRemoteDotnet
                     MessageBox.Show(ex.Message, "Unable to run plink", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void reannounceButton_ButtonClick(object sender, EventArgs e)
+        {
+            Reannounce(ReannounceMode.Specific);
+        }
+
+        private void reannounceAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reannounce(ReannounceMode.All);
+        }
+
+        private void Reannounce(ReannounceMode mode)
+        {
+            CreateActionWorker().RunWorkerAsync(Requests.Reannounce(mode, mode.Equals(ReannounceMode.Specific) ? BuildIdArray() : null));
+        }
+
+        private void recentlyActiveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reannounce(ReannounceMode.RecentlyActive);
         }
     }
 }

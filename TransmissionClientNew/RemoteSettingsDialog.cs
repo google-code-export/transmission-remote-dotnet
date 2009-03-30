@@ -62,17 +62,70 @@ namespace TransmissionRemoteDotnet
                 SetLimitField(((JsonNumber)settings[ProtocolConstants.FIELD_SPEEDLIMITDOWN]).ToInt32(), LimitDownloadValue);
                 LimitUploadValue.Enabled = LimitUploadCheckBox.Checked = ((JsonNumber)settings[ProtocolConstants.FIELD_SPEEDLIMITUPENABLED]).ToBoolean();
                 SetLimitField(((JsonNumber)settings[ProtocolConstants.FIELD_SPEEDLIMITUP]).ToInt32(), LimitUploadValue);
-                IncomingPortValue.Value = ((JsonNumber)settings["port"]).ToInt32();
+                if (settings.Contains("port"))
+                {
+                    IncomingPortValue.Tag = "port";
+                    IncomingPortValue.Value = ((JsonNumber)settings["port"]).ToInt32();
+                }
+                else if (settings.Contains("peer-port"))
+                {
+                    IncomingPortValue.Tag = "peer-port";
+                    IncomingPortValue.Value = ((JsonNumber)settings["peer-port"]).ToInt32();
+                }
                 PortForward.Checked = ((JsonNumber)settings["port-forwarding-enabled"]).ToBoolean();
                 string enc = settings["encryption"] as string;
                 if (enc.Equals("preferred"))
+                {
                     EncryptionCombobox.SelectedIndex = 1;
+                }
                 else if (enc.Equals("required"))
+                {
                     EncryptionCombobox.SelectedIndex = 2;
+                }
                 else
+                {
                     EncryptionCombobox.SelectedIndex = 0;
-                PeerLimitValue.Value = ((JsonNumber)settings["peer-limit"]).ToInt32();
-                PEXcheckBox.Checked = ((JsonNumber)settings["pex-allowed"]).ToBoolean();
+                }
+                // peer limit
+                if (settings.Contains(ProtocolConstants.FIELD_PEERLIMIT))
+                {
+                    PeerLimitValue.Value = ((JsonNumber)settings[ProtocolConstants.FIELD_PEERLIMIT]).ToInt32();
+                    PeerLimitValue.Tag = ProtocolConstants.FIELD_PEERLIMIT;
+                }
+                else if (settings.Contains("peer-limit-global"))
+                {
+                    PeerLimitValue.Value = ((JsonNumber)settings["peer-limit-global"]).ToInt32();
+                    PeerLimitValue.Tag = "peer-limit-global";
+                }
+                // pex
+                if (settings.Contains("pex-allowed"))
+                {
+                    PEXcheckBox.Checked = ((JsonNumber)settings["pex-allowed"]).ToBoolean();
+                    PEXcheckBox.Tag = "pex-allowed";
+                }
+                else if (settings.Contains("pex-enabled"))
+                {
+                    PEXcheckBox.Checked = ((JsonNumber)settings["pex-enabled"]).ToBoolean();
+                    PEXcheckBox.Tag = "pex-enabled";
+                }
+                // blocklist
+                if (blocklistEnabledCheckBox.Enabled = settings.Contains("blocklist-enabled"))
+                {
+                    blocklistEnabledCheckBox.Checked = ((JsonNumber)settings["blocklist-enabled"]).ToBoolean();
+                }
+                if (altSpeedLimitEnable.Enabled =
+                    altUploadLimitField.Enabled =
+                    altDownloadLimitField.Enabled =
+                    altTimeConstraintEnabled.Enabled =
+                    altTimeConstraintEndField.Enabled =
+                    altTimeConstraintStartField.Enabled =
+                    settings.Contains("alt-speed-enabled"))
+                {
+                    altDownloadLimitField.Value = ((JsonNumber)settings["alt-speed-down"]).ToInt32();
+                    altUploadLimitField.Value = ((JsonNumber)settings["alt-speed-up"]).ToInt32();
+                    altDownloadLimitField.Enabled = altUploadLimitField.Enabled = altSpeedLimitEnable.Checked = ((JsonNumber)settings["alt-speed-enabled"]).ToBoolean();
+                    altTimeConstraintStartField.Enabled = altTimeConstraintEndField.Enabled = altTimeConstraintEnabled.Checked = ((JsonNumber)settings["alt-speed-time-enabled"]).ToBoolean();
+                }
             }
             catch (Exception ex)
             {
@@ -108,10 +161,10 @@ namespace TransmissionRemoteDotnet
             JsonObject request = new JsonObject();
             request.Put(ProtocolConstants.KEY_METHOD, "session-set");
             JsonObject arguments = new JsonObject();
-            arguments.Put("port", IncomingPortValue.Value);
+            arguments.Put((string)IncomingPortValue.Tag, IncomingPortValue.Value);
             arguments.Put("port-forwarding-enabled", PortForward.Checked);
-            arguments.Put("pex-allowed", PEXcheckBox.Checked);
-            arguments.Put(ProtocolConstants.FIELD_PEERLIMIT, PeerLimitValue.Value);
+            arguments.Put((string)PEXcheckBox.Tag, PEXcheckBox.Checked);
+            arguments.Put((string)PeerLimitValue.Tag, PeerLimitValue.Value);
             switch (EncryptionCombobox.SelectedIndex)
             {
                 case 1:
@@ -128,6 +181,22 @@ namespace TransmissionRemoteDotnet
             arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITUP, LimitUploadValue.Value);
             arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED, LimitDownloadCheckBox.Checked);
             arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITDOWN, LimitDownloadValue.Value);
+            if (altSpeedLimitEnable.Enabled)
+            {
+                arguments.Put("alt-speed-enabled", altSpeedLimitEnable.Checked);
+                arguments.Put("alt-speed-down", altDownloadLimitField.Value);
+                arguments.Put("alt-speed-up", altUploadLimitField.Value);
+            }
+            if (altTimeConstraintEnabled.Enabled)
+            {
+                arguments.Put("alt-speed-time-enabled", altTimeConstraintEnabled.Checked);
+                arguments.Put("alt-speed-time-begin", altTimeConstraintStartField.Value);
+                arguments.Put("alt-speed-time-end", altTimeConstraintEndField.Value);
+            }
+            if (blocklistEnabledCheckBox.Enabled)
+            {
+                arguments.Put("blocklist-enabled", blocklistEnabledCheckBox.Checked);
+            }
             arguments.Put("download-dir", DownloadToField.Text);
             request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
             request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
@@ -145,6 +214,16 @@ namespace TransmissionRemoteDotnet
             TransmissionCommand command = (TransmissionCommand)e.Result;
             Program.Form.CreateActionWorker().RunWorkerAsync(Requests.SessionGet());
             command.Execute();
+        }
+
+        private void altSpeedLimitEnable_CheckedChanged(object sender, EventArgs e)
+        {
+            altUploadLimitField.Enabled = altDownloadLimitField.Enabled = altSpeedLimitEnable.Checked;
+        }
+
+        private void altTimeConstraintEnabled_CheckedChanged(object sender, EventArgs e)
+        {
+            altTimeConstraintStartField.Enabled = altTimeConstraintEndField.Enabled = altTimeConstraintEnabled.Checked;
         }
     }
 }

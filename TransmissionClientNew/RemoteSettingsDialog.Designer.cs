@@ -40,22 +40,43 @@
             this.SaveButton = new System.Windows.Forms.Button();
             this.CloseFormButton = new System.Windows.Forms.Button();
             this.SettingsWorker = new System.ComponentModel.BackgroundWorker();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.PeerLimitValue = new System.Windows.Forms.NumericUpDown();
             this.PEXcheckBox = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.PortForward = new System.Windows.Forms.CheckBox();
             this.EncryptionCombobox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.blocklistEnabledCheckBox = new System.Windows.Forms.CheckBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.altTimeConstraintEndField = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
+            this.altTimeConstraintStartField = new System.Windows.Forms.NumericUpDown();
+            this.altUploadLimitField = new System.Windows.Forms.NumericUpDown();
+            this.altDownloadLimitField = new System.Windows.Forms.NumericUpDown();
+            this.altTimeConstraintEnabled = new System.Windows.Forms.CheckBox();
+            this.altSpeedLimitEnable = new System.Windows.Forms.CheckBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.LimitUploadValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LimitDownloadValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IncomingPortValue)).BeginInit();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PeerLimitValue)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.altTimeConstraintEndField)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.altTimeConstraintStartField)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.altUploadLimitField)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.altDownloadLimitField)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -137,22 +158,6 @@
             this.SettingsWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.SettingsWorker_DoWork);
             this.SettingsWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.SettingsWorker_RunWorkerCompleted);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.PeerLimitValue);
-            this.groupBox1.Controls.Add(this.PEXcheckBox);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.PortForward);
-            this.groupBox1.Controls.Add(this.EncryptionCombobox);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.DownloadToField);
-            this.groupBox1.Controls.Add(this.IncomingPortValue);
-            this.groupBox1.Controls.Add(this.label2);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
-            // 
             // PeerLimitValue
             // 
             resources.ApplyResources(this.PeerLimitValue, "PeerLimitValue");
@@ -196,18 +201,6 @@
             resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.LimitDownloadValue);
-            this.groupBox2.Controls.Add(this.LimitDownloadCheckBox);
-            this.groupBox2.Controls.Add(this.LimitUploadValue);
-            this.groupBox2.Controls.Add(this.LimitUploadCheckBox);
-            resources.ApplyResources(this.groupBox2, "groupBox2");
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.TabStop = false;
-            // 
             // label6
             // 
             resources.ApplyResources(this.label6, "label6");
@@ -218,16 +211,141 @@
             resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            resources.ApplyResources(this.tabControl1, "tabControl1");
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.blocklistEnabledCheckBox);
+            this.tabPage1.Controls.Add(this.PeerLimitValue);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.PEXcheckBox);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.IncomingPortValue);
+            this.tabPage1.Controls.Add(this.PortForward);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.DownloadToField);
+            this.tabPage1.Controls.Add(this.EncryptionCombobox);
+            this.tabPage1.Controls.Add(this.label3);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // blocklistEnabledCheckBox
+            // 
+            resources.ApplyResources(this.blocklistEnabledCheckBox, "blocklistEnabledCheckBox");
+            this.blocklistEnabledCheckBox.Name = "blocklistEnabledCheckBox";
+            this.blocklistEnabledCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.LimitUploadCheckBox);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.LimitUploadValue);
+            this.tabPage2.Controls.Add(this.LimitDownloadValue);
+            this.tabPage2.Controls.Add(this.LimitDownloadCheckBox);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.label12);
+            this.tabPage3.Controls.Add(this.label11);
+            this.tabPage3.Controls.Add(this.label9);
+            this.tabPage3.Controls.Add(this.label10);
+            this.tabPage3.Controls.Add(this.altTimeConstraintEndField);
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.altTimeConstraintStartField);
+            this.tabPage3.Controls.Add(this.altUploadLimitField);
+            this.tabPage3.Controls.Add(this.altDownloadLimitField);
+            this.tabPage3.Controls.Add(this.altTimeConstraintEnabled);
+            this.tabPage3.Controls.Add(this.altSpeedLimitEnable);
+            resources.ApplyResources(this.tabPage3, "tabPage3");
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            resources.ApplyResources(this.label12, "label12");
+            this.label12.Name = "label12";
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
+            // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.Name = "label9";
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
+            // 
+            // altTimeConstraintEndField
+            // 
+            resources.ApplyResources(this.altTimeConstraintEndField, "altTimeConstraintEndField");
+            this.altTimeConstraintEndField.Name = "altTimeConstraintEndField";
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
+            // 
+            // altTimeConstraintStartField
+            // 
+            resources.ApplyResources(this.altTimeConstraintStartField, "altTimeConstraintStartField");
+            this.altTimeConstraintStartField.Name = "altTimeConstraintStartField";
+            // 
+            // altUploadLimitField
+            // 
+            resources.ApplyResources(this.altUploadLimitField, "altUploadLimitField");
+            this.altUploadLimitField.Name = "altUploadLimitField";
+            // 
+            // altDownloadLimitField
+            // 
+            resources.ApplyResources(this.altDownloadLimitField, "altDownloadLimitField");
+            this.altDownloadLimitField.Name = "altDownloadLimitField";
+            // 
+            // altTimeConstraintEnabled
+            // 
+            resources.ApplyResources(this.altTimeConstraintEnabled, "altTimeConstraintEnabled");
+            this.altTimeConstraintEnabled.Name = "altTimeConstraintEnabled";
+            this.altTimeConstraintEnabled.UseVisualStyleBackColor = true;
+            this.altTimeConstraintEnabled.CheckedChanged += new System.EventHandler(this.altTimeConstraintEnabled_CheckedChanged);
+            // 
+            // altSpeedLimitEnable
+            // 
+            resources.ApplyResources(this.altSpeedLimitEnable, "altSpeedLimitEnable");
+            this.altSpeedLimitEnable.Name = "altSpeedLimitEnable";
+            this.altSpeedLimitEnable.UseVisualStyleBackColor = true;
+            this.altSpeedLimitEnable.CheckedChanged += new System.EventHandler(this.altSpeedLimitEnable_CheckedChanged);
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.Name = "label7";
+            // 
             // RemoteSettingsDialog
             // 
             this.AcceptButton = this.SaveButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.CloseFormButton;
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.CloseFormButton);
             this.Controls.Add(this.SaveButton);
-            this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "RemoteSettingsDialog";
@@ -235,11 +353,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.LimitUploadValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LimitDownloadValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IncomingPortValue)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PeerLimitValue)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.altTimeConstraintEndField)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.altTimeConstraintStartField)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.altUploadLimitField)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.altDownloadLimitField)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -257,8 +382,6 @@
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button CloseFormButton;
         private System.ComponentModel.BackgroundWorker SettingsWorker;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox EncryptionCombobox;
         private System.Windows.Forms.CheckBox PortForward;
@@ -267,5 +390,22 @@
         private System.Windows.Forms.NumericUpDown PeerLimitValue;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.CheckBox altTimeConstraintEnabled;
+        private System.Windows.Forms.CheckBox altSpeedLimitEnable;
+        private System.Windows.Forms.NumericUpDown altTimeConstraintEndField;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown altTimeConstraintStartField;
+        private System.Windows.Forms.NumericUpDown altUploadLimitField;
+        private System.Windows.Forms.NumericUpDown altDownloadLimitField;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.CheckBox blocklistEnabledCheckBox;
     }
 }
