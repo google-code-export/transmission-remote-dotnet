@@ -58,28 +58,15 @@ namespace TransmissionRemoteDotnet
         {
             Torrent firstTorrent = (Torrent)selections[0].Tag;
             this.Text = selections.Count == 1 ? firstTorrent.Name : "Multiple Torrent Properties";
-            try
-            {
                 uploadLimitField.Value = firstTorrent.SpeedLimitUp >= 0 && firstTorrent.SpeedLimitUp <= uploadLimitField.Maximum ? firstTorrent.SpeedLimitUp : 0;
                 downloadLimitField.Value = firstTorrent.SpeedLimitDown >= 0 && firstTorrent.SpeedLimitDown <= downloadLimitField.Maximum ? firstTorrent.SpeedLimitDown : 0;
                 uploadLimitField.Enabled = uploadLimitEnableField.Checked = firstTorrent.SpeedLimitUpEnabled;
                 downloadLimitField.Enabled = downloadLimitEnableField.Checked = firstTorrent.SpeedLimitDownEnabled;
-                uploadLimitField.Tag = ProtocolConstants.FIELD_SPEEDLIMITUP;
-                downloadLimitField.Tag = ProtocolConstants.FIELD_SPEEDLIMITDOWN;
-                uploadLimitEnableField.Tag = ProtocolConstants.FIELD_SPEEDLIMITUPENABLED;
-                downloadLimitEnableField.Tag = ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED;
-            }
-            catch
-            {
-                uploadLimitField.Value = firstTorrent.UploadLimit >= 0 && firstTorrent.UploadLimit <= uploadLimitField.Maximum ? firstTorrent.UploadLimit : 0;
-                downloadLimitField.Value = firstTorrent.DownloadLimit >= 0 && firstTorrent.DownloadLimit <= downloadLimitField.Maximum ? firstTorrent.DownloadLimit : 0;
-                uploadLimitField.Enabled = uploadLimitEnableField.Checked = firstTorrent.UploadLimited;
-                downloadLimitField.Enabled = downloadLimitEnableField.Checked = firstTorrent.DownloadLimited;
-                uploadLimitField.Tag = ProtocolConstants.FIELD_UPLOADLIMIT;
-                downloadLimitField.Tag = ProtocolConstants.FIELD_DOWNLOADLIMIT;
-                uploadLimitEnableField.Tag = ProtocolConstants.FIELD_UPLOADLIMITED;
-                downloadLimitEnableField.Tag = ProtocolConstants.FIELD_DOWNLOADLIMITED;
-            }
+
+                uploadLimitField.Tag = Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_UPLOADLIMIT : ProtocolConstants.FIELD_SPEEDLIMITUP;
+                downloadLimitField.Tag = Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_DOWNLOADLIMIT : ProtocolConstants.FIELD_SPEEDLIMITDOWN;
+                uploadLimitEnableField.Tag = Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_UPLOADLIMITED : ProtocolConstants.FIELD_SPEEDLIMITUPENABLED;
+                downloadLimitEnableField.Tag = Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_DOWNLOADLIMITED : ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED;
             peerLimitValue.Value = firstTorrent.MaxConnectedPeers;
         }
 

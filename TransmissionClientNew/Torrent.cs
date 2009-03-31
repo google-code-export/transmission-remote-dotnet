@@ -608,7 +608,14 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_SPEEDLIMITDOWN]).ToInt32();
+                if (info.Contains(ProtocolConstants.FIELD_UPLOADLIMIT))
+                {
+                    return ((JsonNumber)info[ProtocolConstants.FIELD_UPLOADLIMIT]).ToInt32();
+                }
+                else
+                {
+                    return ((JsonNumber)info[ProtocolConstants.FIELD_SPEEDLIMITUP]).ToInt32();
+                }
             }
         }
 
@@ -616,7 +623,18 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return info.Contains(ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED) ? ((JsonNumber)info[ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED]).ToBoolean() : ((JsonNumber)info[ProtocolConstants.FIELD_DOWNLOADLIMITMODE]).ToBoolean();
+                if (info.Contains(ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED))
+                {
+                    return ((JsonNumber)info[ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED]).ToBoolean();
+                }
+                else if (info.Contains(ProtocolConstants.FIELD_DOWNLOADLIMITED))
+                {
+                    return ((JsonNumber)info[ProtocolConstants.FIELD_DOWNLOADLIMITED]).ToBoolean();
+                }
+                else
+                {
+                    return ((JsonNumber)info[ProtocolConstants.FIELD_DOWNLOADLIMITMODE]).ToBoolean();
+                }
             }
         }
 
@@ -624,7 +642,14 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_SPEEDLIMITUP]).ToInt32();
+                if (info.Contains(ProtocolConstants.FIELD_UPLOADLIMIT))
+                {
+                    return ((JsonNumber)info[ProtocolConstants.FIELD_UPLOADLIMIT]).ToInt32();
+                }
+                else
+                {
+                    return ((JsonNumber)info[ProtocolConstants.FIELD_SPEEDLIMITUP]).ToInt32();
+                }
             }
         }
 
@@ -632,15 +657,33 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return info.Contains(ProtocolConstants.FIELD_SPEEDLIMITUPENABLED) ? ((JsonNumber)info[ProtocolConstants.FIELD_SPEEDLIMITUPENABLED]).ToBoolean() : ((JsonNumber)info[ProtocolConstants.FIELD_UPLOADLIMITMODE]).ToBoolean();
+                if (info.Contains(ProtocolConstants.FIELD_SPEEDLIMITUPENABLED))
+                {
+                    return ((JsonNumber)info[ProtocolConstants.FIELD_SPEEDLIMITUPENABLED]).ToBoolean();
+                }
+                else if (info.Contains(ProtocolConstants.FIELD_UPLOADLIMIT))
+                {
+                    return ((JsonNumber)info[ProtocolConstants.FIELD_UPLOADLIMIT]).ToBoolean();
+                }
+                else
+                {
+                    return ((JsonNumber)info[ProtocolConstants.FIELD_UPLOADLIMITMODE]).ToBoolean();
+                }
             }
         }
 
-        public int DownloadLimit
+        /*public int DownloadLimit
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_DOWNLOADLIMIT]).ToInt32();
+                if (info.Contains(ProtocolConstants.FIELD_DOWNLOADLIMIT))
+                {
+                    return ((JsonNumber)info[ProtocolConstants.FIELD_DOWNLOADLIMIT]).ToInt32();
+                }
+                else
+                {
+                    return ((JsonNumber)info[ProtocolConstants.FIELD_SPEEDLIMITDOWN]).ToInt32();
+                }
             }
         }
 
@@ -666,7 +709,7 @@ namespace TransmissionRemoteDotnet
             {
                 return ((JsonNumber)info[ProtocolConstants.FIELD_UPLOADLIMITED]).ToBoolean();
             }
-        }
+        }*/
         /* END CONFUSION */
     }
 }

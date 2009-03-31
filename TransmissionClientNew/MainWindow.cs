@@ -1224,14 +1224,7 @@ namespace TransmissionRemoteDotnet
             }
             remainingLabel.Text = t.GetLongETA();
             uploadedLabel.Text = t.UploadedString;
-            try
-            {
-                uploadLimitLabel.Text = t.SpeedLimitUpEnabled ? Toolbox.KbpsString(t.SpeedLimitUp) : "∞";
-            }
-            catch
-            {
-                uploadLimitLabel.Text = t.UploadLimited ? Toolbox.KbpsString(t.UploadLimit) : "∞";
-            }
+            uploadLimitLabel.Text = t.SpeedLimitUpEnabled ? Toolbox.KbpsString(t.SpeedLimitUp) : "∞";
             uploadRateLabel.Text = t.UploadRate;
             seedersLabel.Text = String.Format(OtherStrings.XOfYConnected, t.PeersSendingToUs, t.Seeders < 0 ? "?" : t.Seeders.ToString());
             leechersLabel.Text = String.Format(OtherStrings.XOfYConnected, t.PeersGettingFromUs, t.Leechers < 0 ? "?" : t.Leechers.ToString());
@@ -1251,14 +1244,7 @@ namespace TransmissionRemoteDotnet
                 downloadedLabel.Text = String.Format(OtherStrings.DownloadedValid, t.HaveTotalString, Toolbox.GetFileSize(t.HaveValid));
             }
             downloadSpeedLabel.Text = t.DownloadRate;
-            try
-            {
-                downloadLimitLabel.Text = t.SpeedLimitDownEnabled ? Toolbox.KbpsString(t.SpeedLimitDown) : "∞";
-            }
-            catch
-            {
-                downloadLimitLabel.Text = t.UploadLimited ? Toolbox.KbpsString(t.UploadLimit) : "∞";
-            }
+            downloadLimitLabel.Text = t.SpeedLimitDownEnabled ? Toolbox.KbpsString(t.SpeedLimitDown) : "∞";
             statusLabel.Text = t.Status;
             labelForErrorLabel.Visible = errorLabel.Visible = !(errorLabel.Text = t.ErrorString).Equals("");
             RefreshElapsedTimer();
