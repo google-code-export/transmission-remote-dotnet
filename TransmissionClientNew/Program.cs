@@ -168,6 +168,7 @@ namespace TransmissionRemoteDotnet
                     {
                         torrentIndex.Clear();
                     }
+                    Program.DaemonDescriptor.UpdateSerial = 0;
                 }
                 if (OnConnStatusChanged != null)
                 {
