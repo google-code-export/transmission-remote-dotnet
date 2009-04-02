@@ -202,7 +202,7 @@ namespace TransmissionRemoteDotnet
                 ProtocolConstants.FIELD_HASHSTRING,
                 ProtocolConstants.FIELD_DOWNLOADDIR,
                 ProtocolConstants.FIELD_SEEDRATIOLIMIT,
-                ProtocolConstants.FIELD_SEEDRATIOMODE
+                ProtocolConstants.FIELD_SEEDRATIOMODE,
                 /*"sizeWhenDone",, "isPrivate",
                 "hashString", "error",,
                 "peersKnown"*/

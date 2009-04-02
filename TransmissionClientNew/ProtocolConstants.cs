@@ -35,6 +35,7 @@ namespace TransmissionRemoteDotnet
             FIELD_PEERSSENDINGTOUS = "peersSendingToUs",
             FIELD_PEERSGETTINGFROMUS = "peersGettingFromUs",
             FIELD_FLAGSTR = "flagStr",
+            FIELD_HONORSSESSIONLIMITS = "honorsSessionLimits",
             FIELD_METAINFO = "metainfo",
             FIELD_CLIENTNAME = "clientName",
             FIELD_HAVEUNCHECKED = "haveUnchecked",
@@ -75,9 +76,9 @@ namespace TransmissionRemoteDotnet
             FIELD_HASHSTRING = "hashString",
             FIELD_DOWNLOADDIR = "downloadDir",
             FIELD_RECHECKPROGRESS = "recheckProgress",
-            FIELD_SEEDRATIOLIMIT = "seedRatioLimit",
-            FIELD_SEEDRATIOLIMITED = "seedRatioLimited",
-            FIELD_SEEDRATIOMODE = "seedRatioMode",
+            FIELD_SEEDRATIOLIMIT = "seedRatioLimit", // get
+            FIELD_SEEDRATIOMODE = "seedRatioMode", // torrent-get
+            FIELD_SEEDRATIOLIMITED = "seedRatioLimited", // torrent-set
             VALUE_RECENTLY_ACTIVE = "recently-active",
             /* BEGIN CONFUSION */
             FIELD_DOWNLOADLIMITMODE = "downloadLimitMode", // DEPRECATED

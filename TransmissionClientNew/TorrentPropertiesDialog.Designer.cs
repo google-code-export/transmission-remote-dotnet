@@ -44,6 +44,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.honorsSessionLimits = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.seedRatioLimitValue)).BeginInit();
@@ -61,6 +62,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.honorsSessionLimits);
             this.tabPage1.Controls.Add(this.seedRatioLimitedCheckBox);
             this.tabPage1.Controls.Add(this.seedRatioLimitValue);
             this.tabPage1.Controls.Add(this.peerLimitValue);
@@ -160,6 +162,12 @@
             resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
             // 
+            // honorsSessionLimits
+            // 
+            resources.ApplyResources(this.honorsSessionLimits, "honorsSessionLimits");
+            this.honorsSessionLimits.Name = "honorsSessionLimits";
+            this.honorsSessionLimits.UseVisualStyleBackColor = true;
+            // 
             // TorrentPropertiesDialog
             // 
             this.AcceptButton = this.button1;
@@ -203,6 +211,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown seedRatioLimitValue;
         private System.Windows.Forms.CheckBox seedRatioLimitedCheckBox;
+        private System.Windows.Forms.CheckBox honorsSessionLimits;
 
 
     }

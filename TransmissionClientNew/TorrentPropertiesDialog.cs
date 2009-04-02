@@ -38,6 +38,10 @@ namespace TransmissionRemoteDotnet
             arguments.Put(ProtocolConstants.FIELD_PEERLIMIT, peerLimitValue.Value);
             if (seedRatioLimitValue.Enabled)
                 request.Put(ProtocolConstants.FIELD_SEEDRATIOLIMIT, seedRatioLimitValue.Value);
+            if (honorsSessionLimits.Enabled)
+                request.Put(ProtocolConstants.FIELD_HONORSSESSIONLIMITS, honorsSessionLimits.Checked);
+            if (seedRatioLimitedCheckBox.Enabled)
+                request.Put(ProtocolConstants.FIELD_SEEDRATIOLIMITED, seedRatioLimitedCheckBox.Checked);
             request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
             request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
             Program.Form.CreateActionWorker().RunWorkerAsync(request);
@@ -58,15 +62,33 @@ namespace TransmissionRemoteDotnet
         {
             Torrent firstTorrent = (Torrent)selections[0].Tag;
             this.Text = selections.Count == 1 ? firstTorrent.Name : "Multiple Torrent Properties";
-                uploadLimitField.Value = firstTorrent.SpeedLimitUp >= 0 && firstTorrent.SpeedLimitUp <= uploadLimitField.Maximum ? firstTorrent.SpeedLimitUp : 0;
-                downloadLimitField.Value = firstTorrent.SpeedLimitDown >= 0 && firstTorrent.SpeedLimitDown <= downloadLimitField.Maximum ? firstTorrent.SpeedLimitDown : 0;
-                uploadLimitField.Enabled = uploadLimitEnableField.Checked = firstTorrent.SpeedLimitUpEnabled;
-                downloadLimitField.Enabled = downloadLimitEnableField.Checked = firstTorrent.SpeedLimitDownEnabled;
-
-                uploadLimitField.Tag = Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_UPLOADLIMIT : ProtocolConstants.FIELD_SPEEDLIMITUP;
-                downloadLimitField.Tag = Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_DOWNLOADLIMIT : ProtocolConstants.FIELD_SPEEDLIMITDOWN;
-                uploadLimitEnableField.Tag = Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_UPLOADLIMITED : ProtocolConstants.FIELD_SPEEDLIMITUPENABLED;
-                downloadLimitEnableField.Tag = Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_DOWNLOADLIMITED : ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED;
+            uploadLimitField.Value = firstTorrent.SpeedLimitUp >= 0 && firstTorrent.SpeedLimitUp <= uploadLimitField.Maximum ? firstTorrent.SpeedLimitUp : 0;
+            downloadLimitField.Value = firstTorrent.SpeedLimitDown >= 0 && firstTorrent.SpeedLimitDown <= downloadLimitField.Maximum ? firstTorrent.SpeedLimitDown : 0;
+            uploadLimitField.Enabled = uploadLimitEnableField.Checked = firstTorrent.SpeedLimitUpEnabled;
+            downloadLimitField.Enabled = downloadLimitEnableField.Checked = firstTorrent.SpeedLimitDownEnabled;
+            uploadLimitField.Tag = Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_UPLOADLIMIT : ProtocolConstants.FIELD_SPEEDLIMITUP;
+            downloadLimitField.Tag = Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_DOWNLOADLIMIT : ProtocolConstants.FIELD_SPEEDLIMITDOWN;
+            uploadLimitEnableField.Tag = Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_UPLOADLIMITED : ProtocolConstants.FIELD_SPEEDLIMITUPENABLED;
+            downloadLimitEnableField.Tag = Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_DOWNLOADLIMITED : ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED;
+            try
+            {
+                honorsSessionLimits.Checked = firstTorrent.HonorsSessionLimits;
+                honorsSessionLimits.Enabled = true;
+            }
+            catch
+            {
+                honorsSessionLimits.Enabled = false;
+            }
+            try
+            {
+                seedRatioLimitValue.Value = (decimal)firstTorrent.SeedRatioLimit;
+                seedRatioLimitedCheckBox.Enabled = firstTorrent.SeedRatioMode;
+                seedRatioLimitedCheckBox.Enabled = seedRatioLimitValue.Enabled = true;
+            }
+            catch
+            {
+                seedRatioLimitValue.Enabled = seedRatioLimitedCheckBox.Enabled = false;
+            }
             peerLimitValue.Value = firstTorrent.MaxConnectedPeers;
         }
 

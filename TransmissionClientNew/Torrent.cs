@@ -224,6 +224,30 @@ namespace TransmissionRemoteDotnet
             }
         }
 
+        public double SeedRatioLimit
+        {
+            get
+            {
+                return ((JsonNumber)info[ProtocolConstants.FIELD_SEEDRATIOLIMIT]).ToDouble();
+            }
+        }
+
+        public bool SeedRatioMode
+        {
+            get
+            {
+                return ((JsonNumber)info[ProtocolConstants.FIELD_SEEDRATIOMODE]).ToBoolean();
+            }
+        }
+
+        public bool HonorsSessionLimits
+        {
+            get
+            {
+                return ((JsonNumber)info[ProtocolConstants.FIELD_HONORSSESSIONLIMITS]).ToBoolean();
+            }
+        }
+
         public byte[] Pieces
         {
             get
@@ -583,22 +607,6 @@ namespace TransmissionRemoteDotnet
             get
             {
                 return (string)info[ProtocolConstants.FIELD_COMMENT];
-            }
-        }
-
-        public bool SeedRatioMode
-        {
-            get
-            {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_SEEDRATIOMODE]).ToBoolean();
-            }
-        }
-
-        public decimal SeedRatioLimit
-        {
-            get
-            {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_SEEDRATIOLIMIT]).ToDecimal();
             }
         }
 
