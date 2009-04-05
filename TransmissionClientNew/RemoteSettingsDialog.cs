@@ -56,24 +56,24 @@ namespace TransmissionRemoteDotnet
         {
             try
             {
-                JsonObject settings = (JsonObject)Program.DaemonDescriptor.SessionData;
-                DownloadToField.Text = (string)settings["download-dir"];
-                LimitDownloadValue.Enabled = LimitDownloadCheckBox.Checked = ((JsonNumber)settings[ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED]).ToBoolean();
-                SetLimitField(((JsonNumber)settings[ProtocolConstants.FIELD_SPEEDLIMITDOWN]).ToInt32(), LimitDownloadValue);
-                LimitUploadValue.Enabled = LimitUploadCheckBox.Checked = ((JsonNumber)settings[ProtocolConstants.FIELD_SPEEDLIMITUPENABLED]).ToBoolean();
-                SetLimitField(((JsonNumber)settings[ProtocolConstants.FIELD_SPEEDLIMITUP]).ToInt32(), LimitUploadValue);
-                if (settings.Contains("port"))
+                JsonObject session = (JsonObject)Program.DaemonDescriptor.SessionData;
+                DownloadToField.Text = (string)session["download-dir"];
+                LimitDownloadValue.Enabled = LimitDownloadCheckBox.Checked = ((JsonNumber)session[ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED]).ToBoolean();
+                SetLimitField(((JsonNumber)session[ProtocolConstants.FIELD_SPEEDLIMITDOWN]).ToInt32(), LimitDownloadValue);
+                LimitUploadValue.Enabled = LimitUploadCheckBox.Checked = ((JsonNumber)session[ProtocolConstants.FIELD_SPEEDLIMITUPENABLED]).ToBoolean();
+                SetLimitField(((JsonNumber)session[ProtocolConstants.FIELD_SPEEDLIMITUP]).ToInt32(), LimitUploadValue);
+                if (session.Contains("port"))
                 {
                     IncomingPortValue.Tag = "port";
-                    IncomingPortValue.Value = ((JsonNumber)settings["port"]).ToInt32();
+                    IncomingPortValue.Value = ((JsonNumber)session["port"]).ToInt32();
                 }
-                else if (settings.Contains("peer-port"))
+                else if (session.Contains("peer-port"))
                 {
                     IncomingPortValue.Tag = "peer-port";
-                    IncomingPortValue.Value = ((JsonNumber)settings["peer-port"]).ToInt32();
+                    IncomingPortValue.Value = ((JsonNumber)session["peer-port"]).ToInt32();
                 }
-                PortForward.Checked = ((JsonNumber)settings["port-forwarding-enabled"]).ToBoolean();
-                string enc = settings["encryption"] as string;
+                PortForward.Checked = ((JsonNumber)session["port-forwarding-enabled"]).ToBoolean();
+                string enc = session["encryption"] as string;
                 if (enc.Equals("preferred"))
                 {
                     EncryptionCombobox.SelectedIndex = 1;
@@ -87,31 +87,31 @@ namespace TransmissionRemoteDotnet
                     EncryptionCombobox.SelectedIndex = 0;
                 }
                 // peer limit
-                if (settings.Contains(ProtocolConstants.FIELD_PEERLIMIT))
+                if (session.Contains(ProtocolConstants.FIELD_PEERLIMIT))
                 {
-                    PeerLimitValue.Value = ((JsonNumber)settings[ProtocolConstants.FIELD_PEERLIMIT]).ToInt32();
+                    PeerLimitValue.Value = ((JsonNumber)session[ProtocolConstants.FIELD_PEERLIMIT]).ToInt32();
                     PeerLimitValue.Tag = ProtocolConstants.FIELD_PEERLIMIT;
                 }
-                else if (settings.Contains("peer-limit-global"))
+                else if (session.Contains("peer-limit-global"))
                 {
-                    PeerLimitValue.Value = ((JsonNumber)settings["peer-limit-global"]).ToInt32();
+                    PeerLimitValue.Value = ((JsonNumber)session["peer-limit-global"]).ToInt32();
                     PeerLimitValue.Tag = "peer-limit-global";
                 }
                 // pex
-                if (settings.Contains("pex-allowed"))
+                if (session.Contains("pex-allowed"))
                 {
-                    PEXcheckBox.Checked = ((JsonNumber)settings["pex-allowed"]).ToBoolean();
+                    PEXcheckBox.Checked = ((JsonNumber)session["pex-allowed"]).ToBoolean();
                     PEXcheckBox.Tag = "pex-allowed";
                 }
-                else if (settings.Contains("pex-enabled"))
+                else if (session.Contains("pex-enabled"))
                 {
-                    PEXcheckBox.Checked = ((JsonNumber)settings["pex-enabled"]).ToBoolean();
+                    PEXcheckBox.Checked = ((JsonNumber)session["pex-enabled"]).ToBoolean();
                     PEXcheckBox.Tag = "pex-enabled";
                 }
                 // blocklist
-                if (updateBlocklistButton.Enabled = blocklistEnabledCheckBox.Enabled = settings.Contains("blocklist-enabled"))
+                if (updateBlocklistButton.Enabled = blocklistEnabledCheckBox.Enabled = session.Contains("blocklist-enabled"))
                 {
-                    blocklistEnabledCheckBox.Checked = ((JsonNumber)settings["blocklist-enabled"]).ToBoolean();
+                    blocklistEnabledCheckBox.Checked = ((JsonNumber)session["blocklist-enabled"]).ToBoolean();
                 }
                 if (altSpeedLimitEnable.Enabled =
                     altUploadLimitField.Enabled =
@@ -119,12 +119,17 @@ namespace TransmissionRemoteDotnet
                     altTimeConstraintEnabled.Enabled =
                     altTimeConstraintEndField.Enabled =
                     altTimeConstraintStartField.Enabled =
-                    settings.Contains("alt-speed-enabled"))
+                    session.Contains("alt-speed-enabled"))
                 {
-                    altDownloadLimitField.Value = ((JsonNumber)settings["alt-speed-down"]).ToInt32();
-                    altUploadLimitField.Value = ((JsonNumber)settings["alt-speed-up"]).ToInt32();
-                    altDownloadLimitField.Enabled = altUploadLimitField.Enabled = altSpeedLimitEnable.Checked = ((JsonNumber)settings["alt-speed-enabled"]).ToBoolean();
-                    altTimeConstraintStartField.Enabled = altTimeConstraintEndField.Enabled = altTimeConstraintEnabled.Checked = ((JsonNumber)settings["alt-speed-time-enabled"]).ToBoolean();
+                    altDownloadLimitField.Value = ((JsonNumber)session["alt-speed-down"]).ToInt32();
+                    altUploadLimitField.Value = ((JsonNumber)session["alt-speed-up"]).ToInt32();
+                    altDownloadLimitField.Enabled = altUploadLimitField.Enabled = altSpeedLimitEnable.Checked = ((JsonNumber)session["alt-speed-enabled"]).ToBoolean();
+                    altTimeConstraintStartField.Enabled = altTimeConstraintEndField.Enabled = altTimeConstraintEnabled.Checked = ((JsonNumber)session["alt-speed-time-enabled"]).ToBoolean();
+                }
+                if (seedRatioEnabledCheckBox.Enabled = seedLimitUpDown.Enabled = session.Contains(ProtocolConstants.FIELD_SEEDRATIOLIMITED))
+                {
+                    seedLimitUpDown.Value = decimal.Parse((string)session[ProtocolConstants.FIELD_SEEDRATIOLIMIT]);
+                    seedRatioEnabledCheckBox.Checked = ((JsonNumber)session[ProtocolConstants.FIELD_SEEDRATIOLIMITED]).ToBoolean();
                 }
             }
             catch (Exception ex)
@@ -196,6 +201,11 @@ namespace TransmissionRemoteDotnet
             {
                 arguments.Put("blocklist-enabled", blocklistEnabledCheckBox.Checked);
             }
+            if (seedRatioEnabledCheckBox.Enabled)
+            {
+                arguments.Put(ProtocolConstants.FIELD_SEEDRATIOLIMITED, seedRatioEnabledCheckBox.Checked);
+                arguments.Put(ProtocolConstants.FIELD_SEEDRATIOLIMIT, seedLimitUpDown.Value);
+            }
             arguments.Put("download-dir", DownloadToField.Text);
             SettingsWorker.RunWorkerAsync(request);
             this.Close();
@@ -231,6 +241,11 @@ namespace TransmissionRemoteDotnet
         private void updateBlocklistButton_Click(object sender, EventArgs e)
         {
             Program.Form.CreateActionWorker().RunWorkerAsync(Requests.BlocklistUpdate());
+        }
+
+        private void seedRatioEnabledCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            seedLimitUpDown.Enabled = seedRatioEnabledCheckBox.Checked;
         }
     }
 }

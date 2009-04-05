@@ -30,17 +30,17 @@ namespace TransmissionRemoteDotnet
                 ids.Put(t.Id);
             }
             arguments.Put(ProtocolConstants.KEY_IDS, ids);
-            arguments.Put(GetKey(uploadLimitEnableField), uploadLimitEnableField.Checked);
+            arguments.Put(GetKey(uploadLimitEnableField), uploadLimitEnableField.Checked ? 1 : 0);
             arguments.Put(GetKey(uploadLimitField), uploadLimitField.Value);
-            arguments.Put(GetKey(downloadLimitEnableField), downloadLimitEnableField.Checked);
+            arguments.Put(GetKey(downloadLimitEnableField), downloadLimitEnableField.Checked ? 1 : 0);
             arguments.Put(GetKey(downloadLimitField), downloadLimitField.Value);
             arguments.Put(ProtocolConstants.FIELD_PEERLIMIT, peerLimitValue.Value);
             if (seedRatioLimitValue.Enabled)
-                request.Put(ProtocolConstants.FIELD_SEEDRATIOLIMIT, seedRatioLimitValue.Value);
+                arguments.Put(ProtocolConstants.FIELD_SEEDRATIOLIMIT, seedRatioLimitValue.Value);
             if (honorsSessionLimits.Enabled)
-                request.Put(ProtocolConstants.FIELD_HONORSSESSIONLIMITS, honorsSessionLimits.Checked);
+                arguments.Put(ProtocolConstants.FIELD_HONORSSESSIONLIMITS, honorsSessionLimits.Checked);
             if (seedRatioLimitedCheckBox.Enabled)
-                request.Put(ProtocolConstants.FIELD_SEEDRATIOLIMITED, seedRatioLimitedCheckBox.Checked);
+                arguments.Put(ProtocolConstants.FIELD_SEEDRATIOMODE, seedRatioLimitedCheckBox.Checked ? 1 : 0);
             Program.Form.CreateActionWorker().RunWorkerAsync(request);
             this.Close();
         }

@@ -50,8 +50,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.updateBlocklistButton = new System.Windows.Forms.Button();
             this.blocklistEnabledCheckBox = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.seedLimitUpDown = new System.Windows.Forms.NumericUpDown();
+            this.seedRatioEnabledCheckBox = new System.Windows.Forms.CheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -65,7 +68,6 @@
             this.altTimeConstraintEnabled = new System.Windows.Forms.CheckBox();
             this.altSpeedLimitEnable = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.updateBlocklistButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LimitUploadValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LimitDownloadValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IncomingPortValue)).BeginInit();
@@ -73,6 +75,7 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.seedLimitUpDown)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.altTimeConstraintEndField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.altTimeConstraintStartField)).BeginInit();
@@ -225,19 +228,24 @@
             // 
             this.tabPage1.Controls.Add(this.updateBlocklistButton);
             this.tabPage1.Controls.Add(this.blocklistEnabledCheckBox);
-            this.tabPage1.Controls.Add(this.PeerLimitValue);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.PEXcheckBox);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.IncomingPortValue);
             this.tabPage1.Controls.Add(this.PortForward);
-            this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.DownloadToField);
             this.tabPage1.Controls.Add(this.EncryptionCombobox);
             this.tabPage1.Controls.Add(this.label3);
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // updateBlocklistButton
+            // 
+            resources.ApplyResources(this.updateBlocklistButton, "updateBlocklistButton");
+            this.updateBlocklistButton.Name = "updateBlocklistButton";
+            this.updateBlocklistButton.UseVisualStyleBackColor = true;
+            this.updateBlocklistButton.Click += new System.EventHandler(this.updateBlocklistButton_Click);
             // 
             // blocklistEnabledCheckBox
             // 
@@ -248,15 +256,32 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.seedLimitUpDown);
+            this.tabPage2.Controls.Add(this.seedRatioEnabledCheckBox);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.LimitUploadCheckBox);
+            this.tabPage2.Controls.Add(this.PeerLimitValue);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.LimitUploadValue);
             this.tabPage2.Controls.Add(this.LimitDownloadValue);
+            this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.LimitDownloadCheckBox);
             resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // seedLimitUpDown
+            // 
+            this.seedLimitUpDown.DecimalPlaces = 2;
+            resources.ApplyResources(this.seedLimitUpDown, "seedLimitUpDown");
+            this.seedLimitUpDown.Name = "seedLimitUpDown";
+            // 
+            // seedRatioEnabledCheckBox
+            // 
+            resources.ApplyResources(this.seedRatioEnabledCheckBox, "seedRatioEnabledCheckBox");
+            this.seedRatioEnabledCheckBox.Name = "seedRatioEnabledCheckBox";
+            this.seedRatioEnabledCheckBox.UseVisualStyleBackColor = true;
+            this.seedRatioEnabledCheckBox.CheckedChanged += new System.EventHandler(this.seedRatioEnabledCheckBox_CheckedChanged);
             // 
             // tabPage3
             // 
@@ -339,13 +364,6 @@
             resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
             // 
-            // updateBlocklistButton
-            // 
-            resources.ApplyResources(this.updateBlocklistButton, "updateBlocklistButton");
-            this.updateBlocklistButton.Name = "updateBlocklistButton";
-            this.updateBlocklistButton.UseVisualStyleBackColor = true;
-            this.updateBlocklistButton.Click += new System.EventHandler(this.updateBlocklistButton_Click);
-            // 
             // RemoteSettingsDialog
             // 
             this.AcceptButton = this.SaveButton;
@@ -369,6 +387,7 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.seedLimitUpDown)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.altTimeConstraintEndField)).EndInit();
@@ -418,5 +437,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.CheckBox blocklistEnabledCheckBox;
         private System.Windows.Forms.Button updateBlocklistButton;
+        private System.Windows.Forms.NumericUpDown seedLimitUpDown;
+        private System.Windows.Forms.CheckBox seedRatioEnabledCheckBox;
     }
 }

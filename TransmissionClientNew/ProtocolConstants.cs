@@ -80,7 +80,7 @@ namespace TransmissionRemoteDotnet
             FIELD_RECHECKPROGRESS = "recheckProgress",
             FIELD_SEEDRATIOLIMIT = "seedRatioLimit",
             FIELD_SEEDRATIOMODE = "seedRatioMode",
-            FIELD_SEEDRATIOLIMITED = "seedRatioLimited", // torrent-set
+            FIELD_SEEDRATIOLIMITED = "seedRatioLimited", // session-set/get
             VALUE_RECENTLY_ACTIVE = "recently-active",
             /* BEGIN CONFUSION */
             FIELD_DOWNLOADLIMITMODE = "downloadLimitMode", // DEPRECATED
