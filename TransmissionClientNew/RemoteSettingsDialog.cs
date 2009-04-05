@@ -219,8 +219,16 @@ namespace TransmissionRemoteDotnet
         private void SettingsWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             TransmissionCommand command = (TransmissionCommand)e.Result;
-            Program.Form.CreateActionWorker().RunWorkerAsync(Requests.SessionGet());
             command.Execute();
+            Timer t = new Timer();
+            t.Interval = 1000;
+            t.Tick += new EventHandler(t_Tick);
+            t.Start();
+        }
+
+        void t_Tick(object sender, EventArgs e)
+        {
+            Program.Form.CreateActionWorker().RunWorkerAsync(Requests.SessionGet());
         }
 
         private void altSpeedLimitEnable_CheckedChanged(object sender, EventArgs e)
