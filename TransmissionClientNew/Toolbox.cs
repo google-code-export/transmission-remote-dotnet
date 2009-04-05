@@ -16,15 +16,32 @@ namespace TransmissionRemoteDotnet
         private const int STRIPE_OFFSET = 15;
         public static readonly IFormatProvider NUMBER_FORMAT = (new CultureInfo("en-GB")).NumberFormat;
 
-        public static decimal ParseProgress(string s)
+        public static decimal ToProgress(object o)
         {
-            try
+            return Math.Round(ToDecimal(o), 2);
+        }
+
+        public static double ToDouble(object o)
+        {
+            if (o.GetType().Equals(typeof(string)))
             {
-                return Math.Round(Decimal.Parse(s, NUMBER_FORMAT) * 100, 2);
+                return double.Parse((string)o, NUMBER_FORMAT);
             }
-            catch
+            else
             {
-                return new decimal(0);
+                return ((JsonNumber)o).ToDouble();
+            }
+        }
+
+        public static decimal ToDecimal(object o)
+        {
+            if (o.GetType().Equals(typeof(string)))
+            {
+                return decimal.Parse((string)o, NUMBER_FORMAT);
+            }
+            else
+            {
+                return ((JsonNumber)o).ToDecimal();
             }
         }
 
@@ -80,6 +97,18 @@ namespace TransmissionRemoteDotnet
                         : window;
                 }
                 list.ResumeLayout();
+            }
+        }
+
+        public static Boolean ToBool(object o)
+        {
+            if (o.GetType().Equals(typeof(Boolean)))
+            {
+                return (Boolean)o;
+            }
+            else
+            {
+                return ((JsonNumber)o).ToBoolean();
             }
         }
 

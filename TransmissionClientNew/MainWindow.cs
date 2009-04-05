@@ -1274,7 +1274,7 @@ namespace TransmissionRemoteDotnet
                         item.SubItems.Add((string)peer[ProtocolConstants.FIELD_FLAGSTR]);
                         item.SubItems.Add((string)peer[ProtocolConstants.FIELD_CLIENTNAME]);
                         item.ToolTipText = item.SubItems[0].Text;
-                        decimal progress = Toolbox.ParseProgress((string)peer[ProtocolConstants.FIELD_PROGRESS]);
+                        decimal progress = Toolbox.ToProgress(peer[ProtocolConstants.FIELD_PROGRESS]);
                         item.SubItems.Add(progress + "%");
                         item.SubItems[5].Tag = progress;
                         long rateToClient = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOCLIENT]).ToInt64();
@@ -1293,7 +1293,7 @@ namespace TransmissionRemoteDotnet
                     }
                     else
                     {
-                        decimal progress = Toolbox.ParseProgress((string)peer[ProtocolConstants.FIELD_PROGRESS]);
+                        decimal progress = Toolbox.ToProgress(peer[ProtocolConstants.FIELD_PROGRESS]);
                         item.SubItems[3].Text = (string)peer[ProtocolConstants.FIELD_FLAGSTR];
                         item.SubItems[5].Text = progress + "%";
                         long rateToClient = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOCLIENT]).ToInt64();

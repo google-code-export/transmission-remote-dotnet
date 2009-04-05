@@ -57,7 +57,7 @@ namespace TransmissionRemoteDotnet.Commmands
                 if (first)
                 {
                     string name = (string)file[ProtocolConstants.FIELD_NAME];
-                    UpdateFilesCreateSubCommand subCommand = new UpdateFilesCreateSubCommand(name, length, ((JsonNumber)wanted[i]).ToBoolean(), (JsonNumber)priorities[i], bytesCompleted);
+                    UpdateFilesCreateSubCommand subCommand = new UpdateFilesCreateSubCommand(name, length, Toolbox.ToBool(wanted[i]), (JsonNumber)priorities[i], bytesCompleted);
                     uiUpdateBatch.Add((TransmissionCommand)subCommand);
                 }
                 else
