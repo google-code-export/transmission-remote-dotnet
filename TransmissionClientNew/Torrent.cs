@@ -182,7 +182,7 @@ namespace TransmissionRemoteDotnet
                     && form.notifyIcon.Visible == true
                     && this.StatusCode == ProtocolConstants.STATUS_DOWNLOADING
                     && this.LeftUntilDone > 0
-                    && (((JsonNumber)info[ProtocolConstants.FIELD_LEFTUNTILDONE]).ToInt64() == 0))
+                    && (Toolbox.ToLong(info[ProtocolConstants.FIELD_LEFTUNTILDONE]) == 0))
                 {
                     form.notifyIcon.ShowBalloonTip(LocalSettingsSingleton.BALLOON_TIMEOUT, this.Name, "This torrent has finished downloading.", ToolTipIcon.Info);
                     item.SubItems[12].Text = DateTime.Now.ToString();
@@ -220,7 +220,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_PIECECOUNT]).ToInt32();
+                return Toolbox.ToInt(info[ProtocolConstants.FIELD_PIECECOUNT]);
             }
         }
 
@@ -228,7 +228,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ToDouble(info[ProtocolConstants.FIELD_SEEDRATIOLIMIT]);
+                return Toolbox.ToDouble(info[ProtocolConstants.FIELD_SEEDRATIOLIMIT]);
             }
         }
 
@@ -236,7 +236,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_SEEDRATIOMODE]).ToInt32() > 0;
+                return Toolbox.ToInt(info[ProtocolConstants.FIELD_SEEDRATIOMODE]) > 0;
             }
         }
 
@@ -244,7 +244,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ToBool(info[ProtocolConstants.FIELD_HONORSSESSIONLIMITS]);
+                return Toolbox.ToBool(info[ProtocolConstants.FIELD_HONORSSESSIONLIMITS]);
             }
         }
 
@@ -289,7 +289,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ((JsonNumber)this.info[ProtocolConstants.FIELD_MAXCONNECTEDPEERS]).ToInt32();
+                return Toolbox.ToInt(info[ProtocolConstants.FIELD_MAXCONNECTEDPEERS]);
             }
         }
 
@@ -343,7 +343,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_STATUS]).ToInt16();
+                return Toolbox.ToShort(info[ProtocolConstants.FIELD_STATUS]);
             }
         }
 
@@ -351,7 +351,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_ID]).ToInt32();
+                return Toolbox.ToInt(info[ProtocolConstants.FIELD_ID]);
             }
         }
 
@@ -405,7 +405,7 @@ namespace TransmissionRemoteDotnet
             }
             else
             {
-                double eta = ToDouble(info[ProtocolConstants.FIELD_ETA]);
+                double eta = Toolbox.ToDouble(info[ProtocolConstants.FIELD_ETA]);
                 if (eta > 0)
                 {
                     TimeSpan ts = TimeSpan.FromSeconds(eta);
@@ -445,7 +445,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_SEEDERS]).ToInt32();
+                return Toolbox.ToInt(info[ProtocolConstants.FIELD_SEEDERS]);
             }
         }
 
@@ -453,7 +453,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_LEECHERS]).ToInt32();
+                return Toolbox.ToInt(info[ProtocolConstants.FIELD_LEECHERS]);
             }
         }
 
@@ -461,7 +461,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return Toolbox.GetSpeed(((JsonNumber)info[ProtocolConstants.FIELD_SWARMSPEED]).ToInt64());
+                return Toolbox.GetSpeed(info[ProtocolConstants.FIELD_SWARMSPEED]);
             }
         }
 
@@ -469,7 +469,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_TOTALSIZE]).ToInt64();
+                return Toolbox.ToLong(info[ProtocolConstants.FIELD_TOTALSIZE]);
             }
         }
 
@@ -485,7 +485,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return Toolbox.DateFromEpoch(ToDouble(info[ProtocolConstants.FIELD_ADDEDDATE]));
+                return Toolbox.DateFromEpoch(Toolbox.ToDouble(info[ProtocolConstants.FIELD_ADDEDDATE]));
             }
         }
 
@@ -493,7 +493,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_PEERSSENDINGTOUS]).ToInt32();
+                return Toolbox.ToInt(info[ProtocolConstants.FIELD_PEERSSENDINGTOUS]);
             }
         }
 
@@ -501,7 +501,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_PEERSGETTINGFROMUS]).ToInt32();
+                return Toolbox.ToInt(info[ProtocolConstants.FIELD_PEERSGETTINGFROMUS]);
             }
         }
 
@@ -509,7 +509,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return Toolbox.DateFromEpoch(ToDouble(info[ProtocolConstants.FIELD_DATECREATED])).ToString();
+                return Toolbox.DateFromEpoch(Toolbox.ToDouble(info[ProtocolConstants.FIELD_DATECREATED])).ToString();
             }
         }
 
@@ -517,7 +517,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_UPLOADEDEVER]).ToInt64();
+                return Toolbox.ToLong(info[ProtocolConstants.FIELD_UPLOADEDEVER]);
             }
         }
 
@@ -533,7 +533,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_HAVEVALID]).ToInt64() + ((JsonNumber)info[ProtocolConstants.FIELD_HAVEUNCHECKED]).ToInt64();
+                return Toolbox.ToLong(info[ProtocolConstants.FIELD_HAVEVALID]) + Toolbox.ToLong(info[ProtocolConstants.FIELD_HAVEUNCHECKED]);
             }
         }
 
@@ -541,7 +541,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_HAVEVALID]).ToInt64();
+                return Toolbox.ToLong(info[ProtocolConstants.FIELD_HAVEVALID]);
             }
         }
 
@@ -557,7 +557,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_LEFTUNTILDONE]).ToInt64();
+                return Toolbox.ToLong(info[ProtocolConstants.FIELD_LEFTUNTILDONE]);
             }
         }
 
@@ -573,7 +573,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return Toolbox.GetSpeed(((JsonNumber)info[ProtocolConstants.FIELD_RATEDOWNLOAD]).ToInt64());
+                return Toolbox.GetSpeed(info[ProtocolConstants.FIELD_RATEDOWNLOAD]);
             }
         }
 
@@ -581,7 +581,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return Toolbox.GetSpeed(((JsonNumber)info[ProtocolConstants.FIELD_RATEUPLOAD]).ToInt64());
+                return Toolbox.GetSpeed(info[ProtocolConstants.FIELD_RATEUPLOAD]);
             }
         }
 
@@ -618,11 +618,11 @@ namespace TransmissionRemoteDotnet
             {
                 if (info.Contains(ProtocolConstants.FIELD_UPLOADLIMIT))
                 {
-                    return ((JsonNumber)info[ProtocolConstants.FIELD_UPLOADLIMIT]).ToInt32();
+                    return Toolbox.ToInt(info[ProtocolConstants.FIELD_UPLOADLIMIT]);
                 }
                 else
                 {
-                    return ((JsonNumber)info[ProtocolConstants.FIELD_SPEEDLIMITUP]).ToInt32();
+                    return Toolbox.ToInt(info[ProtocolConstants.FIELD_SPEEDLIMITUP]);
                 }
             }
         }
@@ -633,27 +633,17 @@ namespace TransmissionRemoteDotnet
             {
                 if (info.Contains(ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED))
                 {
-                    return ToBool(info[ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED]);
+                    return Toolbox.ToBool(info[ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED]);
                 }
                 else if (info.Contains(ProtocolConstants.FIELD_DOWNLOADLIMITED))
                 {
-                    return ToBool(info[ProtocolConstants.FIELD_DOWNLOADLIMITED]);
+                    return Toolbox.ToBool(info[ProtocolConstants.FIELD_DOWNLOADLIMITED]);
                 }
                 else
                 {
-                    return ToBool(info[ProtocolConstants.FIELD_DOWNLOADLIMITMODE]);
+                    return Toolbox.ToBool(info[ProtocolConstants.FIELD_DOWNLOADLIMITMODE]);
                 }
             }
-        }
-
-        private double ToDouble(object o)
-        {
-            return Toolbox.ToDouble(o);
-        }
-
-        private Boolean ToBool(object o)
-        {
-            return Toolbox.ToBool(o);
         }
 
         public int SpeedLimitUp
@@ -662,11 +652,11 @@ namespace TransmissionRemoteDotnet
             {
                 if (info.Contains(ProtocolConstants.FIELD_UPLOADLIMIT))
                 {
-                    return ((JsonNumber)info[ProtocolConstants.FIELD_UPLOADLIMIT]).ToInt32();
+                    return Toolbox.ToInt(info[ProtocolConstants.FIELD_UPLOADLIMIT]);
                 }
                 else
                 {
-                    return ((JsonNumber)info[ProtocolConstants.FIELD_SPEEDLIMITUP]).ToInt32();
+                    return Toolbox.ToInt(info[ProtocolConstants.FIELD_SPEEDLIMITUP]);
                 }
             }
         }
@@ -677,15 +667,15 @@ namespace TransmissionRemoteDotnet
             {
                 if (info.Contains(ProtocolConstants.FIELD_SPEEDLIMITUPENABLED))
                 {
-                    return ToBool(info[ProtocolConstants.FIELD_SPEEDLIMITUPENABLED]);
+                    return Toolbox.ToBool(info[ProtocolConstants.FIELD_SPEEDLIMITUPENABLED]);
                 }
                 else if (info.Contains(ProtocolConstants.FIELD_UPLOADLIMIT))
                 {
-                    return ToBool(info[ProtocolConstants.FIELD_UPLOADLIMIT]);
+                    return Toolbox.ToBool(info[ProtocolConstants.FIELD_UPLOADLIMIT]);
                 }
                 else
                 {
-                    return ToBool(info[ProtocolConstants.FIELD_UPLOADLIMITMODE]);
+                    return Toolbox.ToBool(info[ProtocolConstants.FIELD_UPLOADLIMITMODE]);
                 }
             }
         }

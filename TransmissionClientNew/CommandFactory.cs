@@ -38,7 +38,7 @@ namespace TransmissionRemoteDotnet
                 {
                     return new ErrorCommand(OtherStrings.UnsuccessfulRequest, (string)jsonResponse["result"], true);
                 }
-                switch (((JsonNumber)jsonResponse[ProtocolConstants.KEY_TAG]).ToInt16())
+                switch (Toolbox.ToShort(jsonResponse[ProtocolConstants.KEY_TAG]))
                 {
                     case (short)ResponseTag.TorrentGet:
                         return new TorrentGetCommand(jsonResponse);

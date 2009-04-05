@@ -23,7 +23,7 @@ namespace TransmissionRemoteDotnet.Commmands
                 return;
             }
             JsonObject torrent = (JsonObject)torrents[0];
-            int id = ((JsonNumber)torrent[ProtocolConstants.FIELD_ID]).ToInt32();
+            int id = Toolbox.ToInt(torrent[ProtocolConstants.FIELD_ID]);
             Torrent t = null;
             form.Invoke(new MethodInvoker(delegate()
             {
@@ -52,8 +52,8 @@ namespace TransmissionRemoteDotnet.Commmands
             for (int i = 0; i < files.Length; i++)
             {
                 JsonObject file = (JsonObject)files[i];
-                long bytesCompleted = ((JsonNumber)file[ProtocolConstants.FIELD_BYTESCOMPLETED]).ToInt64();
-                long length = ((JsonNumber)file[ProtocolConstants.FIELD_LENGTH]).ToInt64();
+                long bytesCompleted = Toolbox.ToLong(file[ProtocolConstants.FIELD_BYTESCOMPLETED]);
+                long length = Toolbox.ToLong(file[ProtocolConstants.FIELD_LENGTH]);
                 if (first)
                 {
                     string name = (string)file[ProtocolConstants.FIELD_NAME];

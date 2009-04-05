@@ -33,6 +33,16 @@ namespace TransmissionRemoteDotnet
             }
         }
 
+        public static long ToLong(object o)
+        {
+            return ((JsonNumber)o).ToInt64();
+        }
+
+        public static int ToInt(object o)
+        {
+            return ((JsonNumber)o).ToInt32();
+        }
+
         public static decimal ToDecimal(object o)
         {
             if (o.GetType().Equals(typeof(string)))
@@ -100,6 +110,11 @@ namespace TransmissionRemoteDotnet
             }
         }
 
+        public static short ToShort(object o)
+        {
+            return ((JsonNumber)o).ToInt16();
+        }
+
         public static Boolean ToBool(object o)
         {
             if (o.GetType().Equals(typeof(Boolean)))
@@ -146,7 +161,7 @@ namespace TransmissionRemoteDotnet
         {
             return String.Format("{0} {1}/{2}", rate, OtherStrings.KilobyteShort, OtherStrings.Second.ToLower()[0]);
         }
-
+        
         public static string FormatTimespanLong(TimeSpan span)
         {
             return String.Format("{0}{1} {2}{3} {4}{5} {6}{7}", new object[] { span.Days, OtherStrings.Day.ToLower()[0], span.Hours, OtherStrings.Hour.ToLower()[0], span.Minutes, OtherStrings.Minute.ToLower()[0], span.Seconds, OtherStrings.Second.ToLower()[0] });
@@ -155,6 +170,11 @@ namespace TransmissionRemoteDotnet
         public static string GetSpeed(long bytes)
         {
             return String.Format("{0}/{1}", GetFileSize(bytes), OtherStrings.Second.ToLower()[0]);
+        }
+
+        public static string GetSpeed(object o)
+        {
+            return GetSpeed(ToLong(o));
         }
 
         public static string GetFileSize(long bytes)

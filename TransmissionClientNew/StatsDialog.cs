@@ -66,15 +66,15 @@ namespace TransmissionRemoteDotnet
             {
                 JsonObject sessionstats = (JsonObject)stats["current-stats"];
                 JsonObject cumulativestats = (JsonObject)stats["cumulative-stats"];
-                TimeSpan ts = TimeSpan.FromSeconds(((JsonNumber)sessionstats["secondsActive"]).ToInt32());
-                downloadedBytesValue1.Text = Toolbox.GetFileSize(((JsonNumber)sessionstats["downloadedBytes"]).ToInt64());
-                uploadedBytesValue1.Text = Toolbox.GetFileSize(((JsonNumber)sessionstats["uploadedBytes"]).ToInt64());
+                TimeSpan ts = TimeSpan.FromSeconds(Toolbox.ToInt(sessionstats["secondsActive"]));
+                downloadedBytesValue1.Text = Toolbox.GetFileSize(Toolbox.ToLong(sessionstats["downloadedBytes"]));
+                uploadedBytesValue1.Text = Toolbox.GetFileSize(Toolbox.ToLong(sessionstats["uploadedBytes"]));
                 filesAddedValue1.Text = ((JsonNumber)sessionstats["filesAdded"]).ToString();
                 sessionCountValue1.Text = ((JsonNumber)sessionstats["sessionCount"]).ToString();
                 secondsActiveValue1.Text = Toolbox.FormatTimespanLong(ts);
-                ts = TimeSpan.FromSeconds(((JsonNumber)cumulativestats["secondsActive"]).ToInt32());
-                downloadedBytesValue2.Text = Toolbox.GetFileSize(((JsonNumber)cumulativestats["downloadedBytes"]).ToInt64());
-                uploadedBytesValue2.Text = Toolbox.GetFileSize(((JsonNumber)cumulativestats["uploadedBytes"]).ToInt64());
+                ts = TimeSpan.FromSeconds(Toolbox.ToInt(cumulativestats["secondsActive"]));
+                downloadedBytesValue2.Text = Toolbox.GetFileSize(Toolbox.ToLong(cumulativestats["downloadedBytes"]));
+                uploadedBytesValue2.Text = Toolbox.GetFileSize(Toolbox.ToLong(cumulativestats["uploadedBytes"]));
                 filesAddedValue2.Text = ((JsonNumber)cumulativestats["filesAdded"]).ToString();
                 sessionCountValue2.Text = ((JsonNumber)cumulativestats["sessionCount"]).ToString();
                 secondsActiveValue2.Text = ts.Ticks < 0 ? OtherStrings.UnknownNegativeResult : Toolbox.FormatTimespanLong(ts);

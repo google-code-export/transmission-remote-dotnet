@@ -1209,7 +1209,7 @@ namespace TransmissionRemoteDotnet
                 trackersListView.SuspendLayout();
                 foreach (JsonObject tracker in t.Trackers)
                 {
-                    int tier = ((JsonNumber)tracker["tier"]).ToInt32();
+                    int tier = Toolbox.ToInt(tracker["tier"]);
                     string announceUrl = (string)tracker["announce"];
                     string scrapeUrl = (string)tracker["scrape"];
                     ListViewItem item = new ListViewItem(tier.ToString());
@@ -1277,10 +1277,10 @@ namespace TransmissionRemoteDotnet
                         decimal progress = Toolbox.ToProgress(peer[ProtocolConstants.FIELD_PROGRESS]);
                         item.SubItems.Add(progress + "%");
                         item.SubItems[5].Tag = progress;
-                        long rateToClient = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOCLIENT]).ToInt64();
+                        long rateToClient = Toolbox.ToLong(peer[ProtocolConstants.FIELD_RATETOCLIENT]);
                         item.SubItems.Add(Toolbox.GetSpeed(rateToClient));
                         item.SubItems[6].Tag = rateToClient;
-                        long rateToPeer = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOPEER]).ToInt64();
+                        long rateToPeer = Toolbox.ToLong(peer[ProtocolConstants.FIELD_RATETOPEER]);
                         item.SubItems.Add(Toolbox.GetSpeed(rateToPeer));
                         item.SubItems[7].Tag = rateToPeer;
                         peersListView.Items.Add(item);
@@ -1296,10 +1296,10 @@ namespace TransmissionRemoteDotnet
                         decimal progress = Toolbox.ToProgress(peer[ProtocolConstants.FIELD_PROGRESS]);
                         item.SubItems[3].Text = (string)peer[ProtocolConstants.FIELD_FLAGSTR];
                         item.SubItems[5].Text = progress + "%";
-                        long rateToClient = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOCLIENT]).ToInt64();
+                        long rateToClient = Toolbox.ToLong(peer[ProtocolConstants.FIELD_RATETOCLIENT]);
                         item.SubItems[6].Text = Toolbox.GetSpeed(rateToClient);
                         item.SubItems[6].Tag = rateToClient;
-                        long rateToPeer = ((JsonNumber)peer[ProtocolConstants.FIELD_RATETOPEER]).ToInt64();
+                        long rateToPeer = Toolbox.ToLong(peer[ProtocolConstants.FIELD_RATETOPEER]);
                         item.SubItems[7].Text = Toolbox.GetSpeed(rateToPeer);
                         item.SubItems[7].Tag = rateToPeer;
                     }

@@ -297,11 +297,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return profileConfMap.ContainsKey(REGKEY_USESSL) ? IntToBool(profileConfMap[REGKEY_USESSL]) : false;
+                return profileConfMap.ContainsKey(REGKEY_USESSL) ? ToBool(profileConfMap[REGKEY_USESSL]) : false;
             }
             set
             {
-                profileConfMap[REGKEY_USESSL] = BoolToInt(value);
+                profileConfMap[REGKEY_USESSL] = ToInt(value);
             }
         }
 
@@ -321,11 +321,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return profileConfMap.ContainsKey(REGKEY_AUTOCONNECT) ? IntToBool(profileConfMap[REGKEY_AUTOCONNECT]) : false;
+                return profileConfMap.ContainsKey(REGKEY_AUTOCONNECT) ? ToBool(profileConfMap[REGKEY_AUTOCONNECT]) : false;
             }
             set
             {
-                profileConfMap[REGKEY_AUTOCONNECT] = BoolToInt(value);
+                profileConfMap[REGKEY_AUTOCONNECT] = ToInt(value);
             }
         }
 
@@ -357,20 +357,20 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return profileConfMap.ContainsKey(REGKEY_AUTHENABLED) ? IntToBool(profileConfMap[REGKEY_AUTHENABLED]) : false;
+                return profileConfMap.ContainsKey(REGKEY_AUTHENABLED) ? ToBool(profileConfMap[REGKEY_AUTHENABLED]) : false;
             }
             set
             {
-                profileConfMap[REGKEY_AUTHENABLED] = BoolToInt(value);
+                profileConfMap[REGKEY_AUTHENABLED] = ToInt(value);
             }
         }
 
-        private static bool IntToBool(object o)
+        private static bool ToBool(object o)
         {
             return (int)o == 1;
         }
 
-        private static int BoolToInt(bool b)
+        private static int ToInt(bool b)
         {
             return b ? 1 : 0;
         }
@@ -379,11 +379,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return profileConfMap.ContainsKey(REGKEY_MINTOTRAY) ? IntToBool(profileConfMap[REGKEY_MINTOTRAY]) : false;
+                return profileConfMap.ContainsKey(REGKEY_MINTOTRAY) ? ToBool(profileConfMap[REGKEY_MINTOTRAY]) : false;
             }
             set
             {
-                profileConfMap[REGKEY_MINTOTRAY] = BoolToInt(value);
+                profileConfMap[REGKEY_MINTOTRAY] = ToInt(value);
             }
         }
 
@@ -458,11 +458,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return profileConfMap.ContainsKey(REGKEY_PLINKENABLE) ? IntToBool(profileConfMap[REGKEY_PLINKENABLE]) : false;
+                return profileConfMap.ContainsKey(REGKEY_PLINKENABLE) ? ToBool(profileConfMap[REGKEY_PLINKENABLE]) : false;
             }
             set
             {
-                profileConfMap[REGKEY_PLINKENABLE] = BoolToInt(value);
+                profileConfMap[REGKEY_PLINKENABLE] = ToInt(value);
             }
         }
 
@@ -506,11 +506,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return profileConfMap.ContainsKey(REGKEY_PROXYAUTH) ? IntToBool(profileConfMap[REGKEY_PROXYAUTH]) : false;
+                return profileConfMap.ContainsKey(REGKEY_PROXYAUTH) ? ToBool(profileConfMap[REGKEY_PROXYAUTH]) : false;
             }
             set
             {
-                profileConfMap[REGKEY_PROXYAUTH] = BoolToInt(value);
+                profileConfMap[REGKEY_PROXYAUTH] = ToInt(value);
             }
         }
 
@@ -518,11 +518,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return profileConfMap.ContainsKey(REGKEY_STARTPAUSED) ? IntToBool(profileConfMap[REGKEY_STARTPAUSED]) : false;
+                return profileConfMap.ContainsKey(REGKEY_STARTPAUSED) ? ToBool(profileConfMap[REGKEY_STARTPAUSED]) : false;
             }
             set
             {
-                profileConfMap[REGKEY_STARTPAUSED] = BoolToInt(value);
+                profileConfMap[REGKEY_STARTPAUSED] = ToInt(value);
             }
         }
 
@@ -558,11 +558,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return profileConfMap.ContainsKey(REGKEY_STARTEDBALLOON) ? IntToBool(profileConfMap[REGKEY_STARTEDBALLOON]) : true;
+                return profileConfMap.ContainsKey(REGKEY_STARTEDBALLOON) ? ToBool(profileConfMap[REGKEY_STARTEDBALLOON]) : true;
             }
             set
             {
-                profileConfMap[REGKEY_STARTEDBALLOON] = BoolToInt(value);
+                profileConfMap[REGKEY_STARTEDBALLOON] = ToInt(value);
             }
         }
 
@@ -570,11 +570,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return profileConfMap.ContainsKey(REGKEY_COMPLETEDBALLOON) ? IntToBool(profileConfMap[REGKEY_COMPLETEDBALLOON]) : true;
+                return profileConfMap.ContainsKey(REGKEY_COMPLETEDBALLOON) ? ToBool(profileConfMap[REGKEY_COMPLETEDBALLOON]) : true;
             }
             set
             {
-                profileConfMap[REGKEY_COMPLETEDBALLOON] = BoolToInt(value);
+                profileConfMap[REGKEY_COMPLETEDBALLOON] = ToInt(value);
             }
         }
 
@@ -582,11 +582,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return profileConfMap.ContainsKey(REGKEY_MINONCLOSE) ? IntToBool(profileConfMap[REGKEY_MINONCLOSE]) : false;
+                return profileConfMap.ContainsKey(REGKEY_MINONCLOSE) ? ToBool(profileConfMap[REGKEY_MINONCLOSE]) : false;
             }
             set
             {
-                profileConfMap[REGKEY_MINONCLOSE] = BoolToInt(value);
+                profileConfMap[REGKEY_MINONCLOSE] = ToInt(value);
             }
         }
     }

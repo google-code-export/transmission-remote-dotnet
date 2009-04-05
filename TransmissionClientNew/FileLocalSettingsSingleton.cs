@@ -207,7 +207,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileKey.Contains(REGKEY_PORT) ? ObjToInt(this.profileKey[REGKEY_PORT]) : 9091;
+                return this.profileKey.Contains(REGKEY_PORT) ? ObjToolbox.ToInt(this.profileKey[REGKEY_PORT]) : 9091;
             }
             set
             {
@@ -219,11 +219,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileKey.Contains(REGKEY_USESSL) ? ObjToBool(this.profileKey[REGKEY_USESSL]) : false;
+                return this.profileKey.Contains(REGKEY_USESSL) ? ObjToolbox.ToBool(this.profileKey[REGKEY_USESSL]) : false;
             }
             set
             {
-                this.profileKey[REGKEY_USESSL] = BoolToInt(value);
+                this.profileKey[REGKEY_USESSL] = BoolToolbox.ToInt(value);
             }
         }
 
@@ -231,7 +231,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileKey.Contains(REGKEY_REFRESHRATE) ? ObjToInt(this.profileKey[REGKEY_REFRESHRATE]) : 3;
+                return this.profileKey.Contains(REGKEY_REFRESHRATE) ? ObjToolbox.ToInt(this.profileKey[REGKEY_REFRESHRATE]) : 3;
             }
             set
             {
@@ -239,11 +239,11 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        private int ObjToInt(object o)
+        private int ObjToolbox.ToInt(object o)
         {
             if (o.GetType() == typeof(JsonNumber))
             {
-                return ((JsonNumber)o).ToInt32();
+                return ((JsonNumber)o).Toolbox.ToInt32();
             }
             else
             {
@@ -251,11 +251,11 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        private bool ObjToBool(object o)
+        private bool ObjToolbox.ToBool(object o)
         {
             if (o.GetType() == typeof(JsonNumber))
             {
-                return ((JsonNumber)o).ToInt32() == 1;
+                return ((JsonNumber)o).Toolbox.ToInt32() == 1;
             }
             else
             {
@@ -263,7 +263,7 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        private int BoolToInt(bool b)
+        private int BoolToolbox.ToInt(bool b)
         {
             return b ? 1 : 0;
         }
@@ -272,11 +272,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileKey.Contains(REGKEY_AUTOCONNECT) ? ObjToBool(this.profileKey[REGKEY_AUTOCONNECT]) : false;
+                return this.profileKey.Contains(REGKEY_AUTOCONNECT) ? ObjToolbox.ToBool(this.profileKey[REGKEY_AUTOCONNECT]) : false;
             }
             set
             {
-                this.profileKey[REGKEY_AUTOCONNECT] = BoolToInt(value);
+                this.profileKey[REGKEY_AUTOCONNECT] = BoolToolbox.ToInt(value);
             }
         }
 
@@ -308,11 +308,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileKey.Contains(REGKEY_AUTHENABLED) ? ObjToBool(this.profileKey[REGKEY_AUTHENABLED]) : false;
+                return this.profileKey.Contains(REGKEY_AUTHENABLED) ? ObjToolbox.ToBool(this.profileKey[REGKEY_AUTHENABLED]) : false;
             }
             set
             {
-                this.profileKey[REGKEY_AUTHENABLED] = BoolToInt(value);
+                this.profileKey[REGKEY_AUTHENABLED] = BoolToolbox.ToInt(value);
             }
         }
 
@@ -320,11 +320,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileKey.Contains(REGKEY_MINTOTRAY) ? ObjToBool(this.profileKey[REGKEY_MINTOTRAY]) : false;
+                return this.profileKey.Contains(REGKEY_MINTOTRAY) ? ObjToolbox.ToBool(this.profileKey[REGKEY_MINTOTRAY]) : false;
             }
             set
             {
-                this.profileKey[REGKEY_MINTOTRAY] = BoolToInt(value);
+                this.profileKey[REGKEY_MINTOTRAY] = BoolToolbox.ToInt(value);
             }
         }
 
@@ -334,7 +334,7 @@ namespace TransmissionRemoteDotnet
             {
                 if (this.profileKey.Contains(REGKEY_PROXYENABLED))
                 {
-                    return (ProxyMode)(ObjToInt(this.profileKey[REGKEY_PROXYENABLED]));
+                    return (ProxyMode)(ObjToolbox.ToInt(this.profileKey[REGKEY_PROXYENABLED]));
                 }
                 else
                 {
@@ -363,7 +363,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileKey.Contains(REGKEY_PROXYPORT) ? ObjToInt(this.profileKey[REGKEY_PROXYPORT]) : 8080;
+                return this.profileKey.Contains(REGKEY_PROXYPORT) ? ObjToolbox.ToInt(this.profileKey[REGKEY_PROXYPORT]) : 8080;
             }
             set
             {
@@ -399,11 +399,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileKey.Contains(REGKEY_PROXYAUTH) ? ObjToBool(this.profileKey[REGKEY_PROXYAUTH]) : false;
+                return this.profileKey.Contains(REGKEY_PROXYAUTH) ? ObjToolbox.ToBool(this.profileKey[REGKEY_PROXYAUTH]) : false;
             }
             set
             {
-                this.profileKey[REGKEY_PROXYAUTH] = BoolToInt(value);
+                this.profileKey[REGKEY_PROXYAUTH] = BoolToolbox.ToInt(value);
             }
         }
 
@@ -411,11 +411,11 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileKey.Contains(REGKEY_STARTPAUSED) ? ObjToBool(this.profileKey[REGKEY_STARTPAUSED]) : false;
+                return this.profileKey.Contains(REGKEY_STARTPAUSED) ? ObjToolbox.ToBool(this.profileKey[REGKEY_STARTPAUSED]) : false;
             }
             set
             {
-                this.profileKey[REGKEY_STARTPAUSED] = BoolToInt(value);
+                this.profileKey[REGKEY_STARTPAUSED] = BoolToolbox.ToInt(value);
             }
         }
 
@@ -423,7 +423,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.profileKey.Contains(REGKEY_RETRYLIMIT) ? ObjToInt(this.profileKey[REGKEY_RETRYLIMIT]) : 3;
+                return this.profileKey.Contains(REGKEY_RETRYLIMIT) ? ObjToolbox.ToInt(this.profileKey[REGKEY_RETRYLIMIT]) : 3;
             }
             set
             {

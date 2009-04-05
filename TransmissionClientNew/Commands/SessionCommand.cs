@@ -51,9 +51,9 @@ namespace TransmissionRemoteDotnet.Commmands
                 descriptor.Version = 1.39;
             }
             if (arguments.Contains("rpc-version"))
-                descriptor.RpcVersion = ((JsonNumber)arguments["rpc-version"]).ToInt32();
+                descriptor.RpcVersion = Toolbox.ToInt(arguments["rpc-version"]);
             if (arguments.Contains("rpc-version-minimum"))
-                descriptor.RpcVersionMin = ((JsonNumber)arguments["rpc-version-minimum"]).ToInt32();
+                descriptor.RpcVersionMin = Toolbox.ToInt(arguments["rpc-version-minimum"]);
             descriptor.SessionData = (JsonObject)response[ProtocolConstants.KEY_ARGUMENTS];
             Program.DaemonDescriptor = descriptor;
         }

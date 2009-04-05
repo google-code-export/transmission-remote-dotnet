@@ -44,12 +44,12 @@ namespace TransmissionRemoteDotnet.Commmands
                 foreach (JsonObject torrent in torrents)
                 {
                     string hash = (string)torrent[ProtocolConstants.FIELD_HASHSTRING];
-                    totalUpload += ((JsonNumber)torrent[ProtocolConstants.FIELD_RATEUPLOAD]).ToInt64();
-                    totalDownload += ((JsonNumber)torrent[ProtocolConstants.FIELD_RATEDOWNLOAD]).ToInt64();
-                    totalSize += ((JsonNumber)torrent[ProtocolConstants.FIELD_TOTALSIZE]).ToInt64();
-                    totalDownloadedSize += ((JsonNumber)torrent[ProtocolConstants.FIELD_HAVEVALID]).ToInt64();
+                    totalUpload += Toolbox.ToLong(torrent[ProtocolConstants.FIELD_RATEUPLOAD]);
+                    totalDownload += Toolbox.ToLong(torrent[ProtocolConstants.FIELD_RATEDOWNLOAD]);
+                    totalSize += Toolbox.ToLong(torrent[ProtocolConstants.FIELD_TOTALSIZE]);
+                    totalDownloadedSize += Toolbox.ToLong(torrent[ProtocolConstants.FIELD_HAVEVALID]);
                     totalTorrents++;
-                    short status = ((JsonNumber)torrent[ProtocolConstants.FIELD_STATUS]).ToInt16();
+                    short status = Toolbox.ToShort(torrent[ProtocolConstants.FIELD_STATUS]);
                     if (status == ProtocolConstants.STATUS_DOWNLOADING)
                     {
                         totalDownloading++;
