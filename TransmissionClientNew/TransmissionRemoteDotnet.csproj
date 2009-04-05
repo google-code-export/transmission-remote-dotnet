@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{4691616B-6112-4361-B5FA-F44176844B54}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -136,11 +136,19 @@
     <Compile Include="Program.cs" />
     <Compile Include="PromiscuousCertificatePolicy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutDialog.de-DE.resx">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="AboutDialog.fr-FR.resx">
       <DependentUpon>AboutDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AboutDialog.resx">
       <DependentUpon>AboutDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorLogWindow.de-DE.resx">
+      <DependentUpon>ErrorLogWindow.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ErrorLogWindow.fr-FR.resx">
@@ -149,6 +157,10 @@
     <EmbeddedResource Include="ErrorLogWindow.resx">
       <DependentUpon>ErrorLogWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LocalSettingsDialog.de-DE.resx">
+      <DependentUpon>LocalSettingsDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="LocalSettingsDialog.fr-FR.resx">
       <DependentUpon>LocalSettingsDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,8 +168,15 @@
       <DependentUpon>LocalSettingsDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.de-DE.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.fr-FR.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherStrings.de-DE.resx">
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="OtherStrings.fr-FR.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -173,11 +192,19 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="RemoteSettingsDialog.de-DE.resx">
+      <DependentUpon>RemoteSettingsDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="RemoteSettingsDialog.fr-FR.resx">
       <DependentUpon>RemoteSettingsDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RemoteSettingsDialog.resx">
       <DependentUpon>RemoteSettingsDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatsDialog.de-DE.resx">
+      <DependentUpon>StatsDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="StatsDialog.fr-FR.resx">
@@ -186,11 +213,19 @@
     <EmbeddedResource Include="StatsDialog.resx">
       <DependentUpon>StatsDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TorrentPropertiesDialog.de-DE.resx">
+      <DependentUpon>TorrentPropertiesDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="TorrentPropertiesDialog.fr-FR.resx">
       <DependentUpon>TorrentPropertiesDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TorrentPropertiesDialog.resx">
       <DependentUpon>TorrentPropertiesDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UriPromptWindow.de-DE.resx">
+      <DependentUpon>UriPromptWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UriPromptWindow.fr-FR.resx">
       <DependentUpon>UriPromptWindow.cs</DependentUpon>
