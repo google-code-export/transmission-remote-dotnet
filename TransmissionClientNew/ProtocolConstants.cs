@@ -25,11 +25,13 @@ namespace TransmissionRemoteDotnet
             METHOD_TORRENTSTOP = "torrent-stop",
             METHOD_TORRENTSET = "torrent-set",
             METHOD_SESSIONGET = "session-get",
+            METHOD_SESSIONSET = "session-set",
             METHOD_TORRENTREMOVE = "torrent-remove",
             METHOD_TORRENTVERIFY = "torrent-verify",
             METHOD_TORRENTADD = "torrent-add",
             METHOD_TORRENTREANNOUNCE = "torrent-reannounce",
             METHOD_SESSIONSTATS = "session-stats",
+            METHOD_BLOCKLISTUPDATE = "blocklist-update",
             FIELD_PIECES = "pieces",
             FIELD_PIECECOUNT = "pieceCount",
             FIELD_PEERSSENDINGTOUS = "peersSendingToUs",
@@ -76,8 +78,8 @@ namespace TransmissionRemoteDotnet
             FIELD_HASHSTRING = "hashString",
             FIELD_DOWNLOADDIR = "downloadDir",
             FIELD_RECHECKPROGRESS = "recheckProgress",
-            FIELD_SEEDRATIOLIMIT = "seedRatioLimit", // get
-            FIELD_SEEDRATIOMODE = "seedRatioMode", // torrent-get
+            FIELD_SEEDRATIOLIMIT = "seedRatioLimit",
+            FIELD_SEEDRATIOMODE = "seedRatioMode",
             FIELD_SEEDRATIOLIMITED = "seedRatioLimited", // torrent-set
             VALUE_RECENTLY_ACTIVE = "recently-active",
             /* BEGIN CONFUSION */

@@ -21,9 +21,8 @@ namespace TransmissionRemoteDotnet
 
         private void button1_Click(object sender, EventArgs e)
         {
-            JsonObject request = new JsonObject();
-            request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTSET);
-            JsonObject arguments = new JsonObject();
+            JsonObject request = Requests.CreateBasicObject(ProtocolConstants.METHOD_TORRENTSET);
+            JsonObject arguments = Requests.GetArgObject(request);
             JsonArray ids = new JsonArray();
             foreach (ListViewItem item in this.selections)
             {
@@ -42,8 +41,6 @@ namespace TransmissionRemoteDotnet
                 request.Put(ProtocolConstants.FIELD_HONORSSESSIONLIMITS, honorsSessionLimits.Checked);
             if (seedRatioLimitedCheckBox.Enabled)
                 request.Put(ProtocolConstants.FIELD_SEEDRATIOLIMITED, seedRatioLimitedCheckBox.Checked);
-            request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
-            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
             Program.Form.CreateActionWorker().RunWorkerAsync(request);
             this.Close();
         }
@@ -82,7 +79,7 @@ namespace TransmissionRemoteDotnet
             try
             {
                 seedRatioLimitValue.Value = (decimal)firstTorrent.SeedRatioLimit;
-                seedRatioLimitedCheckBox.Enabled = firstTorrent.SeedRatioMode;
+                seedRatioLimitedCheckBox.Checked = firstTorrent.SeedRatioMode;
                 seedRatioLimitedCheckBox.Enabled = seedRatioLimitValue.Enabled = true;
             }
             catch

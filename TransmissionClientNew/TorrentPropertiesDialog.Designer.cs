@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TorrentPropertiesDialog));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.honorsSessionLimits = new System.Windows.Forms.CheckBox();
             this.seedRatioLimitedCheckBox = new System.Windows.Forms.CheckBox();
             this.seedRatioLimitValue = new System.Windows.Forms.NumericUpDown();
             this.peerLimitValue = new System.Windows.Forms.NumericUpDown();
@@ -44,7 +45,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.honorsSessionLimits = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.seedRatioLimitValue)).BeginInit();
@@ -76,6 +76,12 @@
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // honorsSessionLimits
+            // 
+            resources.ApplyResources(this.honorsSessionLimits, "honorsSessionLimits");
+            this.honorsSessionLimits.Name = "honorsSessionLimits";
+            this.honorsSessionLimits.UseVisualStyleBackColor = true;
             // 
             // seedRatioLimitedCheckBox
             // 
@@ -161,12 +167,6 @@
             // 
             resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
-            // 
-            // honorsSessionLimits
-            // 
-            resources.ApplyResources(this.honorsSessionLimits, "honorsSessionLimits");
-            this.honorsSessionLimits.Name = "honorsSessionLimits";
-            this.honorsSessionLimits.UseVisualStyleBackColor = true;
             // 
             // TorrentPropertiesDialog
             // 

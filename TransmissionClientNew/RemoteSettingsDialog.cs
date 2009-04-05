@@ -109,7 +109,7 @@ namespace TransmissionRemoteDotnet
                     PEXcheckBox.Tag = "pex-enabled";
                 }
                 // blocklist
-                if (blocklistEnabledCheckBox.Enabled = settings.Contains("blocklist-enabled"))
+                if (updateBlocklistButton.Enabled = blocklistEnabledCheckBox.Enabled = settings.Contains("blocklist-enabled"))
                 {
                     blocklistEnabledCheckBox.Checked = ((JsonNumber)settings["blocklist-enabled"]).ToBoolean();
                 }
@@ -158,9 +158,8 @@ namespace TransmissionRemoteDotnet
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            JsonObject request = new JsonObject();
-            request.Put(ProtocolConstants.KEY_METHOD, "session-set");
-            JsonObject arguments = new JsonObject();
+            JsonObject request = Requests.CreateBasicObject(ProtocolConstants.METHOD_SESSIONSET);
+            JsonObject arguments = Requests.GetArgObject(request);
             arguments.Put((string)IncomingPortValue.Tag, IncomingPortValue.Value);
             arguments.Put("port-forwarding-enabled", PortForward.Checked);
             arguments.Put((string)PEXcheckBox.Tag, PEXcheckBox.Checked);
@@ -198,8 +197,6 @@ namespace TransmissionRemoteDotnet
                 arguments.Put("blocklist-enabled", blocklistEnabledCheckBox.Checked);
             }
             arguments.Put("download-dir", DownloadToField.Text);
-            request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
-            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
             SettingsWorker.RunWorkerAsync(request);
             this.Close();
         }
@@ -224,6 +221,16 @@ namespace TransmissionRemoteDotnet
         private void altTimeConstraintEnabled_CheckedChanged(object sender, EventArgs e)
         {
             altTimeConstraintStartField.Enabled = altTimeConstraintEndField.Enabled = altTimeConstraintEnabled.Checked;
+        }
+
+        private void blocklistEnabledCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            updateBlocklistButton.Enabled = blocklistEnabledCheckBox.Checked;
+        }
+
+        private void updateBlocklistButton_Click(object sender, EventArgs e)
+        {
+            Program.Form.CreateActionWorker().RunWorkerAsync(Requests.BlocklistUpdate());
         }
     }
 }

@@ -228,7 +228,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_SEEDRATIOLIMIT]).ToDouble();
+                return double.Parse((string)info[ProtocolConstants.FIELD_SEEDRATIOLIMIT]);
             }
         }
 
@@ -236,7 +236,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return ((JsonNumber)info[ProtocolConstants.FIELD_SEEDRATIOMODE]).ToBoolean();
+                return ((JsonNumber)info[ProtocolConstants.FIELD_SEEDRATIOMODE]).ToInt32() > 0;
             }
         }
 

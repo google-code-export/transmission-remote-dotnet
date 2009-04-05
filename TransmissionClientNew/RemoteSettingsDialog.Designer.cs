@@ -65,6 +65,7 @@
             this.altTimeConstraintEnabled = new System.Windows.Forms.CheckBox();
             this.altSpeedLimitEnable = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.updateBlocklistButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LimitUploadValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LimitDownloadValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IncomingPortValue)).BeginInit();
@@ -222,6 +223,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.updateBlocklistButton);
             this.tabPage1.Controls.Add(this.blocklistEnabledCheckBox);
             this.tabPage1.Controls.Add(this.PeerLimitValue);
             this.tabPage1.Controls.Add(this.label1);
@@ -242,6 +244,7 @@
             resources.ApplyResources(this.blocklistEnabledCheckBox, "blocklistEnabledCheckBox");
             this.blocklistEnabledCheckBox.Name = "blocklistEnabledCheckBox";
             this.blocklistEnabledCheckBox.UseVisualStyleBackColor = true;
+            this.blocklistEnabledCheckBox.CheckedChanged += new System.EventHandler(this.blocklistEnabledCheckBox_CheckedChanged);
             // 
             // tabPage2
             // 
@@ -336,6 +339,13 @@
             resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
             // 
+            // updateBlocklistButton
+            // 
+            resources.ApplyResources(this.updateBlocklistButton, "updateBlocklistButton");
+            this.updateBlocklistButton.Name = "updateBlocklistButton";
+            this.updateBlocklistButton.UseVisualStyleBackColor = true;
+            this.updateBlocklistButton.Click += new System.EventHandler(this.updateBlocklistButton_Click);
+            // 
             // RemoteSettingsDialog
             // 
             this.AcceptButton = this.SaveButton;
@@ -407,5 +417,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.CheckBox blocklistEnabledCheckBox;
+        private System.Windows.Forms.Button updateBlocklistButton;
     }
 }

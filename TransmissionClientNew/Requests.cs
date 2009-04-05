@@ -18,31 +18,24 @@ namespace TransmissionRemoteDotnet
     {
         public static JsonObject SessionGet()
         {
-            JsonObject request = new JsonObject();
-            request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_SESSIONGET);
-            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.SessionGet);
-            return request;
+            return CreateBasicObject(ProtocolConstants.METHOD_SESSIONGET, ResponseTag.SessionGet);
         }
 
         public static JsonObject Generic(string method, JsonArray ids)
         {
-            JsonObject request = new JsonObject();
-            request.Put(ProtocolConstants.KEY_METHOD, method);
-            JsonObject arguments = new JsonObject();
+            JsonObject request = CreateBasicObject(method);
+            JsonObject args = GetArgObject(request);
             if (ids != null)
             {
-                arguments.Put(ProtocolConstants.KEY_IDS, ids);
+                args.Put(ProtocolConstants.KEY_IDS, ids);
             }
-            request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
-            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
             return request;
         }
 
         public static JsonObject Reannounce(ReannounceMode mode, JsonArray ids)
         {
-            JsonObject request = new JsonObject();
-            request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTREANNOUNCE);
-            JsonObject arguments = new JsonObject();
+            JsonObject request = CreateBasicObject(ProtocolConstants.METHOD_TORRENTREANNOUNCE);
+            JsonObject arguments = GetArgObject(request);
             switch (mode)
             {
                 case ReannounceMode.RecentlyActive:
@@ -55,23 +48,18 @@ namespace TransmissionRemoteDotnet
                     arguments.Put(ProtocolConstants.KEY_IDS, ids);
                     break;
             }
-            request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
-            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
             return request;
         }
 
         public static JsonObject RemoveTorrent(JsonArray ids, bool delete)
         {
-            JsonObject request = new JsonObject();
-            request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTREMOVE);
-            JsonObject arguments = new JsonObject();
+            JsonObject request = CreateBasicObject(ProtocolConstants.METHOD_TORRENTREMOVE);
+            JsonObject arguments = GetArgObject(request);
             if (delete && Program.DaemonDescriptor.Revision >= 7331)
             {
                 arguments.Put(ProtocolConstants.FIELD_DELETELOCALDATA, true);
             }
             arguments.Put(ProtocolConstants.KEY_IDS, ids);
-            request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
-            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
             return request;
         }
 
@@ -82,10 +70,8 @@ namespace TransmissionRemoteDotnet
 
         private static JsonObject Files(int id, bool includePriorities)
         {
-            JsonObject request = new JsonObject();
-            request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTGET);
-            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.UpdateFiles);
-            JsonObject arguments = new JsonObject();
+            JsonObject request = CreateBasicObject(ProtocolConstants.METHOD_TORRENTGET, ResponseTag.UpdateFiles);
+            JsonObject arguments = GetArgObject(request);
             JsonArray ids = new JsonArray();
             ids.Push(id);
             arguments.Put(ProtocolConstants.KEY_IDS, ids);
@@ -98,7 +84,6 @@ namespace TransmissionRemoteDotnet
                 fields.Put(ProtocolConstants.FIELD_WANTED);
             }
             arguments.Put(ProtocolConstants.KEY_FIELDS, fields);
-            request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
             return request;
         }
 
@@ -116,13 +101,10 @@ namespace TransmissionRemoteDotnet
                 throw new Exception("Empty file");
             }
             inFile.Close();
-            JsonObject request = new JsonObject();
-            JsonObject arguments = new JsonObject();
+            JsonObject request = CreateBasicObject(ProtocolConstants.METHOD_TORRENTADD);
+            JsonObject arguments = GetArgObject(request);
             arguments.Put(ProtocolConstants.FIELD_METAINFO, Convert.ToBase64String(binaryData, 0, binaryData.Length));
             arguments.Put(ProtocolConstants.FIELD_PAUSED, LocalSettingsSingleton.Instance.StartPaused);
-            request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
-            request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTADD);
-            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
             if (deleteAfter && File.Exists(file))
             {
                 try
@@ -136,30 +118,46 @@ namespace TransmissionRemoteDotnet
 
         public static JsonObject TorrentAddByUrl(string url)
         {
-            JsonObject request = new JsonObject();
-            request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTADD);
-            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.DoNothing);
-            JsonObject arguments = new JsonObject();
+            JsonObject request = CreateBasicObject(ProtocolConstants.METHOD_TORRENTADD);
+            JsonObject arguments = GetArgObject(request);
             arguments.Put(ProtocolConstants.FIELD_FILENAME, url);
             arguments.Put(ProtocolConstants.FIELD_PAUSED, LocalSettingsSingleton.Instance.StartPaused);
-            request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
             return request;
         }
-        
+
+        public static JsonObject CreateBasicObject(string method)
+        {
+            return CreateBasicObject(method, ResponseTag.DoNothing);
+        }
+
+        public static JsonObject CreateBasicObject(string method, ResponseTag tag)
+        {
+            JsonObject obj = new JsonObject();
+            obj.Put(ProtocolConstants.KEY_TAG, (int)tag);
+            obj.Put(ProtocolConstants.KEY_METHOD, method);
+            obj.Put(ProtocolConstants.KEY_ARGUMENTS, new JsonObject());
+            return obj;
+        }
+
+        public static JsonObject GetArgObject(JsonObject obj)
+        {
+            return (JsonObject)obj[ProtocolConstants.KEY_ARGUMENTS];
+        }
+
         public static JsonObject SessionStats()
         {
-            JsonObject request = new JsonObject();
-            request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_SESSIONSTATS);
-            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.SessionStats);
-            return request;
+            return CreateBasicObject(ProtocolConstants.METHOD_SESSIONSTATS, ResponseTag.SessionStats);
+        }
+
+        public static JsonObject BlocklistUpdate()
+        {
+            return CreateBasicObject(ProtocolConstants.METHOD_BLOCKLISTUPDATE);
         }
 
         public static JsonObject TorrentGet()
         {
-            JsonObject request = new JsonObject();
-            request.Put(ProtocolConstants.KEY_METHOD, ProtocolConstants.METHOD_TORRENTGET);
-            request.Put(ProtocolConstants.KEY_TAG, (int)ResponseTag.TorrentGet);
-            JsonObject arguments = new JsonObject();
+            JsonObject request = CreateBasicObject(ProtocolConstants.METHOD_TORRENTGET, ResponseTag.TorrentGet);
+            JsonObject arguments = GetArgObject(request);
             JsonArray fields = new JsonArray(new string[]{
                 ProtocolConstants.FIELD_ID,
                 ProtocolConstants.FIELD_ADDEDDATE,
@@ -202,13 +200,14 @@ namespace TransmissionRemoteDotnet
                 ProtocolConstants.FIELD_HASHSTRING,
                 ProtocolConstants.FIELD_DOWNLOADDIR,
                 ProtocolConstants.FIELD_SEEDRATIOLIMIT,
+                //ProtocolConstants.FIELD_SEEDRATIOLIMITED,
                 ProtocolConstants.FIELD_SEEDRATIOMODE,
+                ProtocolConstants.FIELD_HONORSSESSIONLIMITS,
                 /*"sizeWhenDone",, "isPrivate",
                 "hashString", "error",,
                 "peersKnown"*/
             });
             arguments.Put(ProtocolConstants.KEY_FIELDS, fields);
-            request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
             return request;
         }
     }
