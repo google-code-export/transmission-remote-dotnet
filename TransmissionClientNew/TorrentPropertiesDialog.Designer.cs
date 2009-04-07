@@ -91,6 +91,7 @@
             // 
             // seedRatioLimitValue
             // 
+            this.seedRatioLimitValue.DecimalPlaces = 2;
             resources.ApplyResources(this.seedRatioLimitValue, "seedRatioLimitValue");
             this.seedRatioLimitValue.Name = "seedRatioLimitValue";
             // 
