@@ -17,15 +17,6 @@
     <resheader name="version">2.0</resheader>
     <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
     <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
                 
     There are any number of "resheader" rows that contain simple 
     name/value pairs.
@@ -118,52 +109,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="torrentAndTabsSplitContainer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="torrentAndTabsSplitContainer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="torrentAndTabsSplitContainer.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
-    <value>Horizontal</value>
-  </data>
-  <data name="mainVerticalSplitContainer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="mainVerticalSplitContainer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="stateListBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="stateListBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="stateListBox.ItemHeight" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="stateListBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="stateListBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 400</value>
-  </data>
-  <data name="stateListBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="columnHeader6.Text" xml:space="preserve">
     <value>Nom</value>
   </data>
-  <data name="columnHeader6.Width" type="System.Int32, mscorlib">
-    <value>200</value>
-  </data>
   <data name="columnHeader7.Text" xml:space="preserve">
     <value>Taille</value>
-  </data>
-  <data name="columnHeader7.Width" type="System.Int32, mscorlib">
-    <value>80</value>
   </data>
   <data name="columnHeader8.Text" xml:space="preserve">
     <value>Terminé</value>
@@ -180,23 +132,14 @@
   <data name="columnHeader12.Text" xml:space="preserve">
     <value>Réception</value>
   </data>
-  <data name="columnHeader12.Width" type="System.Int32, mscorlib">
-    <value>80</value>
-  </data>
   <data name="columnHeader13.Text" xml:space="preserve">
     <value>Emission</value>
-  </data>
-  <data name="columnHeader13.Width" type="System.Int32, mscorlib">
-    <value>80</value>
   </data>
   <data name="columnHeader14.Text" xml:space="preserve">
     <value>Estimé</value>
   </data>
   <data name="columnHeader15.Text" xml:space="preserve">
     <value>Envoyé</value>
-  </data>
-  <data name="columnHeader15.Width" type="System.Int32, mscorlib">
-    <value>90</value>
   </data>
   <data name="columnHeader16.Text" xml:space="preserve">
     <value>Ratio</value>
@@ -210,836 +153,62 @@
   <data name="columnHeader30.Text" xml:space="preserve">
     <value>Tracker</value>
   </data>
-  <data name="columnHeader30.Width" type="System.Int32, mscorlib">
-    <value>140</value>
-  </data>
-  <data name="torrentListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="torrentListView.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="torrentListView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="torrentListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>861, 416</value>
-  </data>
-  <data name="torrentListView.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="mainVerticalSplitContainer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>974, 416</value>
-  </data>
-  <data name="mainVerticalSplitContainer.SplitterDistance" type="System.Int32, mscorlib">
-    <value>109</value>
-  </data>
-  <data name="mainVerticalSplitContainer.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="splitContainer3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="splitContainer3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="splitContainer3.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
-    <value>Horizontal</value>
-  </data>
-  <data name="splitContainer4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="splitContainer4.IsSplitterFixed" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="splitContainer4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="piecesLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="piecesLabel.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="piecesLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="piecesLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="piecesLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
-  </data>
-  <data name="piecesLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="piecesLabel.Text" xml:space="preserve">
     <value>Morceaux :</value>
-  </data>
-  <data name="piecesLabel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="downloadProgressLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="downloadProgressLabel.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="downloadProgressLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="downloadProgressLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="downloadProgressLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 10</value>
-  </data>
-  <data name="downloadProgressLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 13</value>
-  </data>
-  <data name="downloadProgressLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="downloadProgressLabel.Text" xml:space="preserve">
     <value>Téléchargé :</value>
   </data>
-  <data name="splitContainer5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="splitContainer5.IsSplitterFixed" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="splitContainer5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="piecesGraph.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="piecesGraph.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="piecesGraph.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="piecesGraph.Size" type="System.Drawing.Size, System.Drawing">
-    <value>801, 25</value>
-  </data>
-  <data name="piecesGraph.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="piecesGraph.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="progressBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="progressBar.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="progressBar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="progressBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="progressBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>801, 25</value>
-  </data>
-  <data name="progressBar.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="percentageLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="percentageLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="percentageLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 10</value>
-  </data>
-  <data name="percentageLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="percentageLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="splitContainer5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>877, 25</value>
-  </data>
-  <data name="splitContainer5.SplitterDistance" type="System.Int32, mscorlib">
-    <value>801</value>
-  </data>
-  <data name="splitContainer5.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="splitContainer4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>960, 25</value>
-  </data>
-  <data name="splitContainer4.SplitterDistance" type="System.Int32, mscorlib">
-    <value>79</value>
-  </data>
-  <data name="splitContainer4.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="splitContainer3.Panel2.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="generalTorrentNameGroupBox.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="createdByLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="createdByLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="createdByLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>646, 118</value>
-  </data>
-  <data name="createdByLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="createdByLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
-  </data>
-  <data name="label17.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label17.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="label17.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>555, 118</value>
-  </data>
-  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 13</value>
-  </data>
-  <data name="label17.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
-  </data>
   <data name="label17.Text" xml:space="preserve">
     <value>Créé par :</value>
-  </data>
-  <data name="createdAtLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="createdAtLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="createdAtLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>646, 94</value>
-  </data>
-  <data name="createdAtLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="createdAtLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
-  </data>
-  <data name="label16.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label16.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>555, 94</value>
-  </data>
-  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 13</value>
-  </data>
-  <data name="label16.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
   </data>
   <data name="label16.Text" xml:space="preserve">
     <value>Créé le :</value>
   </data>
-  <data name="errorLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="errorLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="errorLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>646, 143</value>
-  </data>
-  <data name="errorLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="errorLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="errorLabel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="labelForErrorLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelForErrorLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="labelForErrorLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelForErrorLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>555, 143</value>
-  </data>
-  <data name="labelForErrorLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 13</value>
-  </data>
-  <data name="labelForErrorLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
   <data name="labelForErrorLabel.Text" xml:space="preserve">
     <value>Erreur :</value>
-  </data>
-  <data name="labelForErrorLabel.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="commentLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="commentLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="commentLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 143</value>
-  </data>
-  <data name="commentLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="commentLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="label15.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label15.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="label15.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 143</value>
-  </data>
-  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 13</value>
-  </data>
-  <data name="label15.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
   </data>
   <data name="label15.Text" xml:space="preserve">
     <value>Commentaire :</value>
   </data>
-  <data name="ratioLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ratioLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ratioLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>646, 71</value>
-  </data>
-  <data name="ratioLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="ratioLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="label14.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label14.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="label14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>555, 71</value>
-  </data>
-  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 13</value>
-  </data>
-  <data name="label14.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
   <data name="label14.Text" xml:space="preserve">
     <value>Ratio :</value>
-  </data>
-  <data name="leechersLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="leechersLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="leechersLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>646, 49</value>
-  </data>
-  <data name="leechersLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="leechersLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="seedersLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="seedersLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="seedersLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>646, 25</value>
-  </data>
-  <data name="seedersLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="seedersLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="label13.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label13.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="label13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>555, 49</value>
-  </data>
-  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 13</value>
-  </data>
-  <data name="label13.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
     <value>Clients :</value>
   </data>
-  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="label10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>555, 25</value>
-  </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 13</value>
-  </data>
-  <data name="label10.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
   <data name="label10.Text" xml:space="preserve">
     <value>Sources :</value>
-  </data>
-  <data name="uploadLimitLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="uploadLimitLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="uploadLimitLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>385, 94</value>
-  </data>
-  <data name="uploadLimitLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="uploadLimitLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="label12.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label12.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>287, 94</value>
-  </data>
-  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 13</value>
-  </data>
-  <data name="label12.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
     <value>Limite d'envoi :</value>
   </data>
-  <data name="uploadRateLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="uploadRateLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="uploadRateLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>385, 71</value>
-  </data>
-  <data name="uploadRateLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="uploadRateLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>287, 71</value>
-  </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 13</value>
-  </data>
-  <data name="label8.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
   <data name="label8.Text" xml:space="preserve">
     <value>Taux d'envoi :</value>
-  </data>
-  <data name="uploadedLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="uploadedLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="uploadedLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>385, 49</value>
-  </data>
-  <data name="uploadedLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="uploadedLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>288, 49</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 13</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Envoyé :</value>
   </data>
-  <data name="remainingLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="remainingLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="remainingLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>385, 25</value>
-  </data>
-  <data name="remainingLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="remainingLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>287, 25</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 13</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Reste :</value>
-  </data>
-  <data name="statusLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="statusLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="statusLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 119</value>
-  </data>
-  <data name="statusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="statusLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 119</value>
-  </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 13</value>
-  </data>
-  <data name="label11.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
     <value>Etat :</value>
   </data>
-  <data name="downloadLimitLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="downloadLimitLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="downloadLimitLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 94</value>
-  </data>
-  <data name="downloadLimitLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="downloadLimitLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 94</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 13</value>
-  </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Limite de réception :</value>
-  </data>
-  <data name="downloadSpeedLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="downloadSpeedLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="downloadSpeedLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 71</value>
-  </data>
-  <data name="downloadSpeedLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="downloadSpeedLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 71</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 13</value>
-  </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Taux de réception :</value>
   </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 49</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 13</value>
-  </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Reçu :</value>
-  </data>
-  <data name="downloadedLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="downloadedLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="downloadedLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 49</value>
-  </data>
-  <data name="downloadedLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="downloadedLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="startedAtLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="startedAtLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="startedAtLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>385, 119</value>
-  </data>
-  <data name="startedAtLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="startedAtLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>287, 119</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 13</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Démarré le :</value>
   </data>
-  <data name="timeElapsedLabelLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="timeElapsedLabelLabel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="timeElapsedLabelLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="timeElapsedLabelLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="timeElapsedLabelLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 13</value>
-  </data>
-  <data name="timeElapsedLabelLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="timeElapsedLabelLabel.Text" xml:space="preserve">
     <value>Temps écoulé :</value>
-  </data>
-  <data name="timeElapsedLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="timeElapsedLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="timeElapsedLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 25</value>
-  </data>
-  <data name="timeElapsedLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="timeElapsedLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="generalTorrentNameGroupBox.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="generalTorrentNameGroupBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="generalTorrentNameGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 2</value>
-  </data>
-  <data name="generalTorrentNameGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>881, 172</value>
-  </data>
-  <data name="generalTorrentNameGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="splitContainer3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>960, 66</value>
-  </data>
-  <data name="splitContainer3.SplitterDistance" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="splitContainer3.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="generalTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="generalTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="generalTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>966, 72</value>
-  </data>
-  <data name="generalTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="generalTabPage.Text" xml:space="preserve">
     <value>Général</value>
@@ -1047,59 +216,11 @@
   <data name="columnHeader22.Text" xml:space="preserve">
     <value>Tiers</value>
   </data>
-  <data name="columnHeader22.Width" type="System.Int32, mscorlib">
-    <value>40</value>
-  </data>
   <data name="columnHeader20.Text" xml:space="preserve">
     <value>URL d'annonce</value>
   </data>
-  <data name="columnHeader20.Width" type="System.Int32, mscorlib">
-    <value>300</value>
-  </data>
   <data name="columnHeader21.Text" xml:space="preserve">
     <value>URL détaillée</value>
-  </data>
-  <data name="columnHeader21.Width" type="System.Int32, mscorlib">
-    <value>300</value>
-  </data>
-  <data name="trackersListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="trackersListView.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="trackersListView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="trackersListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>954, 47</value>
-  </data>
-  <data name="trackersListView.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="trackersTorrentNameGroupBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="trackersTorrentNameGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="trackersTorrentNameGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>960, 66</value>
-  </data>
-  <data name="trackersTorrentNameGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="trackersTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="trackersTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="trackersTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>966, 72</value>
-  </data>
-  <data name="trackersTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
   </data>
   <data name="trackersTabPage.Text" xml:space="preserve">
     <value>Trackers</value>
@@ -1107,20 +228,11 @@
   <data name="columnHeader1.Text" xml:space="preserve">
     <value>Chemin</value>
   </data>
-  <data name="columnHeader1.Width" type="System.Int32, mscorlib">
-    <value>500</value>
-  </data>
   <data name="columnHeader2.Text" xml:space="preserve">
     <value>Taille</value>
   </data>
-  <data name="columnHeader2.Width" type="System.Int32, mscorlib">
-    <value>70</value>
-  </data>
   <data name="columnHeader3.Text" xml:space="preserve">
     <value>Terminé</value>
-  </data>
-  <data name="columnHeader3.Width" type="System.Int32, mscorlib">
-    <value>70</value>
   </data>
   <data name="columnHeader4.Text" xml:space="preserve">
     <value>%</value>
@@ -1128,53 +240,8 @@
   <data name="columnHeader17.Text" xml:space="preserve">
     <value>Passer</value>
   </data>
-  <data name="columnHeader17.Width" type="System.Int32, mscorlib">
-    <value>55</value>
-  </data>
   <data name="columnHeader5.Text" xml:space="preserve">
     <value>Priorité</value>
-  </data>
-  <data name="columnHeader5.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="filesListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="filesListView.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="filesListView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="filesListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>954, 47</value>
-  </data>
-  <data name="filesListView.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="filesTorrentNameGroupBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="filesTorrentNameGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="filesTorrentNameGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>960, 66</value>
-  </data>
-  <data name="filesTorrentNameGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="filesTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="filesTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="filesTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>966, 72</value>
-  </data>
-  <data name="filesTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
   </data>
   <data name="filesTabPage.Text" xml:space="preserve">
     <value>Fichiers</value>
@@ -1182,20 +249,11 @@
   <data name="columnHeader23.Text" xml:space="preserve">
     <value>Adresse IP</value>
   </data>
-  <data name="columnHeader23.Width" type="System.Int32, mscorlib">
-    <value>115</value>
-  </data>
   <data name="columnHeader24.Text" xml:space="preserve">
     <value>Nom d'hôte</value>
   </data>
-  <data name="columnHeader24.Width" type="System.Int32, mscorlib">
-    <value>280</value>
-  </data>
   <data name="columnHeader25.Text" xml:space="preserve">
     <value>Pays</value>
-  </data>
-  <data name="columnHeader25.Width" type="System.Int32, mscorlib">
-    <value>100</value>
   </data>
   <data name="columnHeader31.Text" xml:space="preserve">
     <value>Flags</value>
@@ -1203,1329 +261,167 @@
   <data name="columnHeader26.Text" xml:space="preserve">
     <value>Client</value>
   </data>
-  <data name="columnHeader26.Width" type="System.Int32, mscorlib">
-    <value>130</value>
-  </data>
   <data name="columnHeader27.Text" xml:space="preserve">
     <value>Avancement</value>
-  </data>
-  <data name="columnHeader27.Width" type="System.Int32, mscorlib">
-    <value>70</value>
   </data>
   <data name="columnHeader28.Text" xml:space="preserve">
     <value>Taux de réception</value>
   </data>
-  <data name="columnHeader28.Width" type="System.Int32, mscorlib">
-    <value>80</value>
-  </data>
   <data name="columnHeader29.Text" xml:space="preserve">
     <value>Taux d'émission</value>
-  </data>
-  <data name="columnHeader29.Width" type="System.Int32, mscorlib">
-    <value>80</value>
-  </data>
-  <data name="peersListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="peersListView.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="peersListView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="peersListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>954, 47</value>
-  </data>
-  <data name="peersListView.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="peersTorrentNameGroupBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="peersTorrentNameGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="peersTorrentNameGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>960, 66</value>
-  </data>
-  <data name="peersTorrentNameGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="peersTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="peersTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="peersTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>966, 72</value>
-  </data>
-  <data name="peersTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
   </data>
   <data name="peersTabPage.Text" xml:space="preserve">
     <value>Sources</value>
   </data>
-  <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="splitContainer1.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
-    <value>Horizontal</value>
-  </data>
-  <data name="splitContainer2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="splitContainer2.IsSplitterFixed" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="splitContainer2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="label18.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label18.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 9</value>
-  </data>
-  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 13</value>
-  </data>
-  <data name="label18.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="label18.Text" xml:space="preserve">
     <value>Résolution :</value>
-  </data>
-  <data name="speedResComboBox.Items" xml:space="preserve">
-    <value>5 sec</value>
-  </data>
-  <data name="speedResComboBox.Items1" xml:space="preserve">
-    <value>10 sec</value>
-  </data>
-  <data name="speedResComboBox.Items2" xml:space="preserve">
-    <value>30 sec</value>
-  </data>
-  <data name="speedResComboBox.Items3" xml:space="preserve">
-    <value>5 min</value>
-  </data>
-  <data name="speedResComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>69, 6</value>
-  </data>
-  <data name="speedResComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 21</value>
-  </data>
-  <data name="speedResComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="splitContainer2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>954, 25</value>
-  </data>
-  <data name="splitContainer2.SplitterDistance" type="System.Int32, mscorlib">
-    <value>750</value>
-  </data>
-  <data name="splitContainer2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label20.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label20.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
-  </data>
-  <data name="label20.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 84</value>
-  </data>
-  <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 18</value>
-  </data>
-  <data name="label20.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
   </data>
   <data name="label20.Text" xml:space="preserve">
     <value>Réception</value>
   </data>
-  <data name="label19.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label19.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
-  </data>
-  <data name="label19.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 54</value>
-  </data>
-  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 18</value>
-  </data>
-  <data name="label19.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="label19.Text" xml:space="preserve">
     <value>Envoi</value>
-  </data>
-  <data name="speedGraph.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="speedGraph.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="speedGraph.Size" type="System.Drawing.Size, System.Drawing">
-    <value>954, 25</value>
-  </data>
-  <data name="speedGraph.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="speedGraph.Text" xml:space="preserve">
     <value>c2DPushGraph1</value>
   </data>
-  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>954, 47</value>
-  </data>
-  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="groupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>960, 66</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Usage global de la bande passante</value>
-  </data>
-  <data name="speedTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 23</value>
-  </data>
-  <data name="speedTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="speedTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>966, 72</value>
-  </data>
-  <data name="speedTabPage.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
   </data>
   <data name="speedTabPage.Text" xml:space="preserve">
     <value>Vitesse</value>
   </data>
-  <data name="torrentTabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tabControlImageList.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>396, 56</value>
-  </data>
-  <data name="tabControlImageList.ImageSize" type="System.Drawing.Size, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="torrentTabControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="torrentTabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>974, 99</value>
-  </data>
-  <data name="torrentTabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="torrentAndTabsSplitContainer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>974, 519</value>
-  </data>
-  <data name="torrentAndTabsSplitContainer.SplitterDistance" type="System.Int32, mscorlib">
-    <value>416</value>
-  </data>
-  <data name="torrentAndTabsSplitContainer.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>0, 519</value>
-  </data>
-  <data name="toolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 17</value>
-  </data>
-  <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 519</value>
-  </data>
-  <data name="statusStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>974, 22</value>
-  </data>
-  <data name="statusStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="statusStrip.Text" xml:space="preserve">
     <value>statusStrip1</value>
-  </data>
-  <data name="toolStripContainer1.ContentPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>974, 541</value>
-  </data>
-  <data name="toolStripContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="toolStripContainer1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
-  </data>
-  <data name="toolStripContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>974, 580</value>
-  </data>
-  <data name="toolStripContainer1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
   </data>
   <data name="toolStripContainer1.Text" xml:space="preserve">
     <value>toolStripContainer1</value>
   </data>
-  <data name="toolStripContainer1.TopToolStripPanel.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
-  </data>
-  <data name="toolStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="connectButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="connectButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="connectButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="connectButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 36</value>
-  </data>
   <data name="connectButton.Text" xml:space="preserve">
     <value>Connection</value>
-  </data>
-  <data name="disconnectButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        RK5CYII=
-</value>
-  </data>
-  <data name="disconnectButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="disconnectButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="disconnectButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 36</value>
   </data>
   <data name="disconnectButton.Text" xml:space="preserve">
     <value>Déconnection</value>
   </data>
-  <data name="disconnectButton.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 39</value>
-  </data>
-  <data name="toolStripSeparator4.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="addTorrentButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        fwIzf51sHS3RlwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="addTorrentButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="addTorrentButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="addTorrentButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 36</value>
-  </data>
   <data name="addTorrentButton.Text" xml:space="preserve">
     <value>Ajouter un Torrent</value>
-  </data>
-  <data name="addTorrentButton.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="addWebTorrentButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAACNFJREFUWEfVlnk0
-        lesex19DUSR2g6nh3E63c1bdaKDOrY7INUTaFJkyNRBOyFwpUlkUURFRHBaplOg0iSKSjlnYW9I2bLa9
-        lTlF2N/7bKdj3eHoVqd/7l7rs979vuv3e77fZ/w9FPV/9Vt/VY5am2YjuiE9UdbwbtW3u3M7lZ0K+xZZ
-        5nTI6KSXUKoXzlPyduaUhNLsr9sv7Ss0SiPj+F925750TWxCRkUvqtsG0dg9io4BoKZ9BKXN7xCb2wnz
-        sAbM0r9eR8nb+xAT0/68kQ0ZGrPMHtb6pXPBeM3HewB8ApM7CnY3H/1DwAD5yBd8JL/+UeABiw/T8CZI
-        rooppyRWq3+5CY1rFsquv/bHFwt6CzR2jIDZPkwYAYPQ1DWKVjIK7T2j4JCnAF7vKDrf8FHxGvC50YM5
-        2tdeUZKrt36+iY23Nyq7VryLKBzEg/ph5DIHkcMcQmJhKawjXWEaZgvTk3YwPbET24J3wfKkK+IfPkJ1
-        6zBq2obRwB3BjdphOFztxRzd1NfU5O8MPt2E3i25+fb5L3xv9yE8pxdpxQPIqXuPYvYwzCMdkcfIJz3n
-        gN3VSmhDaxcHpQ2VMDpmj6zqTjyuH0IhoYQ1hMN3yLo4z4WU8vFnFCWx5JNMiBhmhVvENeFH/yIk5HXj
-        KZuPEg6Qy+qBSbg1OD3tCCoIglWmFWxv2cInzwevBl7BKeYgkh834GZJP26WvkEBcxRRd1qxNqgU+oF1
-        oGibzv/vhamduXC5Z0mrSXQ1FjhmIKxgAPdeDiGzlodL5S+x9dR2tHSxoX9JH9NPTActnAbVJFW09LbA
-        Kfoggi4/QeydRiRl8+ARXQrZrZEQ0QzG9tgGKK6L4lKU+PqPj4LBPUfDU7VQcU+H3ZVX2J1eCc2wnTA+
-        a41tkTbwTPIBp7cdmy5tgvRJacyImIFVSavA7mMjLD0aRkfsQfe3x7KdW0GpEJR2gVq6E2s9LkPLuxzU
-        FOUgYmDqhCaktmVdtElg4zuHZFikcKF52hvZtQ/A6+OReW9FOxHn9HGgl6I3bkAwAvVd9eD1d6Cth0Ni
-        O1BaX4VF5kaQ1DwIarEdvjE8BrPQ56BkdDOI+JwJDSjaPco3PVcLcTVfiK31wcr9RmjubEZIbgg0YjWg
-        eVETmgmamBc+DzKhMpgZMRNzo+dC55oODG4aYPOtzThccpgY5UHdbReWedzDyn03sNAqGtsjajFpjtlj
-        Iv63CQ3MdXxSqROQQwwcIu6PYuk+PTS9boL9NXuI+4lDIkAC045Nw/RgMv+htDEDs87Oguw5WcjFyUEh
-        XgFm2WZktNqh7esCndAqGJ6txcagfLintmPyfIsSIr5yYgN2j4rowUWQ0j4JGb1wLPOijxuYcmgKJI9I
-        QuqYFKRDpMcNzD47G3LRcpCPk4diguK4AfpRH1gntUHv+GME5nQj4Jc+UPImAgMqExqYYXb3skVkDWbT
-        oyFrGIvl3r9Ngf99f6icUYFqlCpUYlSgEKYwPgWK5xSxJnUN1NLUoJ6uDo8nHuR05GHzEW/oBZfA/ToP
-        8dWAU2wTKCntR0R8+cQ7Qevn/ZYxLHy/Iw3yJklY4LwV+c8LxhZYS3cL2D2t5FhuhG6y7vgiVElSQc2r
-        GnD6yeHU1wreGx6esZjQOeSJBVZXILPpIhwvMED3KwMltvQqEV80sQGFTX9fF8AcMA4tgwz9EtQCU6AV
-        voPsY0dYnXfC4bRAcPu4f7gNo+8kwjLUHVZhXtDx20vi72L53mzIbbuKY7d4oK1KGKSoSUeJ+EfLtai4
-        weU7zintWOGSh+C8tzj19B32Z7HhksmEfojl2EH0n+dASy8b9ucOwuVGGfyz2+CUzELU00FEFQ7gNCnT
-        jjHN5CTcXE3EBYVp0scPIzktNUEh8kjlwP0yF8kMIKYcOPm4B/Qw67G97vfQD/QrdGy5vgXO2c5k2Dvg
-        GO2H4w9bkFAFJD0bxXUmUMAFUiuHILEq4g1FSZ4hwgs+qR5QSp7Hjc60IKlsELdekkZqgJ+rhqEXao8n
-        9b+Sfc4lW40UIoKgNlQ3M2FwdA/iy3pxvQ64/QIo4gE5zcASs7ugJi26T4T1CaKfZkBwm1E+nLrldDMe
-        tPBR0EYaJUZCc5/C5IwLzM78BPPTe2Ee7kJwg/EJNwRk3kcWC8gjolXk/nC7fhTLd+SCmqpSRERtCdKf
-        Kv4hTnIW9e2umMVuxSMplSMo7wTSnvGRXD6CDAYf98nN5+6LUeQ0EoNsoIT0uKYHqOwCQm53Q0E3YZia
-        rJRPGrMnyH2m+Hj4VGr6CvspaqfrtI4w4JDUDcfkd7CMHcTuxPewihvELvL0vTGCuKL3CMx4DdU9uRBW
-        3NlICc2IJ60YEWZ8qfjveUJk4SpTEspHJJTcnsibJPYs2RPHV9lXDlWPSig7F2P++vujtNUR3cJyxpWU
-        kEIKSXQmKBHE/6z4v+aLkZdvCOrfr9BIOxWbgcDwG9i2Yz9fZuacHPLdhaBN+CtB4msK/1dbWuvW7GOW
-        FqOqsARHfXwhS5OO+RpD/W9CFhYWMtbW1g6WlpbuVlZWblZWNm7m1jtcHcy3OVR6KOQN/6KFwZv66ExY
-        gXB9Wrma+j8O2NjY7CU5roJY8t/L1NTClkajSX3RaNDp9KXJyam9TU1tYDBegMlsAIPFQf2DLLy/sBB4
-        mwm8KQC6YvE2ajWeV9aBWccai6urewkWiw1/f3+uiIjIZmJA5LNN0Okbl8bGpvYyGByUlTWgnNwJyxhc
-        VGY+RN+JuUCDH1B3guw9J3QEqKCsgInyisaxuIoKFmpr2+Dp6dkvLEzt/aLFaGxsvNjR0ZHr63sIXl4H
-        +ALc9vvz/W2d+J3eNKB6A1CqCxT/gGqb+dDXpI96eh8cixNw4IA/zMzM+sTExH76IgMkSXTatGk/iIqK
-        7iP4ErwpYWHPqcLC3m4zhTKjVog8P6Us3BC5WIhlNFW4kKKEQkiMlyDuAz7k6Una+ZEw+bOn4EOCYO6m
-        EAQ32d8RvM8krCJsIGgQ1hHm/UGsIGfC6vdPhQLJySLT75cAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="addWebTorrentButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="addWebTorrentButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="addWebTorrentButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 36</value>
   </data>
   <data name="addWebTorrentButton.Text" xml:space="preserve">
     <value>Ajouter un Torrent à partir d'une URL</value>
   </data>
-  <data name="addWebTorrentButton.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 39</value>
-  </data>
-  <data name="toolStripSeparator1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="startAllToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 22</value>
-  </data>
   <data name="startAllToolStripMenuItem1.Text" xml:space="preserve">
     <value>Tout démarrer</value>
-  </data>
-  <data name="startTorrentButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="startTorrentButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="startTorrentButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="startTorrentButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="startTorrentButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 36</value>
   </data>
   <data name="startTorrentButton.Text" xml:space="preserve">
     <value>Démarrer le(s) torrent(s)</value>
   </data>
-  <data name="startTorrentButton.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="pauseAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 22</value>
-  </data>
   <data name="pauseAllToolStripMenuItem.Text" xml:space="preserve">
     <value>Tous en pause</value>
-  </data>
-  <data name="pauseTorrentButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="pauseTorrentButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAABCFJREFUWEftl21M
-        U2cUx5+yhbnvbp80iy68FhwUxY3MMKMJUdiLgUTZJlHshEhcRFc3bOMQGge6l9JLoZ2jhTk1UHxdtbJl
-        XJgaFXRzbhkb7iZGhMxlCsYPvgF/z+OG3oeWy0W/+IEm/+T23Hv+99fT9p5zDGzkZfJsZrcH89ng0BBj
-        BjyI/3cQwSIjhtkzT29lZwq8o86Jb1Nqc9ggs7Nbg5F0Yjjk2qcwhT0beZCdLSwSz8U7Bsz2Y6j7thvV
-        zV2CeOwty/dgRumk5s35yXjXvrQVB+ANXAjx2XGoG+u+OAVDovt6qE+MY6C+5SKGAPTffahrdDxMsS2+
-        82BR0olxAaKrmvM2t9/P4blqL3qLQOcVRNCHDQMg9X/SpOD3fqCz96E66LhrAHhfOgcWKx0fFyBW8r9p
-        ke/ndPSIXr9dBTwtfTAk1faHBSjZqUCmpMPdotouA/mfE0CcPoCMYhntlBP4U/RpvQRUHNQAKPpKQdMf
-        QMPPoprIaGmFfoD0tTL8lFP/k+jT2AWUNBJA8hgVeNelwHkW2HZclPMMkFmmHyB1jQyJfCqPiT5VnUBh
-        g0YF3vhMgbUdsHwnyvYjkG7TCWCU/LNWy7DRzS0tos8m8l7m0QBI36rAfATI2y+Kx1I26geIypdhDpLH
-        XtFnVQDIqNL4CpI+VpDVBCz6RtTrfiBmHQEk6PgRJkj+aXkyeM5on6xGYG5lH9hYv4GojxS8Ug+kfimK
-        x6YXEUCiPoDn3paR1hDGxwfEbdGowIsfKphLF832iOKx6WsmAJArh/fxUiVLNSowGiCFQLhSCWDaYwA8
-        8PkfYMy/4UyqAL/ZSMKjAkylCoT1mQSYrMBkBZ74CkRvUjBvJ5BWJ4rHXlirvxc8T4/iedRPQny+Bozl
-        Gk/CpFIFmdTBMvaIytpHj9Bi/QC8GfGcjN2iT2YzPVW3aQC8TO04l1pvDrVjtXhs1gTa8Qxqx7nUjnMI
-        Qu2zjNrxa1rteP6nCgpagZVHRRW0AXOs+ueB6Pdk8JyVBKH2ojAW1Wp0w8VOBR+cogmYktWyUOzVUp0A
-        NBUbC2VYTpMH3VDts+EkkO3TAMh2Kyg7D9goWS07xRbY9QMkF8ko/xWwErjah8ZKLN+lAfCOV4HjAo3O
-        dEO1HH8Biyv1A6TSR6+inIpfRvnQuF/g15gJzbQX+Gier6EL1fJSbMkE9oK09TJ8tNC4aDRX+9TRXlA8
-        5l4Q5xjYcOAigreAvbTBqBW8TcOlm1azGB0jWZTkX1jSjuAdoPlf0efwTaCs7QoMYVezBNeN7O0dKG/t
-        hS14SZBd7sVCaxstp9Wnx13NjNX7k80B8BzrEdGn7Ide5NWeo8XEfSPUx+Rxspdcf7N452UW6+oRxGOJ
-        Uh8zuS3jApjcZpZc0xPWh/vG1/zDTJ6GEZ97Y5d+t91IQ9cAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="pauseTorrentButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="pauseTorrentButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="pauseTorrentButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 36</value>
   </data>
   <data name="pauseTorrentButton.Text" xml:space="preserve">
     <value>Pause le(s) torrent(s)</value>
   </data>
-  <data name="pauseTorrentButton.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="recheckTorrentButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="recheckTorrentButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="recheckTorrentButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="recheckTorrentButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="recheckTorrentButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 36</value>
-  </data>
   <data name="recheckTorrentButton.Text" xml:space="preserve">
     <value>Re-vérifier le(s) torrent(s)</value>
-  </data>
-  <data name="recheckTorrentButton.ToolTipText" xml:space="preserve">
-    <value>Re-vérifier le(s) torrent(s)</value>
-  </data>
-  <data name="recheckTorrentButton.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="configureTorrentButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="configureTorrentButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAA+JJREFUWEft111M
-        m1UYB/CnUMZa0rVqAwuzc4Ox0hhBPoqAm9QFlsURmLpBv4BQOnDgEkYcJmLsnBuLOjY6mdkuFBJhoVHZ
-        MlnFIqPy4fieQ4tIBgVCh1pDGGZNE8W/573g2qv3vfLcvcnJ+f/yPOecnJfo/8EqkJCQEKnT6ZxxcXGn
-        2OcWwYui1Wb0trR8AZerB8XFximFQnGcISIEg6Smpp6re/sixse98Psfor9/AFqt1skAmwRBsBZEZGcf
-        nHZ87oZ37ldwo6HhPFj4bkEAXEhSUoKl+sRpuL/zYH5+BW1t7ZBIJBWCAbKyssSZmZmX8w8Zlixl1X+7
-        XMOw2WxBmUxmFgzBBTGELC0tOb2gwLDgdv/AWtG4LpfLSwVFcGEZGRnxhYVFc729d7lK/KNUKssFR7C2
-        7CooKJrp6RnH1aufICoqqkpwRE5Ozk6jsWSq+9sxNDd/BpVKVS04Ij9/v8pcVDrpco2gtbUdMTE7agVH
-        5OXlRZvNlrtdXUNwODqgVsfVbSBq2CkuI3qcd5Rer48qKbGOOp3fo+N6JxJTUt58lchyRkTrtWKx7yWi
-        swwRyivEYDAoLZVVgze7R2G3HIUtRISlK02YKCuGjug2r+Ebi5fn5kqPJabebwgLw5j+MAJTHkyfqsMh
-        ogk2R8wr4ggrMWv+GzaiwNdPbcPka1Z4P7qIlc4buJaSiL1EHVKirbwhThBJWPiD9hDCLdlmuJ9R416p
-        CYsf27HW9RXcxiMwEN1XEGXxhniL6MKHIkIjQ1wLJfTFbsNPFhOWmi4gODSA2fP1qN0iDT5J9DovCNYC
-        FbsIDrJqHGBH8E5bGGH46Z342WqGz/4BgqN3sOa8Abs6BhqiJl73RSXr90kRLd6KEGEiWY2ZoyYsN55D
-        YKgf65PjcOx7HilENxlCzks1uEUZYs87IRTse0yMe2kazJUb8VtjPQIDt4HFWXQbXuY25wCbGskbwkpU
-        9j5rxVhkODzpGixUGOHnEG4X8LsPg1YT2K4cZgAlbwj2aKi/LBHhx+jNmM7UYKnCgBX7WQR6uwD/Awxa
-        9Egn6mEACW+IEqKWZlkIftkuweweDZaP6bF66QyCbobwedF54AXEEtl5A7A7Qmwi+rJNHgrvDgkW9sbD
-        zxB/MsRf/d3AiBuno59YZ2/+fbwh2E9FOLuMOloVYvhipVjOisdKZSEeXXoPGOuDp9KEZ4kcvAG4hdn7
-        LewVok+vsEr4dkmxqtuNteN6oOldzOxP4vbCN7wCNhbPIzpZIwl5NLI9HA+fi8Z88lZUiWmVXQovCgLg
-        QnKJtIeJrtdsoj+KReRhL5dswcL/K+hfBWy7IKDQBNYAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="configureTorrentButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="configureTorrentButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="configureTorrentButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 36</value>
   </data>
   <data name="configureTorrentButton.Text" xml:space="preserve">
     <value>Définir les propriétés de(s) torrent(s)</value>
   </data>
-  <data name="configureTorrentButton.ToolTipText" xml:space="preserve">
-    <value>Définir les propriétés de(s) torrent(s)</value>
-  </data>
-  <data name="configureTorrentButton.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="removeTorrentButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="removeTorrentButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        rkJggg==
-</value>
-  </data>
-  <data name="removeTorrentButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="removeTorrentButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="removeTorrentButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 36</value>
-  </data>
   <data name="removeTorrentButton.Text" xml:space="preserve">
     <value>Retirer le(s) torrent(s)</value>
-  </data>
-  <data name="removeTorrentButton.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="removeAndDeleteButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="removeAndDeleteButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAACWtJREFUWEftl3tc
-        zmcfx39JM2ZO43EcyhazYSXpqZSxWIxhNjw1SQ6JrSKpyRwmh8kmhcVSOduSjE5EOheVSnV3d7o76SxF
-        peP9fq7M8+fDvefv5369vq/rd79e1+/3eV+f7/e6ft+fJP3/p4oDX0X1lVZEGUsWUQ5vWt3xGrg2JnjY
-        t4kJox3vZYz67l760PWx8f3+FXH1jSXBx6S5p+2l0eZGkv7Ofqo8+tVzlseNkKzifhjjnJb6+c7Sdvur
-        jbiGNLMjoh23sA5crrfjFNyGY1A7m35vw/pcC1/6NKC9Obd5gGVEiqTrvEMaqPfu3wdZl6IhWcW76OyV
-        Pdl5s4kjiV24hLbx5al6TH4qZ7JbEWMdZIy2y2DMuvuMtklAyyaOibZJGDo/ZOmRGlYFtLPgRCuD18TU
-        SRPXugqIPqqBCHF166Rjq87XcDod7IJa0T1QzWgXBSMc8xnybR5DrOPQ3xDIaItgei2+Re/FkfRZEErv
-        uUGom15E3fgsg8yDMN4mw8IPJrmUIk3e7C8A+r8eYmXcBsszVfikgol3E0NdaxjmXM5Ip2KGb8pGa9Wf
-        /HAshKKCfO7EpeJ46E8mW/gzaP4lAXCVXrMu09PoDJLOr0gTPRnxRQiLj3Wi7ZCPNMx0hwDo9UqIf9in
-        3PVK7sT8tyYmOkQzzy0UM7fb6DvexHTTBfwuh1H1qISSYgXFRQUoCmTcunWTz9cfQTLwQ9L3R/rYB+lD
-        b6SPjiFNOILmihjmHAWNSbZxQlz7lQDaruk53smg51GPtn0si7f6ExIRxcOHGWRl59BQ/5jHdXWUl5eT
-        nZ1NdHQ0cdF38Dp5gdVbj2Oz7aQYT2Hl5McKB18GTd/PYPMQZh+BN6c6ZAtxw1cC6O1Kk/2RpcT29xaG
-        O1cwdm04kVHxVFeWUZCfR2xsLKFhYeTm5lJcXEx+fj6RkbcJDrpCdNQt0tPuIcvOoKGunGuhd3lL/xB6
-        zpXouLcLR9blCHGTVwIY7EkrjC/p4mgCWJ1/jq79LaKi42huqKa6ooyw0BDCwkIpKBD2K4qpqKh8ARIj
-        nHiQlkJWRiqyh8kUFeZjtu4ikx3LmXG4kz72BSIdqgDsTitMLOsiPB/OP4DNQc38HP6Y6Ox6MmVFZGZk
-        Is/JIC8nnXKFnNrKYirLCikWtZCRkcHN6FT8wouxP9OCsftzPt7fQr8t+ajZ5ajowK7UwrgSJfcqIDS3
-        nZCcdgJSYEcobAlsxeFsHW6Xa/C4Uc/xmw2cvP1MXDey7eIz1vi2sPRYG/O8YI5nMx/sKaXftkL6bJbR
-        c6NMRQe2pxTGlyqJL4drsg5yapWUNkKS+B+YBV6JsO+2kl9utbP9agvLTzaw4FgjX/s+Z7l/C6sutbL2
-        ShPWl2oxO1rIEOdc3tosVx3gnz/cL4oXDiSUwR15E3m1XeQ9hvvCkbvFEFEEkbJG/ogvJDCxBOcLWVif
-        ysQxsAy74Gds+rOVVRfrsTxTzcITJQzdliMcEAB23Q6sfX0RTvs++VF3ESYKF5KKWymqV3I/s5SAJcu5
-        +NEkTnuew/OGjMNhJfjE1nE2uQH34Hx+vF7GFrdL/P7hFHwM52Ltfpd53ooXDvx9ACGeXC4gFK0khcVw
-        bekynmzZgnLfPmKmTuXkpp343yrit4Qn7L4iZ19APJ52u4iebkiXry/Nv/7KlflfY7PRj8HO8r9S0F2E
-        qjqQIBy4X9omHGjjgvl8mm1sUKaKs7migs6TJ8mabkDAwm847BeDu08k/otXkjnDhI7Tp1GWlkJeHq0+
-        PgSazmHQ1lx6O+a+BFijWgoSS7tILe8gXtFG2N6fSJ03j64DB1DGx4tiuE/nuXMo/mlIwHhd/CdOpUBc
-        d5w9izJZHKGJiSgvXUK2Zi3uSxww8ZAz1jWTHrZZSONXvR7AYGtCRXKZkrTKLsKynqKoeU64zzlhvR6d
-        3U4EBkJICJ1CpNLAgHJd3b/Eb9yAoCC6RJoezP4UF8s9LPHM5gtvOZqu6ajZihRoqwCg45L0OFkcRBlV
-        XdwtaKO0AfLrxRYMCCN4mhH1s2e/EFGeOkWXtzddXl4vrjs9PHi6ciUR+iZs/vYUlmdrme8pY+quVN5y
-        zEa9exdoqQCg55pUnyCKT1bdTkJxO8UNSkqegl9iPVbf+XN99FjqJ0+mxdqaFkdHWhwcaLa15YmZGTGa
-        WqyxPMxi7yKW+T5i0YlC0cDk8LZjFj02qArgkFgfn/+U3Kp2rqY3UlDXSXkTuB+PZP8sC2Sj3qVUQ4OC
-        AQOQDR/+IvJHjaJ03DgKRJpOzVrBsrUBfHFYzmc/ZbHQS46WSIG0XtSASg44JNSnVymJKWrF/EgumZVt
-        pEXGEjxnIdVjNalRV0chSYhqIleEXMDkDBxIkaYmVTo61JmbE/HpQuw3BrDgYA6LDucy/vsHqK1/qBqA
-        oXNUY8ojJZfSnjLjkJzw3y4TNfMT2rS0aBCCj0R0AyiEcNTAwUS8MxTFkCEoBEC5SM1jIyNav/mGe/MW
-        sHv1z5jsyWO4k4IeG3ORxlnLXvs6HrkyIvvawxaCMp5hdFDOtdlmdIiVtaqpUSuEa3r2pLh/f4InGeDk
-        dB57tzAuT/mEQu3xVIkdUSMAmubOpdPJibtm5hjvUjDKtQL1NSINwxamCwDjV/eFEx23LDqUy4PqDmZ4
-        FHDD3YtMszk0jxxJ09tvIx8xEk/9RSy0vcq8Q6VYHK/gu71J+M5ZTa6OLo2iGJuXLSP9a0sOLNvJhzuq
-        GOhcgtpM0ar1eveiEJ/0msZ0SF/po21nlntk8X1oCzmPniEPDyfc6FPuvz8eO1MHJtslMc6lig/capji
-        Vs1nByqw2JvFwSVupOtNJ3rGHLZv8MV8r5yhohfoYXq+S+qvnyyErUQMeH1n3N0+D561s5+57yPH04XE
-        FTznRGIrE36sYcLuGt5zq0V7e51Y3ROm7G5i2p5mDPe3M/twK3N/acT4YA2aLkX0/ipSnP+ONVKvEUEv
-        xYepIv6fORqS1NdEememV39DN9kYK78O/e2ZGO0tEi1WLTOPNmF6tBXjo20Y/NzCx3vrGLdVvP9XJ9PL
-        LKBd0rJRSG9qXxcP6/4o6c77//yp1lfcPEXSGGwj9df1koaaXlEbuzhS4/3liW+8b5nSQ9sytceYpfek
-        EeaxUn/DMKn3ewGSmsaP4h4LEVNFDBKh9ndW/t/mqr/MX/e33oQXUJKkJ2Lay1FHjBNFaIoYIuINVUT/
-        DfxTsBen22gUAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="removeAndDeleteButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="removeAndDeleteButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="removeAndDeleteButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 36</value>
   </data>
   <data name="removeAndDeleteButton.Text" xml:space="preserve">
     <value>Retirer et effacer le(s) torrent(s)</value>
   </data>
-  <data name="removeAndDeleteButton.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="remoteCmdButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="remoteCmdButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="remoteCmdButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 36</value>
-  </data>
-  <data name="remoteCmdButton.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 39</value>
-  </data>
-  <data name="toolStripSeparator2.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="localConfigureButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAABQ9JREFUWEftlmtM
-        k3cUxoHBYmKyiYmQEDJnZBM1YcIISkxALuFSWmEoMZlRggrKuDqKBJ0ksH0hwX1YYpYZjQajTAgXZcoY
-        8zZEBOTWSqVcSim30lJ6gRYol2fn/wpmRt2Xt92nNXnTy9ue8zvPec7518Hh/8d7FAgPD/cICws7HRER
-        XRYXl9AWH3+wNTo65iZ9lkH3PrG7cLGx8XXFxT+jqqoBDx8+p6ude11cfBEHDnwtDwkJOWpXCKFQ9PvV
-        qzUYHp5Ga2s/nj7tRVvbAKRSFRobJRCLv1shNQrtBkEVbhUK93ddvlyOFy9GcP9+Jxoa2vH4cTe9H0Z3
-        txICwYFl+l68TSCioqI8RaKv7ggEojssOQsaHBz8Kb1vLC2tgUSiwpMnUlJCRor0YmBgAo8etVM7DklD
-        Q0PdeUOQnN9euPALbtyoRUxMTAdBbF6F8GRKXLtWRZWr0N7eTzAKyOUjGBrSorCwBGFh+w7xBmBuLy+v
-        x8TEDFiyqChhEyngyQIT3OcxMbHNt27dQ1/fGGSyYSgU4/RdPcrKahEREXGRN0BcXFxbXd1TtLTI0ds7
-        htLSaoKIbg8KCvqMBd+92z+lqKiEEmvpmsDoqBY63Qz5ogUi0f76HTt2fMgLQih8BdDUJMODB10k8zCu
-        XKlg1XX4+X2RRm2QVlb+SVOhwciIFhqNHkajBffuNSEyUlCdkJDwAS8A6nnZzZt38eyZnHN7Y6MUXV1D
-        pMRtFBQUo6LiD/T3j3OVq9V6GAyzmJmZw/XrNQgMDKzilZz9OCDgy/Sioh/x/PkAjZoEzc09nOFkshFy
-        /CSUSg2XfHJSD73eBItlgTwwjZ4eJbKy8qy7dvmIeUH4+vpujowUDdbXt6CzU0EgfZzbX75UcT1nsqvV
-        05ieNmF+3oqpKRN5RUVKmDE2pkNoqGB5586dubwgfHx8jp48mU3VyynxKDmejRoz3BRXudE4i7m5BUpu
-        pOTDnCIGwwzYg6mRkZGL7du3neUFQVUUHT+evsLMJZezynVkOBPJbqbLApVKQ21RriafhdW6yAGwh1pt
-        QHp6jtXLy+sML4ht27wO7t27T5KTU4BLl35Fbe1fdD0GW8vMG1qtESaT+Y3kaxDsXmamGFu3bvmeFwRV
-        scnLa0sCKfKTv/+e3wICAioJrPrEibQVZsylpdeFv/WCQWRkiOHp6ZnDC2Ltx6tLxpk2ozMFFdPzslw+
-        9n4CusNadupUFjw8PAoojqNNQNaCuLu75yYlpZJJx98JsbCwSO1ZIu8YkZqaDTc3t3M2BWDB3N035Scm
-        pqwMDk6+AWGxzNPEGGhSDDQxi7SuzQgPFyxv3LiR33S8qwJXV9e8Y8e+oUWl5iDM5jmaEi3thVdjy8bV
-        al1ebUcmNmz46LytlXBydf34B9YOhYKdETrulGRLi0FoNAZucS0uLtOzGcnJ6Uvr16+3jTH/WQkLeuTI
-        iSW2vNhhxZbXGoRUOohuST8W5pe4wyst7TSoHfm2VsJh3bp15xMTk8mYE9QGHUGoCUIDSbcC5eUPIO9T
-        vV5Wfn57FDYHYAGdnZ3OshFlnmBKKEmJjo4+3K1rxti4DkbDPP2ZPQfyjv3+zBLHOWoHHd1MCS2dKUqu
-        HTqdBdnZeaD7bEM62UWB1aBs6RQcPpxEhpyk88GE8XEDHdln4OjoWGLzpfQvleQkJaWQEmo6G3LXKrdn
-        4W/HdnJyyPf29pa5uLgU2Vv2/7YyW2b7G8FyAJkpbsiZAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="localConfigureButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="localConfigureButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="localConfigureButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 36</value>
-  </data>
   <data name="localConfigureButton.Text" xml:space="preserve">
     <value>Paramètres locaux</value>
-  </data>
-  <data name="remoteConfigureButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="remoteConfigureButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="remoteConfigureButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="remoteConfigureButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 36</value>
   </data>
   <data name="remoteConfigureButton.Text" xml:space="preserve">
     <value>Paramètres distants</value>
   </data>
-  <data name="remoteConfigureButton.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="sessionStatsButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        TkSuQmCC
-</value>
-  </data>
-  <data name="sessionStatsButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="sessionStatsButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="sessionStatsButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 36</value>
-  </data>
   <data name="sessionStatsButton.Text" xml:space="preserve">
     <value>Afficher les statistiques</value>
-  </data>
-  <data name="sessionStatsButton.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="toolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
-  </data>
-  <data name="toolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 39</value>
-  </data>
-  <data name="toolStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="connectToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
   </data>
   <data name="connectToolStripMenuItem.Text" xml:space="preserve">
     <value>Connection</value>
   </data>
-  <data name="disconnectToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
-  </data>
   <data name="disconnectToolStripMenuItem.Text" xml:space="preserve">
     <value>Déconnection</value>
-  </data>
-  <data name="disconnectToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 6</value>
-  </data>
-  <data name="addTorrentToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
   </data>
   <data name="addTorrentToolStripMenuItem.Text" xml:space="preserve">
     <value>Ajouter un Torrent</value>
   </data>
-  <data name="addTorrentToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="addTorrentFromUrlToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
-  </data>
   <data name="addTorrentFromUrlToolStripMenuItem.Text" xml:space="preserve">
     <value>Ajouter un Torrent à partir d'une URL</value>
-  </data>
-  <data name="addTorrentFromUrlToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="fileMenuItemSeperator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 6</value>
-  </data>
-  <data name="fileMenuItemSeperator1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>Sortir</value>
   </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
-  </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>Fichier</value>
-  </data>
-  <data name="localSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 22</value>
   </data>
   <data name="localSettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Paramètres locaux</value>
   </data>
-  <data name="remoteSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 22</value>
-  </data>
   <data name="remoteSettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Paramètres distants</value>
-  </data>
-  <data name="remoteSettingsToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="optionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 20</value>
   </data>
   <data name="optionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Options</value>
   </data>
-  <data name="startToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="startToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
-  </data>
   <data name="startToolStripMenuItem.Text" xml:space="preserve">
     <value>Démarrer</value>
-  </data>
-  <data name="pauseToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="pauseToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
   </data>
   <data name="pauseToolStripMenuItem.Text" xml:space="preserve">
     <value>Pause</value>
   </data>
-  <data name="recheckToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="recheckToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
-  </data>
   <data name="recheckToolStripMenuItem.Text" xml:space="preserve">
     <value>Re-vérifier</value>
-  </data>
-  <data name="propertiesToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="propertiesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
   </data>
   <data name="propertiesToolStripMenuItem.Text" xml:space="preserve">
     <value>Propriétés</value>
   </data>
-  <data name="removeToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="removeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
-  </data>
   <data name="removeToolStripMenuItem.Text" xml:space="preserve">
     <value>Retirer</value>
-  </data>
-  <data name="removeDeleteToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="removeDeleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
   </data>
   <data name="removeDeleteToolStripMenuItem.Text" xml:space="preserve">
     <value>Retirer et effacer</value>
   </data>
-  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 6</value>
-  </data>
-  <data name="startAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
-  </data>
   <data name="startAllToolStripMenuItem.Text" xml:space="preserve">
     <value>Tout démarrer</value>
-  </data>
-  <data name="stopAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
   </data>
   <data name="stopAllToolStripMenuItem.Text" xml:space="preserve">
     <value>Tous en pause</value>
   </data>
-  <data name="torrentToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 20</value>
-  </data>
   <data name="torrentToolStripMenuItem.Text" xml:space="preserve">
     <value>Torrent</value>
-  </data>
-  <data name="torrentToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="showDetailsPanelToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 22</value>
   </data>
   <data name="showDetailsPanelToolStripMenuItem.Text" xml:space="preserve">
     <value>Panneau des détails</value>
   </data>
-  <data name="viewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
   <data name="viewToolStripMenuItem.Text" xml:space="preserve">
     <value>Vue</value>
-  </data>
-  <data name="showErrorLogToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
   </data>
   <data name="showErrorLogToolStripMenuItem.Text" xml:space="preserve">
     <value>Afficher le journal des erreurs</value>
   </data>
-  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 6</value>
-  </data>
-  <data name="projectSiteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
   <data name="projectSiteToolStripMenuItem.Text" xml:space="preserve">
     <value>Site du projet</value>
-  </data>
-  <data name="checkForNewVersionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
   </data>
   <data name="checkForNewVersionToolStripMenuItem.Text" xml:space="preserve">
     <value>Vérifier les mises à jour</value>
   </data>
-  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
-  </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>A propos de Transmission Remote</value>
-  </data>
-  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 20</value>
   </data>
   <data name="helpToolStripMenuItem.Text" xml:space="preserve">
     <value>Aide</value>
   </data>
-  <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>974, 24</value>
-  </data>
-  <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="menuStrip.Text" xml:space="preserve">
     <value>menuStrip1</value>
   </data>
-  <data name="flagsImageList.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>17, 17</value>
-  </data>
-  <data name="flagsImageList.ImageSize" type="System.Drawing.Size, System.Drawing">
-    <value>16, 12</value>
-  </data>
-  <data name="refreshWorker.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>461, 17</value>
-  </data>
-  <data name="notifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>590, 17</value>
-  </data>
-  <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
-        AABVWVelU1dV/VRYVvxUWFb8VFhW/FRYVvxUWFb8VFhW/FRYVvxUWFb8VFhW/FRYVvxUWFb8VFhW/FNX
-        VfxVWVfFVVlX73p/fP9/hIH/foJ//36DgP9+g4D/foOA/36CgP9+goD/foKA/36CgP99gn//fYJ//36D
-        gP9+g4D/VFhW/FhcWteHi4n/bXFv/1ZaWP9WWlj/VlpY/1ZaWP9WWlj/VlpY/1ZaWP9WWlj/VlpY/1Za
-        WP9maWf/jpKQ/1ZaWPBaXly5j5KQ/1tgXf/Jz8v/197Z/9fe2f+9wr3/R0ZA/3Z4c//V3Nf/197Z/9fe
-        2f/T2tX/VlpY/5eamP9ZXVvaWFxalIuOjP9tcm//s7q1/9fe2f+1u7b/QD45/0hKRf9ERED/WlpV/8zS
-        zf/X3tn/vsXB/2VoZv+Xm5n/W19dvFNXVXF7f336fH9+/5yinv+tsq3/PTw2/0lLSP9TV1X/U1dV/0hJ
-        RP9HR0H/vcK9/6etqf90eHb/h4uJ/1hcWplTV1VUbHBu8YaJh/+Ch4T/cHJt/zw6NP89Ozb/U1dV/1NX
-        Vf9APjn/NjQu/21uaP+Nk4//f4OB/3l9e/pTV1V0U1dVOGBkYu+OkpD/am9r/9fe2f/X3tn/NjQu/1RY
-        Vv9TV1X/OTcx/9LZ0//X3tn/c3h0/4mNi/9rb23xU1dVWFNXVRtYXFr0lJiW/1ZaWP/T2tX/197Z/1td
-        Wv9laWf/ZWln/1pcWP/S2dP/1dzX/1tfXf+RlJL/YGRi71NXVTsAAAADVFhW+42Rjv9tcW//V1tZ/1ld
-        W/9laGb/tby5/7S7uP9kaGb/WFxZ/1hcWv9rbmz/j5OR/1dbWfVTV1UfAAAAAFZaWJ9UWFb9VFhW/FRY
-        VvxVWFf8ZWln/7a9uv+2vbr/ZGhm/1NWVPxUWFb8VFhW/FRYVvxWWli/AAAAAQAAAAAAAAAAAAAABwAA
-        AAgAAAAIXGBeEGVpZ/+2vbr/tr26/2RoZv9JSzoQAAAACAAAAAgAAAAIAAAAAAAAAAAAAAAAAACUZAAA
-        leAAAJT2AACU9wMDk/dkaGj/tr26/7a9uv9kaGb/AACT9wAAlPcAAJT2AACV3AAAk1IAAAAAAAAAAAAA
-        k/wAAK3/AACz/wAAs/8DA7H/ZGhp/8/U0v/O09H/ZGhm/wAAs/8AALP/AACz/wAAq/8AAJTxAAAAAAAA
-        AAAAAJT9RUXl/0VF7f9FRe3/Rkbp/2Vpaf/k5ub/4uTk/2RoZv9FRe3/RUXt/0VF7f9BQeD/AACW8wAA
-        AAAAAAAAAACWdgIClu8CApX8AgKV/AIClfxJTHj+ZGhm/2RoZv9FSHr+AgKV/AIClfwCApX8AgKX7AAA
-        lWIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIABAAD4HwAAgAEAAIAB
-        AACAAQAAgAEAAA==
-</value>
-  </data>
   <data name="notifyIcon.Text" xml:space="preserve">
     <value>Transmission Remote</value>
-  </data>
-  <data name="refreshTimer.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>696, 17</value>
-  </data>
-  <data name="filesTimer.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>17, 56</value>
-  </data>
-  <data name="filesWorker.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>121, 56</value>
-  </data>
-  <data name="refreshElapsedTimer.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>234, 56</value>
-  </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="$this.TrayHeight" type="System.Int32, mscorlib">
-    <value>109</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>974, 604</value>
-  </data>
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
-        AABVWVelU1dV/VRYVvxUWFb8VFhW/FRYVvxUWFb8VFhW/FRYVvxUWFb8VFhW/FRYVvxUWFb8VFhW/FNX
-        VfxVWVfFVVlX73p/fP9/hIH/foJ//36DgP9+g4D/foOA/36CgP9+goD/foKA/36CgP99gn//fYJ//36D
-        gP9+g4D/VFhW/FhcWteHi4n/bXFv/1ZaWP9WWlj/VlpY/1ZaWP9WWlj/VlpY/1ZaWP9WWlj/VlpY/1Za
-        WP9maWf/jpKQ/1ZaWPBaXly5j5KQ/1tgXf/Jz8v/197Z/9fe2f+9wr3/R0ZA/3Z4c//V3Nf/197Z/9fe
-        2f/T2tX/VlpY/5eamP9ZXVvaWFxalIuOjP9tcm//s7q1/9fe2f+1u7b/QD45/0hKRf9ERED/WlpV/8zS
-        zf/X3tn/vsXB/2VoZv+Xm5n/W19dvFNXVXF7f336fH9+/5yinv+tsq3/PTw2/0lLSP9TV1X/U1dV/0hJ
-        RP9HR0H/vcK9/6etqf90eHb/h4uJ/1hcWplTV1VUbHBu8YaJh/+Ch4T/cHJt/zw6NP89Ozb/U1dV/1NX
-        Vf9APjn/NjQu/21uaP+Nk4//f4OB/3l9e/pTV1V0U1dVOGBkYu+OkpD/am9r/9fe2f/X3tn/NjQu/1RY
-        Vv9TV1X/OTcx/9LZ0//X3tn/c3h0/4mNi/9rb23xU1dVWFNXVRtYXFr0lJiW/1ZaWP/T2tX/197Z/1td
-        Wv9laWf/ZWln/1pcWP/S2dP/1dzX/1tfXf+RlJL/YGRi71NXVTsAAAADVFhW+42Rjv9tcW//V1tZ/1ld
-        W/9laGb/tby5/7S7uP9kaGb/WFxZ/1hcWv9rbmz/j5OR/1dbWfVTV1UfAAAAAFZaWJ9UWFb9VFhW/FRY
-        VvxVWFf8ZWln/7a9uv+2vbr/ZGhm/1NWVPxUWFb8VFhW/FRYVvxWWli/AAAAAQAAAAAAAAAAAAAABwAA
-        AAgAAAAIXGBeEGVpZ/+2vbr/tr26/2RoZv9JSzoQAAAACAAAAAgAAAAIAAAAAAAAAAAAAAAAAACUZAAA
-        leAAAJT2AACU9wMDk/dkaGj/tr26/7a9uv9kaGb/AACT9wAAlPcAAJT2AACV3AAAk1IAAAAAAAAAAAAA
-        k/wAAK3/AACz/wAAs/8DA7H/ZGhp/8/U0v/O09H/ZGhm/wAAs/8AALP/AACz/wAAq/8AAJTxAAAAAAAA
-        AAAAAJT9RUXl/0VF7f9FRe3/Rkbp/2Vpaf/k5ub/4uTk/2RoZv9FRe3/RUXt/0VF7f9BQeD/AACW8wAA
-        AAAAAAAAAACWdgIClu8CApX8AgKV/AIClfxJTHj+ZGhm/2RoZv9FSHr+AgKV/AIClfwCApX8AgKX7AAA
-        lWIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIABAAD4HwAAgAEAAIAB
-        AACAAQAAgAEAAA==
-</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Transmission Remote</value>

@@ -142,6 +142,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AboutDialog.fr-FR.resx">
       <DependentUpon>AboutDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AboutDialog.resx">
       <DependentUpon>AboutDialog.cs</DependentUpon>
@@ -153,9 +154,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ErrorLogWindow.fr-FR.resx">
       <DependentUpon>ErrorLogWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ErrorLogWindow.resx">
       <DependentUpon>ErrorLogWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="LocalSettingsDialog.de-DE.resx">
       <DependentUpon>LocalSettingsDialog.cs</DependentUpon>
@@ -163,6 +166,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LocalSettingsDialog.fr-FR.resx">
       <DependentUpon>LocalSettingsDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="LocalSettingsDialog.resx">
       <DependentUpon>LocalSettingsDialog.cs</DependentUpon>
@@ -174,6 +178,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.fr-FR.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="OtherStrings.de-DE.resx">
       <SubType>Designer</SubType>
@@ -181,12 +186,16 @@
     <EmbeddedResource Include="OtherStrings.fr-FR.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>OtherStrings.fr-FR.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="OtherStrings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>OtherStrings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Flags.resx" />
+    <EmbeddedResource Include="Properties\Flags.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -198,6 +207,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RemoteSettingsDialog.fr-FR.resx">
       <DependentUpon>RemoteSettingsDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="RemoteSettingsDialog.resx">
       <DependentUpon>RemoteSettingsDialog.cs</DependentUpon>
@@ -209,9 +219,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StatsDialog.fr-FR.resx">
       <DependentUpon>StatsDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="StatsDialog.resx">
       <DependentUpon>StatsDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="TorrentPropertiesDialog.de-DE.resx">
       <DependentUpon>TorrentPropertiesDialog.cs</DependentUpon>
@@ -219,9 +231,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TorrentPropertiesDialog.fr-FR.resx">
       <DependentUpon>TorrentPropertiesDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="TorrentPropertiesDialog.resx">
       <DependentUpon>TorrentPropertiesDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UriPromptWindow.de-DE.resx">
       <DependentUpon>UriPromptWindow.cs</DependentUpon>
@@ -229,9 +243,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UriPromptWindow.fr-FR.resx">
       <DependentUpon>UriPromptWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UriPromptWindow.resx">
       <DependentUpon>UriPromptWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
