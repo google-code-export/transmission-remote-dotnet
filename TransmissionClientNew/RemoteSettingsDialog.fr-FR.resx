@@ -137,6 +137,12 @@
   <data name="PortForward.Text" xml:space="preserve">
     <value>Utiliser UPNP</value>
   </data>
+  <data name="EncryptionCombobox.Items1" xml:space="preserve">
+    <value>préféré</value>
+  </data>
+  <data name="EncryptionCombobox.Items2" xml:space="preserve">
+    <value>requis</value>
+  </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Encryption :</value>
   </data>

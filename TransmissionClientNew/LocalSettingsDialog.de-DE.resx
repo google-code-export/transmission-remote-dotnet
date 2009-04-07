@@ -140,6 +140,12 @@
   <data name="ProxyAuthEnableCheckBox.Text" xml:space="preserve">
     <value>authentifizieren</value>
   </data>
+  <data name="EnableProxyCombo.Items1" xml:space="preserve">
+    <value>Aktiviert</value>
+  </data>
+  <data name="EnableProxyCombo.Items2" xml:space="preserve">
+    <value>Deaktiviert</value>
+  </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Port:</value>
   </data>
