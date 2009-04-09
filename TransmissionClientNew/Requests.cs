@@ -130,6 +130,11 @@ namespace TransmissionRemoteDotnet
             return CreateBasicObject(method, ResponseTag.DoNothing);
         }
 
+        public static JsonObject PortTest()
+        {
+            return CreateBasicObject(ProtocolConstants.METHOD_PORT_TEST, ResponseTag.PortTest);
+        }
+
         public static JsonObject CreateBasicObject(string method, ResponseTag tag)
         {
             JsonObject obj = new JsonObject();

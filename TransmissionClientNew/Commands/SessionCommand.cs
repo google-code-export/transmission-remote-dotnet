@@ -7,7 +7,7 @@ using System.Net;
 
 namespace TransmissionRemoteDotnet.Commmands
 {
-    public class SessionCommand : TransmissionCommand
+    public class SessionCommand : ICommand
     {
         private void ParseVersionAndRevisionResponse(string str, TransmissionDaemonDescriptor descriptor)
         {

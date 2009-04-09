@@ -497,7 +497,7 @@ namespace TransmissionRemoteDotnet
 
         private void ActionWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            TransmissionCommand command = (TransmissionCommand)e.Result;
+            ICommand command = (ICommand)e.Result;
             command.Execute();
             /* Everything seemed to go OK, so do an update if not already. */
             if (command.GetType() != typeof(ErrorCommand))
@@ -532,7 +532,7 @@ namespace TransmissionRemoteDotnet
         {
             if (e.Result != null)
             {
-                ((TransmissionCommand)e.Result).Execute();
+                ((ICommand)e.Result).Execute();
                 RefreshIfNotRefreshing();
             }
         }
@@ -633,7 +633,7 @@ namespace TransmissionRemoteDotnet
             if (this.connectWorker != null && this.connectWorker.Equals(senderBW))
             {
                 this.connectWorker = null;
-                ((TransmissionCommand)e.Result).Execute();
+                ((ICommand)e.Result).Execute();
             }
         }
 
@@ -1009,7 +1009,7 @@ namespace TransmissionRemoteDotnet
 
         private void filesWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            ((TransmissionCommand)e.Result).Execute();
+            ((ICommand)e.Result).Execute();
         }
 
         private void SetHighPriorityHandler(object sender, EventArgs e)
@@ -1341,7 +1341,7 @@ namespace TransmissionRemoteDotnet
 
         private void resolveHostWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            ((TransmissionCommand)e.Result).Execute();
+            ((ICommand)e.Result).Execute();
         }
 
         private void resolveHostWorker_DoWork(object sender, DoWorkEventArgs e)
@@ -1510,7 +1510,7 @@ namespace TransmissionRemoteDotnet
 
         private void refreshWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            ((TransmissionCommand)e.Result).Execute();
+            ((ICommand)e.Result).Execute();
         }
 
         private void recheckTorrentButton_Click(object sender, EventArgs e)

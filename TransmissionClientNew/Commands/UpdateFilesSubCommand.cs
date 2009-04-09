@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace TransmissionRemoteDotnet.Commands
 {     
-    class UpdateFilesUpdateSubCommand : TransmissionCommand
+    class UpdateFilesUpdateSubCommand : ICommand
     {
         private ListViewItem item;
         private long bytesCompleted;
@@ -30,7 +30,7 @@ namespace TransmissionRemoteDotnet.Commands
         }
     }
 
-    class UpdateFilesCreateSubCommand : TransmissionCommand
+    class UpdateFilesCreateSubCommand : ICommand
     {
         private ListViewItem item;
 

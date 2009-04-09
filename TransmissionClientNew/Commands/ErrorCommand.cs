@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace TransmissionRemoteDotnet.Commmands
 {
-    public class ErrorCommand : TransmissionCommand
+    public class ErrorCommand : ICommand
     {
         private const int MAX_MESSAGE_DIALOG_LENGTH = 500;
         private const int MAX_MESSAGE_STATUSBAR_LENGTH = 120;

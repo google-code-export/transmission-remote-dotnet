@@ -7,10 +7,10 @@ using TransmissionRemoteDotnet.Commands;
 
 namespace TransmissionRemoteDotnet.Commmands
 {
-    public class UpdateFilesCommand : TransmissionCommand
+    public class UpdateFilesCommand : ICommand
     {
         private bool first;
-        private List<TransmissionCommand> uiUpdateBatch;
+        private List<ICommand> uiUpdateBatch;
 
         public UpdateFilesCommand(JsonObject response)
         {
@@ -48,7 +48,7 @@ namespace TransmissionRemoteDotnet.Commmands
             JsonArray priorities = (JsonArray)torrent[ProtocolConstants.FIELD_PRIORITIES];
             JsonArray wanted = (JsonArray)torrent[ProtocolConstants.FIELD_WANTED];
             first = (priorities != null && wanted != null);
-            uiUpdateBatch = new List<TransmissionCommand>();
+            uiUpdateBatch = new List<ICommand>();
             for (int i = 0; i < files.Length; i++)
             {
                 JsonObject file = (JsonObject)files[i];
@@ -58,7 +58,7 @@ namespace TransmissionRemoteDotnet.Commmands
                 {
                     string name = (string)file[ProtocolConstants.FIELD_NAME];
                     UpdateFilesCreateSubCommand subCommand = new UpdateFilesCreateSubCommand(name, length, Toolbox.ToBool(wanted[i]), (JsonNumber)priorities[i], bytesCompleted);
-                    uiUpdateBatch.Add((TransmissionCommand)subCommand);
+                    uiUpdateBatch.Add((ICommand)subCommand);
                 }
                 else
                 {
@@ -68,7 +68,7 @@ namespace TransmissionRemoteDotnet.Commmands
                         {
                             ListViewItem item = form.FileItems[i];
                             UpdateFilesUpdateSubCommand subCommand = new UpdateFilesUpdateSubCommand(item, bytesCompleted);
-                            uiUpdateBatch.Add((TransmissionCommand)subCommand);
+                            uiUpdateBatch.Add((ICommand)subCommand);
                         }
                     }
                 }
@@ -85,7 +85,7 @@ namespace TransmissionRemoteDotnet.Commmands
             lock (form.filesListView)
             {
                 form.filesListView.SuspendLayout();
-                foreach (TransmissionCommand uiUpdate in uiUpdateBatch)
+                foreach (ICommand uiUpdate in uiUpdateBatch)
                 {
                     uiUpdate.Execute();
                 }

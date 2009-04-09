@@ -9,6 +9,18 @@ using Jayrock.Json;
 
 namespace TransmissionRemoteDotnet
 {
+    [Flags]
+    public enum DaysFlags : byte
+    {
+        Sunday = 0x1,
+        Monday = 0x2,
+        Tuesday = 0x3,
+        Wednesday = 0x4,
+        Thursday = 0x5,
+        Friday = 0x6,
+        Saturday = 0x7
+    }
+
     public partial class RemoteSettingsDialog : Form
     {
         private static RemoteSettingsDialog instance = null;
@@ -131,6 +143,7 @@ namespace TransmissionRemoteDotnet
                     seedLimitUpDown.Value = Toolbox.ToDecimal(session[ProtocolConstants.FIELD_SEEDRATIOLIMIT]);
                     seedRatioEnabledCheckBox.Checked = Toolbox.ToBool(session[ProtocolConstants.FIELD_SEEDRATIOLIMITED]);
                 }
+                testPortButton.Enabled = Program.DaemonDescriptor.Revision >= 8145;
             }
             catch (Exception ex)
             {
@@ -218,7 +231,7 @@ namespace TransmissionRemoteDotnet
 
         private void SettingsWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            TransmissionCommand command = (TransmissionCommand)e.Result;
+            ICommand command = (ICommand)e.Result;
             command.Execute();
             Timer t = new Timer();
             t.Interval = 1000;
@@ -254,6 +267,11 @@ namespace TransmissionRemoteDotnet
         private void seedRatioEnabledCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             seedLimitUpDown.Enabled = seedRatioEnabledCheckBox.Checked;
+        }
+
+        private void testPortButton_Click(object sender, EventArgs e)
+        {
+            Program.Form.CreateActionWorker().RunWorkerAsync(Requests.PortTest());
         }
     }
 }

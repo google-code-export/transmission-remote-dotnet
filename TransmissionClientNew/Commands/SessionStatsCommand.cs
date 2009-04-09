@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace TransmissionRemoteDotnet.Commmands
 {
-    class SessionStatsCommand : TransmissionCommand
+    class SessionStatsCommand : ICommand
     {
         private JsonObject stats;
 

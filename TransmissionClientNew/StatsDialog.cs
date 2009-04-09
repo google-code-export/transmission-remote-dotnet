@@ -93,7 +93,7 @@ namespace TransmissionRemoteDotnet
 
         private void StatsWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            ((TransmissionCommand)e.Result).Execute();
+            ((ICommand)e.Result).Execute();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

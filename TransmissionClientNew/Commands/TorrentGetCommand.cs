@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace TransmissionRemoteDotnet.Commmands
 {
-    public class TorrentGetCommand : TransmissionCommand
+    public class TorrentGetCommand : ICommand
     {
         private JsonObject response;
 

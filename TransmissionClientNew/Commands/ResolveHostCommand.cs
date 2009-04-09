@@ -6,7 +6,7 @@ using System.Net;
 
 namespace TransmissionRemoteDotnet.Commmands
 {
-    public class ResolveHostCommand : TransmissionCommand
+    public class ResolveHostCommand : ICommand
     {
         private ListViewItem item;
         private IPHostEntry host;

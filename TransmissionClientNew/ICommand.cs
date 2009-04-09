@@ -6,10 +6,10 @@ namespace TransmissionRemoteDotnet
 {
     public enum ResponseTag
     {
-        SessionGet, SessionStats, TorrentGet, DoNothing, UpdateFiles
+        SessionGet, SessionStats, TorrentGet, DoNothing, UpdateFiles, PortTest
     }
 
-    public interface TransmissionCommand
+    public interface ICommand
     {
         void Execute();
     }

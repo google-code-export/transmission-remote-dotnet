@@ -56,6 +56,7 @@
             this.seedLimitUpDown = new System.Windows.Forms.NumericUpDown();
             this.seedRatioEnabledCheckBox = new System.Windows.Forms.CheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -68,6 +69,7 @@
             this.altTimeConstraintEnabled = new System.Windows.Forms.CheckBox();
             this.altSpeedLimitEnable = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.testPortButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LimitUploadValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LimitDownloadValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IncomingPortValue)).BeginInit();
@@ -226,6 +228,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.testPortButton);
             this.tabPage1.Controls.Add(this.updateBlocklistButton);
             this.tabPage1.Controls.Add(this.blocklistEnabledCheckBox);
             this.tabPage1.Controls.Add(this.label1);
@@ -285,6 +288,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.listBox1);
             this.tabPage3.Controls.Add(this.label12);
             this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Controls.Add(this.label9);
@@ -299,6 +303,24 @@
             resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Items.AddRange(new object[] {
+            resources.GetString("listBox1.Items"),
+            resources.GetString("listBox1.Items1"),
+            resources.GetString("listBox1.Items2"),
+            resources.GetString("listBox1.Items3"),
+            resources.GetString("listBox1.Items4"),
+            resources.GetString("listBox1.Items5"),
+            resources.GetString("listBox1.Items6"),
+            resources.GetString("listBox1.Items7"),
+            resources.GetString("listBox1.Items8"),
+            resources.GetString("listBox1.Items9")});
+            resources.ApplyResources(this.listBox1, "listBox1");
+            this.listBox1.Name = "listBox1";
+            this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             // 
             // label12
             // 
@@ -363,6 +385,13 @@
             // 
             resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
+            // 
+            // testPortButton
+            // 
+            resources.ApplyResources(this.testPortButton, "testPortButton");
+            this.testPortButton.Name = "testPortButton";
+            this.testPortButton.UseVisualStyleBackColor = true;
+            this.testPortButton.Click += new System.EventHandler(this.testPortButton_Click);
             // 
             // RemoteSettingsDialog
             // 
@@ -439,5 +468,7 @@
         private System.Windows.Forms.Button updateBlocklistButton;
         private System.Windows.Forms.NumericUpDown seedLimitUpDown;
         private System.Windows.Forms.CheckBox seedRatioEnabledCheckBox;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button testPortButton;
     }
 }

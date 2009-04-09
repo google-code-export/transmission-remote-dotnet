@@ -15,7 +15,7 @@ namespace TransmissionRemoteDotnet
 {
     public class CommandFactory
     {
-        public static TransmissionCommand Request(JsonObject data)
+        public static ICommand Request(JsonObject data)
         {
             string str_response = null;
             try
@@ -48,6 +48,8 @@ namespace TransmissionRemoteDotnet
                         return new SessionStatsCommand(jsonResponse);
                     case (short)ResponseTag.UpdateFiles:
                         return new UpdateFilesCommand(jsonResponse);
+                    case (short)ResponseTag.PortTest:
+                        return new PortTestCommand(jsonResponse);
                     case (short)ResponseTag.DoNothing:
                         return new NoCommand();
                 }

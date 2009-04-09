@@ -370,4 +370,13 @@
   <data name="Second" xml:space="preserve">
     <value>Second</value>
   </data>
+  <data name="PortIsClosed" xml:space="preserve">
+    <value>The incoming port on your daemon is CLOSED.</value>
+  </data>
+  <data name="PortIsOpen" xml:space="preserve">
+    <value>The incoming port on your daemon is OPEN.</value>
+  </data>
+  <data name="PortTestResult" xml:space="preserve">
+    <value>Port test result</value>
+  </data>
 </root>

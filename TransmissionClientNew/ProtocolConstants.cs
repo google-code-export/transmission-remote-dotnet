@@ -32,6 +32,7 @@ namespace TransmissionRemoteDotnet
             METHOD_TORRENTREANNOUNCE = "torrent-reannounce",
             METHOD_SESSIONSTATS = "session-stats",
             METHOD_BLOCKLISTUPDATE = "blocklist-update",
+            METHOD_PORT_TEST = "port-test",
             FIELD_PIECES = "pieces",
             FIELD_PIECECOUNT = "pieceCount",
             FIELD_PEERSSENDINGTOUS = "peersSendingToUs",
@@ -92,6 +93,7 @@ namespace TransmissionRemoteDotnet
             FIELD_UPLOADLIMITED = "uploadLimited",
             FIELD_DOWNLOADLIMITED = "downloadLimited",
             FIELD_UPLOADLIMIT = "uploadLimit",
-            FIELD_DOWNLOADLIMIT = "downloadLimit";
+            FIELD_DOWNLOADLIMIT = "downloadLimit",
+            FIELD_PORT_IS_OPEN = "port-is-open";
     }
 }
