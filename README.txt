@@ -22,6 +22,7 @@ CREDITS AND ACKNOWLEDGEMENTS
  * Thank you to all the following users kind enough to translate this application
     * Romaric R. for the French translation
 	* 0obeanonymouso0 for the German translation
+	* drphrozen for the Danish translation
 	
 ABOUT
 ----------------------------

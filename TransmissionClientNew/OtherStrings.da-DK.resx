@@ -118,157 +118,157 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="All" xml:space="preserve">
-    <value>Tous</value>
+    <value>Alle</value>
   </data>
   <data name="Author" xml:space="preserve">
-    <value>Auteur</value>
+    <value>Forfatter</value>
   </data>
   <data name="Broken" xml:space="preserve">
-    <value>Cassé</value>
+    <value>Ødelagt</value>
   </data>
   <data name="Build" xml:space="preserve">
-    <value>Build</value>
+    <value>Byg</value>
   </data>
   <data name="Checking" xml:space="preserve">
-    <value>En cours de vérification</value>
+    <value>Kontrollerer</value>
   </data>
   <data name="Complete" xml:space="preserve">
-    <value>Terminé</value>
+    <value>Fuldført</value>
   </data>
   <data name="Confirm" xml:space="preserve">
-    <value>Confirmer</value>
+    <value>Bekræft</value>
   </data>
   <data name="ConfirmMultipleRemove" xml:space="preserve">
-    <value>Vous avez selectionné {0} torrents pour les retirer. Etes-vous sûre ?</value>
+    <value>Du har valgt at fjerne {0} torrents. Er du sikker?</value>
   </data>
   <data name="ConfirmMultipleRemoveAndDelete" xml:space="preserve">
-    <value>Vous avez selectionné {0} torrents pour les retirer. Etes-vous sûre ?{1}Toutes les données de ces torrents seront supprimées."</value>
+    <value>You have selected {0} torrents for removal. Are you sure?{1}ALL THE DATA FROM THESE TORRENTS WILL BE REMOVED."</value>
   </data>
   <data name="ConfirmSingleRemove" xml:space="preserve">
-    <value>Voulez vous retirer {0} ?</value>
+    <value>Do you want to remove {0}?</value>
   </data>
   <data name="ConfirmSingleRemoveAndDelete" xml:space="preserve">
-    <value>Voulez vous retirer et effacer {0} ?{1} Toutes les données de ce torrent seront supprimées."</value>
+    <value>Du har valgt at fjerne {0} torrents. Er du sikker?{1}ALLE DATA FRA DISSE TORRENTS VIL BLIVE FJERNET."</value>
   </data>
   <data name="Connect" xml:space="preserve">
-    <value>Se connecter</value>
+    <value>Forbind</value>
   </data>
   <data name="ConnectedGettingInfo" xml:space="preserve">
-    <value>Connecté. Récupération des informations sur les torrents en cours...</value>
+    <value>Forbundet. Henter torrent informationer...</value>
   </data>
   <data name="ConnectedTo" xml:space="preserve">
-    <value>Connecté</value>
+    <value>Forbundet til</value>
   </data>
   <data name="Connecting" xml:space="preserve">
-    <value>En cours de connection</value>
+    <value>Forbinder</value>
   </data>
   <data name="CopyAsCSV" xml:space="preserve">
-    <value>Copier en tant que CSV</value>
+    <value>Kopier som CSV</value>
   </data>
   <data name="Disconnect" xml:space="preserve">
-    <value>Se déconnecter</value>
+    <value>Afbryd forbindelsen</value>
   </data>
   <data name="Disconnected" xml:space="preserve">
-    <value>Déconnecté</value>
+    <value>Forbindelsen afbrudt</value>
   </data>
   <data name="DisconnectedExceeded" xml:space="preserve">
-    <value>Déconnecté. Le nombre maxmial de tentatives a été depassé.</value>
+    <value>Forbindelsen afbrudt. Det maksimale antal mislykkede anmodninger blev overskredet!</value>
   </data>
   <data name="DisplayStatistics" xml:space="preserve">
-    <value>Afficher les statistiques</value>
+    <value>Vis statistik</value>
   </data>
   <data name="Down" xml:space="preserve">
-    <value>Réception</value>
+    <value>Ned</value>
   </data>
   <data name="Download" xml:space="preserve">
-    <value>Réception</value>
+    <value>Hent</value>
   </data>
   <data name="DownloadedValid" xml:space="preserve">
-    <value>{0} ({1} valide)</value>
+    <value>{0} ({1} gyldig)</value>
   </data>
   <data name="Downloading" xml:space="preserve">
-    <value>En cours de réception</value>
+    <value>Henter</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Erreur</value>
+    <value>Fejl</value>
   </data>
   <data name="FailedRequest" xml:space="preserve">
-    <value>Requête en échec</value>
+    <value>Forespørgelsen fejlede</value>
   </data>
   <data name="High" xml:space="preserve">
-    <value>Haute</value>
+    <value>Høj</value>
   </data>
   <data name="HighPriority" xml:space="preserve">
-    <value>Priorité haute</value>
+    <value>Høj prioritet</value>
   </data>
   <data name="Host" xml:space="preserve">
-    <value>Hôte</value>
+    <value>Vært</value>
   </data>
   <data name="Info" xml:space="preserve">
     <value>Info</value>
   </data>
   <data name="InputAccepted" xml:space="preserve">
-    <value>Entrée acceptée</value>
+    <value>Input accepteret</value>
   </data>
   <data name="LatestVersion" xml:space="preserve">
-    <value>Vous utilisez la dernière version ({0}.{1}).</value>
+    <value>Du bruger den nyeste version ({0}.{1}).</value>
   </data>
   <data name="LatestVersionCheckFailed" xml:space="preserve">
-    <value>Echec de vérification de la dernière version</value>
+    <value>Kunne ikke checke om dette er den nyeste version</value>
   </data>
   <data name="Low" xml:space="preserve">
-    <value>Basse</value>
+    <value>Lav</value>
   </data>
   <data name="LowPriority" xml:space="preserve">
-    <value>Priorité basse</value>
+    <value>Lav prioritet</value>
   </data>
   <data name="MustBeConnected" xml:space="preserve">
-    <value>Pour ajouter des torrents, vous devez être connectés. Voulez vous vous connecter ?</value>
+    <value>Du skal være forbundet for at kunne tilføje torrents. Vil du forbinde nu?</value>
   </data>
   <data name="NewerVersion" xml:space="preserve">
-    <value>Une version plus récente ({0}.{1}) est disponible. Voulez vous ouvrir la page de téléchargement ?</value>
+    <value>Der findes en nyere version af programmet ({0}.{1}). Vil du gå til download siden nu?</value>
   </data>
   <data name="No" xml:space="preserve">
-    <value>Non</value>
+    <value>Nej</value>
   </data>
   <data name="Normal" xml:space="preserve">
     <value>Normal</value>
   </data>
   <data name="NormalPriority" xml:space="preserve">
-    <value>Priorité normale</value>
+    <value>Normal prioritet</value>
   </data>
   <data name="NotConnected" xml:space="preserve">
-    <value>Non connecté</value>
+    <value>Ikke forbundet</value>
   </data>
   <data name="NoUpgradeAvailable" xml:space="preserve">
-    <value>Aucune mise à jour n'est disponible</value>
+    <value>Der er ingen en opgradering tilgængelig</value>
   </data>
   <data name="OpenFileFilter" xml:space="preserve">
-    <value>BitTorrent Metafile (*.torrent)|*.torrent|All Files (*.*)|*.*</value>
+    <value>BitTorrent Metafile (*.torrent)|*.torrent|Alle filer (*.*)|*.*</value>
   </data>
   <data name="Pause" xml:space="preserve">
     <value>Pause</value>
   </data>
   <data name="PauseAll" xml:space="preserve">
-    <value>Tous en pause</value>
+    <value>Pause alle</value>
   </data>
   <data name="Paused" xml:space="preserve">
-    <value>En pause</value>
+    <value>Midlertidig stoppet</value>
   </data>
   <data name="Properties" xml:space="preserve">
-    <value>Propriétés</value>
+    <value>Egenskaber</value>
   </data>
   <data name="Recheck" xml:space="preserve">
-    <value>Re-vérifier</value>
+    <value>Kontroller igen</value>
   </data>
   <data name="Remove" xml:space="preserve">
-    <value>Retirer</value>
+    <value>Fjern</value>
   </data>
   <data name="RemoveAndDelete" xml:space="preserve">
-    <value>Retirer et effacer</value>
+    <value>Fjern og slet</value>
   </data>
   <data name="Revision" xml:space="preserve">
-    <value>Révision</value>
+    <value>Revision</value>
   </data>
   <data name="RpcVersion" xml:space="preserve">
     <value>RpcVersion</value>
@@ -277,81 +277,97 @@
     <value>RpcVersionMinimum</value>
   </data>
   <data name="Seeding" xml:space="preserve">
-    <value>En partage</value>
+    <value>Seeder</value>
   </data>
   <data name="SelectAll" xml:space="preserve">
-    <value>Tout selectionner</value>
+    <value>Vælg alle</value>
   </data>
   <data name="Skip" xml:space="preserve">
-    <value>Passer</value>
+    <value>Spring over</value>
   </data>
   <data name="Start" xml:space="preserve">
-    <value>Démarrer</value>
+    <value>Start</value>
   </data>
   <data name="StartAll" xml:space="preserve">
-    <value>Tout démarrer</value>
+    <value>Start alle</value>
   </data>
   <data name="TheTorrentHasFinishedDownloading" xml:space="preserve">
-    <value>Ce torrent est téléchargé</value>
+    <value>Denne torrent er nu færdig</value>
   </data>
   <data name="Torrents" xml:space="preserve">
     <value>Torrents</value>
   </data>
   <data name="UnableToParse" xml:space="preserve">
-    <value>Impossible d'analyser la réponse du serveur</value>
+    <value>Kan ikke fortolke serverens svar</value>
   </data>
   <data name="UnknownNegativeResult" xml:space="preserve">
-    <value>Inconnu (négatif)</value>
+    <value>Ukendt (negativt)</value>
   </data>
   <data name="UnsuccessfulRequest" xml:space="preserve">
-    <value>Requête échouée</value>
+    <value>Andmodning fejlede</value>
   </data>
   <data name="Up" xml:space="preserve">
-    <value>Emission</value>
+    <value>Op</value>
   </data>
   <data name="UpgradeAvailable" xml:space="preserve">
-    <value>Mise à jour disponible</value>
+    <value>Opgradering er tilgængelig</value>
   </data>
   <data name="Version" xml:space="preserve">
     <value>Version</value>
   </data>
   <data name="WaitingForInput" xml:space="preserve">
-    <value>En attente d'entrée</value>
+    <value>Venter på input</value>
   </data>
   <data name="WaitingToCheck" xml:space="preserve">
-    <value>En attente de vérification</value>
+    <value>Venter på kontrol</value>
   </data>
   <data name="XOfYConnected" xml:space="preserve">
-    <value>{0} sur {1} est connecté</value>
+    <value>{0} af {1} forbundet</value>
   </data>
   <data name="Yes" xml:space="preserve">
-    <value>Oui</value>
+    <value>Ja</value>
   </data>
   <data name="Incomplete" xml:space="preserve">
-    <value>Incomplet</value>
+    <value>Ufuldstændig</value>
   </data>
-  <data name="BytesPerSecondShort" xml:space="preserve">
-    <value>O/s</value>
+  <data name="LanguageUpdated" xml:space="preserve">
+    <value>Sprog opdateret</value>
   </data>
-  <data name="KilobytesPerSecondShort" xml:space="preserve">
-    <value>KO/s</value>
+  <data name="LanguageUpdateDetail" xml:space="preserve">
+    <value>Dit valg af sprog er blevet opdateret. En genstart af programmet er krævet for fuldføre opdateringen.</value>
+  </data>
+  <data name="Byte" xml:space="preserve">
+    <value>Byte</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>Dag</value>
   </data>
   <data name="Gigabyte" xml:space="preserve">
-    <value>Gigaoctect</value>
+    <value>Gigabyte</value>
   </data>
   <data name="GigabyteShort" xml:space="preserve">
-    <value>GO</value>
+    <value>GB</value>
+  </data>
+  <data name="Hour" xml:space="preserve">
+    <value>Time</value>
   </data>
   <data name="Kilobyte" xml:space="preserve">
-    <value>Kilooctect</value>
+    <value>Kilobyte</value>
+    <comment>b</comment>
   </data>
   <data name="KilobyteShort" xml:space="preserve">
-    <value>KO</value>
+    <value>KB</value>
   </data>
   <data name="Megabyte" xml:space="preserve">
-    <value>Mégaoctect</value>
+    <value>Megabyte</value>
   </data>
   <data name="MegabyteShort" xml:space="preserve">
-    <value>MO</value>
+    <value>MB</value>
+  </data>
+  <data name="Minute" xml:space="preserve">
+    <value>Minut</value>
+  </data>
+  <data name="Second" xml:space="preserve">
+    <value>Sekund</value>
   </data>
 </root>

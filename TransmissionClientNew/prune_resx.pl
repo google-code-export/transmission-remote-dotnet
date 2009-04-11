@@ -10,13 +10,19 @@ if (@ARGV < 1)
 	exit 1;
 }
 
-opendir(DIR, $ARGV[0]);
-my @files = readdir(DIR);
-closedir(DIR);
+if (@ARGV == 1)
+{
+	opendir(DIR, $ARGV[0]);
+}
+my @files = @ARGV == 1 ? readdir(DIR) : @ARGV;
+if (@ARGV == 1)
+{
+	closedir(DIR);
+}
 
 foreach my $file (@files)
 {
-if ($file =~ m/\.[a-z][a-z]-[A-Z][A-Z]\.resx/i)
+if ($file =~ m/\.[a-z][a-z]-[A-Z][A-Z]\.resx/i && $file !~ m/OtherStrings/)
 {
 $output = "";
 open(RESX, "<$file");
