@@ -84,6 +84,18 @@ Section /o "French translation"
   File "fr-FR\Transmission Remote.resources.dll"
 SectionEnd
 
+Section /o "German translation"
+  CreateDirectory "$INSTDIR\de-DE"
+  SetOutPath "$INSTDIR\de-DE"
+  File "de-DE\Transmission Remote.resources.dll"
+SectionEnd
+
+Section /o "Danish translation"
+  CreateDirectory "$INSTDIR\da-DK"
+  SetOutPath "$INSTDIR\da-DK"
+  File "da-DK\Transmission Remote.resources.dll"
+SectionEnd
+
 ;--------------------------------
 
 ; Uninstaller
@@ -101,12 +113,18 @@ Section "Uninstall"
   Delete "$INSTDIR\GeoIP.dat"
   Delete "$INSTDIR\README.txt"
   Delete "$INSTDIR\LICENCE.txt"
+  Delete "$INSTDIR\de-DE\Transmission Remote.resources.dll"
+  Delete "$INSTDIR\fr-FR\Transmission Remote.resources.dll"
+  Delete "$INSTDIR\da-DK\Transmission Remote.resources.dll"
 
   ; Remove shortcuts, if any
   Delete "$SMPROGRAMS\Transmission Remote\*.*"
 
   ; Remove directories used
   RMDir "$SMPROGRAMS\Transmission Remote"
+  RMDir "$INSTDIR\da-DK"
+  RMDir "$INSTDIR\de-DE"
+  RMDir "$INSTDIR\fr-FR"
   RMDir "$INSTDIR"
 
 SectionEnd

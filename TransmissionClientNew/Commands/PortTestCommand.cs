@@ -19,6 +19,7 @@ namespace TransmissionRemoteDotnet
 
         public void Execute()
         {
+            RemoteSettingsDialog.PortTestReplyArrived();
             MessageBox.Show(port_is_open ? OtherStrings.PortIsOpen : OtherStrings.PortIsClosed, OtherStrings.PortTestResult, MessageBoxButtons.OK, port_is_open ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
         }
     }

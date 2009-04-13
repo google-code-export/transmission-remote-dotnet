@@ -369,30 +369,44 @@ namespace TransmissionRemoteDotnet
                 Connect();
             }
             OpenGeoipDatabase();
+            PopulateLanguagesMenu();
+        }
+
+        private void PopulateLanguagesMenu()
+        {
             DirectoryInfo di = new DirectoryInfo(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-            foreach (DirectoryInfo subdi in di.GetDirectories())
+            DirectoryInfo[] subDirs = di.GetDirectories();
+            List<CultureInfo> availableCultures = new List<CultureInfo>();
+            foreach (DirectoryInfo subDir in subDirs)
             {
-                string dn = subdi.Name;
+                string dn = subDir.Name;
                 if (dn.IndexOf('-') == 2 && dn.Length == 5)
                 {
-                    string cultureId = null;
-                    try
+                    string cultureId = dn.Substring(0, 2).ToLower() + "-" + dn.Substring(3, 2).ToUpper();
+                    availableCultures.Add(new CultureInfo(cultureId));
+                }
+            }
+            int i, j;
+            for (i = (availableCultures.Count - 1); i >= 0; i--)
+            {
+                for (j = 1; j <= i; j++)
+                {
+                    if (availableCultures[j - 1].EnglishName.CompareTo(availableCultures[j].EnglishName) > 0)
                     {
-                        cultureId = dn.Substring(0, 2).ToLower() + "-" + dn.Substring(3, 2).ToUpper();
-                        CultureInfo ci = new CultureInfo(cultureId);
-                        ToolStripMenuItem ti = new ToolStripMenuItem(ci.EnglishName);
-                        ti.Click += new EventHandler(this.ChangeUICulture);
-                        ti.Tag = cultureId;
-                        languageToolStripMenuItem.DropDownItems.Add(ti);
-                    }
-                    catch (Exception ex)
-                    {
-                        Program.Log(String.Format("Could not load pack {0}", cultureId), String.Format("{0}: {1}", ex.GetType(), ex.Message));
+                        CultureInfo temp = availableCultures[j - 1];
+                        availableCultures[j - 1] = availableCultures[j];
+                        availableCultures[j] = temp;
                     }
                 }
             }
-            foreach (ToolStripMenuItem mi in languageToolStripMenuItem.DropDownItems)
-                mi.Checked = settings.Locale.Equals((string)mi.Tag);
+            foreach (CultureInfo ci in availableCultures)
+            {
+                ToolStripMenuItem ti = new ToolStripMenuItem(ci.EnglishName);
+                ti.Click += new EventHandler(this.ChangeUICulture);
+                ti.Tag = ci;
+                ti.Checked = LocalSettingsSingleton.Instance.Locale.Equals(ci.Name);
+                languageToolStripMenuItem.DropDownItems.Add(ti);
+            }
         }
 
         private void ChangeUICulture(object sender, EventArgs e)
@@ -401,11 +415,12 @@ namespace TransmissionRemoteDotnet
             {
                 LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
                 ToolStripMenuItem senderMI = sender as ToolStripMenuItem;
+                CultureInfo culture = (CultureInfo)senderMI.Tag;
                 foreach (ToolStripMenuItem mi in languageToolStripMenuItem.DropDownItems)
                     mi.Checked = false;
                 senderMI.Checked = true;
-                settings.Locale = (string)senderMI.Tag;
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo(settings.Locale);
+                settings.Locale = culture.Name;
+                Thread.CurrentThread.CurrentUICulture = culture;
                 MessageBox.Show(OtherStrings.LanguageUpdateDetail, OtherStrings.LanguageUpdated, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)

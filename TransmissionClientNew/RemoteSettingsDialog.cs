@@ -9,18 +9,6 @@ using Jayrock.Json;
 
 namespace TransmissionRemoteDotnet
 {
-    [Flags]
-    public enum DaysFlags : byte
-    {
-        Sunday = 0x1,
-        Monday = 0x2,
-        Tuesday = 0x3,
-        Wednesday = 0x4,
-        Thursday = 0x5,
-        Friday = 0x6,
-        Saturday = 0x7
-    }
-
     public partial class RemoteSettingsDialog : Form
     {
         private static RemoteSettingsDialog instance = null;
@@ -49,8 +37,15 @@ namespace TransmissionRemoteDotnet
         public static void CloseIfOpen()
         {
             if (IsActive())
-            {
                 instance.Close();
+        }
+
+        public static void PortTestReplyArrived()
+        {
+            if (IsActive())
+            {
+                instance.testPortButton.Text = "Test Port";
+                instance.testPortButton.Enabled = true;
             }
         }
 
@@ -129,14 +124,22 @@ namespace TransmissionRemoteDotnet
                     altUploadLimitField.Enabled =
                     altDownloadLimitField.Enabled =
                     altTimeConstraintEnabled.Enabled =
-                    altTimeConstraintEndField.Enabled =
-                    altTimeConstraintStartField.Enabled =
+                    timeConstraintEndHours.Enabled =
+                    timeConstraintBeginHours.Enabled =
+                    timeConstaintEndMinutes.Enabled =
+                    timeConstaintBeginMinutes.Enabled =
                     session.Contains("alt-speed-enabled"))
                 {
                     altDownloadLimitField.Value = Toolbox.ToInt(session["alt-speed-down"]);
                     altUploadLimitField.Value = Toolbox.ToInt(session["alt-speed-up"]);
                     altDownloadLimitField.Enabled = altUploadLimitField.Enabled = altSpeedLimitEnable.Checked = Toolbox.ToBool(session["alt-speed-enabled"]);
-                    altTimeConstraintStartField.Enabled = altTimeConstraintEndField.Enabled = altTimeConstraintEnabled.Checked = Toolbox.ToBool(session["alt-speed-time-enabled"]);
+                    timeConstaintBeginMinutes.Enabled = timeConstaintEndMinutes.Enabled = timeConstraintBeginHours.Enabled = timeConstraintEndHours.Enabled = altTimeConstraintEnabled.Checked = Toolbox.ToBool(session["alt-speed-time-enabled"]);
+                    int altSpeedTimeBegin = Toolbox.ToInt(session["alt-speed-time-begin"]);
+                    int altSpeedTimeEnd = Toolbox.ToInt(session["alt-speed-time-end"]);
+                    timeConstraintBeginHours.Value = Math.Floor((decimal)altSpeedTimeBegin / 60);
+                    timeConstraintEndHours.Value = Math.Floor((decimal)altSpeedTimeEnd / 60);
+                    timeConstaintBeginMinutes.Value = altSpeedTimeBegin % 60;
+                    timeConstaintEndMinutes.Value = altSpeedTimeEnd % 60;
                 }
                 if (seedRatioEnabledCheckBox.Enabled = seedLimitUpDown.Enabled = session.Contains(ProtocolConstants.FIELD_SEEDRATIOLIMITED))
                 {
@@ -207,8 +210,8 @@ namespace TransmissionRemoteDotnet
             if (altTimeConstraintEnabled.Enabled)
             {
                 arguments.Put("alt-speed-time-enabled", altTimeConstraintEnabled.Checked);
-                arguments.Put("alt-speed-time-begin", altTimeConstraintStartField.Value);
-                arguments.Put("alt-speed-time-end", altTimeConstraintEndField.Value);
+                arguments.Put("alt-speed-time-begin", timeConstraintBeginHours.Value*60+timeConstaintBeginMinutes.Value);
+                arguments.Put("alt-speed-time-end", timeConstraintEndHours.Value*60+timeConstaintEndMinutes.Value);
             }
             if (blocklistEnabledCheckBox.Enabled)
             {
@@ -250,8 +253,8 @@ namespace TransmissionRemoteDotnet
         }
 
         private void altTimeConstraintEnabled_CheckedChanged(object sender, EventArgs e)
-        {
-            altTimeConstraintStartField.Enabled = altTimeConstraintEndField.Enabled = altTimeConstraintEnabled.Checked;
+        { 
+            timeConstaintBeginMinutes.Enabled = timeConstaintEndMinutes.Enabled = timeConstraintBeginHours.Enabled = timeConstraintEndHours.Enabled = altTimeConstraintEnabled.Checked;
         }
 
         private void blocklistEnabledCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -271,6 +274,8 @@ namespace TransmissionRemoteDotnet
 
         private void testPortButton_Click(object sender, EventArgs e)
         {
+            testPortButton.Enabled = false;
+            testPortButton.Text = "Querying...";
             Program.Form.CreateActionWorker().RunWorkerAsync(Requests.PortTest());
         }
     }

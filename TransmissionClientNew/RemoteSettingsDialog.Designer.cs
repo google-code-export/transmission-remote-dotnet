@@ -50,26 +50,29 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.testPortButton = new System.Windows.Forms.Button();
             this.updateBlocklistButton = new System.Windows.Forms.Button();
             this.blocklistEnabledCheckBox = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.seedLimitUpDown = new System.Windows.Forms.NumericUpDown();
             this.seedRatioEnabledCheckBox = new System.Windows.Forms.CheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.timeConstaintEndMinutes = new System.Windows.Forms.NumericUpDown();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.timeConstaintBeginMinutes = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.altTimeConstraintEndField = new System.Windows.Forms.NumericUpDown();
+            this.timeConstraintEndHours = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
-            this.altTimeConstraintStartField = new System.Windows.Forms.NumericUpDown();
+            this.timeConstraintBeginHours = new System.Windows.Forms.NumericUpDown();
             this.altUploadLimitField = new System.Windows.Forms.NumericUpDown();
             this.altDownloadLimitField = new System.Windows.Forms.NumericUpDown();
             this.altTimeConstraintEnabled = new System.Windows.Forms.CheckBox();
             this.altSpeedLimitEnable = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.testPortButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LimitUploadValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LimitDownloadValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IncomingPortValue)).BeginInit();
@@ -79,8 +82,10 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.seedLimitUpDown)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.altTimeConstraintEndField)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.altTimeConstraintStartField)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeConstaintEndMinutes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeConstaintBeginMinutes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeConstraintEndHours)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeConstraintBeginHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.altUploadLimitField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.altDownloadLimitField)).BeginInit();
             this.SuspendLayout();
@@ -243,6 +248,13 @@
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // testPortButton
+            // 
+            resources.ApplyResources(this.testPortButton, "testPortButton");
+            this.testPortButton.Name = "testPortButton";
+            this.testPortButton.UseVisualStyleBackColor = true;
+            this.testPortButton.Click += new System.EventHandler(this.testPortButton_Click);
+            // 
             // updateBlocklistButton
             // 
             resources.ApplyResources(this.updateBlocklistButton, "updateBlocklistButton");
@@ -288,14 +300,17 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.listBox1);
+            this.tabPage3.Controls.Add(this.timeConstaintEndMinutes);
+            this.tabPage3.Controls.Add(this.label14);
+            this.tabPage3.Controls.Add(this.label13);
+            this.tabPage3.Controls.Add(this.timeConstaintBeginMinutes);
             this.tabPage3.Controls.Add(this.label12);
             this.tabPage3.Controls.Add(this.label11);
             this.tabPage3.Controls.Add(this.label9);
             this.tabPage3.Controls.Add(this.label10);
-            this.tabPage3.Controls.Add(this.altTimeConstraintEndField);
+            this.tabPage3.Controls.Add(this.timeConstraintEndHours);
             this.tabPage3.Controls.Add(this.label8);
-            this.tabPage3.Controls.Add(this.altTimeConstraintStartField);
+            this.tabPage3.Controls.Add(this.timeConstraintBeginHours);
             this.tabPage3.Controls.Add(this.altUploadLimitField);
             this.tabPage3.Controls.Add(this.altDownloadLimitField);
             this.tabPage3.Controls.Add(this.altTimeConstraintEnabled);
@@ -304,23 +319,35 @@
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // timeConstaintEndMinutes
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
-            resources.GetString("listBox1.Items"),
-            resources.GetString("listBox1.Items1"),
-            resources.GetString("listBox1.Items2"),
-            resources.GetString("listBox1.Items3"),
-            resources.GetString("listBox1.Items4"),
-            resources.GetString("listBox1.Items5"),
-            resources.GetString("listBox1.Items6"),
-            resources.GetString("listBox1.Items7"),
-            resources.GetString("listBox1.Items8"),
-            resources.GetString("listBox1.Items9")});
-            resources.ApplyResources(this.listBox1, "listBox1");
-            this.listBox1.Name = "listBox1";
-            this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            resources.ApplyResources(this.timeConstaintEndMinutes, "timeConstaintEndMinutes");
+            this.timeConstaintEndMinutes.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.timeConstaintEndMinutes.Name = "timeConstaintEndMinutes";
+            // 
+            // label14
+            // 
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.Name = "label14";
+            // 
+            // label13
+            // 
+            resources.ApplyResources(this.label13, "label13");
+            this.label13.Name = "label13";
+            // 
+            // timeConstaintBeginMinutes
+            // 
+            resources.ApplyResources(this.timeConstaintBeginMinutes, "timeConstaintBeginMinutes");
+            this.timeConstaintBeginMinutes.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.timeConstaintBeginMinutes.Name = "timeConstaintBeginMinutes";
             // 
             // label12
             // 
@@ -342,20 +369,30 @@
             resources.ApplyResources(this.label10, "label10");
             this.label10.Name = "label10";
             // 
-            // altTimeConstraintEndField
+            // timeConstraintEndHours
             // 
-            resources.ApplyResources(this.altTimeConstraintEndField, "altTimeConstraintEndField");
-            this.altTimeConstraintEndField.Name = "altTimeConstraintEndField";
+            resources.ApplyResources(this.timeConstraintEndHours, "timeConstraintEndHours");
+            this.timeConstraintEndHours.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.timeConstraintEndHours.Name = "timeConstraintEndHours";
             // 
             // label8
             // 
             resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
             // 
-            // altTimeConstraintStartField
+            // timeConstraintBeginHours
             // 
-            resources.ApplyResources(this.altTimeConstraintStartField, "altTimeConstraintStartField");
-            this.altTimeConstraintStartField.Name = "altTimeConstraintStartField";
+            resources.ApplyResources(this.timeConstraintBeginHours, "timeConstraintBeginHours");
+            this.timeConstraintBeginHours.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.timeConstraintBeginHours.Name = "timeConstraintBeginHours";
             // 
             // altUploadLimitField
             // 
@@ -386,13 +423,6 @@
             resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
             // 
-            // testPortButton
-            // 
-            resources.ApplyResources(this.testPortButton, "testPortButton");
-            this.testPortButton.Name = "testPortButton";
-            this.testPortButton.UseVisualStyleBackColor = true;
-            this.testPortButton.Click += new System.EventHandler(this.testPortButton_Click);
-            // 
             // RemoteSettingsDialog
             // 
             this.AcceptButton = this.SaveButton;
@@ -419,8 +449,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.seedLimitUpDown)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.altTimeConstraintEndField)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.altTimeConstraintStartField)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeConstaintEndMinutes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeConstaintBeginMinutes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeConstraintEndHours)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeConstraintBeginHours)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.altUploadLimitField)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.altDownloadLimitField)).EndInit();
             this.ResumeLayout(false);
@@ -455,9 +487,9 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.CheckBox altTimeConstraintEnabled;
         private System.Windows.Forms.CheckBox altSpeedLimitEnable;
-        private System.Windows.Forms.NumericUpDown altTimeConstraintEndField;
+        private System.Windows.Forms.NumericUpDown timeConstraintEndHours;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.NumericUpDown altTimeConstraintStartField;
+        private System.Windows.Forms.NumericUpDown timeConstraintBeginHours;
         private System.Windows.Forms.NumericUpDown altUploadLimitField;
         private System.Windows.Forms.NumericUpDown altDownloadLimitField;
         private System.Windows.Forms.Label label9;
@@ -468,7 +500,10 @@
         private System.Windows.Forms.Button updateBlocklistButton;
         private System.Windows.Forms.NumericUpDown seedLimitUpDown;
         private System.Windows.Forms.CheckBox seedRatioEnabledCheckBox;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button testPortButton;
+        private System.Windows.Forms.NumericUpDown timeConstaintEndMinutes;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.NumericUpDown timeConstaintBeginMinutes;
     }
 }
