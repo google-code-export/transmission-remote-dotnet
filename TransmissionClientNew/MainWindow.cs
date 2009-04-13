@@ -60,8 +60,8 @@ namespace TransmissionRemoteDotnet
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo(settings.Locale);
             }
             catch { }
-            Program.OnConnStatusChanged += new ConnStatusChangedDelegate(Program_connStatusChanged);
-            Program.OnTorrentsUpdated += new TorrentsUpdatedDelegate(Program_onTorrentsUpdated);
+            Program.OnConnStatusChanged += new EventHandler(Program_connStatusChanged);
+            Program.OnTorrentsUpdated += new EventHandler(Program_onTorrentsUpdated);
             InitializeComponent();
             tabControlImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.folder16);
             filesTabPage.ImageIndex = 0;
@@ -186,7 +186,7 @@ namespace TransmissionRemoteDotnet
             notifyIcon.ShowBalloonTip(LocalSettingsSingleton.BALLOON_TIMEOUT, t.Name, OtherStrings.TheTorrentHasFinishedDownloading, ToolTipIcon.Info);
         }
 
-        private void Program_onTorrentsUpdated()
+        private void Program_onTorrentsUpdated(object sender, EventArgs e)
         {
             Torrent t = null;
             lock (torrentListView)
@@ -204,9 +204,10 @@ namespace TransmissionRemoteDotnet
             Toolbox.StripeListView(torrentListView);
         }
 
-        private void Program_connStatusChanged(Boolean connected)
+        private void Program_connStatusChanged(object sender, EventArgs e)
         {
             ContextMenu trayMenu = new ContextMenu();
+            bool connected = Program.Connected;
             if (connected)
             {
                 CreateTorrentSelectionContextMenu();

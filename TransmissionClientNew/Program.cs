@@ -7,18 +7,14 @@ using TransmissionRemoteDotnet.Commands;
 
 namespace TransmissionRemoteDotnet
 {
-    public delegate void ConnStatusChangedDelegate(bool connected);
-    public delegate void TorrentsUpdatedDelegate();
-    public delegate void OnErrorDelegate();
-
     static class Program
     {
         private const int TCP_SINGLE_INSTANCE_PORT = 24452;
         private const string APPLICATION_GUID = "{1a4ec788-d8f8-46b4-bb6b-598bc39f6999}";
 
-        public static event ConnStatusChangedDelegate OnConnStatusChanged;
-        public static event TorrentsUpdatedDelegate OnTorrentsUpdated;
-        public static event OnErrorDelegate OnError;
+        public static event EventHandler OnConnStatusChanged;
+        public static event EventHandler OnTorrentsUpdated;
+        public static event EventHandler OnError;
 
         private static Boolean connected = false;
 
@@ -123,7 +119,7 @@ namespace TransmissionRemoteDotnet
             }
             if (OnError != null)
             {
-                OnError();
+                OnError(null, null);
             }
         }
 
@@ -153,7 +149,7 @@ namespace TransmissionRemoteDotnet
         {
             if (OnTorrentsUpdated != null)
             {
-                OnTorrentsUpdated();
+                OnTorrentsUpdated(null, null);
             }
         }
 
@@ -172,7 +168,7 @@ namespace TransmissionRemoteDotnet
                 }
                 if (OnConnStatusChanged != null)
                 {
-                    OnConnStatusChanged(connected);
+                    OnConnStatusChanged(null, null);
                 }
             }
             get

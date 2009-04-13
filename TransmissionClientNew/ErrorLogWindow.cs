@@ -31,11 +31,11 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        private OnErrorDelegate onErrorDelegate;
+        private EventHandler onErrorDelegate;
 
         private ErrorLogWindow()
         {
-            Program.OnError += onErrorDelegate = new OnErrorDelegate(this.OnError);
+            Program.OnError += onErrorDelegate = new EventHandler(this.OnError);
             InitializeComponent();
             errorListView.ListViewItemSorter = lvwColumnSorter = new ErrorsListViewColumnSorter();
         }
@@ -80,7 +80,7 @@ namespace TransmissionRemoteDotnet
             Program.OnError -= onErrorDelegate;
         }
 
-        private void OnError()
+        private void OnError(object sender, EventArgs e)
         {
             errorListView.SuspendLayout();
             lock (Program.LogItems)
