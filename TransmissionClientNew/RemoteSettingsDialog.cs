@@ -146,7 +146,7 @@ namespace TransmissionRemoteDotnet
                     seedLimitUpDown.Value = Toolbox.ToDecimal(session[ProtocolConstants.FIELD_SEEDRATIOLIMIT]);
                     seedRatioEnabledCheckBox.Checked = Toolbox.ToBool(session[ProtocolConstants.FIELD_SEEDRATIOLIMITED]);
                 }
-                testPortButton.Enabled = Program.DaemonDescriptor.Revision >= 8145;
+                testPortButton.Enabled = Program.DaemonDescriptor.RpcVersion >= 5;
             }
             catch (Exception ex)
             {

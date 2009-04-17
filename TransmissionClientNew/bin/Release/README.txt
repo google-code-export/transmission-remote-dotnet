@@ -21,7 +21,7 @@ CREDITS AND ACKNOWLEDGEMENTS
  * Elbandi has made a number of notable contributions including SSL, speed graphs and GeoIP support.
  * Thank you to all the following users kind enough to translate this application
     * Romaric R. for the French translation
-	* 0obeanonymouso0 for the German translation
+	* benba for the German translation
 	* drphrozen for the Danish translation
 	
 ABOUT

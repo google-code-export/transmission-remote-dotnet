@@ -272,7 +272,7 @@ namespace TransmissionRemoteDotnet
                 = refreshTimer.Enabled = recheckTorrentButton.Visible
                 = speedGraph.Enabled = toolStripSeparator2.Visible = connected;
             SetRemoteCmdButtonVisible(connected);
-            reannounceButton.Visible = connected && Program.DaemonDescriptor.Revision >= 8102;
+            reannounceButton.Visible = connected && Program.DaemonDescriptor.RpcVersion >= 5;
             removeAndDeleteButton.Visible = connected && Program.DaemonDescriptor.Version >= 1.5;
             sessionStatsButton.Visible = connected && Program.DaemonDescriptor.RpcVersion >= 4;
         }
@@ -375,6 +375,11 @@ namespace TransmissionRemoteDotnet
 
         private void PopulateLanguagesMenu()
         {
+            ToolStripMenuItem englishItem = new ToolStripMenuItem("English");
+            englishItem.Click += new EventHandler(this.ChangeUICulture);
+            englishItem.Tag = new CultureInfo("en-GB");
+            englishItem.Checked = LocalSettingsSingleton.Instance.Locale.Equals("en-GB");
+            languageToolStripMenuItem.DropDownItems.Add(englishItem);
             DirectoryInfo di = new DirectoryInfo(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
             DirectoryInfo[] subDirs = di.GetDirectories();
             List<CultureInfo> availableCultures = new List<CultureInfo>();
