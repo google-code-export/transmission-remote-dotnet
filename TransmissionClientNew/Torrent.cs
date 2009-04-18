@@ -633,13 +633,13 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                if (info.Contains(ProtocolConstants.FIELD_UPLOADLIMIT))
+                if (info.Contains(ProtocolConstants.FIELD_DOWNLOADLIMIT))
                 {
-                    return Toolbox.ToInt(info[ProtocolConstants.FIELD_UPLOADLIMIT]);
+                    return Toolbox.ToInt(info[ProtocolConstants.FIELD_DOWNLOADLIMIT]);
                 }
                 else
                 {
-                    return Toolbox.ToInt(info[ProtocolConstants.FIELD_SPEEDLIMITUP]);
+                    return Toolbox.ToInt(info[ProtocolConstants.FIELD_SPEEDLIMITDOWN]);
                 }
             }
         }
@@ -686,9 +686,9 @@ namespace TransmissionRemoteDotnet
                 {
                     return Toolbox.ToBool(info[ProtocolConstants.FIELD_SPEEDLIMITUPENABLED]);
                 }
-                else if (info.Contains(ProtocolConstants.FIELD_UPLOADLIMIT))
+                else if (info.Contains(ProtocolConstants.FIELD_UPLOADLIMITED))
                 {
-                    return Toolbox.ToBool(info[ProtocolConstants.FIELD_UPLOADLIMIT]);
+                    return Toolbox.ToBool(info[ProtocolConstants.FIELD_UPLOADLIMITED]);
                 }
                 else
                 {

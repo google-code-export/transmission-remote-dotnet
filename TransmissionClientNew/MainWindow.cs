@@ -172,8 +172,105 @@ namespace TransmissionRemoteDotnet
             }
             this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Recheck, new EventHandler(this.recheckTorrentButton_Click)));
             this.torrentSelectionMenu.MenuItems.Add(new MenuItem("-"));
+            MenuItem downLimitMenuItem = new MenuItem(OtherStrings.DownloadLimit);
+            downLimitMenuItem.MenuItems.Add(OtherStrings.Unlimited, ChangeDownLimit);
+            downLimitMenuItem.MenuItems.Add("-");
+            LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
+            string[] split = settings.DownLimit.Split(',');
+            for (int i = 0; i < split.Length; i++)
+            {
+                try
+                {
+                    downLimitMenuItem.MenuItems.Add(Toolbox.KbpsString(int.Parse(split[i])), ChangeDownLimit);
+                    downLimitMenuItem.Popup += new EventHandler(this.downlimit_Opening);
+                }
+                catch { }
+            }
+            this.torrentSelectionMenu.MenuItems.Add(downLimitMenuItem);
+            MenuItem upLimitMenuItem = new MenuItem(OtherStrings.UploadLimit);
+            upLimitMenuItem.MenuItems.Add(OtherStrings.Unlimited, ChangeUpLimit);
+            upLimitMenuItem.MenuItems.Add("-");
+            split = settings.UpLimit.Split(',');
+            for (int i = 0; i < split.Length; i++)
+            {
+                try
+                {
+                    upLimitMenuItem.MenuItems.Add(Toolbox.KbpsString(int.Parse(split[i])), ChangeUpLimit);
+                    upLimitMenuItem.Popup += new EventHandler(this.uplimit_Opening);
+                }
+                catch { }
+            }
+            this.torrentSelectionMenu.MenuItems.Add(upLimitMenuItem);
+            this.torrentSelectionMenu.MenuItems.Add(new MenuItem("-"));
             this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Properties, new EventHandler(this.ShowTorrentPropsHandler)));
             this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.CopyAsCSV, new EventHandler(this.TorrentsToClipboardHandler)));
+        }
+
+        private void downlimit_Opening(object sender, EventArgs e)
+        {
+            Torrent firstTorrent = (Torrent)torrentListView.SelectedItems[0].Tag;
+            if (firstTorrent == null)
+                return;
+            string limit = firstTorrent.SpeedLimitDown.ToString();
+            if (!firstTorrent.SpeedLimitDownEnabled)
+                limit = OtherStrings.Unlimited;
+            for (int i = 0; i < ((MenuItem)sender).MenuItems.Count; i++)
+            {
+                MenuItem m = ((MenuItem)sender).MenuItems[i];
+                if (m.Text == limit)
+                    m.Checked = true;
+                else
+                    m.Checked = false;
+            }
+        }
+
+        private void uplimit_Opening(object sender, EventArgs e)
+        {
+            Torrent firstTorrent = (Torrent)torrentListView.SelectedItems[0].Tag;
+            if (firstTorrent == null)
+                return;
+            string limit = firstTorrent.SpeedLimitUp.ToString();
+            if (!firstTorrent.SpeedLimitUpEnabled)
+                limit = OtherStrings.Unlimited;
+            for (int i = 0; i < ((MenuItem)sender).MenuItems.Count; i++)
+            {
+                MenuItem m = ((MenuItem)sender).MenuItems[i];
+                if (m.Text == limit)
+                    m.Checked = true;
+                else
+                    m.Checked = false;
+            }
+        }
+
+        private void ChangeDownLimit(object sender, EventArgs e)
+        {
+            JsonObject request = CreateLimitChangeRequest();
+            JsonObject arguments = Requests.GetArgObject(request); 
+            arguments.Put(Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_DOWNLOADLIMITED : ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED, (((MenuItem)sender).Text != "Unlimited") ? 1 : 0);
+            arguments.Put(Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_DOWNLOADLIMIT : ProtocolConstants.FIELD_SPEEDLIMITDOWN, ((((MenuItem)sender).Text == "Unlimited") ? 0 : (int.Parse(((MenuItem)sender).Text))));
+            CreateActionWorker().RunWorkerAsync(request);
+        }
+
+        private JsonObject CreateLimitChangeRequest()
+        {
+            JsonObject request = Requests.CreateBasicObject(ProtocolConstants.METHOD_TORRENTSET);
+            JsonArray ids = new JsonArray();
+            foreach (ListViewItem item in torrentListView.SelectedItems)
+            {
+                Torrent t = (Torrent)item.Tag;
+                ids.Put(t.Id);
+            }
+            Requests.GetArgObject(request).Put(ProtocolConstants.KEY_IDS, ids);
+            return request;
+        }
+
+        private void ChangeUpLimit(object sender, EventArgs e)
+        {
+            JsonObject request = CreateLimitChangeRequest();
+            JsonObject arguments = Requests.GetArgObject(request);
+            arguments.Put(Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_UPLOADLIMITED : ProtocolConstants.FIELD_SPEEDLIMITUPENABLED, (((MenuItem)sender).Text != OtherStrings.Unlimited) ? 1 : 0);
+            arguments.Put(Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_UPLOADLIMIT : ProtocolConstants.FIELD_SPEEDLIMITUP, ((((MenuItem)sender).Text == OtherStrings.Unlimited) ? 0 : (int.Parse(((MenuItem)sender).Text))));
+            CreateActionWorker().RunWorkerAsync(request);
         }
 
         private void OpenGeoipDatabase()

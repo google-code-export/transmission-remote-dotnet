@@ -93,6 +93,9 @@
             this.label12 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.downlimit = new System.Windows.Forms.TextBox();
+            this.uplimit = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.profileComboBox = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -102,6 +105,8 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.addProfileButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PortField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RefreshRateValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RetryLimitValue)).BeginInit();
@@ -112,6 +117,7 @@
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.SuspendLayout();
@@ -307,6 +313,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -477,6 +484,26 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.label17);
+            this.tabPage6.Controls.Add(this.label16);
+            this.tabPage6.Controls.Add(this.downlimit);
+            this.tabPage6.Controls.Add(this.uplimit);
+            resources.ApplyResources(this.tabPage6, "tabPage6");
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // downlimit
+            // 
+            resources.ApplyResources(this.downlimit, "downlimit");
+            this.downlimit.Name = "downlimit";
+            // 
+            // uplimit
+            // 
+            resources.ApplyResources(this.uplimit, "uplimit");
+            this.uplimit.Name = "uplimit";
+            // 
             // button1
             // 
             resources.ApplyResources(this.button1, "button1");
@@ -541,6 +568,16 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
+            // label16
+            // 
+            resources.ApplyResources(this.label16, "label16");
+            this.label16.Name = "label16";
+            // 
+            // label17
+            // 
+            resources.ApplyResources(this.label17, "label17");
+            this.label17.Name = "label17";
+            // 
             // LocalSettingsDialog
             // 
             this.AcceptButton = this.SaveButton;
@@ -572,6 +609,8 @@
             this.tabPage3.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -638,5 +677,10 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.TextBox uplimit;
+        private System.Windows.Forms.TextBox downlimit;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
     }
 }

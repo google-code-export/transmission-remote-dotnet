@@ -72,11 +72,10 @@ namespace TransmissionRemoteDotnet
         static void Main(string[] args)
         {
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fr-FR");
-            using (ISingleInstance singleInstance =
 #if MONO || DOTNET2
-                new TCPSingleInstance(TCP_SINGLE_INSTANCE_PORT))
+            using (TCPSingleInstance singleInstance = new TCPSingleInstance(TCP_SINGLE_INSTANCE_PORT))
 #else
-                new SingleInstance(new Guid(APPLICATION_GUID)))
+            using (NamedPipeSingleInstance singleInstance = new TCPSingleInstance(TCP_SINGLE_INSTANCE_PORT))
 #endif
             {
                 if (singleInstance.IsFirstInstance)

@@ -82,6 +82,8 @@ namespace TransmissionRemoteDotnet
             textBox2.Text = settings.PlinkPath;
             checkBox1.Checked = settings.PlinkEnable;
             textBox3.Text = settings.PlinkCmd;
+            downlimit.Text = settings.DownLimit;
+            uplimit.Text = settings.UpLimit;
         }
 
         private void LocalSettingsDialog_Load(object sender, EventArgs e)

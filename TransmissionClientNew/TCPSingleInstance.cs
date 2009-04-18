@@ -28,7 +28,7 @@ using Jayrock.Json.Conversion;
 
 namespace TransmissionRemoteDotnet
 {
-    class TCPSingleInstance : ISingleInstance
+    class TCPSingleInstance : IDisposable
     {
         private int port;
         private TcpListener listener;

@@ -107,7 +107,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="GListBoxItem.cs" />
-    <Compile Include="ISingleInstance.cs" />
     <Compile Include="ListViewColumnSorter.cs" />
     <Compile Include="ListViewNF.cs">
       <SubType>Component</SubType>

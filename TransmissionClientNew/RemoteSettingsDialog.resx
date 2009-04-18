@@ -312,7 +312,7 @@
     <value>6</value>
   </data>
   <data name="SaveButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>267, 205</value>
+    <value>267, 210</value>
   </data>
   <data name="SaveButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 38</value>
@@ -336,7 +336,7 @@
     <value>3</value>
   </data>
   <data name="CloseFormButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>348, 205</value>
+    <value>348, 210</value>
   </data>
   <data name="CloseFormButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 38</value>
@@ -1227,14 +1227,11 @@
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>435, 253</value>
+    <value>435, 263</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

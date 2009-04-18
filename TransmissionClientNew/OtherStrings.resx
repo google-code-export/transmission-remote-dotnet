@@ -379,4 +379,13 @@
   <data name="PortTestResult" xml:space="preserve">
     <value>Port test result</value>
   </data>
+  <data name="DownloadLimit" xml:space="preserve">
+    <value>Download Limit</value>
+  </data>
+  <data name="Unlimited" xml:space="preserve">
+    <value>Unlimited</value>
+  </data>
+  <data name="UploadLimit" xml:space="preserve">
+    <value>Upload Limit</value>
+  </data>
 </root>

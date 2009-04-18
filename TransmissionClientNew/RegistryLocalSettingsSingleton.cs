@@ -69,7 +69,10 @@ namespace TransmissionRemoteDotnet
             REGKEY_PLINKCMD = "plinkCmd",
             REGKEY_PLINKENABLE = "plinkEnable",
             REGKEY_LOCALE = "locale",
-            REGKEY_CUSTOMPATH = "customPath";
+            REGKEY_CUSTOMPATH = "customPath",
+            REGKEY_DOWNLIMIT = "downlimit",
+            REGKEY_UPLIMIT = "uplimit";
+
 
         private static LocalSettingsSingleton instance = null;
         private static readonly object padlock = new object();
@@ -606,6 +609,31 @@ namespace TransmissionRemoteDotnet
                 profileConfMap[REGKEY_MINONCLOSE] = ToInt(value);
             }
         }
+
+        public string DownLimit
+        {
+            get
+            {
+                return profileConfMap.ContainsKey(REGKEY_DOWNLIMIT) ? (string)profileConfMap[REGKEY_DOWNLIMIT] : "10,50,100,200,300,400,500,700,1000,1500,2000,3000,5000";
+            }
+            set
+            {
+                profileConfMap[REGKEY_DOWNLIMIT] = value;
+            }
+        }
+
+        public string UpLimit
+        {
+            get
+            {
+                return profileConfMap.ContainsKey(REGKEY_UPLIMIT) ? (string)profileConfMap[REGKEY_DOWNLIMIT] : "10,50,100,200,300,400,500,700,1000,1500,2000,3000,5000";
+            }
+            set
+            {
+                profileConfMap[REGKEY_UPLIMIT] = value;
+            }
+        }
+
     }
 }
 #endif
