@@ -1,5 +1,6 @@
 ﻿/* http://www.codeproject.com/KB/combobox/glistbox.aspx
  * + some of my fixes. */
+ 
 using System.Windows.Forms;
 using System.Drawing;
 
