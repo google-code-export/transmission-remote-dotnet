@@ -71,11 +71,11 @@ namespace TransmissionRemoteDotnet
         [STAThread]
         static void Main(string[] args)
         {
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fr-FR");
-#if MONO || DOTNET2
-            using (TCPSingleInstance singleInstance = new TCPSingleInstance(TCP_SINGLE_INSTANCE_PORT))
-#else
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(LocalSettingsSingleton.Instance.Locale);
+#if DOTNET35
             using (NamedPipeSingleInstance singleInstance = new TCPSingleInstance(TCP_SINGLE_INSTANCE_PORT))
+#else
+            using (TCPSingleInstance singleInstance = new TCPSingleInstance(TCP_SINGLE_INSTANCE_PORT))
 #endif
             {
                 if (singleInstance.IsFirstInstance)
