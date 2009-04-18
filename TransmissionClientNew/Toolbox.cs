@@ -186,7 +186,7 @@ namespace TransmissionRemoteDotnet
 
         public static string GetSpeed(long bytes)
         {
-            return String.Format("{0}/{1}", GetFileSize(bytes), OtherStrings.Second.ToLower()[0]);
+            return String.Format("{0}/s", GetFileSize(bytes));
         }
 
         public static string GetSpeed(object o)

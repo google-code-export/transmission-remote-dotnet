@@ -242,12 +242,17 @@ namespace TransmissionRemoteDotnet
             }
         }
 
+        private int ParseSpeed(string s)
+        {
+            return int.Parse(s.Substring(0, s.IndexOf(' ')));
+        }
+
         private void ChangeDownLimit(object sender, EventArgs e)
         {
             JsonObject request = CreateLimitChangeRequest();
             JsonObject arguments = Requests.GetArgObject(request); 
-            arguments.Put(Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_DOWNLOADLIMITED : ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED, (((MenuItem)sender).Text != "Unlimited") ? 1 : 0);
-            arguments.Put(Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_DOWNLOADLIMIT : ProtocolConstants.FIELD_SPEEDLIMITDOWN, ((((MenuItem)sender).Text == "Unlimited") ? 0 : (int.Parse(((MenuItem)sender).Text))));
+            arguments.Put(Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_DOWNLOADLIMITED : ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED, (((MenuItem)sender).Text != OtherStrings.Unlimited) ? 1 : 0);
+            arguments.Put(Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_DOWNLOADLIMIT : ProtocolConstants.FIELD_SPEEDLIMITDOWN, (((MenuItem)sender).Text == OtherStrings.Unlimited) ? 0 : ParseSpeed(((MenuItem)sender).Text));
             CreateActionWorker().RunWorkerAsync(request);
         }
 
@@ -269,7 +274,7 @@ namespace TransmissionRemoteDotnet
             JsonObject request = CreateLimitChangeRequest();
             JsonObject arguments = Requests.GetArgObject(request);
             arguments.Put(Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_UPLOADLIMITED : ProtocolConstants.FIELD_SPEEDLIMITUPENABLED, (((MenuItem)sender).Text != OtherStrings.Unlimited) ? 1 : 0);
-            arguments.Put(Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_UPLOADLIMIT : ProtocolConstants.FIELD_SPEEDLIMITUP, ((((MenuItem)sender).Text == OtherStrings.Unlimited) ? 0 : (int.Parse(((MenuItem)sender).Text))));
+            arguments.Put(Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_UPLOADLIMIT : ProtocolConstants.FIELD_SPEEDLIMITUP, ((((MenuItem)sender).Text == OtherStrings.Unlimited) ? 0 : ParseSpeed(((MenuItem)sender).Text)));
             CreateActionWorker().RunWorkerAsync(request);
         }
 
