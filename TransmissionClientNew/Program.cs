@@ -10,7 +10,7 @@ namespace TransmissionRemoteDotnet
     static class Program
     {
         private const int TCP_SINGLE_INSTANCE_PORT = 24452;
-        private const string APPLICATION_GUID = "{1a4ec788-d8f8-46b4-bb6b-598bc39f6999}";
+        private const string APPLICATION_GUID = "{1a4ec788-d8f8-46b4-bb6b-598bc39f6307}";
 
         public static event EventHandler OnConnStatusChanged;
         public static event EventHandler OnTorrentsUpdated;

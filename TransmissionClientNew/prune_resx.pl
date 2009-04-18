@@ -10,12 +10,12 @@ if (@ARGV < 1)
 	exit 1;
 }
 
-if (@ARGV == 1)
+if (@ARGV == 1 && -d $ARGV[0])
 {
 	opendir(DIR, $ARGV[0]);
 }
-my @files = @ARGV == 1 ? readdir(DIR) : @ARGV;
-if (@ARGV == 1)
+my @files = (@ARGV == 1 && -d $ARGV[0]) ? readdir(DIR) : @ARGV;
+if (@ARGV == 1 && -d $ARGV[0])
 {
 	closedir(DIR);
 }

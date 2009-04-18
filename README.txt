@@ -15,14 +15,13 @@ svn co http://transmission-remote-dotnet.googlecode.com/svn/trunk/ transmission-
 CREDITS AND ACKNOWLEDGEMENTS
 ----------------------------
 
- * Jayrock (http://jayrock.berlios.de/) is used for encoding and decoding JSON. The revision as of December
-   2008 is currently being used with no modifications (which I would have to publish under the LGPL licence).
  * All icons are the creation of David Vignoni in his Nuvola theme. http://www.icon-king.com/
- * Elbandi has made a number of notable contributions including SSL, speed graphs and GeoIP support.
- * Thank you to all the following users kind enough to translate this application
-    * Romaric R. for the French translation
-	* benba for the German translation
-	* drphrozen for the Danish translation
+ * Első András has made a number of notable contributions including SSL, speed graphs and GeoIP support.
+ * Thank you to all the following users kind enough to translate this application:
+    * Romaric R. for the French translation.
+	* benba for the German translation.
+	* drphrozen for the Danish translation.
+	* Első András for the Hungarian translation.
 	
 ABOUT
 ----------------------------

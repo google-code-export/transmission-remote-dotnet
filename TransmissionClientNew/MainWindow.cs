@@ -375,11 +375,12 @@ namespace TransmissionRemoteDotnet
 
         private void PopulateLanguagesMenu()
         {
-            ToolStripMenuItem englishItem = new ToolStripMenuItem("English");
+            ToolStripMenuItem englishItem = new ToolStripMenuItem("Default (English)");
             englishItem.Click += new EventHandler(this.ChangeUICulture);
             englishItem.Tag = new CultureInfo("en-GB");
             englishItem.Checked = LocalSettingsSingleton.Instance.Locale.Equals("en-GB");
             languageToolStripMenuItem.DropDownItems.Add(englishItem);
+            languageToolStripMenuItem.DropDownItems.Add(new ToolStripSeparator());
             DirectoryInfo di = new DirectoryInfo(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
             DirectoryInfo[] subDirs = di.GetDirectories();
             List<CultureInfo> availableCultures = new List<CultureInfo>();
@@ -407,7 +408,7 @@ namespace TransmissionRemoteDotnet
             }
             foreach (CultureInfo ci in availableCultures)
             {
-                ToolStripMenuItem ti = new ToolStripMenuItem(ci.EnglishName);
+                ToolStripMenuItem ti = new ToolStripMenuItem(ci.EnglishName.Substring(0, ci.EnglishName.IndexOf('(')-1));
                 ti.Click += new EventHandler(this.ChangeUICulture);
                 ti.Tag = ci;
                 ti.Checked = LocalSettingsSingleton.Instance.Locale.Equals(ci.Name);
@@ -422,8 +423,9 @@ namespace TransmissionRemoteDotnet
                 LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
                 ToolStripMenuItem senderMI = sender as ToolStripMenuItem;
                 CultureInfo culture = (CultureInfo)senderMI.Tag;
-                foreach (ToolStripMenuItem mi in languageToolStripMenuItem.DropDownItems)
-                    mi.Checked = false;
+                foreach (ToolStripItem mi in languageToolStripMenuItem.DropDownItems)
+                    if (mi.GetType().Equals(typeof(ToolStripMenuItem)))
+                        ((ToolStripMenuItem)mi).Checked = false;
                 senderMI.Checked = true;
                 settings.Locale = culture.Name;
                 Thread.CurrentThread.CurrentUICulture = culture;

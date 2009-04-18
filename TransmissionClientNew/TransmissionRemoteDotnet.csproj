@@ -149,6 +149,10 @@
       <DependentUpon>AboutDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="AboutDialog.hu-HU.resx">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="AboutDialog.resx">
       <DependentUpon>AboutDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -162,6 +166,10 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ErrorLogWindow.fr-FR.resx">
+      <DependentUpon>ErrorLogWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorLogWindow.hu-HU.resx">
       <DependentUpon>ErrorLogWindow.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -181,6 +189,10 @@
       <DependentUpon>LocalSettingsDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="LocalSettingsDialog.hu-HU.resx">
+      <DependentUpon>LocalSettingsDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="LocalSettingsDialog.resx">
       <DependentUpon>LocalSettingsDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -197,6 +209,10 @@
       <DependentUpon>MainWindow.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.hu-HU.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="OtherStrings.da-DK.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -206,6 +222,9 @@
     <EmbeddedResource Include="OtherStrings.fr-FR.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>OtherStrings.fr-FR.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherStrings.hu-HU.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="OtherStrings.resx">
@@ -233,6 +252,10 @@
       <DependentUpon>RemoteSettingsDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="RemoteSettingsDialog.hu-HU.resx">
+      <DependentUpon>RemoteSettingsDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="RemoteSettingsDialog.resx">
       <DependentUpon>RemoteSettingsDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -246,6 +269,10 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="StatsDialog.fr-FR.resx">
+      <DependentUpon>StatsDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatsDialog.hu-HU.resx">
       <DependentUpon>StatsDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -265,6 +292,10 @@
       <DependentUpon>TorrentPropertiesDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="TorrentPropertiesDialog.hu-HU.resx">
+      <DependentUpon>TorrentPropertiesDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="TorrentPropertiesDialog.resx">
       <DependentUpon>TorrentPropertiesDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -278,6 +309,10 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UriPromptWindow.fr-FR.resx">
+      <DependentUpon>UriPromptWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UriPromptWindow.hu-HU.resx">
       <DependentUpon>UriPromptWindow.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>

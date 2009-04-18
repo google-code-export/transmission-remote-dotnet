@@ -94,3 +94,14 @@ C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\T
 C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\fr-FR\Transmission Remote.resources.dll
 C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\Transmission Remote.exe
 C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\Transmission Remote.pdb
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\bin\Release\hu-HU\Transmission Remote.resources.dll
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.AboutDialog.hu-HU.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.ErrorLogWindow.hu-HU.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.LocalSettingsDialog.hu-HU.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.MainWindow.hu-HU.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.OtherStrings.hu-HU.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.RemoteSettingsDialog.hu-HU.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.StatsDialog.hu-HU.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentPropertiesDialog.hu-HU.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.UriPromptWindow.hu-HU.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\hu-HU\Transmission Remote.resources.dll

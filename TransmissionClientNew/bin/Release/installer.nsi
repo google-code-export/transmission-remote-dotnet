@@ -11,7 +11,7 @@
 Name "Transmission Remote"
 
 ; The file to write
-OutFile "transmission-remote-dotnet-3.7-installer.exe"
+OutFile "transmission-remote-dotnet-3.7rc2-installer.exe"
 
 ; The default installation directory
 InstallDir "$PROGRAMFILES\Transmission Remote"
@@ -70,7 +70,7 @@ Section "Start Menu Shortcuts"
   CreateShortCut "$SMPROGRAMS\Transmission Remote\Transmission Remote.lnk" "$INSTDIR\Transmission Remote.exe" "" "$INSTDIR\Transmission Remote.exe" 0 
 SectionEnd
 
-Section "Desktop Shortcut"
+Section /o "Desktop Shortcut"
   CreateShortCut "$DESKTOP\Transmission Remote.lnk" "$INSTDIR\Transmission Remote.exe" "" "$INSTDIR\Transmission Remote.exe" 0
 SectionEnd
   
@@ -94,6 +94,12 @@ Section /o "Danish translation"
   CreateDirectory "$INSTDIR\da-DK"
   SetOutPath "$INSTDIR\da-DK"
   File "da-DK\Transmission Remote.resources.dll"
+SectionEnd
+
+Section /o "Hungarian translation"
+  CreateDirectory "$INSTDIR\hu-HU"
+  SetOutPath "$INSTDIR\hu-HU"
+  File "hu-HU\Transmission Remote.resources.dll"
 SectionEnd
 
 ;--------------------------------

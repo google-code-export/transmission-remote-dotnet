@@ -760,6 +760,11 @@ namespace CustomUIControls
                     return; // No magnitudes
                 }
 
+                int m_NewMaxPeek, m_NewMinPeek;
+
+                m_NewMaxPeek = 0;
+                m_NewMinPeek = 100;
+                
                 foreach (Line line in m_Lines)
                 {
                     /* If the line has less push points than the line with the greatest
@@ -778,14 +783,37 @@ namespace CustomUIControls
                             line.m_MagnitudeList[line.m_MagnitudeList.Count - 1]);
                     }
 
-/*                  // nem toroljuk a regi adatokat
+                  // nem toroljuk a regi adatokat
                     int cullsRequired = (line.m_MagnitudeList.Count - m_MaxCoords) + 1;
                     if (cullsRequired > 0)
                     {
-                        line.m_MagnitudeList.RemoveRange(0, cullsRequired);
+//                        line.m_MagnitudeList.RemoveRange(0, cullsRequired);
+                        for (int i = cullsRequired; i < line.m_MagnitudeList.Count; i++)
+                        {
+                            if (line.m_MagnitudeList[i] > m_NewMaxPeek)
+                            {
+                                m_NewMaxPeek = line.m_MagnitudeList[i];
+                            }
+
+                            if (line.m_MagnitudeList[i] < m_NewMinPeek)
+                            {
+                                m_NewMinPeek = line.m_MagnitudeList[i];
+                            }
+                        }
                     }
-*/
+
+
                 }
+
+                if (m_NewMaxPeek > 0)
+                {
+                    m_MaxPeek = m_NewMaxPeek;
+                }
+                if (m_NewMinPeek < 100)
+                {
+                    m_MinPeek = m_NewMinPeek;
+                }
+
             }
 
             // ===================================================================
