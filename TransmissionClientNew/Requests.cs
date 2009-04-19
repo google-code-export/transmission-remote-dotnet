@@ -222,12 +222,9 @@ namespace TransmissionRemoteDotnet
                 ProtocolConstants.FIELD_HASHSTRING,
                 ProtocolConstants.FIELD_DOWNLOADDIR,
                 ProtocolConstants.FIELD_SEEDRATIOLIMIT,
-                //ProtocolConstants.FIELD_SEEDRATIOLIMITED,
+                ProtocolConstants.FIELD_BANDWIDTHPRIORITY,
                 ProtocolConstants.FIELD_SEEDRATIOMODE,
-                ProtocolConstants.FIELD_HONORSSESSIONLIMITS,
-                /*"sizeWhenDone",, "isPrivate",
-                "hashString", "error",,
-                "peersKnown"*/
+                ProtocolConstants.FIELD_HONORSSESSIONLIMITS
             });
             arguments.Put(ProtocolConstants.KEY_FIELDS, fields);
             return request;

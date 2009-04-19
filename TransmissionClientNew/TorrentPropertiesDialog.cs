@@ -62,6 +62,15 @@ namespace TransmissionRemoteDotnet
                 arguments.Put(ProtocolConstants.FIELD_HONORSSESSIONLIMITS, honorsSessionLimits.Checked);
             if (seedRatioLimitedCheckBox.Enabled)
                 arguments.Put(ProtocolConstants.FIELD_SEEDRATIOMODE, seedRatioLimitedCheckBox.Checked ? 1 : 0);
+            if (comboBox1.Enabled)
+            {
+                int bandwidthPriority = 0;
+                if (comboBox1.SelectedIndex == 0)
+                    bandwidthPriority = -1;
+                else if (comboBox1.SelectedIndex == 2)
+                    bandwidthPriority = 1;
+                arguments.Put(ProtocolConstants.FIELD_BANDWIDTHPRIORITY, bandwidthPriority);
+            }
             Program.Form.CreateActionWorker().RunWorkerAsync(request);
             this.Close();
         }
@@ -79,6 +88,10 @@ namespace TransmissionRemoteDotnet
             downloadLimitField.Value = firstTorrent.SpeedLimitDown >= 0 && firstTorrent.SpeedLimitDown <= downloadLimitField.Maximum ? firstTorrent.SpeedLimitDown : 0;
             uploadLimitField.Enabled = uploadLimitEnableField.Checked = firstTorrent.SpeedLimitUpEnabled;
             downloadLimitField.Enabled = downloadLimitEnableField.Checked = firstTorrent.SpeedLimitDownEnabled;
+            comboBox1.Items.Add(OtherStrings.Low);
+            comboBox1.Items.Add(OtherStrings.Normal);
+            comboBox1.Items.Add(OtherStrings.High);
+            comboBox1.SelectedIndex = 1;
             try
             {
                 honorsSessionLimits.Checked = firstTorrent.HonorsSessionLimits;
@@ -97,6 +110,20 @@ namespace TransmissionRemoteDotnet
             catch
             {
                 seedRatioLimitValue.Enabled = seedRatioLimitedCheckBox.Enabled = false;
+            }
+            try
+            {
+                if (firstTorrent.BandwidthPriority < 0)
+                    comboBox1.SelectedIndex = 0;
+                else if (firstTorrent.BandwidthPriority > 0)
+                    comboBox1.SelectedIndex = 2;
+                else
+                    comboBox1.SelectedIndex = 1;
+                label4.Enabled = comboBox1.Enabled = true;
+            }
+            catch
+            {
+                label4.Enabled = comboBox1.Enabled = false;
             }
             peerLimitValue.Value = firstTorrent.MaxConnectedPeers;
         }

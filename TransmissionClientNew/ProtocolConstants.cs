@@ -71,6 +71,7 @@ namespace TransmissionRemoteDotnet
             FIELD_ANNOUNCEURL = "announceURL",
             FIELD_ETA = "eta",
             FIELD_STATUS = "status",
+            FIELD_BANDWIDTHPRIORITY = "bandwidthPriority",
             FIELD_RATEDOWNLOAD = "rateDownload",
             FIELD_RATEUPLOAD = "rateUpload",
             FIELD_TOTALSIZE = "totalSize",

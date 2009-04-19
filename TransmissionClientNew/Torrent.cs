@@ -506,6 +506,14 @@ namespace TransmissionRemoteDotnet
             }
         }
 
+        public int BandwidthPriority
+        {
+            get
+            {
+                return Toolbox.ToInt(info[ProtocolConstants.FIELD_BANDWIDTHPRIORITY]);
+            }
+        }
+
         public int PeersSendingToUs
         {
             get

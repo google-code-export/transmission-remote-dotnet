@@ -94,8 +94,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.downlimit = new System.Windows.Forms.TextBox();
-            this.uplimit = new System.Windows.Forms.TextBox();
+            this.downloadLimitItems = new System.Windows.Forms.TextBox();
+            this.uploadLimitItems = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.profileComboBox = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -488,21 +488,21 @@
             // 
             this.tabPage6.Controls.Add(this.label17);
             this.tabPage6.Controls.Add(this.label16);
-            this.tabPage6.Controls.Add(this.downlimit);
-            this.tabPage6.Controls.Add(this.uplimit);
+            this.tabPage6.Controls.Add(this.downloadLimitItems);
+            this.tabPage6.Controls.Add(this.uploadLimitItems);
             resources.ApplyResources(this.tabPage6, "tabPage6");
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // downlimit
             // 
-            resources.ApplyResources(this.downlimit, "downlimit");
-            this.downlimit.Name = "downlimit";
+            resources.ApplyResources(this.downloadLimitItems, "downlimit");
+            this.downloadLimitItems.Name = "downlimit";
             // 
             // uplimit
             // 
-            resources.ApplyResources(this.uplimit, "uplimit");
-            this.uplimit.Name = "uplimit";
+            resources.ApplyResources(this.uploadLimitItems, "uplimit");
+            this.uploadLimitItems.Name = "uplimit";
             // 
             // button1
             // 
@@ -678,8 +678,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.TextBox uplimit;
-        private System.Windows.Forms.TextBox downlimit;
+        private System.Windows.Forms.TextBox uploadLimitItems;
+        private System.Windows.Forms.TextBox downloadLimitItems;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
     }

@@ -82,8 +82,8 @@ namespace TransmissionRemoteDotnet
             textBox2.Text = settings.PlinkPath;
             checkBox1.Checked = settings.PlinkEnable;
             textBox3.Text = settings.PlinkCmd;
-            downlimit.Text = settings.DownLimit;
-            uplimit.Text = settings.UpLimit;
+            downloadLimitItems.Text = settings.DownLimit;
+            uploadLimitItems.Text = settings.UpLimit;
         }
 
         private void LocalSettingsDialog_Load(object sender, EventArgs e)
@@ -136,6 +136,8 @@ namespace TransmissionRemoteDotnet
             settings.PlinkCmd = textBox3.Text;
             settings.PlinkEnable = checkBox1.Checked;
             settings.PlinkPath = textBox2.Text;
+            settings.UpLimit = uploadLimitItems.Text;
+            settings.DownLimit = downloadLimitItems.Text;
             Program.Form.SetRemoteCmdButtonVisible(Program.Connected);
             settings.Commit();
         }

@@ -62,6 +62,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.seedRatioLimitValue)).BeginInit();
@@ -79,6 +81,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.honorsSessionLimits);
             this.tabPage1.Controls.Add(this.seedRatioLimitedCheckBox);
             this.tabPage1.Controls.Add(this.seedRatioLimitValue);
@@ -186,6 +190,18 @@
             resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
             // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBox1, "comboBox1");
+            this.comboBox1.Name = "comboBox1";
+            // 
             // TorrentPropertiesDialog
             // 
             this.AcceptButton = this.button1;
@@ -230,6 +246,8 @@
         private System.Windows.Forms.NumericUpDown seedRatioLimitValue;
         private System.Windows.Forms.CheckBox seedRatioLimitedCheckBox;
         private System.Windows.Forms.CheckBox honorsSessionLimits;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox1;
 
 
     }
