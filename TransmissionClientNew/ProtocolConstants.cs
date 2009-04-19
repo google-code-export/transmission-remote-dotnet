@@ -63,6 +63,7 @@ namespace TransmissionRemoteDotnet
             FIELD_COMMENT = "comment",
             FIELD_NAME = "name",
             FIELD_RATETOCLIENT = "rateToClient",
+            FIELD_BLOCKLISTSIZE = "blocklist-size",
             FIELD_RATETOPEER = "rateToPeer",
             FIELD_ERRORSTRING = "errorString",
             FIELD_PROGRESS = "progress",
@@ -112,6 +113,22 @@ namespace TransmissionRemoteDotnet
             FIELD_DOWNLOADLIMITED = "downloadLimited",
             FIELD_UPLOADLIMIT = "uploadLimit",
             FIELD_DOWNLOADLIMIT = "downloadLimit",
-            FIELD_PORT_IS_OPEN = "port-is-open";
+            FIELD_PORT_IS_OPEN = "port-is-open",
+            // settings
+            FIELD_PORTFORWARDINGENABLED = "port-forwarding-enabled",
+            FIELD_ENCRYPTION = "encryption",
+            FIELD_ALTSPEEDTIMEENABLED = "alt-speed-time-enabled",
+            FIELD_ALTSPEEDTIMEBEGIN = "alt-speed-time-begin",
+            FIELD_ALTSPEEDTIMEEND = "alt-speed-time-end",
+            FIELD_BLOCKLISTENABLED = "blocklist-enabled",
+            FIELD_ALTSPEEDENABLED = "alt-speed-enabled",
+            FIELD_ALTSPEEDDOWN = "alt-speed-down",
+            FIELD_ALTSPEEDUP = "alt-speed-up",
+            FIELD_PEERLIMITGLOBAL = "peer-limit-global",
+            FIELD_PEXENABLED = "pex-enabled",
+            FIELD_PEXALLOWED = "pex-allowed",
+            VALUE_PREFERRED = "preferred",
+            VALUE_TOLERATED = "tolerated",
+            VALUE_REQUIRED = "required";
     }
 }

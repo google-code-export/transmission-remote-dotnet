@@ -173,7 +173,7 @@ namespace TransmissionRemoteDotnet
 
         public static JsonObject BlocklistUpdate()
         {
-            return CreateBasicObject(ProtocolConstants.METHOD_BLOCKLISTUPDATE);
+            return CreateBasicObject(ProtocolConstants.METHOD_BLOCKLISTUPDATE, ResponseTag.UpdateBlocklist);
         }
 
         public static JsonObject TorrentGet()

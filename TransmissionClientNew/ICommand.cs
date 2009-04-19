@@ -23,7 +23,7 @@ namespace TransmissionRemoteDotnet
 {
     public enum ResponseTag
     {
-        SessionGet, SessionStats, TorrentGet, DoNothing, UpdateFiles, PortTest
+        SessionGet, SessionStats, TorrentGet, DoNothing, UpdateFiles, PortTest, UpdateBlocklist
     }
 
     public interface ICommand

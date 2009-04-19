@@ -67,6 +67,8 @@ namespace TransmissionRemoteDotnet
                         return new UpdateFilesCommand(jsonResponse);
                     case (short)ResponseTag.PortTest:
                         return new PortTestCommand(jsonResponse);
+                    case (short)ResponseTag.UpdateBlocklist:
+                        return new UpdateBlocklistCommand(jsonResponse);
                     case (short)ResponseTag.DoNothing:
                         return new NoCommand();
                 }

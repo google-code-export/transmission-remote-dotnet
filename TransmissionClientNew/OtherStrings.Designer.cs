@@ -637,6 +637,15 @@ namespace TransmissionRemoteDotnet {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Querying....
+        /// </summary>
+        internal static string Querying {
+            get {
+                return ResourceManager.GetString("Querying", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Recheck.
         /// </summary>
         internal static string Recheck {
@@ -808,6 +817,15 @@ namespace TransmissionRemoteDotnet {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Updating....
+        /// </summary>
+        internal static string Updating {
+            get {
+                return ResourceManager.GetString("Updating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upgrade available.
         /// </summary>
         internal static string UpgradeAvailable {
@@ -849,6 +867,15 @@ namespace TransmissionRemoteDotnet {
         internal static string WaitingToCheck {
             get {
                 return ResourceManager.GetString("WaitingToCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} in blocklist..
+        /// </summary>
+        internal static string XInBlocklist {
+            get {
+                return ResourceManager.GetString("XInBlocklist", resourceCulture);
             }
         }
         

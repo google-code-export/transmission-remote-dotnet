@@ -626,7 +626,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return profileConfMap.ContainsKey(REGKEY_UPLIMIT) ? (string)profileConfMap[REGKEY_DOWNLIMIT] : "10,50,100,200,300,400,500,700,1000,1500,2000,3000,5000";
+                return profileConfMap.ContainsKey(REGKEY_UPLIMIT) ? (string)profileConfMap[REGKEY_UPLIMIT] : "10,50,100,200,300,400,500,700,1000,1500,2000,3000,5000";
             }
             set
             {

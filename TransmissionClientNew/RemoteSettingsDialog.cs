@@ -61,7 +61,7 @@ namespace TransmissionRemoteDotnet
         {
             if (IsActive())
             {
-                instance.testPortButton.Text = "Test Port";
+                instance.testPortButton.Text = (string)instance.testPortButton.Tag;
                 instance.testPortButton.Enabled = true;
             }
         }
@@ -116,26 +116,26 @@ namespace TransmissionRemoteDotnet
                     PeerLimitValue.Value = Toolbox.ToInt(session[ProtocolConstants.FIELD_PEERLIMIT]);
                     PeerLimitValue.Tag = ProtocolConstants.FIELD_PEERLIMIT;
                 }
-                else if (session.Contains("peer-limit-global"))
+                else if (session.Contains(ProtocolConstants.FIELD_PEERLIMITGLOBAL))
                 {
-                    PeerLimitValue.Value = Toolbox.ToInt(session["peer-limit-global"]);
-                    PeerLimitValue.Tag = "peer-limit-global";
+                    PeerLimitValue.Value = Toolbox.ToInt(session[ProtocolConstants.FIELD_PEERLIMITGLOBAL]);
+                    PeerLimitValue.Tag = ProtocolConstants.FIELD_PEERLIMITGLOBAL;
                 }
                 // pex
-                if (session.Contains("pex-allowed"))
+                if (session.Contains(ProtocolConstants.FIELD_PEXALLOWED))
                 {
-                    PEXcheckBox.Checked = Toolbox.ToBool(session["pex-allowed"]);
-                    PEXcheckBox.Tag = "pex-allowed";
+                    PEXcheckBox.Checked = Toolbox.ToBool(session[ProtocolConstants.FIELD_PEXALLOWED]);
+                    PEXcheckBox.Tag = ProtocolConstants.FIELD_PEXALLOWED;
                 }
-                else if (session.Contains("pex-enabled"))
+                else if (session.Contains(ProtocolConstants.FIELD_PEXENABLED))
                 {
-                    PEXcheckBox.Checked = Toolbox.ToBool(session["pex-enabled"]);
-                    PEXcheckBox.Tag = "pex-enabled";
+                    PEXcheckBox.Checked = Toolbox.ToBool(session[ProtocolConstants.FIELD_PEXENABLED]);
+                    PEXcheckBox.Tag = ProtocolConstants.FIELD_PEXENABLED;
                 }
                 // blocklist
-                if (updateBlocklistButton.Enabled = blocklistEnabledCheckBox.Enabled = session.Contains("blocklist-enabled"))
+                if (updateBlocklistButton.Enabled = blocklistEnabledCheckBox.Enabled = session.Contains(ProtocolConstants.FIELD_BLOCKLISTENABLED))
                 {
-                    blocklistEnabledCheckBox.Checked = Toolbox.ToBool(session["blocklist-enabled"]);
+                    blocklistEnabledCheckBox.Checked = Toolbox.ToBool(session[ProtocolConstants.FIELD_BLOCKLISTENABLED]);
                 }
                 if (altSpeedLimitEnable.Enabled =
                     altUploadLimitField.Enabled =
@@ -145,14 +145,14 @@ namespace TransmissionRemoteDotnet
                     timeConstraintBeginHours.Enabled =
                     timeConstaintEndMinutes.Enabled =
                     timeConstaintBeginMinutes.Enabled =
-                    session.Contains("alt-speed-enabled"))
+                    session.Contains(ProtocolConstants.FIELD_ALTSPEEDENABLED))
                 {
-                    altDownloadLimitField.Value = Toolbox.ToInt(session["alt-speed-down"]);
-                    altUploadLimitField.Value = Toolbox.ToInt(session["alt-speed-up"]);
-                    altDownloadLimitField.Enabled = altUploadLimitField.Enabled = altSpeedLimitEnable.Checked = Toolbox.ToBool(session["alt-speed-enabled"]);
+                    altDownloadLimitField.Value = Toolbox.ToInt(session[ProtocolConstants.FIELD_ALTSPEEDDOWN]);
+                    altUploadLimitField.Value = Toolbox.ToInt(session[ProtocolConstants.FIELD_ALTSPEEDUP]);
+                    altDownloadLimitField.Enabled = altUploadLimitField.Enabled = altSpeedLimitEnable.Checked = Toolbox.ToBool(session[ProtocolConstants.FIELD_ALTSPEEDENABLED]);
                     timeConstaintBeginMinutes.Enabled = timeConstaintEndMinutes.Enabled = timeConstraintBeginHours.Enabled = timeConstraintEndHours.Enabled = altTimeConstraintEnabled.Checked = Toolbox.ToBool(session["alt-speed-time-enabled"]);
-                    int altSpeedTimeBegin = Toolbox.ToInt(session["alt-speed-time-begin"]);
-                    int altSpeedTimeEnd = Toolbox.ToInt(session["alt-speed-time-end"]);
+                    int altSpeedTimeBegin = Toolbox.ToInt(session[ProtocolConstants.FIELD_ALTSPEEDTIMEBEGIN]);
+                    int altSpeedTimeEnd = Toolbox.ToInt(session[ProtocolConstants.FIELD_ALTSPEEDTIMEEND]);
                     timeConstraintBeginHours.Value = Math.Floor((decimal)altSpeedTimeBegin / 60);
                     timeConstraintEndHours.Value = Math.Floor((decimal)altSpeedTimeEnd / 60);
                     timeConstaintBeginMinutes.Value = altSpeedTimeBegin % 60;
@@ -199,19 +199,19 @@ namespace TransmissionRemoteDotnet
             JsonObject request = Requests.CreateBasicObject(ProtocolConstants.METHOD_SESSIONSET);
             JsonObject arguments = Requests.GetArgObject(request);
             arguments.Put((string)IncomingPortValue.Tag, IncomingPortValue.Value);
-            arguments.Put("port-forwarding-enabled", PortForward.Checked);
+            arguments.Put(ProtocolConstants.FIELD_PORTFORWARDINGENABLED, PortForward.Checked);
             arguments.Put((string)PEXcheckBox.Tag, PEXcheckBox.Checked);
             arguments.Put((string)PeerLimitValue.Tag, PeerLimitValue.Value);
             switch (EncryptionCombobox.SelectedIndex)
             {
                 case 1:
-                    arguments.Put("encryption", "preferred");
+                    arguments.Put(ProtocolConstants.FIELD_ENCRYPTION, ProtocolConstants.VALUE_PREFERRED);
                     break;
                 case 2:
-                    arguments.Put("encryption", "required");
+                    arguments.Put(ProtocolConstants.FIELD_ENCRYPTION, ProtocolConstants.VALUE_REQUIRED);
                     break;
                 default:
-                    arguments.Put("encryption", "tolerated");
+                    arguments.Put(ProtocolConstants.FIELD_ENCRYPTION, ProtocolConstants.VALUE_TOLERATED);
                     break;
             }
             arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITUPENABLED, LimitUploadCheckBox.Checked);
@@ -220,26 +220,26 @@ namespace TransmissionRemoteDotnet
             arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITDOWN, LimitDownloadValue.Value);
             if (altSpeedLimitEnable.Enabled)
             {
-                arguments.Put("alt-speed-enabled", altSpeedLimitEnable.Checked);
-                arguments.Put("alt-speed-down", altDownloadLimitField.Value);
-                arguments.Put("alt-speed-up", altUploadLimitField.Value);
+                arguments.Put(ProtocolConstants.FIELD_ALTSPEEDENABLED, altSpeedLimitEnable.Checked);
+                arguments.Put(ProtocolConstants.FIELD_ALTSPEEDDOWN, altDownloadLimitField.Value);
+                arguments.Put(ProtocolConstants.FIELD_ALTSPEEDUP, altUploadLimitField.Value);
             }
             if (altTimeConstraintEnabled.Enabled)
             {
-                arguments.Put("alt-speed-time-enabled", altTimeConstraintEnabled.Checked);
-                arguments.Put("alt-speed-time-begin", timeConstraintBeginHours.Value*60+timeConstaintBeginMinutes.Value);
-                arguments.Put("alt-speed-time-end", timeConstraintEndHours.Value*60+timeConstaintEndMinutes.Value);
+                arguments.Put(ProtocolConstants.FIELD_ALTSPEEDTIMEENABLED, altTimeConstraintEnabled.Checked);
+                arguments.Put(ProtocolConstants.FIELD_ALTSPEEDTIMEBEGIN, timeConstraintBeginHours.Value*60+timeConstaintBeginMinutes.Value);
+                arguments.Put(ProtocolConstants.FIELD_ALTSPEEDTIMEEND, timeConstraintEndHours.Value*60+timeConstaintEndMinutes.Value);
             }
             if (blocklistEnabledCheckBox.Enabled)
             {
-                arguments.Put("blocklist-enabled", blocklistEnabledCheckBox.Checked);
+                arguments.Put(ProtocolConstants.FIELD_BLOCKLISTENABLED, blocklistEnabledCheckBox.Checked);
             }
             if (seedRatioEnabledCheckBox.Enabled)
             {
                 arguments.Put(ProtocolConstants.FIELD_SEEDRATIOLIMITED, seedRatioEnabledCheckBox.Checked);
                 arguments.Put(ProtocolConstants.FIELD_SEEDRATIOLIMIT, seedLimitUpDown.Value);
             }
-            arguments.Put("download-dir", DownloadToField.Text);
+            arguments.Put(ProtocolConstants.FIELD_DOWNLOADDIR, DownloadToField.Text);
             SettingsWorker.RunWorkerAsync(request);
             this.Close();
         }
@@ -281,7 +281,20 @@ namespace TransmissionRemoteDotnet
 
         private void updateBlocklistButton_Click(object sender, EventArgs e)
         {
+            updateBlocklistButton.Enabled = false;
+            updateBlocklistButton.Tag = updateBlocklistButton.Text;
+            updateBlocklistButton.Text = OtherStrings.Updating;
             Program.Form.CreateActionWorker().RunWorkerAsync(Requests.BlocklistUpdate());
+        }
+
+        public static void BlocklistUpdateDone(int size)
+        {
+            if (IsActive())
+            {
+                instance.updateBlocklistButton.Enabled = true;
+                instance.updateBlocklistButton.Text = (string)instance.updateBlocklistButton.Tag;
+                instance.label15.Text = String.Format(OtherStrings.XInBlocklist, size);
+            }
         }
 
         private void seedRatioEnabledCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -292,7 +305,8 @@ namespace TransmissionRemoteDotnet
         private void testPortButton_Click(object sender, EventArgs e)
         {
             testPortButton.Enabled = false;
-            testPortButton.Text = "Querying...";
+            testPortButton.Tag = testPortButton.Text;
+            testPortButton.Text = OtherStrings.Querying;
             Program.Form.CreateActionWorker().RunWorkerAsync(Requests.PortTest());
         }
     }

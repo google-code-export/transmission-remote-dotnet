@@ -145,7 +145,7 @@
     <value>Tálca ikon mutatása</value>
   </data>
   <data name="ProxyAuthEnableCheckBox.Text" xml:space="preserve">
-    <value>Hitelesítés_</value>
+    <value>Hitelesítés</value>
   </data>
   <data name="EnableProxyCombo.Items" xml:space="preserve">
     <value>Automatikus</value>
@@ -199,7 +199,7 @@
     <value>Hitelesítés</value>
   </data>
   <data name="tabPage3.Text" xml:space="preserve">
-    <value>Proxy_</value>
+    <value>Proxy</value>
   </data>
   <data name="label15.Text" xml:space="preserve">
     <value>Segítég:</value>

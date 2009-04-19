@@ -90,6 +90,7 @@
             this.altTimeConstraintEnabled = new System.Windows.Forms.CheckBox();
             this.altSpeedLimitEnable = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.LimitUploadValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LimitDownloadValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IncomingPortValue)).BeginInit();
@@ -250,6 +251,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label15);
             this.tabPage1.Controls.Add(this.testPortButton);
             this.tabPage1.Controls.Add(this.updateBlocklistButton);
             this.tabPage1.Controls.Add(this.blocklistEnabledCheckBox);
@@ -440,6 +442,11 @@
             resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
             // 
+            // label15
+            // 
+            resources.ApplyResources(this.label15, "label15");
+            this.label15.Name = "label15";
+            // 
             // RemoteSettingsDialog
             // 
             this.AcceptButton = this.SaveButton;
@@ -522,5 +529,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.NumericUpDown timeConstaintBeginMinutes;
+        private System.Windows.Forms.Label label15;
     }
 }

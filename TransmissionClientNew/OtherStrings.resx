@@ -388,4 +388,13 @@
   <data name="UploadLimit" xml:space="preserve">
     <value>Upload Limit</value>
   </data>
+  <data name="Querying" xml:space="preserve">
+    <value>Querying...</value>
+  </data>
+  <data name="Updating" xml:space="preserve">
+    <value>Updating...</value>
+  </data>
+  <data name="XInBlocklist" xml:space="preserve">
+    <value>{0} in blocklist.</value>
+  </data>
 </root>

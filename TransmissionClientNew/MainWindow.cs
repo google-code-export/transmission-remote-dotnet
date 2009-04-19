@@ -256,11 +256,11 @@ namespace TransmissionRemoteDotnet
             JsonObject arguments = Requests.GetArgObject(request);
             foreach (string key in new string[] { ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED, ProtocolConstants.FIELD_DOWNLOADLIMITED, ProtocolConstants.FIELD_DOWNLOADLIMITMODE })
             {
-                arguments.Put(key, (((MenuItem)sender).Text != OtherStrings.Unlimited) ? 1 : 0);
+                arguments.Put(key, ((MenuItem)sender).Text != OtherStrings.Unlimited ? 1 : 0);
             }
             foreach (string key in new string[] { ProtocolConstants.FIELD_DOWNLOADLIMIT, ProtocolConstants.FIELD_SPEEDLIMITDOWN })
             {
-                arguments.Put(key, ((((MenuItem)sender).Text == OtherStrings.Unlimited) ? 0 : ParseSpeed(((MenuItem)sender).Text)));
+                arguments.Put(key, (((MenuItem)sender).Text == OtherStrings.Unlimited ? 0 : ParseSpeed(((MenuItem)sender).Text)));
             }
             CreateActionWorker().RunWorkerAsync(request);
         }
