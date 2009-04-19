@@ -211,13 +211,11 @@ namespace TransmissionRemoteDotnet
             Torrent firstTorrent = (Torrent)torrentListView.SelectedItems[0].Tag;
             if (firstTorrent == null)
                 return;
-            string limit = firstTorrent.SpeedLimitDown.ToString();
-            if (!firstTorrent.SpeedLimitDownEnabled)
-                limit = OtherStrings.Unlimited;
+            int limit = firstTorrent.SpeedLimitDownEnabled ? firstTorrent.SpeedLimitDown : -1;
             for (int i = 0; i < ((MenuItem)sender).MenuItems.Count; i++)
             {
                 MenuItem m = ((MenuItem)sender).MenuItems[i];
-                if (m.Text == limit)
+                if (ParseSpeed(m.Text) == limit || (m.Text == OtherStrings.Unlimited && limit < 0))
                     m.Checked = true;
                 else
                     m.Checked = false;
@@ -229,13 +227,11 @@ namespace TransmissionRemoteDotnet
             Torrent firstTorrent = (Torrent)torrentListView.SelectedItems[0].Tag;
             if (firstTorrent == null)
                 return;
-            string limit = firstTorrent.SpeedLimitUp.ToString();
-            if (!firstTorrent.SpeedLimitUpEnabled)
-                limit = OtherStrings.Unlimited;
+            int limit = firstTorrent.SpeedLimitUpEnabled ? firstTorrent.SpeedLimitUp : -1;
             for (int i = 0; i < ((MenuItem)sender).MenuItems.Count; i++)
             {
                 MenuItem m = ((MenuItem)sender).MenuItems[i];
-                if (m.Text == limit)
+                if (ParseSpeed(m.Text) == limit || (m.Text == OtherStrings.Unlimited && limit < 0))
                     m.Checked = true;
                 else
                     m.Checked = false;
@@ -244,15 +240,28 @@ namespace TransmissionRemoteDotnet
 
         private int ParseSpeed(string s)
         {
-            return int.Parse(s.Substring(0, s.IndexOf(' ')));
+            try
+            {
+                return int.Parse(s.Substring(0, s.IndexOf(' ')));
+            }
+            catch
+            {
+                return -1;
+            }
         }
 
         private void ChangeDownLimit(object sender, EventArgs e)
         {
             JsonObject request = CreateLimitChangeRequest();
-            JsonObject arguments = Requests.GetArgObject(request); 
-            arguments.Put(Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_DOWNLOADLIMITED : ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED, (((MenuItem)sender).Text != OtherStrings.Unlimited) ? 1 : 0);
-            arguments.Put(Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_DOWNLOADLIMIT : ProtocolConstants.FIELD_SPEEDLIMITDOWN, (((MenuItem)sender).Text == OtherStrings.Unlimited) ? 0 : ParseSpeed(((MenuItem)sender).Text));
+            JsonObject arguments = Requests.GetArgObject(request);
+            foreach (string key in new string[] { ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED, ProtocolConstants.FIELD_DOWNLOADLIMITED, ProtocolConstants.FIELD_DOWNLOADLIMITMODE })
+            {
+                arguments.Put(key, (((MenuItem)sender).Text != OtherStrings.Unlimited) ? 1 : 0);
+            }
+            foreach (string key in new string[] { ProtocolConstants.FIELD_DOWNLOADLIMIT, ProtocolConstants.FIELD_SPEEDLIMITDOWN })
+            {
+                arguments.Put(key, ((((MenuItem)sender).Text == OtherStrings.Unlimited) ? 0 : ParseSpeed(((MenuItem)sender).Text)));
+            }
             CreateActionWorker().RunWorkerAsync(request);
         }
 
@@ -273,8 +282,14 @@ namespace TransmissionRemoteDotnet
         {
             JsonObject request = CreateLimitChangeRequest();
             JsonObject arguments = Requests.GetArgObject(request);
-            arguments.Put(Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_UPLOADLIMITED : ProtocolConstants.FIELD_SPEEDLIMITUPENABLED, (((MenuItem)sender).Text != OtherStrings.Unlimited) ? 1 : 0);
-            arguments.Put(Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_UPLOADLIMIT : ProtocolConstants.FIELD_SPEEDLIMITUP, ((((MenuItem)sender).Text == OtherStrings.Unlimited) ? 0 : ParseSpeed(((MenuItem)sender).Text)));
+            foreach (string key in new string[] { ProtocolConstants.FIELD_SPEEDLIMITUPENABLED, ProtocolConstants.FIELD_UPLOADLIMITED, ProtocolConstants.FIELD_UPLOADLIMITMODE })
+            {
+                arguments.Put(key, (((MenuItem)sender).Text != OtherStrings.Unlimited) ? 1 : 0);
+            }
+            foreach(string key in new string[]{ProtocolConstants.FIELD_UPLOADLIMIT, ProtocolConstants.FIELD_SPEEDLIMITUP})
+            {
+                arguments.Put(key, ((((MenuItem)sender).Text == OtherStrings.Unlimited) ? 0 : ParseSpeed(((MenuItem)sender).Text)));
+            }
             CreateActionWorker().RunWorkerAsync(request);
         }
 

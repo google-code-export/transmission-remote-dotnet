@@ -47,10 +47,14 @@ namespace TransmissionRemoteDotnet
                 ids.Put(t.Id);
             }
             arguments.Put(ProtocolConstants.KEY_IDS, ids);
-            arguments.Put(GetKey(uploadLimitEnableField), uploadLimitEnableField.Checked ? 1 : 0);
-            arguments.Put(GetKey(uploadLimitField), uploadLimitField.Value);
-            arguments.Put(GetKey(downloadLimitEnableField), downloadLimitEnableField.Checked ? 1 : 0);
-            arguments.Put(GetKey(downloadLimitField), downloadLimitField.Value);
+            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITUPENABLED, uploadLimitEnableField.Checked ? 1 : 0);
+            arguments.Put(ProtocolConstants.FIELD_UPLOADLIMITED, uploadLimitEnableField.Checked ? 1 : 0);
+            arguments.Put(ProtocolConstants.FIELD_UPLOADLIMIT, uploadLimitField.Value);
+            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITUP, uploadLimitField.Value);
+            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED, uploadLimitEnableField.Checked ? 1 : 0);
+            arguments.Put(ProtocolConstants.FIELD_DOWNLOADLIMITED, uploadLimitEnableField.Checked ? 1 : 0);
+            arguments.Put(ProtocolConstants.FIELD_DOWNLOADLIMIT, uploadLimitField.Value);
+            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITDOWN, uploadLimitField.Value);
             arguments.Put(ProtocolConstants.FIELD_PEERLIMIT, peerLimitValue.Value);
             if (seedRatioLimitValue.Enabled)
                 arguments.Put(ProtocolConstants.FIELD_SEEDRATIOLIMIT, seedRatioLimitValue.Value);
@@ -60,11 +64,6 @@ namespace TransmissionRemoteDotnet
                 arguments.Put(ProtocolConstants.FIELD_SEEDRATIOMODE, seedRatioLimitedCheckBox.Checked ? 1 : 0);
             Program.Form.CreateActionWorker().RunWorkerAsync(request);
             this.Close();
-        }
-
-        private string GetKey(Control c)
-        {
-            return (string)c.Tag;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -80,10 +79,6 @@ namespace TransmissionRemoteDotnet
             downloadLimitField.Value = firstTorrent.SpeedLimitDown >= 0 && firstTorrent.SpeedLimitDown <= downloadLimitField.Maximum ? firstTorrent.SpeedLimitDown : 0;
             uploadLimitField.Enabled = uploadLimitEnableField.Checked = firstTorrent.SpeedLimitUpEnabled;
             downloadLimitField.Enabled = downloadLimitEnableField.Checked = firstTorrent.SpeedLimitDownEnabled;
-            uploadLimitField.Tag = Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_UPLOADLIMIT : ProtocolConstants.FIELD_SPEEDLIMITUP;
-            downloadLimitField.Tag = Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_DOWNLOADLIMIT : ProtocolConstants.FIELD_SPEEDLIMITDOWN;
-            uploadLimitEnableField.Tag = Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_UPLOADLIMITED : ProtocolConstants.FIELD_SPEEDLIMITUPENABLED;
-            downloadLimitEnableField.Tag = Program.DaemonDescriptor.Revision >= 8100 ? ProtocolConstants.FIELD_DOWNLOADLIMITED : ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED;
             try
             {
                 honorsSessionLimits.Checked = firstTorrent.HonorsSessionLimits;

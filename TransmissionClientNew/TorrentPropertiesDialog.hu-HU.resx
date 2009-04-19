@@ -145,7 +145,7 @@
     <value>Mégse</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
-    <value>OK_</value>
+    <value>OK</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Figyelem: Néhány beállítás elérhetőségéhez a transmission-daemon frissítése szükséges.</value>
