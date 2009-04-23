@@ -105,3 +105,14 @@ C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\T
 C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentPropertiesDialog.hu-HU.resources
 C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.UriPromptWindow.hu-HU.resources
 C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\hu-HU\Transmission Remote.resources.dll
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\bin\Release\zh-CN\Transmission Remote.resources.dll
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.AboutDialog.zh-CN.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.ErrorLogWindow.zh-CN.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.LocalSettingsDialog.zh-CN.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.MainWindow.zh-CN.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.OtherStrings.zh-CN.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.RemoteSettingsDialog.zh-CN.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.StatsDialog.zh-CN.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentPropertiesDialog.zh-CN.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.UriPromptWindow.zh-CN.resources
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\zh-CN\Transmission Remote.resources.dll

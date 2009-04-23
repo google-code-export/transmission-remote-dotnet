@@ -22,6 +22,7 @@ CREDITS AND ACKNOWLEDGEMENTS
 	* benba for the German translation.
 	* drphrozen for the Danish translation.
 	* Első András for the Hungarian translation.
+	* liuzhiyi for the Chinese translation.
 	
 ABOUT
 ----------------------------
