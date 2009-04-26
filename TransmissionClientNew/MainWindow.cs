@@ -359,9 +359,6 @@ namespace TransmissionRemoteDotnet
                 speedGraph.GetLineHandle("Upload").Clear();
                 speedGraph.Push(0, "Download");
                 speedGraph.Push(0, "Upload");
-                bool enablePieces = Program.DaemonDescriptor.Revision >= 8001;
-                piecesLabel.Visible = piecesGraph.Visible = enablePieces;
-                progressBar.Visible = downloadProgressLabel.Visible = !enablePieces;
             }
             else
             {
@@ -1378,6 +1375,8 @@ namespace TransmissionRemoteDotnet
                 trackersListView.ResumeLayout();
                 peersListView.Enabled = trackersListView.Enabled
                     = true;
+                piecesLabel.Visible = piecesGraph.Visible = t.Pieces != null;
+                progressBar.Visible = downloadProgressLabel.Visible = !piecesGraph.Visible;
             }
             remainingLabel.Text = t.GetLongETA();
             uploadedLabel.Text = t.UploadedString;
