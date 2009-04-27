@@ -224,8 +224,9 @@ namespace TransmissionRemoteDotnet
                 ProtocolConstants.FIELD_SEEDRATIOLIMIT,
                 ProtocolConstants.FIELD_BANDWIDTHPRIORITY,
                 ProtocolConstants.FIELD_SEEDRATIOMODE,
-                ProtocolConstants.FIELD_HONORSSESSIONLIMITS
-            });
+                ProtocolConstants.FIELD_HONORSSESSIONLIMITS,
+                ProtocolConstants.FIELD_DONEDATE,
+        });
             arguments.Put(ProtocolConstants.KEY_FIELDS, fields);
             return request;
         }

@@ -35,7 +35,8 @@ namespace TransmissionRemoteDotnet
 
         public static decimal ToProgress(object o)
         {
-            return Math.Round(ToDecimal(o), 2);
+            decimal result = Math.Round(ToDecimal(o), 2);
+            return Program.DaemonDescriptor.Version >= 1.52 ? result * 100 : result;
         }
 
         public static double ToDouble(object o)

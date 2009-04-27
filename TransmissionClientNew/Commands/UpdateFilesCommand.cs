@@ -84,8 +84,8 @@ namespace TransmissionRemoteDotnet.Commmands
                         if (i < form.FileItems.Count)
                         {
                             ListViewItem item = form.FileItems[i];
-                            UpdateFilesUpdateSubCommand subCommand = new UpdateFilesUpdateSubCommand(item, bytesCompleted);
-                            uiUpdateBatch.Add((ICommand)subCommand);
+                            ICommand subCommand = new UpdateFilesUpdateSubCommand(item, bytesCompleted);
+                            uiUpdateBatch.Add(subCommand);
                         }
                     }
                 }

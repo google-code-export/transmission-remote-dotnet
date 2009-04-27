@@ -60,7 +60,6 @@ namespace TransmissionRemoteDotnet
         private ContextMenu fileSelectionMenu;
         private ContextMenu noFileSelectionMenu;
         private BackgroundWorker connectWorker;
-        private TabPage peersTabPageSaved;
         private GeoIPCountry geo;
         private List<ListViewItem> fileItems = new List<ListViewItem>();
 
@@ -91,7 +90,6 @@ namespace TransmissionRemoteDotnet
             tabControlImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.info16);
             generalTabPage.ImageIndex = 4;
             mainVerticalSplitContainer.Panel1Collapsed = true;
-            this.peersTabPageSaved = this.peersTabPage;
             refreshTimer.Interval = settings.RefreshRate * 1000;
             filesTimer.Interval = settings.RefreshRate * 1000 * LocalSettingsSingleton.FILES_REFRESH_MULTIPLICANT;
             torrentListView.ListViewItemSorter = lvwColumnSorter = new ListViewItemSorter();
@@ -1352,14 +1350,6 @@ namespace TransmissionRemoteDotnet
                 createdAtLabel.Text = t.Created;
                 createdByLabel.Text = t.Creator;
                 commentLabel.Text = t.Comment;
-                if (t.Peers != null && !torrentTabControl.TabPages.Contains(peersTabPageSaved))
-                {
-                    torrentTabControl.TabPages.Add(peersTabPageSaved);
-                }
-                else if (t.Peers == null && torrentTabControl.TabPages.Contains(peersTabPageSaved))
-                {
-                    torrentTabControl.TabPages.Remove(peersTabPageSaved);
-                }
                 trackersListView.SuspendLayout();
                 foreach (JsonObject tracker in t.Trackers)
                 {

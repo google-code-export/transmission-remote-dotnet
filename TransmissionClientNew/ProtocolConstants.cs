@@ -129,6 +129,8 @@ namespace TransmissionRemoteDotnet
             FIELD_PEXALLOWED = "pex-allowed",
             VALUE_PREFERRED = "preferred",
             VALUE_TOLERATED = "tolerated",
-            VALUE_REQUIRED = "required";
+            VALUE_REQUIRED = "required",
+
+            FIELD_DONEDATE = "doneDate";
     }
 }

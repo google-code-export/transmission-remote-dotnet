@@ -71,7 +71,6 @@ namespace TransmissionRemoteDotnet
 
         private void ListenForArguments(Object state)
         {
-            StreamWriter writer = null;
             StreamReader reader = null;
             try
             {
@@ -89,8 +88,6 @@ namespace TransmissionRemoteDotnet
             { }
             finally
             {
-                if (writer != null)
-                    writer.Close();
                 if (reader != null)
                     reader.Close();
                 ListenForArguments(null);

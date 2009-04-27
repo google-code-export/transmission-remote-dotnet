@@ -71,7 +71,7 @@ namespace TransmissionRemoteDotnet
             item.SubItems.Add(this.UploadedString);
             item.SubItems.Add(this.LocalRatioString);
             item.SubItems.Add(this.Added.ToString());
-            item.SubItems.Add(this.IsFinished ? "?" : "");
+            item.SubItems.Add(this.IsFinished ? this.DoneDate : "");
             item.SubItems.Add(GetFirstTracker(true));
             lock (Program.TorrentIndex)
             {
@@ -220,6 +220,7 @@ namespace TransmissionRemoteDotnet
                 item.SubItems[9].Text = this.UploadedString;
                 item.SubItems[10].Text = this.LocalRatioString;
                 item.SubItems[11].Text = this.Added.ToString();
+                //item.SubItems[12].Text = this.IsFinished ? this.DoneDate : "";
                 this.updateSerial = Program.DaemonDescriptor.UpdateSerial;
                 LogError();
             }
@@ -705,5 +706,13 @@ namespace TransmissionRemoteDotnet
             }
         }
         /* END CONFUSION */
+
+        public string DoneDate
+        {
+            get
+            {
+                return info.Contains(ProtocolConstants.FIELD_ADDEDDATE) ? Toolbox.DateFromEpoch(Toolbox.ToDouble(info[ProtocolConstants.FIELD_DONEDATE])).ToString() : "?";
+            }
+        }
     }
 }
