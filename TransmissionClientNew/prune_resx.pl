@@ -22,34 +22,34 @@ if (@ARGV == 1 && -d $ARGV[0])
 
 foreach my $file (@files)
 {
-if ($file =~ m/\.[a-z][a-z]-[A-Z][A-Z]\.resx/i && $file !~ m/OtherStrings/)
-{
-$output = "";
-open(RESX, "<$file");
-while(<RESX>)
-{
-	if ($skip > 0)
+	if ($file =~ m/\.[a-z][a-z]-[A-Z][A-Z]\.resx/i && $file !~ m/OtherStrings/)
 	{
-		if ($_ =~ m/\<\/data\>/)
+		$output = "";
+		open(RESX, "<$file");
+		while(<RESX>)
 		{
-			$skip = 0;
+			if ($skip > 0)
+			{
+				if ($_ =~ m/\<\/data\>/)
+				{
+					$skip = 0;
+				}
+				next;
+			}
+			if (m/\<data name=\"(.*?)\"/)
+			{
+				if ($1 !~ m/\.(Text|Items\d+)$/)
+				{
+					$skip = 1;
+					next;
+				}
+			}
+			$output .= $_;
 		}
-		next;
-	}
-	if (m/\<data name=\"(.*?)\"/)
-	{
-		if ($1 !~ m/\.(Text|Items\d+)$/)
-		{
-			$skip = 1;
-			next;
-		}
-	}
-	$output .= $_;
-}
-close(RESX);
+		close(RESX);
 
-open(RESX, ">$file");
-print RESX $output;
-close(RESX);
-}
+		open(RESX, ">$file");
+		print RESX $output;
+		close(RESX);
+	}
 }

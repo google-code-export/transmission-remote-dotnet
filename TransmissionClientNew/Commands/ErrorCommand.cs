@@ -64,6 +64,7 @@ namespace TransmissionRemoteDotnet.Commmands
                 if (!Program.Connected)
                 {
                     form.toolStripStatusLabel.Text = this.StatusBarMessage;
+                    Program.Connected = false;
                     ShowErrorBox(this.title, this.body);
                 }
                 else if (showDontCount)
