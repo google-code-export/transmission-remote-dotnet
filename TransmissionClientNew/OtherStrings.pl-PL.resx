@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="All" xml:space="preserve">
+    <value>Wszystkie</value>
+  </data>
+  <data name="Author" xml:space="preserve">
+    <value>Autor</value>
+  </data>
+  <data name="Broken" xml:space="preserve">
+    <value>Przerwany</value>
+  </data>
+  <data name="Build" xml:space="preserve">
+    <value>Budowa</value>
+  </data>
+  <data name="Checking" xml:space="preserve">
+    <value>Checking</value>
+  </data>
+  <data name="Complete" xml:space="preserve">
+    <value>Zakończono</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Potwierdź</value>
+  </data>
+  <data name="ConfirmMultipleRemove" xml:space="preserve">
+    <value>Zaznaczyłeś {0} torrentów do usunięcia. Jesteś pewien?</value>
+  </data>
+  <data name="ConfirmMultipleRemoveAndDelete" xml:space="preserve">
+    <value>Zaznaczyłeś {0} torrentów do usunięcia. Jesteś pewien?{1}WSZYSTKIE DANE Z TYCH TORRENTÓW ZOSTANĄ USUNIĘTE."</value>
+  </data>
+  <data name="ConfirmSingleRemove" xml:space="preserve">
+    <value>Napewno chcesz usunąć {0}?</value>
+  </data>
+  <data name="ConfirmSingleRemoveAndDelete" xml:space="preserve">
+    <value>Napewno chcesz usunąć wraz z danymi {0}?{1}WSZYSTKIE DANE Z TEGO TORRENTA ZOSTANĄ USUNIĘTE."</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Połącz</value>
+  </data>
+  <data name="ConnectedGettingInfo" xml:space="preserve">
+    <value>Połączony. Pobieranie danych...</value>
+  </data>
+  <data name="ConnectedTo" xml:space="preserve">
+    <value>Połączony do</value>
+  </data>
+  <data name="Connecting" xml:space="preserve">
+    <value>Łączenie</value>
+  </data>
+  <data name="CopyAsCSV" xml:space="preserve">
+    <value>Zapisz jako CSV</value>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>Rozłącz</value>
+  </data>
+  <data name="Disconnected" xml:space="preserve">
+    <value>Rozłączony</value>
+  </data>
+  <data name="DisconnectedExceeded" xml:space="preserve">
+    <value>Rozłączony. Limit nieudanych prób został przekroczony.</value>
+  </data>
+  <data name="DisplayStatistics" xml:space="preserve">
+    <value>Pokaż statystyki</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>W dół</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Pobierz</value>
+  </data>
+  <data name="DownloadedValid" xml:space="preserve">
+    <value>{0} ({1} poprawny)</value>
+  </data>
+  <data name="Downloading" xml:space="preserve">
+    <value>Pobieranie</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Błąd</value>
+  </data>
+  <data name="FailedRequest" xml:space="preserve">
+    <value>Nieudane żądanie</value>
+  </data>
+  <data name="High" xml:space="preserve">
+    <value>Wysoki</value>
+  </data>
+  <data name="HighPriority" xml:space="preserve">
+    <value>Wysoki priorytet</value>
+  </data>
+  <data name="Host" xml:space="preserve">
+    <value>Host</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="InputAccepted" xml:space="preserve">
+    <value>Wprowadzono poprawnie</value>
+  </data>
+  <data name="LatestVersion" xml:space="preserve">
+    <value>Używasz najnowszej wersji ({0}.{1}).</value>
+  </data>
+  <data name="LatestVersionCheckFailed" xml:space="preserve">
+    <value>Nie udało się sprawdzić najnowszej wersji</value>
+  </data>
+  <data name="Low" xml:space="preserve">
+    <value>Niski</value>
+  </data>
+  <data name="LowPriority" xml:space="preserve">
+    <value>Niski priorytet</value>
+  </data>
+  <data name="MustBeConnected" xml:space="preserve">
+    <value>Musisz być połączony żeby dodawać torrenty. Chcesz się połączyć teraz?</value>
+  </data>
+  <data name="NewerVersion" xml:space="preserve">
+    <value>Nowa wersja ({0}.{1}) jest dostępna. Chcesz przejść do strony pobierania?</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Nie</value>
+  </data>
+  <data name="Normal" xml:space="preserve">
+    <value>Normalny</value>
+  </data>
+  <data name="NormalPriority" xml:space="preserve">
+    <value>Normalny priorytet</value>
+  </data>
+  <data name="NotConnected" xml:space="preserve">
+    <value>Nie połączony</value>
+  </data>
+  <data name="NoUpgradeAvailable" xml:space="preserve">
+    <value>Brak nowszej wersji</value>
+  </data>
+  <data name="OpenFileFilter" xml:space="preserve">
+    <value>Pliki BitTorrent (*.torrent)|*.torrent|Wszystkie pliki (*.*)|*.*</value>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>Wstrzymaj</value>
+  </data>
+  <data name="PauseAll" xml:space="preserve">
+    <value>Wstrzymaj wszystkie</value>
+  </data>
+  <data name="Paused" xml:space="preserve">
+    <value>Wstrzymany</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Właściwości</value>
+  </data>
+  <data name="Recheck" xml:space="preserve">
+    <value>Zweryfikuj</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="RemoveAndDelete" xml:space="preserve">
+    <value>Usuń i wyczyść</value>
+  </data>
+  <data name="Revision" xml:space="preserve">
+    <value>Wersja</value>
+  </data>
+  <data name="RpcVersion" xml:space="preserve">
+    <value>Wersja RPC</value>
+  </data>
+  <data name="RpcVersionMinimum" xml:space="preserve">
+    <value>Najniższa wersja RPC</value>
+  </data>
+  <data name="Seeding" xml:space="preserve">
+    <value>Wysyłanie</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Zaznacz wszystkie</value>
+  </data>
+  <data name="Skip" xml:space="preserve">
+    <value>Wstrzymaj</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Uruchom</value>
+  </data>
+  <data name="StartAll" xml:space="preserve">
+    <value>Uruchome wszystkie</value>
+  </data>
+  <data name="TheTorrentHasFinishedDownloading" xml:space="preserve">
+    <value>Ten torrent został pobrany</value>
+  </data>
+  <data name="Torrents" xml:space="preserve">
+    <value>Torrenty</value>
+  </data>
+  <data name="UnableToParse" xml:space="preserve">
+    <value>Nieznana odpowiedź serwera</value>
+  </data>
+  <data name="UnknownNegativeResult" xml:space="preserve">
+    <value>Nieznany (negatywny)</value>
+  </data>
+  <data name="UnsuccessfulRequest" xml:space="preserve">
+    <value>Żądanie nieudane</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>W górę</value>
+  </data>
+  <data name="UpgradeAvailable" xml:space="preserve">
+    <value>Nowa wersja jest dostępna</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Wersja</value>
+  </data>
+  <data name="WaitingForInput" xml:space="preserve">
+    <value>Oczekiwanie na sygnał</value>
+  </data>
+  <data name="WaitingToCheck" xml:space="preserve">
+    <value>Oczekiwanie na weryfikacje</value>
+  </data>
+  <data name="XOfYConnected" xml:space="preserve">
+    <value>{0} z {1} połączono</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Tak</value>
+  </data>
+  <data name="Incomplete" xml:space="preserve">
+    <value>Niekompletne</value>
+  </data>
+  <data name="LanguageUpdated" xml:space="preserve">
+    <value>Zaktualizowano tłumaczenie</value>
+  </data>
+  <data name="LanguageUpdateDetail" xml:space="preserve">
+    <value>Język został zmieniony. Uruchom ponownie program aby dokonać zmian.</value>
+  </data>
+  <data name="Byte" xml:space="preserve">
+    <value>Bajt</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>Dzień</value>
+  </data>
+  <data name="Gigabyte" xml:space="preserve">
+    <value>Gigabajt</value>
+  </data>
+  <data name="GigabyteShort" xml:space="preserve">
+    <value>GB</value>
+  </data>
+  <data name="Hour" xml:space="preserve">
+    <value>Godzina</value>
+  </data>
+  <data name="Kilobyte" xml:space="preserve">
+    <value>Kilobajt</value>
+    <comment>b</comment>
+  </data>
+  <data name="KilobyteShort" xml:space="preserve">
+    <value>KB</value>
+  </data>
+  <data name="Megabyte" xml:space="preserve">
+    <value>Megabajt</value>
+  </data>
+  <data name="MegabyteShort" xml:space="preserve">
+    <value>MB</value>
+  </data>
+  <data name="Minute" xml:space="preserve">
+    <value>Minuta</value>
+  </data>
+  <data name="Second" xml:space="preserve">
+    <value>Sekunda</value>
+  </data>
+  <data name="PortIsClosed" xml:space="preserve">
+    <value>Port nasłuchu demona jest ZAMKNIĘTY.</value>
+  </data>
+  <data name="PortIsOpen" xml:space="preserve">
+    <value>Port nasłuchu demona jest OTWARTY.</value>
+  </data>
+  <data name="PortTestResult" xml:space="preserve">
+    <value>Wynik testowania portu nasłuchiwania</value>
+  </data>
+  <data name="DownloadLimit" xml:space="preserve">
+    <value>Limit Pobierania</value>
+  </data>
+  <data name="Unlimited" xml:space="preserve">
+    <value>Bez limitu</value>
+  </data>
+  <data name="UploadLimit" xml:space="preserve">
+    <value>Limit Wysyłania</value>
+  </data>
+  <data name="Querying" xml:space="preserve">
+    <value>Pobieranie danych...</value>
+  </data>
+  <data name="Updating" xml:space="preserve">
+    <value>Aktualizowanie...</value>
+  </data>
+  <data name="XInBlocklist" xml:space="preserve">
+    <value>{0} w liście zablokowanych peerów.</value>
+  </data>
+</root>

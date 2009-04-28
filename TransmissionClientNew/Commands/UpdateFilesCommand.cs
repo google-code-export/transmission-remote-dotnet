@@ -53,7 +53,7 @@ namespace TransmissionRemoteDotnet.Commmands
                     }
                 }
             }));
-            if (t == null || t.Id != id)
+            if (t == null || t.Id != id || form.filesListView.Enabled)
             {
                 return;
             }
@@ -82,11 +82,7 @@ namespace TransmissionRemoteDotnet.Commmands
                     lock (form.FileItems)
                     {
                         if (i < form.FileItems.Count)
-                        {
-                            ListViewItem item = form.FileItems[i];
-                            ICommand subCommand = new UpdateFilesUpdateSubCommand(item, bytesCompleted);
-                            uiUpdateBatch.Add(subCommand);
-                        }
+                            uiUpdateBatch.Add(new UpdateFilesUpdateSubCommand(form.FileItems[i], bytesCompleted));
                     }
                 }
             }

@@ -169,7 +169,7 @@
     <value>stateListBox</value>
   </data>
   <data name="&gt;&gt;stateListBox.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.GListBox, Transmission Remote, Version=3.7.3404.33922, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.GListBox, Transmission Remote, Version=3.7.3404.24872, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;stateListBox.Parent" xml:space="preserve">
     <value>mainVerticalSplitContainer.Panel1</value>
@@ -190,37 +190,37 @@
     <value>0</value>
   </data>
   <data name="columnHeader6.Text" xml:space="preserve">
-    <value>Name</value>
+    <value>Nazwa</value>
   </data>
   <data name="columnHeader6.Width" type="System.Int32, mscorlib">
     <value>200</value>
   </data>
   <data name="columnHeader7.Text" xml:space="preserve">
-    <value>Size</value>
+    <value>Rozmiar</value>
   </data>
   <data name="columnHeader7.Width" type="System.Int32, mscorlib">
     <value>80</value>
   </data>
   <data name="columnHeader8.Text" xml:space="preserve">
-    <value>Done</value>
+    <value>Postęp</value>
   </data>
   <data name="columnHeader9.Text" xml:space="preserve">
     <value>Status</value>
   </data>
   <data name="columnHeader10.Text" xml:space="preserve">
-    <value>Seeds</value>
+    <value>Seedów</value>
   </data>
   <data name="columnHeader11.Text" xml:space="preserve">
-    <value>Leechers</value>
+    <value>Peerów</value>
   </data>
   <data name="columnHeader12.Text" xml:space="preserve">
-    <value>Down Speed</value>
+    <value>Pobieranie</value>
   </data>
   <data name="columnHeader12.Width" type="System.Int32, mscorlib">
     <value>80</value>
   </data>
   <data name="columnHeader13.Text" xml:space="preserve">
-    <value>Up Speed</value>
+    <value>Wysyłanie</value>
   </data>
   <data name="columnHeader13.Width" type="System.Int32, mscorlib">
     <value>80</value>
@@ -229,7 +229,7 @@
     <value>ETA</value>
   </data>
   <data name="columnHeader15.Text" xml:space="preserve">
-    <value>Uploaded</value>
+    <value>Wysłano</value>
   </data>
   <data name="columnHeader15.Width" type="System.Int32, mscorlib">
     <value>90</value>
@@ -238,10 +238,10 @@
     <value>Ratio</value>
   </data>
   <data name="columnHeader18.Text" xml:space="preserve">
-    <value>Added At</value>
+    <value>Dodany</value>
   </data>
   <data name="columnHeader19.Text" xml:space="preserve">
-    <value>Completed At</value>
+    <value>Data i czas ukończenia</value>
   </data>
   <data name="columnHeader30.Text" xml:space="preserve">
     <value>Tracker</value>
@@ -268,7 +268,7 @@
     <value>torrentListView</value>
   </data>
   <data name="&gt;&gt;torrentListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.7.3404.33922, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.7.3404.24872, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;torrentListView.Parent" xml:space="preserve">
     <value>mainVerticalSplitContainer.Panel2</value>
@@ -361,7 +361,7 @@
     <value>1</value>
   </data>
   <data name="piecesLabel.Text" xml:space="preserve">
-    <value>Pieces:</value>
+    <value>Fragmenty:</value>
   </data>
   <data name="&gt;&gt;piecesLabel.Name" xml:space="preserve">
     <value>piecesLabel</value>
@@ -397,7 +397,7 @@
     <value>0</value>
   </data>
   <data name="downloadProgressLabel.Text" xml:space="preserve">
-    <value>Downloaded:</value>
+    <value>Pobrano:</value>
   </data>
   <data name="downloadProgressLabel.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -454,7 +454,7 @@
     <value>piecesGraph</value>
   </data>
   <data name="&gt;&gt;piecesGraph.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.PiecesGraph, Transmission Remote, Version=3.7.3404.33922, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.PiecesGraph, Transmission Remote, Version=3.7.3404.24872, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;piecesGraph.Parent" xml:space="preserve">
     <value>splitContainer5.Panel1</value>
@@ -664,7 +664,7 @@
     <value>32</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
-    <value>Created by:</value>
+    <value>Utworzony przez:</value>
   </data>
   <data name="&gt;&gt;label17.Name" xml:space="preserve">
     <value>label17</value>
@@ -724,7 +724,7 @@
     <value>30</value>
   </data>
   <data name="label16.Text" xml:space="preserve">
-    <value>Created at:</value>
+    <value>Data utworzenia:</value>
   </data>
   <data name="&gt;&gt;label16.Name" xml:space="preserve">
     <value>label16</value>
@@ -787,7 +787,7 @@
     <value>28</value>
   </data>
   <data name="labelForErrorLabel.Text" xml:space="preserve">
-    <value>Error:</value>
+    <value>Błąd:</value>
   </data>
   <data name="labelForErrorLabel.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -850,7 +850,7 @@
     <value>26</value>
   </data>
   <data name="label15.Text" xml:space="preserve">
-    <value>Comment:</value>
+    <value>Komentarz:</value>
   </data>
   <data name="&gt;&gt;label15.Name" xml:space="preserve">
     <value>label15</value>
@@ -997,7 +997,7 @@
     <value>21</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
-    <value>Leechers:</value>
+    <value>Peerów:</value>
   </data>
   <data name="&gt;&gt;label13.Name" xml:space="preserve">
     <value>label13</value>
@@ -1030,7 +1030,7 @@
     <value>20</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
-    <value>Seeds:</value>
+    <value>Seedów:</value>
   </data>
   <data name="&gt;&gt;label10.Name" xml:space="preserve">
     <value>label10</value>
@@ -1090,7 +1090,7 @@
     <value>18</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
-    <value>Upload limit:</value>
+    <value>Limit wysyłania:</value>
   </data>
   <data name="&gt;&gt;label12.Name" xml:space="preserve">
     <value>label12</value>
@@ -1150,7 +1150,7 @@
     <value>16</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
-    <value>Upload rate:</value>
+    <value>Wysyłanie:</value>
   </data>
   <data name="&gt;&gt;label8.Name" xml:space="preserve">
     <value>label8</value>
@@ -1210,7 +1210,7 @@
     <value>14</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Uploaded:</value>
+    <value>Wysłano:</value>
   </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
@@ -1270,7 +1270,7 @@
     <value>12</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Remaining:</value>
+    <value>Pozostało:</value>
   </data>
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
@@ -1390,7 +1390,7 @@
     <value>8</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
-    <value>Download limit:</value>
+    <value>Limit wysyłania:</value>
   </data>
   <data name="&gt;&gt;label9.Name" xml:space="preserve">
     <value>label9</value>
@@ -1450,7 +1450,7 @@
     <value>6</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>Download rate:</value>
+    <value>Pobieranie:</value>
   </data>
   <data name="&gt;&gt;label7.Name" xml:space="preserve">
     <value>label7</value>
@@ -1483,7 +1483,7 @@
     <value>5</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Downloaded:</value>
+    <value>Pobrano:</value>
   </data>
   <data name="&gt;&gt;label6.Name" xml:space="preserve">
     <value>label6</value>
@@ -1570,7 +1570,7 @@
     <value>2</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Started At:</value>
+    <value>Uruchomiony:</value>
   </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -1603,7 +1603,7 @@
     <value>0</value>
   </data>
   <data name="timeElapsedLabelLabel.Text" xml:space="preserve">
-    <value>Time elapsed:</value>
+    <value>Upłynęło:</value>
   </data>
   <data name="&gt;&gt;timeElapsedLabelLabel.Name" xml:space="preserve">
     <value>timeElapsedLabelLabel</value>
@@ -1717,7 +1717,7 @@
     <value>0</value>
   </data>
   <data name="generalTabPage.Text" xml:space="preserve">
-    <value>General</value>
+    <value>Ogólne</value>
   </data>
   <data name="&gt;&gt;generalTabPage.Name" xml:space="preserve">
     <value>generalTabPage</value>
@@ -1768,7 +1768,7 @@
     <value>trackersListView</value>
   </data>
   <data name="&gt;&gt;trackersListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.7.3404.33922, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.7.3404.24872, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;trackersListView.Parent" xml:space="preserve">
     <value>trackersTorrentNameGroupBox</value>
@@ -1813,7 +1813,7 @@
     <value>1</value>
   </data>
   <data name="trackersTabPage.Text" xml:space="preserve">
-    <value>Trackers</value>
+    <value>Trackery</value>
   </data>
   <data name="&gt;&gt;trackersTabPage.Name" xml:space="preserve">
     <value>trackersTabPage</value>
@@ -1828,19 +1828,19 @@
     <value>1</value>
   </data>
   <data name="columnHeader1.Text" xml:space="preserve">
-    <value>Path</value>
+    <value>Plik</value>
   </data>
   <data name="columnHeader1.Width" type="System.Int32, mscorlib">
     <value>500</value>
   </data>
   <data name="columnHeader2.Text" xml:space="preserve">
-    <value>Size</value>
+    <value>Rozmiar</value>
   </data>
   <data name="columnHeader2.Width" type="System.Int32, mscorlib">
     <value>70</value>
   </data>
   <data name="columnHeader3.Text" xml:space="preserve">
-    <value>Done</value>
+    <value>Ukończono</value>
   </data>
   <data name="columnHeader3.Width" type="System.Int32, mscorlib">
     <value>70</value>
@@ -1849,13 +1849,13 @@
     <value>%</value>
   </data>
   <data name="columnHeader17.Text" xml:space="preserve">
-    <value>Skip</value>
+    <value>Pomiń</value>
   </data>
   <data name="columnHeader17.Width" type="System.Int32, mscorlib">
     <value>55</value>
   </data>
   <data name="columnHeader5.Text" xml:space="preserve">
-    <value>Priority</value>
+    <value>Priorytet</value>
   </data>
   <data name="columnHeader5.Width" type="System.Int32, mscorlib">
     <value>50</value>
@@ -1879,7 +1879,7 @@
     <value>filesListView</value>
   </data>
   <data name="&gt;&gt;filesListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.7.3404.33922, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.7.3404.24872, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;filesListView.Parent" xml:space="preserve">
     <value>filesTorrentNameGroupBox</value>
@@ -1924,7 +1924,7 @@
     <value>2</value>
   </data>
   <data name="filesTabPage.Text" xml:space="preserve">
-    <value>Files</value>
+    <value>Pliki</value>
   </data>
   <data name="&gt;&gt;filesTabPage.Name" xml:space="preserve">
     <value>filesTabPage</value>
@@ -1939,46 +1939,46 @@
     <value>2</value>
   </data>
   <data name="columnHeader23.Text" xml:space="preserve">
-    <value>IP Address</value>
+    <value>Adres IP</value>
   </data>
   <data name="columnHeader23.Width" type="System.Int32, mscorlib">
     <value>115</value>
   </data>
   <data name="columnHeader24.Text" xml:space="preserve">
-    <value>Hostname</value>
+    <value>Nazwa Hosta</value>
   </data>
   <data name="columnHeader24.Width" type="System.Int32, mscorlib">
     <value>280</value>
   </data>
   <data name="columnHeader25.Text" xml:space="preserve">
-    <value>Country</value>
+    <value>Państwo</value>
   </data>
   <data name="columnHeader25.Width" type="System.Int32, mscorlib">
     <value>100</value>
   </data>
   <data name="columnHeader31.Text" xml:space="preserve">
-    <value>Flags</value>
+    <value>Flagi</value>
   </data>
   <data name="columnHeader26.Text" xml:space="preserve">
-    <value>Client</value>
+    <value>Klient</value>
   </data>
   <data name="columnHeader26.Width" type="System.Int32, mscorlib">
     <value>130</value>
   </data>
   <data name="columnHeader27.Text" xml:space="preserve">
-    <value>Progress</value>
+    <value>Postęp</value>
   </data>
   <data name="columnHeader27.Width" type="System.Int32, mscorlib">
     <value>70</value>
   </data>
   <data name="columnHeader28.Text" xml:space="preserve">
-    <value>Down Rate</value>
+    <value>Pobieranie</value>
   </data>
   <data name="columnHeader28.Width" type="System.Int32, mscorlib">
     <value>80</value>
   </data>
   <data name="columnHeader29.Text" xml:space="preserve">
-    <value>Up Rate</value>
+    <value>Wysyłanie</value>
   </data>
   <data name="columnHeader29.Width" type="System.Int32, mscorlib">
     <value>80</value>
@@ -2002,7 +2002,7 @@
     <value>peersListView</value>
   </data>
   <data name="&gt;&gt;peersListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.7.3404.33922, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.7.3404.24872, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;peersListView.Parent" xml:space="preserve">
     <value>peersTorrentNameGroupBox</value>
@@ -2047,7 +2047,7 @@
     <value>3</value>
   </data>
   <data name="peersTabPage.Text" xml:space="preserve">
-    <value>Peers</value>
+    <value>Połączenia</value>
   </data>
   <data name="&gt;&gt;peersTabPage.Name" xml:space="preserve">
     <value>peersTabPage</value>
@@ -2107,7 +2107,7 @@
     <value>0</value>
   </data>
   <data name="label18.Text" xml:space="preserve">
-    <value>Resolution:</value>
+    <value>Odstęp czasowy:</value>
   </data>
   <data name="&gt;&gt;label18.Name" xml:space="preserve">
     <value>label18</value>
@@ -2122,16 +2122,16 @@
     <value>0</value>
   </data>
   <data name="speedResComboBox.Items" xml:space="preserve">
-    <value>5 sec</value>
+    <value>5 sekund</value>
   </data>
   <data name="speedResComboBox.Items1" xml:space="preserve">
-    <value>10 sec</value>
+    <value>10 sekund</value>
   </data>
   <data name="speedResComboBox.Items2" xml:space="preserve">
-    <value>30 sec</value>
+    <value>30 sekund</value>
   </data>
   <data name="speedResComboBox.Items3" xml:space="preserve">
-    <value>5 min</value>
+    <value>5 minut</value>
   </data>
   <data name="speedResComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>69, 6</value>
@@ -2272,7 +2272,7 @@
     <value>0, 0</value>
   </data>
   <data name="speedGraph.Size" type="System.Drawing.Size, System.Drawing">
-    <value>954, 159</value>
+    <value>954, 25</value>
   </data>
   <data name="speedGraph.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2284,7 +2284,7 @@
     <value>speedGraph</value>
   </data>
   <data name="&gt;&gt;speedGraph.Type" xml:space="preserve">
-    <value>CustomUIControls.Graphing.C2DPushGraph, Transmission Remote, Version=3.7.3404.33922, Culture=neutral, PublicKeyToken=null</value>
+    <value>CustomUIControls.Graphing.C2DPushGraph, Transmission Remote, Version=3.7.3404.24872, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;speedGraph.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -2338,7 +2338,7 @@
     <value>0</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Overall bandwidth utilisation</value>
+    <value>Średnie wykorzystanie łącza</value>
   </data>
   <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
     <value>groupBox1</value>
@@ -2365,7 +2365,7 @@
     <value>4</value>
   </data>
   <data name="speedTabPage.Text" xml:space="preserve">
-    <value>Speed</value>
+    <value>Prędkość</value>
   </data>
   <data name="&gt;&gt;speedTabPage.Name" xml:space="preserve">
     <value>speedTabPage</value>
@@ -2574,7 +2574,7 @@
     <value>48, 36</value>
   </data>
   <data name="connectButton.Text" xml:space="preserve">
-    <value>Connect</value>
+    <value>Połącz</value>
   </data>
   <data name="disconnectButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2627,7 +2627,7 @@
     <value>36, 36</value>
   </data>
   <data name="disconnectButton.Text" xml:space="preserve">
-    <value>Disconnect</value>
+    <value>Rozłącz</value>
   </data>
   <data name="disconnectButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2680,7 +2680,7 @@
     <value>36, 36</value>
   </data>
   <data name="addTorrentButton.Text" xml:space="preserve">
-    <value>Add Torrent</value>
+    <value>Dodaj Torrent</value>
   </data>
   <data name="addTorrentButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2739,7 +2739,7 @@
     <value>36, 36</value>
   </data>
   <data name="addWebTorrentButton.Text" xml:space="preserve">
-    <value>Add Torrent from URL</value>
+    <value>Dodaj Torrent z adresu URL</value>
   </data>
   <data name="addWebTorrentButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2754,7 +2754,7 @@
     <value>115, 22</value>
   </data>
   <data name="startAllToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Start All</value>
+    <value>Uruchom wszystkie</value>
   </data>
   <data name="startTorrentButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2797,7 +2797,7 @@
     <value>48, 36</value>
   </data>
   <data name="startTorrentButton.Text" xml:space="preserve">
-    <value>Start torrent(s)</value>
+    <value>Uruchom</value>
   </data>
   <data name="startTorrentButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2806,7 +2806,7 @@
     <value>122, 22</value>
   </data>
   <data name="pauseAllToolStripMenuItem.Text" xml:space="preserve">
-    <value>Pause All</value>
+    <value>Wstrzymaj wszystkie</value>
   </data>
   <data name="pauseTorrentButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2845,7 +2845,7 @@
     <value>48, 36</value>
   </data>
   <data name="pauseTorrentButton.Text" xml:space="preserve">
-    <value>Pause torrent(s)</value>
+    <value>Wstrzymaj</value>
   </data>
   <data name="pauseTorrentButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2897,10 +2897,10 @@
     <value>36, 36</value>
   </data>
   <data name="recheckTorrentButton.Text" xml:space="preserve">
-    <value>Recheck torrent(s)</value>
+    <value>Weryfikuj</value>
   </data>
   <data name="recheckTorrentButton.ToolTipText" xml:space="preserve">
-    <value>Recheck torrent(s)</value>
+    <value>Weryfikuj</value>
   </data>
   <data name="recheckTorrentButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2941,10 +2941,10 @@
     <value>36, 36</value>
   </data>
   <data name="configureTorrentButton.Text" xml:space="preserve">
-    <value>Set torrent(s) properties</value>
+    <value>Ustawienia torrenta</value>
   </data>
   <data name="configureTorrentButton.ToolTipText" xml:space="preserve">
-    <value>Set torrent(s) properties</value>
+    <value>Ustawienia torrenta</value>
   </data>
   <data name="configureTorrentButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3000,7 +3000,7 @@
     <value>36, 36</value>
   </data>
   <data name="removeTorrentButton.Text" xml:space="preserve">
-    <value>Remove torrent(s)</value>
+    <value>Usuń</value>
   </data>
   <data name="removeTorrentButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3065,7 +3065,7 @@
     <value>36, 36</value>
   </data>
   <data name="removeAndDeleteButton.Text" xml:space="preserve">
-    <value>Remove and delete torrent(s)</value>
+    <value>Usuń i wyczyść dane</value>
   </data>
   <data name="removeAndDeleteButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3074,13 +3074,13 @@
     <value>155, 22</value>
   </data>
   <data name="allToolStripMenuItem.Text" xml:space="preserve">
-    <value>All</value>
+    <value>Wszystkie</value>
   </data>
   <data name="recentlyActiveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 22</value>
   </data>
   <data name="recentlyActiveToolStripMenuItem.Text" xml:space="preserve">
-    <value>Recently Active</value>
+    <value>Ostatnio aktywne</value>
   </data>
   <data name="reannounceButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3095,7 +3095,7 @@
     <value>48, 36</value>
   </data>
   <data name="reannounceButton.Text" xml:space="preserve">
-    <value>Reannounce</value>
+    <value>Rozgłoś</value>
   </data>
   <data name="reannounceButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3156,7 +3156,7 @@
     <value>36, 36</value>
   </data>
   <data name="localConfigureButton.Text" xml:space="preserve">
-    <value>Local Settings</value>
+    <value>Ustawienia Lokalne</value>
   </data>
   <data name="remoteConfigureButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3214,7 +3214,7 @@
     <value>36, 36</value>
   </data>
   <data name="remoteConfigureButton.Text" xml:space="preserve">
-    <value>Remote Settings</value>
+    <value>Ustawienia Zdalne</value>
   </data>
   <data name="remoteConfigureButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3278,7 +3278,7 @@
     <value>36, 36</value>
   </data>
   <data name="sessionStatsButton.Text" xml:space="preserve">
-    <value>Display Statistics</value>
+    <value>Statystyki</value>
   </data>
   <data name="sessionStatsButton.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3335,13 +3335,13 @@
     <value>193, 22</value>
   </data>
   <data name="connectToolStripMenuItem.Text" xml:space="preserve">
-    <value>Connect</value>
+    <value>Połącz</value>
   </data>
   <data name="disconnectToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>193, 22</value>
   </data>
   <data name="disconnectToolStripMenuItem.Text" xml:space="preserve">
-    <value>Disconnect</value>
+    <value>Rozłącz</value>
   </data>
   <data name="disconnectToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3353,7 +3353,7 @@
     <value>193, 22</value>
   </data>
   <data name="addTorrentToolStripMenuItem.Text" xml:space="preserve">
-    <value>Add Torrent</value>
+    <value>Dodaj Torrent</value>
   </data>
   <data name="addTorrentToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3362,7 +3362,7 @@
     <value>193, 22</value>
   </data>
   <data name="addTorrentFromUrlToolStripMenuItem.Text" xml:space="preserve">
-    <value>Add Torrent From URL</value>
+    <value>Dodaj Torrent z adresu URL</value>
   </data>
   <data name="addTorrentFromUrlToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3377,25 +3377,25 @@
     <value>193, 22</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
-    <value>Exit</value>
+    <value>Wyjście</value>
   </data>
   <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 20</value>
   </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>File</value>
+    <value>Plik</value>
   </data>
   <data name="localSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 22</value>
   </data>
   <data name="localSettingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Local Settings</value>
+    <value>Ustawienia Lokalne</value>
   </data>
   <data name="remoteSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 22</value>
   </data>
   <data name="remoteSettingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Remote Settings</value>
+    <value>Ustawienia Zdalne</value>
   </data>
   <data name="remoteSettingsToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3407,13 +3407,13 @@
     <value>160, 22</value>
   </data>
   <data name="languageToolStripMenuItem.Text" xml:space="preserve">
-    <value>Language</value>
+    <value>Język</value>
   </data>
   <data name="optionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 20</value>
   </data>
   <data name="optionsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Options</value>
+    <value>Opcje</value>
   </data>
   <data name="startToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3422,7 +3422,7 @@
     <value>176, 22</value>
   </data>
   <data name="startToolStripMenuItem.Text" xml:space="preserve">
-    <value>Start</value>
+    <value>Uruchom</value>
   </data>
   <data name="pauseToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3431,7 +3431,7 @@
     <value>176, 22</value>
   </data>
   <data name="pauseToolStripMenuItem.Text" xml:space="preserve">
-    <value>Pause</value>
+    <value>Wstrzymaj</value>
   </data>
   <data name="recheckToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3440,7 +3440,7 @@
     <value>176, 22</value>
   </data>
   <data name="recheckToolStripMenuItem.Text" xml:space="preserve">
-    <value>Recheck</value>
+    <value>Zweryfikuj</value>
   </data>
   <data name="propertiesToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3449,7 +3449,7 @@
     <value>176, 22</value>
   </data>
   <data name="propertiesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Properties</value>
+    <value>Właściwości</value>
   </data>
   <data name="removeToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3458,7 +3458,7 @@
     <value>176, 22</value>
   </data>
   <data name="removeToolStripMenuItem.Text" xml:space="preserve">
-    <value>Remove</value>
+    <value>Usuń</value>
   </data>
   <data name="removeDeleteToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3467,7 +3467,7 @@
     <value>176, 22</value>
   </data>
   <data name="removeDeleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Remove and Delete</value>
+    <value>Usuń i wyczyść</value>
   </data>
   <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 6</value>
@@ -3476,13 +3476,13 @@
     <value>176, 22</value>
   </data>
   <data name="startAllToolStripMenuItem.Text" xml:space="preserve">
-    <value>Start All</value>
+    <value>Uruchom wszystkie</value>
   </data>
   <data name="stopAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 22</value>
   </data>
   <data name="stopAllToolStripMenuItem.Text" xml:space="preserve">
-    <value>Pause All</value>
+    <value>Wstrzymaj wszystkie</value>
   </data>
   <data name="torrentToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 20</value>
@@ -3497,19 +3497,19 @@
     <value>141, 22</value>
   </data>
   <data name="showDetailsPanelToolStripMenuItem.Text" xml:space="preserve">
-    <value>Details panel</value>
+    <value>Szczegóły</value>
   </data>
   <data name="viewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
   </data>
   <data name="viewToolStripMenuItem.Text" xml:space="preserve">
-    <value>View</value>
+    <value>Widok</value>
   </data>
   <data name="showErrorLogToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 22</value>
   </data>
   <data name="showErrorLogToolStripMenuItem.Text" xml:space="preserve">
-    <value>Show Error Log</value>
+    <value>Pokaż Raport Błędów</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>221, 6</value>
@@ -3518,25 +3518,25 @@
     <value>224, 22</value>
   </data>
   <data name="projectSiteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Project site</value>
+    <value>Strona projektu</value>
   </data>
   <data name="checkForNewVersionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 22</value>
   </data>
   <data name="checkForNewVersionToolStripMenuItem.Text" xml:space="preserve">
-    <value>Check for new version</value>
+    <value>Sprawdź aktualizacje</value>
   </data>
   <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 22</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
-    <value>About Transmission Remote</value>
+    <value>O Transmission Remote</value>
   </data>
   <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
   </data>
   <data name="helpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Help</value>
+    <value>Pomoc</value>
   </data>
   <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>

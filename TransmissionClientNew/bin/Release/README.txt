@@ -23,11 +23,13 @@ CREDITS AND ACKNOWLEDGEMENTS
 	* drphrozen for the Danish translation.
 	* Első András for the Hungarian translation.
 	* liuzhiyi for the Chinese translation.
-	
+    * Woodzu for the Polish translation.	
 ABOUT
 ----------------------------
 
-transmission-remote-dotnet is a feature rich client to transmission-daemon (a client to a client). The user interface is inspired by uTorrent, and its aim is to make using a remote machine for torrents as convenient as a local machine.
+transmission-remote-dotnet is a feature rich client to transmission-daemon (a client to a client).
+The user interface is inspired by uTorrent, and its aim is to make using a remote machine for
+torrents as convenient as a local machine.
 
 FEATURES
 ----------------------------
