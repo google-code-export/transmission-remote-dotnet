@@ -103,7 +103,7 @@ namespace TransmissionRemoteDotnet
             }
             try
             {
-                seedRatioLimitValue.Value = (decimal)firstTorrent.SeedRatioLimit;
+                seedRatioLimitValue.Value = firstTorrent.SeedRatioLimit >= 0 && (decimal)firstTorrent.SeedRatioLimit <= seedRatioLimitValue.Maximum ? (decimal)firstTorrent.SeedRatioLimit : 0;
                 seedRatioLimitedCheckBox.Checked = firstTorrent.SeedRatioMode;
                 seedRatioLimitedCheckBox.Enabled = seedRatioLimitValue.Enabled = true;
             }
@@ -125,7 +125,7 @@ namespace TransmissionRemoteDotnet
             {
                 label4.Enabled = comboBox1.Enabled = false;
             }
-            peerLimitValue.Value = firstTorrent.MaxConnectedPeers;
+            peerLimitValue.Value = firstTorrent.MaxConnectedPeers >= 0 && (decimal)firstTorrent.MaxConnectedPeers <= peerLimitValue.Maximum ? (decimal)firstTorrent.MaxConnectedPeers : 0;
         }
 
         private void downloadLimitEnableField_CheckedChanged(object sender, EventArgs e)

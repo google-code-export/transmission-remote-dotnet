@@ -56,6 +56,7 @@ namespace TransmissionRemoteDotnet
             }
             else if (this.StatusCode == ProtocolConstants.STATUS_CHECKING || this.StatusCode == ProtocolConstants.STATUS_WAITING_TO_CHECK)
             {
+                this.item.ImageIndex = 4;
             }
             else if (this.StatusCode == ProtocolConstants.STATUS_SEEDING)
             {
@@ -68,6 +69,10 @@ namespace TransmissionRemoteDotnet
             else if (this.StatusCode == ProtocolConstants.STATUS_PAUSED)
             {
                 this.item.ImageIndex = 0;
+            }
+            else
+            {
+                this.item.ImageIndex = -1;
             }
         }
 

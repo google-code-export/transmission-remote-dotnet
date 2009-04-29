@@ -120,6 +120,7 @@ namespace TransmissionRemoteDotnet
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.player_reload16);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.warning);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.incomplete);
+            imageList1.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.player_reload16);
             stateListBox.ImageList = stateListBoxImageList;
             stateListBox.Items.Add(new GListBoxItem(OtherStrings.All, 0));
             stateListBox.Items.Add(new GListBoxItem(OtherStrings.Downloading, 1));

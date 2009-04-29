@@ -35,18 +35,20 @@ torrents as convenient as a local machine.
 FEATURES
 ----------------------------
 
+    * Supports all or almost all the remote functionality of Transmission.
     * Adding torrents by handling .torrent files, drag-n-drop, and browsing.
-    * Start, stop, remove, delete, recheck torrents remotely.
+    * Start, stop, remove, delete, recheck torrents.
     * Authentication support.
-    * Limiting upload/download/peer limits globally or for specific torrents.
-    * Setting priorities on files and viewing their progress.
-    * View peers.
+    * Limiting upload/download/peer limits globally or for specific torrents. Set alternate global limits for certain times.
+    * Prioritisation of files and torrents.
+    * Remotely update the blocklist and test the incoming BitTorrent port.
     * Filter by tracker or state.
-    * Proxy support (works through my university firewall).
-    * Minimise to tray option and torrent complete popup.
-    * Location of peers displayed by text and flag.
+    * Proxy support.
+    * Minimise/close to tray option, torrent complete/started popup.
+    * Country of peers displayed by text and flag using GeoIP.
     * SSL support.
     * Multiple settings profiles.
-    * Backwards compatible with older versions of transmission.
+    * Backwards compatible with older versions of Transmission.
     * Experimental Mono support
+	* Samba and SSH integration.
     * More! 

@@ -126,11 +126,21 @@
             // 
             this.seedRatioLimitValue.DecimalPlaces = 2;
             resources.ApplyResources(this.seedRatioLimitValue, "seedRatioLimitValue");
+            this.seedRatioLimitValue.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.seedRatioLimitValue.Name = "seedRatioLimitValue";
             // 
             // peerLimitValue
             // 
             resources.ApplyResources(this.peerLimitValue, "peerLimitValue");
+            this.peerLimitValue.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.peerLimitValue.Name = "peerLimitValue";
             // 
             // label3
