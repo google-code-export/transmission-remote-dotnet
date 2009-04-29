@@ -94,6 +94,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.downloadLimitItems = new System.Windows.Forms.TextBox();
             this.uploadLimitItems = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -105,8 +107,7 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.addProfileButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.PortField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RefreshRateValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RetryLimitValue)).BeginInit();
@@ -486,6 +487,7 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.checkBox2);
             this.tabPage6.Controls.Add(this.label17);
             this.tabPage6.Controls.Add(this.label16);
             this.tabPage6.Controls.Add(this.downloadLimitItems);
@@ -494,15 +496,25 @@
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // downlimit
+            // label17
             // 
-            resources.ApplyResources(this.downloadLimitItems, "downlimit");
-            this.downloadLimitItems.Name = "downlimit";
+            resources.ApplyResources(this.label17, "label17");
+            this.label17.Name = "label17";
             // 
-            // uplimit
+            // label16
             // 
-            resources.ApplyResources(this.uploadLimitItems, "uplimit");
-            this.uploadLimitItems.Name = "uplimit";
+            resources.ApplyResources(this.label16, "label16");
+            this.label16.Name = "label16";
+            // 
+            // downloadLimitItems
+            // 
+            resources.ApplyResources(this.downloadLimitItems, "downloadLimitItems");
+            this.downloadLimitItems.Name = "downloadLimitItems";
+            // 
+            // uploadLimitItems
+            // 
+            resources.ApplyResources(this.uploadLimitItems, "uploadLimitItems");
+            this.uploadLimitItems.Name = "uploadLimitItems";
             // 
             // button1
             // 
@@ -568,15 +580,11 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
-            // label16
+            // checkBox2
             // 
-            resources.ApplyResources(this.label16, "label16");
-            this.label16.Name = "label16";
-            // 
-            // label17
-            // 
-            resources.ApplyResources(this.label17, "label17");
-            this.label17.Name = "label17";
+            resources.ApplyResources(this.checkBox2, "checkBox2");
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // LocalSettingsDialog
             // 
@@ -682,5 +690,6 @@
         private System.Windows.Forms.TextBox downloadLimitItems;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }

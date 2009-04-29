@@ -1284,6 +1284,33 @@
   <data name="&gt;&gt;tabPage5.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="checkBox2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 75</value>
+  </data>
+  <data name="checkBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 17</value>
+  </data>
+  <data name="checkBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="checkBox2.Text" xml:space="preserve">
+    <value>Enable open by </value>
+  </data>
+  <data name="&gt;&gt;checkBox2.Name" xml:space="preserve">
+    <value>checkBox2</value>
+  </data>
+  <data name="&gt;&gt;checkBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBox2.Parent" xml:space="preserve">
+    <value>tabPage6</value>
+  </data>
+  <data name="&gt;&gt;checkBox2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="label17.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1312,7 +1339,7 @@
     <value>tabPage6</value>
   </data>
   <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="label16.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1339,49 +1366,49 @@
     <value>tabPage6</value>
   </data>
   <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="downlimit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>182, 36</value>
-  </data>
-  <data name="downlimit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 20</value>
-  </data>
-  <data name="downlimit.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;downlimit.Name" xml:space="preserve">
-    <value>downlimit</value>
-  </data>
-  <data name="&gt;&gt;downlimit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;downlimit.Parent" xml:space="preserve">
-    <value>tabPage6</value>
-  </data>
-  <data name="&gt;&gt;downlimit.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="uplimit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>182, 10</value>
+  <data name="downloadLimitItems.Location" type="System.Drawing.Point, System.Drawing">
+    <value>182, 36</value>
   </data>
-  <data name="uplimit.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="downloadLimitItems.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 20</value>
   </data>
-  <data name="uplimit.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="downloadLimitItems.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;uplimit.Name" xml:space="preserve">
-    <value>uplimit</value>
+  <data name="&gt;&gt;downloadLimitItems.Name" xml:space="preserve">
+    <value>downloadLimitItems</value>
   </data>
-  <data name="&gt;&gt;uplimit.Type" xml:space="preserve">
+  <data name="&gt;&gt;downloadLimitItems.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;uplimit.Parent" xml:space="preserve">
+  <data name="&gt;&gt;downloadLimitItems.Parent" xml:space="preserve">
     <value>tabPage6</value>
   </data>
-  <data name="&gt;&gt;uplimit.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;downloadLimitItems.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="uploadLimitItems.Location" type="System.Drawing.Point, System.Drawing">
+    <value>182, 10</value>
+  </data>
+  <data name="uploadLimitItems.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 20</value>
+  </data>
+  <data name="uploadLimitItems.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;uploadLimitItems.Name" xml:space="preserve">
+    <value>uploadLimitItems</value>
+  </data>
+  <data name="&gt;&gt;uploadLimitItems.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;uploadLimitItems.Parent" xml:space="preserve">
+    <value>tabPage6</value>
+  </data>
+  <data name="&gt;&gt;uploadLimitItems.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="tabPage6.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

@@ -17,13 +17,14 @@ CREDITS AND ACKNOWLEDGEMENTS
 
  * All icons are the creation of David Vignoni in his Nuvola theme. http://www.icon-king.com/
  * Első András has made a number of notable contributions including SSL, speed graphs and GeoIP support.
- * Thank you to all the following users kind enough to translate this application:
+ * Thanks to the following users kind enough to translate this application:
     * Romaric R. for the French translation.
 	* benba for the German translation.
 	* drphrozen for the Danish translation.
 	* Első András for the Hungarian translation.
 	* liuzhiyi for the Chinese translation.
     * Woodzu for the Polish translation.	
+	
 ABOUT
 ----------------------------
 

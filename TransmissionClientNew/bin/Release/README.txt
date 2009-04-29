@@ -23,7 +23,8 @@ CREDITS AND ACKNOWLEDGEMENTS
 	* drphrozen for the Danish translation.
 	* Első András for the Hungarian translation.
 	* liuzhiyi for the Chinese translation.
-    * Woodzu for the Polish translation.	
+    * Woodzu for the Polish translation.
+	
 ABOUT
 ----------------------------
 

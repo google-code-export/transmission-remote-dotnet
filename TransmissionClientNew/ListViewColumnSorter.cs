@@ -97,6 +97,9 @@ namespace TransmissionRemoteDotnet
                     case 11:
                         objectCompare = new ListViewTorrentInt64Comparer(ProtocolConstants.FIELD_ADDEDDATE);
                         break;
+                    case 12:
+                        objectCompare = new ListViewDoneDateComparer(value);
+                        break;
                     default:
                         objectCompare = new ListViewTextComparer(columnToSort, true);
                         break;

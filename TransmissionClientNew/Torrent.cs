@@ -71,7 +71,22 @@ namespace TransmissionRemoteDotnet
             item.SubItems.Add(this.UploadedString);
             item.SubItems.Add(this.LocalRatioString);
             item.SubItems.Add(this.Added.ToString());
-            item.SubItems.Add(this.IsFinished ? this.DoneDate : "");
+            if (this.IsFinished)
+            {
+                object doneDate = this.DoneDate;
+                if (doneDate != null)
+                {
+                    item.SubItems.Add(doneDate.ToString());
+                }
+                else
+                {
+                    item.SubItems.Add("?");
+                }
+            }
+            else
+            {
+                item.SubItems.Add("");
+            }
             item.SubItems.Add(GetFirstTracker(true));
             lock (Program.TorrentIndex)
             {
@@ -203,6 +218,7 @@ namespace TransmissionRemoteDotnet
                 {
                     form.notifyIcon.ShowBalloonTip(LocalSettingsSingleton.BALLOON_TIMEOUT, this.Name, "This torrent has finished downloading.", ToolTipIcon.Info);
                     item.SubItems[12].Text = DateTime.Now.ToString();
+                    item.SubItems[12].Tag = DateTime.Now;
                 }
                 this.info = info;
                 item.SubItems[0].Text = this.Name;
@@ -707,11 +723,18 @@ namespace TransmissionRemoteDotnet
         }
         /* END CONFUSION */
 
-        public string DoneDate
+        // DateTime isn't nullable
+        public object DoneDate
         {
             get
             {
-                return info.Contains(ProtocolConstants.FIELD_ADDEDDATE) ? Toolbox.DateFromEpoch(Toolbox.ToDouble(info[ProtocolConstants.FIELD_DONEDATE])).ToString() : "?";
+                if (info.Contains(ProtocolConstants.FIELD_ADDEDDATE))
+                {
+                    DateTime dateTime = Toolbox.DateFromEpoch(Toolbox.ToDouble(info[ProtocolConstants.FIELD_DONEDATE]));
+                    if (!dateTime.Year.Equals(1970))
+                        return dateTime;
+                }
+                return null;
             }
         }
     }

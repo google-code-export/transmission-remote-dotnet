@@ -86,6 +86,7 @@
     <Compile Include="Commands\UpdateBlocklistCommand.cs" />
     <Compile Include="Commands\UpdateFilesCommand.cs" />
     <Compile Include="Commands\UpdateFilesSubCommand.cs" />
+    <Compile Include="Comparers\ListViewDoneDateComparer.cs" />
     <Compile Include="Comparers\ListViewItemIPComparer.cs" />
     <Compile Include="Comparers\ListViewItemDecimalComparer.cs" />
     <Compile Include="Comparers\ListViewItemInt64Comparer.cs" />
