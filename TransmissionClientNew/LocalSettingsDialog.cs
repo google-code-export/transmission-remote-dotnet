@@ -84,6 +84,8 @@ namespace TransmissionRemoteDotnet
             textBox3.Text = settings.PlinkCmd;
             downloadLimitItems.Text = settings.DownLimit;
             uploadLimitItems.Text = settings.UpLimit;
+            sambaShare.Enabled = sambaShareEnabledCheckBox.Checked = settings.SambaShareEnabled;
+            sambaShare.Text = settings.SambaShare;
         }
 
         private void LocalSettingsDialog_Load(object sender, EventArgs e)
@@ -138,6 +140,8 @@ namespace TransmissionRemoteDotnet
             settings.PlinkPath = textBox2.Text;
             settings.UpLimit = uploadLimitItems.Text;
             settings.DownLimit = downloadLimitItems.Text;
+            settings.SambaShareEnabled = sambaShareEnabledCheckBox.Checked;
+            settings.SambaShare = sambaShare.Text;
             Program.Form.SetRemoteCmdButtonVisible(Program.Connected);
             settings.Commit();
         }
@@ -257,6 +261,11 @@ namespace TransmissionRemoteDotnet
         {
             linkLabel1.LinkVisited = true;
             System.Diagnostics.Process.Start(linkLabel1.Text);
+        }
+
+        private void sambaShareEnabledCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            sambaShare.Enabled = sambaShareEnabledCheckBox.Checked;
         }
     }
 }

@@ -71,8 +71,9 @@ namespace TransmissionRemoteDotnet
             REGKEY_LOCALE = "locale",
             REGKEY_CUSTOMPATH = "customPath",
             REGKEY_DOWNLIMIT = "downlimit",
-            REGKEY_UPLIMIT = "uplimit";
-
+            REGKEY_UPLIMIT = "uplimit",
+            REGKEY_SAMBASHARE = "sambaShare",
+            REGKEY_SAMBASHAREENABLED = "sambaShareEnabled";
 
         private static LocalSettingsSingleton instance = null;
         private static readonly object padlock = new object();
@@ -634,6 +635,29 @@ namespace TransmissionRemoteDotnet
             }
         }
 
+        public string SambaShare
+        {
+            get
+            {
+                return profileConfMap.ContainsKey(REGKEY_SAMBASHARE) ? (string)profileConfMap[REGKEY_SAMBASHARE] : @"\\host\share\torrents";
+            }
+            set
+            {
+                profileConfMap[REGKEY_SAMBASHARE] = value;
+            }
+        }
+
+        public bool SambaShareEnabled
+        {
+            get
+            {
+                return profileConfMap.ContainsKey(REGKEY_SAMBASHAREENABLED) ? ToBool(profileConfMap[REGKEY_SAMBASHAREENABLED]) : false;
+            }
+            set
+            {
+                profileConfMap[REGKEY_SAMBASHAREENABLED] = ToInt(value);
+            }
+        }
     }
 }
 #endif

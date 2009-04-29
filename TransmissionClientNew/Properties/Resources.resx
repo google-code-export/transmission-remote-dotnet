@@ -118,41 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="button_cancel1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button_cancel.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="configure" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\configure.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="connect_creating" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\connect_creating.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="connect_no" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\connect_no.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit_add.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ledgreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ledgreen.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ledred" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ledred.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="netconfigure" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\netconfigure.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="net_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\net_add.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="player_pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\player_pause.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="openterm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\openterm.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="player_play1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\player_play.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_16x16_ledblue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\16x16_ledblue.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_16x16_remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\_16x16_remove.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,58 +130,91 @@
   <data name="apply16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\apply16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="down16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\down16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="player_pause16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\player_pause16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="up16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\up16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_16x16_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\viewmag+.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="connect_creating" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\connect_creating.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="folder16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="info16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\info16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ledred" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ledred.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="peer16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\peer16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pipe16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pipe16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="server16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\server16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="connect_no" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\connect_no.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="player_reload" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\player_reload.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="player_reload16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\player_reload16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="remove_and_delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\remove_and_delete.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\messagebox_warning.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_16x16_ledblue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16x16_ledblue.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="hwinfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hwinfo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="configure" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\configure.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="kgpg_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kgpg_edit.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="openterm" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\openterm.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="up16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\up16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reannounce" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reannounce.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="remove_and_delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\remove_and_delete.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="incomplete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\incomplete.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="reannounce" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\reannounce.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button_cancel1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_cancel.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="server16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\server16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit_add.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_16x16_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\viewmag+.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pipe16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pipe16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="player_pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\player_pause.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ledgreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ledgreen.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="player_reload16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\player_reload16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="net_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\net_add.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="player_pause16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\player_pause16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="peer16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\peer16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="netconfigure" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\netconfigure.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\messagebox_warning.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="down16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\down16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="folder_html" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder_html.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

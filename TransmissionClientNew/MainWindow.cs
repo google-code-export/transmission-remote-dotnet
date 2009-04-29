@@ -284,7 +284,7 @@ namespace TransmissionRemoteDotnet
             {
                 arguments.Put(key, (((MenuItem)sender).Text != OtherStrings.Unlimited) ? 1 : 0);
             }
-            foreach(string key in new string[]{ProtocolConstants.FIELD_UPLOADLIMIT, ProtocolConstants.FIELD_SPEEDLIMITUP})
+            foreach (string key in new string[] { ProtocolConstants.FIELD_UPLOADLIMIT, ProtocolConstants.FIELD_SPEEDLIMITUP })
             {
                 arguments.Put(key, ((((MenuItem)sender).Text == OtherStrings.Unlimited) ? 0 : ParseSpeed(((MenuItem)sender).Text)));
             }
@@ -410,6 +410,7 @@ namespace TransmissionRemoteDotnet
         {
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
             remoteCmdButton.Visible = connected && settings.PlinkEnable && settings.PlinkCmd != null && settings.PlinkPath != null && File.Exists(settings.PlinkPath);
+            openNetworkShareButton.Visible = connected && settings.SambaShareEnabled && settings.SambaShare != null && settings.SambaShare.Length > 5;
         }
 
         public void TorrentsToClipboardHandler(object sender, EventArgs e)
@@ -537,7 +538,7 @@ namespace TransmissionRemoteDotnet
             }
             foreach (CultureInfo ci in availableCultures)
             {
-                ToolStripMenuItem ti = new ToolStripMenuItem(ci.EnglishName.Substring(0, ci.EnglishName.IndexOf('(')-1));
+                ToolStripMenuItem ti = new ToolStripMenuItem(ci.EnglishName.Substring(0, ci.EnglishName.IndexOf('(') - 1));
                 ti.Click += new EventHandler(this.ChangeUICulture);
                 ti.Tag = ci;
                 ti.Checked = LocalSettingsSingleton.Instance.Locale.Equals(ci.Name);
@@ -887,7 +888,7 @@ namespace TransmissionRemoteDotnet
                     = filesTimer.Enabled = downloadProgressLabel.Enabled
                     = generalTorrentNameGroupBox.Enabled
                     = piecesLabel.Enabled = remoteCmdButton.Enabled
-                    = one;
+                    = openNetworkShareButton.Enabled = one;
         }
 
         private void torrentListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -1771,7 +1772,16 @@ namespace TransmissionRemoteDotnet
             {
                 try
                 {
-                    PlinkCmd.Start((Torrent)torrentListView.SelectedItems[0].Tag);
+                    Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
+                    Process.Start(
+                        LocalSettingsSingleton.Instance.PlinkPath,
+                        String.Format(
+                            "\"{0}\" \"{1}\"",
+                            LocalSettingsSingleton.Instance.Host,
+                            String.Format(
+                                LocalSettingsSingleton.Instance.PlinkCmd.Replace("$DATA", "{0}"),
+                                String.Format("{0}{1}{2}", t.DownloadDir, t.DownloadDir.EndsWith("/") ? "/" : null, t.Name))
+                        ));
                 }
                 catch (Exception ex)
                 {
@@ -1798,6 +1808,16 @@ namespace TransmissionRemoteDotnet
         private void recentlyActiveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Reannounce(ReannounceMode.RecentlyActive);
+        }
+
+        private void openNetworkShareButton_Click(object sender, EventArgs e)
+        {
+            if (torrentListView.SelectedItems.Count == 1)
+            {
+                Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
+                string unc = LocalSettingsSingleton.Instance.SambaShare + '\\' + t.Name;
+                Process.Start(unc);
+            }
         }
     }
 }

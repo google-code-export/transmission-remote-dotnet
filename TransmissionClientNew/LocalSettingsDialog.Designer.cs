@@ -103,11 +103,12 @@
             this.label11 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.removeProfileButton = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.addProfileButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.sambaShareEnabledCheckBox = new System.Windows.Forms.CheckBox();
+            this.sambaShare = new System.Windows.Forms.TextBox();
+            this.addProfileButton = new System.Windows.Forms.Button();
+            this.removeProfileButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PortField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RefreshRateValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RetryLimitValue)).BeginInit();
@@ -487,7 +488,8 @@
             // 
             // tabPage6
             // 
-            this.tabPage6.Controls.Add(this.checkBox2);
+            this.tabPage6.Controls.Add(this.sambaShare);
+            this.tabPage6.Controls.Add(this.sambaShareEnabledCheckBox);
             this.tabPage6.Controls.Add(this.label17);
             this.tabPage6.Controls.Add(this.label16);
             this.tabPage6.Controls.Add(this.downloadLimitItems);
@@ -551,14 +553,6 @@
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.TabStop = false;
             // 
-            // removeProfileButton
-            // 
-            resources.ApplyResources(this.removeProfileButton, "removeProfileButton");
-            this.removeProfileButton.Image = global::TransmissionRemoteDotnet.Properties.Resources._16x16_remove;
-            this.removeProfileButton.Name = "removeProfileButton";
-            this.removeProfileButton.UseVisualStyleBackColor = true;
-            this.removeProfileButton.Click += new System.EventHandler(this.removeProfileButton_Click);
-            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.addProfileButton);
@@ -566,6 +560,23 @@
             resources.ApplyResources(this.groupBox6, "groupBox6");
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.TabStop = false;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
+            // 
+            // sambaShareEnabledCheckBox
+            // 
+            resources.ApplyResources(this.sambaShareEnabledCheckBox, "sambaShareEnabledCheckBox");
+            this.sambaShareEnabledCheckBox.Name = "sambaShareEnabledCheckBox";
+            this.sambaShareEnabledCheckBox.UseVisualStyleBackColor = true;
+            this.sambaShareEnabledCheckBox.CheckedChanged += new System.EventHandler(this.sambaShareEnabledCheckBox_CheckedChanged);
+            // 
+            // sambaShare
+            // 
+            resources.ApplyResources(this.sambaShare, "sambaShare");
+            this.sambaShare.Name = "sambaShare";
             // 
             // addProfileButton
             // 
@@ -575,16 +586,13 @@
             this.addProfileButton.UseVisualStyleBackColor = true;
             this.addProfileButton.Click += new System.EventHandler(this.button2_Click);
             // 
-            // openFileDialog1
+            // removeProfileButton
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
-            // 
-            // checkBox2
-            // 
-            resources.ApplyResources(this.checkBox2, "checkBox2");
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.removeProfileButton, "removeProfileButton");
+            this.removeProfileButton.Image = global::TransmissionRemoteDotnet.Properties.Resources._16x16_remove;
+            this.removeProfileButton.Name = "removeProfileButton";
+            this.removeProfileButton.UseVisualStyleBackColor = true;
+            this.removeProfileButton.Click += new System.EventHandler(this.removeProfileButton_Click);
             // 
             // LocalSettingsDialog
             // 
@@ -690,6 +698,7 @@
         private System.Windows.Forms.TextBox downloadLimitItems;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox sambaShareEnabledCheckBox;
+        private System.Windows.Forms.TextBox sambaShare;
     }
 }
