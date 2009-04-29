@@ -67,9 +67,9 @@ namespace TransmissionRemoteDotnet.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap _16x16_ledblue {
+        internal static System.Drawing.Bitmap _16x16_ledpurple {
             get {
-                object obj = ResourceManager.GetObject("_16x16_ledblue", resourceCulture);
+                object obj = ResourceManager.GetObject("_16x16_ledpurple", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -168,20 +168,6 @@ namespace TransmissionRemoteDotnet.Properties {
         internal static System.Drawing.Bitmap kgpg_edit {
             get {
                 object obj = ResourceManager.GetObject("kgpg_edit", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap ledgreen {
-            get {
-                object obj = ResourceManager.GetObject("ledgreen", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap ledred {
-            get {
-                object obj = ResourceManager.GetObject("ledred", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

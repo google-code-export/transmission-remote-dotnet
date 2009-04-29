@@ -169,7 +169,7 @@
     <value>stateListBox</value>
   </data>
   <data name="&gt;&gt;stateListBox.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.GListBox, Transmission Remote, Version=3.7.3406.3000, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.GListBox, Transmission Remote, Version=3.7.3406.21369, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;stateListBox.Parent" xml:space="preserve">
     <value>mainVerticalSplitContainer.Panel1</value>
@@ -261,6 +261,122 @@
   <data name="torrentListView.Size" type="System.Drawing.Size, System.Drawing">
     <value>861, 416</value>
   </data>
+  <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>101, 0</value>
+  </metadata>
+  <data name="imageList1.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACY
+        GAAAAk1TRnQBSQFMAgEBBAEAAQgBAAEEAQABEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        AwABIAMAAQEBAAEgBgABIP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8ALgADCAELAT4BMgEu
+        AVQBewFBASwBvgGcAUoBJwHwAasBWgE0AfgBqwFbATUB+AGfAU0BKQHxAX8BQQEqAcUBQwE1ATABXAMK
+        AQ0YAAMIAQsBMwEyAS4BVAFDAUEBLAG+AUgBSwEnAfABUwFdATcB+AFUAV0BNwH4AUoBTgEpAfEBQgFA
+        ASoBxQE2ATUBMAFcAwoBDRgAAwgBCwEyATQBOgFUAUEBTAFmAb4BOAFXAX4B8AE1AWIBjwH4ATYBYwGP
+        AfgBOQFXAYIB8QE/AUwBaAHFATUBOAE+AVwDCgENGAADCAELAi4BNwFUAiwBWgG+AiEBbwHwAiIBfwH4
+        AiIBgAH4AiEBcAHxAioBWwHFAjABOwFcAwoBDRQAARsBGQEYASIBdAFAAS0BsgGzAWEBNwH/AdwBqgGA
+        Af8B9QHXAasB/wH9AeMBtQH/Af0B4wG1Af8B9gHYAawB/wHeAa8BhQH/AbUBZgE9Af8BdwFAASwBuQEf
+        ARwBGwEoEAACGQEYASIBQwE/AS0BsgFTAWYBOAH/AYYBuAGGAf8BqwHqAbcB/wG8AfoBxwH/Ab0B+gHH
+        Af8BrgHsAbkB/wGKAb0BjAH/AVcBawE/Af8BQwE+ASwBuQEdARwBGwEoEAACGQEaASIBQgFLAWEBsgEz
+        AWYBlwH/ASsBnAHPAf8BHAHBAfEB/wEQAc8B/AH/ARABzgH8Af8BGwHCAfIB/wEqAaAB0gH/ATMBaQGb
+        Af8BQQFLAWMBuQEcAR0BHgEoEAACGAEaASICLwFWAbICIQGIAf8CPAHIAf8CUwHvAf8CWgH7Af8CWgH7
+        Af8CUgHwAf8CPwHMAf8CIgGNAf8CLgFXAbkCGwEeASgMAAEbARkBGAEiAYYBPgEjAdUBzwGSAWgB/wH8
+        Ad4BrgL/AeYBtQL/AeMBswL/AeUBtQL/AeUBtQL/AeIBsgL/AecBtQH/Af0B4AGwAf8B1AGaAXAB/wGL
+        AT8BIQHeASABHQEcASkIAAIZARgBIgFCATwBIwHVAWsBoQFqAf8BlQH5AbYB/wGmAf8BwwH/AbQB/wHF
+        Af8BxgH/AcsB/wHGAf8BzQH/AbYB/wHHAf8BpwH/AcQB/wGXAfsBuQH/AW4BqgFxAf8BQQE9ASEB3gId
+        ARwBKQgAARgBGQEaASIBPQFNAWwB1QEvAYUBvgH/ARABtAH7Af8BAAHBAv8BAAHJAv8BAAHTAv8BAAHU
+        Av8BAAHKAv8BAAHCAv8BDwG2Af0B/wEuAYoBxQH/ATsBTgFuAd4BHQEeAR8BKQgAAhgBGgEiAiQBXQHV
+        AisBtQH/AjQB+gH/AjwC/wJLAv8CXQL/Al0C/wJMAv8CPgL/AjUB/AH/AisBvAH/AiABXwHeAhwBHgEp
+        BAABCQIIAQsBdQFFAS8BrAHQAY8BYAL/Ad4BrAL/AdcBpgL/AdYBpgL/AdoBqgL/Ad0BrwL/Ad4BrwL/
+        AdoBqwL/AdYBpgL/AdcBpQL/Ad8BrQH/AdUBmAFqAf8BeQFAASsBvQENAgwBEAMIAQsBPQFGAS4BrAFe
+        AaIBYgH/AYEB/wGyAf8BigH/Aa4B/wGaAf8BsgH/AawB/wG8Af8BuQH/AcMB/wG7Af8BxAH/Aa4B/wG8
+        Af8BmwH/AbMB/wGLAf8BrwH/AYIB/wGyAf8BZAGrAWsB/wFDAT4BKgG9AwwBEAMIAQsBOwFBAWMBrAEs
+        AXsBvwH/AQgBqgL/AQABqwL/AQABtQL/AQABwAL/AQABygL/AQABywL/AQABwQL/AQABtgL/AQABrAL/
+        AQYBqQL/ASwBhAHGAf8BQAFMAWQBvQMMARADCAELAjEBWQGsAiEBtgH/Ah0C/wIlAv8CNgL/AkcC/wJU
+        Av8CVgL/AkkC/wI4Av8CJgL/AhwC/wIhAb0B/wItAVgBvQMMARABOwExASwBTAG/AWUBKwH/AfsBzgGS
+        Av8B0QGeAv8B0QGfAv8B1QGkAv8B2AGoAv8B2gGrAv8B2gGrAv8B2AGoAv8B1QGkAv8B0QGgAv8B0QGe
+        Af8B/QHSAZcB/wG2AWIBMgH/AUQBNgExAV0BLQEzASwBTAE0AXYBLgH/AW0B9wGgAf8BcQH/AaMB/wGC
+        Af8BpwH/AZIB/wGvAf8BoAH/AbYB/wGpAf8BugH/AakB/wG6Af8BoQH/AbYB/wGTAf8BsQH/AYQB/wGo
+        Af8BcQH/AaIB/wFtAfwBowH/AU0BbAE2Af8BNwE1ATEBXQItATgBTAEhAUMBogH/AQ4BmgH5Af8BAAGc
+        Av8BAAGlAv8BAAGwAv8BAAG5Av8BAAHAAv8BAAHAAv8BAAG6Av8BAAGxAv8BAAGmAv8BAAGcAv8BDAGb
+        Af0B/wEuAWMBnAH/ATYBOQE/AV0CLAE1AUwCFAGPAf8CDwH5Af8CDQL/AiAC/wIvAv8CPAL/AkQC/wJF
+        Av8CPQL/AjAC/wIiAv8CDwL/Ag4B/AH/AhUBjQH/AjEBPAFdAYQBUQEuAbIB5AGeAVQC/wHNAYUC/wHK
+        AZQC/wHPAZ4C/wHSAaAC/wHUAaMC/wHWAaUC/wHWAaUC/wHUAaMC/wHSAaAC/wHQAZ4C/wHKAZUC/wHP
+        AYcB/wHgAaABXAH/AX8BQgEpAcUBLwFZAS4BsgFLAcABZQH/AWUB/wGfAf8BaAH/AZsB/wF4Af8BpAH/
+        AYUB/wGpAf8BkAH/Aa8B/wGXAf8BsQH/AZcB/wGxAf8BkgH/Aa8B/wGGAf8BqgH/AXkB/wGkAf8BaQH/
+        AZsB/wFhAf8BngH/AV4BvgFuAf8BRAFAASgBxQEwAS8BcwGyARkBagHWAf8BAQGZAv8BAAGTAv8BAAGf
+        Av8BAAGnAv8BAAGvAv8BAAGzAv8BAAGzAv8BAAGwAv8BAAGoAv8BAAGgAv8BAAGVAv8BAAGSAv8BIQGD
+        AdQB/wE/AU0BaQHFAi8BZQGyAhgBygH/AgAC/wIIAv8CFwL/AiQC/wItAv8CNAL/AjQC/wIuAv8CJQL/
+        AhkC/wIJAv8CAAL/AhgBzAH/AioBWwHFAbABWgEhAeoB9gG2AV8C/wHCAW0C/wHEAYMC/wHLAZYC/wHO
+        AZ4C/wHQAZ8C/wHSAaAC/wHSAaAC/wHQAZ8C/wHOAZ4C/wHMAZgC/wHFAYUC/wHDAW4B/wH2AbkBYQH/
+        AZ8BSwEhAfIBHwFvASEB6gFZAeQBggH/AVsB+wGTAf8BYAH7AZQB/wFqAf8BnAH/AXYB/wGiAf8BgAH/
+        AaYB/wGFAf8BqAH/AYQB/wGoAf8BgAH/AacB/wF3Af8BowH/AWsB/wGdAf8BYgH8AZUB/wFZAfsBkgH/
+        AVwB5gGIAf8BRAFMASIB8gEbASMBlQHqARIBhAHyAf8BAAGPAv8BAAGOAv8BAAGVAv8BAAGdAv8BAAGk
+        Av8BAAGnAv8BAAGmAv8BAAGkAv8BAAGeAv8BAAGWAv8BAAGPAv8BAAGLAv8BEgGMAfQB/wE0AVUBggHy
+        AhwBfwHqAhMB5wH/AgAB/QH/AgAB/QH/AgoC/wIWAv8CHgL/AiEC/wIhAv8CHwL/AhcC/wILAv8CAQH+
+        Af8CAAH+Af8CEQHsAf8CGAFxAfIBuAFaAR8B9gH7AbYBUQL/AboBWwL/Ab4BcAL/AcQBgQL/AccBjQL/
+        AcoBlgL/AcsBmAL/AcsBmAL/AcoBlgL/AcgBjgL/AcQBggL/Ab8BcQL/AboBXAH/Af0BuAFPAf8BqwFV
+        AR8B+AElAXUBJQH2AVUB5wGEAf8BUwHxAYkB/wFaAfQBjgH/AV4B+gGUAf8BYgH+AZYB/wFoAf8BmgH/
+        AWwB/wGcAf8BbQH/AZwB/wFpAf8BmgH/AWIB/gGWAf8BXwH7AZQB/wFcAfUBjwH/AVMB8gGJAf8BUwHr
+        AYYB/wFDAVwBKQH4ARgBLgGeAfYBDAGGAfkB/wEAAYcC/wEAAYoC/wEAAY0C/wEAAY4C/wEAAZMC/wEA
+        AZcC/wEAAZcC/wEAAZQC/wEAAY4C/wEAAY4C/wEAAYoC/wEAAYUC/wEKAYcB/AH/AS4BWgGQAfgCFAGH
+        AfYCDAHqAf8CAAH0Af8CAAH4Af8CAAH+Af8CAAL/AgUC/wILAv8CCwL/AgYC/wIAAv8CAAH9Af8CAAH4
+        Af8CAAH0Af8CCQHtAf8CFAF9AfgBsgFQAR0B9gH6AbABQAL/AbQBRwL/AbUBVgL/AbwBZwL/AcUBggL/
+        Ac0BlgL/Ac4BnQL/Ac4BnQL/Ac0BlgL/AcUBhAL/AbwBaAL/AbYBVwL/AbQBSAH/Af0BsQE+Af8BqwFT
+        AR0B9wEoAW0BIwH2AU4B4QF8Af8BTQHqAYMB/wFOAesBgwH/AVYB8gGLAf8BbwH6AZ8B/wGLAf4BsQH/
+        AZcB/wG6Af8BmAH/AboB/wGMAf8BsgH/AXIB+wGgAf8BWAHzAY0B/wFOAesBgwH/AUsB6gGDAf8BTQHl
+        AX4B/wFDAVoBKAH3ARsBMgGZAfYBCwGDAfgB/wEAAYMC/wEAAYEC/wECAYgC/wEeAZ0C/wFAAbMC/wFS
+        Ab4C/wFTAb4C/wFCAbQC/wEhAZ8C/wEDAYkC/wEAAYEC/wEAAYEC/wEKAYMB/AH/AS4BWQGOAfcCFAGD
+        AfYCDAHjAf8CAAHsAf8CAAHuAf8CAgH2Af8CHQH8Af8CPgL/AlIC/wJTAv8CQgL/Ah8B/QH/AgMB9gH/
+        AgAB7wH/AgAB7AH/AgkB5gH/AhMBfQH3AZ8BQAEeAegB8wGjATIC/wGuASwC/wGyAUwC/wHKAY0C/wHX
+        Aa0C/wHdAbgC/wHfAb0C/wHfAb0C/wHdAbgC/wHZAa4C/wHLAZEC/wGzAVAC/wGtAS0B/wH1AagBMQH/
+        AZwBSAEdAfABLAFdASAB6AFIAdEBbwH/AUAB5AF4Af8BUwHnAYUB/wGSAfkBtQH/AbcB/wHPAf8BwwH/
+        AdYB/wHHAf8B2QH/AccB/wHaAf8BwwH/AdcB/wG4Af8BzwH/AZYB+QG4Af8BVwHoAYgB/wE+AeQBeAH/
+        AUoB1QF0Af8BQAFLASAB8AEkATMBiAHoAQ8BeAHvAf8BAAF5Av8BDQGGAv8BUgG7Av8BhQHXAv8BmwHf
+        Av8BogHhAv8BoQHhAv8BnAHfAv8BiAHYAv8BVgG+Av8BEAGKAv8BAAF2Av8BDgF+AfEB/wEwAVIBfwHw
+        AhoBdAHoAg8B1gH/AgAB5gH/Ag0B6gH/AlIB+gH/AoUC/wKbAv8CoQL/AqEC/wKcAv8CiAL/AlYB+wH/
+        AhAB6wH/AgAB5QH/AgwB2QH/AhUBbQHwAXcBPgExAawB2wF6ARsC/wGuASAC/wHJAYsC/wHeAb0C/wHj
+        AcYC/wHoAdIC/wHsAdcC/wHsAdcC/wHpAdIC/wHlAcgC/wHeAb8C/wHMAZQC/wGuASUB/wHdAYUBGwH/
+        AXsBQwErAb8BOgFPAS8BrAE0AaYBSgH/AUEB5QF7Af8BmAH3AbgB/wHFAf8B2QH/AcwB/wHdAf8B1gH/
+        AeMB/wHbAf8B5gH/AdoB/wHnAf8B1QH/AeQB/wHOAf8B3QH/AccB/wHZAf8BngH4AbwB/wFCAegBfQH/
+        AT4BpQFQAf8BRQFBASkBvwE4AT0BaAGsAQwBWQHPAf8BBgF9Av8BXQG+Av8BmQHhAv8BqwHhAv8BuQHn
+        Av8BwQHqAv8BwgHqAv8BuwHnAv8BqwHjAv8BmwHhAv8BZQHEAv8BBwF8Av8BEgFqAdAB/wE+AU0BZgG/
+        Ai8BXgGsAggBsgH/AgcB5AH/Al0B9wH/ApkC/wKrAv8CuQL/AsEC/wLCAv8CuwL/AqsC/wKbAv8CZQH4
+        Af8CCQHmAf8CBwG1Af8CKgFbAb8BNAErASkBRAG6AUQBBAH/AfoBtgFIAv8B4AG6Av8B5AHJAv8B6wHY
+        Av8B8QHkAv8B9AHpAv8B9AHqAv8B8gHkAv8B7AHZAv8B5QHLAv8B4QG+Af8B/QG9AVQB/wG0AU8BBQH/
+        AT8BMwEvAVUBKwEuASkBRAEZAWoBFgH/AWQB5gGQAf8BwgH/AdoB/wHOAf8B3gH/AdwB/wHoAf8B5wH/
+        Ae8B/wHsAf8B8gH/AewB/wHyAf8B5wH/AfAB/wHeAf8B6AH/Ac8B/wHfAf8BxAH/AdwB/wFtAe0BmgH/
+        ATABWwEcAf8BNAEzAS8BVQIrATIBRAEGASwBoQH/ASoBmAH5Af8BkQHgAv8BrAHjAv8BxAHrAv8B1gHx
+        Av8B3gHzAv8B3wHzAv8B1wHxAv8BxgHrAv8BrwHjAv8BlQHgAv8BMwGfAfsB/wEVAU4BmAH/ATMBNgE7
+        AVUCKQEwAUQCAAGEAf8CLAHnAf8CkgL/AqwC/wLEAv8C1gL/At4C/wLfAv8C1wL/AsYC/wKvAv8ClgL/
+        AjUB7QH/AgABfgH/Ai8BOAFVAwYBCAFzAT8BMAGjAdYBgwFKAv8B7AHLAv8B8QHdAv8B8wHkAv8B+AHx
+        Av8B/AH2Av8B/AH3Av8B+AHyAv8B9AHmAv8B8gHeAv8B8AHQAf8B0QGLAVcB/wF0AT8BLAGzAwoBDQMG
+        AQgBNAFNATABowFNAagBXQH/Ac8B/wHmAf8B4gH/Ae8B/wHnAf8B8AH/AfIB/wH1Af8B+AH/AfoB/wH4
+        Af8B+gH/AfIB/wH2Af8B6QH/AfEB/wHhAf8B7wH/AdEB/wHqAf8BaQGhAWkB/wFAAT4BLAGzAwoBDQMG
+        AQgBMgE1AWUBowErAWcBxQH/AaMB7AL/AckB8gL/AdgB8gL/AekB9wL/AfMB+gL/AfMB+gL/AeoB+AL/
+        AdoB8gL/AcoB8AL/AaYB6wL/AUABiQG/Af8BOgFIAWABswMKAQ0DBgEIAjABWgGjAiwBtQH/AqUC/wLI
+        Av8C1wL/AukC/wLzAv8C8wL/AuoC/wLaAv8CygL/AqoC/wI3AbUB/wIsAVYBswMKAQ0EAAEYARYBFQEe
+        AY4BRQElAccB2gGXAWIB/wH7AfEB2xn/AfoB8wHhAf8BzgGTAW0B/wGFAT0BIgHVARsCGQEjCAACFgEV
+        AR4BJQFYASQBxwFeAbABawH/AdwB9gHqGf8B4AH2Ae4B/wF8AZ4BdgH/ATwBPQEgAdUDGQEjCAACFgEX
+        AR4BJAEmAXgBxwFHAW4BxwH/AcIB7AH5Af8B9hP/AfYD/wHHAfAB+AH/AV0BlgG8Af8BMgFJAWwB1QEZ
+        ARoBGwEjCAACFQEXAR4CIwFoAccCSQG5Af8CwwH3Af8C9xL/AvkC/wLIAfgB/wJRAbMB/wIdAV4B1QIZ
+        ARoBIwwAARYBFQEUARwBfQFMAS8BpgHFAWsBMgH/Ad0BrwGRAf8B8QHfAdQB/wH5AfAB6wH/AfkB8QHs
+        Af8B8AHhAdcB/wHYAa4BmAH/AbABWwE3Af8BcAE+AS0BrQEbARkBGAEiEAABFAEVARQBHAEvAVcBLwGm
+        ATABfgE1Af8BlgG3AZQB/wHYAeIB1AH/Ae0B8wHrAf8B7gHzAe0B/wHcAeMB1wH/AaQBsQGaAf8BUwFg
+        AToB/wI+AS0BrQIZARgBIhAAAhQBFgEcAi8BbQGmASYBOAGnAf8BhQGfAc4B/wHPAd0B6wH/AekB8QH3
+        Af8B6QHxAfYB/wHTAeEB7AH/AZQBsQHKAf8BPwFmAZMB/wE5AUYBXgGtAhkBGgEiEAACFAEVARwCLwFg
+        AaYCJwGSAf8CggHFAf8CywHoAf8C5wH1Af8C6AH2Af8CzgHpAf8CigHCAf8CLAGEAf8CLQFVAa0CGAEa
+        ASIUAAMFAQcBNgEuASkBRQF3AUcBLwGqAZoBSAElAegBpAFRATEB9gGmAVIBMwH3AZYBRQEmAeoBdQFB
+        AS0BsgE5AS8BLAFNAwcBCRgAAwUBBwEpAS8BKQFFATUBSwEvAaoBOwFNASYB6AFMAVMBMQH2AU8BUwEz
+        AfcBQQFHASYB6gFAAUEBLQGyATABLwEsAU0DBwEJGAADBQEHAikBMwFFATEBOQFmAaoBMAFIAX0B6AE/
+        AV4BhwH2AT8BXwGJAfcBNQFRAXoB6gE5AUkBYgGyAS4BMQE2AU0DBwEJGAADBQEHAikBMQFFAi4BWwGq
+        AiABawHoAiwBdwH2Ai0BdwH3Ah8BaQHqAiwBVwGyAiwBNAFNAwcBCQwAAUIBTQE+BwABPgMAASgDAAFA
+        AwABIAMAAQEBAAEBBgABARYAA/+BAAHgAQcB4AEHAeABBwHgAQcBwAEDAcABAwHAAQMBwAEDAYABAQGA
+        AQEBgAEBAYABAVAAAYABAQGAAQEBgAEBAYABAQHAAQMBwAEDAcABAwHAAQMB4AEHAeABBwHgAQcB4AEH
+        Cw==
+</value>
+  </data>
   <data name="torrentListView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -268,7 +384,7 @@
     <value>torrentListView</value>
   </data>
   <data name="&gt;&gt;torrentListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.7.3406.3000, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.7.3406.21369, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;torrentListView.Parent" xml:space="preserve">
     <value>mainVerticalSplitContainer.Panel2</value>
@@ -454,7 +570,7 @@
     <value>piecesGraph</value>
   </data>
   <data name="&gt;&gt;piecesGraph.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.PiecesGraph, Transmission Remote, Version=3.7.3406.3000, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.PiecesGraph, Transmission Remote, Version=3.7.3406.21369, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;piecesGraph.Parent" xml:space="preserve">
     <value>splitContainer5.Panel1</value>
@@ -1768,7 +1884,7 @@
     <value>trackersListView</value>
   </data>
   <data name="&gt;&gt;trackersListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.7.3406.3000, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.7.3406.21369, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;trackersListView.Parent" xml:space="preserve">
     <value>trackersTorrentNameGroupBox</value>
@@ -1879,7 +1995,7 @@
     <value>filesListView</value>
   </data>
   <data name="&gt;&gt;filesListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.7.3406.3000, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.7.3406.21369, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;filesListView.Parent" xml:space="preserve">
     <value>filesTorrentNameGroupBox</value>
@@ -2002,7 +2118,7 @@
     <value>peersListView</value>
   </data>
   <data name="&gt;&gt;peersListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.7.3406.3000, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.7.3406.21369, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;peersListView.Parent" xml:space="preserve">
     <value>peersTorrentNameGroupBox</value>
@@ -2284,7 +2400,7 @@
     <value>speedGraph</value>
   </data>
   <data name="&gt;&gt;speedGraph.Type" xml:space="preserve">
-    <value>CustomUIControls.Graphing.C2DPushGraph, Transmission Remote, Version=3.7.3406.3000, Culture=neutral, PublicKeyToken=null</value>
+    <value>CustomUIControls.Graphing.C2DPushGraph, Transmission Remote, Version=3.7.3406.21369, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;speedGraph.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -2383,7 +2499,7 @@
     <value>Fill</value>
   </data>
   <metadata name="tabControlImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>396, 56</value>
+    <value>396, 39</value>
   </metadata>
   <data name="tabControlImageList.ImageSize" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
@@ -2443,7 +2559,7 @@
     <value>0</value>
   </data>
   <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 519</value>
+    <value>558, 39</value>
   </metadata>
   <data name="toolStripStatusLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 17</value>
@@ -3305,7 +3421,7 @@
     <value>3, 0</value>
   </data>
   <data name="toolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>676, 39</value>
+    <value>87, 39</value>
   </data>
   <data name="toolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3581,16 +3697,87 @@
     <value>1</value>
   </data>
   <metadata name="flagsImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>211, 0</value>
   </metadata>
-  <data name="flagsImageList.ImageSize" type="System.Drawing.Size, System.Drawing">
-    <value>16, 12</value>
+  <data name="flagsImageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACa
+        DwAAAk1TRnQBSQFMAgEBBAEAAQwBAAEEAQABEAEAAQwBAAT/ARkBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        AwABGAMAAQEBAAEYBgABEv8A/wD/AP8A/wD/AP8A/wD/ACEAA/0B7wHoAeUB2QG9AbABxAGLAXABwgGB
+        AVwBygGLAWMBygGMAWMBwgGDAVsBwwGIAWsB1wG5AasB7gHmAeMB/QL8DAAD/QLoAeUBuwG+AbABgwGP
+        AXEBcwGJAWABewGVAWwBfAGVAWwBcgGIAWABfgGLAW4BtgG5AawB5gHlAeMD/AwAA/0B6AHpAe0BtAG/
+        Ac8BaAGQAbEBOQGDAawBLQGKAbYBLgGLAbYBNwGDAa8BYQGMAq8BvAHMAeYB5wHrAvwB/QwAA/0C5gHr
+        AqwByQJcAaUCOwGjAjkBrQI5Aa4COQGhAlcBpAKmAcYC4wHpA/wJAAH7AfoB+QHPAakBmwHIAY4BbAHk
+        AbUBhwHzAdIBowH8Ad8BsAH+AeQBtQH+AeQBtQH8Ad8BsAH0AdQBpQHlAbgBigHJAY8BbQHLAaIBkwH6
+        AfkB+AYAAvoB+QGqAagBmwF4AZcBbgF/AckBjAGbAecBrwGxAfgBwAHDAf0BygHDAf0BywGzAfkBwgGd
+        AekBsQGCAcwBkQF3AZgBbQGkAaEBkwL5AfgGAAP6AakBsAHAAVMBigG2AR0BmgHaAQ8BtQHvAQoBxgH6
+        AQYB0gH+AQYB0gH+AQkBxwH7AQ4BtwHwARwBnQHcAU8BigG2AaEBqgG8AfgC+QYAAvkB+gKbAbkCSgGs
+        Ai8B1AI9Ae0CTwH6Al0B/gJdAf4CTwH6Aj8B7gIwAdcCRAGtApIBtAL4AfkDAAP9AcgBmAGCAdABjwFh
+        Af8B3gGsAf8B1wGmAf8B1gGmAf8B2gGqAf8B3QGvAf8B3gGvAf8B2gGrAf8B1gGmAf8B1wGlAf8B3wGt
+        AdUBmAFrAbwBggFuAvwB+wP9AZABmgGCAV8BogFjAYEB/wGyAYoB/wGuAZoB/wGyAawB/wG8AbkB/wHD
+        AbsB/wHEAa4B/wG8AZsB/wGzAYsB/wGvAYIB/wGyAWUBqwFsAYUBgQFtAvwB+wP9AY8BlAG2AS0BfAG/
+        AQkBqgH/AQABqwH/AQABtQH/AQABwAH/AQABygH/AQABywH/AQABwQH/AQABtgH/AQABrAH/AQcBqQH/
+        AS0BhAHGAYMBjgGlA/wD/QKEAawCIgG2Ah4B/wImAf8CNwH/AkgB/wJVAf8CVwH/AkoB/wI5Af8CJwH/
+        Ah0B/wIiAb0CbwGaAvsB/AHmAdIBxQHLAXkBOgH8Ac4BjgH/Ac8BmwH/AdABnwH/AdQBowH/AdcBpgH/
+        AdkBqQH/AdkBqQH/AdcBpgH/AdQBowH/AdEBnwH/Ac8BmwH+AdEBkgHEAXcBQQHZAb8BtQHGAdUBxQE9
+        AZABQQFrAfoBoAFvAf8BoAF/Af8BpgGOAf8BrQGbAf8BtAGjAf8BtwGjAf8BtwGcAf8BtAGPAf8BrwGB
+        Af8BpwFvAf8BoAFqAf0BoQFUAYgBSgHAAb4BtQLGAd8BHwFRAbMBCwGaAfsBAAGZAf8BAAGjAf8BAAGt
+        Af8BAAG2Af8BAAG8Af8BAAG8Af8BAAG3Af8BAAGuAf8BAAGkAf8BAAGaAf8BCQGYAf4BKwFuAa8BvgHE
+        Ac8CxgHZAhYBowILAfsCDAH/Ah4B/wIsAf8COAH/AkAB/wJAAf8COQH/Ai0B/wIgAf8CDgH/AgoB/QIX
+        AaICtQLKAYEBTwHwAa4BXAH/AcYBdgH/AcYBiQH/AcwBmQH/Ac8BnwH/AdEBoAH/AdMBogH/AdMBogH/
+        AdEBoAH/Ac8BnwH/Ac0BmgH/AccBigH/AccBdwHvAbEBYAGwAWUBQQFPAZABTwFVAdgBeQFfAfwBlwFk
+        AfwBlgFwAf8BnwF8Af8BpAGFAf8BqQGLAf8BqwGKAf8BqwGGAf8BqgF9Af8BpQFxAf8BnwFlAf0BlwFd
+        AfwBlgFeAdkBgAFgAWUBQQFNAVABsgEVAXwB6QEBAZIB/wEAAZAB/wEAAZgB/wEAAaAB/wEAAagB/wEA
+        AasB/wEAAaoB/wEAAagB/wEAAaEB/wEAAZkB/wEAAZEB/wEAAY0B/wEYAYkB6QFVAW4BlAJNAZ8CFgHd
+        AgAB/gIEAf4CDwH/AhwB/wIkAf8CKAH/AigB/wIlAf8CHQH/AhEB/wIFAf4CAAH+AhQB4QI7AYUBwAFk
+        ASgB+wG2AVIB/wG6AVwB/wG+AXEB/wHEAYEB/wHHAY0B/wHKAZYB/wHLAZgB/wHLAZgB/wHKAZYB/wHI
+        AY4B/wHEAYIB/wG/AXIB/wG6AV0B/QG4AVABsQFdASYBLwF/AS8BVgHnAYQBVAHxAYkBWwH0AY4BXwH6
+        AZQBYwH+AZYBaQH/AZoBbQH/AZwBbgH/AZwBagH/AZoBYwH+AZYBYAH7AZQBXQH1AY8BVAHyAYkBVAHr
+        AYYBSgFjATEBIAE3AaYBDQGGAfkBAAGHAf8BAAGKAf8BAAGNAf8BAAGOAf8BAAGTAf8BAAGXAf8BAAGX
+        Af8BAAGUAf8BAAGOAf8BAAGOAf8BAAGKAf8BAAGFAf8BCwGHAfwBNgFhAZcCHQGPAg0B6gIAAfQCAAH4
+        AgAB/gIAAf8CBgH/AgwB/wIMAf8CBwH/AgEB/wIAAf0CAAH4AgAB9AIKAe0CGwGEAboBWwEtAfgBrAE8
+        Af8BsgE/Af8BtAFUAf8BwQF0Af8BywGQAf8B0gGhAf8B1AGoAf8B1AGoAf8B0gGhAf8BzAGSAf8BwQF2
+        Af8BtQFWAf8BsgFAAfoBrgE7Aa8BWgEmATgBdgEyAU0B3AF5AUoB6AGAAVEB6gGEAWsB9AGZAYgB/AGv
+        AZ4B/gG9AacB/wHEAagB/wHFAZ4B/wG+AYoB/AGwAW0B9QGbAVIB6gGFAUgB6AGAAU0B4AF8AUwBYAEv
+        AS4BQgGiAQ0BgAH1AQABgAH/AQUBgwH/AR4BmQH/AUEBsAH/AV8BwgH/AW4BygH/AW4BygH/AWEBwgH/
+        AUQBsgH/ASABmwH/AQYBhAH/AQABfgH/AQwBggH4ATgBYQGSAiUBjQIOAd8CAAHqAgUB7QIeAfcCQQH9
+        Al4B/wJtAf8CbgH/AmEB/wJDAf4CIAH4AgYB7gIAAeoCCwHiAh0BgAHDAX4BbAHjAYgBJAH/Aa4BJQH/
+        AcEBdgH/AdcBrQH/Ad8BvgH/AeQByQH/AegBzgH/AegBzgH/AeUByQH/AeEBvwH/AdgBsAH/AcQBfgH/
+        Aa4BKQHlAZEBIwG3AXUBWQF3AZQBawE8AbQBVwFCAeUBewGBAfIBpwG0Af0BzQHFAf8B2AHQAf8B3wHU
+        Af8B4gHUAf8B4wHPAf8B4AHHAf8B2AG3Af0BzgGHAfMBqwFCAecBfAFDAbUBXQJ1AVkBcwF6AbIBDgFk
+        AdoBBQF9Af8BQwGrAf8BggHUAf8BngHeAf8BrwHkAf8BtwHnAf8BtwHnAf8BsQHkAf8BnwHfAf8BhAHV
+        Af8BSgGxAf8BBQF7Af8BEgFyAdsBawGAAZ8CagGlAgsBvgIFAeUCQwHzAoIB/QKeAf8CrwH/ArYB/wK3
+        Af8CsQH/Ap8B/wKEAf4CSgH0AgcB5gIKAcECVQGTAfAB5gHkAboBRQEFAfoBtgFJAf8B4AG6Af8B5AHJ
+        Af8B6wHYAf8B8QHkAf8B9AHpAf8B9AHqAf8B8gHkAf8B7AHZAf8B5QHLAf8B4QG+Af0BvQFVAbQBUAEG
+        AekB3gHZAeYB6QHkARoBawEXAWUB5gGQAcIB/wHaAc4B/wHeAdwB/wHoAecB/wHvAewB/wHyAewB/wHy
+        AecB/wHwAd4B/wHoAc8B/wHfAcQB/wHcAW4B7QGaATEBXAEdAd8B3QHZAeYB5wHtAQcBLQGhASsBmAH5
+        AZEB4AH/AawB4wH/AcQB6wH/AdYB8QH/Ad4B8wH/Ad8B8wH/AdcB8QH/AcYB6wH/Aa8B4wH/AZUB4AH/
+        ATQBnwH7ARYBTwGYAd0B4AHlAuQB7AIAAYQCLQHnApIB/wKsAf8CxAH/AtYB/wLeAf8C3wH/AtcB/wLG
+        Af8CrwH/ApYB/wI2Ae0CAAF/AtkB4wP+AeABxQG9AdABgAFQAfMBzwGoAf4B8QHcAf8B9wHtAf8B+gH2
+        Af8B/QH5Af8B/QH6Af8B+gH2Af8B+AHuAf0B8gHfAe8B0QGvAcQBfQFSAdcBvAGxA/0D/gHAAc0BvQFS
+        AZ0BXAGpAeQBvQHgAfwB7QHvAf8B9QH2Af8B+AH6Af8B/AH6Af8B/AH2Af8B+QHwAf8B9gHhAfwB7wG1
+        Ad4BwwFnAYoBXQG8AboBsQP9A/4BvwHAAdkBPgFiAbwBhAHCAewBxwHwAf0B4gH2Af8B8AH6Af8B9wH8
+        Af8B9wH8Af8B8QH6Af8B4wH2Af8ByQHwAf0BjgHOAegBSgGAAa8BuQHAAc0D/QP+Ar0B0wI+AasChgHn
+        AsYB/ALiAf8C8AH/AvcB/wL3Af8C8QH/AuQB/wLJAf0CjAHlAjwBowKxAcgD/QMAA/0B7AHfAdkB1QGe
+        AXkB1wGYAWsB6AHKAbYB9gHqAeIB+wH1AfIB+wH2AfIB9QHrAeQB5QHJAboByQGOAXABwwGPAXgB5wHZ
+        AdQC/QH8BgAD/QHZAeMB2QF5AawBfAFqAacBcgG5Ac8BuAHlAewB4gHzAfcB8gH0AfcB8wHoAewB5AHC
+        AcsBvAGCAZIBdgGIAZABegLZAdMC/QH8BgAD/QLZAegBcwF9AcMBWgF0AcIBqwG/Ad4B3wHoAfIB8AH2
+        AfoB8AH2AfkB4gHrAfIBtQHLAdwBbQGUAbUBfAGWAbEB1wHbAeID/QYAA/0C2QHlAnQBtgJbAbQCqQHY
+        AtwB8ALvAfgC8AH5At4B8AKvAdYCYAGrAnABpwLTAd8C/AH9DAAD/gHwAegB5AHMAZwBhAGwAWABPAGs
+        AVoBOQGvAVoBOwGrAVsBPAHCAY4BegHsAeIB3gP9EgAD/gHkAeoB5AGKAaEBhAFSAWQBPQFVAVwBOQFX
+        AVsBOwFWAV0BPAKOAXoC4gHeA/0SAAP+AuQB7gGHAY4BvAFHAWABkwFJAWgBjwFHAWcBkQFJAWcBjwGH
+        AZcBrwHhAeQB6AP9EgAD/gLkAewChAGwAjcBggI1AYECNgF/AjQBfgJ6AaQC3gHmA/0JAAFCAU0BPgcA
+        AT4DAAEoAwABQAMAARgDAAEBAQABAQUAAcAXAAP/YQABwAEDAcABAwHAAQMBwAEDAYABAQGAAQEBgAEB
+        AYABAUAAAYABAQGAAQEBgAEBAYABAQHgAQcB4AEHAeABBwHgAQcL
+</value>
   </data>
   <metadata name="refreshWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>461, 17</value>
+    <value>340, 0</value>
   </metadata>
   <metadata name="notifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>590, 17</value>
+    <value>469, 0</value>
   </metadata>
   <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3620,16 +3807,16 @@
     <value>Transmission Remote</value>
   </data>
   <metadata name="refreshTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>696, 17</value>
+    <value>575, 0</value>
   </metadata>
   <metadata name="filesTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+    <value>17, 39</value>
   </metadata>
   <metadata name="filesWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>121, 56</value>
+    <value>121, 39</value>
   </metadata>
   <metadata name="refreshElapsedTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>234, 56</value>
+    <value>234, 39</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -3928,126 +4115,6 @@
   <data name="&gt;&gt;refreshElapsedTimer.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;connectButton.Name" xml:space="preserve">
-    <value>connectButton</value>
-  </data>
-  <data name="&gt;&gt;connectButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;disconnectButton.Name" xml:space="preserve">
-    <value>disconnectButton</value>
-  </data>
-  <data name="&gt;&gt;disconnectButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addTorrentButton.Name" xml:space="preserve">
-    <value>addTorrentButton</value>
-  </data>
-  <data name="&gt;&gt;addTorrentButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;addWebTorrentButton.Name" xml:space="preserve">
-    <value>addWebTorrentButton</value>
-  </data>
-  <data name="&gt;&gt;addWebTorrentButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;startTorrentButton.Name" xml:space="preserve">
-    <value>startTorrentButton</value>
-  </data>
-  <data name="&gt;&gt;startTorrentButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;startAllToolStripMenuItem1.Name" xml:space="preserve">
-    <value>startAllToolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;startAllToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pauseTorrentButton.Name" xml:space="preserve">
-    <value>pauseTorrentButton</value>
-  </data>
-  <data name="&gt;&gt;pauseTorrentButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pauseAllToolStripMenuItem.Name" xml:space="preserve">
-    <value>pauseAllToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;pauseAllToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;recheckTorrentButton.Name" xml:space="preserve">
-    <value>recheckTorrentButton</value>
-  </data>
-  <data name="&gt;&gt;recheckTorrentButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;configureTorrentButton.Name" xml:space="preserve">
-    <value>configureTorrentButton</value>
-  </data>
-  <data name="&gt;&gt;configureTorrentButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;removeTorrentButton.Name" xml:space="preserve">
-    <value>removeTorrentButton</value>
-  </data>
-  <data name="&gt;&gt;removeTorrentButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;removeAndDeleteButton.Name" xml:space="preserve">
-    <value>removeAndDeleteButton</value>
-  </data>
-  <data name="&gt;&gt;removeAndDeleteButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;reannounceButton.Name" xml:space="preserve">
-    <value>reannounceButton</value>
-  </data>
-  <data name="&gt;&gt;reannounceButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;allToolStripMenuItem.Name" xml:space="preserve">
-    <value>allToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;allToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;recentlyActiveToolStripMenuItem.Name" xml:space="preserve">
-    <value>recentlyActiveToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;recentlyActiveToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;remoteCmdButton.Name" xml:space="preserve">
-    <value>remoteCmdButton</value>
-  </data>
-  <data name="&gt;&gt;remoteCmdButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;localConfigureButton.Name" xml:space="preserve">
-    <value>localConfigureButton</value>
-  </data>
-  <data name="&gt;&gt;localConfigureButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;remoteConfigureButton.Name" xml:space="preserve">
-    <value>remoteConfigureButton</value>
-  </data>
-  <data name="&gt;&gt;remoteConfigureButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sessionStatsButton.Name" xml:space="preserve">
-    <value>sessionStatsButton</value>
-  </data>
-  <data name="&gt;&gt;sessionStatsButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;openNetworkShareButton.Name" xml:space="preserve">
-    <value>openNetworkShareButton</value>
-  </data>
-  <data name="&gt;&gt;openNetworkShareButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;columnHeader6.Name" xml:space="preserve">
     <value>columnHeader6</value>
   </data>
@@ -4233,6 +4300,132 @@
   </data>
   <data name="&gt;&gt;columnHeader29.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;connectButton.Name" xml:space="preserve">
+    <value>connectButton</value>
+  </data>
+  <data name="&gt;&gt;connectButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;disconnectButton.Name" xml:space="preserve">
+    <value>disconnectButton</value>
+  </data>
+  <data name="&gt;&gt;disconnectButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addTorrentButton.Name" xml:space="preserve">
+    <value>addTorrentButton</value>
+  </data>
+  <data name="&gt;&gt;addTorrentButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addWebTorrentButton.Name" xml:space="preserve">
+    <value>addWebTorrentButton</value>
+  </data>
+  <data name="&gt;&gt;addWebTorrentButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;startTorrentButton.Name" xml:space="preserve">
+    <value>startTorrentButton</value>
+  </data>
+  <data name="&gt;&gt;startTorrentButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;startAllToolStripMenuItem1.Name" xml:space="preserve">
+    <value>startAllToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;startAllToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pauseTorrentButton.Name" xml:space="preserve">
+    <value>pauseTorrentButton</value>
+  </data>
+  <data name="&gt;&gt;pauseTorrentButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pauseAllToolStripMenuItem.Name" xml:space="preserve">
+    <value>pauseAllToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;pauseAllToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;recheckTorrentButton.Name" xml:space="preserve">
+    <value>recheckTorrentButton</value>
+  </data>
+  <data name="&gt;&gt;recheckTorrentButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;configureTorrentButton.Name" xml:space="preserve">
+    <value>configureTorrentButton</value>
+  </data>
+  <data name="&gt;&gt;configureTorrentButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;removeTorrentButton.Name" xml:space="preserve">
+    <value>removeTorrentButton</value>
+  </data>
+  <data name="&gt;&gt;removeTorrentButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;removeAndDeleteButton.Name" xml:space="preserve">
+    <value>removeAndDeleteButton</value>
+  </data>
+  <data name="&gt;&gt;removeAndDeleteButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;reannounceButton.Name" xml:space="preserve">
+    <value>reannounceButton</value>
+  </data>
+  <data name="&gt;&gt;reannounceButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;allToolStripMenuItem.Name" xml:space="preserve">
+    <value>allToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;allToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;recentlyActiveToolStripMenuItem.Name" xml:space="preserve">
+    <value>recentlyActiveToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;recentlyActiveToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openNetworkShareButton.Name" xml:space="preserve">
+    <value>openNetworkShareButton</value>
+  </data>
+  <data name="&gt;&gt;openNetworkShareButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;remoteCmdButton.Name" xml:space="preserve">
+    <value>remoteCmdButton</value>
+  </data>
+  <data name="&gt;&gt;remoteCmdButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;localConfigureButton.Name" xml:space="preserve">
+    <value>localConfigureButton</value>
+  </data>
+  <data name="&gt;&gt;localConfigureButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;remoteConfigureButton.Name" xml:space="preserve">
+    <value>remoteConfigureButton</value>
+  </data>
+  <data name="&gt;&gt;remoteConfigureButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sessionStatsButton.Name" xml:space="preserve">
+    <value>sessionStatsButton</value>
+  </data>
+  <data name="&gt;&gt;sessionStatsButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;imageList1.Name" xml:space="preserve">
+    <value>imageList1</value>
+  </data>
+  <data name="&gt;&gt;imageList1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>

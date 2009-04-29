@@ -524,7 +524,6 @@
     <None Include="Resources\configure.png" />
     <None Include="Resources\netconfigure.png" />
     <None Include="Resources\net_add.png" />
-    <None Include="Resources\16x16_ledblue.png" />
     <None Include="Resources\viewmag+.png" />
     <None Include="Resources\_16x16_remove.png" />
     <None Include="Resources\apply16.png" />
@@ -546,6 +545,7 @@
     <None Include="Resources\incomplete.png" />
     <None Include="Resources\reannounce.png" />
     <None Include="Resources\folder_html.png" />
+    <None Include="Resources\16x16_ledpurple.png" />
     <Content Include="transmission_large.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -111,8 +111,8 @@ namespace TransmissionRemoteDotnet
         {
             stateListBox.SuspendLayout();
             ImageList stateListBoxImageList = new ImageList();
-            stateListBoxImageList.ColorDepth = ColorDepth.Depth32Bit;
-            stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledblue);
+            stateListBoxImageList.ColorDepth = ColorDepth.Depth24Bit;
+            stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledpurple);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.down16);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.player_pause16);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.apply16);
@@ -1054,7 +1054,7 @@ namespace TransmissionRemoteDotnet
                 }
                 else if (stateListBox.SelectedIndex == 2)
                 {
-                    ShowTorrentIfStatus(ProtocolConstants.STATUS_STOPPED);
+                    ShowTorrentIfStatus(ProtocolConstants.STATUS_PAUSED);
                 }
                 else if (stateListBox.SelectedIndex == 3)
                 {
@@ -1397,7 +1397,7 @@ namespace TransmissionRemoteDotnet
             RefreshElapsedTimer();
             if (t.Peers != null)
             {
-                peersListView.Enabled = t.StatusCode != ProtocolConstants.STATUS_STOPPED;
+                peersListView.Enabled = t.StatusCode != ProtocolConstants.STATUS_PAUSED;
                 peersListView.Tag = (int)peersListView.Tag + 1;
                 peersListView.SuspendLayout();
                 foreach (JsonObject peer in t.Peers)
@@ -1780,7 +1780,7 @@ namespace TransmissionRemoteDotnet
                             LocalSettingsSingleton.Instance.Host,
                             String.Format(
                                 LocalSettingsSingleton.Instance.PlinkCmd.Replace("$DATA", "{0}"),
-                                String.Format("{0}{1}{2}", t.DownloadDir, t.DownloadDir.EndsWith("/") ? "/" : null, t.Name))
+                                String.Format("{0}{1}{2}", t.DownloadDir, !t.DownloadDir.EndsWith("/") ? "/" : null, t.Name))
                         ));
                 }
                 catch (Exception ex)

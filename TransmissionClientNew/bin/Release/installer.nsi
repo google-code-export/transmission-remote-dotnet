@@ -108,6 +108,12 @@ Section /o "Chinese translation"
   File "zh-CN\Transmission Remote.resources.dll"
 SectionEnd
 
+Section /o "Polish translation"
+  CreateDirectory "$INSTDIR\pl-PL"
+  SetOutPath "$INSTDIR\pl-PL"
+  File "pl-PL\Transmission Remote.resources.dll"
+SectionEnd
+
 ;--------------------------------
 
 ; Uninstaller
@@ -130,6 +136,7 @@ Section "Uninstall"
   Delete "$INSTDIR\da-DK\Transmission Remote.resources.dll"
   Delete "$INSTDIR\hu-HU\Transmission Remote.resources.dll"
   Delete "$INSTDIR\zh-CN\Transmission Remote.resources.dll"
+  Delete "$INSTDIR\pl-PL\Transmission Remote.resources.dll"
 
   ; Remove shortcuts, if any
   Delete "$SMPROGRAMS\Transmission Remote\*.*"
@@ -141,6 +148,7 @@ Section "Uninstall"
   RMDir "$INSTDIR\fr-FR"
   RMDir "$INSTDIR\zh-CN"
   RMDir "$INSTDIR\hu-HU"
+  RMDir "$INSTDIR\pl-PL"
   RMDir "$INSTDIR"
 
 SectionEnd

@@ -28,7 +28,7 @@ namespace TransmissionRemoteDotnet
             STATUS_CHECKING = 2,
             STATUS_DOWNLOADING = 4,
             STATUS_SEEDING = 8,
-            STATUS_STOPPED = 16;
+            STATUS_PAUSED = 16;
 
         public const string
             KEY_TAG = "tag",

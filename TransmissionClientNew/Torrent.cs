@@ -46,12 +46,37 @@ namespace TransmissionRemoteDotnet
         {
             get { return updateSerial; }
         }
+        
+        // blue green orange red
+        private void UpdateIcon()
+        {
+            if (this.HasError)
+            {
+                this.item.ImageIndex = 3;
+            }
+            else if (this.StatusCode == ProtocolConstants.STATUS_CHECKING || this.StatusCode == ProtocolConstants.STATUS_WAITING_TO_CHECK)
+            {
+            }
+            else if (this.StatusCode == ProtocolConstants.STATUS_SEEDING)
+            {
+                this.item.ImageIndex = 2;
+            }
+            else if (this.StatusCode == ProtocolConstants.STATUS_DOWNLOADING)
+            {
+                this.item.ImageIndex = 1;
+            }
+            else if (this.StatusCode == ProtocolConstants.STATUS_PAUSED)
+            {
+                this.item.ImageIndex = 0;
+            }
+        }
 
         public Torrent(JsonObject info)
         {
             this.updateSerial = Program.DaemonDescriptor.UpdateSerial;
             this.info = info;
             item = new ListViewItem(this.Name);
+            UpdateIcon();
             if (this.HasError)
             {
                 item.ForeColor = Color.Red;
@@ -221,6 +246,7 @@ namespace TransmissionRemoteDotnet
                     item.SubItems[12].Tag = DateTime.Now;
                 }
                 this.info = info;
+                UpdateIcon();
                 item.SubItems[0].Text = this.Name;
                 item.ForeColor = this.HasError ? Color.Red : SystemColors.WindowText;
                 item.SubItems[1].Text = this.TotalSizeString;
