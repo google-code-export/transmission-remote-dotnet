@@ -11,7 +11,7 @@
 Name "Transmission Remote"
 
 ; The file to write
-OutFile "transmission-remote-dotnet-3.7-installer.exe"
+OutFile "transmission-remote-dotnet-3.8alpha-installer.exe"
 
 ; The default installation directory
 InstallDir "$PROGRAMFILES\Transmission Remote"
@@ -114,6 +114,12 @@ Section /o "Polish translation"
   File "pl-PL\Transmission Remote.resources.dll"
 SectionEnd
 
+Section /o "Turkish translation"
+  CreateDirectory "$INSTDIR\tr-TR"
+  SetOutPath "$INSTDIR\tr-TR"
+  File "tr-TR\Transmission Remote.resources.dll"
+SectionEnd
+
 ;--------------------------------
 
 ; Uninstaller
@@ -137,6 +143,7 @@ Section "Uninstall"
   Delete "$INSTDIR\hu-HU\Transmission Remote.resources.dll"
   Delete "$INSTDIR\zh-CN\Transmission Remote.resources.dll"
   Delete "$INSTDIR\pl-PL\Transmission Remote.resources.dll"
+  Delete "$INSTDIR\tr-TR\Transmission Remote.resources.dll"
 
   ; Remove shortcuts, if any
   Delete "$SMPROGRAMS\Transmission Remote\*.*"
@@ -149,6 +156,7 @@ Section "Uninstall"
   RMDir "$INSTDIR\zh-CN"
   RMDir "$INSTDIR\hu-HU"
   RMDir "$INSTDIR\pl-PL"
+  RMDir "$INSTDIR\tr-TR"
   RMDir "$INSTDIR"
 
 SectionEnd

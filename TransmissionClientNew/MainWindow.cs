@@ -1551,7 +1551,7 @@ namespace TransmissionRemoteDotnet
 
         private void projectSiteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(PROJECT_SITE);
+            Process.Start(PROJECT_SITE);
         }
 
         private void showErrorLogToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1817,7 +1817,14 @@ namespace TransmissionRemoteDotnet
             {
                 Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
                 string unc = LocalSettingsSingleton.Instance.SambaShare + '\\' + t.Name;
-                Process.Start(unc);
+                try
+                {
+                    Process.Start(unc);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Unable to open network share", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

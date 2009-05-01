@@ -119,7 +119,7 @@ namespace TransmissionRemoteDotnet
             settings.Port = (int)PortField.Value;
             settings.UseSSL = UseSSLCheckBox.Checked;
             settings.AutoConnect = AutoConnectCheckBox.Checked;
-            settings.RefreshRate = (int)RefreshRateValue.Value;
+            settings.RefreshRate = Program.Form.refreshTimer.Interval = (int)RefreshRateValue.Value;
             settings.AuthEnabled = EnableAuthCheckBox.Checked;
             settings.User = UserField.Text;
             settings.Pass = PassField.Text;

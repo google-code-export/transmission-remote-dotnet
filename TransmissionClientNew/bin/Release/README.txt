@@ -16,7 +16,8 @@ CREDITS AND ACKNOWLEDGEMENTS
 ----------------------------
 
  * All icons are the creation of David Vignoni in his Nuvola theme. http://www.icon-king.com/
- * Első András has made a number of notable contributions including SSL, speed graphs and GeoIP support.
+ * charles and the other Transmission developers for their great work.
+ * Első András has made a number of notable contributions including SSL, speed graphs, GeoIP support and many small patches.
  * Thank you to all the following users kind enough to translate this application:
     * Romaric R. for the French translation.
 	* benba for the German translation.
@@ -24,13 +25,14 @@ CREDITS AND ACKNOWLEDGEMENTS
 	* Első András for the Hungarian translation.
 	* liuzhiyi for the Chinese translation.
     * Woodzu for the Polish translation.
+	* RayTracer for the Turkish translation.
 	
 ABOUT
 ----------------------------
 
-transmission-remote-dotnet is a feature rich client to transmission-daemon (a client to a client).
-The user interface is inspired by uTorrent, and its aim is to make using a remote machine for
-torrents as convenient as a local machine.
+transmission-remote-dotnet is a feature rich client to transmission-daemon, allowing you to remotely
+control your Transmission bittorrent client. The user interface is inspired by uTorrent, and its aim
+is to make using a remote machine for torrents as convenient as a local machine.
 
 FEATURES
 ----------------------------
