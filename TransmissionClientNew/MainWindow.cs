@@ -329,9 +329,9 @@ namespace TransmissionRemoteDotnet
             }
             if (t != null)
                 UpdateInfoPanel(false, t);
-            torrentListView.Enabled = true;
-            mainVerticalSplitContainer.Panel1Collapsed = false;
-            refreshTimer.Enabled = true;
+            refreshTimer.Enabled = torrentListView.Enabled = true;
+            if (categoriesPanelToolStripMenuItem.Checked)
+                mainVerticalSplitContainer.Panel1Collapsed = false;
             FilterByStateOrTracker();
             torrentListView.Sort();
             Toolbox.StripeListView(torrentListView);
@@ -888,7 +888,7 @@ namespace TransmissionRemoteDotnet
                     = downloadProgressLabel.Enabled = refreshElapsedTimer.Enabled
                     = filesTimer.Enabled = downloadProgressLabel.Enabled
                     = generalTorrentNameGroupBox.Enabled
-                    = piecesLabel.Enabled = remoteCmdButton.Enabled
+                    = remoteCmdButton.Enabled
                     = openNetworkShareButton.Enabled = one;
         }
 
@@ -984,6 +984,10 @@ namespace TransmissionRemoteDotnet
             else if (e.KeyCode == Keys.F5)
             {
                 ToggleTorrentDetailPanel();
+            }
+            else if (e.KeyCode == Keys.F7)
+            {
+                ToggleCategoriesVisiblePanel();
             }
             else if (e.Control && e.KeyCode == Keys.O)
             {
@@ -1367,8 +1371,8 @@ namespace TransmissionRemoteDotnet
                 trackersListView.ResumeLayout();
                 peersListView.Enabled = trackersListView.Enabled
                     = true;
-                piecesLabel.Visible = piecesGraph.Visible = t.Pieces != null;
-                progressBar.Visible = downloadProgressLabel.Visible = !piecesGraph.Visible;
+                downloadProgressLabel.Text = (piecesGraph.Visible = t.Pieces != null) ? "Pieces: " : "Progress: ";
+                progressBar.Visible = !piecesGraph.Visible;
             }
             remainingLabel.Text = t.GetLongETA();
             uploadedLabel.Text = t.UploadedString;
@@ -1826,6 +1830,17 @@ namespace TransmissionRemoteDotnet
                     MessageBox.Show(ex.Message, "Unable to open network share", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void ToggleCategoriesVisiblePanel()
+        {
+            mainVerticalSplitContainer.Panel1Collapsed = !mainVerticalSplitContainer.Panel1Collapsed;
+            categoriesPanelToolStripMenuItem.Checked = !mainVerticalSplitContainer.Panel1Collapsed;
+        }
+
+        private void categoriesPanelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToggleCategoriesVisiblePanel();
         }
     }
 }
