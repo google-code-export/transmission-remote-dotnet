@@ -28,6 +28,7 @@ namespace TransmissionRemoteDotnet.Commmands
     {
         private bool first;
         private List<ICommand> uiUpdateBatch;
+        private ImageList imgList;
 
         public UpdateFilesCommand(JsonObject response)
         {
@@ -53,7 +54,7 @@ namespace TransmissionRemoteDotnet.Commmands
                     }
                 }
             }));
-            if (t == null || t.Id != id || form.filesListView.Enabled)
+            if (t == null || t.Id != id)
             {
                 return;
             }
@@ -66,6 +67,13 @@ namespace TransmissionRemoteDotnet.Commmands
             JsonArray wanted = (JsonArray)torrent[ProtocolConstants.FIELD_WANTED];
             first = (priorities != null && wanted != null);
             uiUpdateBatch = new List<ICommand>();
+            this.imgList = new ImageList();
+            imgList.ColorDepth = ColorDepth.Depth32Bit;
+            int mainWindowHandle = 0;
+            Program.Form.Invoke(new MethodInvoker(delegate()
+            {
+                mainWindowHandle = Program.Form.Handle.ToInt32();
+            }));
             for (int i = 0; i < files.Length; i++)
             {
                 JsonObject file = (JsonObject)files[i];
@@ -74,7 +82,7 @@ namespace TransmissionRemoteDotnet.Commmands
                 if (first)
                 {
                     string name = (string)file[ProtocolConstants.FIELD_NAME];
-                    UpdateFilesCreateSubCommand subCommand = new UpdateFilesCreateSubCommand(name, length, Toolbox.ToBool(wanted[i]), (JsonNumber)priorities[i], bytesCompleted);
+                    UpdateFilesCreateSubCommand subCommand = new UpdateFilesCreateSubCommand(name, length, Toolbox.ToBool(wanted[i]), (JsonNumber)priorities[i], bytesCompleted, imgList, mainWindowHandle);
                     uiUpdateBatch.Add((ICommand)subCommand);
                 }
                 else
@@ -90,14 +98,15 @@ namespace TransmissionRemoteDotnet.Commmands
 
         public void Execute()
         {
-            if (uiUpdateBatch == null)
-            {
-                return;
-            }
             MainWindow form = Program.Form;
             lock (form.filesListView)
             {
+                if (uiUpdateBatch == null || form.filesListView.Enabled)
+                {
+                    return;
+                }
                 form.filesListView.SuspendLayout();
+                form.filesListView.SmallImageList = imgList;
                 foreach (ICommand uiUpdate in uiUpdateBatch)
                 {
                     uiUpdate.Execute();

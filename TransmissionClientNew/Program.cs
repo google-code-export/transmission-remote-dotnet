@@ -21,6 +21,7 @@ using System.Windows.Forms;
 using Jayrock.Json;
 using System.Net;
 using TransmissionRemoteDotnet.Commands;
+using System.Threading;
 
 namespace TransmissionRemoteDotnet
 {
@@ -71,7 +72,7 @@ namespace TransmissionRemoteDotnet
         [STAThread]
         static void Main(string[] args)
         {
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(LocalSettingsSingleton.Instance.Locale);
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(LocalSettingsSingleton.Instance.Locale);
 #if DOTNET35
             using (NamedPipeSingleInstance singleInstance = new TCPSingleInstance(TCP_SINGLE_INSTANCE_PORT))
 #else

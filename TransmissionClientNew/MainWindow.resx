@@ -160,7 +160,7 @@
     <value>0, 0</value>
   </data>
   <data name="stateListBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 274</value>
+    <value>109, 400</value>
   </data>
   <data name="stateListBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -169,7 +169,7 @@
     <value>stateListBox</value>
   </data>
   <data name="&gt;&gt;stateListBox.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.GListBox, Transmission Remote, Version=3.7.3410.33434, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.GListBox, Transmission Remote, Version=3.7.3411.271, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;stateListBox.Parent" xml:space="preserve">
     <value>mainVerticalSplitContainer.Panel1</value>
@@ -259,7 +259,7 @@
     <value>0, 0</value>
   </data>
   <data name="torrentListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>861, 274</value>
+    <value>861, 416</value>
   </data>
   <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>101, 0</value>
@@ -268,106 +268,105 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAQ
-        FwAAAk1TRnQBSQFMAgEBBAEAAQwBAAEEAQABEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADu
+        FgAAAk1TRnQBSQFMAgEBBAEAAQwBAAEEAQABEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABIAMAAQEBAAEgBgABIP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8ALgADCAELAzQBVAFZ
-        AlYBvgFuAU4BSgHwAY4BXAE+AfgBjgFcAT4B+AF3AVMBTAHxAVoCVwHFAzgBXAMKAQ0YAAMIAQsDNAFU
-        A1YBvgJOAUoB8AJcAT4B+AJcAT4B+AJTAUwB8QNXAcUDOAFcAwoBDRgAAwgBCwM0AVQCVgFZAb4BTgFa
-        AWYB8AE+AVwBegH4AT4BXAF6AfgBUwFXAW0B8QJXAVoBxQM4AVwDCgENGAADCAELAzQBVAJWAVkBvgJH
-        AV8B8AI6AXUB+AI6AXUB+AJJAWQB8QJXAVoBxQM4AVwDCgENFAADGAEiA1UBsgGzAVcBLQH/AdwBqgGA
-        Af8B9QHXAasB/wH9AeMBtQH/Af0B4wG1Af8B9gHYAawB/wHeAa8BhQH/AbUBXAEzAf8BWAJWAbkDHAEo
-        EAADGAEiA1UBsgFJAVwBLgH/AYYBuAGGAf8BqwHqAbcB/wG8AfoBxwH/Ab0B+gHHAf8BrgHsAbkB/wGK
-        Ab0BjAH/AU0BYQE1Af8DVgG5AxwBKBAAAxgBIgNVAbIBKQFcAZcB/wEhAZwBzwH/ARIBwQHxAf8BBgHP
-        AfwB/wEGAc4B/AH/AREBwgHyAf8BIAGgAdIB/wEpAV8BmwH/AlYBWAG5AxwBKBAAAxgBIgNVAbICFwGI
-        Af8CMgHIAf8CSQHvAf8CUAH7Af8CUAH7Af8CSAHwAf8CNQHMAf8CGAGNAf8DVgG5AxwBKAwAAxgBIgFe
-        AloB1QHPAZIBXgH/AfwB3gGuAv8B5gG1Av8B4wGzAv8B5QG1Av8B5QG1Av8B4gGyAv8B5wG1Af8B/QHg
-        AbAB/wHUAZoBZgH/AWABWgFYAd4DHQEpCAADGAEiA1oB1QFhAaEBYAH/AZUB+QG2Af8BpgH/AcMB/wG0
-        Af8BxQH/AcYB/wHLAf8BxgH/Ac0B/wG2Af8BxwH/AacB/wHEAf8BlwH7AbkB/wFkAaoBZwH/AloBWAHe
-        Ax0BKQgAAxgBIgJaAV4B1QElAYUBvgH/AQYBtAH7Af8BAAHBAv8BAAHJAv8BAAHTAv8BAAHUAv8BAAHK
-        Av8BAAHCAv8BBQG2Af0B/wEkAYoBxQH/AloBYAHeAx0BKQgAAxgBIgJaAV4B1QIhAbUB/wIqAfoB/wIy
-        Av8CQQL/AlMC/wJTAv8CQgL/AjQC/wIrAfwB/wIhAbwB/wJYAV8B3gMdASkEAAMIAQsBVAJTAawB0AGP
-        AVYC/wHeAawC/wHXAaYC/wHWAaYC/wHaAaoC/wHdAa8C/wHeAa8C/wHaAasC/wHWAaYC/wHXAaUC/wHf
-        Aa0B/wHVAZgBYAH/AVoCVwG9AwwBEAMIAQsDUwGsAVQBogFYAf8BgQH/AbIB/wGKAf8BrgH/AZoB/wGy
-        Af8BrAH/AbwB/wG5Af8BwwH/AbsB/wHEAf8BrgH/AbwB/wGbAf8BswH/AYsB/wGvAf8BggH/AbIB/wFa
-        AasBYQH/A1cBvQMMARADCAELAlMBVAGsASIBcQG/Af8BAAGqAv8BAAGrAv8BAAG1Av8BAAHAAv8BAAHK
-        Av8BAAHLAv8BAAHBAv8BAAG2Av8BAAGsAv8BAAGpAv8BIgGEAcYB/wJXAVoBvQMMARADCAELAlMBVAGs
-        AhcBtgH/AhMC/wIbAv8CLAL/Aj0C/wJKAv8CTAL/Aj8C/wIuAv8CHAL/AhIC/wIXAb0B/wNXAb0DDAEQ
-        AzABTAG/AVsBIQH/AfsBzgGSAv8B0QGeAv8B0QGfAv8B1QGkAv8B2AGoAv8B2gGrAv8B2gGrAv8B2AGo
-        Av8B1QGkAv8B0QGgAv8B0QGeAf8B/QHSAZcB/wG2AVgBKAH/AzgBXQMwAUwBKgFsASQB/wFjAfcBoAH/
-        AWcB/wGjAf8BggH/AacB/wGSAf8BrwH/AaAB/wG2Af8BqQH/AboB/wGpAf8BugH/AaEB/wG2Af8BkwH/
-        AbEB/wGEAf8BqAH/AWcB/wGiAf8BYwH8AaMB/wFDAWIBLAH/AzgBXQMwAUwBFwE5AaIB/wEEAZoB+QH/
-        AQABnAL/AQABpQL/AQABsAL/AQABuQL/AQABwAL/AQABwAL/AQABugL/AQABsQL/AQABpgL/AQABnAL/
-        AQIBmwH9Af8BJAFZAZwB/wM4AV0DMAFMAgoBjwH/AgUB+QH/AgMC/wIWAv8CJQL/AjIC/wI6Av8COwL/
-        AjMC/wImAv8CGAL/AgUC/wIEAfwB/wILAY0B/wM4AV0DVQGyAeQBngFKAv8BzQGFAv8BygGUAv8BzwGe
-        Av8B0gGgAv8B1AGjAv8B1gGlAv8B1gGlAv8B1AGjAv8B0gGgAv8B0AGeAv8BygGVAv8BzwGHAf8B4AGg
-        AVIB/wFaAlcBxQNVAbIBQQHAAVsB/wFbAf8BnwH/AV4B/wGbAf8BbgH/AaQB/wGFAf8BqQH/AZAB/wGv
-        Af8BlwH/AbEB/wGXAf8BsQH/AZIB/wGvAf8BhgH/AaoB/wFvAf8BpAH/AV8B/wGbAf8BVwH/AZ4B/wFU
-        Ab4BZAH/A1cBxQNVAbIBDwFgAdYB/wEAAZkC/wEAAZMC/wEAAZ8C/wEAAacC/wEAAa8C/wEAAbMC/wEA
-        AbMC/wEAAbAC/wEAAagC/wEAAaAC/wEAAZUC/wEAAZIC/wEXAYMB1AH/AlcBWgHFA1UBsgIOAcoB/wIA
-        Av8CAAL/Ag0C/wIaAv8CIwL/AioC/wIqAv8CJAL/AhsC/wIPAv8CAAL/AgAC/wIOAcwB/wJXAVoBxQFs
-        AVwBUQHqAfYBtgFVAv8BwgFjAv8BxAGDAv8BywGWAv8BzgGeAv8B0AGfAv8B0gGgAv8B0gGgAv8B0AGf
-        Av8BzgGeAv8BzAGYAv8BxQGFAv8BwwFkAf8B9gG5AVcB/wF5AVgBSAHyAVEBXgFRAeoBTwHkAYIB/wFR
-        AfsBkwH/AVYB+wGUAf8BYAH/AZwB/wFsAf8BogH/AYAB/wGmAf8BhQH/AagB/wGEAf8BqAH/AYAB/wGn
-        Af8BbQH/AaMB/wFhAf8BnQH/AVgB/AGVAf8BTwH7AZIB/wFSAeYBiAH/AVEBWQFIAfIBUAFRAWYB6gEI
-        AYQB8gH/AQABjwL/AQABjgL/AQABlQL/AQABnQL/AQABpAL/AQABpwL/AQABpgL/AQABpAL/AQABngL/
-        AQABlgL/AQABjwL/AQABiwL/AQgBjAH0Af8BSwFZAWoB8gJRAWMB6gIJAecB/wIAAf0B/wIAAf0B/wIA
-        Av8CDAL/AhQC/wIXAv8CFwL/AhUC/wINAv8CAQL/AgAB/gH/AgAB/gH/AgcB7AH/AkYBZwHyAYkBWgE1
-        AfYB+wG2AUcC/wG6AVEC/wG+AWYC/wHEAYEC/wHHAY0C/wHKAZYC/wHLAZgC/wHLAZgC/wHKAZYC/wHI
-        AY4C/wHEAYIC/wG/AWcC/wG6AVIB/wH9AbgBRQH/AY4BXAE5AfgBNwFiATcB9gFLAecBhAH/AUkB8QGJ
-        Af8BUAH0AY4B/wFUAfoBlAH/AVgB/gGWAf8BXgH/AZoB/wFiAf8BnAH/AWMB/wGcAf8BXwH/AZoB/wFY
-        Af4BlgH/AVUB+wGUAf8BUgH1AY8B/wFJAfIBiQH/AUkB6wGGAf8BQwFcAT0B+AEzATkBewH2AQIBhgH5
-        Af8BAAGHAv8BAAGKAv8BAAGNAv8BAAGOAv8BAAGTAv8BAAGXAv8BAAGXAv8BAAGUAv8BAAGOAv8BAAGO
-        Av8BAAGKAv8BAAGFAv8BAAGHAfwB/wE+AVwBegH4AjIBbgH2AgIB6gH/AgAB9AH/AgAB+AH/AgAB/gH/
-        AgAC/wIAAv8CAQL/AgEC/wIAAv8CAAL/AgAB/QH/AgAB+AH/AgAB9AH/AgAB7QH/Ai4BcwH4AYUBSQE1
-        AfYB+gGwATYC/wG0AT0C/wG1AUwC/wG8AV0C/wHFAYIC/wHNAZYC/wHOAZ0C/wHOAZ0C/wHNAZYC/wHF
-        AYQC/wG8AV4C/wG2AU0C/wG0AT4B/wH9AbEBNAH/AYoBUgE4AfcBNwFiATYB9gFEAeEBcgH/AUMB6gGD
-        Af8BRAHrAYMB/wFMAfIBiwH/AWUB+gGfAf8BiwH+AbEB/wGXAf8BugH/AZgB/wG6Af8BjAH/AbIB/wFo
-        AfsBoAH/AU4B8wGNAf8BRAHrAYMB/wFBAeoBgwH/AUMB5QF0Af8BUQFSATsB9wE0AT8BeQH2AQEBgwH4
-        Af8BAAGDAv8BAAGBAv8BAAGIAv8BFAGdAv8BNgGzAv8BSAG+Av8BSQG+Av8BOAG0Av8BFwGfAv8BAAGJ
-        Av8BAAGBAv8BAAGBAv8BAAGDAfwB/wE9AVIBggH3AjIBawH2AgIB4wH/AgAB7AH/AgAB7gH/AgAB9gH/
-        AhMB/AH/AjQC/wJIAv8CSQL/AjgC/wIVAf0B/wIAAfYB/wIAAe8B/wIAAewB/wIAAeYB/wI1AW0B9wFo
-        AVcBVQHoAfMBowEoAv8BrgEiAv8BsgFCAv8BygGNAv8B1wGtAv8B3QG4Av8B3wG9Av8B3wG9Av8B3QG4
-        Av8B2QGuAv8BywGRAv8BswFGAv8BrQEjAf8B9QGoAScB/wFuAU4BRQHwAVYBXwFVAegBPgHRAWUB/wE2
-        AeQBbgH/AUkB5wGFAf8BkgH5AbUB/wG3Af8BzwH/AcMB/wHWAf8BxwH/AdkB/wHHAf8B2gH/AcMB/wHX
-        Af8BuAH/Ac8B/wGWAfkBuAH/AU0B6AGIAf8BNAHkAW4B/wFAAdUBagH/Ak4BRwHwAVYBVwFmAegBBQFu
-        Ae8B/wEAAW8C/wEDAYYC/wFIAbsC/wGFAdcC/wGbAd8C/wGiAeEC/wGhAeEC/wGcAd8C/wGIAdgC/wFM
-        Ab4C/wEGAYoC/wEAAWwC/wEEAXQB8QH/AU0BUgFnAfACVQFhAegCBQHWAf8CAAHmAf8CAwHqAf8CSAH6
-        Af8ChQL/ApsC/wKhAv8CoQL/ApwC/wKIAv8CTAH7Af8CBgHrAf8CAAHlAf8CAgHZAf8CQwFdAfABVAJT
-        AawB2wFwAREC/wGuARYC/wHJAYsC/wHeAb0C/wHjAcYC/wHoAdIC/wHsAdcC/wHsAdcC/wHpAdIC/wHl
-        AcgC/wHeAb8C/wHMAZQC/wGuARsB/wHdAYUBEQH/AVkCVwG/A1MBrAEqAaYBQAH/ATcB5QFxAf8BmAH3
-        AbgB/wHFAf8B2QH/AcwB/wHdAf8B1gH/AeMB/wHbAf8B5gH/AdoB/wHnAf8B1QH/AeQB/wHOAf8B3QH/
-        AccB/wHZAf8BngH4AbwB/wE4AegBcwH/ATQBpQFGAf8DVwG/AlMBVAGsAQIBTwHPAf8BAAFzAv8BUwG+
-        Av8BmQHhAv8BqwHhAv8BuQHnAv8BwQHqAv8BwgHqAv8BuwHnAv8BqwHjAv8BmwHhAv8BWwHEAv8BAAFy
-        Av8BCAFgAdAB/wJXAVkBvwJTAVQBrAIAAbIB/wIAAeQB/wJTAfcB/wKZAv8CqwL/ArkC/wLBAv8CwgL/
-        ArsC/wKrAv8CmwL/AlsB+AH/AgAB5gH/AgABtQH/AlcBWQG/AywBRAG6AToBAAH/AfoBtgE+Av8B4AG6
-        Av8B5AHJAv8B6wHYAv8B8QHkAv8B9AHpAv8B9AHqAv8B8gHkAv8B7AHZAv8B5QHLAv8B4QG+Af8B/QG9
-        AUoB/wG0AUUBAAH/ATUCNAFVAywBRAEPAWABDAH/AVoB5gGQAf8BwgH/AdoB/wHOAf8B3gH/AdwB/wHo
-        Af8B5wH/Ae8B/wHsAf8B8gH/AewB/wHyAf8B5wH/AfAB/wHeAf8B6AH/Ac8B/wHfAf8BxAH/AdwB/wFj
-        Ae0BmgH/ASYBUQESAf8DNAFVAywBRAEAASIBoQH/ASABmAH5Af8BkQHgAv8BrAHjAv8BxAHrAv8B1gHx
-        Av8B3gHzAv8B3wHzAv8B1wHxAv8BxgHrAv8BrwHjAv8BlQHgAv8BKQGfAfsB/wELAUQBmAH/ATQCNQFV
-        AywBRAIAAYQB/wIiAecB/wKSAv8CrAL/AsQC/wLWAv8C3gL/At8C/wLXAv8CxgL/Aq8C/wKWAv8CKwHt
-        Af8CAAF0Af8CNAE1AVUDBgEIAVICUAGjAdYBgwFAAv8B7AHLAv8B8QHdAv8B8wHkAv8B+AHxAv8B/AH2
-        Av8B/AH3Av8B+AHyAv8B9AHmAv8B8gHeAv8B8AHQAf8B0QGLAU0B/wNWAbMDCgENAwYBCANQAaMBQwGo
-        AVMB/wHPAf8B5gH/AeIB/wHvAf8B5wH/AfAB/wHyAf8B9QH/AfgB/wH6Af8B+AH/AfoB/wHyAf8B9gH/
-        AekB/wHxAf8B4QH/Ae8B/wHRAf8B6gH/AV8BoQFfAf8DVgGzAwoBDQMGAQgCUAFSAaMBIQFdAcUB/wGj
-        AewC/wHJAfIC/wHYAfIC/wHpAfcC/wHzAfoC/wHzAfoC/wHqAfgC/wHaAfIC/wHKAfAC/wGmAesC/wE2
-        AYkBvwH/A1YBswMKAQ0DBgEIAlABUgGjAiIBtQH/AqUC/wLIAv8C1wL/AukC/wLzAv8C8wL/AuoC/wLa
-        Av8CygL/AqoC/wItAbUB/wNWAbMDCgENBAADFgEeA1kBxwHaAZcBWAH/AfsB8QHbGf8B+gHzAeEB/wHO
-        AZMBYwH/AV4CWgHVAxkBIwgAAxYBHgNZAccBVAGwAWEB/wHcAfYB6hn/AeAB9gHuAf8BcgGeAWwB/wNa
-        AdUDGQEjCAADFgEeA1kBxwE9AWQBxwH/AcIB7AH5Af8B9hP/AfYD/wHHAfAB+AH/AVMBlgG8Af8CWgFe
-        AdUDGQEjCAADFgEeA1kBxwI/AbkB/wLDAfcB/wL3Ev8C+QL/AsgB+AH/AkcBswH/AloBXgHVAxkBIwwA
-        AxQBHAFUAlIBpgHFAWEBKAH/Ad0BrwGRAf8B8QHfAdQB/wH5AfAB6wH/AfkB8QHsAf8B8AHhAdcB/wHY
-        Aa4BmAH/AbABUQEtAf8BVQJTAa0DGAEiEAADFAEcAVIBVAFSAaYBJgF0ASsB/wGWAbcBlAH/AdgB4gHU
-        Af8B7QHzAesB/wHuAfMB7QH/AdwB4wHXAf8BpAGxAZoB/wFJAVYBMAH/A1MBrQMYASIQAAMUARwCUgFU
-        AaYBHAEuAacB/wGFAZ8BzgH/Ac8B3QHrAf8B6QHxAfcB/wHpAfEB9gH/AdMB4QHsAf8BlAGxAcoB/wE1
-        AVwBkwH/AlMBVQGtAxgBIhAAAxQBHAJSAVQBpgIdAZIB/wKCAcUB/wLLAegB/wLnAfUB/wLoAfYB/wLO
-        AekB/wKKAcIB/wIiAYQB/wJTAVUBrQMYASIUAAMFAQcDLQFFA1MBqgFoAVcBVgHoAX0BSQE9AfYBiAFS
-        AT4B9wFmAVUBUQHqA1UBsgExAjABTQMHAQkYAAMFAQcDLQFFA1MBqgJXAVYB6AJJAT0B9gFRAVIBPgH3
-        AlUBUQHqA1UBsgMwAU0DBwEJGAADBQEHAy0BRQNTAaoCVwFkAegBSAFeAW4B9gFRAVUBfwH3AVMBVQFi
-        AeoDVQGyATACMQFNAwcBCRgAAwUBBwMtAUUDUwGqAlUBXwHoAjgBYgH2AjwBbQH3AlEBXAHqA1UBsgIw
-        ATEBTQMHAQkMAAFCAU0BPgcAAT4DAAEoAwABQAMAASADAAEBAQABAQYAAQEWAAP/gQAB4AEHAeABBwHg
-        AQcB4AEHAcABAwHAAQMBwAEDAcABAwGAAQEBgAEBAYABAQGAAQFQAAGAAQEBgAEBAYABAQGAAQEBwAED
-        AcABAwHAAQMBwAEDAeABBwHgAQcB4AEHAeABBws=
+        AlYBvgFlAk4B8AF9AVwBPgH4AX0BXAE+AfgBawJTAfEBWgJXAcUDOAFcAwoBDRgAAwgBCwM0AVQDVgG+
+        A04B8AJcAT4B+AJcAT4B+ANTAfEDVwHFAzgBXAMKAQ0YAAMIAQsDNAFUAlYBWQG+AU4BWgFdAfABPgFc
+        AXMB+AE+AVwBcwH4AVMBVwFkAfECVwFaAcUDOAFcAwoBDRgAAwgBCwM0AVQCVgFZAb4CTgFdAfACPgFu
+        AfgCPgFuAfgCUwFkAfECVwFaAcUDOAFcAwoBDRQAAxgBIgNVAbIBswFQASYB/wHcAaoBgAH/AfUB1wGr
+        Af8B/QHjAbUB/wH9AeMBtQH/AfYB2AGsAf8B3gGvAYUB/wG1AVUBLAH/AVgCVgG5AxwBKBAAAxgBIgNV
+        AbIBQgFVAScB/wGGAbgBhgH/AasB6gG3Af8BvAH6AccB/wG9AfoBxwH/Aa4B7AG5Af8BigG9AYwB/wFG
+        AVoBLgH/A1YBuQMcASgQAAMYASIDVQGyASIBVQGXAf8BGgGcAc8B/wELAcEB8QH/AQABzwH8Af8BAAHO
+        AfwB/wEKAcIB8gH/ARkBoAHSAf8BIgFYAZsB/wJWAVgBuQMcASgQAAMYASIDVQGyAhABiAH/AisByAH/
+        AkIB7wH/AkkB+wH/AkkB+wH/AkEB8AH/Ai4BzAH/AhEBjQH/A1YBuQMcASgMAAMYASIBXgJaAdUBzwGS
+        AVcB/wH8Ad4BrgL/AeYBtQL/AeMBswL/AeUBtQL/AeUBtQL/AeIBsgL/AecBtQH/Af0B4AGwAf8B1AGa
+        AV8B/wFgAloB3gMdASkIAAMYASIDWgHVAVoBoQFZAf8BlQH5AbYB/wGmAf8BwwH/AbQB/wHFAf8BxgH/
+        AcsB/wHGAf8BzQH/AbYB/wHHAf8BpwH/AcQB/wGXAfsBuQH/AV0BqgFgAf8DWgHeAx0BKQgAAxgBIgJa
+        AV4B1QEeAYUBvgH/AQABtAH7Af8BAAHBAv8BAAHJAv8BAAHTAv8BAAHUAv8BAAHKAv8BAAHCAv8BAAG2
+        Af0B/wEdAYoBxQH/AloBYAHeAx0BKQgAAxgBIgJaAV4B1QIaAbUB/wIjAfoB/wIrAv8COgL/AkwC/wJM
+        Av8COwL/Ai0C/wIkAfwB/wIaAbwB/wJaAV8B3gMdASkEAAMIAQsBVAJTAawB0AGPAU8C/wHeAawC/wHX
+        AaYC/wHWAaYC/wHaAaoC/wHdAa8C/wHeAa8C/wHaAasC/wHWAaYC/wHXAaUC/wHfAa0B/wHVAZgBWQH/
+        AVoCVwG9AwwBEAMIAQsDUwGsAU0BogFRAf8BgQH/AbIB/wGKAf8BrgH/AZoB/wGyAf8BrAH/AbwB/wG5
+        Af8BwwH/AbsB/wHEAf8BrgH/AbwB/wGbAf8BswH/AYsB/wGvAf8BggH/AbIB/wFTAasBWgH/A1cBvQMM
+        ARADCAELAlMBVAGsARsBagG/Af8BAAGqAv8BAAGrAv8BAAG1Av8BAAHAAv8BAAHKAv8BAAHLAv8BAAHB
+        Av8BAAG2Av8BAAGsAv8BAAGpAv8BGwGEAcYB/wJXAVoBvQMMARADCAELAlMBVAGsAhABtgH/AgwC/wIU
+        Av8CJQL/AjYC/wJDAv8CRQL/AjgC/wInAv8CFQL/AgsC/wIQAb0B/wNXAb0DDAEQAzABTAG/AVQBGgH/
+        AfsBzgGSAv8B0QGeAv8B0QGfAv8B1QGkAv8B2AGoAv8B2gGrAv8B2gGrAv8B2AGoAv8B1QGkAv8B0QGg
+        Av8B0QGeAf8B/QHSAZcB/wG2AVEBIQH/AzgBXQMwAUwBIwFlAR0B/wFcAfcBoAH/AWAB/wGjAf8BggH/
+        AacB/wGSAf8BrwH/AaAB/wG2Af8BqQH/AboB/wGpAf8BugH/AaEB/wG2Af8BkwH/AbEB/wGEAf8BqAH/
+        AWAB/wGiAf8BXAH8AaMB/wE8AVsBJQH/AzgBXQMwAUwBEAEyAaIB/wEAAZoB+QH/AQABnAL/AQABpQL/
+        AQABsAL/AQABuQL/AQABwAL/AQABwAL/AQABugL/AQABsQL/AQABpgL/AQABnAL/AQABmwH9Af8BHQFS
+        AZwB/wM4AV0DMAFMAgMBjwH/AgAB+QH/AgAC/wIPAv8CHgL/AisC/wIzAv8CNAL/AiwC/wIfAv8CEQL/
+        AgAC/wIAAfwB/wIEAY0B/wM4AV0DVQGyAeQBngFDAv8BzQGFAv8BygGUAv8BzwGeAv8B0gGgAv8B1AGj
+        Av8B1gGlAv8B1gGlAv8B1AGjAv8B0gGgAv8B0AGeAv8BygGVAv8BzwGHAf8B4AGgAUsB/wFaAlcBxQNV
+        AbIBOgHAAVQB/wFUAf8BnwH/AVcB/wGbAf8BZwH/AaQB/wGFAf8BqQH/AZAB/wGvAf8BlwH/AbEB/wGX
+        Af8BsQH/AZIB/wGvAf8BhgH/AaoB/wFoAf8BpAH/AVgB/wGbAf8BUAH/AZ4B/wFNAb4BXQH/A1cBxQNV
+        AbIBCAFZAdYB/wEAAZkC/wEAAZMC/wEAAZ8C/wEAAacC/wEAAa8C/wEAAbMC/wEAAbMC/wEAAbAC/wEA
+        AagC/wEAAaAC/wEAAZUC/wEAAZIC/wEQAYMB1AH/AlcBWgHFA1UBsgIHAcoB/wIAAv8CAAL/AgYC/wIT
+        Av8CHAL/AiMC/wIjAv8CHQL/AhQC/wIIAv8CAAL/AgAC/wIHAcwB/wJXAVoBxQFhAVwBVQHqAfYBtgFO
+        Av8BwgFcAv8BxAGDAv8BywGWAv8BzgGeAv8B0AGfAv8B0gGgAv8B0gGgAv8B0AGfAv8BzgGeAv8BzAGY
+        Av8BxQGFAv8BwwFdAf8B9gG5AVAB/wFpAVkBTwHyAVUBXAFVAeoBSAHkAYIB/wFKAfsBkwH/AU8B+wGU
+        Af8BWQH/AZwB/wFlAf8BogH/AYAB/wGmAf8BhQH/AagB/wGEAf8BqAH/AYAB/wGnAf8BZgH/AaMB/wFa
+        Af8BnQH/AVEB/AGVAf8BSAH7AZIB/wFLAeYBiAH/AlkBTwHyAlUBXgHqAQEBhAHyAf8BAAGPAv8BAAGO
+        Av8BAAGVAv8BAAGdAv8BAAGkAv8BAAGnAv8BAAGmAv8BAAGkAv8BAAGeAv8BAAGWAv8BAAGPAv8BAAGL
+        Av8BAQGMAfQB/wFVAVkBZwHyAlUBXAHqAgIB5wH/AgAB/QH/AgAB/QH/AgAC/wIFAv8CDQL/AhAC/wIQ
+        Av8CDgL/AgYC/wIAAv8CAAH+Af8CAAH+Af8CAAHsAf8CTQFnAfIBdQFaAT8B9gH7AbYBQAL/AboBSgL/
+        Ab4BXwL/AcQBgQL/AccBjQL/AcoBlgL/AcsBmAL/AcsBmAL/AcoBlgL/AcgBjgL/AcQBggL/Ab8BYAL/
+        AboBSwH/Af0BuAE+Af8BfQFcAT4B+AFDAWIBQwH2AUQB5wGEAf8BQgHxAYkB/wFJAfQBjgH/AU0B+gGU
+        Af8BUQH+AZYB/wFXAf8BmgH/AVsB/wGcAf8BXAH/AZwB/wFYAf8BmgH/AVEB/gGWAf8BTgH7AZQB/wFL
+        AfUBjwH/AUIB8gGJAf8BQgHrAYYB/wFDAVwBPgH4ATsBRwFrAfYBAAGGAfkB/wEAAYcC/wEAAYoC/wEA
+        AY0C/wEAAY4C/wEAAZMC/wEAAZcC/wEAAZcC/wEAAZQC/wEAAY4C/wEAAY4C/wEAAYoC/wEAAYUC/wEA
+        AYcB/AH/AT4BXAFzAfgCOQFiAfYCAAHqAf8CAAH0Af8CAAH4Af8CAAH+Af8CAAL/AgAC/wIAAv8CAAL/
+        AgAC/wIAAv8CAAH9Af8CAAH4Af8CAAH0Af8CAAHtAf8CPAFrAfgBcwFJAT8B9gH6AbABLwL/AbQBNgL/
+        AbUBRQL/AbwBVgL/AcUBggL/Ac0BlgL/Ac4BnQL/Ac4BnQL/Ac0BlgL/AcUBhAL/AbwBVwL/AbYBRgL/
+        AbQBNwH/Af0BsQEtAf8BgwFSAT8B9wFDAWIBQQH2AT0B4QFrAf8BPAHqAYMB/wE9AesBgwH/AUUB8gGL
+        Af8BXgH6AZ8B/wGLAf4BsQH/AZcB/wG6Af8BmAH/AboB/wGMAf8BsgH/AWEB+wGgAf8BRwHzAY0B/wE9
+        AesBgwH/AToB6gGDAf8BPAHlAW0B/wFRAVIBRAH3AT0BSAFoAfYBAAGDAfgB/wEAAYMC/wEAAYEC/wEA
+        AYgC/wENAZ0C/wEvAbMC/wFBAb4C/wFCAb4C/wExAbQC/wEQAZ8C/wEAAYkC/wEAAYEC/wEAAYEC/wEA
+        AYMB/AH/AUgBUgF0AfcCOQFiAfYCAAHjAf8CAAHsAf8CAAHuAf8CAAH2Af8CDAH8Af8CLQL/AkEC/wJC
+        Av8CMQL/Ag4B/QH/AgAB9gH/AgAB7wH/AgAB7AH/AgAB5gH/AjwBbQH3AWACVwHoAfMBowEhAv8BrgEb
+        Av8BsgE7Av8BygGNAv8B1wGtAv8B3QG4Av8B3wG9Av8B3wG9Av8B3QG4Av8B2QGuAv8BywGRAv8BswE/
+        Av8BrQEcAf8B9QGoASAB/wFlAk4B8AFXAV8BVwHoATcB0QFeAf8BLwHkAWcB/wFCAecBhQH/AZIB+QG1
+        Af8BtwH/Ac8B/wHDAf8B1gH/AccB/wHZAf8BxwH/AdoB/wHDAf8B1wH/AbgB/wHPAf8BlgH5AbgB/wFG
+        AegBiAH/AS0B5AFnAf8BOQHVAWMB/wNOAfACVwFfAegBAAFnAe8B/wEAAWgC/wEAAYYC/wFBAbsC/wGF
+        AdcC/wGbAd8C/wGiAeEC/wGhAeEC/wGcAd8C/wGIAdgC/wFFAb4C/wEAAYoC/wEAAWUC/wEAAW0B8QH/
+        AU4BUgFdAfACVwFfAegCAAHWAf8CAAHmAf8CAAHqAf8CQQH6Af8ChQL/ApsC/wKhAv8CoQL/ApwC/wKI
+        Av8CRQH7Af8CAAHrAf8CAAHlAf8CAAHZAf8CTgFdAfABVAJTAawB2wFpAQoC/wGuAQ8C/wHJAYsC/wHe
+        Ab0C/wHjAcYC/wHoAdIC/wHsAdcC/wHsAdcC/wHpAdIC/wHlAcgC/wHeAb8C/wHMAZQC/wGuARQB/wHd
+        AYUBCgH/AVkCVwG/A1MBrAEjAaYBOQH/ATAB5QFqAf8BmAH3AbgB/wHFAf8B2QH/AcwB/wHdAf8B1gH/
+        AeMB/wHbAf8B5gH/AdoB/wHnAf8B1QH/AeQB/wHOAf8B3QH/AccB/wHZAf8BngH4AbwB/wExAegBbAH/
+        AS0BpQE/Af8DVwG/AlMBVAGsAQABSAHPAf8BAAFsAv8BTAG+Av8BmQHhAv8BqwHhAv8BuQHnAv8BwQHq
+        Av8BwgHqAv8BuwHnAv8BqwHjAv8BmwHhAv8BVAHEAv8BAAFrAv8BAQFZAdAB/wJXAVkBvwJTAVQBrAIA
+        AbIB/wIAAeQB/wJMAfcB/wKZAv8CqwL/ArkC/wLBAv8CwgL/ArsC/wKrAv8CmwL/AlQB+AH/AgAB5gH/
+        AgABtQH/AlcBWQG/AywBRAG6ATMBAAH/AfoBtgE3Av8B4AG6Av8B5AHJAv8B6wHYAv8B8QHkAv8B9AHp
+        Av8B9AHqAv8B8gHkAv8B7AHZAv8B5QHLAv8B4QG+Af8B/QG9AUMB/wG0AT4BAAH/ATUCNAFVAywBRAEI
+        AVkBBQH/AVMB5gGQAf8BwgH/AdoB/wHOAf8B3gH/AdwB/wHoAf8B5wH/Ae8B/wHsAf8B8gH/AewB/wHy
+        Af8B5wH/AfAB/wHeAf8B6AH/Ac8B/wHfAf8BxAH/AdwB/wFcAe0BmgH/AR8BSgELAf8DNAFVAywBRAEA
+        ARsBoQH/ARkBmAH5Af8BkQHgAv8BrAHjAv8BxAHrAv8B1gHxAv8B3gHzAv8B3wHzAv8B1wHxAv8BxgHr
+        Av8BrwHjAv8BlQHgAv8BIgGfAfsB/wEEAT0BmAH/ATQCNQFVAywBRAIAAYQB/wIbAecB/wKSAv8CrAL/
+        AsQC/wLWAv8C3gL/At8C/wLXAv8CxgL/Aq8C/wKWAv8CJAHtAf8CAAFtAf8CNAE1AVUDBgEIAVICUAGj
+        AdYBgwE5Av8B7AHLAv8B8QHdAv8B8wHkAv8B+AHxAv8B/AH2Av8B/AH3Av8B+AHyAv8B9AHmAv8B8gHe
+        Av8B8AHQAf8B0QGLAUYB/wNWAbMDCgENAwYBCANQAaMBPAGoAUwB/wHPAf8B5gH/AeIB/wHvAf8B5wH/
+        AfAB/wHyAf8B9QH/AfgB/wH6Af8B+AH/AfoB/wHyAf8B9gH/AekB/wHxAf8B4QH/Ae8B/wHRAf8B6gH/
+        AVgBoQFYAf8DVgGzAwoBDQMGAQgCUAFSAaMBGgFWAcUB/wGjAewC/wHJAfIC/wHYAfIC/wHpAfcC/wHz
+        AfoC/wHzAfoC/wHqAfgC/wHaAfIC/wHKAfAC/wGmAesC/wEvAYkBvwH/A1YBswMKAQ0DBgEIAlABUgGj
+        AhsBtQH/AqUC/wLIAv8C1wL/AukC/wLzAv8C8wL/AuoC/wLaAv8CygL/AqoC/wImAbUB/wNWAbMDCgEN
+        BAADFgEeA1kBxwHaAZcBUQH/AfsB8QHbGf8B+gHzAeEB/wHOAZMBXAH/AV4CWgHVAxkBIwgAAxYBHgNZ
+        AccBTQGwAVoB/wHcAfYB6hn/AeAB9gHuAf8BawGeAWUB/wNaAdUDGQEjCAADFgEeA1kBxwE2AV0BxwH/
+        AcIB7AH5Af8B9hP/AfYD/wHHAfAB+AH/AUwBlgG8Af8CWgFeAdUDGQEjCAADFgEeA1kBxwI4AbkB/wLD
+        AfcB/wL3Ev8C+QL/AsgB+AH/AkABswH/AloBXgHVAxkBIwwAAxQBHAFUAlIBpgHFAVoBIQH/Ad0BrwGR
+        Af8B8QHfAdQB/wH5AfAB6wH/AfkB8QHsAf8B8AHhAdcB/wHYAa4BmAH/AbABSgEmAf8BVQJTAa0DGAEi
+        EAADFAEcAVIBVAFSAaYBHwFtASQB/wGWAbcBlAH/AdgB4gHUAf8B7QHzAesB/wHuAfMB7QH/AdwB4wHX
+        Af8BpAGxAZoB/wFCAU8BKQH/A1MBrQMYASIQAAMUARwCUgFUAaYBFQEnAacB/wGFAZ8BzgH/Ac8B3QHr
+        Af8B6QHxAfcB/wHpAfEB9gH/AdMB4QHsAf8BlAGxAcoB/wEuAVUBkwH/AlMBVQGtAxgBIhAAAxQBHAJS
+        AVQBpgIWAZIB/wKCAcUB/wLLAegB/wLnAfUB/wLoAfYB/wLOAekB/wKKAcIB/wIbAYQB/wJTAVUBrQMY
+        ASIUAAMFAQcDLQFFA1MBqgFgAlcB6AFuAUkBSAH2AYEBUgFKAfcBXgJVAeoDVQGyATECMAFNAwcBCRgA
+        AwUBBwMtAUUDUwGqA1cB6AJJAUgB9gFRAVIBSgH3A1UB6gNVAbIDMAFNAwcBCRgAAwUBBwMtAUUDUwGq
+        AlcBXwHoAUgBXgFiAfYBUQFSAW0B9wJVAVwB6gNVAbIBMAIxAU0DBwEJGAADBQEHAy0BRQNTAaoCVwFf
+        AegCRQFiAfYCRgFtAfcCVQFcAeoDVQGyAjABMQFNAwcBCQwAAUIBTQE+BwABPgMAASgDAAFAAwABIAMA
+        AQEBAAEBBgABARYAA/+BAAHgAQcB4AEHAeABBwHgAQcBwAEDAcABAwHAAQMBwAEDAYABAQGAAQEBgAEB
+        AYABAVAAAYABAQGAAQEBgAEBAYABAQHAAQMBwAEDAcABAwHAAQMB4AEHAeABBwHgAQcB4AEHCw==
 </value>
   </data>
   <data name="torrentListView.TabIndex" type="System.Int32, mscorlib">
@@ -377,7 +376,7 @@
     <value>torrentListView</value>
   </data>
   <data name="&gt;&gt;torrentListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.7.3410.33434, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.7.3411.271, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;torrentListView.Parent" xml:space="preserve">
     <value>mainVerticalSplitContainer.Panel2</value>
@@ -398,7 +397,7 @@
     <value>1</value>
   </data>
   <data name="mainVerticalSplitContainer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>974, 274</value>
+    <value>974, 416</value>
   </data>
   <data name="mainVerticalSplitContainer.SplitterDistance" type="System.Int32, mscorlib">
     <value>109</value>
@@ -524,7 +523,7 @@
     <value>piecesGraph</value>
   </data>
   <data name="&gt;&gt;piecesGraph.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.PiecesGraph, Transmission Remote, Version=3.7.3410.33434, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.PiecesGraph, Transmission Remote, Version=3.7.3411.271, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;piecesGraph.Parent" xml:space="preserve">
     <value>splitContainer5.Panel1</value>
@@ -701,7 +700,7 @@
     <value>0, 13</value>
   </data>
   <data name="createdByLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
+    <value>26</value>
   </data>
   <data name="&gt;&gt;createdByLabel.Name" xml:space="preserve">
     <value>createdByLabel</value>
@@ -731,7 +730,7 @@
     <value>61, 13</value>
   </data>
   <data name="label17.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
+    <value>20</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
     <value>Created by:</value>
@@ -761,7 +760,7 @@
     <value>0, 13</value>
   </data>
   <data name="createdAtLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
+    <value>25</value>
   </data>
   <data name="&gt;&gt;createdAtLabel.Name" xml:space="preserve">
     <value>createdAtLabel</value>
@@ -791,7 +790,7 @@
     <value>59, 13</value>
   </data>
   <data name="label16.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
+    <value>19</value>
   </data>
   <data name="label16.Text" xml:space="preserve">
     <value>Created at:</value>
@@ -821,7 +820,7 @@
     <value>0, 13</value>
   </data>
   <data name="errorLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
+    <value>27</value>
   </data>
   <data name="errorLabel.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -854,7 +853,7 @@
     <value>32, 13</value>
   </data>
   <data name="labelForErrorLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
+    <value>21</value>
   </data>
   <data name="labelForErrorLabel.Text" xml:space="preserve">
     <value>Error:</value>
@@ -887,7 +886,7 @@
     <value>0, 13</value>
   </data>
   <data name="commentLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;commentLabel.Name" xml:space="preserve">
     <value>commentLabel</value>
@@ -917,7 +916,7 @@
     <value>54, 13</value>
   </data>
   <data name="label15.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
+    <value>5</value>
   </data>
   <data name="label15.Text" xml:space="preserve">
     <value>Comment:</value>
@@ -947,7 +946,7 @@
     <value>0, 13</value>
   </data>
   <data name="ratioLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+    <value>24</value>
   </data>
   <data name="&gt;&gt;ratioLabel.Name" xml:space="preserve">
     <value>ratioLabel</value>
@@ -977,7 +976,7 @@
     <value>35, 13</value>
   </data>
   <data name="label14.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>18</value>
   </data>
   <data name="label14.Text" xml:space="preserve">
     <value>Ratio:</value>
@@ -1064,7 +1063,7 @@
     <value>54, 13</value>
   </data>
   <data name="label13.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
+    <value>17</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
     <value>Leechers:</value>
@@ -1097,7 +1096,7 @@
     <value>40, 13</value>
   </data>
   <data name="label10.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+    <value>16</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>Seeds:</value>
@@ -1127,7 +1126,7 @@
     <value>0, 13</value>
   </data>
   <data name="uploadLimitLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="&gt;&gt;uploadLimitLabel.Name" xml:space="preserve">
     <value>uploadLimitLabel</value>
@@ -1157,7 +1156,7 @@
     <value>64, 13</value>
   </data>
   <data name="label12.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>15</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
     <value>Upload limit:</value>
@@ -1187,7 +1186,7 @@
     <value>0, 13</value>
   </data>
   <data name="uploadRateLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>19</value>
   </data>
   <data name="&gt;&gt;uploadRateLabel.Name" xml:space="preserve">
     <value>uploadRateLabel</value>
@@ -1217,7 +1216,7 @@
     <value>65, 13</value>
   </data>
   <data name="label8.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>14</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>Upload rate:</value>
@@ -1247,7 +1246,7 @@
     <value>0, 13</value>
   </data>
   <data name="uploadedLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>18</value>
   </data>
   <data name="&gt;&gt;uploadedLabel.Name" xml:space="preserve">
     <value>uploadedLabel</value>
@@ -1277,7 +1276,7 @@
     <value>56, 13</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Uploaded:</value>
@@ -1307,7 +1306,7 @@
     <value>0, 13</value>
   </data>
   <data name="remainingLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>17</value>
   </data>
   <data name="&gt;&gt;remainingLabel.Name" xml:space="preserve">
     <value>remainingLabel</value>
@@ -1367,7 +1366,7 @@
     <value>0, 13</value>
   </data>
   <data name="statusLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;statusLabel.Name" xml:space="preserve">
     <value>statusLabel</value>
@@ -1397,7 +1396,7 @@
     <value>40, 13</value>
   </data>
   <data name="label11.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>4</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
     <value>Status:</value>
@@ -1457,7 +1456,7 @@
     <value>78, 13</value>
   </data>
   <data name="label9.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>3</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Download limit:</value>
@@ -1487,7 +1486,7 @@
     <value>0, 13</value>
   </data>
   <data name="downloadSpeedLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;downloadSpeedLabel.Name" xml:space="preserve">
     <value>downloadSpeedLabel</value>
@@ -1517,7 +1516,7 @@
     <value>79, 13</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>2</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Download rate:</value>
@@ -1550,7 +1549,7 @@
     <value>70, 13</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>1</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Downloaded:</value>
@@ -1580,7 +1579,7 @@
     <value>0, 13</value>
   </data>
   <data name="downloadedLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;downloadedLabel.Name" xml:space="preserve">
     <value>downloadedLabel</value>
@@ -1607,7 +1606,7 @@
     <value>0, 13</value>
   </data>
   <data name="startedAtLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>21</value>
   </data>
   <data name="&gt;&gt;startedAtLabel.Name" xml:space="preserve">
     <value>startedAtLabel</value>
@@ -1637,7 +1636,7 @@
     <value>57, 13</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>16</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Started At:</value>
@@ -1700,7 +1699,7 @@
     <value>0, 13</value>
   </data>
   <data name="timeElapsedLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;timeElapsedLabel.Name" xml:space="preserve">
     <value>timeElapsedLabel</value>
@@ -1727,7 +1726,7 @@
     <value>881, 172</value>
   </data>
   <data name="generalTorrentNameGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;generalTorrentNameGroupBox.Name" xml:space="preserve">
     <value>generalTorrentNameGroupBox</value>
@@ -1754,7 +1753,7 @@
     <value>1</value>
   </data>
   <data name="splitContainer3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>960, 208</value>
+    <value>960, 66</value>
   </data>
   <data name="splitContainer3.SplitterDistance" type="System.Int32, mscorlib">
     <value>25</value>
@@ -1781,7 +1780,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="generalTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>966, 214</value>
+    <value>966, 72</value>
   </data>
   <data name="generalTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1829,7 +1828,7 @@
     <value>3, 16</value>
   </data>
   <data name="trackersListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>954, 189</value>
+    <value>954, 47</value>
   </data>
   <data name="trackersListView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1838,7 +1837,7 @@
     <value>trackersListView</value>
   </data>
   <data name="&gt;&gt;trackersListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.7.3410.33434, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.7.3411.271, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;trackersListView.Parent" xml:space="preserve">
     <value>trackersTorrentNameGroupBox</value>
@@ -1853,7 +1852,7 @@
     <value>3, 3</value>
   </data>
   <data name="trackersTorrentNameGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>960, 208</value>
+    <value>960, 66</value>
   </data>
   <data name="trackersTorrentNameGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1877,7 +1876,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="trackersTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>966, 214</value>
+    <value>966, 72</value>
   </data>
   <data name="trackersTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1940,7 +1939,7 @@
     <value>3, 16</value>
   </data>
   <data name="filesListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>954, 189</value>
+    <value>954, 47</value>
   </data>
   <data name="filesListView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1949,7 +1948,7 @@
     <value>filesListView</value>
   </data>
   <data name="&gt;&gt;filesListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.7.3410.33434, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.7.3411.271, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;filesListView.Parent" xml:space="preserve">
     <value>filesTorrentNameGroupBox</value>
@@ -1964,7 +1963,7 @@
     <value>3, 3</value>
   </data>
   <data name="filesTorrentNameGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>960, 208</value>
+    <value>960, 66</value>
   </data>
   <data name="filesTorrentNameGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1988,7 +1987,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="filesTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>966, 214</value>
+    <value>966, 72</value>
   </data>
   <data name="filesTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2063,7 +2062,7 @@
     <value>3, 16</value>
   </data>
   <data name="peersListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>954, 189</value>
+    <value>954, 47</value>
   </data>
   <data name="peersListView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2072,7 +2071,7 @@
     <value>peersListView</value>
   </data>
   <data name="&gt;&gt;peersListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.7.3410.33434, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.7.3411.271, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;peersListView.Parent" xml:space="preserve">
     <value>peersTorrentNameGroupBox</value>
@@ -2087,7 +2086,7 @@
     <value>3, 3</value>
   </data>
   <data name="peersTorrentNameGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>960, 208</value>
+    <value>960, 66</value>
   </data>
   <data name="peersTorrentNameGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2111,7 +2110,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="peersTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>966, 214</value>
+    <value>966, 72</value>
   </data>
   <data name="peersTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2354,7 +2353,7 @@
     <value>speedGraph</value>
   </data>
   <data name="&gt;&gt;speedGraph.Type" xml:space="preserve">
-    <value>CustomUIControls.Graphing.C2DPushGraph, Transmission Remote, Version=3.7.3410.33434, Culture=neutral, PublicKeyToken=null</value>
+    <value>CustomUIControls.Graphing.C2DPushGraph, Transmission Remote, Version=3.7.3411.271, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;speedGraph.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -2375,7 +2374,7 @@
     <value>1</value>
   </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>954, 189</value>
+    <value>954, 47</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
     <value>25</value>
@@ -2402,7 +2401,7 @@
     <value>3, 3</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>960, 208</value>
+    <value>960, 66</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2429,7 +2428,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="speedTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>966, 214</value>
+    <value>966, 72</value>
   </data>
   <data name="speedTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -2462,7 +2461,7 @@
     <value>0, 0</value>
   </data>
   <data name="torrentTabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>974, 241</value>
+    <value>974, 99</value>
   </data>
   <data name="torrentTabControl.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2495,7 +2494,7 @@
     <value>974, 519</value>
   </data>
   <data name="torrentAndTabsSplitContainer.SplitterDistance" type="System.Int32, mscorlib">
-    <value>274</value>
+    <value>416</value>
   </data>
   <data name="torrentAndTabsSplitContainer.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3817,11 +3816,197 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Transmission Remote</value>
   </data>
+  <data name="&gt;&gt;columnHeader6.Name" xml:space="preserve">
+    <value>columnHeader6</value>
+  </data>
+  <data name="&gt;&gt;columnHeader6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader7.Name" xml:space="preserve">
+    <value>columnHeader7</value>
+  </data>
+  <data name="&gt;&gt;columnHeader7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader8.Name" xml:space="preserve">
+    <value>columnHeader8</value>
+  </data>
+  <data name="&gt;&gt;columnHeader8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader9.Name" xml:space="preserve">
+    <value>columnHeader9</value>
+  </data>
+  <data name="&gt;&gt;columnHeader9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader10.Name" xml:space="preserve">
+    <value>columnHeader10</value>
+  </data>
+  <data name="&gt;&gt;columnHeader10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader11.Name" xml:space="preserve">
+    <value>columnHeader11</value>
+  </data>
+  <data name="&gt;&gt;columnHeader11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader12.Name" xml:space="preserve">
+    <value>columnHeader12</value>
+  </data>
+  <data name="&gt;&gt;columnHeader12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader13.Name" xml:space="preserve">
+    <value>columnHeader13</value>
+  </data>
+  <data name="&gt;&gt;columnHeader13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader14.Name" xml:space="preserve">
+    <value>columnHeader14</value>
+  </data>
+  <data name="&gt;&gt;columnHeader14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader15.Name" xml:space="preserve">
+    <value>columnHeader15</value>
+  </data>
+  <data name="&gt;&gt;columnHeader15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader16.Name" xml:space="preserve">
+    <value>columnHeader16</value>
+  </data>
+  <data name="&gt;&gt;columnHeader16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader18.Name" xml:space="preserve">
+    <value>columnHeader18</value>
+  </data>
+  <data name="&gt;&gt;columnHeader18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader19.Name" xml:space="preserve">
+    <value>columnHeader19</value>
+  </data>
+  <data name="&gt;&gt;columnHeader19.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader30.Name" xml:space="preserve">
+    <value>columnHeader30</value>
+  </data>
+  <data name="&gt;&gt;columnHeader30.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;imageList1.Name" xml:space="preserve">
     <value>imageList1</value>
   </data>
   <data name="&gt;&gt;imageList1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader22.Name" xml:space="preserve">
+    <value>columnHeader22</value>
+  </data>
+  <data name="&gt;&gt;columnHeader22.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader20.Name" xml:space="preserve">
+    <value>columnHeader20</value>
+  </data>
+  <data name="&gt;&gt;columnHeader20.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader21.Name" xml:space="preserve">
+    <value>columnHeader21</value>
+  </data>
+  <data name="&gt;&gt;columnHeader21.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader1.Name" xml:space="preserve">
+    <value>columnHeader1</value>
+  </data>
+  <data name="&gt;&gt;columnHeader1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader2.Name" xml:space="preserve">
+    <value>columnHeader2</value>
+  </data>
+  <data name="&gt;&gt;columnHeader2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader3.Name" xml:space="preserve">
+    <value>columnHeader3</value>
+  </data>
+  <data name="&gt;&gt;columnHeader3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader4.Name" xml:space="preserve">
+    <value>columnHeader4</value>
+  </data>
+  <data name="&gt;&gt;columnHeader4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader17.Name" xml:space="preserve">
+    <value>columnHeader17</value>
+  </data>
+  <data name="&gt;&gt;columnHeader17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader5.Name" xml:space="preserve">
+    <value>columnHeader5</value>
+  </data>
+  <data name="&gt;&gt;columnHeader5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader23.Name" xml:space="preserve">
+    <value>columnHeader23</value>
+  </data>
+  <data name="&gt;&gt;columnHeader23.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader24.Name" xml:space="preserve">
+    <value>columnHeader24</value>
+  </data>
+  <data name="&gt;&gt;columnHeader24.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader25.Name" xml:space="preserve">
+    <value>columnHeader25</value>
+  </data>
+  <data name="&gt;&gt;columnHeader25.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader31.Name" xml:space="preserve">
+    <value>columnHeader31</value>
+  </data>
+  <data name="&gt;&gt;columnHeader31.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader26.Name" xml:space="preserve">
+    <value>columnHeader26</value>
+  </data>
+  <data name="&gt;&gt;columnHeader26.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader27.Name" xml:space="preserve">
+    <value>columnHeader27</value>
+  </data>
+  <data name="&gt;&gt;columnHeader27.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader28.Name" xml:space="preserve">
+    <value>columnHeader28</value>
+  </data>
+  <data name="&gt;&gt;columnHeader28.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;columnHeader29.Name" xml:space="preserve">
+    <value>columnHeader29</value>
+  </data>
+  <data name="&gt;&gt;columnHeader29.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tabControlImageList.Name" xml:space="preserve">
     <value>tabControlImageList</value>
@@ -4123,6 +4308,12 @@
   <data name="&gt;&gt;showDetailsPanelToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;categoriesPanelToolStripMenuItem.Name" xml:space="preserve">
+    <value>categoriesPanelToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;categoriesPanelToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;helpToolStripMenuItem.Name" xml:space="preserve">
     <value>helpToolStripMenuItem</value>
   </data>
@@ -4200,198 +4391,6 @@
   </data>
   <data name="&gt;&gt;refreshElapsedTimer.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;categoriesPanelToolStripMenuItem.Name" xml:space="preserve">
-    <value>categoriesPanelToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;categoriesPanelToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader6.Name" xml:space="preserve">
-    <value>columnHeader6</value>
-  </data>
-  <data name="&gt;&gt;columnHeader6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader7.Name" xml:space="preserve">
-    <value>columnHeader7</value>
-  </data>
-  <data name="&gt;&gt;columnHeader7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader8.Name" xml:space="preserve">
-    <value>columnHeader8</value>
-  </data>
-  <data name="&gt;&gt;columnHeader8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader9.Name" xml:space="preserve">
-    <value>columnHeader9</value>
-  </data>
-  <data name="&gt;&gt;columnHeader9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader10.Name" xml:space="preserve">
-    <value>columnHeader10</value>
-  </data>
-  <data name="&gt;&gt;columnHeader10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader11.Name" xml:space="preserve">
-    <value>columnHeader11</value>
-  </data>
-  <data name="&gt;&gt;columnHeader11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader12.Name" xml:space="preserve">
-    <value>columnHeader12</value>
-  </data>
-  <data name="&gt;&gt;columnHeader12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader13.Name" xml:space="preserve">
-    <value>columnHeader13</value>
-  </data>
-  <data name="&gt;&gt;columnHeader13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader14.Name" xml:space="preserve">
-    <value>columnHeader14</value>
-  </data>
-  <data name="&gt;&gt;columnHeader14.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader15.Name" xml:space="preserve">
-    <value>columnHeader15</value>
-  </data>
-  <data name="&gt;&gt;columnHeader15.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader16.Name" xml:space="preserve">
-    <value>columnHeader16</value>
-  </data>
-  <data name="&gt;&gt;columnHeader16.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader18.Name" xml:space="preserve">
-    <value>columnHeader18</value>
-  </data>
-  <data name="&gt;&gt;columnHeader18.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader19.Name" xml:space="preserve">
-    <value>columnHeader19</value>
-  </data>
-  <data name="&gt;&gt;columnHeader19.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader30.Name" xml:space="preserve">
-    <value>columnHeader30</value>
-  </data>
-  <data name="&gt;&gt;columnHeader30.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader22.Name" xml:space="preserve">
-    <value>columnHeader22</value>
-  </data>
-  <data name="&gt;&gt;columnHeader22.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader20.Name" xml:space="preserve">
-    <value>columnHeader20</value>
-  </data>
-  <data name="&gt;&gt;columnHeader20.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader21.Name" xml:space="preserve">
-    <value>columnHeader21</value>
-  </data>
-  <data name="&gt;&gt;columnHeader21.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader1.Name" xml:space="preserve">
-    <value>columnHeader1</value>
-  </data>
-  <data name="&gt;&gt;columnHeader1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader2.Name" xml:space="preserve">
-    <value>columnHeader2</value>
-  </data>
-  <data name="&gt;&gt;columnHeader2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader3.Name" xml:space="preserve">
-    <value>columnHeader3</value>
-  </data>
-  <data name="&gt;&gt;columnHeader3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader4.Name" xml:space="preserve">
-    <value>columnHeader4</value>
-  </data>
-  <data name="&gt;&gt;columnHeader4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader17.Name" xml:space="preserve">
-    <value>columnHeader17</value>
-  </data>
-  <data name="&gt;&gt;columnHeader17.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader5.Name" xml:space="preserve">
-    <value>columnHeader5</value>
-  </data>
-  <data name="&gt;&gt;columnHeader5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader23.Name" xml:space="preserve">
-    <value>columnHeader23</value>
-  </data>
-  <data name="&gt;&gt;columnHeader23.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader24.Name" xml:space="preserve">
-    <value>columnHeader24</value>
-  </data>
-  <data name="&gt;&gt;columnHeader24.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader25.Name" xml:space="preserve">
-    <value>columnHeader25</value>
-  </data>
-  <data name="&gt;&gt;columnHeader25.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader31.Name" xml:space="preserve">
-    <value>columnHeader31</value>
-  </data>
-  <data name="&gt;&gt;columnHeader31.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader26.Name" xml:space="preserve">
-    <value>columnHeader26</value>
-  </data>
-  <data name="&gt;&gt;columnHeader26.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader27.Name" xml:space="preserve">
-    <value>columnHeader27</value>
-  </data>
-  <data name="&gt;&gt;columnHeader27.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader28.Name" xml:space="preserve">
-    <value>columnHeader28</value>
-  </data>
-  <data name="&gt;&gt;columnHeader28.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnHeader29.Name" xml:space="preserve">
-    <value>columnHeader29</value>
-  </data>
-  <data name="&gt;&gt;columnHeader29.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainWindow</value>

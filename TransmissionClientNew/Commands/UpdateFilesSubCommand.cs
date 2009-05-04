@@ -20,6 +20,9 @@ using System.Collections.Generic;
 using System.Text;
 using Jayrock.Json;
 using System.Windows.Forms;
+using System.Drawing;
+using System.Runtime.InteropServices;
+using System.Collections;
 
 namespace TransmissionRemoteDotnet.Commands
 {     
@@ -50,9 +53,11 @@ namespace TransmissionRemoteDotnet.Commands
     class UpdateFilesCreateSubCommand : ICommand
     {
         private ListViewItem item;
+        private string extension;
+        private static RegisteredFileType regTypes;
 
         public UpdateFilesCreateSubCommand(string name, long length, bool wanted,
-            JsonNumber priority, long bytesCompleted)
+            JsonNumber priority, long bytesCompleted, ImageList img, int mainHandle)
         {
             int fwdSlashPos = name.IndexOf('/');
             if (fwdSlashPos > 0)
@@ -67,7 +72,63 @@ namespace TransmissionRemoteDotnet.Commands
                     name = name.Remove(0, bckSlashPos + 1);
                 }
             }
+            if (regTypes == null)
+                regTypes = new RegisteredFileType();
             this.item = new ListViewItem(name);
+            string[] split = name.Split('.');
+            if (split.Length > 1)
+            {
+                string extension = split[split.Length - 1].ToLower();
+                if (img.Images.ContainsKey(extension))
+                {
+                    this.extension = extension;
+                }
+                else if (regTypes.Icons.ContainsKey("." + extension))
+                {
+                    string fileAndParam = (regTypes.Icons["."+extension]).ToString();
+                    if (!String.IsNullOrEmpty(fileAndParam))
+                    {
+                        //Use to store the file contains icon.
+                        string fileName = "";
+
+                        //The index of the icon in the file.
+                        int iconIndex = 0;
+                        string iconIndexString = "";
+
+                        int index = fileAndParam.IndexOf(",");
+                        //if fileAndParam is some thing likes that: "C:\\Program Files\\NetMeeting\\conf.exe,1".
+                        if (index > 0)
+                        {
+                            fileName = fileAndParam.Substring(0, index);
+                            iconIndexString = fileAndParam.Substring(index + 1);
+                        }
+                        else
+                            fileName = fileAndParam;
+
+                        if (!string.IsNullOrEmpty(iconIndexString))
+                        {
+                            //Get the index of icon.
+                            iconIndex = int.Parse(iconIndexString);
+                            if (iconIndex < 0)
+                                iconIndex = 0;  //To avoid the invalid index.
+                        }
+
+                        //Gets the handle of the icon.
+                        IntPtr lIcon = RegisteredFileType.ExtractIcon(mainHandle, fileName, iconIndex);
+
+                        //The handle cannot be zero.
+                        if (lIcon != IntPtr.Zero)
+                        {
+                            //Gets the real icon.
+                            Icon icon = Icon.FromHandle(lIcon);
+
+                            //Draw the icon to the picture box.
+                            img.Images.Add(extension, icon);
+                            this.extension = extension;
+                        }
+                    }
+                }
+            }
             item.Name = item.ToolTipText = name;
             item.SubItems.Add(Toolbox.GetFileSize(length));
             item.SubItems[1].Tag = length;
@@ -86,6 +147,8 @@ namespace TransmissionRemoteDotnet.Commands
 
         public void Execute()
         {
+            if (extension != null)
+                item.ImageKey = extension;
             Program.Form.filesListView.Items.Add(item);
         }
 

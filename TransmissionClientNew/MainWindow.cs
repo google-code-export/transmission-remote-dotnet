@@ -560,6 +560,7 @@ namespace TransmissionRemoteDotnet
                 senderMI.Checked = true;
                 settings.Locale = culture.Name;
                 Thread.CurrentThread.CurrentUICulture = culture;
+                this.Refresh();
                 MessageBox.Show(OtherStrings.LanguageUpdateDetail, OtherStrings.LanguageUpdated, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
@@ -791,15 +792,23 @@ namespace TransmissionRemoteDotnet
             }
         }
 
+        private delegate void ConnectDelegate();
         public void Connect()
         {
-            if (Program.Connected)
-                Program.Connected = false;
-            toolStripStatusLabel.Text = OtherStrings.Connecting + "...";
-            BackgroundWorker connectWorker = this.connectWorker = new BackgroundWorker();
-            connectWorker.DoWork += new DoWorkEventHandler(connectWorker_DoWork);
-            connectWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(connectWorker_RunWorkerCompleted);
-            connectWorker.RunWorkerAsync();
+            if (this.InvokeRequired)
+            {
+                this.Invoke(new ConnectDelegate(this.Connect));
+            }
+            else
+            {
+                if (Program.Connected)
+                    Program.Connected = false;
+                toolStripStatusLabel.Text = OtherStrings.Connecting + "...";
+                BackgroundWorker connectWorker = this.connectWorker = new BackgroundWorker();
+                connectWorker.DoWork += new DoWorkEventHandler(connectWorker_DoWork);
+                connectWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(connectWorker_RunWorkerCompleted);
+                connectWorker.RunWorkerAsync();
+            }
         }
 
         private void refreshWorker_DoWork(object sender, DoWorkEventArgs e)
