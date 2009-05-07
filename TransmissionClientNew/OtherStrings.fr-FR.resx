@@ -330,28 +330,22 @@
   <data name="Incomplete" xml:space="preserve">
     <value>Incomplet</value>
   </data>
-  <data name="BytesPerSecondShort" xml:space="preserve">
-    <value>O/s</value>
-  </data>
-  <data name="KilobytesPerSecondShort" xml:space="preserve">
-    <value>KO/s</value>
-  </data>
   <data name="Gigabyte" xml:space="preserve">
     <value>Gigaoctect</value>
   </data>
   <data name="GigabyteShort" xml:space="preserve">
-    <value>GO</value>
+    <value>GB</value>
   </data>
   <data name="Kilobyte" xml:space="preserve">
     <value>Kilooctect</value>
   </data>
   <data name="KilobyteShort" xml:space="preserve">
-    <value>KO</value>
+    <value>KB</value>
   </data>
   <data name="Megabyte" xml:space="preserve">
     <value>Mégaoctect</value>
   </data>
   <data name="MegabyteShort" xml:space="preserve">
-    <value>MO</value>
+    <value>MB</value>
   </data>
 </root>

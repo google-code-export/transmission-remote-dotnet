@@ -111,7 +111,7 @@ namespace TransmissionRemoteDotnet
         {
             stateListBox.SuspendLayout();
             ImageList stateListBoxImageList = new ImageList();
-            stateListBoxImageList.ColorDepth = ColorDepth.Depth24Bit;
+            stateListBoxImageList.ColorDepth = ColorDepth.Depth32Bit;
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledpurple);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.down16);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.player_pause16);
@@ -774,6 +774,7 @@ namespace TransmissionRemoteDotnet
                     this.WindowState = this.notifyIcon.Tag != null ? (FormWindowState)this.notifyIcon.Tag : FormWindowState.Normal;
                 }
                 this.Activate();
+                this.BringToFront();
             }
         }
 
@@ -1380,7 +1381,7 @@ namespace TransmissionRemoteDotnet
                 trackersListView.ResumeLayout();
                 peersListView.Enabled = trackersListView.Enabled
                     = true;
-                downloadProgressLabel.Text = (piecesGraph.Visible = t.Pieces != null) ? "Pieces: " : "Progress: ";
+                downloadProgressLabel.Text = ((piecesGraph.Visible = t.Pieces != null) ? OtherStrings.Pieces : OtherStrings.Progress) + ": ";
                 progressBar.Visible = !piecesGraph.Visible;
             }
             remainingLabel.Text = t.GetLongETA();

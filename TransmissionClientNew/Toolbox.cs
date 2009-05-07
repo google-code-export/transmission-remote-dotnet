@@ -25,6 +25,7 @@ using System.Net;
 using System.IO;
 using System.Globalization;
 using System.Reflection;
+using System.Resources;
 
 namespace TransmissionRemoteDotnet
 {
@@ -36,7 +37,8 @@ namespace TransmissionRemoteDotnet
         public static decimal ToProgress(object o)
         {
             decimal result = Math.Round(ToDecimal(o), 2);
-            return Program.DaemonDescriptor.Version >= 1.52 ? result * 100 : result;
+            decimal resultMultiplied = result * 100;
+            return resultMultiplied <= 100 ? resultMultiplied : result;
         }
 
         public static double ToDouble(object o)
@@ -187,7 +189,7 @@ namespace TransmissionRemoteDotnet
 
         public static string GetSpeed(long bytes)
         {
-            return String.Format("{0}/s", GetFileSize(bytes));
+            return String.Format("{0}/{1}", GetFileSize(bytes), OtherStrings.Second.ToLower()[0]);
         }
 
         public static string GetSpeed(object o)

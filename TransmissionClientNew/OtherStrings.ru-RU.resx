@@ -118,88 +118,88 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="All" xml:space="preserve">
-    <value>All</value>
+    <value>Все</value>
   </data>
   <data name="Author" xml:space="preserve">
-    <value>Author</value>
+    <value>Автор</value>
   </data>
   <data name="Broken" xml:space="preserve">
-    <value>Broken</value>
+    <value>Неисправный</value>
   </data>
   <data name="Build" xml:space="preserve">
     <value>Build</value>
   </data>
   <data name="Checking" xml:space="preserve">
-    <value>Checking</value>
+    <value>Проверяется</value>
   </data>
   <data name="Complete" xml:space="preserve">
-    <value>Complete</value>
+    <value>Завершён</value>
   </data>
   <data name="Confirm" xml:space="preserve">
-    <value>Confirm</value>
+    <value>Подтверждение</value>
   </data>
   <data name="ConfirmMultipleRemove" xml:space="preserve">
-    <value>You have selected {0} torrents for removal. Are you sure?</value>
+    <value>Вы выбрали {0} торрентов для удаления. Вы уверены?</value>
   </data>
   <data name="ConfirmMultipleRemoveAndDelete" xml:space="preserve">
-    <value>You have selected {0} torrents for removal. Are you sure?{1}ALL THE DATA FROM THESE TORRENTS WILL BE REMOVED."</value>
+    <value>Вы выбрали {0} торрентов для удаления. Вы уверены?{1}ВСЕ ДАННЫЕ ИЗ ЭТИХ ТОРРЕНТОВ БУДУТ УДАЛЕНЫ</value>
   </data>
   <data name="ConfirmSingleRemove" xml:space="preserve">
-    <value>Do you want to remove {0}?</value>
+    <value>Вы хотите удалить {0}?</value>
   </data>
   <data name="ConfirmSingleRemoveAndDelete" xml:space="preserve">
-    <value>Do you want to remove and delete {0}?{1}ALL THE DATA FROM THIS TORRENT WILL BE REMOVED."</value>
+    <value>Вы хотите удалить {0} вместе с файлами?{1}ВСЕ ДАННЫЕ ИЗ ЭТОГО ТОРРЕНТА БУДУТ УДАЛЕНЫ</value>
   </data>
   <data name="Connect" xml:space="preserve">
-    <value>Connect</value>
+    <value>Подключиться</value>
   </data>
   <data name="ConnectedGettingInfo" xml:space="preserve">
-    <value>Connected. Getting torrent information...</value>
+    <value>Подключен. Получение информации о торрентах...</value>
   </data>
   <data name="ConnectedTo" xml:space="preserve">
     <value>Connected to</value>
   </data>
   <data name="Connecting" xml:space="preserve">
-    <value>Connecting</value>
+    <value>Подключение</value>
   </data>
   <data name="CopyAsCSV" xml:space="preserve">
-    <value>Copy as CSV</value>
+    <value>Скопировать как CSV</value>
   </data>
   <data name="Disconnect" xml:space="preserve">
-    <value>Disconnect</value>
+    <value>Отключиться</value>
   </data>
   <data name="Disconnected" xml:space="preserve">
-    <value>Disconnected</value>
+    <value>Отключен</value>
   </data>
   <data name="DisconnectedExceeded" xml:space="preserve">
-    <value>Disconnected. Exceeded maximum number of failed requests.</value>
+    <value>Отключен. Превышено максимальное количество неудачных запросов.</value>
   </data>
   <data name="DisplayStatistics" xml:space="preserve">
-    <value>Display statistics</value>
+    <value>Показать статистику</value>
   </data>
   <data name="Down" xml:space="preserve">
-    <value>Down</value>
+    <value>Закачка</value>
   </data>
   <data name="Download" xml:space="preserve">
-    <value>Download</value>
+    <value>Скачать</value>
   </data>
   <data name="DownloadedValid" xml:space="preserve">
-    <value>{0} ({1} valid)</value>
+    <value>{0} ({1} сохранено)</value>
   </data>
   <data name="Downloading" xml:space="preserve">
-    <value>Downloading</value>
+    <value>Качается</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Error</value>
+    <value>Ошибка</value>
   </data>
   <data name="FailedRequest" xml:space="preserve">
-    <value>Failed request</value>
+    <value>Неудачный запрос</value>
   </data>
   <data name="High" xml:space="preserve">
-    <value>High</value>
+    <value>Высокий</value>
   </data>
   <data name="HighPriority" xml:space="preserve">
-    <value>High priority</value>
+    <value>Высокий приоритет</value>
   </data>
   <data name="Host" xml:space="preserve">
     <value>Host</value>
@@ -208,64 +208,64 @@
     <value>Info</value>
   </data>
   <data name="InputAccepted" xml:space="preserve">
-    <value>Input accepted</value>
+    <value>Ввод принят</value>
   </data>
   <data name="LatestVersion" xml:space="preserve">
-    <value>You are using the latest version ({0}.{1}).</value>
+    <value>Вы используете последнюю версию ({0}.{1}).</value>
   </data>
   <data name="LatestVersionCheckFailed" xml:space="preserve">
-    <value>Latest version check failed</value>
+    <value>Ошибка проверки обновлений</value>
   </data>
   <data name="Low" xml:space="preserve">
-    <value>Low</value>
+    <value>Низкий</value>
   </data>
   <data name="LowPriority" xml:space="preserve">
-    <value>Low priority</value>
+    <value>Низкий приоритет</value>
   </data>
   <data name="MustBeConnected" xml:space="preserve">
-    <value>You must be connected to add torrents. Would you like to connect now?</value>
+    <value>Чтобы добавить торрент, необходимо подключиться. Подключиться сейчас?</value>
   </data>
   <data name="NewerVersion" xml:space="preserve">
-    <value>There is a newer version ({0}.{1}) available. Would you like to visit the downloads page?</value>
+    <value>Доступна новая версия ({0}.{1}). Перейти на страницу загрузки?</value>
   </data>
   <data name="No" xml:space="preserve">
-    <value>No</value>
+    <value>Нет</value>
   </data>
   <data name="Normal" xml:space="preserve">
-    <value>Normal</value>
+    <value>Нормальный</value>
   </data>
   <data name="NormalPriority" xml:space="preserve">
-    <value>Normal priority</value>
+    <value>Нормальный приоритет</value>
   </data>
   <data name="NotConnected" xml:space="preserve">
-    <value>Not connected</value>
+    <value>Не подключен</value>
   </data>
   <data name="NoUpgradeAvailable" xml:space="preserve">
-    <value>No upgrade available</value>
+    <value>Нет новой версии</value>
   </data>
   <data name="OpenFileFilter" xml:space="preserve">
-    <value>BitTorrent Metafile (*.torrent)|*.torrent|All Files (*.*)|*.*</value>
+    <value>Метафайл BitTorrent (*.torrent)|*.torrent|Все файлы (*.*)|*.*</value>
   </data>
   <data name="Pause" xml:space="preserve">
-    <value>Pause</value>
+    <value>Остановить</value>
   </data>
   <data name="PauseAll" xml:space="preserve">
-    <value>Pause all</value>
+    <value>Остановить все</value>
   </data>
   <data name="Paused" xml:space="preserve">
-    <value>Paused</value>
+    <value>Остановлен</value>
   </data>
   <data name="Properties" xml:space="preserve">
-    <value>Properties</value>
+    <value>Свойства</value>
   </data>
   <data name="Recheck" xml:space="preserve">
-    <value>Recheck</value>
+    <value>Перепроверить</value>
   </data>
   <data name="Remove" xml:space="preserve">
-    <value>Remove</value>
+    <value>Удалить</value>
   </data>
   <data name="RemoveAndDelete" xml:space="preserve">
-    <value>Remove and delete</value>
+    <value>Удалить вместе с файлами</value>
   </data>
   <data name="Revision" xml:space="preserve">
     <value>Revision</value>
@@ -277,130 +277,124 @@
     <value>RpcVersionMinimum</value>
   </data>
   <data name="Seeding" xml:space="preserve">
-    <value>Seeding</value>
+    <value>Раздаётся</value>
   </data>
   <data name="SelectAll" xml:space="preserve">
-    <value>Select all</value>
+    <value>Выбрать все</value>
   </data>
   <data name="Skip" xml:space="preserve">
-    <value>Skip</value>
+    <value>Пропустить</value>
   </data>
   <data name="Start" xml:space="preserve">
-    <value>Start</value>
+    <value>Запустить</value>
   </data>
   <data name="StartAll" xml:space="preserve">
-    <value>Start all</value>
+    <value>Запустить все</value>
   </data>
   <data name="TheTorrentHasFinishedDownloading" xml:space="preserve">
-    <value>This torrent is now complete</value>
+    <value>Загрузка торрента завершена</value>
   </data>
   <data name="Torrents" xml:space="preserve">
-    <value>Torrents</value>
+    <value>Торрентов</value>
   </data>
   <data name="UnableToParse" xml:space="preserve">
-    <value>Unable to parse the server response</value>
+    <value>Ошибка обработки ответа сервера</value>
   </data>
   <data name="UnknownNegativeResult" xml:space="preserve">
-    <value>Unknown (negative)</value>
+    <value>Неизвестный (отрицательный)</value>
   </data>
   <data name="UnsuccessfulRequest" xml:space="preserve">
-    <value>Unsuccessful request</value>
+    <value>Неудачный запрос</value>
   </data>
   <data name="Up" xml:space="preserve">
-    <value>Up</value>
+    <value>Отдача</value>
   </data>
   <data name="UpgradeAvailable" xml:space="preserve">
-    <value>Upgrade available</value>
+    <value>Доступно обновление</value>
   </data>
   <data name="Version" xml:space="preserve">
     <value>Version</value>
   </data>
   <data name="WaitingForInput" xml:space="preserve">
-    <value>Waiting for input</value>
+    <value>Ожидание ввода</value>
   </data>
   <data name="WaitingToCheck" xml:space="preserve">
-    <value>Waiting to check</value>
+    <value>Ожидание проверки</value>
   </data>
   <data name="XOfYConnected" xml:space="preserve">
-    <value>{0} of {1} connected</value>
+    <value>{0} из {1} подключенных</value>
   </data>
   <data name="Yes" xml:space="preserve">
-    <value>Yes</value>
+    <value>Да</value>
   </data>
   <data name="Incomplete" xml:space="preserve">
-    <value>Incomplete</value>
+    <value>Неполный</value>
   </data>
   <data name="LanguageUpdated" xml:space="preserve">
-    <value>Language updated</value>
+    <value>Язык обновлён</value>
   </data>
   <data name="LanguageUpdateDetail" xml:space="preserve">
-    <value>Your language choice has been updated. A restart of the application is required for it to take full effect.</value>
+    <value>Выбран новый язык. Для полного переключения требуется рестарт программы.</value>
   </data>
   <data name="Byte" xml:space="preserve">
-    <value>Byte</value>
+    <value>Байт</value>
   </data>
   <data name="Day" xml:space="preserve">
-    <value>Day</value>
+    <value>День</value>
   </data>
   <data name="Gigabyte" xml:space="preserve">
-    <value>Gigabyte</value>
+    <value>Гигабайт</value>
   </data>
   <data name="GigabyteShort" xml:space="preserve">
-    <value>GB</value>
+    <value>Гб</value>
   </data>
   <data name="Hour" xml:space="preserve">
-    <value>Hour</value>
+    <value>Час</value>
   </data>
   <data name="Kilobyte" xml:space="preserve">
-    <value>Kilobyte</value>
+    <value>Килобайт</value>
     <comment>b</comment>
   </data>
   <data name="KilobyteShort" xml:space="preserve">
-    <value>KB</value>
+    <value>Кб</value>
   </data>
   <data name="Megabyte" xml:space="preserve">
-    <value>Megabyte</value>
+    <value>Мегабайт</value>
   </data>
   <data name="MegabyteShort" xml:space="preserve">
-    <value>MB</value>
+    <value>Мб</value>
   </data>
   <data name="Minute" xml:space="preserve">
-    <value>Minute</value>
+    <value>Минута</value>
   </data>
   <data name="Second" xml:space="preserve">
-    <value>Second</value>
+    <value>Секунда</value>
   </data>
   <data name="PortIsClosed" xml:space="preserve">
-    <value>The incoming port on your daemon is CLOSED.</value>
+    <value>Входящий порт вашего демона ЗАКРЫТ.</value>
   </data>
   <data name="PortIsOpen" xml:space="preserve">
-    <value>The incoming port on your daemon is OPEN.</value>
+    <value>Входящий порт вашего демона ОТКРЫТ.</value>
   </data>
   <data name="PortTestResult" xml:space="preserve">
-    <value>Port test result</value>
+    <value>Результат проверки порта</value>
   </data>
   <data name="DownloadLimit" xml:space="preserve">
-    <value>Download Limit</value>
+    <value>Ограничение на скачивание</value>
   </data>
   <data name="Unlimited" xml:space="preserve">
-    <value>Unlimited</value>
+    <value>Без ограничений</value>
   </data>
   <data name="UploadLimit" xml:space="preserve">
-    <value>Upload Limit</value>
+    <value>Ограничение на отдачу</value>
   </data>
   <data name="Querying" xml:space="preserve">
-    <value>Querying...</value>
+    <value>Запрос...</value>
   </data>
   <data name="Updating" xml:space="preserve">
-    <value>Updating...</value>
+    <value>Обновление...</value>
   </data>
   <data name="XInBlocklist" xml:space="preserve">
-    <value>{0} in blocklist.</value>
-  </data>
-  <data name="Pieces" xml:space="preserve">
-    <value>Pieces</value>
-  </data>
-  <data name="Progress" xml:space="preserve">
-    <value>Progress</value>
+    <value>{0} в блоклисте.</value>
   </data>
 </root>

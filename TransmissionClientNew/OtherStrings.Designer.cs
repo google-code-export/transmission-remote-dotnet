@@ -601,6 +601,15 @@ namespace TransmissionRemoteDotnet {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pieces.
+        /// </summary>
+        internal static string Pieces {
+            get {
+                return ResourceManager.GetString("Pieces", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The incoming port on your daemon is CLOSED..
         /// </summary>
         internal static string PortIsClosed {
@@ -624,6 +633,15 @@ namespace TransmissionRemoteDotnet {
         internal static string PortTestResult {
             get {
                 return ResourceManager.GetString("PortTestResult", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Progress.
+        /// </summary>
+        internal static string Progress {
+            get {
+                return ResourceManager.GetString("Progress", resourceCulture);
             }
         }
         

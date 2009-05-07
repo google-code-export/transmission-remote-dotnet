@@ -8,6 +8,8 @@ using System.Collections;
 using System.Text;
 using System.Runtime.InteropServices;
 using Microsoft.Win32;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace TransmissionRemoteDotnet
 {
@@ -19,6 +21,57 @@ namespace TransmissionRemoteDotnet
         public static extern IntPtr ExtractIcon(int hInst, string lpszExeFileName, int nIconIndex);
 
         #endregion
+
+        public bool AddToImgList(string extension, int mainHandle, ImageList imgList)
+        {
+            if (!ContainsExtension(extension))
+                return false;
+            string fileAndParam = (icons["." + extension]).ToString();
+            if (String.IsNullOrEmpty(fileAndParam))
+                return false;
+            //Use to store the file contains icon.
+            string fileName = "";
+
+            //The index of the icon in the file.
+            int iconIndex = 0;
+            string iconIndexString = "";
+
+            int index = fileAndParam.IndexOf(",");
+            //if fileAndParam is some thing likes that: "C:\\Program Files\\NetMeeting\\conf.exe,1".
+            if (index > 0)
+            {
+                fileName = fileAndParam.Substring(0, index);
+                iconIndexString = fileAndParam.Substring(index + 1);
+            }
+            else
+                fileName = fileAndParam;
+
+            if (!string.IsNullOrEmpty(iconIndexString))
+            {
+                //Get the index of icon.
+                iconIndex = int.Parse(iconIndexString);
+                if (iconIndex < 0)
+                    iconIndex = 0;  //To avoid the invalid index.
+            }
+
+            //Gets the handle of the icon.
+            IntPtr lIcon = RegisteredFileType.ExtractIcon(mainHandle, fileName, iconIndex);
+
+            //The handle cannot be zero.
+            if (lIcon == IntPtr.Zero)
+                return false;
+            //Gets the real icon.
+            Icon icon = Icon.FromHandle(lIcon);
+
+            //Draw the icon to the picture box.
+            imgList.Images.Add(extension, icon);
+            return true;
+        }
+
+        public bool ContainsExtension(string extension)
+        {
+            return this.icons.ContainsKey("." + extension);
+        }
 
         private Hashtable icons;
 

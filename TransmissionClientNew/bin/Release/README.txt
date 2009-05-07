@@ -26,6 +26,7 @@ CREDITS AND ACKNOWLEDGEMENTS
 	* liuzhiyi for the Chinese translation.
     * Woodzu for the Polish translation.
 	* RayTracer for the Turkish translation.
+	* Alexey Komarov for the Russian translation.
 	
 ABOUT
 ----------------------------

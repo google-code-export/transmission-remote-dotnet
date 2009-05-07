@@ -78,6 +78,18 @@ Section "GeoIP Database"
   File "GeoIP.dat"
 SectionEnd
 
+Section /o "Chinese translation"
+  CreateDirectory "$INSTDIR\zh-CN"
+  SetOutPath "$INSTDIR\zh-CN"
+  File "zh-CN\Transmission Remote.resources.dll"
+SectionEnd
+
+Section /o "Danish translation"
+  CreateDirectory "$INSTDIR\da-DK"
+  SetOutPath "$INSTDIR\da-DK"
+  File "da-DK\Transmission Remote.resources.dll"
+SectionEnd
+
 Section /o "French translation"
   CreateDirectory "$INSTDIR\fr-FR"
   SetOutPath "$INSTDIR\fr-FR"
@@ -90,28 +102,22 @@ Section /o "German translation"
   File "de-DE\Transmission Remote.resources.dll"
 SectionEnd
 
-Section /o "Danish translation"
-  CreateDirectory "$INSTDIR\da-DK"
-  SetOutPath "$INSTDIR\da-DK"
-  File "da-DK\Transmission Remote.resources.dll"
-SectionEnd
-
 Section /o "Hungarian translation"
   CreateDirectory "$INSTDIR\hu-HU"
   SetOutPath "$INSTDIR\hu-HU"
   File "hu-HU\Transmission Remote.resources.dll"
 SectionEnd
 
-Section /o "Chinese translation"
-  CreateDirectory "$INSTDIR\zh-CN"
-  SetOutPath "$INSTDIR\zh-CN"
-  File "zh-CN\Transmission Remote.resources.dll"
-SectionEnd
-
 Section /o "Polish translation"
   CreateDirectory "$INSTDIR\pl-PL"
   SetOutPath "$INSTDIR\pl-PL"
   File "pl-PL\Transmission Remote.resources.dll"
+SectionEnd
+
+Section /o "Russian translation"
+  CreateDirectory "$INSTDIR\ru-RU"
+  SetOutPath "$INSTDIR\ru-RU"
+  File "ru-RU\Transmission Remote.resources.dll"
 SectionEnd
 
 Section /o "Turkish translation"
@@ -143,6 +149,7 @@ Section "Uninstall"
   Delete "$INSTDIR\hu-HU\Transmission Remote.resources.dll"
   Delete "$INSTDIR\zh-CN\Transmission Remote.resources.dll"
   Delete "$INSTDIR\pl-PL\Transmission Remote.resources.dll"
+  Delete "$INSTDIR\ru-RU\Transmission Remote.resources.dll"
   Delete "$INSTDIR\tr-TR\Transmission Remote.resources.dll"
 
   ; Remove shortcuts, if any
@@ -155,6 +162,7 @@ Section "Uninstall"
   RMDir "$INSTDIR\fr-FR"
   RMDir "$INSTDIR\zh-CN"
   RMDir "$INSTDIR\hu-HU"
+  RMDir "$INSTDIR\ru-RU"
   RMDir "$INSTDIR\pl-PL"
   RMDir "$INSTDIR\tr-TR"
   RMDir "$INSTDIR"
