@@ -23,7 +23,9 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Collections;
+#if !MONO
 using Etier.IconHelper;
+#endif
 
 namespace TransmissionRemoteDotnet.Commands
 {     
@@ -54,7 +56,9 @@ namespace TransmissionRemoteDotnet.Commands
     class UpdateFilesCreateSubCommand : ICommand
     {
         private ListViewItem item;
+#if !MONO
         private string extension;
+#endif
 
         public UpdateFilesCreateSubCommand(string name, long length, bool wanted,
             JsonNumber priority, long bytesCompleted, ImageList img, int mainHandle)
@@ -78,11 +82,15 @@ namespace TransmissionRemoteDotnet.Commands
             if (split.Length > 1)
             {
                 string extension = split[split.Length - 1].ToLower();
+#if !MONO
                 if (img.Images.ContainsKey(extension) || IconReader.AddToImgList(extension, img))
                 {
                     this.extension = extension;
                     typeName = IconReader.GetTypeName(extension);
                 }
+#else
+                typeName = extension;
+#endif
             }
             item.Name = item.ToolTipText = name;
             item.SubItems.Add(typeName);
@@ -103,8 +111,10 @@ namespace TransmissionRemoteDotnet.Commands
 
         public void Execute()
         {
+#if !MONO
             if (extension != null)
                 item.ImageKey = extension;
+#endif
             Program.Form.filesListView.Items.Add(item);
         }
 

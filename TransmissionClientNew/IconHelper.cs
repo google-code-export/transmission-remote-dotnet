@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if !MONO
+using System;
 using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
@@ -270,3 +271,4 @@ namespace Etier.IconHelper
         public static extern int DestroyIcon(IntPtr hIcon);
     }
 }
+#endif

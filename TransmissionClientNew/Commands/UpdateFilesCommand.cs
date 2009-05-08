@@ -28,7 +28,9 @@ namespace TransmissionRemoteDotnet.Commmands
     {
         private bool first;
         private List<ICommand> uiUpdateBatch;
+#if !MONO
         private ImageList imgList;
+#endif
 
         public UpdateFilesCommand(JsonObject response)
         {
@@ -67,6 +69,7 @@ namespace TransmissionRemoteDotnet.Commmands
             JsonArray wanted = (JsonArray)torrent[ProtocolConstants.FIELD_WANTED];
             first = (priorities != null && wanted != null);
             uiUpdateBatch = new List<ICommand>();
+#if !MONO
             this.imgList = new ImageList();
             imgList.ColorDepth = ColorDepth.Depth32Bit;
             int mainWindowHandle = 0;
@@ -74,6 +77,7 @@ namespace TransmissionRemoteDotnet.Commmands
             {
                 mainWindowHandle = Program.Form.Handle.ToInt32();
             }));
+#endif
             for (int i = 0; i < files.Length; i++)
             {
                 JsonObject file = (JsonObject)files[i];
@@ -82,7 +86,11 @@ namespace TransmissionRemoteDotnet.Commmands
                 if (first)
                 {
                     string name = (string)file[ProtocolConstants.FIELD_NAME];
+#if !MONO
                     UpdateFilesCreateSubCommand subCommand = new UpdateFilesCreateSubCommand(name, length, Toolbox.ToBool(wanted[i]), (JsonNumber)priorities[i], bytesCompleted, imgList, mainWindowHandle);
+#else
+                    UpdateFilesCreateSubCommand subCommand = new UpdateFilesCreateSubCommand(name, length, Toolbox.ToBool(wanted[i]), (JsonNumber)priorities[i], bytesCompleted, null, -1);
+#endif
                     uiUpdateBatch.Add((ICommand)subCommand);
                 }
                 else
@@ -106,7 +114,9 @@ namespace TransmissionRemoteDotnet.Commmands
                     return;
                 }
                 form.filesListView.SuspendLayout();
+#if !MONO
                 form.filesListView.SmallImageList = imgList;
+#endif
                 foreach (ICommand uiUpdate in uiUpdateBatch)
                 {
                     uiUpdate.Execute();
