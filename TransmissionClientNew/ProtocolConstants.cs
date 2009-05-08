@@ -130,7 +130,15 @@ namespace TransmissionRemoteDotnet
             VALUE_PREFERRED = "preferred",
             VALUE_TOLERATED = "tolerated",
             VALUE_REQUIRED = "required",
-
-            FIELD_DONEDATE = "doneDate";
+            FIELD_DONEDATE = "doneDate",
+            PRIORITY_HIGH = "priority-high",
+            PRIORITY_NORMAL = "priority-normal",
+            PRIORITY_LOW = "priority-low",
+            FILES_WANTED = "files-wanted",
+            FILES_UNWANTED = "files-unwanted",
+            ADDRESS = "address",
+            TIER = "tier",
+            ANNOUNCE = "announce",
+            SCRAPE = "scrape";
     }
 }

@@ -196,6 +196,7 @@
             this.filesTimer = new System.Windows.Forms.Timer(this.components);
             this.filesWorker = new System.ComponentModel.BackgroundWorker();
             this.refreshElapsedTimer = new System.Windows.Forms.Timer(this.components);
+            this.columnHeader32 = new System.Windows.Forms.ColumnHeader();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -741,6 +742,7 @@
             this.filesListView.AllowColumnReorder = true;
             this.filesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
+            this.columnHeader32,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
@@ -1409,6 +1411,10 @@
             this.refreshElapsedTimer.Interval = 1000;
             this.refreshElapsedTimer.Tick += new System.EventHandler(this.refreshElapsedTimer_Tick);
             // 
+            // columnHeader32
+            // 
+            resources.ApplyResources(this.columnHeader32, "columnHeader32");
+            // 
             // MainWindow
             // 
             this.AllowDrop = true;
@@ -1648,5 +1654,6 @@
         private System.Windows.Forms.ToolStripButton openNetworkShareButton;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ToolStripMenuItem categoriesPanelToolStripMenuItem;
+        private System.Windows.Forms.ColumnHeader columnHeader32;
     }
 }

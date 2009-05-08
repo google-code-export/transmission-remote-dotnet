@@ -63,13 +63,13 @@ namespace TransmissionRemoteDotnet.Comparers
                 columnToSort = value;
                 switch (columnToSort)
                 {
-                    case 1:
-                        objectCompare = new ListViewItemInt64Comparer(value);
-                        break;
                     case 2:
                         objectCompare = new ListViewItemInt64Comparer(value);
                         break;
                     case 3:
+                        objectCompare = new ListViewItemInt64Comparer(value);
+                        break;
+                    case 4:
                         objectCompare = new ListViewItemDecimalComparer(value);
                         break;
                     default:

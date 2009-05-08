@@ -506,7 +506,7 @@ namespace TransmissionRemoteDotnet
 
         private void PopulateLanguagesMenu()
         {
-            ToolStripMenuItem englishItem = new ToolStripMenuItem("Default (English)");
+            ToolStripMenuItem englishItem = new ToolStripMenuItem("English");
             englishItem.Click += new EventHandler(this.ChangeUICulture);
             englishItem.Tag = new CultureInfo("en-GB");
             englishItem.Checked = LocalSettingsSingleton.Instance.Locale.Equals("en-GB");
@@ -1306,47 +1306,47 @@ namespace TransmissionRemoteDotnet
             arguments.Put(ProtocolConstants.KEY_IDS, ids);
             if (high.Count == fileItems.Count)
             {
-                arguments.Put("priority-high", new JsonArray());
+                arguments.Put(ProtocolConstants.PRIORITY_HIGH, new JsonArray());
             }
             else if (high.Count > 0)
             {
-                arguments.Put("priority-high", high);
+                arguments.Put(ProtocolConstants.PRIORITY_HIGH, high);
             }
 
             if (normal.Count == fileItems.Count)
             {
-                arguments.Put("priority-normal", new JsonArray());
+                arguments.Put(ProtocolConstants.PRIORITY_NORMAL, new JsonArray());
             }
             else if (normal.Count > 0)
             {
-                arguments.Put("priority-normal", normal);
+                arguments.Put(ProtocolConstants.PRIORITY_NORMAL, normal);
             }
 
             if (low.Count == fileItems.Count)
             {
-                arguments.Put("priority-low", new JsonArray());
+                arguments.Put(ProtocolConstants.PRIORITY_LOW, new JsonArray());
             }
             else if (low.Count > 0)
             {
-                arguments.Put("priority-low", low);
+                arguments.Put(ProtocolConstants.PRIORITY_LOW, low);
             }
 
             if (wanted.Count == fileItems.Count)
             {
-                arguments.Put("files-wanted", new JsonArray());
+                arguments.Put(ProtocolConstants.FILES_WANTED, new JsonArray());
             }
             else if (wanted.Count > 0)
             {
-                arguments.Put("files-wanted", wanted);
+                arguments.Put(ProtocolConstants.FILES_WANTED, wanted);
             }
 
             if (unwanted.Count == fileItems.Count)
             {
-                arguments.Put("files-unwanted", new JsonArray());
+                arguments.Put(ProtocolConstants.FILES_UNWANTED, new JsonArray());
             }
             else if (unwanted.Count > 0)
             {
-                arguments.Put("files-unwanted", unwanted);
+                arguments.Put(ProtocolConstants.FILES_UNWANTED, unwanted);
             }
 
             request.Put(ProtocolConstants.KEY_ARGUMENTS, arguments);
@@ -1369,9 +1369,9 @@ namespace TransmissionRemoteDotnet
                 trackersListView.SuspendLayout();
                 foreach (JsonObject tracker in t.Trackers)
                 {
-                    int tier = Toolbox.ToInt(tracker["tier"]);
-                    string announceUrl = (string)tracker["announce"];
-                    string scrapeUrl = (string)tracker["scrape"];
+                    int tier = Toolbox.ToInt(tracker[ProtocolConstants.TIER]);
+                    string announceUrl = (string)tracker[ProtocolConstants.ANNOUNCE];
+                    string scrapeUrl = (string)tracker[ProtocolConstants.SCRAPE];
                     ListViewItem item = new ListViewItem(tier.ToString());
                     item.SubItems.Add(announceUrl);
                     item.SubItems.Add(scrapeUrl);
@@ -1417,10 +1417,10 @@ namespace TransmissionRemoteDotnet
                 peersListView.SuspendLayout();
                 foreach (JsonObject peer in t.Peers)
                 {
-                    ListViewItem item = FindPeerItem(peer["address"].ToString());
+                    ListViewItem item = FindPeerItem(peer[ProtocolConstants.ADDRESS].ToString());
                     if (item == null)
                     {
-                        item = new ListViewItem((string)peer["address"]); // 0
+                        item = new ListViewItem((string)peer[ProtocolConstants.ADDRESS]); // 0
                         item.SubItems[0].Tag = IPAddress.Parse(item.Text);
                         item.SubItems.Add(""); // 1
                         int countryIndex = -1;

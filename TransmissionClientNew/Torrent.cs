@@ -334,7 +334,7 @@ namespace TransmissionRemoteDotnet
             try
             {
                 JsonObject tracker = (JsonObject)this.Trackers[0];
-                Uri announceUrl = new Uri((string)tracker["announce"]);
+                Uri announceUrl = new Uri((string)tracker[ProtocolConstants.ANNOUNCE]);
                 if (!trim)
                 {
                     return announceUrl.Host;

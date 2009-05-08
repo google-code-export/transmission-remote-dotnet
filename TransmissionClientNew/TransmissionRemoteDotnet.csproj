@@ -109,6 +109,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="GListBoxItem.cs" />
+    <Compile Include="IconHelper.cs" />
     <Compile Include="ListViewColumnSorter.cs" />
     <Compile Include="ListViewNF.cs">
       <SubType>Component</SubType>
@@ -155,7 +156,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OtherStrings.zh-CN.resx</DependentUpon>
     </Compile>
-    <Compile Include="RegisteredFileType.cs" />
     <Compile Include="RegistryLocalSettingsSingleton.cs" />
     <Compile Include="Comparers\PeersListViewColumnSorter.cs" />
     <Compile Include="PiecesGraph.cs">

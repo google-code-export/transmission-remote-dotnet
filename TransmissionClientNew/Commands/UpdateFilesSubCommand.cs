@@ -23,6 +23,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Collections;
+using Etier.IconHelper;
 
 namespace TransmissionRemoteDotnet.Commands
 {     
@@ -38,15 +39,15 @@ namespace TransmissionRemoteDotnet.Commands
             this.item = item;
             this.bytesCompleted = bytesCompleted;
             this.bytesCompletedStr = Toolbox.GetFileSize(bytesCompleted);
-            this.progress = Toolbox.CalcPercentage(bytesCompleted, (long)item.SubItems[1].Tag);
+            this.progress = Toolbox.CalcPercentage(bytesCompleted, (long)item.SubItems[2].Tag);
         }
 
         public void Execute()
         {
-            item.SubItems[2].Tag = bytesCompleted;
-            item.SubItems[2].Text = bytesCompletedStr;
-            item.SubItems[3].Tag = progress;
-            item.SubItems[3].Text = progress + "%";
+            item.SubItems[3].Tag = bytesCompleted;
+            item.SubItems[3].Text = bytesCompletedStr;
+            item.SubItems[4].Tag = progress;
+            item.SubItems[4].Text = progress + "%";
         }
     }
 
@@ -54,7 +55,6 @@ namespace TransmissionRemoteDotnet.Commands
     {
         private ListViewItem item;
         private string extension;
-        private static RegisteredFileType regTypes;
 
         public UpdateFilesCreateSubCommand(string name, long length, bool wanted,
             JsonNumber priority, long bytesCompleted, ImageList img, int mainHandle)
@@ -72,26 +72,27 @@ namespace TransmissionRemoteDotnet.Commands
                     name = name.Remove(0, bckSlashPos + 1);
                 }
             }
-            if (regTypes == null)
-                regTypes = new RegisteredFileType();
             this.item = new ListViewItem(name);
             string[] split = name.Split('.');
+            string typeName = "";
             if (split.Length > 1)
             {
                 string extension = split[split.Length - 1].ToLower();
-                if (img.Images.ContainsKey(extension) || regTypes.AddToImgList(extension, mainHandle, img))
+                if (img.Images.ContainsKey(extension) || IconReader.AddToImgList(extension, img))
                 {
                     this.extension = extension;
+                    typeName = IconReader.GetTypeName(extension);
                 }
             }
             item.Name = item.ToolTipText = name;
+            item.SubItems.Add(typeName);
             item.SubItems.Add(Toolbox.GetFileSize(length));
-            item.SubItems[1].Tag = length;
+            item.SubItems[2].Tag = length;
             item.SubItems.Add(Toolbox.GetFileSize(bytesCompleted));
-            item.SubItems[2].Tag = bytesCompleted;
+            item.SubItems[3].Tag = bytesCompleted;
             decimal progress = Toolbox.CalcPercentage(bytesCompleted, length);
             item.SubItems.Add(progress + "%");
-            item.SubItems[3].Tag = progress;
+            item.SubItems[4].Tag = progress;
             item.SubItems.Add(wanted ? OtherStrings.No : OtherStrings.Yes);
             item.SubItems.Add(FormatPriority(priority));
             lock (Program.Form.FileItems)
