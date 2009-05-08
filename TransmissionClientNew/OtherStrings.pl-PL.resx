@@ -124,16 +124,16 @@
     <value>Autor</value>
   </data>
   <data name="Broken" xml:space="preserve">
-    <value>Przerwany</value>
+    <value>Przerwane</value>
   </data>
   <data name="Build" xml:space="preserve">
-    <value>Budowa</value>
+    <value>build</value>
   </data>
   <data name="Checking" xml:space="preserve">
-    <value>Checking</value>
+    <value>Weryfikowne</value>
   </data>
   <data name="Complete" xml:space="preserve">
-    <value>Zakończono</value>
+    <value>Ukończone</value>
   </data>
   <data name="Confirm" xml:space="preserve">
     <value>Potwierdź</value>
@@ -148,7 +148,7 @@
     <value>Napewno chcesz usunąć {0}?</value>
   </data>
   <data name="ConfirmSingleRemoveAndDelete" xml:space="preserve">
-    <value>Napewno chcesz usunąć wraz z danymi {0}?{1}WSZYSTKIE DANE Z TEGO TORRENTA ZOSTANĄ USUNIĘTE."</value>
+    <value>Napewno chcesz usunąć {0} wraz z danymi?{1}WSZYSTKIE DANE Z TEGO TORRENTA ZOSTANĄ USUNIĘTE."</value>
   </data>
   <data name="Connect" xml:space="preserve">
     <value>Połącz</value>
@@ -178,22 +178,22 @@
     <value>Pokaż statystyki</value>
   </data>
   <data name="Down" xml:space="preserve">
-    <value>W dół</value>
+    <value>Pobierane</value>
   </data>
   <data name="Download" xml:space="preserve">
     <value>Pobierz</value>
   </data>
   <data name="DownloadedValid" xml:space="preserve">
-    <value>{0} ({1} poprawny)</value>
+    <value>{0} ({1} ok)</value>
   </data>
   <data name="Downloading" xml:space="preserve">
-    <value>Pobieranie</value>
+    <value>Pobierane</value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>Błąd</value>
   </data>
   <data name="FailedRequest" xml:space="preserve">
-    <value>Nieudane żądanie</value>
+    <value>Niepoprawne żądanie</value>
   </data>
   <data name="High" xml:space="preserve">
     <value>Wysoki</value>
@@ -253,7 +253,7 @@
     <value>Wstrzymaj wszystkie</value>
   </data>
   <data name="Paused" xml:space="preserve">
-    <value>Wstrzymany</value>
+    <value>Wstrzymane</value>
   </data>
   <data name="Properties" xml:space="preserve">
     <value>Właściwości</value>
@@ -277,7 +277,7 @@
     <value>Najniższa wersja RPC</value>
   </data>
   <data name="Seeding" xml:space="preserve">
-    <value>Wysyłanie</value>
+    <value>Wysyłane</value>
   </data>
   <data name="SelectAll" xml:space="preserve">
     <value>Zaznacz wszystkie</value>
@@ -292,7 +292,7 @@
     <value>Uruchome wszystkie</value>
   </data>
   <data name="TheTorrentHasFinishedDownloading" xml:space="preserve">
-    <value>Ten torrent został pobrany</value>
+    <value>Torrent został pobrany</value>
   </data>
   <data name="Torrents" xml:space="preserve">
     <value>Torrenty</value>
@@ -304,10 +304,10 @@
     <value>Nieznany (negatywny)</value>
   </data>
   <data name="UnsuccessfulRequest" xml:space="preserve">
-    <value>Żądanie nieudane</value>
+    <value>Żądanie niepoprawne</value>
   </data>
   <data name="Up" xml:space="preserve">
-    <value>W górę</value>
+    <value>Wysyłane</value>
   </data>
   <data name="UpgradeAvailable" xml:space="preserve">
     <value>Nowa wersja jest dostępna</value>

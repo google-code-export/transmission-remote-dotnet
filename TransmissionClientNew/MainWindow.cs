@@ -1187,7 +1187,7 @@ namespace TransmissionRemoteDotnet
                 filesListView.SuspendLayout();
                 foreach (ListViewItem item in filesListView.SelectedItems)
                 {
-                    item.SubItems[5].Text = OtherStrings.High;
+                    item.SubItems[6].Text = OtherStrings.High;
                 }
                 filesListView.ResumeLayout();
             }
@@ -1201,7 +1201,7 @@ namespace TransmissionRemoteDotnet
                 filesListView.SuspendLayout();
                 foreach (ListViewItem item in filesListView.SelectedItems)
                 {
-                    item.SubItems[5].Text = OtherStrings.Low;
+                    item.SubItems[6].Text = OtherStrings.Low;
                 }
                 filesListView.ResumeLayout();
             }
@@ -1215,7 +1215,7 @@ namespace TransmissionRemoteDotnet
                 filesListView.SuspendLayout();
                 foreach (ListViewItem item in filesListView.SelectedItems)
                 {
-                    item.SubItems[5].Text = OtherStrings.Normal;
+                    item.SubItems[6].Text = OtherStrings.Normal;
                 }
                 filesListView.ResumeLayout();
             }
@@ -1229,7 +1229,7 @@ namespace TransmissionRemoteDotnet
                 filesListView.SuspendLayout();
                 foreach (ListViewItem item in filesListView.SelectedItems)
                 {
-                    item.SubItems[4].Text = OtherStrings.Yes;
+                    item.SubItems[5].Text = OtherStrings.Yes;
                 }
                 filesListView.ResumeLayout();
             }
@@ -1243,7 +1243,7 @@ namespace TransmissionRemoteDotnet
                 filesListView.SuspendLayout();
                 foreach (ListViewItem item in filesListView.SelectedItems)
                 {
-                    item.SubItems[4].Text = OtherStrings.No;
+                    item.SubItems[5].Text = OtherStrings.No;
                 }
                 filesListView.ResumeLayout();
             }
@@ -1276,7 +1276,7 @@ namespace TransmissionRemoteDotnet
                 for (int i = 0; i < fileItems.Count; i++)
                 {
                     ListViewItem item = fileItems[i];
-                    if (item.SubItems[4].Text.Equals(OtherStrings.Yes))
+                    if (item.SubItems[5].Text.Equals(OtherStrings.Yes))
                     {
                         unwanted.Add(i);
                     }
@@ -1284,15 +1284,15 @@ namespace TransmissionRemoteDotnet
                     {
                         wanted.Add(i);
                     }
-                    if (item.SubItems[5].Text.Equals(OtherStrings.High))
+                    if (item.SubItems[6].Text.Equals(OtherStrings.High))
                     {
                         high.Add(i);
                     }
-                    else if (item.SubItems[5].Text.Equals(OtherStrings.Normal))
+                    else if (item.SubItems[6].Text.Equals(OtherStrings.Normal))
                     {
                         normal.Add(i);
                     }
-                    else if (item.SubItems[5].Text.Equals(OtherStrings.Low))
+                    else if (item.SubItems[6].Text.Equals(OtherStrings.Low))
                     {
                         low.Add(i);
                     }

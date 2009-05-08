@@ -111,13 +111,13 @@
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label2.Text" xml:space="preserve">
-    <value>Raporty błędów i patche proszę wysyłać przez tą stronę.</value>
+    <value>Raporty błędów i patche proszę zgłaszać na tej stronie.</value>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
     <value>http://code.google.com/p/transmission-remote-dotnet/</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
-    <value>Close</value>
+    <value>Zamknij</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

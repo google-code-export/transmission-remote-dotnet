@@ -129,7 +129,7 @@
     <value>Częstotliwość odświeżania:</value>
   </data>
   <data name="UseSSLCheckBox.Text" xml:space="preserve">
-    <value>Włącz SSL</value>
+    <value>Używaj SSL</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>Limit prób:</value>
@@ -138,7 +138,7 @@
     <value>Pokaż ikonę na posku zadań</value>
   </data>
   <data name="ProxyAuthEnableCheckBox.Text" xml:space="preserve">
-    <value>Uwierzytelnij</value>
+    <value>Wymaga uwieżytelnienia</value>
   </data>
   <data name="EnableProxyCombo.Items1" xml:space="preserve">
     <value>Włącz</value>
@@ -159,20 +159,20 @@
     <value>Host:</value>
   </data>
   <data name="StartPausedCheckBox.Text" xml:space="preserve">
-    <value>Uruchom zatrzymane torrenty</value>
+    <value>Wznawiaj wstrzymane torrenty po uruchomieniu</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Serwer</value>
   </data>
   <data name="minimizeOnCloseCheckBox.Text" xml:space="preserve">
-    <value>Minimalizuj przy zamknięciu</value>
+    <value>Minimalizuj zamiast zamykać</value>
   </data>
   <data name="notificationOnAdditionCheckBox.Text" xml:space="preserve">
-    <value>Powiadomienie po dodaniu</value>
+    <value>Powiadamiaj o dodaniu</value>
   </data>
   <data name="notificationOnCompletionCheckBox.Text" xml:space="preserve">
-    <value>Powiadomienie po ukończeniu</value>
+    <value>Powiadamiaj o ukończeniu</value>
   </data>
   <data name="tabPage4.Text" xml:space="preserve">
     <value>Ogólne</value>
@@ -181,7 +181,7 @@
     <value>Hasło:</value>
   </data>
   <data name="EnableAuthCheckBox.Text" xml:space="preserve">
-    <value>Włącz uwierzytelnianie</value>
+    <value>Używaj uwierzytelniania</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Użytkownik:</value>
@@ -219,8 +219,11 @@
   <data name="label16.Text" xml:space="preserve">
     <value>Składniki menu limitów Wysyłania:</value>
   </data>
+  <data name="sambaShareEnabledCheckBox.Text" xml:space="preserve">
+    <value>Katalog pobierania w sieci: </value>
+  </data>
   <data name="tabPage6.Text" xml:space="preserve">
-    <value>Misc</value>
+    <value>Inne</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Zapisz i Połącz</value>

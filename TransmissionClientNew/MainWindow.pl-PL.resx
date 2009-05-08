@@ -196,7 +196,7 @@
     <value>Status:</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
-    <value>Limit wysyłania:</value>
+    <value>Limit pobierania:</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Pobieranie:</value>
@@ -232,7 +232,7 @@
     <value>Rozmiar</value>
   </data>
   <data name="columnHeader3.Text" xml:space="preserve">
-    <value>Ukończono</value>
+    <value>Pobrano</value>
   </data>
   <data name="columnHeader4.Text" xml:space="preserve">
     <value>%</value>
@@ -274,7 +274,10 @@
     <value>Połączenia</value>
   </data>
   <data name="label18.Text" xml:space="preserve">
-    <value>Odstęp czasowy:</value>
+    <value>Odśwież co:</value>
+  </data>
+  <data name="speedResComboBox.Items" xml:space="preserve">
+    <value> 5 sekund</value>
   </data>
   <data name="speedResComboBox.Items1" xml:space="preserve">
     <value>10 sekund</value>
@@ -358,7 +361,7 @@
     <value>Ostatnio aktywne</value>
   </data>
   <data name="reannounceButton.Text" xml:space="preserve">
-    <value>Rozgłoś</value>
+    <value>Aktualizuj trackery</value>
   </data>
   <data name="localConfigureButton.Text" xml:space="preserve">
     <value>Ustawienia Lokalne</value>
