@@ -193,6 +193,13 @@ namespace TransmissionRemoteDotnet.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap pause16 {
+            get {
+                object obj = ResourceManager.GetObject("pause16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap peer16 {
             get {
                 object obj = ResourceManager.GetObject("peer16", resourceCulture);
@@ -210,13 +217,6 @@ namespace TransmissionRemoteDotnet.Properties {
         internal static System.Drawing.Bitmap player_pause {
             get {
                 object obj = ResourceManager.GetObject("player_pause", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap player_pause16 {
-            get {
-                object obj = ResourceManager.GetObject("player_pause16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -151,9 +151,6 @@
   <data name="kgpg_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kgpg_edit.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="up16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\up16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="reannounce" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\reannounce.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -190,25 +187,28 @@
   <data name="net_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\net_add.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="player_pause16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\player_pause16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="peer16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\peer16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="netconfigure" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\netconfigure.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\messagebox_warning.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="down16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\down16.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="folder_html" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder_html.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_16x16_ledpurple" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\16x16_ledpurple.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="down16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\down16.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pause16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pause16.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="up16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\up16.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\error16.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -46,21 +46,28 @@ namespace TransmissionRemoteDotnet
         {
             get { return updateSerial; }
         }
-        
-        // blue green orange red
+
+        /*            stateListBox.Items.Add(new GListBoxItem(OtherStrings.All, 0));
+            stateListBox.Items.Add(new GListBoxItem(OtherStrings.Downloading, 1));
+            stateListBox.Items.Add(new GListBoxItem(OtherStrings.Paused, 2));
+            stateListBox.Items.Add(new GListBoxItem(OtherStrings.Checking, 5));
+            stateListBox.Items.Add(new GListBoxItem(OtherStrings.Complete, 3));
+            stateListBox.Items.Add(new GListBoxItem(OtherStrings.Incomplete, 7));
+            stateListBox.Items.Add(new GListBoxItem(OtherStrings.Seeding, 4));
+            stateListBox.Items.Add(new GListBoxItem(OtherStrings.Broken, 6));*/
         private void UpdateIcon()
         {
             if (this.HasError)
             {
-                this.item.ImageIndex = 3;
+                this.item.ImageIndex = 6;
             }
             else if (this.StatusCode == ProtocolConstants.STATUS_CHECKING || this.StatusCode == ProtocolConstants.STATUS_WAITING_TO_CHECK)
             {
-                this.item.ImageIndex = 4;
+                this.item.ImageIndex = 5;
             }
             else if (this.StatusCode == ProtocolConstants.STATUS_SEEDING)
             {
-                this.item.ImageIndex = 2;
+                this.item.ImageIndex = 4;
             }
             else if (this.StatusCode == ProtocolConstants.STATUS_DOWNLOADING)
             {
@@ -68,7 +75,7 @@ namespace TransmissionRemoteDotnet
             }
             else if (this.StatusCode == ProtocolConstants.STATUS_PAUSED)
             {
-                this.item.ImageIndex = 0;
+                this.item.ImageIndex = 2;
             }
             else
             {

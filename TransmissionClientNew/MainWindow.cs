@@ -114,14 +114,13 @@ namespace TransmissionRemoteDotnet
             stateListBoxImageList.ColorDepth = ColorDepth.Depth32Bit;
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources._16x16_ledpurple);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.down16);
-            stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.player_pause16);
+            stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.pause16);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.apply16);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.up16);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.player_reload16);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.warning);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.incomplete);
-            imageList1.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.player_reload16);
-            stateListBox.ImageList = stateListBoxImageList;
+            torrentListView.SmallImageList = stateListBox.ImageList = stateListBoxImageList;
             stateListBox.Items.Add(new GListBoxItem(OtherStrings.All, 0));
             stateListBox.Items.Add(new GListBoxItem(OtherStrings.Downloading, 1));
             stateListBox.Items.Add(new GListBoxItem(OtherStrings.Paused, 2));
