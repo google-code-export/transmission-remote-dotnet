@@ -196,7 +196,7 @@
     <value>错误的请求</value>
   </data>
   <data name="High" xml:space="preserve">
-    <value>高</value>
+    <value>High</value>
   </data>
   <data name="HighPriority" xml:space="preserve">
     <value>高优先级</value>
@@ -217,7 +217,7 @@
     <value>最新版本检查失败</value>
   </data>
   <data name="Low" xml:space="preserve">
-    <value>低</value>
+    <value>Low</value>
   </data>
   <data name="LowPriority" xml:space="preserve">
     <value>低优先级</value>
@@ -229,10 +229,10 @@
     <value>有新版本 ({0}.{1}) 可用. 您希望访问下载页面吗?</value>
   </data>
   <data name="No" xml:space="preserve">
-    <value>不</value>
+    <value>No</value>
   </data>
   <data name="Normal" xml:space="preserve">
-    <value>普通</value>
+    <value>Normal</value>
   </data>
   <data name="NormalPriority" xml:space="preserve">
     <value>普通优先级</value>
@@ -325,7 +325,7 @@
     <value>{1}个中的{0}个 已连接</value>
   </data>
   <data name="Yes" xml:space="preserve">
-    <value>是</value>
+    <value>Yes</value>
   </data>
   <data name="Incomplete" xml:space="preserve">
     <value>未完成</value>

@@ -664,6 +664,15 @@ namespace TransmissionRemoteDotnet {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reannounce.
+        /// </summary>
+        internal static string Reannounce {
+            get {
+                return ResourceManager.GetString("Reannounce", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Recheck.
         /// </summary>
         internal static string Recheck {

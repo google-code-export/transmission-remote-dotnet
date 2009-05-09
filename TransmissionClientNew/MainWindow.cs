@@ -170,6 +170,7 @@ namespace TransmissionRemoteDotnet
                 this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.RemoveAndDelete, new EventHandler(this.removeAndDeleteButton_Click)));
             }
             this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Recheck, new EventHandler(this.recheckTorrentButton_Click)));
+            this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Reannounce, new EventHandler(this.reannounceButton_ButtonClick)));
             this.torrentSelectionMenu.MenuItems.Add(new MenuItem("-"));
             MenuItem downLimitMenuItem = new MenuItem(OtherStrings.DownloadLimit);
             downLimitMenuItem.MenuItems.Add(OtherStrings.Unlimited, ChangeDownLimit);
@@ -850,7 +851,7 @@ namespace TransmissionRemoteDotnet
                 = startToolStripMenuItem.Enabled = pauseToolStripMenuItem.Enabled
                 = recheckToolStripMenuItem.Enabled = propertiesToolStripMenuItem.Enabled
                 = removeDeleteToolStripMenuItem.Enabled = removeToolStripMenuItem.Enabled
-                = reannounceButton.Enabled = oneOrMore;
+                = reannounceButton.Enabled = reannounceToolStripMenuItem.Enabled = oneOrMore;
         }
 
         private void OneTorrentsSelected(bool one, Torrent t)

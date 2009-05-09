@@ -370,4 +370,7 @@
   <data name="Second" xml:space="preserve">
     <value>Sekund</value>
   </data>
+  <data name="Reannounce" xml:space="preserve">
+    <value>Egenskaber</value>
+  </data>
 </root>

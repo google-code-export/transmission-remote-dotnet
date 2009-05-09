@@ -27,6 +27,13 @@ namespace TransmissionRemoteDotnet
     class TransmissionWebClient : WebClient
     {
         private bool authenticate;
+        private static string x_transmission_session_id;
+
+        public static string X_transmission_session_id
+        {
+            get { return x_transmission_session_id; }
+            set { x_transmission_session_id = value; }
+        }
 
         public TransmissionWebClient(bool authenticate)
         {
@@ -56,6 +63,8 @@ namespace TransmissionRemoteDotnet
         {
             request.KeepAlive = false;
             request.UserAgent = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)";
+            if (x_transmission_session_id != null)
+                request.Headers["X-Transmission-Session-Id"] = x_transmission_session_id;
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
             if (settings.AuthEnabled && authenticate)
             {

@@ -397,4 +397,7 @@
   <data name="XInBlocklist" xml:space="preserve">
     <value>{0} в блоклисте.</value>
   </data>
+  <data name="Reannounce" xml:space="preserve">
+    <value>Переанонсировать</value>
+  </data>
 </root>

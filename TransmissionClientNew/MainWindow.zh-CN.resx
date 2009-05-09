@@ -462,4 +462,7 @@
   <data name="recheckTorrentButton.ToolTipText" xml:space="preserve">
     <value>校验数据</value>
   </data>
+  <data name="categoriesPanelToolStripMenuItem.Text" xml:space="preserve">
+    <value>分类过滤面板</value>
+  </data>
 </root>

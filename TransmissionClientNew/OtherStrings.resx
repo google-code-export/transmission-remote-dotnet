@@ -403,4 +403,7 @@
   <data name="Progress" xml:space="preserve">
     <value>Progress</value>
   </data>
+  <data name="Reannounce" xml:space="preserve">
+    <value>Reannounce</value>
+  </data>
 </root>

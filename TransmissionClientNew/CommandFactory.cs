@@ -34,6 +34,11 @@ namespace TransmissionRemoteDotnet
     {
         public static ICommand Request(JsonObject data)
         {
+            return Request(data, true);
+        }
+
+        public static ICommand Request(JsonObject data, bool allowRecursion)
+        {
             string str_response = null;
             try
             {
@@ -80,6 +85,23 @@ namespace TransmissionRemoteDotnet
             catch (JsonException ex)
             {
                 return new ErrorCommand(String.Format("{0} ({1})", OtherStrings.UnableToParse, ex.GetType()), str_response, false);
+            }
+            catch (WebException ex)
+            {
+                HttpWebResponse response = (HttpWebResponse)ex.Response;
+                if (response.StatusCode == HttpStatusCode.Conflict && allowRecursion)
+                {
+                    Stream stream = ex.Response.GetResponseStream();
+                    StreamReader reader = new StreamReader(stream);
+                    string errorStr = reader.ReadToEnd();
+                    reader.Close();
+                    TransmissionWebClient.X_transmission_session_id = errorStr.Substring(errorStr.IndexOf("X-Transmission-Session-Id") + 27, 48);
+                    return Request(data, false);
+                }
+                else
+                {
+                    return new ErrorCommand(ex, false);
+                }
             }
             catch (Exception ex)
             {
