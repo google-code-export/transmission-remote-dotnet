@@ -599,9 +599,6 @@
     <None Include="Resources\viewmag+.png" />
     <None Include="Resources\_16x16_remove.png" />
     <None Include="Resources\apply16.png" />
-    <None Include="Resources\down16.png" />
-    <None Include="Resources\player_pause16.png" />
-    <None Include="Resources\up16.png" />
     <None Include="Resources\folder16.png" />
     <None Include="Resources\server16.png" />
     <None Include="Resources\peer16.png" />
@@ -610,7 +607,6 @@
     <None Include="Resources\player_reload.png" />
     <None Include="Resources\player_reload16.png" />
     <None Include="Resources\remove_and_delete.png" />
-    <None Include="Resources\messagebox_warning.png" />
     <None Include="Resources\hwinfo.png" />
     <None Include="Resources\kgpg_edit.png" />
     <None Include="Resources\openterm.png" />

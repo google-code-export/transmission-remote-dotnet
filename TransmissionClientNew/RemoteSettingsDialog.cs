@@ -261,6 +261,8 @@ namespace TransmissionRemoteDotnet
 
         void t_Tick(object sender, EventArgs e)
         {
+            Timer t = (Timer)sender;
+            t.Stop();
             Program.Form.CreateActionWorker().RunWorkerAsync(Requests.SessionGet());
         }
 

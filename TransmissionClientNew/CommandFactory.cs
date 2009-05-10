@@ -39,6 +39,7 @@ namespace TransmissionRemoteDotnet
 
         public static ICommand Request(JsonObject data, bool allowRecursion)
         {
+            Console.WriteLine(DateTime.Now + ": " + (string)data[ProtocolConstants.KEY_METHOD]);
             string str_response = null;
             try
             {

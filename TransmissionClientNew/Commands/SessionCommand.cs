@@ -50,9 +50,6 @@ namespace TransmissionRemoteDotnet.Commmands
 
         public SessionCommand(JsonObject response, WebHeaderCollection headers)
         {
-            /* I'm not exactly sure if the version numbers here are correct
-             * but for the purposes of what it's used for these heuristics
-             * work fine at the moment. */
             TransmissionDaemonDescriptor descriptor = new TransmissionDaemonDescriptor();
             JsonObject arguments = (JsonObject)response["arguments"];
             if (arguments.Contains("version"))

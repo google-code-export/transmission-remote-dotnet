@@ -174,6 +174,8 @@ namespace TransmissionRemoteDotnet
         {
             set
             {
+                if (value.Equals(connected))
+                    return;
                 connected = value;
                 if (!connected)
                 {
