@@ -406,4 +406,7 @@
   <data name="Reannounce" xml:space="preserve">
     <value>Reannounce</value>
   </data>
+  <data name="OpenNetworkShare" xml:space="preserve">
+    <value>Open on Network Share</value>
+  </data>
 </root>

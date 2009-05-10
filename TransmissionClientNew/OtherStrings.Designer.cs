@@ -574,6 +574,15 @@ namespace TransmissionRemoteDotnet {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open on Network Share.
+        /// </summary>
+        internal static string OpenNetworkShare {
+            get {
+                return ResourceManager.GetString("OpenNetworkShare", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pause.
         /// </summary>
         internal static string Pause {
