@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -17,15 +17,6 @@
     <resheader name="version">2.0</resheader>
     <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
     <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
                 
     There are any number of "resheader" rows that contain simple 
     name/value pairs.
@@ -117,6 +108,42 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="columnHeader32.Text" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="speedGraph.Text" xml:space="preserve">
+    <value>c2DPushGraph1</value>
+  </data>
+  <data name="statusStrip.Text" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="toolStripContainer1.Text" xml:space="preserve">
+    <value>toolStripContainer1</value>
+  </data>
+  <data name="openNetworkShareButton.Text" xml:space="preserve">
+    <value>Open on network share</value>
+  </data>
+  <data name="reannounceToolStripMenuItem.Text" xml:space="preserve">
+    <value>Reannounce</value>
+  </data>
+  <data name="openNetworkShareToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open on Network Share</value>
+  </data>
+  <data name="categoriesPanelToolStripMenuItem.Text" xml:space="preserve">
+    <value>Category filter panel</value>
+  </data>
+  <data name="menuStrip.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="notifyIcon.Text" xml:space="preserve">
+    <value>Transmission Remote</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Transmission Remote</value>
+  </data>
   <data name="columnHeader6.Text" xml:space="preserve">
     <value>Név</value>
   </data>
@@ -158,9 +185,6 @@
   </data>
   <data name="columnHeader30.Text" xml:space="preserve">
     <value>Tracker-ek</value>
-  </data>
-  <data name="piecesLabel.Text" xml:space="preserve">
-    <value>Szeletek:</value>
   </data>
   <data name="downloadProgressLabel.Text" xml:space="preserve">
     <value>Letöltve:</value>
@@ -281,9 +305,6 @@
   </data>
   <data name="label18.Text" xml:space="preserve">
     <value>Felbontás:</value>
-  </data>
-  <data name="speedResComboBox.Items" xml:space="preserve">
-    <value>5 másodperc</value>
   </data>
   <data name="speedResComboBox.Items1" xml:space="preserve">
     <value>10 másodperc</value>

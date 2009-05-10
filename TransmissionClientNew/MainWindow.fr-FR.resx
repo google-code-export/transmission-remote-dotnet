@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -111,6 +111,30 @@
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="columnHeader32.Text" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="allToolStripMenuItem.Text" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="recentlyActiveToolStripMenuItem.Text" xml:space="preserve">
+    <value>Recently Active</value>
+  </data>
+  <data name="reannounceButton.Text" xml:space="preserve">
+    <value>Reannounce</value>
+  </data>
+  <data name="openNetworkShareButton.Text" xml:space="preserve">
+    <value>Open on network share</value>
+  </data>
+  <data name="reannounceToolStripMenuItem.Text" xml:space="preserve">
+    <value>Reannounce</value>
+  </data>
+  <data name="openNetworkShareToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open on Network Share</value>
+  </data>
+  <data name="categoriesPanelToolStripMenuItem.Text" xml:space="preserve">
+    <value>Category filter panel</value>
+  </data>
   <data name="columnHeader6.Text" xml:space="preserve">
     <value>Nom</value>
   </data>
@@ -152,9 +176,6 @@
   </data>
   <data name="columnHeader30.Text" xml:space="preserve">
     <value>Tracker</value>
-  </data>
-  <data name="piecesLabel.Text" xml:space="preserve">
-    <value>Morceaux :</value>
   </data>
   <data name="downloadProgressLabel.Text" xml:space="preserve">
     <value>Téléchargé :</value>

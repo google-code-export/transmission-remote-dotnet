@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -109,7 +109,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="sambaShareEnabledCheckBox.Text" xml:space="preserve">
+    <value>Downloads network share: </value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Download limit menu items:</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Upload limit menu items:</value>
+  </data>
+  <data name="tabPage6.Text" xml:space="preserve">
+    <value>Misc</value>
+  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Host:</value>
   </data>
@@ -161,7 +174,6 @@
   <data name="StartPausedCheckBox.Text" xml:space="preserve">
     <value>Starte Torrents pausiert</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Server</value>
   </data>

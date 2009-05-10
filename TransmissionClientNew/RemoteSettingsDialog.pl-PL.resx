@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -110,6 +110,7 @@
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label1.Text" xml:space="preserve">
     <value>Zapisuj w:</value>
   </data>
@@ -128,9 +129,6 @@
   <data name="CloseFormButton.Text" xml:space="preserve">
     <value>Zamknij</value>
   </data>
-  <metadata name="SettingsWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="PEXcheckBox.Text" xml:space="preserve">
     <value>Używaj Peer Exchange</value>
   </data>
@@ -139,9 +137,6 @@
   </data>
   <data name="PortForward.Text" xml:space="preserve">
     <value>Używaj UPnP</value>
-  </data>
-  <data name="EncryptionCombobox.Items" xml:space="preserve">
-    <value>tolerowane</value>
   </data>
   <data name="EncryptionCombobox.Items1" xml:space="preserve">
     <value>preferowane</value>
@@ -167,7 +162,6 @@
   <data name="blocklistEnabledCheckBox.Text" xml:space="preserve">
     <value>Używaj Blocklist</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Ogólne</value>
   </data>
@@ -210,9 +204,6 @@
   <data name="label7.Text" xml:space="preserve">
     <value>INFO: Niektóre opcję wymagają aktualizacji Transmission.</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="$this.Text" xml:space="preserve">
     <value>Ustawienia Zdalne</value>
   </data>

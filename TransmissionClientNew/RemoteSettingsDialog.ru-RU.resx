@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -17,15 +17,6 @@
     <resheader name="version">2.0</resheader>
     <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
     <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
                 
     There are any number of "resheader" rows that contain simple 
     name/value pairs.
@@ -117,27 +108,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 13</value>
+  <data name="label6.Text" xml:space="preserve">
+    <value>KB/s</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>KB/s</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label14.Text" xml:space="preserve">
+    <value>:</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>:</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Сохранять в:</value>
   </data>
-  <data name="LimitUploadCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 17</value>
-  </data>
   <data name="LimitUploadCheckBox.Text" xml:space="preserve">
     <value>На отдачу</value>
   </data>
-  <data name="LimitDownloadCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 17</value>
-  </data>
   <data name="LimitDownloadCheckBox.Text" xml:space="preserve">
     <value>На приём</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 13</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Входящий порт:</value>
@@ -148,35 +141,20 @@
   <data name="CloseFormButton.Text" xml:space="preserve">
     <value>Закрыть</value>
   </data>
-  <data name="PEXcheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 17</value>
-  </data>
   <data name="PEXcheckBox.Text" xml:space="preserve">
     <value>Разрешить обмен источниками</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 13</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>На количество источников</value>
   </data>
-  <data name="PortForward.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 17</value>
-  </data>
   <data name="PortForward.Text" xml:space="preserve">
     <value>Разрешить UPnP</value>
-  </data>
-  <data name="EncryptionCombobox.Items" xml:space="preserve">
-    <value>разрешено</value>
   </data>
   <data name="EncryptionCombobox.Items1" xml:space="preserve">
     <value>желательно</value>
   </data>
   <data name="EncryptionCombobox.Items2" xml:space="preserve">
     <value>необходимо</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Шифрование:</value>
@@ -187,17 +165,11 @@
   <data name="updateBlocklistButton.Text" xml:space="preserve">
     <value>Обновить блоклист</value>
   </data>
-  <data name="blocklistEnabledCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 17</value>
-  </data>
   <data name="blocklistEnabledCheckBox.Text" xml:space="preserve">
     <value>Разрешить блоклист</value>
   </data>
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Общие</value>
-  </data>
-  <data name="seedRatioEnabledCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 17</value>
   </data>
   <data name="seedRatioEnabledCheckBox.Text" xml:space="preserve">
     <value>На рейтинг</value>
@@ -205,14 +177,8 @@
   <data name="tabPage2.Text" xml:space="preserve">
     <value>Ограничения</value>
   </data>
-  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
-  </data>
   <data name="label12.Text" xml:space="preserve">
     <value>На отдачу:</value>
-  </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 13</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
     <value>На приём:</value>
@@ -223,29 +189,17 @@
   <data name="label10.Text" xml:space="preserve">
     <value>Кб/с</value>
   </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>19, 13</value>
-  </data>
   <data name="label8.Text" xml:space="preserve">
     <value>по</value>
   </data>
-  <data name="altTimeConstraintEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 17</value>
-  </data>
   <data name="altTimeConstraintEnabled.Text" xml:space="preserve">
     <value>Временные рамки</value>
-  </data>
-  <data name="altSpeedLimitEnable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 17</value>
   </data>
   <data name="altSpeedLimitEnable.Text" xml:space="preserve">
     <value>Включить альтернативные ограничения</value>
   </data>
   <data name="tabPage3.Text" xml:space="preserve">
     <value>Альтернативные ограничения</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 44</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Примечание: Для некоторых опций может потребоваться обновление transmission-daemon.</value>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -17,15 +17,6 @@
     <resheader name="version">2.0</resheader>
     <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
     <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
                 
     There are any number of "resheader" rows that contain simple 
     name/value pairs.
@@ -117,72 +108,47 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 13</value>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>SSH</value>
+  </data>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>http://code.google.com/p/transmission-remote-dotnet/wiki/SSH</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>plink.exe:</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Хост:</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 13</value>
-  </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Порт:</value>
-  </data>
-  <data name="SaveButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 23</value>
   </data>
   <data name="SaveButton.Text" xml:space="preserve">
     <value>Сохранить</value>
   </data>
-  <data name="CloseDialogButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>322, 235</value>
-  </data>
-  <data name="CloseDialogButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 23</value>
-  </data>
   <data name="CloseDialogButton.Text" xml:space="preserve">
     <value>Отмена</value>
-  </data>
-  <data name="AutoConnectCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 17</value>
   </data>
   <data name="AutoConnectCheckBox.Text" xml:space="preserve">
     <value>Автоконнект</value>
   </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 13</value>
-  </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Период обновления:</value>
-  </data>
-  <data name="UseSSLCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 17</value>
   </data>
   <data name="UseSSLCheckBox.Text" xml:space="preserve">
     <value>Безопасный (SSL)</value>
   </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 13</value>
-  </data>
   <data name="label10.Text" xml:space="preserve">
     <value>Попыток подключения:</value>
-  </data>
-  <data name="MinToTrayCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 17</value>
   </data>
   <data name="MinToTrayCheckBox.Text" xml:space="preserve">
     <value>Иконка в трее</value>
   </data>
-  <data name="ProxyAuthEnableCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 17</value>
-  </data>
   <data name="ProxyAuthEnableCheckBox.Text" xml:space="preserve">
     <value>Авторизовать</value>
-  </data>
-  <data name="EnableProxyCombo.Items" xml:space="preserve">
-    <value>Авто</value>
   </data>
   <data name="EnableProxyCombo.Items1" xml:space="preserve">
     <value>Разрешить</value>
@@ -190,14 +156,8 @@
   <data name="EnableProxyCombo.Items2" xml:space="preserve">
     <value>Запретить</value>
   </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 13</value>
-  </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Порт:</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 13</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Пароль:</value>
@@ -205,14 +165,8 @@
   <data name="label8.Text" xml:space="preserve">
     <value>Имя:</value>
   </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 13</value>
-  </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Хост:</value>
-  </data>
-  <data name="StartPausedCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 17</value>
   </data>
   <data name="StartPausedCheckBox.Text" xml:space="preserve">
     <value>Добавлять торренты остановленными</value>
@@ -229,20 +183,11 @@
   <data name="tabPage3.Text" xml:space="preserve">
     <value>Прокси</value>
   </data>
-  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 13</value>
-  </data>
   <data name="label15.Text" xml:space="preserve">
     <value>Справка: </value>
   </data>
-  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
-  </data>
   <data name="label13.Text" xml:space="preserve">
     <value>Команда: </value>
-  </data>
-  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 17</value>
   </data>
   <data name="checkBox1.Text" xml:space="preserve">
     <value>Показать кнопку удалённого управления</value>
@@ -250,83 +195,35 @@
   <data name="button2.Text" xml:space="preserve">
     <value>Обзор</value>
   </data>
-  <data name="sambaShare.Location" type="System.Drawing.Point, System.Drawing">
-    <value>201, 62</value>
-  </data>
-  <data name="sambaShare.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 20</value>
-  </data>
-  <data name="sambaShareEnabledCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 17</value>
-  </data>
   <data name="sambaShareEnabledCheckBox.Text" xml:space="preserve">
     <value>Сетевая папка с закачками:</value>
-  </data>
-  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 13</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
     <value>Ограничения скорости скачивания:</value>
   </data>
-  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 13</value>
-  </data>
   <data name="label16.Text" xml:space="preserve">
     <value>Ограничения скорости отдачи:</value>
-  </data>
-  <data name="downloadLimitItems.Location" type="System.Drawing.Point, System.Drawing">
-    <value>201, 36</value>
-  </data>
-  <data name="downloadLimitItems.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 20</value>
-  </data>
-  <data name="uploadLimitItems.Location" type="System.Drawing.Point, System.Drawing">
-    <value>201, 10</value>
-  </data>
-  <data name="uploadLimitItems.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 20</value>
   </data>
   <data name="tabPage6.Text" xml:space="preserve">
     <value>Прочие</value>
   </data>
-  <data name="minimizeOnCloseCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 17</value>
-  </data>
   <data name="minimizeOnCloseCheckBox.Text" xml:space="preserve">
     <value>Минимизировать при закрытии</value>
-  </data>
-  <data name="notificationOnAdditionCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 17</value>
   </data>
   <data name="notificationOnAdditionCheckBox.Text" xml:space="preserve">
     <value>Уведомление о добавлении</value>
   </data>
-  <data name="notificationOnCompletionCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 17</value>
-  </data>
   <data name="notificationOnCompletionCheckBox.Text" xml:space="preserve">
     <value>Уведомление о завершении</value>
   </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 13</value>
-  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Пароль:</value>
-  </data>
-  <data name="EnableAuthCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 17</value>
   </data>
   <data name="EnableAuthCheckBox.Text" xml:space="preserve">
     <value>Разрешить авторизацию</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Имя:</value>
-  </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>141, 235</value>
-  </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 23</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Сохранить и подключиться</value>

@@ -73,7 +73,7 @@ namespace TransmissionRemoteDotnet
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
             try
             {
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo(settings.Locale);
+                Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture = new CultureInfo(settings.Locale);
             }
             catch { }
             Program.OnConnStatusChanged += new EventHandler(Program_connStatusChanged);
@@ -560,7 +560,7 @@ namespace TransmissionRemoteDotnet
                         ((ToolStripMenuItem)mi).Checked = false;
                 senderMI.Checked = true;
                 settings.Locale = culture.Name;
-                Thread.CurrentThread.CurrentUICulture = culture;
+                Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture = culture;
                 this.Refresh();
                 MessageBox.Show(OtherStrings.LanguageUpdateDetail, OtherStrings.LanguageUpdated, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }

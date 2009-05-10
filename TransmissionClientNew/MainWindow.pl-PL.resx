@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -111,6 +111,21 @@
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="columnHeader32.Text" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="openNetworkShareButton.Text" xml:space="preserve">
+    <value>Open on network share</value>
+  </data>
+  <data name="reannounceToolStripMenuItem.Text" xml:space="preserve">
+    <value>Reannounce</value>
+  </data>
+  <data name="openNetworkShareToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open on Network Share</value>
+  </data>
+  <data name="categoriesPanelToolStripMenuItem.Text" xml:space="preserve">
+    <value>Category filter panel</value>
+  </data>
   <data name="columnHeader6.Text" xml:space="preserve">
     <value>Nazwa</value>
   </data>
@@ -152,9 +167,6 @@
   </data>
   <data name="columnHeader30.Text" xml:space="preserve">
     <value>Tracker</value>
-  </data>
-  <data name="piecesLabel.Text" xml:space="preserve">
-    <value>Fragmenty:</value>
   </data>
   <data name="downloadProgressLabel.Text" xml:space="preserve">
     <value>Pobrano:</value>
@@ -276,9 +288,6 @@
   <data name="label18.Text" xml:space="preserve">
     <value>Odśwież co:</value>
   </data>
-  <data name="speedResComboBox.Items" xml:space="preserve">
-    <value> 5 sekund</value>
-  </data>
   <data name="speedResComboBox.Items1" xml:space="preserve">
     <value>10 sekund</value>
   </data>
@@ -303,21 +312,12 @@
   <data name="speedTabPage.Text" xml:space="preserve">
     <value>Prędkość</value>
   </data>
-  <metadata name="tabControlImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>396, 56</value>
-  </metadata>
-  <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 519</value>
-  </metadata>
   <data name="statusStrip.Text" xml:space="preserve">
     <value>statusStrip1</value>
   </data>
   <data name="toolStripContainer1.Text" xml:space="preserve">
     <value>toolStripContainer1</value>
   </data>
-  <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>3, 0</value>
-  </metadata>
   <data name="connectButton.Text" xml:space="preserve">
     <value>Połącz</value>
   </data>
@@ -372,9 +372,6 @@
   <data name="sessionStatsButton.Text" xml:space="preserve">
     <value>Statystyki</value>
   </data>
-  <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 0</value>
-  </metadata>
   <data name="connectToolStripMenuItem.Text" xml:space="preserve">
     <value>Połącz</value>
   </data>
@@ -456,36 +453,9 @@
   <data name="menuStrip.Text" xml:space="preserve">
     <value>menuStrip1</value>
   </data>
-  <metadata name="flagsImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="refreshWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>461, 17</value>
-  </metadata>
-  <metadata name="notifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>590, 17</value>
-  </metadata>
   <data name="notifyIcon.Text" xml:space="preserve">
     <value>Transmission Remote</value>
   </data>
-  <metadata name="refreshTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>696, 17</value>
-  </metadata>
-  <metadata name="filesTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
-  <metadata name="filesWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>121, 56</value>
-  </metadata>
-  <metadata name="refreshElapsedTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>234, 56</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>109</value>
-  </metadata>
   <data name="$this.Text" xml:space="preserve">
     <value>Transmission Remote</value>
   </data>
