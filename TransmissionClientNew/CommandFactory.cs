@@ -88,23 +88,26 @@ namespace TransmissionRemoteDotnet
             }
             catch (WebException ex)
             {
-                HttpWebResponse response = (HttpWebResponse)ex.Response;
-                if (response.StatusCode == HttpStatusCode.Conflict && allowRecursion)
+                if (ex.Response != null)
                 {
-                    try
+                    HttpWebResponse response = (HttpWebResponse)ex.Response;
+                    if (response.StatusCode == HttpStatusCode.Conflict && allowRecursion)
                     {
-                        Stream stream = ex.Response.GetResponseStream();
-                        StreamReader reader = new StreamReader(stream);
-                        string errorStr = reader.ReadToEnd();
-                        reader.Close();
-                        int index = errorStr.IndexOf("X-Transmission-Session-Id");
-                        if (index > 0)
+                        try
                         {
-                            TransmissionWebClient.X_transmission_session_id = errorStr.Substring(index + 27, 48);
-                            return Request(data, false);
+                            Stream stream = ex.Response.GetResponseStream();
+                            StreamReader reader = new StreamReader(stream);
+                            string errorStr = reader.ReadToEnd();
+                            reader.Close();
+                            int index = errorStr.IndexOf("X-Transmission-Session-Id");
+                            if (index > 0)
+                            {
+                                TransmissionWebClient.X_transmission_session_id = errorStr.Substring(index + 27, 48);
+                                return Request(data, false);
+                            }
                         }
+                        catch { }
                     }
-                    catch { }
                 }
                 return new ErrorCommand(ex, false);
             }
