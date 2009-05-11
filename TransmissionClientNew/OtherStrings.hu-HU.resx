@@ -118,34 +118,34 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DownloadLimit" xml:space="preserve">
-    <value>Download Limit</value>
+    <value>Letöltési korlát</value>
   </data>
   <data name="Unlimited" xml:space="preserve">
-    <value>Unlimited</value>
+    <value>Korlátlan</value>
   </data>
   <data name="UploadLimit" xml:space="preserve">
-    <value>Upload Limit</value>
+    <value>Feltöltési korlát</value>
   </data>
   <data name="Querying" xml:space="preserve">
-    <value>Querying...</value>
+    <value>Lekérdezés...</value>
   </data>
   <data name="Updating" xml:space="preserve">
-    <value>Updating...</value>
+    <value>Frissítés...</value>
   </data>
   <data name="XInBlocklist" xml:space="preserve">
-    <value>{0} in blocklist.</value>
+    <value>{0} elem a tiltólistán.</value>
   </data>
   <data name="Pieces" xml:space="preserve">
-    <value>Pieces</value>
+    <value>Szeletek</value>
   </data>
   <data name="Progress" xml:space="preserve">
     <value>Progress</value>
   </data>
   <data name="Reannounce" xml:space="preserve">
-    <value>Reannounce</value>
+    <value>Újrahirdet</value>
   </data>
   <data name="OpenNetworkShare" xml:space="preserve">
-    <value>Open on Network Share</value>
+    <value>Hálózati megosztás megnyitása</value>
   </data>
   <data name="All" xml:space="preserve">
     <value>Minden</value>

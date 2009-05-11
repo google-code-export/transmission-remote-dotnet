@@ -112,7 +112,7 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="columnHeader32.Text" xml:space="preserve">
-    <value>Type</value>
+    <value>Típus</value>
   </data>
   <data name="speedGraph.Text" xml:space="preserve">
     <value>c2DPushGraph1</value>
@@ -124,16 +124,16 @@
     <value>toolStripContainer1</value>
   </data>
   <data name="openNetworkShareButton.Text" xml:space="preserve">
-    <value>Open on network share</value>
+    <value>Hálózati megosztás megnyitása</value>
   </data>
   <data name="reannounceToolStripMenuItem.Text" xml:space="preserve">
-    <value>Reannounce</value>
+    <value>Újrahirdet</value>
   </data>
   <data name="openNetworkShareToolStripMenuItem.Text" xml:space="preserve">
-    <value>Open on Network Share</value>
+    <value>Hálózati megosztás megnyitása</value>
   </data>
   <data name="categoriesPanelToolStripMenuItem.Text" xml:space="preserve">
-    <value>Category filter panel</value>
+    <value>Kategória lista mutatása</value>
   </data>
   <data name="menuStrip.Text" xml:space="preserve">
     <value>menuStrip1</value>

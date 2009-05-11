@@ -112,16 +112,16 @@
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="sambaShareEnabledCheckBox.Text" xml:space="preserve">
-    <value>Downloads network share: </value>
+    <value>Letöltések hálózati helye: </value>
   </data>
   <data name="label17.Text" xml:space="preserve">
-    <value>Download limit menu items:</value>
+    <value>Letöltési korlát menü elemei:</value>
   </data>
   <data name="label16.Text" xml:space="preserve">
-    <value>Upload limit menu items:</value>
+    <value>Feltöltési korlát menü elemei:</value>
   </data>
   <data name="tabPage6.Text" xml:space="preserve">
-    <value>Misc</value>
+    <value>Egyéb</value>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
     <value>http://code.google.com/p/transmission-remote-dotnet/wiki/SSH</value>
