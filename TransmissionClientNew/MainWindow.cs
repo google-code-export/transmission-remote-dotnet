@@ -79,6 +79,7 @@ namespace TransmissionRemoteDotnet
             Program.OnConnStatusChanged += new EventHandler(Program_connStatusChanged);
             Program.OnTorrentsUpdated += new EventHandler(Program_onTorrentsUpdated);
             InitializeComponent();
+            CreateTrayContextMenu();
             tabControlImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.folder16);
             filesTabPage.ImageIndex = 0;
             tabControlImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.peer16);
@@ -338,13 +339,11 @@ namespace TransmissionRemoteDotnet
             Toolbox.StripeListView(torrentListView);
         }
 
-        private void Program_connStatusChanged(object sender, EventArgs e)
+        private void CreateTrayContextMenu()
         {
             ContextMenu trayMenu = new ContextMenu();
-            bool connected = Program.Connected;
-            if (connected)
+            if (Program.Connected)
             {
-                CreateTorrentSelectionContextMenu();
                 trayMenu.MenuItems.Add(OtherStrings.StartAll, new EventHandler(this.startAllMenuItem_Click));
                 trayMenu.MenuItems.Add(OtherStrings.PauseAll, new EventHandler(this.stopAllMenuItem_Click));
                 trayMenu.MenuItems.Add("-");
@@ -353,6 +352,24 @@ namespace TransmissionRemoteDotnet
                     trayMenu.MenuItems.Add(OtherStrings.DisplayStatistics, new EventHandler(this.sessionStatsButton_Click));
                 }
                 trayMenu.MenuItems.Add(OtherStrings.Disconnect, new EventHandler(this.disconnectButton_Click));
+            }
+            else
+            {
+                trayMenu.MenuItems.Add(OtherStrings.Connect, new EventHandler(this.connectButton_Click));
+            }
+            this.notifyIcon.Text = MainWindow.DEFAULT_WINDOW_TITLE;
+            trayMenu.MenuItems.Add("-");
+            trayMenu.MenuItems.Add(OtherStrings.Exit, new EventHandler(this.exitToolStripMenuItem_Click));
+            this.notifyIcon.ContextMenu = trayMenu;
+        }
+
+        private void Program_connStatusChanged(object sender, EventArgs e)
+        {
+            bool connected = Program.Connected;
+            CreateTrayContextMenu();
+            if (connected)
+            {
+                CreateTorrentSelectionContextMenu();
                 this.toolStripStatusLabel.Text = OtherStrings.ConnectedGettingInfo;
                 this.Text = MainWindow.DEFAULT_WINDOW_TITLE + " - " + LocalSettingsSingleton.Instance.Host;
                 speedGraph.GetLineHandle("Download").Clear();
@@ -372,7 +389,6 @@ namespace TransmissionRemoteDotnet
                 }
                 OneOrMoreTorrentsSelected(false);
                 OneTorrentsSelected(false, null);
-                trayMenu.MenuItems.Add(OtherStrings.Connect, new EventHandler(this.connectButton_Click));
                 this.toolStripStatusLabel.Text = OtherStrings.Disconnected;
                 this.Text = MainWindow.DEFAULT_WINDOW_TITLE;
                 lock (this.stateListBox)
@@ -386,10 +402,6 @@ namespace TransmissionRemoteDotnet
                     }
                 }
             }
-            this.notifyIcon.Text = MainWindow.DEFAULT_WINDOW_TITLE;
-            trayMenu.MenuItems.Add("-");
-            trayMenu.MenuItems.Add("Exit", new EventHandler(this.exitToolStripMenuItem_Click));
-            this.notifyIcon.ContextMenu = trayMenu;
             connectButton.Visible = connectToolStripMenuItem.Visible
                 = mainVerticalSplitContainer.Panel1Collapsed = !connected;
             disconnectButton.Visible = addTorrentToolStripMenuItem.Visible

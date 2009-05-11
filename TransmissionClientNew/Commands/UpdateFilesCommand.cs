@@ -21,6 +21,7 @@ using System.Text;
 using Jayrock.Json;
 using System.Windows.Forms;
 using TransmissionRemoteDotnet.Commands;
+using System.Threading;
 
 namespace TransmissionRemoteDotnet.Commmands
 {
@@ -34,6 +35,7 @@ namespace TransmissionRemoteDotnet.Commmands
 
         public UpdateFilesCommand(JsonObject response)
         {
+            Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(LocalSettingsSingleton.Instance.Locale);
             Program.DaemonDescriptor.ResetFailCount();
             MainWindow form = Program.Form;
             JsonObject arguments = (JsonObject)response[ProtocolConstants.KEY_ARGUMENTS];

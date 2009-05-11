@@ -39,7 +39,6 @@ namespace TransmissionRemoteDotnet
 
         public static ICommand Request(JsonObject data, bool allowRecursion)
         {
-            Console.WriteLine(DateTime.Now + ": " + (string)data[ProtocolConstants.KEY_METHOD]);
             string str_response = null;
             try
             {
@@ -92,23 +91,28 @@ namespace TransmissionRemoteDotnet
                 HttpWebResponse response = (HttpWebResponse)ex.Response;
                 if (response.StatusCode == HttpStatusCode.Conflict && allowRecursion)
                 {
-                    Stream stream = ex.Response.GetResponseStream();
-                    StreamReader reader = new StreamReader(stream);
-                    string errorStr = reader.ReadToEnd();
-                    reader.Close();
-                    TransmissionWebClient.X_transmission_session_id = errorStr.Substring(errorStr.IndexOf("X-Transmission-Session-Id") + 27, 48);
-                    return Request(data, false);
+                    try
+                    {
+                        Stream stream = ex.Response.GetResponseStream();
+                        StreamReader reader = new StreamReader(stream);
+                        string errorStr = reader.ReadToEnd();
+                        reader.Close();
+                        int index = errorStr.IndexOf("X-Transmission-Session-Id");
+                        if (index > 0)
+                        {
+                            TransmissionWebClient.X_transmission_session_id = errorStr.Substring(index + 27, 48);
+                            return Request(data, false);
+                        }
+                    }
+                    catch { }
                 }
-                else
-                {
-                    return new ErrorCommand(ex, false);
-                }
+                return new ErrorCommand(ex, false);
             }
             catch (Exception ex)
             {
                 return new ErrorCommand(ex, false);
             }
-            return new ErrorCommand("Unknown response tag", str_response, false);
+            return new ErrorCommand("Unknown response tag", str_response != null ? str_response : "null", false);
         }
     }
 }
