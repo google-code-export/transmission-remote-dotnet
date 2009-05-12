@@ -15,7 +15,8 @@ svn co http://transmission-remote-dotnet.googlecode.com/svn/trunk/ transmission-
 CREDITS AND ACKNOWLEDGEMENTS
 ----------------------------
 
- * All icons are the creation of David Vignoni in his Nuvola theme. http://www.icon-king.com/
+ * Most icons are the creation of David Vignoni in his Nuvola theme. http://www.icon-king.com/
+ * Some icons were kindly contributed by liuzhiyi and benketom.
  * charles and the other Transmission developers for their great work.
  * Első András has made a number of notable contributions including SSL, speed graphs, GeoIP support and many small patches.
  * Thank you to all the following users kind enough to translate this application:

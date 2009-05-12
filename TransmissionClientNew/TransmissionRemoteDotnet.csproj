@@ -614,10 +614,10 @@
     <None Include="Resources\reannounce.png" />
     <None Include="Resources\folder_html.png" />
     <None Include="Resources\16x16_ledpurple.png" />
-    <None Include="Resources\down16.gif" />
-    <None Include="Resources\error16.gif" />
-    <None Include="Resources\pause16.gif" />
-    <None Include="Resources\up16.gif" />
+    <None Include="Resources\down16.png" />
+    <None Include="Resources\error16.png" />
+    <None Include="Resources\pause16.png" />
+    <None Include="Resources\up16.png" />
     <Content Include="transmission_large.ico" />
   </ItemGroup>
   <ItemGroup>
