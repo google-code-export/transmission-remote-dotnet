@@ -59,6 +59,7 @@ namespace TransmissionRemoteDotnet
         private ContextMenu noTorrentSelectionMenu;
         private ContextMenu fileSelectionMenu;
         private ContextMenu noFileSelectionMenu;
+        private MenuItem OpenNetworkShareMenuItem;
         private BackgroundWorker connectWorker;
         private GeoIPCountry geo;
         private List<ListViewItem> fileItems = new List<ListViewItem>();
@@ -171,7 +172,7 @@ namespace TransmissionRemoteDotnet
             }
             this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Recheck, new EventHandler(this.recheckTorrentButton_Click)));
             this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Reannounce, new EventHandler(this.reannounceButton_ButtonClick)));
-            this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.OpenNetworkShare, new EventHandler(this.openNetworkShareButton_Click)));
+            this.torrentSelectionMenu.MenuItems.Add(OpenNetworkShareMenuItem = new MenuItem(OtherStrings.OpenNetworkShare, new EventHandler(this.openNetworkShareButton_Click)));
             this.torrentSelectionMenu.MenuItems.Add(new MenuItem("-"));
             MenuItem downLimitMenuItem = new MenuItem(OtherStrings.DownloadLimit);
             downLimitMenuItem.MenuItems.Add(OtherStrings.Unlimited, ChangeDownLimit);
@@ -424,7 +425,7 @@ namespace TransmissionRemoteDotnet
         {
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
             remoteCmdButton.Visible = connected && settings.PlinkEnable && settings.PlinkCmd != null && settings.PlinkPath != null && File.Exists(settings.PlinkPath);
-            openNetworkShareButton.Visible = connected && settings.SambaShareEnabled && settings.SambaShare != null && settings.SambaShare.Length > 5;
+            OpenNetworkShareMenuItem.Visible = openNetworkShareButton.Visible = connected && settings.SambaShareEnabled && settings.SambaShare != null && settings.SambaShare.Length > 5;
         }
 
         public void TorrentsToClipboardHandler(object sender, EventArgs e)
