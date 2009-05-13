@@ -22,6 +22,7 @@ using Jayrock.Json;
 using System.Windows.Forms;
 using TransmissionRemoteDotnet.Commands;
 using System.Threading;
+using System.Collections;
 
 namespace TransmissionRemoteDotnet.Commmands
 {
@@ -119,6 +120,8 @@ namespace TransmissionRemoteDotnet.Commmands
 #if !MONO
                 form.filesListView.SmallImageList = imgList;
 #endif
+                IComparer tmp = form.filesListView.ListViewItemSorter;
+                form.filesListView.ListViewItemSorter = null;
                 foreach (ICommand uiUpdate in uiUpdateBatch)
                 {
                     uiUpdate.Execute();
@@ -127,6 +130,7 @@ namespace TransmissionRemoteDotnet.Commmands
                 {
                     form.filesListView.Enabled = true;
                 }
+                form.filesListView.ListViewItemSorter = tmp;
                 form.filesListView.Sort();
                 Toolbox.StripeListView(form.filesListView);
                 form.filesListView.ResumeLayout();
