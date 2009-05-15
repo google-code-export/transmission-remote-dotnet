@@ -425,7 +425,9 @@ namespace TransmissionRemoteDotnet
         {
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
             remoteCmdButton.Visible = connected && settings.PlinkEnable && settings.PlinkCmd != null && settings.PlinkPath != null && File.Exists(settings.PlinkPath);
-            OpenNetworkShareMenuItem.Visible = openNetworkShareButton.Visible = connected && settings.SambaShareEnabled && settings.SambaShare != null && settings.SambaShare.Length > 5;
+            openNetworkShareButton.Visible = connected && settings.SambaShareEnabled && settings.SambaShare != null && settings.SambaShare.Length > 5;
+	    if (OpenNetworkShareMenuItem != null)
+		OpenNetworkShareMenuItem.Visible = openNetworkShareButton.Visible;
         }
 
         public void TorrentsToClipboardHandler(object sender, EventArgs e)
