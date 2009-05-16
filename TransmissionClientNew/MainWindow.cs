@@ -324,7 +324,7 @@ namespace TransmissionRemoteDotnet
 
         private void Program_onTorrentsUpdated(object sender, EventArgs e)
         {
-            if (!mainVerticalSplitContainer.Panel1Collapsed)
+            if (Program.Connected)
             {
                 Torrent t = null;
                 lock (torrentListView)
@@ -417,7 +417,8 @@ namespace TransmissionRemoteDotnet
                 = remoteSettingsToolStripMenuItem.Visible = fileMenuItemSeperator1.Visible
                 = addTorrentFromUrlToolStripMenuItem.Visible = startTorrentButton.Visible
                 = refreshTimer.Enabled = recheckTorrentButton.Visible
-                = speedGraph.Enabled = toolStripSeparator2.Visible = connected;
+                = speedGraph.Enabled = toolStripSeparator2.Visible 
+                = categoriesPanelToolStripMenuItem.Checked = connected;
             SetRemoteCmdButtonVisible(connected);
             reannounceButton.Visible = connected && Program.DaemonDescriptor.RpcVersion >= 5;
             removeAndDeleteButton.Visible = connected && Program.DaemonDescriptor.Version >= 1.5;
@@ -429,8 +430,8 @@ namespace TransmissionRemoteDotnet
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
             remoteCmdButton.Visible = connected && settings.PlinkEnable && settings.PlinkCmd != null && settings.PlinkPath != null && File.Exists(settings.PlinkPath);
             openNetworkShareButton.Visible = connected && settings.SambaShareEnabled && settings.SambaShare != null && settings.SambaShare.Length > 5;
-	    if (openNetworkShareMenuItem != null)
-		openNetworkShareMenuItem.Visible = openNetworkShareButton.Visible;
+	        if (openNetworkShareMenuItem != null)
+		        openNetworkShareMenuItem.Visible = openNetworkShareButton.Visible;
         }
 
         public void TorrentsToClipboardHandler(object sender, EventArgs e)
@@ -927,13 +928,8 @@ namespace TransmissionRemoteDotnet
         private void ShowTorrentPropsHandler(object sender, EventArgs e)
         {
             lock (torrentListView)
-            {
                 if (torrentListView.SelectedItems.Count > 0)
-                {
-                    TorrentPropertiesDialog dialog = new TorrentPropertiesDialog(torrentListView.SelectedItems);
-                    dialog.Show();
-                }
-            }
+                    (new TorrentPropertiesDialog(torrentListView.SelectedItems)).ShowDialog();
         }
 
         private void removeTorrentButton_Click(object sender, EventArgs e)
@@ -949,17 +945,13 @@ namespace TransmissionRemoteDotnet
         private void startTorrentButton_Click(object sender, EventArgs e)
         {
             if (torrentListView.SelectedItems.Count > 0)
-            {
                 CreateActionWorker().RunWorkerAsync(Requests.Generic(ProtocolConstants.METHOD_TORRENTSTART, BuildIdArray()));
-            }
         }
 
         private void pauseTorrentButton_Click(object sender, EventArgs e)
         {
-            if (torrentListView.SelectedItems.Count > 0)
-            {
+            if (torrentListView.SelectedItems.Count > 0)           
                 CreateActionWorker().RunWorkerAsync(Requests.Generic(ProtocolConstants.METHOD_TORRENTSTOP, BuildIdArray()));
-            }
         }
 
         public void UpdateGraph(int downspeed, int upspeed)
