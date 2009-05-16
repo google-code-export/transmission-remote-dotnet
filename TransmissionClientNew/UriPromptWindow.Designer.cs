@@ -109,6 +109,7 @@
             this.MinimizeBox = false;
             this.Name = "UriPromptWindow";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);

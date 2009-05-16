@@ -59,7 +59,7 @@ namespace TransmissionRemoteDotnet
         private ContextMenu noTorrentSelectionMenu;
         private ContextMenu fileSelectionMenu;
         private ContextMenu noFileSelectionMenu;
-        private MenuItem OpenNetworkShareMenuItem;
+        private MenuItem openNetworkShareMenuItem;
         private BackgroundWorker connectWorker;
         private GeoIPCountry geo;
         private List<ListViewItem> fileItems = new List<ListViewItem>();
@@ -172,7 +172,7 @@ namespace TransmissionRemoteDotnet
             }
             this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Recheck, new EventHandler(this.recheckTorrentButton_Click)));
             this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Reannounce, new EventHandler(this.reannounceButton_ButtonClick)));
-            this.torrentSelectionMenu.MenuItems.Add(OpenNetworkShareMenuItem = new MenuItem(OtherStrings.OpenNetworkShare, new EventHandler(this.openNetworkShareButton_Click)));
+            this.torrentSelectionMenu.MenuItems.Add(openNetworkShareMenuItem = new MenuItem(OtherStrings.OpenNetworkShare, new EventHandler(this.openNetworkShareButton_Click)));
             this.torrentSelectionMenu.MenuItems.Add(new MenuItem("-"));
             MenuItem downLimitMenuItem = new MenuItem(OtherStrings.DownloadLimit);
             downLimitMenuItem.MenuItems.Add(OtherStrings.Unlimited, ChangeDownLimit);
@@ -426,8 +426,8 @@ namespace TransmissionRemoteDotnet
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
             remoteCmdButton.Visible = connected && settings.PlinkEnable && settings.PlinkCmd != null && settings.PlinkPath != null && File.Exists(settings.PlinkPath);
             openNetworkShareButton.Visible = connected && settings.SambaShareEnabled && settings.SambaShare != null && settings.SambaShare.Length > 5;
-	    if (OpenNetworkShareMenuItem != null)
-		OpenNetworkShareMenuItem.Visible = openNetworkShareButton.Visible;
+	    if (openNetworkShareMenuItem != null)
+		openNetworkShareMenuItem.Visible = openNetworkShareButton.Visible;
         }
 
         public void TorrentsToClipboardHandler(object sender, EventArgs e)
@@ -771,8 +771,7 @@ namespace TransmissionRemoteDotnet
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AboutDialog.Instance.Show();
-            AboutDialog.Instance.BringToFront();
+            (new AboutDialog()).ShowDialog();
         }
 
         private delegate void InvokeShowDelegate();
@@ -848,14 +847,12 @@ namespace TransmissionRemoteDotnet
 
         private void localConfigureButton_Click(object sender, EventArgs e)
         {
-            LocalSettingsDialog.Instance.Show();
-            LocalSettingsDialog.Instance.BringToFront();
+            (new LocalSettingsDialog()).ShowDialog();
         }
 
         private void remoteConfigureButton_Click(object sender, EventArgs e)
         {
-            RemoteSettingsDialog.Instance.Show();
-            RemoteSettingsDialog.Instance.BringToFront();
+            RemoteSettingsDialog.Instance.ShowDialog();
         }
 
         private void OneOrMoreTorrentsSelected(bool oneOrMore)
@@ -1018,13 +1015,11 @@ namespace TransmissionRemoteDotnet
             }
             else if (e.Control && e.KeyCode == Keys.O)
             {
-                LocalSettingsDialog.Instance.Show();
-                LocalSettingsDialog.Instance.BringToFront();
+                (new LocalSettingsDialog()).ShowDialog();
             }
             else if (e.Control && e.KeyCode == Keys.R && Program.Connected)
             {
-                RemoteSettingsDialog.Instance.Show();
-                RemoteSettingsDialog.Instance.BringToFront();
+                RemoteSettingsDialog.Instance.ShowDialog();
             }
         }
 
@@ -1065,7 +1060,7 @@ namespace TransmissionRemoteDotnet
         private void addWebTorrentButton_Click(object sender, EventArgs e)
         {
             UriPromptWindow uriPrompt = new UriPromptWindow();
-            uriPrompt.Show();
+            uriPrompt.ShowDialog();
         }
 
         private void stateListBox_SelectedIndexChanged(object sender, EventArgs e)

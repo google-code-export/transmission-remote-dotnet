@@ -28,25 +28,7 @@ namespace TransmissionRemoteDotnet
 {
     public partial class AboutDialog : Form
     {
-        private static AboutDialog instance = null;
-        private static readonly object padlock = new object();
-
-        public static AboutDialog Instance
-        {
-            get
-            {
-                lock (padlock)
-                {
-                    if (instance == null || instance.IsDisposed)
-                    {
-                        instance = new AboutDialog();
-                    }
-                }
-                return instance;
-            }
-        }
-
-        private AboutDialog()
+        public AboutDialog()
         {
             InitializeComponent();
         }

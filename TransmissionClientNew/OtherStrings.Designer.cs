@@ -529,6 +529,15 @@ namespace TransmissionRemoteDotnet {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New torrent {0}..
+        /// </summary>
+        internal static string NewTorrentIs {
+            get {
+                return ResourceManager.GetString("NewTorrentIs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No.
         /// </summary>
         internal static string No {

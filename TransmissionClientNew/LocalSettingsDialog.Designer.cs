@@ -94,6 +94,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.sambaShare = new System.Windows.Forms.TextBox();
+            this.sambaShareEnabledCheckBox = new System.Windows.Forms.CheckBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.downloadLimitItems = new System.Windows.Forms.TextBox();
@@ -105,8 +107,6 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.sambaShareEnabledCheckBox = new System.Windows.Forms.CheckBox();
-            this.sambaShare = new System.Windows.Forms.TextBox();
             this.addProfileButton = new System.Windows.Forms.Button();
             this.removeProfileButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PortField)).BeginInit();
@@ -498,6 +498,18 @@
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // sambaShare
+            // 
+            resources.ApplyResources(this.sambaShare, "sambaShare");
+            this.sambaShare.Name = "sambaShare";
+            // 
+            // sambaShareEnabledCheckBox
+            // 
+            resources.ApplyResources(this.sambaShareEnabledCheckBox, "sambaShareEnabledCheckBox");
+            this.sambaShareEnabledCheckBox.Name = "sambaShareEnabledCheckBox";
+            this.sambaShareEnabledCheckBox.UseVisualStyleBackColor = true;
+            this.sambaShareEnabledCheckBox.CheckedChanged += new System.EventHandler(this.sambaShareEnabledCheckBox_CheckedChanged);
+            // 
             // label17
             // 
             resources.ApplyResources(this.label17, "label17");
@@ -566,18 +578,6 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
-            // sambaShareEnabledCheckBox
-            // 
-            resources.ApplyResources(this.sambaShareEnabledCheckBox, "sambaShareEnabledCheckBox");
-            this.sambaShareEnabledCheckBox.Name = "sambaShareEnabledCheckBox";
-            this.sambaShareEnabledCheckBox.UseVisualStyleBackColor = true;
-            this.sambaShareEnabledCheckBox.CheckedChanged += new System.EventHandler(this.sambaShareEnabledCheckBox_CheckedChanged);
-            // 
-            // sambaShare
-            // 
-            resources.ApplyResources(this.sambaShare, "sambaShare");
-            this.sambaShare.Name = "sambaShare";
-            // 
             // addProfileButton
             // 
             resources.ApplyResources(this.addProfileButton, "addProfileButton");
@@ -609,6 +609,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "LocalSettingsDialog";
+            this.ShowInTaskbar = false;
             this.Load += new System.EventHandler(this.LocalSettingsDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PortField)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RefreshRateValue)).EndInit();

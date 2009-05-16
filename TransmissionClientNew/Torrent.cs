@@ -155,7 +155,7 @@ namespace TransmissionRemoteDotnet
                 }
                 if (LocalSettingsSingleton.Instance.StartedBalloon && this.updateSerial > 1)
                 {
-                    Program.Form.notifyIcon.ShowBalloonTip(LocalSettingsSingleton.BALLOON_TIMEOUT, this.Name, String.Format("New torrent {0}.", this.Status.ToLower()), ToolTipIcon.Info);
+                    Program.Form.notifyIcon.ShowBalloonTip(LocalSettingsSingleton.BALLOON_TIMEOUT, this.Name, String.Format(OtherStrings.NewTorrentIs, this.Status.ToLower()), ToolTipIcon.Info);
                 }
                 LogError();
             }

@@ -96,6 +96,7 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "AboutDialog";
+            this.ShowInTaskbar = false;
             this.Load += new System.EventHandler(this.AboutDialog_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

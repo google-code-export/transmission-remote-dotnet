@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="NewTorrentIs" xml:space="preserve">
+    <value>New torrent {0}.</value>
+  </data>
   <data name="DownloadLimit" xml:space="preserve">
     <value>Letöltési korlát</value>
   </data>
@@ -383,7 +389,6 @@
   </data>
   <data name="Kilobyte" xml:space="preserve">
     <value>Kilobájt</value>
-    <comment>b</comment>
   </data>
   <data name="KilobyteShort" xml:space="preserve">
     <value>KB</value>
@@ -395,7 +400,7 @@
     <value>MB</value>
   </data>
   <data name="Minute" xml:space="preserve">
-    <value>Minute</value>
+    <value>Perc</value>
   </data>
   <data name="Second" xml:space="preserve">
     <value>Másodperc</value>

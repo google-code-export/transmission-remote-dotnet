@@ -412,4 +412,7 @@
   <data name="Exit" xml:space="preserve">
     <value>Exit</value>
   </data>
+  <data name="NewTorrentIs" xml:space="preserve">
+    <value>New torrent {0}.</value>
+  </data>
 </root>

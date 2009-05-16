@@ -27,28 +27,10 @@ namespace TransmissionRemoteDotnet
 {
     public partial class LocalSettingsDialog : Form
     {
-        private static LocalSettingsDialog instance = null;
-        private static readonly object padlock = new object();
-
-        public static LocalSettingsDialog Instance
-        {
-            get
-            {
-                lock (padlock)
-                {
-                    if (instance == null || instance.IsDisposed)
-                    {
-                        instance = new LocalSettingsDialog();
-                    }
-                }
-                return instance;
-            }
-        }
-
         private string originalHost;
         private int originalPort;
 
-        private LocalSettingsDialog()
+        public LocalSettingsDialog()
         {
             InitializeComponent();
         }
