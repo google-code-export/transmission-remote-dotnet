@@ -324,20 +324,23 @@ namespace TransmissionRemoteDotnet
 
         private void Program_onTorrentsUpdated(object sender, EventArgs e)
         {
-            Torrent t = null;
-            lock (torrentListView)
+            if (!mainVerticalSplitContainer.Panel1Collapsed)
             {
-                if (torrentListView.SelectedItems.Count == 1)
-                    t = (Torrent)torrentListView.SelectedItems[0].Tag;
+                Torrent t = null;
+                lock (torrentListView)
+                {
+                    if (torrentListView.SelectedItems.Count == 1)
+                        t = (Torrent)torrentListView.SelectedItems[0].Tag;
+                }
+                if (t != null)
+                    UpdateInfoPanel(false, t);
+                refreshTimer.Enabled = torrentListView.Enabled = true;
+                if (categoriesPanelToolStripMenuItem.Checked)
+                    mainVerticalSplitContainer.Panel1Collapsed = false;
+                FilterByStateOrTracker();
+                torrentListView.Sort();
+                Toolbox.StripeListView(torrentListView);
             }
-            if (t != null)
-                UpdateInfoPanel(false, t);
-            refreshTimer.Enabled = torrentListView.Enabled = true;
-            if (categoriesPanelToolStripMenuItem.Checked)
-                mainVerticalSplitContainer.Panel1Collapsed = false;
-            FilterByStateOrTracker();
-            torrentListView.Sort();
-            Toolbox.StripeListView(torrentListView);
         }
 
         private void CreateTrayContextMenu()
@@ -529,37 +532,26 @@ namespace TransmissionRemoteDotnet
             languageToolStripMenuItem.DropDownItems.Add(englishItem);
             languageToolStripMenuItem.DropDownItems.Add(new ToolStripSeparator());
             DirectoryInfo di = new DirectoryInfo(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-            DirectoryInfo[] subDirs = di.GetDirectories();
-            List<CultureInfo> availableCultures = new List<CultureInfo>();
-            foreach (DirectoryInfo subDir in subDirs)
+            foreach (DirectoryInfo subDir in di.GetDirectories())
             {
                 string dn = subDir.Name;
                 if (dn.IndexOf('-') == 2 && dn.Length == 5)
                 {
-                    string cultureId = dn.Substring(0, 2).ToLower() + "-" + dn.Substring(3, 2).ToUpper();
-                    availableCultures.Add(new CultureInfo(cultureId));
-                }
-            }
-            int i, j;
-            for (i = (availableCultures.Count - 1); i >= 0; i--)
-            {
-                for (j = 1; j <= i; j++)
-                {
-                    if (availableCultures[j - 1].EnglishName.CompareTo(availableCultures[j].EnglishName) > 0)
+                    try
                     {
-                        CultureInfo temp = availableCultures[j - 1];
-                        availableCultures[j - 1] = availableCultures[j];
-                        availableCultures[j] = temp;
+                        CultureInfo cInfo = new CultureInfo(dn.Substring(0, 2).ToLower() + "-" + dn.Substring(3, 2).ToUpper());
+                        string engName = cInfo.EnglishName;
+                        ToolStripMenuItem item = new ToolStripMenuItem(engName.Substring(0, engName.IndexOf('(')-1));
+                        item.Tag = cInfo;
+                        item.Click += new EventHandler(this.ChangeUICulture);
+                        item.Checked = LocalSettingsSingleton.Instance.Locale.Equals(cInfo.Name);
+                        languageToolStripMenuItem.DropDownItems.Add(item);
+                    }
+                    catch (Exception ex)
+                    {
+                        Program.Log("Unable to load localisation " + dn, ex.Message);
                     }
                 }
-            }
-            foreach (CultureInfo ci in availableCultures)
-            {
-                ToolStripMenuItem ti = new ToolStripMenuItem(ci.EnglishName.Substring(0, ci.EnglishName.IndexOf('(') - 1));
-                ti.Click += new EventHandler(this.ChangeUICulture);
-                ti.Tag = ci;
-                ti.Checked = LocalSettingsSingleton.Instance.Locale.Equals(ci.Name);
-                languageToolStripMenuItem.DropDownItems.Add(ti);
             }
         }
 
