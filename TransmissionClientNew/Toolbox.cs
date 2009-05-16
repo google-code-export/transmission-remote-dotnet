@@ -78,16 +78,19 @@ namespace TransmissionRemoteDotnet
         public static void CopyListViewToClipboard(ListView listView)
         {
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < listView.Columns.Count; i++)
+            if (listView.SelectedItems.Count > 1)
             {
-                sb.Append(listView.Columns[i].Text);
-                if (i != listView.Columns.Count - 1)
+                for (int i = 0; i < listView.Columns.Count; i++)
                 {
-                    sb.Append(',');
-                }
-                else
-                {
-                    sb.Append(System.Environment.NewLine);
+                    sb.Append(listView.Columns[i].Text);
+                    if (i != listView.Columns.Count - 1)
+                    {
+                        sb.Append(',');
+                    }
+                    else
+                    {
+                        sb.Append(System.Environment.NewLine);
+                    }
                 }
             }
             lock (listView)

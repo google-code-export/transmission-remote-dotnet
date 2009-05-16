@@ -64,7 +64,9 @@ namespace TransmissionRemoteDotnet
             PassField.Enabled = UserField.Enabled = EnableAuthCheckBox.Checked = settings.AuthEnabled;
             UserField.Text = settings.User;
             PassField.Text = settings.Pass;
-            MinToTrayCheckBox.Checked = settings.MinToTray;
+            notificationOnCompletionCheckBox.Enabled = notificationOnAdditionCheckBox.Enabled
+                = minimizeOnCloseCheckBox.Enabled = MinToTrayCheckBox.Checked
+                = settings.MinToTray;
             EnableProxyCombo.SelectedIndex = (int)settings.ProxyMode;
             ProxyPortField.Enabled = ProxyHostField.Enabled = settings.ProxyMode == ProxyMode.Enabled;
             ProxyHostField.Text = settings.ProxyHost;
@@ -78,7 +80,6 @@ namespace TransmissionRemoteDotnet
             notificationOnAdditionCheckBox.Checked = settings.StartedBalloon;
             notificationOnCompletionCheckBox.Checked = settings.CompletedBaloon;
             minimizeOnCloseCheckBox.Checked = settings.MinOnClose;
-            minimizeOnCloseCheckBox.Enabled = MinToTrayCheckBox.Checked;
             textBox2.Text = settings.PlinkPath;
             checkBox1.Checked = settings.PlinkEnable;
             textBox3.Text = settings.PlinkCmd;
@@ -242,7 +243,8 @@ namespace TransmissionRemoteDotnet
 
         private void MinToTrayCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            minimizeOnCloseCheckBox.Enabled = MinToTrayCheckBox.Checked;
+            notificationOnAdditionCheckBox.Enabled = notificationOnCompletionCheckBox.Enabled
+                = minimizeOnCloseCheckBox.Enabled = MinToTrayCheckBox.Checked;
         }
 
         private void button2_Click_1(object sender, EventArgs e)
