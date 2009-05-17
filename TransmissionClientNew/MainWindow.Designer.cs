@@ -1,4 +1,4 @@
-﻿namespace TransmissionRemoteDotnet
+namespace TransmissionRemoteDotnet
 {
     partial class MainWindow
     {

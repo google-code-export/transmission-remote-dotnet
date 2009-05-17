@@ -1,4 +1,4 @@
-﻿#if !MONO
+#if !MONO
 using System;
 using System.Drawing;
 using System.Collections;

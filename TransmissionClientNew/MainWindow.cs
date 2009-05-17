@@ -1,4 +1,4 @@
-﻿// transmission-remote-dotnet
+// transmission-remote-dotnet
 // http://code.google.com/p/transmission-remote-dotnet/
 // Copyright (C) 2009 Alan F
 //
@@ -15,7 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

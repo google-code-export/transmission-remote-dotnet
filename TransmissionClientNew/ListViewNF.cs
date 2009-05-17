@@ -15,7 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-﻿/* This class should prevent ListView's flickering. */
+/* This class should prevent ListView's flickering. */
 
 using System;
 using System.Collections.Generic;

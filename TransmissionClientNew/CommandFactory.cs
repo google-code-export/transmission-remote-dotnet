@@ -15,7 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-﻿/* This factory class is responsible for dispatching JSON requests and
+/* This factory class is responsible for dispatching JSON requests and
  * torrent uploads, and also creating an object using the command design
  * pattern which contains the logic for updating the UI. */
 
