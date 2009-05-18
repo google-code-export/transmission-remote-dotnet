@@ -105,10 +105,10 @@ namespace TransmissionRemoteDotnet
             this.label11 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.addProfileButton = new System.Windows.Forms.Button();
             this.removeProfileButton = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.addProfileButton = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.PortField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RefreshRateValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RetryLimitValue)).BeginInit();
@@ -565,6 +565,14 @@ namespace TransmissionRemoteDotnet
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.TabStop = false;
             // 
+            // removeProfileButton
+            // 
+            resources.ApplyResources(this.removeProfileButton, "removeProfileButton");
+            this.removeProfileButton.Image = global::TransmissionRemoteDotnet.Properties.Resources._16x16_remove;
+            this.removeProfileButton.Name = "removeProfileButton";
+            this.removeProfileButton.UseVisualStyleBackColor = true;
+            this.removeProfileButton.Click += new System.EventHandler(this.removeProfileButton_Click);
+            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.addProfileButton);
@@ -572,11 +580,6 @@ namespace TransmissionRemoteDotnet
             resources.ApplyResources(this.groupBox6, "groupBox6");
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.TabStop = false;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
             // addProfileButton
             // 
@@ -586,13 +589,9 @@ namespace TransmissionRemoteDotnet
             this.addProfileButton.UseVisualStyleBackColor = true;
             this.addProfileButton.Click += new System.EventHandler(this.button2_Click);
             // 
-            // removeProfileButton
+            // openFileDialog1
             // 
-            resources.ApplyResources(this.removeProfileButton, "removeProfileButton");
-            this.removeProfileButton.Image = global::TransmissionRemoteDotnet.Properties.Resources._16x16_remove;
-            this.removeProfileButton.Name = "removeProfileButton";
-            this.removeProfileButton.UseVisualStyleBackColor = true;
-            this.removeProfileButton.Click += new System.EventHandler(this.removeProfileButton_Click);
+            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
             // LocalSettingsDialog
             // 
