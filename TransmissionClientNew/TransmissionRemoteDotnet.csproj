@@ -120,6 +120,12 @@
     <Compile Include="LocalSettingsDialog.Designer.cs">
       <DependentUpon>LocalSettingsDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="MoveDataPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MoveDataPrompt.designer.cs">
+      <DependentUpon>MoveDataPrompt.cs</DependentUpon>
+    </Compile>
     <Compile Include="OtherStrings.da-DK.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -302,6 +308,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.zh-CN.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoveDataPrompt.resx">
+      <DependentUpon>MoveDataPrompt.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="OtherStrings.da-DK.resx">

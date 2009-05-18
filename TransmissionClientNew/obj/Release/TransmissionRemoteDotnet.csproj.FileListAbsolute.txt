@@ -149,3 +149,4 @@ C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\T
 C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentPropertiesDialog.ru-RU.resources
 C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.UriPromptWindow.ru-RU.resources
 C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\ru-RU\Transmission Remote.resources.dll
+C:\Users\Alan\Documents\Visual Studio 2008\Projects\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.MoveDataPrompt.resources

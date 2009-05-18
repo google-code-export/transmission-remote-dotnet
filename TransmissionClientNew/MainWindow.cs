@@ -171,7 +171,14 @@ namespace TransmissionRemoteDotnet
                 this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.RemoveAndDelete, new EventHandler(this.removeAndDeleteButton_Click)));
             }
             this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Recheck, new EventHandler(this.recheckTorrentButton_Click)));
-            this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Reannounce, new EventHandler(this.reannounceButton_ButtonClick)));
+            if (Program.DaemonDescriptor.RpcVersion >= 5)
+            {
+                this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Reannounce, new EventHandler(this.reannounceButton_ButtonClick)));
+            }
+            if (Program.DaemonDescriptor.Revision >= 8385)
+            {
+                this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.MoveTorrentData, new EventHandler(this.moveTorrentDataToolStripMenuItem_Click)));
+            }
             this.torrentSelectionMenu.MenuItems.Add(openNetworkShareMenuItem = new MenuItem(OtherStrings.OpenNetworkShare, new EventHandler(this.openNetworkShareButton_Click)));
             this.torrentSelectionMenu.MenuItems.Add(new MenuItem("-"));
             MenuItem downLimitMenuItem = new MenuItem(OtherStrings.DownloadLimit);
@@ -420,9 +427,11 @@ namespace TransmissionRemoteDotnet
                 = speedGraph.Enabled = toolStripSeparator2.Visible 
                 = categoriesPanelToolStripMenuItem.Checked = connected;
             SetRemoteCmdButtonVisible(connected);
-            reannounceButton.Visible = connected && Program.DaemonDescriptor.RpcVersion >= 5;
-            removeAndDeleteButton.Visible = connected && Program.DaemonDescriptor.Version >= 1.5;
-            sessionStatsButton.Visible = connected && Program.DaemonDescriptor.RpcVersion >= 4;
+            TransmissionDaemonDescriptor dd = Program.DaemonDescriptor;
+            reannounceButton.Visible = connected && dd.RpcVersion >= 5;
+            removeAndDeleteButton.Visible = connected && dd.Version >= 1.5;
+            sessionStatsButton.Visible = connected && dd.RpcVersion >= 4;
+            moveTorrentDataToolStripMenuItem.Visible = connected && dd.Revision >= 8385;
         }
 
         public void SetRemoteCmdButtonVisible(bool connected)
@@ -856,8 +865,9 @@ namespace TransmissionRemoteDotnet
                 = startToolStripMenuItem.Enabled = pauseToolStripMenuItem.Enabled
                 = recheckToolStripMenuItem.Enabled = propertiesToolStripMenuItem.Enabled
                 = removeDeleteToolStripMenuItem.Enabled = removeToolStripMenuItem.Enabled
-                = reannounceButton.Enabled = reannounceToolStripMenuItem.Enabled 
-                = openNetworkShareToolStripMenuItem.Enabled = oneOrMore;
+                = reannounceButton.Enabled = reannounceToolStripMenuItem.Enabled
+                = moveTorrentDataToolStripMenuItem.Enabled = openNetworkShareToolStripMenuItem.Enabled
+                = oneOrMore;
         }
 
         private void OneTorrentsSelected(bool one, Torrent t)
@@ -1847,6 +1857,11 @@ namespace TransmissionRemoteDotnet
         private void categoriesPanelToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ToggleCategoriesVisiblePanel();
+        }
+
+        private void moveTorrentDataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new MoveDataPrompt(this.torrentListView.SelectedItems)).ShowDialog();
         }
     }
 }

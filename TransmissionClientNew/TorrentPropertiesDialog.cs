@@ -40,21 +40,15 @@ namespace TransmissionRemoteDotnet
         {
             JsonObject request = Requests.CreateBasicObject(ProtocolConstants.METHOD_TORRENTSET);
             JsonObject arguments = Requests.GetArgObject(request);
-            JsonArray ids = new JsonArray();
-            foreach (ListViewItem item in this.selections)
-            {
-                Torrent t = (Torrent)item.Tag;
-                ids.Put(t.Id);
-            }
-            arguments.Put(ProtocolConstants.KEY_IDS, ids);
+            arguments.Put(ProtocolConstants.KEY_IDS, Toolbox.ListViewSelectionToIdArray(selections));
             arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITUPENABLED, uploadLimitEnableField.Checked ? 1 : 0);
             arguments.Put(ProtocolConstants.FIELD_UPLOADLIMITED, uploadLimitEnableField.Checked ? 1 : 0);
             arguments.Put(ProtocolConstants.FIELD_UPLOADLIMIT, uploadLimitField.Value);
             arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITUP, uploadLimitField.Value);
-            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED, uploadLimitEnableField.Checked ? 1 : 0);
-            arguments.Put(ProtocolConstants.FIELD_DOWNLOADLIMITED, uploadLimitEnableField.Checked ? 1 : 0);
-            arguments.Put(ProtocolConstants.FIELD_DOWNLOADLIMIT, uploadLimitField.Value);
-            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITDOWN, uploadLimitField.Value);
+            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED, downloadLimitEnableField.Checked ? 1 : 0);
+            arguments.Put(ProtocolConstants.FIELD_DOWNLOADLIMITED, downloadLimitEnableField.Checked ? 1 : 0);
+            arguments.Put(ProtocolConstants.FIELD_DOWNLOADLIMIT, downloadLimitField.Value);
+            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITDOWN, downloadLimitField.Value);
             arguments.Put(ProtocolConstants.FIELD_PEERLIMIT, peerLimitValue.Value);
             if (seedRatioLimitValue.Enabled)
                 arguments.Put(ProtocolConstants.FIELD_SEEDRATIOLIMIT, seedRatioLimitValue.Value);

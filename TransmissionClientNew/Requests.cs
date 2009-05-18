@@ -38,6 +38,15 @@ namespace TransmissionRemoteDotnet
             return CreateBasicObject(ProtocolConstants.METHOD_SESSIONGET, ResponseTag.SessionGet);
         }
 
+        public static JsonObject TorrentSetLocation(JsonArray ids, string location, bool move)
+        {
+            JsonObject request = CreateBasicObject(ProtocolConstants.METHOD_SESSIONGET, ResponseTag.DoNothing);
+            request.Put(ProtocolConstants.KEY_IDS, ids);
+            request.Put(ProtocolConstants.FIELD_LOCATION, location);
+            request.Put(ProtocolConstants.FIELD_MOVE, move);
+            return request;
+        }
+
         public static JsonObject Generic(string method, JsonArray ids)
         {
             JsonObject request = CreateBasicObject(method);

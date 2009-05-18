@@ -511,6 +511,33 @@ namespace TransmissionRemoteDotnet {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Move multiple torrent data.
+        /// </summary>
+        internal static string MoveMultipleTorrents {
+            get {
+                return ResourceManager.GetString("MoveMultipleTorrents", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Move torrent data.
+        /// </summary>
+        internal static string MoveTorrentData {
+            get {
+                return ResourceManager.GetString("MoveTorrentData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Move {0}.
+        /// </summary>
+        internal static string MoveX {
+            get {
+                return ResourceManager.GetString("MoveX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You must be connected to add torrents. Would you like to connect now?.
         /// </summary>
         internal static string MustBeConnected {

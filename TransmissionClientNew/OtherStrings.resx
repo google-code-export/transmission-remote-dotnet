@@ -415,4 +415,13 @@
   <data name="NewTorrentIs" xml:space="preserve">
     <value>New torrent {0}.</value>
   </data>
+  <data name="MoveMultipleTorrents" xml:space="preserve">
+    <value>Move multiple torrent data</value>
+  </data>
+  <data name="MoveTorrentData" xml:space="preserve">
+    <value>Move torrent data</value>
+  </data>
+  <data name="MoveX" xml:space="preserve">
+    <value>Move {0}</value>
+  </data>
 </root>

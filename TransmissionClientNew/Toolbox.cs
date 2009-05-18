@@ -75,6 +75,17 @@ namespace TransmissionRemoteDotnet
             }
         }
 
+        public static JsonArray ListViewSelectionToIdArray(ListView.SelectedListViewItemCollection selections)
+        {
+            JsonArray ids = new JsonArray();
+            foreach (ListViewItem item in selections)
+            {
+                Torrent t = (Torrent)item.Tag;
+                ids.Put(t.Id);
+            }
+            return ids;
+        }
+
         public static void CopyListViewToClipboard(ListView listView)
         {
             StringBuilder sb = new StringBuilder();

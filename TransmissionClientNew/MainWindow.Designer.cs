@@ -33,12 +33,29 @@ namespace TransmissionRemoteDotnet
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.torrentAndTabsSplitContainer = new System.Windows.Forms.SplitContainer();
             this.mainVerticalSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.stateListBox = new TransmissionRemoteDotnet.GListBox();
+            this.torrentListView = new TransmissionRemoteDotnet.ListViewNF();
+            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader8 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader9 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader10 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader11 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader12 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader13 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader14 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader15 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader16 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader18 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader19 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader30 = new System.Windows.Forms.ColumnHeader();
             this.torrentTabControl = new System.Windows.Forms.TabControl();
             this.generalTabPage = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.downloadProgressLabel = new System.Windows.Forms.Label();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.piecesGraph = new TransmissionRemoteDotnet.PiecesGraph();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.percentageLabel = new System.Windows.Forms.Label();
             this.generalTorrentNameGroupBox = new System.Windows.Forms.GroupBox();
@@ -78,10 +95,31 @@ namespace TransmissionRemoteDotnet
             this.timeElapsedLabel = new System.Windows.Forms.Label();
             this.trackersTabPage = new System.Windows.Forms.TabPage();
             this.trackersTorrentNameGroupBox = new System.Windows.Forms.GroupBox();
+            this.trackersListView = new TransmissionRemoteDotnet.ListViewNF();
+            this.columnHeader22 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader20 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader21 = new System.Windows.Forms.ColumnHeader();
             this.filesTabPage = new System.Windows.Forms.TabPage();
             this.filesTorrentNameGroupBox = new System.Windows.Forms.GroupBox();
+            this.filesListView = new TransmissionRemoteDotnet.ListViewNF();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader32 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader17 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.peersTabPage = new System.Windows.Forms.TabPage();
             this.peersTorrentNameGroupBox = new System.Windows.Forms.GroupBox();
+            this.peersListView = new TransmissionRemoteDotnet.ListViewNF();
+            this.columnHeader23 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader24 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader25 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader31 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader26 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader27 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader28 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader29 = new System.Windows.Forms.ColumnHeader();
             this.speedTabPage = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -90,6 +128,7 @@ namespace TransmissionRemoteDotnet
             this.speedResComboBox = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.speedGraph = new CustomUIControls.Graphing.C2DPushGraph();
             this.tabControlImageList = new System.Windows.Forms.ImageList(this.components);
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -139,6 +178,7 @@ namespace TransmissionRemoteDotnet
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeDeleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reannounceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.moveTorrentDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openNetworkShareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.startAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -159,45 +199,6 @@ namespace TransmissionRemoteDotnet
             this.filesTimer = new System.Windows.Forms.Timer(this.components);
             this.filesWorker = new System.ComponentModel.BackgroundWorker();
             this.refreshElapsedTimer = new System.Windows.Forms.Timer(this.components);
-            this.stateListBox = new TransmissionRemoteDotnet.GListBox();
-            this.torrentListView = new TransmissionRemoteDotnet.ListViewNF();
-            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader8 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader9 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader10 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader11 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader12 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader13 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader14 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader15 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader16 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader18 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader19 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader30 = new System.Windows.Forms.ColumnHeader();
-            this.piecesGraph = new TransmissionRemoteDotnet.PiecesGraph();
-            this.trackersListView = new TransmissionRemoteDotnet.ListViewNF();
-            this.columnHeader22 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader20 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader21 = new System.Windows.Forms.ColumnHeader();
-            this.filesListView = new TransmissionRemoteDotnet.ListViewNF();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader32 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader17 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
-            this.peersListView = new TransmissionRemoteDotnet.ListViewNF();
-            this.columnHeader23 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader24 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader25 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader31 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader26 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader27 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader28 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader29 = new System.Windows.Forms.ColumnHeader();
-            this.speedGraph = new CustomUIControls.Graphing.C2DPushGraph();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -284,6 +285,100 @@ namespace TransmissionRemoteDotnet
             // 
             this.mainVerticalSplitContainer.Panel2.Controls.Add(this.torrentListView);
             // 
+            // stateListBox
+            // 
+            resources.ApplyResources(this.stateListBox, "stateListBox");
+            this.stateListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.stateListBox.FormattingEnabled = true;
+            this.stateListBox.ImageList = null;
+            this.stateListBox.Name = "stateListBox";
+            this.stateListBox.SelectedIndexChanged += new System.EventHandler(this.stateListBox_SelectedIndexChanged);
+            // 
+            // torrentListView
+            // 
+            this.torrentListView.AllowColumnReorder = true;
+            this.torrentListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10,
+            this.columnHeader11,
+            this.columnHeader12,
+            this.columnHeader13,
+            this.columnHeader14,
+            this.columnHeader15,
+            this.columnHeader16,
+            this.columnHeader18,
+            this.columnHeader19,
+            this.columnHeader30});
+            resources.ApplyResources(this.torrentListView, "torrentListView");
+            this.torrentListView.FullRowSelect = true;
+            this.torrentListView.Name = "torrentListView";
+            this.torrentListView.ShowItemToolTips = true;
+            this.torrentListView.UseCompatibleStateImageBehavior = false;
+            this.torrentListView.View = System.Windows.Forms.View.Details;
+            this.torrentListView.SelectedIndexChanged += new System.EventHandler(this.torrentListView_SelectedIndexChanged);
+            this.torrentListView.DoubleClick += new System.EventHandler(this.ShowTorrentPropsHandler);
+            this.torrentListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.torrentListView_ColumnClick);
+            this.torrentListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.torrentListView_KeyDown);
+            // 
+            // columnHeader6
+            // 
+            resources.ApplyResources(this.columnHeader6, "columnHeader6");
+            // 
+            // columnHeader7
+            // 
+            resources.ApplyResources(this.columnHeader7, "columnHeader7");
+            // 
+            // columnHeader8
+            // 
+            resources.ApplyResources(this.columnHeader8, "columnHeader8");
+            // 
+            // columnHeader9
+            // 
+            resources.ApplyResources(this.columnHeader9, "columnHeader9");
+            // 
+            // columnHeader10
+            // 
+            resources.ApplyResources(this.columnHeader10, "columnHeader10");
+            // 
+            // columnHeader11
+            // 
+            resources.ApplyResources(this.columnHeader11, "columnHeader11");
+            // 
+            // columnHeader12
+            // 
+            resources.ApplyResources(this.columnHeader12, "columnHeader12");
+            // 
+            // columnHeader13
+            // 
+            resources.ApplyResources(this.columnHeader13, "columnHeader13");
+            // 
+            // columnHeader14
+            // 
+            resources.ApplyResources(this.columnHeader14, "columnHeader14");
+            // 
+            // columnHeader15
+            // 
+            resources.ApplyResources(this.columnHeader15, "columnHeader15");
+            // 
+            // columnHeader16
+            // 
+            resources.ApplyResources(this.columnHeader16, "columnHeader16");
+            // 
+            // columnHeader18
+            // 
+            resources.ApplyResources(this.columnHeader18, "columnHeader18");
+            // 
+            // columnHeader19
+            // 
+            resources.ApplyResources(this.columnHeader19, "columnHeader19");
+            // 
+            // columnHeader30
+            // 
+            resources.ApplyResources(this.columnHeader30, "columnHeader30");
+            // 
             // torrentTabControl
             // 
             this.torrentTabControl.Controls.Add(this.generalTabPage);
@@ -351,6 +446,13 @@ namespace TransmissionRemoteDotnet
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.percentageLabel);
+            // 
+            // piecesGraph
+            // 
+            this.piecesGraph.BackColor = System.Drawing.Color.LightSteelBlue;
+            resources.ApplyResources(this.piecesGraph, "piecesGraph");
+            this.piecesGraph.ForeColor = System.Drawing.Color.LimeGreen;
+            this.piecesGraph.Name = "piecesGraph";
             // 
             // progressBar
             // 
@@ -587,6 +689,32 @@ namespace TransmissionRemoteDotnet
             this.trackersTorrentNameGroupBox.Name = "trackersTorrentNameGroupBox";
             this.trackersTorrentNameGroupBox.TabStop = false;
             // 
+            // trackersListView
+            // 
+            this.trackersListView.AllowColumnReorder = true;
+            this.trackersListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader22,
+            this.columnHeader20,
+            this.columnHeader21});
+            resources.ApplyResources(this.trackersListView, "trackersListView");
+            this.trackersListView.FullRowSelect = true;
+            this.trackersListView.Name = "trackersListView";
+            this.trackersListView.UseCompatibleStateImageBehavior = false;
+            this.trackersListView.View = System.Windows.Forms.View.Details;
+            this.trackersListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.torrentDetailsTabListView_KeyDown);
+            // 
+            // columnHeader22
+            // 
+            resources.ApplyResources(this.columnHeader22, "columnHeader22");
+            // 
+            // columnHeader20
+            // 
+            resources.ApplyResources(this.columnHeader20, "columnHeader20");
+            // 
+            // columnHeader21
+            // 
+            resources.ApplyResources(this.columnHeader21, "columnHeader21");
+            // 
             // filesTabPage
             // 
             this.filesTabPage.Controls.Add(this.filesTorrentNameGroupBox);
@@ -601,6 +729,55 @@ namespace TransmissionRemoteDotnet
             this.filesTorrentNameGroupBox.Name = "filesTorrentNameGroupBox";
             this.filesTorrentNameGroupBox.TabStop = false;
             // 
+            // filesListView
+            // 
+            this.filesListView.AllowColumnReorder = true;
+            this.filesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader32,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader17,
+            this.columnHeader5});
+            resources.ApplyResources(this.filesListView, "filesListView");
+            this.filesListView.FullRowSelect = true;
+            this.filesListView.Name = "filesListView";
+            this.filesListView.ShowItemToolTips = true;
+            this.filesListView.UseCompatibleStateImageBehavior = false;
+            this.filesListView.View = System.Windows.Forms.View.Details;
+            this.filesListView.SelectedIndexChanged += new System.EventHandler(this.filesListView_SelectedIndexChanged);
+            this.filesListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.filesListView_ColumnClick);
+            this.filesListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.torrentDetailsTabListView_KeyDown);
+            // 
+            // columnHeader1
+            // 
+            resources.ApplyResources(this.columnHeader1, "columnHeader1");
+            // 
+            // columnHeader32
+            // 
+            resources.ApplyResources(this.columnHeader32, "columnHeader32");
+            // 
+            // columnHeader2
+            // 
+            resources.ApplyResources(this.columnHeader2, "columnHeader2");
+            // 
+            // columnHeader3
+            // 
+            resources.ApplyResources(this.columnHeader3, "columnHeader3");
+            // 
+            // columnHeader4
+            // 
+            resources.ApplyResources(this.columnHeader4, "columnHeader4");
+            // 
+            // columnHeader17
+            // 
+            resources.ApplyResources(this.columnHeader17, "columnHeader17");
+            // 
+            // columnHeader5
+            // 
+            resources.ApplyResources(this.columnHeader5, "columnHeader5");
+            // 
             // peersTabPage
             // 
             this.peersTabPage.Controls.Add(this.peersTorrentNameGroupBox);
@@ -614,6 +791,59 @@ namespace TransmissionRemoteDotnet
             resources.ApplyResources(this.peersTorrentNameGroupBox, "peersTorrentNameGroupBox");
             this.peersTorrentNameGroupBox.Name = "peersTorrentNameGroupBox";
             this.peersTorrentNameGroupBox.TabStop = false;
+            // 
+            // peersListView
+            // 
+            this.peersListView.AllowColumnReorder = true;
+            this.peersListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader23,
+            this.columnHeader24,
+            this.columnHeader25,
+            this.columnHeader31,
+            this.columnHeader26,
+            this.columnHeader27,
+            this.columnHeader28,
+            this.columnHeader29});
+            resources.ApplyResources(this.peersListView, "peersListView");
+            this.peersListView.FullRowSelect = true;
+            this.peersListView.Name = "peersListView";
+            this.peersListView.ShowItemToolTips = true;
+            this.peersListView.UseCompatibleStateImageBehavior = false;
+            this.peersListView.View = System.Windows.Forms.View.Details;
+            this.peersListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.peersListView_ColumnClick);
+            this.peersListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.torrentDetailsTabListView_KeyDown);
+            // 
+            // columnHeader23
+            // 
+            resources.ApplyResources(this.columnHeader23, "columnHeader23");
+            // 
+            // columnHeader24
+            // 
+            resources.ApplyResources(this.columnHeader24, "columnHeader24");
+            // 
+            // columnHeader25
+            // 
+            resources.ApplyResources(this.columnHeader25, "columnHeader25");
+            // 
+            // columnHeader31
+            // 
+            resources.ApplyResources(this.columnHeader31, "columnHeader31");
+            // 
+            // columnHeader26
+            // 
+            resources.ApplyResources(this.columnHeader26, "columnHeader26");
+            // 
+            // columnHeader27
+            // 
+            resources.ApplyResources(this.columnHeader27, "columnHeader27");
+            // 
+            // columnHeader28
+            // 
+            resources.ApplyResources(this.columnHeader28, "columnHeader28");
+            // 
+            // columnHeader29
+            // 
+            resources.ApplyResources(this.columnHeader29, "columnHeader29");
             // 
             // speedTabPage
             // 
@@ -687,6 +917,25 @@ namespace TransmissionRemoteDotnet
             this.label19.BackColor = System.Drawing.Color.MidnightBlue;
             this.label19.ForeColor = System.Drawing.Color.Yellow;
             this.label19.Name = "label19";
+            // 
+            // speedGraph
+            // 
+            this.speedGraph.AutoAdjustPeek = true;
+            this.speedGraph.BackColor = System.Drawing.Color.MidnightBlue;
+            resources.ApplyResources(this.speedGraph, "speedGraph");
+            this.speedGraph.GridColor = System.Drawing.Color.LightBlue;
+            this.speedGraph.GridDashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.speedGraph.GridSize = ((ushort)(50));
+            this.speedGraph.HighQuality = true;
+            this.speedGraph.LineInterval = 5F;
+            this.speedGraph.MaxLabel = "Max";
+            this.speedGraph.MaxPeekMagnitude = 100;
+            this.speedGraph.MinLabel = "";
+            this.speedGraph.MinPeekMagnitude = 0;
+            this.speedGraph.Name = "speedGraph";
+            this.speedGraph.ShowGrid = true;
+            this.speedGraph.ShowLabels = true;
+            this.speedGraph.TextColor = System.Drawing.Color.White;
             // 
             // tabControlImageList
             // 
@@ -999,6 +1248,7 @@ namespace TransmissionRemoteDotnet
             this.removeToolStripMenuItem,
             this.removeDeleteToolStripMenuItem,
             this.reannounceToolStripMenuItem,
+            this.moveTorrentDataToolStripMenuItem,
             this.openNetworkShareToolStripMenuItem,
             this.toolStripSeparator5,
             this.startAllToolStripMenuItem,
@@ -1048,6 +1298,12 @@ namespace TransmissionRemoteDotnet
             resources.ApplyResources(this.reannounceToolStripMenuItem, "reannounceToolStripMenuItem");
             this.reannounceToolStripMenuItem.Name = "reannounceToolStripMenuItem";
             this.reannounceToolStripMenuItem.Click += new System.EventHandler(this.reannounceButton_ButtonClick);
+            // 
+            // moveTorrentDataToolStripMenuItem
+            // 
+            resources.ApplyResources(this.moveTorrentDataToolStripMenuItem, "moveTorrentDataToolStripMenuItem");
+            this.moveTorrentDataToolStripMenuItem.Name = "moveTorrentDataToolStripMenuItem";
+            this.moveTorrentDataToolStripMenuItem.Click += new System.EventHandler(this.moveTorrentDataToolStripMenuItem_Click);
             // 
             // openNetworkShareToolStripMenuItem
             // 
@@ -1170,254 +1426,6 @@ namespace TransmissionRemoteDotnet
             // 
             this.refreshElapsedTimer.Interval = 1000;
             this.refreshElapsedTimer.Tick += new System.EventHandler(this.refreshElapsedTimer_Tick);
-            // 
-            // stateListBox
-            // 
-            resources.ApplyResources(this.stateListBox, "stateListBox");
-            this.stateListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.stateListBox.FormattingEnabled = true;
-            this.stateListBox.ImageList = null;
-            this.stateListBox.Name = "stateListBox";
-            this.stateListBox.SelectedIndexChanged += new System.EventHandler(this.stateListBox_SelectedIndexChanged);
-            // 
-            // torrentListView
-            // 
-            this.torrentListView.AllowColumnReorder = true;
-            this.torrentListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader9,
-            this.columnHeader10,
-            this.columnHeader11,
-            this.columnHeader12,
-            this.columnHeader13,
-            this.columnHeader14,
-            this.columnHeader15,
-            this.columnHeader16,
-            this.columnHeader18,
-            this.columnHeader19,
-            this.columnHeader30});
-            resources.ApplyResources(this.torrentListView, "torrentListView");
-            this.torrentListView.FullRowSelect = true;
-            this.torrentListView.Name = "torrentListView";
-            this.torrentListView.ShowItemToolTips = true;
-            this.torrentListView.UseCompatibleStateImageBehavior = false;
-            this.torrentListView.View = System.Windows.Forms.View.Details;
-            this.torrentListView.SelectedIndexChanged += new System.EventHandler(this.torrentListView_SelectedIndexChanged);
-            this.torrentListView.DoubleClick += new System.EventHandler(this.ShowTorrentPropsHandler);
-            this.torrentListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.torrentListView_ColumnClick);
-            this.torrentListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.torrentListView_KeyDown);
-            // 
-            // columnHeader6
-            // 
-            resources.ApplyResources(this.columnHeader6, "columnHeader6");
-            // 
-            // columnHeader7
-            // 
-            resources.ApplyResources(this.columnHeader7, "columnHeader7");
-            // 
-            // columnHeader8
-            // 
-            resources.ApplyResources(this.columnHeader8, "columnHeader8");
-            // 
-            // columnHeader9
-            // 
-            resources.ApplyResources(this.columnHeader9, "columnHeader9");
-            // 
-            // columnHeader10
-            // 
-            resources.ApplyResources(this.columnHeader10, "columnHeader10");
-            // 
-            // columnHeader11
-            // 
-            resources.ApplyResources(this.columnHeader11, "columnHeader11");
-            // 
-            // columnHeader12
-            // 
-            resources.ApplyResources(this.columnHeader12, "columnHeader12");
-            // 
-            // columnHeader13
-            // 
-            resources.ApplyResources(this.columnHeader13, "columnHeader13");
-            // 
-            // columnHeader14
-            // 
-            resources.ApplyResources(this.columnHeader14, "columnHeader14");
-            // 
-            // columnHeader15
-            // 
-            resources.ApplyResources(this.columnHeader15, "columnHeader15");
-            // 
-            // columnHeader16
-            // 
-            resources.ApplyResources(this.columnHeader16, "columnHeader16");
-            // 
-            // columnHeader18
-            // 
-            resources.ApplyResources(this.columnHeader18, "columnHeader18");
-            // 
-            // columnHeader19
-            // 
-            resources.ApplyResources(this.columnHeader19, "columnHeader19");
-            // 
-            // columnHeader30
-            // 
-            resources.ApplyResources(this.columnHeader30, "columnHeader30");
-            // 
-            // piecesGraph
-            // 
-            this.piecesGraph.BackColor = System.Drawing.Color.LightSteelBlue;
-            resources.ApplyResources(this.piecesGraph, "piecesGraph");
-            this.piecesGraph.ForeColor = System.Drawing.Color.LimeGreen;
-            this.piecesGraph.Name = "piecesGraph";
-            // 
-            // trackersListView
-            // 
-            this.trackersListView.AllowColumnReorder = true;
-            this.trackersListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader22,
-            this.columnHeader20,
-            this.columnHeader21});
-            resources.ApplyResources(this.trackersListView, "trackersListView");
-            this.trackersListView.FullRowSelect = true;
-            this.trackersListView.Name = "trackersListView";
-            this.trackersListView.UseCompatibleStateImageBehavior = false;
-            this.trackersListView.View = System.Windows.Forms.View.Details;
-            this.trackersListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.torrentDetailsTabListView_KeyDown);
-            // 
-            // columnHeader22
-            // 
-            resources.ApplyResources(this.columnHeader22, "columnHeader22");
-            // 
-            // columnHeader20
-            // 
-            resources.ApplyResources(this.columnHeader20, "columnHeader20");
-            // 
-            // columnHeader21
-            // 
-            resources.ApplyResources(this.columnHeader21, "columnHeader21");
-            // 
-            // filesListView
-            // 
-            this.filesListView.AllowColumnReorder = true;
-            this.filesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader32,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader17,
-            this.columnHeader5});
-            resources.ApplyResources(this.filesListView, "filesListView");
-            this.filesListView.FullRowSelect = true;
-            this.filesListView.Name = "filesListView";
-            this.filesListView.ShowItemToolTips = true;
-            this.filesListView.UseCompatibleStateImageBehavior = false;
-            this.filesListView.View = System.Windows.Forms.View.Details;
-            this.filesListView.SelectedIndexChanged += new System.EventHandler(this.filesListView_SelectedIndexChanged);
-            this.filesListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.filesListView_ColumnClick);
-            this.filesListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.torrentDetailsTabListView_KeyDown);
-            // 
-            // columnHeader1
-            // 
-            resources.ApplyResources(this.columnHeader1, "columnHeader1");
-            // 
-            // columnHeader32
-            // 
-            resources.ApplyResources(this.columnHeader32, "columnHeader32");
-            // 
-            // columnHeader2
-            // 
-            resources.ApplyResources(this.columnHeader2, "columnHeader2");
-            // 
-            // columnHeader3
-            // 
-            resources.ApplyResources(this.columnHeader3, "columnHeader3");
-            // 
-            // columnHeader4
-            // 
-            resources.ApplyResources(this.columnHeader4, "columnHeader4");
-            // 
-            // columnHeader17
-            // 
-            resources.ApplyResources(this.columnHeader17, "columnHeader17");
-            // 
-            // columnHeader5
-            // 
-            resources.ApplyResources(this.columnHeader5, "columnHeader5");
-            // 
-            // peersListView
-            // 
-            this.peersListView.AllowColumnReorder = true;
-            this.peersListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader23,
-            this.columnHeader24,
-            this.columnHeader25,
-            this.columnHeader31,
-            this.columnHeader26,
-            this.columnHeader27,
-            this.columnHeader28,
-            this.columnHeader29});
-            resources.ApplyResources(this.peersListView, "peersListView");
-            this.peersListView.FullRowSelect = true;
-            this.peersListView.Name = "peersListView";
-            this.peersListView.ShowItemToolTips = true;
-            this.peersListView.UseCompatibleStateImageBehavior = false;
-            this.peersListView.View = System.Windows.Forms.View.Details;
-            this.peersListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.peersListView_ColumnClick);
-            this.peersListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.torrentDetailsTabListView_KeyDown);
-            // 
-            // columnHeader23
-            // 
-            resources.ApplyResources(this.columnHeader23, "columnHeader23");
-            // 
-            // columnHeader24
-            // 
-            resources.ApplyResources(this.columnHeader24, "columnHeader24");
-            // 
-            // columnHeader25
-            // 
-            resources.ApplyResources(this.columnHeader25, "columnHeader25");
-            // 
-            // columnHeader31
-            // 
-            resources.ApplyResources(this.columnHeader31, "columnHeader31");
-            // 
-            // columnHeader26
-            // 
-            resources.ApplyResources(this.columnHeader26, "columnHeader26");
-            // 
-            // columnHeader27
-            // 
-            resources.ApplyResources(this.columnHeader27, "columnHeader27");
-            // 
-            // columnHeader28
-            // 
-            resources.ApplyResources(this.columnHeader28, "columnHeader28");
-            // 
-            // columnHeader29
-            // 
-            resources.ApplyResources(this.columnHeader29, "columnHeader29");
-            // 
-            // speedGraph
-            // 
-            this.speedGraph.AutoAdjustPeek = true;
-            this.speedGraph.BackColor = System.Drawing.Color.MidnightBlue;
-            resources.ApplyResources(this.speedGraph, "speedGraph");
-            this.speedGraph.GridColor = System.Drawing.Color.LightBlue;
-            this.speedGraph.GridDashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.speedGraph.GridSize = ((ushort)(50));
-            this.speedGraph.HighQuality = true;
-            this.speedGraph.LineInterval = 5F;
-            this.speedGraph.MaxLabel = "Max";
-            this.speedGraph.MaxPeekMagnitude = 100;
-            this.speedGraph.MinLabel = "";
-            this.speedGraph.MinPeekMagnitude = 0;
-            this.speedGraph.Name = "speedGraph";
-            this.speedGraph.ShowGrid = true;
-            this.speedGraph.ShowLabels = true;
-            this.speedGraph.TextColor = System.Drawing.Color.White;
             // 
             // MainWindow
             // 
@@ -1660,5 +1668,6 @@ namespace TransmissionRemoteDotnet
         private System.Windows.Forms.ColumnHeader columnHeader32;
         private System.Windows.Forms.ToolStripMenuItem reannounceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openNetworkShareToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem moveTorrentDataToolStripMenuItem;
     }
 }
