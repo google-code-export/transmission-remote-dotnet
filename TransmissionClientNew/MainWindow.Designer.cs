@@ -435,7 +435,7 @@ namespace TransmissionRemoteDotnet
             // splitContainer5
             // 
             resources.ApplyResources(this.splitContainer5, "splitContainer5");
-            this.splitContainer5.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer5.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.splitContainer5.Name = "splitContainer5";
             // 
             // splitContainer5.Panel1
