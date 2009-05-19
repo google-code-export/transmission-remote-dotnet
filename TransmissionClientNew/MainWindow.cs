@@ -1038,6 +1038,9 @@ namespace TransmissionRemoteDotnet
                 lvwColumnSorter.Order = SortOrder.Ascending;
             }
             this.torrentListView.Sort();
+#if !MONO
+            this.torrentListView.SetSortIcon(lvwColumnSorter.SortColumn, lvwColumnSorter.Order);
+#endif
             Toolbox.StripeListView(torrentListView);
         }
 
@@ -1592,6 +1595,9 @@ namespace TransmissionRemoteDotnet
                 filesLvwColumnSorter.Order = SortOrder.Ascending;
             }
             this.filesListView.Sort();
+#if !MONO
+            this.filesListView.SetSortIcon(filesLvwColumnSorter.SortColumn, filesLvwColumnSorter.Order);
+#endif
             Toolbox.StripeListView(filesListView);
         }
 
@@ -1607,6 +1613,9 @@ namespace TransmissionRemoteDotnet
                 peersLvwColumnSorter.Order = SortOrder.Ascending;
             }
             this.peersListView.Sort();
+#if !MONO
+            this.peersListView.SetSortIcon(peersLvwColumnSorter.SortColumn, peersLvwColumnSorter.Order);
+#endif
             Toolbox.StripeListView(peersListView);
         }
 
