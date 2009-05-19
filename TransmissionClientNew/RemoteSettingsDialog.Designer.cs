@@ -347,7 +347,7 @@ namespace TransmissionRemoteDotnet
             // 
             resources.ApplyResources(this.timeConstaintEndMinutes, "timeConstaintEndMinutes");
             this.timeConstaintEndMinutes.Maximum = new decimal(new int[] {
-            60,
+            59,
             0,
             0,
             0});
@@ -367,7 +367,7 @@ namespace TransmissionRemoteDotnet
             // 
             resources.ApplyResources(this.timeConstaintBeginMinutes, "timeConstaintBeginMinutes");
             this.timeConstaintBeginMinutes.Maximum = new decimal(new int[] {
-            60,
+            59,
             0,
             0,
             0});
@@ -421,11 +421,21 @@ namespace TransmissionRemoteDotnet
             // altUploadLimitField
             // 
             resources.ApplyResources(this.altUploadLimitField, "altUploadLimitField");
+            this.altUploadLimitField.Maximum = new decimal(new int[] {
+            1048576,
+            0,
+            0,
+            0});
             this.altUploadLimitField.Name = "altUploadLimitField";
             // 
             // altDownloadLimitField
             // 
             resources.ApplyResources(this.altDownloadLimitField, "altDownloadLimitField");
+            this.altDownloadLimitField.Maximum = new decimal(new int[] {
+            1048576,
+            0,
+            0,
+            0});
             this.altDownloadLimitField.Name = "altDownloadLimitField";
             // 
             // altTimeConstraintEnabled

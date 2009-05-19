@@ -147,8 +147,10 @@ namespace TransmissionRemoteDotnet
                     timeConstaintBeginMinutes.Enabled =
                     session.Contains(ProtocolConstants.FIELD_ALTSPEEDENABLED))
                 {
-                    altDownloadLimitField.Value = Toolbox.ToInt(session[ProtocolConstants.FIELD_ALTSPEEDDOWN]);
-                    altUploadLimitField.Value = Toolbox.ToInt(session[ProtocolConstants.FIELD_ALTSPEEDUP]);
+                    int altDown = Toolbox.ToInt(session[ProtocolConstants.FIELD_ALTSPEEDDOWN]);
+                    altDownloadLimitField.Value = altDown <= altDownloadLimitField.Maximum ? altDown : 0;
+                    int altUp = Toolbox.ToInt(session[ProtocolConstants.FIELD_ALTSPEEDUP]);
+                    altUploadLimitField.Value = altUp <= altUploadLimitField.Maximum ? altUp : 0;
                     altDownloadLimitField.Enabled = altUploadLimitField.Enabled = altSpeedLimitEnable.Checked = Toolbox.ToBool(session[ProtocolConstants.FIELD_ALTSPEEDENABLED]);
                     timeConstaintBeginMinutes.Enabled = timeConstaintEndMinutes.Enabled = timeConstraintBeginHours.Enabled = timeConstraintEndHours.Enabled = altTimeConstraintEnabled.Checked = Toolbox.ToBool(session["alt-speed-time-enabled"]);
                     int altSpeedTimeBegin = Toolbox.ToInt(session[ProtocolConstants.FIELD_ALTSPEEDTIMEBEGIN]);
