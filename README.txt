@@ -21,13 +21,13 @@ CREDITS AND ACKNOWLEDGEMENTS
  * Első András has made a number of notable contributions including SSL, speed graphs, GeoIP support and many small patches.
  * Thank you to all the following users kind enough to translate this application:
     * Romaric R. for the French translation.
-	* benba for the German translation.
-	* drphrozen for the Danish translation.
-	* Első András for the Hungarian translation.
-	* liuzhiyi for the Chinese translation.
-    * Woodzu for the Polish translation.
-	* RayTracer for the Turkish translation.
-	* Alexey Komarov for the Russian translation.
+    * benba for the German translation.
+    * drphrozen for the Danish translation.
+    * Első András for the Hungarian translation.
+    * liuzhiyi for the Chinese translation.
+    * Woodzu and joannacichon83 for the Polish translation.
+    * RayTracer for the Turkish translation.
+    * Alexey Komarov for the Russian translation.
 	
 ABOUT
 ----------------------------

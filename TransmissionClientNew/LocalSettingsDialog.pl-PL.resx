@@ -124,28 +124,28 @@
     <value>Anuluj</value>
   </data>
   <data name="AutoConnectCheckBox.Text" xml:space="preserve">
-    <value>Auto connect</value>
+    <value>Autopołączenie</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Częstotliwość odświeżania:</value>
+    <value>Tempo Odświeżania:</value>
   </data>
   <data name="UseSSLCheckBox.Text" xml:space="preserve">
-    <value>Używaj SSL</value>
+    <value>Bezpieczne (użyj SSL)</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
-    <value>Limit prób:</value>
+    <value>Ilość prób:</value>
   </data>
   <data name="MinToTrayCheckBox.Text" xml:space="preserve">
-    <value>Pokaż ikonę na posku zadań</value>
+    <value>Ikona w trayu</value>
   </data>
   <data name="ProxyAuthEnableCheckBox.Text" xml:space="preserve">
-    <value>Wymaga uwieżytelnienia</value>
+    <value>Autoryzacja</value>
   </data>
   <data name="EnableProxyCombo.Items1" xml:space="preserve">
-    <value>Włącz</value>
+    <value>Włączone</value>
   </data>
   <data name="EnableProxyCombo.Items2" xml:space="preserve">
-    <value>Wyłącz</value>
+    <value>Wyłączone</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Port:</value>
@@ -160,37 +160,52 @@
     <value>Host:</value>
   </data>
   <data name="StartPausedCheckBox.Text" xml:space="preserve">
-    <value>Wznawiaj wstrzymane torrenty po uruchomieniu</value>
+    <value>Uruchom wstrzymane torrenty</value>
   </data>
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Serwer</value>
   </data>
-  <data name="minimizeOnCloseCheckBox.Text" xml:space="preserve">
-    <value>Minimalizuj zamiast zamykać</value>
-  </data>
-  <data name="notificationOnAdditionCheckBox.Text" xml:space="preserve">
-    <value>Powiadamiaj o dodaniu</value>
-  </data>
-  <data name="notificationOnCompletionCheckBox.Text" xml:space="preserve">
-    <value>Powiadamiaj o ukończeniu</value>
-  </data>
   <data name="tabPage4.Text" xml:space="preserve">
     <value>Ogólne</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Autoryzacja</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Proxy</value>
+  </data>
+  <data name="tabPage5.Text" xml:space="preserve">
+    <value>SSH</value>
+  </data>
+  <data name="sambaShareEnabledCheckBox.Text" xml:space="preserve">
+    <value>Folder sieciowy torrentów: </value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Elementy menu limitu pobierania:</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Elementy menu limitu wysyłania:</value>
+  </data>
+  <data name="tabPage6.Text" xml:space="preserve">
+    <value>Różne</value>
+  </data>
+  <data name="minimizeOnCloseCheckBox.Text" xml:space="preserve">
+    <value>Minimalizuj przy zamykaniu</value>
+  </data>
+  <data name="notificationOnAdditionCheckBox.Text" xml:space="preserve">
+    <value>Powiadomienie o dodaniu zadania</value>
+  </data>
+  <data name="notificationOnCompletionCheckBox.Text" xml:space="preserve">
+    <value>Powiadomienie o zakończeniu zadania</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Hasło:</value>
   </data>
   <data name="EnableAuthCheckBox.Text" xml:space="preserve">
-    <value>Używaj uwierzytelniania</value>
+    <value>Włącz autoryzację</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Użytkownik:</value>
-  </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>Uwierzytelnianie</value>
-  </data>
-  <data name="tabPage3.Text" xml:space="preserve">
-    <value>Proxy</value>
   </data>
   <data name="label15.Text" xml:space="preserve">
     <value>Pomoc: </value>
@@ -199,41 +214,35 @@
     <value>http://code.google.com/p/transmission-remote-dotnet/wiki/SSH</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
-    <value>Polecenie: </value>
+    <value>Komenda: </value>
   </data>
   <data name="checkBox1.Text" xml:space="preserve">
-    <value>Wyświetl przycisk poleceń zdalnych</value>
+    <value>Pokaż przycisk komend zdalnych</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
     <value>plink.exe:</value>
   </data>
   <data name="button2.Text" xml:space="preserve">
-    <value>Przeglądaj</value>
-  </data>
-  <data name="tabPage5.Text" xml:space="preserve">
-    <value>SSH</value>
-  </data>
-  <data name="label17.Text" xml:space="preserve">
-    <value>Składniki menu limitów Pobierania:</value>
-  </data>
-  <data name="label16.Text" xml:space="preserve">
-    <value>Składniki menu limitów Wysyłania:</value>
-  </data>
-  <data name="sambaShareEnabledCheckBox.Text" xml:space="preserve">
-    <value>Katalog pobierania w sieci: </value>
-  </data>
-  <data name="tabPage6.Text" xml:space="preserve">
-    <value>Inne</value>
+    <value>Przeglądaj...</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Zapisz i Połącz</value>
   </data>
   <data name="groupBox5.Text" xml:space="preserve">
-    <value>Aktywny profil</value>
+    <value>Obecny profil</value>
   </data>
   <data name="groupBox6.Text" xml:space="preserve">
     <value>Nowy profil</value>
   </data>
+  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="$this.Text" xml:space="preserve">
     <value>Ustawienia Lokalne</value>
   </data>

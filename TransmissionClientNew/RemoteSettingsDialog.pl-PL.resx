@@ -110,18 +110,17 @@
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label1.Text" xml:space="preserve">
-    <value>Zapisuj w:</value>
+    <value>Pobieraj do:</value>
   </data>
   <data name="LimitUploadCheckBox.Text" xml:space="preserve">
-    <value>Limit wysyłania</value>
+    <value>Limit Wysyłania:</value>
   </data>
   <data name="LimitDownloadCheckBox.Text" xml:space="preserve">
-    <value>Limit pobierania</value>
+    <value>Limit Pobierania:</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Port nasłuchu:</value>
+    <value>Port:</value>
   </data>
   <data name="SaveButton.Text" xml:space="preserve">
     <value>Zapisz</value>
@@ -129,20 +128,23 @@
   <data name="CloseFormButton.Text" xml:space="preserve">
     <value>Zamknij</value>
   </data>
+  <metadata name="SettingsWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="PEXcheckBox.Text" xml:space="preserve">
-    <value>Używaj Peer Exchange</value>
+    <value>Włącz wymianę Peerów</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Globalny limit peerów</value>
+    <value>Limit Peerów:</value>
   </data>
   <data name="PortForward.Text" xml:space="preserve">
-    <value>Używaj UPnP</value>
+    <value>Włącz UPnP</value>
   </data>
   <data name="EncryptionCombobox.Items1" xml:space="preserve">
-    <value>preferowane</value>
+    <value>Preferowane</value>
   </data>
   <data name="EncryptionCombobox.Items2" xml:space="preserve">
-    <value>wymagane</value>
+    <value>Wymagane</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Szyfrowanie:</value>
@@ -157,11 +159,12 @@
     <value>Testuj</value>
   </data>
   <data name="updateBlocklistButton.Text" xml:space="preserve">
-    <value>Aktualizuj Blocklist</value>
+    <value>Uaktualnij Blocklist</value>
   </data>
   <data name="blocklistEnabledCheckBox.Text" xml:space="preserve">
-    <value>Używaj Blocklist</value>
+    <value>Włączono Blocklist</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Ogólne</value>
   </data>
@@ -178,10 +181,10 @@
     <value>:</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
-    <value>Pobierania:</value>
+    <value>Wysyłania:</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
-    <value>Wysyłania:</value>
+    <value>Pobierania:</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>KB/s</value>
@@ -193,17 +196,20 @@
     <value>do</value>
   </data>
   <data name="altTimeConstraintEnabled.Text" xml:space="preserve">
-    <value>Przedział czasowy</value>
+    <value>Limit czasowy</value>
   </data>
   <data name="altSpeedLimitEnable.Text" xml:space="preserve">
-    <value>Używaj alternatywnych limitów prędkości</value>
+    <value>Włącz alternatywne limitowanie</value>
   </data>
   <data name="tabPage3.Text" xml:space="preserve">
     <value>Alternatywne limity</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>INFO: Niektóre opcję wymagają aktualizacji Transmission.</value>
+    <value>WAŻNE: Niektóre opcje dostępne są tylko po uaktualnieniu transmission-daemon.</value>
   </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="$this.Text" xml:space="preserve">
     <value>Ustawienia Zdalne</value>
   </data>

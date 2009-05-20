@@ -117,30 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="MoveMultipleTorrents" xml:space="preserve">
-    <value>Move multiple torrent data</value>
-  </data>
-  <data name="MoveTorrentData" xml:space="preserve">
-    <value>Move torrent data</value>
-  </data>
-  <data name="MoveX" xml:space="preserve">
-    <value>Move {0}</value>
-  </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Exit</value>
-  </data>
-  <data name="NewTorrentIs" xml:space="preserve">
-    <value>New torrent {0}.</value>
-  </data>
-  <data name="Pieces" xml:space="preserve">
-    <value>Pieces</value>
-  </data>
-  <data name="Progress" xml:space="preserve">
-    <value>Progress</value>
-  </data>
-  <data name="OpenNetworkShare" xml:space="preserve">
-    <value>Open on Network Share</value>
-  </data>
   <data name="All" xml:space="preserve">
     <value>Wszystkie</value>
   </data>
@@ -148,46 +124,46 @@
     <value>Autor</value>
   </data>
   <data name="Broken" xml:space="preserve">
-    <value>Przerwane</value>
+    <value>Uszkodzony</value>
   </data>
   <data name="Build" xml:space="preserve">
-    <value>build</value>
+    <value>Build</value>
   </data>
   <data name="Checking" xml:space="preserve">
-    <value>Weryfikowne</value>
+    <value>Sprawdzanie</value>
   </data>
   <data name="Complete" xml:space="preserve">
     <value>Ukończone</value>
   </data>
   <data name="Confirm" xml:space="preserve">
-    <value>Potwierdź</value>
+    <value>Potwierdzenie</value>
   </data>
   <data name="ConfirmMultipleRemove" xml:space="preserve">
-    <value>Zaznaczyłeś {0} torrentów do usunięcia. Jesteś pewien?</value>
+    <value>Wybrałeś {0} torrentów do usunięcia. Jesteś tego pewien?</value>
   </data>
   <data name="ConfirmMultipleRemoveAndDelete" xml:space="preserve">
-    <value>Zaznaczyłeś {0} torrentów do usunięcia. Jesteś pewien?{1}WSZYSTKIE DANE Z TYCH TORRENTÓW ZOSTANĄ USUNIĘTE."</value>
+    <value>Wybrałeś {0} torrentów do usunięcia. Jesteś tego pewien?{1}WSZYSTKIE DANE ZWIĄZANE Z TORRENTEM ZOSTANĄ USUNIĘTE!</value>
   </data>
   <data name="ConfirmSingleRemove" xml:space="preserve">
-    <value>Napewno chcesz usunąć {0}?</value>
+    <value>Czy chcesz usunąć {0}?</value>
   </data>
   <data name="ConfirmSingleRemoveAndDelete" xml:space="preserve">
-    <value>Napewno chcesz usunąć {0} wraz z danymi?{1}WSZYSTKIE DANE Z TEGO TORRENTA ZOSTANĄ USUNIĘTE."</value>
+    <value>Czy chcesz usunąć i skasować {0}?{1}WSZYSTKIE DANE ZWIĄZANE Z TORRENTEM ZOSTANĄ USUNIĘTE!</value>
   </data>
   <data name="Connect" xml:space="preserve">
     <value>Połącz</value>
   </data>
   <data name="ConnectedGettingInfo" xml:space="preserve">
-    <value>Połączony. Pobieranie danych...</value>
+    <value>Połączono. Pobieranie danych o torrentach...</value>
   </data>
   <data name="ConnectedTo" xml:space="preserve">
-    <value>Połączony do</value>
+    <value>Połączono z </value>
   </data>
   <data name="Connecting" xml:space="preserve">
-    <value>Łączenie</value>
+    <value>Łączenie...</value>
   </data>
   <data name="CopyAsCSV" xml:space="preserve">
-    <value>Zapisz jako CSV</value>
+    <value>Kopiuj do CSV</value>
   </data>
   <data name="Disconnect" xml:space="preserve">
     <value>Rozłącz</value>
@@ -196,31 +172,31 @@
     <value>Rozłączony</value>
   </data>
   <data name="DisconnectedExceeded" xml:space="preserve">
-    <value>Rozłączony. Limit nieudanych prób został przekroczony.</value>
+    <value>Rozłączony. Osiągnięto maksymalną liczbę błędnych logowań.</value>
   </data>
   <data name="DisplayStatistics" xml:space="preserve">
     <value>Pokaż statystyki</value>
   </data>
   <data name="Down" xml:space="preserve">
-    <value>Pobierane</value>
+    <value>Pobieranie</value>
   </data>
   <data name="Download" xml:space="preserve">
-    <value>Pobierz</value>
+    <value>Pobieranie</value>
   </data>
   <data name="DownloadedValid" xml:space="preserve">
-    <value>{0} ({1} ok)</value>
+    <value>{0} ({1} ważny)</value>
   </data>
   <data name="Downloading" xml:space="preserve">
-    <value>Pobierane</value>
+    <value>Pobieranie</value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>Błąd</value>
   </data>
   <data name="FailedRequest" xml:space="preserve">
-    <value>Niepoprawne żądanie</value>
+    <value>Błędne żądanie</value>
   </data>
   <data name="High" xml:space="preserve">
-    <value>Wysoki</value>
+    <value>Wysokie</value>
   </data>
   <data name="HighPriority" xml:space="preserve">
     <value>Wysoki priorytet</value>
@@ -232,25 +208,25 @@
     <value>Info</value>
   </data>
   <data name="InputAccepted" xml:space="preserve">
-    <value>Wprowadzono poprawnie</value>
+    <value>Dane poprawne</value>
   </data>
   <data name="LatestVersion" xml:space="preserve">
-    <value>Używasz najnowszej wersji ({0}.{1}).</value>
+    <value>Używasz aktualnej wersji - ({0}.{1}).</value>
   </data>
   <data name="LatestVersionCheckFailed" xml:space="preserve">
-    <value>Nie udało się sprawdzić najnowszej wersji</value>
+    <value>Sprawdzanie wersji nie powiodło się.</value>
   </data>
   <data name="Low" xml:space="preserve">
-    <value>Niski</value>
+    <value>Niskie</value>
   </data>
   <data name="LowPriority" xml:space="preserve">
     <value>Niski priorytet</value>
   </data>
   <data name="MustBeConnected" xml:space="preserve">
-    <value>Musisz być połączony żeby dodawać torrenty. Chcesz się połączyć teraz?</value>
+    <value>Musisz być połączony by móc dodawać torrenty. Czy chcesz się połączyć?</value>
   </data>
   <data name="NewerVersion" xml:space="preserve">
-    <value>Nowa wersja ({0}.{1}) jest dostępna. Chcesz przejść do strony pobierania?</value>
+    <value>Dostępna jest nowa ({0}.{1}) wersja. Czy otworzyć stronę pobierania??</value>
   </data>
   <data name="No" xml:space="preserve">
     <value>Nie</value>
@@ -265,13 +241,13 @@
     <value>Nie połączony</value>
   </data>
   <data name="NoUpgradeAvailable" xml:space="preserve">
-    <value>Brak nowszej wersji</value>
+    <value>Upgrade niedostępny</value>
   </data>
   <data name="OpenFileFilter" xml:space="preserve">
-    <value>Pliki BitTorrent (*.torrent)|*.torrent|Wszystkie pliki (*.*)|*.*</value>
+    <value>Pliki BitTorrenta (*.torrent)|*.torrent|Wszystkie pliki (*.*)|*.*</value>
   </data>
   <data name="Pause" xml:space="preserve">
-    <value>Wstrzymaj</value>
+    <value>Pauza</value>
   </data>
   <data name="PauseAll" xml:space="preserve">
     <value>Wstrzymaj wszystkie</value>
@@ -283,43 +259,43 @@
     <value>Właściwości</value>
   </data>
   <data name="Recheck" xml:space="preserve">
-    <value>Zweryfikuj</value>
+    <value>Sprawdź ponownie</value>
   </data>
   <data name="Remove" xml:space="preserve">
     <value>Usuń</value>
   </data>
   <data name="RemoveAndDelete" xml:space="preserve">
-    <value>Usuń i wyczyść</value>
+    <value>Usuń i skasuj dane</value>
   </data>
   <data name="Revision" xml:space="preserve">
-    <value>Wersja</value>
+    <value>Poprawka</value>
   </data>
   <data name="RpcVersion" xml:space="preserve">
     <value>Wersja RPC</value>
   </data>
   <data name="RpcVersionMinimum" xml:space="preserve">
-    <value>Najniższa wersja RPC</value>
+    <value>Minimalna wersja RPC</value>
   </data>
   <data name="Seeding" xml:space="preserve">
-    <value>Wysyłane</value>
+    <value>Udostępnianie</value>
   </data>
   <data name="SelectAll" xml:space="preserve">
-    <value>Zaznacz wszystkie</value>
+    <value>Zaznacz wszystko</value>
   </data>
   <data name="Skip" xml:space="preserve">
-    <value>Wstrzymaj</value>
+    <value>Pomiń</value>
   </data>
   <data name="Start" xml:space="preserve">
     <value>Uruchom</value>
   </data>
   <data name="StartAll" xml:space="preserve">
-    <value>Uruchome wszystkie</value>
+    <value>Uruchom wszystkie</value>
   </data>
   <data name="TheTorrentHasFinishedDownloading" xml:space="preserve">
     <value>Torrent został pobrany</value>
   </data>
   <data name="Torrents" xml:space="preserve">
-    <value>Torrenty</value>
+    <value>Torrent</value>
   </data>
   <data name="UnableToParse" xml:space="preserve">
     <value>Nieznana odpowiedź serwera</value>
@@ -328,37 +304,37 @@
     <value>Nieznany (negatywny)</value>
   </data>
   <data name="UnsuccessfulRequest" xml:space="preserve">
-    <value>Żądanie niepoprawne</value>
+    <value>Błędne żądanie</value>
   </data>
   <data name="Up" xml:space="preserve">
-    <value>Wysyłane</value>
+    <value>Wysyłanie</value>
   </data>
   <data name="UpgradeAvailable" xml:space="preserve">
-    <value>Nowa wersja jest dostępna</value>
+    <value>Uaktualnienie dostępne</value>
   </data>
   <data name="Version" xml:space="preserve">
     <value>Wersja</value>
   </data>
   <data name="WaitingForInput" xml:space="preserve">
-    <value>Oczekiwanie na sygnał</value>
+    <value>Oczekiwanie na dane</value>
   </data>
   <data name="WaitingToCheck" xml:space="preserve">
-    <value>Oczekiwanie na weryfikacje</value>
+    <value>W kolejce</value>
   </data>
   <data name="XOfYConnected" xml:space="preserve">
-    <value>{0} z {1} połączono</value>
+    <value>{0} z {1} połączonych</value>
   </data>
   <data name="Yes" xml:space="preserve">
     <value>Tak</value>
   </data>
   <data name="Incomplete" xml:space="preserve">
-    <value>Niekompletne</value>
+    <value>Nie dokończone</value>
   </data>
   <data name="LanguageUpdated" xml:space="preserve">
-    <value>Zaktualizowano tłumaczenie</value>
+    <value>Język programu uaktualniony</value>
   </data>
   <data name="LanguageUpdateDetail" xml:space="preserve">
-    <value>Język został zmieniony. Uruchom ponownie program aby dokonać zmian.</value>
+    <value>Zmieniono domyślny język programu. Zrestartuj aplikację aby dokończyć zmiany.</value>
   </data>
   <data name="Byte" xml:space="preserve">
     <value>Bajt</value>
@@ -395,13 +371,13 @@
     <value>Sekunda</value>
   </data>
   <data name="PortIsClosed" xml:space="preserve">
-    <value>Port nasłuchu demona jest ZAMKNIĘTY.</value>
+    <value>Port nasłuchu danych jest ZAMKNIĘTY.</value>
   </data>
   <data name="PortIsOpen" xml:space="preserve">
-    <value>Port nasłuchu demona jest OTWARTY.</value>
+    <value>Port nasłuchu danych jest OTWARTY.</value>
   </data>
   <data name="PortTestResult" xml:space="preserve">
-    <value>Wynik testowania portu nasłuchiwania</value>
+    <value>Wyniki testu</value>
   </data>
   <data name="DownloadLimit" xml:space="preserve">
     <value>Limit Pobierania</value>
@@ -413,15 +389,24 @@
     <value>Limit Wysyłania</value>
   </data>
   <data name="Querying" xml:space="preserve">
-    <value>Pobieranie danych...</value>
+    <value>Sprawdzanie...</value>
   </data>
   <data name="Updating" xml:space="preserve">
-    <value>Aktualizowanie...</value>
+    <value>Uaktualnianie...</value>
   </data>
   <data name="XInBlocklist" xml:space="preserve">
-    <value>{0} w liście zablokowanych peerów.</value>
+    <value>{0} na czarnej liście.</value>
+  </data>
+  <data name="Pieces" xml:space="preserve">
+    <value>Części</value>
+  </data>
+  <data name="Progress" xml:space="preserve">
+    <value>Postęp</value>
   </data>
   <data name="Reannounce" xml:space="preserve">
-    <value>Aktualizuj trackery</value>
+    <value>Aktualizuj Tracker</value>
+  </data>
+  <data name="OpenNetworkShare" xml:space="preserve">
+    <value>Otwórz Folder Sieciowy</value>
   </data>
 </root>

@@ -110,26 +110,29 @@
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="columnHeader1.Text" xml:space="preserve">
     <value>Czas</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="columnHeader2.Text" xml:space="preserve">
     <value>Tytuł</value>
   </data>
   <data name="columnHeader3.Text" xml:space="preserve">
-    <value>Treść</value>
+    <value>Wartość</value>
   </data>
   <data name="button2.Text" xml:space="preserve">
     <value>Wyczyść</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value> Możesz skopiować treść błędu do schowka klikając na niego dwa razy</value>
+    <value> Możesz skopiować wartość błędu klikając na nią dwukrotnie.</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Zamknij</value>
   </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="$this.Text" xml:space="preserve">
-    <value>Raport Błędu</value>
+    <value>Log Błędów</value>
   </data>
 </root>
