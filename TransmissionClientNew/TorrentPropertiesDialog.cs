@@ -98,8 +98,8 @@ namespace TransmissionRemoteDotnet
             try
             {
                 seedRatioLimitValue.Value = firstTorrent.SeedRatioLimit >= 0 && (decimal)firstTorrent.SeedRatioLimit <= seedRatioLimitValue.Maximum ? (decimal)firstTorrent.SeedRatioLimit : 0;
-                seedRatioLimitedCheckBox.Checked = firstTorrent.SeedRatioMode;
-                seedRatioLimitedCheckBox.Enabled = seedRatioLimitValue.Enabled = true;
+                seedRatioLimitValue.Enabled = seedRatioLimitedCheckBox.Checked = firstTorrent.SeedRatioMode;
+                seedRatioLimitedCheckBox.Enabled = true;
             }
             catch
             {
@@ -130,6 +130,11 @@ namespace TransmissionRemoteDotnet
         private void uploadLimitEnableField_CheckedChanged(object sender, EventArgs e)
         {
             uploadLimitField.Enabled = uploadLimitEnableField.Checked;
+        }
+
+        private void seedRatioLimitedCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            seedRatioLimitValue.Enabled = seedRatioLimitedCheckBox.Checked;
         }
     }
 }
