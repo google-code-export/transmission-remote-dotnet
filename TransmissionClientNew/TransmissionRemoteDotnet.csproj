@@ -157,6 +157,16 @@
       <DependentUpon>OtherStrings.pl-PL.resx</DependentUpon>
     </Compile>
     <Compile Include="OtherStrings.ru-RU.Designer.cs" />
+    <Compile Include="OtherStrings.ru-RU1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OtherStrings.ru-RU.resx</DependentUpon>
+    </Compile>
+    <Compile Include="OtherStrings.tr-TR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OtherStrings.tr-TR.resx</DependentUpon>
+    </Compile>
     <Compile Include="OtherStrings.zh-CN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -346,9 +356,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OtherStrings.ru-RU.resx">
       <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OtherStrings.ru-RU1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="OtherStrings.tr-TR.resx">
       <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OtherStrings.tr-TR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="OtherStrings.zh-CN.resx">
       <SubType>Designer</SubType>

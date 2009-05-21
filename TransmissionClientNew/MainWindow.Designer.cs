@@ -30,34 +30,7 @@ namespace TransmissionRemoteDotnet
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.tabControlImageList = new System.Windows.Forms.ImageList(this.components);
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.connectButton = new System.Windows.Forms.ToolStripSplitButton();
-            this.disconnectButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.addTorrentButton = new System.Windows.Forms.ToolStripButton();
-            this.addWebTorrentButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.startTorrentButton = new System.Windows.Forms.ToolStripSplitButton();
-            this.startAllToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pauseTorrentButton = new System.Windows.Forms.ToolStripSplitButton();
-            this.pauseAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.recheckTorrentButton = new System.Windows.Forms.ToolStripButton();
-            this.configureTorrentButton = new System.Windows.Forms.ToolStripButton();
-            this.removeTorrentButton = new System.Windows.Forms.ToolStripButton();
-            this.removeAndDeleteButton = new System.Windows.Forms.ToolStripButton();
-            this.reannounceButton = new System.Windows.Forms.ToolStripSplitButton();
-            this.allToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.recentlyActiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openNetworkShareButton = new System.Windows.Forms.ToolStripButton();
-            this.remoteCmdButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.localConfigureButton = new System.Windows.Forms.ToolStripButton();
-            this.remoteConfigureButton = new System.Windows.Forms.ToolStripButton();
-            this.sessionStatsButton = new System.Windows.Forms.ToolStripButton();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.connectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -101,6 +74,33 @@ namespace TransmissionRemoteDotnet
             this.filesTimer = new System.Windows.Forms.Timer(this.components);
             this.filesWorker = new System.ComponentModel.BackgroundWorker();
             this.refreshElapsedTimer = new System.Windows.Forms.Timer(this.components);
+            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.connectButton = new System.Windows.Forms.ToolStripSplitButton();
+            this.disconnectButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.addTorrentButton = new System.Windows.Forms.ToolStripButton();
+            this.addWebTorrentButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.startTorrentButton = new System.Windows.Forms.ToolStripSplitButton();
+            this.startAllToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pauseTorrentButton = new System.Windows.Forms.ToolStripSplitButton();
+            this.pauseAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recheckTorrentButton = new System.Windows.Forms.ToolStripButton();
+            this.configureTorrentButton = new System.Windows.Forms.ToolStripButton();
+            this.removeTorrentButton = new System.Windows.Forms.ToolStripButton();
+            this.removeAndDeleteButton = new System.Windows.Forms.ToolStripButton();
+            this.reannounceButton = new System.Windows.Forms.ToolStripSplitButton();
+            this.allToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recentlyActiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openNetworkShareButton = new System.Windows.Forms.ToolStripButton();
+            this.remoteCmdButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.localConfigureButton = new System.Windows.Forms.ToolStripButton();
+            this.remoteConfigureButton = new System.Windows.Forms.ToolStripButton();
+            this.sessionStatsButton = new System.Windows.Forms.ToolStripButton();
             this.torrentAndTabsSplitContainer = new TransmissionRemoteDotnet.SplitContainerFix();
             this.mainVerticalSplitContainer = new System.Windows.Forms.SplitContainer();
             this.stateListBox = new TransmissionRemoteDotnet.GListBox();
@@ -199,12 +199,12 @@ namespace TransmissionRemoteDotnet
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.speedGraph = new CustomUIControls.Graphing.C2DPushGraph();
+            this.menuStrip.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
-            this.menuStrip.SuspendLayout();
             this.torrentAndTabsSplitContainer.Panel1.SuspendLayout();
             this.torrentAndTabsSplitContainer.Panel2.SuspendLayout();
             this.torrentAndTabsSplitContainer.SuspendLayout();
@@ -238,229 +238,11 @@ namespace TransmissionRemoteDotnet
             this.splitContainer2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // toolStripContainer1
-            // 
-            this.toolStripContainer1.BottomToolStripPanelVisible = false;
-            // 
-            // toolStripContainer1.ContentPanel
-            // 
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.torrentAndTabsSplitContainer);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.statusStrip);
-            resources.ApplyResources(this.toolStripContainer1.ContentPanel, "toolStripContainer1.ContentPanel");
-            resources.ApplyResources(this.toolStripContainer1, "toolStripContainer1");
-            this.toolStripContainer1.LeftToolStripPanelVisible = false;
-            this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.RightToolStripPanelVisible = false;
-            // 
-            // toolStripContainer1.TopToolStripPanel
-            // 
-            resources.ApplyResources(this.toolStripContainer1.TopToolStripPanel, "toolStripContainer1.TopToolStripPanel");
-            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip);
-            // 
             // tabControlImageList
             // 
             this.tabControlImageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
             resources.ApplyResources(this.tabControlImageList, "tabControlImageList");
             this.tabControlImageList.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // statusStrip
-            // 
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel});
-            resources.ApplyResources(this.statusStrip, "statusStrip");
-            this.statusStrip.Name = "statusStrip";
-            // 
-            // toolStripStatusLabel
-            // 
-            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            resources.ApplyResources(this.toolStripStatusLabel, "toolStripStatusLabel");
-            // 
-            // toolStrip
-            // 
-            resources.ApplyResources(this.toolStrip, "toolStrip");
-            this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.connectButton,
-            this.disconnectButton,
-            this.toolStripSeparator4,
-            this.addTorrentButton,
-            this.addWebTorrentButton,
-            this.toolStripSeparator1,
-            this.startTorrentButton,
-            this.pauseTorrentButton,
-            this.recheckTorrentButton,
-            this.configureTorrentButton,
-            this.removeTorrentButton,
-            this.removeAndDeleteButton,
-            this.reannounceButton,
-            this.openNetworkShareButton,
-            this.remoteCmdButton,
-            this.toolStripSeparator2,
-            this.localConfigureButton,
-            this.remoteConfigureButton,
-            this.sessionStatsButton});
-            this.toolStrip.Name = "toolStrip";
-            // 
-            // connectButton
-            // 
-            this.connectButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.connectButton, "connectButton");
-            this.connectButton.Name = "connectButton";
-            this.connectButton.ButtonClick += new System.EventHandler(this.connectButton_Click);
-            // 
-            // disconnectButton
-            // 
-            this.disconnectButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.disconnectButton, "disconnectButton");
-            this.disconnectButton.Name = "disconnectButton";
-            this.disconnectButton.Click += new System.EventHandler(this.disconnectButton_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
-            // 
-            // addTorrentButton
-            // 
-            this.addTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.addTorrentButton, "addTorrentButton");
-            this.addTorrentButton.Name = "addTorrentButton";
-            this.addTorrentButton.Click += new System.EventHandler(this.addTorrentButton_Click);
-            // 
-            // addWebTorrentButton
-            // 
-            this.addWebTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.addWebTorrentButton, "addWebTorrentButton");
-            this.addWebTorrentButton.Name = "addWebTorrentButton";
-            this.addWebTorrentButton.Click += new System.EventHandler(this.addWebTorrentButton_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
-            // 
-            // startTorrentButton
-            // 
-            this.startTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.startTorrentButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.startAllToolStripMenuItem1});
-            resources.ApplyResources(this.startTorrentButton, "startTorrentButton");
-            this.startTorrentButton.Name = "startTorrentButton";
-            this.startTorrentButton.Click += new System.EventHandler(this.startTorrentButton_Click);
-            // 
-            // startAllToolStripMenuItem1
-            // 
-            this.startAllToolStripMenuItem1.Name = "startAllToolStripMenuItem1";
-            resources.ApplyResources(this.startAllToolStripMenuItem1, "startAllToolStripMenuItem1");
-            this.startAllToolStripMenuItem1.Click += new System.EventHandler(this.startAllMenuItem_Click);
-            // 
-            // pauseTorrentButton
-            // 
-            this.pauseTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.pauseTorrentButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pauseAllToolStripMenuItem});
-            resources.ApplyResources(this.pauseTorrentButton, "pauseTorrentButton");
-            this.pauseTorrentButton.Name = "pauseTorrentButton";
-            this.pauseTorrentButton.Click += new System.EventHandler(this.pauseTorrentButton_Click);
-            // 
-            // pauseAllToolStripMenuItem
-            // 
-            this.pauseAllToolStripMenuItem.Name = "pauseAllToolStripMenuItem";
-            resources.ApplyResources(this.pauseAllToolStripMenuItem, "pauseAllToolStripMenuItem");
-            this.pauseAllToolStripMenuItem.Click += new System.EventHandler(this.stopAllMenuItem_Click);
-            // 
-            // recheckTorrentButton
-            // 
-            this.recheckTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.recheckTorrentButton, "recheckTorrentButton");
-            this.recheckTorrentButton.Name = "recheckTorrentButton";
-            this.recheckTorrentButton.Click += new System.EventHandler(this.recheckTorrentButton_Click);
-            // 
-            // configureTorrentButton
-            // 
-            this.configureTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.configureTorrentButton, "configureTorrentButton");
-            this.configureTorrentButton.Name = "configureTorrentButton";
-            this.configureTorrentButton.Click += new System.EventHandler(this.ShowTorrentPropsHandler);
-            // 
-            // removeTorrentButton
-            // 
-            this.removeTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.removeTorrentButton, "removeTorrentButton");
-            this.removeTorrentButton.Name = "removeTorrentButton";
-            this.removeTorrentButton.Click += new System.EventHandler(this.removeTorrentButton_Click);
-            // 
-            // removeAndDeleteButton
-            // 
-            this.removeAndDeleteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.removeAndDeleteButton, "removeAndDeleteButton");
-            this.removeAndDeleteButton.Name = "removeAndDeleteButton";
-            this.removeAndDeleteButton.Click += new System.EventHandler(this.removeAndDeleteButton_Click);
-            // 
-            // reannounceButton
-            // 
-            this.reannounceButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.reannounceButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.allToolStripMenuItem,
-            this.recentlyActiveToolStripMenuItem});
-            resources.ApplyResources(this.reannounceButton, "reannounceButton");
-            this.reannounceButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.reannounce;
-            this.reannounceButton.Name = "reannounceButton";
-            this.reannounceButton.ButtonClick += new System.EventHandler(this.reannounceButton_ButtonClick);
-            // 
-            // allToolStripMenuItem
-            // 
-            this.allToolStripMenuItem.Name = "allToolStripMenuItem";
-            resources.ApplyResources(this.allToolStripMenuItem, "allToolStripMenuItem");
-            this.allToolStripMenuItem.Click += new System.EventHandler(this.reannounceAllToolStripMenuItem_Click);
-            // 
-            // recentlyActiveToolStripMenuItem
-            // 
-            this.recentlyActiveToolStripMenuItem.Name = "recentlyActiveToolStripMenuItem";
-            resources.ApplyResources(this.recentlyActiveToolStripMenuItem, "recentlyActiveToolStripMenuItem");
-            this.recentlyActiveToolStripMenuItem.Click += new System.EventHandler(this.recentlyActiveToolStripMenuItem_Click);
-            // 
-            // openNetworkShareButton
-            // 
-            this.openNetworkShareButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.openNetworkShareButton, "openNetworkShareButton");
-            this.openNetworkShareButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.folder_html;
-            this.openNetworkShareButton.Name = "openNetworkShareButton";
-            this.openNetworkShareButton.Click += new System.EventHandler(this.openNetworkShareButton_Click);
-            // 
-            // remoteCmdButton
-            // 
-            this.remoteCmdButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.remoteCmdButton, "remoteCmdButton");
-            this.remoteCmdButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.openterm;
-            this.remoteCmdButton.Name = "remoteCmdButton";
-            this.remoteCmdButton.Click += new System.EventHandler(this.runCmdButton_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
-            // 
-            // localConfigureButton
-            // 
-            this.localConfigureButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.localConfigureButton, "localConfigureButton");
-            this.localConfigureButton.Name = "localConfigureButton";
-            this.localConfigureButton.Click += new System.EventHandler(this.localConfigureButton_Click);
-            // 
-            // remoteConfigureButton
-            // 
-            this.remoteConfigureButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.remoteConfigureButton, "remoteConfigureButton");
-            this.remoteConfigureButton.Name = "remoteConfigureButton";
-            this.remoteConfigureButton.Click += new System.EventHandler(this.remoteConfigureButton_Click);
-            // 
-            // sessionStatsButton
-            // 
-            this.sessionStatsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.sessionStatsButton, "sessionStatsButton");
-            this.sessionStatsButton.Name = "sessionStatsButton";
-            this.sessionStatsButton.Click += new System.EventHandler(this.sessionStatsButton_Click);
             // 
             // menuStrip
             // 
@@ -746,6 +528,237 @@ namespace TransmissionRemoteDotnet
             // 
             this.refreshElapsedTimer.Interval = 1000;
             this.refreshElapsedTimer.Tick += new System.EventHandler(this.refreshElapsedTimer_Tick);
+            // 
+            // toolStripContainer1
+            // 
+            this.toolStripContainer1.BottomToolStripPanelVisible = false;
+            // 
+            // toolStripContainer1.ContentPanel
+            // 
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.torrentAndTabsSplitContainer);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.statusStrip);
+            resources.ApplyResources(this.toolStripContainer1.ContentPanel, "toolStripContainer1.ContentPanel");
+            resources.ApplyResources(this.toolStripContainer1, "toolStripContainer1");
+            this.toolStripContainer1.LeftToolStripPanelVisible = false;
+            this.toolStripContainer1.Name = "toolStripContainer1";
+            this.toolStripContainer1.RightToolStripPanelVisible = false;
+            // 
+            // toolStripContainer1.TopToolStripPanel
+            // 
+            resources.ApplyResources(this.toolStripContainer1.TopToolStripPanel, "toolStripContainer1.TopToolStripPanel");
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip);
+            // 
+            // statusStrip
+            // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel});
+            resources.ApplyResources(this.statusStrip, "statusStrip");
+            this.statusStrip.Name = "statusStrip";
+            // 
+            // toolStripStatusLabel
+            // 
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            resources.ApplyResources(this.toolStripStatusLabel, "toolStripStatusLabel");
+            // 
+            // toolStrip
+            // 
+            resources.ApplyResources(this.toolStrip, "toolStrip");
+            this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.connectButton,
+            this.disconnectButton,
+            this.toolStripSeparator4,
+            this.addTorrentButton,
+            this.addWebTorrentButton,
+            this.toolStripSeparator1,
+            this.startTorrentButton,
+            this.pauseTorrentButton,
+            this.recheckTorrentButton,
+            this.configureTorrentButton,
+            this.removeTorrentButton,
+            this.removeAndDeleteButton,
+            this.reannounceButton,
+            this.openNetworkShareButton,
+            this.remoteCmdButton,
+            this.toolStripSeparator2,
+            this.localConfigureButton,
+            this.remoteConfigureButton,
+            this.sessionStatsButton});
+            this.toolStrip.Name = "toolStrip";
+            // 
+            // connectButton
+            // 
+            this.connectButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.connectButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.connect_creating;
+            resources.ApplyResources(this.connectButton, "connectButton");
+            this.connectButton.Name = "connectButton";
+            this.connectButton.ButtonClick += new System.EventHandler(this.connectButton_Click);
+            // 
+            // disconnectButton
+            // 
+            this.disconnectButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.disconnectButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.connect_no;
+            resources.ApplyResources(this.disconnectButton, "disconnectButton");
+            this.disconnectButton.Name = "disconnectButton";
+            this.disconnectButton.Click += new System.EventHandler(this.disconnectButton_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+            // 
+            // addTorrentButton
+            // 
+            this.addTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.addTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.edit_add;
+            resources.ApplyResources(this.addTorrentButton, "addTorrentButton");
+            this.addTorrentButton.Name = "addTorrentButton";
+            this.addTorrentButton.Click += new System.EventHandler(this.addTorrentButton_Click);
+            // 
+            // addWebTorrentButton
+            // 
+            this.addWebTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.addWebTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.net_add;
+            resources.ApplyResources(this.addWebTorrentButton, "addWebTorrentButton");
+            this.addWebTorrentButton.Name = "addWebTorrentButton";
+            this.addWebTorrentButton.Click += new System.EventHandler(this.addWebTorrentButton_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            // 
+            // startTorrentButton
+            // 
+            this.startTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.startTorrentButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.startAllToolStripMenuItem1});
+            resources.ApplyResources(this.startTorrentButton, "startTorrentButton");
+            this.startTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.player_play1;
+            this.startTorrentButton.Name = "startTorrentButton";
+            this.startTorrentButton.Click += new System.EventHandler(this.startTorrentButton_Click);
+            // 
+            // startAllToolStripMenuItem1
+            // 
+            this.startAllToolStripMenuItem1.Name = "startAllToolStripMenuItem1";
+            resources.ApplyResources(this.startAllToolStripMenuItem1, "startAllToolStripMenuItem1");
+            this.startAllToolStripMenuItem1.Click += new System.EventHandler(this.startAllMenuItem_Click);
+            // 
+            // pauseTorrentButton
+            // 
+            this.pauseTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.pauseTorrentButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pauseAllToolStripMenuItem});
+            resources.ApplyResources(this.pauseTorrentButton, "pauseTorrentButton");
+            this.pauseTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.player_pause;
+            this.pauseTorrentButton.Name = "pauseTorrentButton";
+            this.pauseTorrentButton.Click += new System.EventHandler(this.pauseTorrentButton_Click);
+            // 
+            // pauseAllToolStripMenuItem
+            // 
+            this.pauseAllToolStripMenuItem.Name = "pauseAllToolStripMenuItem";
+            resources.ApplyResources(this.pauseAllToolStripMenuItem, "pauseAllToolStripMenuItem");
+            this.pauseAllToolStripMenuItem.Click += new System.EventHandler(this.stopAllMenuItem_Click);
+            // 
+            // recheckTorrentButton
+            // 
+            this.recheckTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.recheckTorrentButton, "recheckTorrentButton");
+            this.recheckTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.player_reload;
+            this.recheckTorrentButton.Name = "recheckTorrentButton";
+            this.recheckTorrentButton.Click += new System.EventHandler(this.recheckTorrentButton_Click);
+            // 
+            // configureTorrentButton
+            // 
+            this.configureTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.configureTorrentButton, "configureTorrentButton");
+            this.configureTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.kgpg_edit;
+            this.configureTorrentButton.Name = "configureTorrentButton";
+            this.configureTorrentButton.Click += new System.EventHandler(this.ShowTorrentPropsHandler);
+            // 
+            // removeTorrentButton
+            // 
+            this.removeTorrentButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.removeTorrentButton, "removeTorrentButton");
+            this.removeTorrentButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.button_cancel1;
+            this.removeTorrentButton.Name = "removeTorrentButton";
+            this.removeTorrentButton.Click += new System.EventHandler(this.removeTorrentButton_Click);
+            // 
+            // removeAndDeleteButton
+            // 
+            this.removeAndDeleteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.removeAndDeleteButton, "removeAndDeleteButton");
+            this.removeAndDeleteButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.remove_and_delete;
+            this.removeAndDeleteButton.Name = "removeAndDeleteButton";
+            this.removeAndDeleteButton.Click += new System.EventHandler(this.removeAndDeleteButton_Click);
+            // 
+            // reannounceButton
+            // 
+            this.reannounceButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.reannounceButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.allToolStripMenuItem,
+            this.recentlyActiveToolStripMenuItem});
+            resources.ApplyResources(this.reannounceButton, "reannounceButton");
+            this.reannounceButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.reannounce;
+            this.reannounceButton.Name = "reannounceButton";
+            this.reannounceButton.ButtonClick += new System.EventHandler(this.reannounceButton_ButtonClick);
+            // 
+            // allToolStripMenuItem
+            // 
+            this.allToolStripMenuItem.Name = "allToolStripMenuItem";
+            resources.ApplyResources(this.allToolStripMenuItem, "allToolStripMenuItem");
+            this.allToolStripMenuItem.Click += new System.EventHandler(this.reannounceAllToolStripMenuItem_Click);
+            // 
+            // recentlyActiveToolStripMenuItem
+            // 
+            this.recentlyActiveToolStripMenuItem.Name = "recentlyActiveToolStripMenuItem";
+            resources.ApplyResources(this.recentlyActiveToolStripMenuItem, "recentlyActiveToolStripMenuItem");
+            this.recentlyActiveToolStripMenuItem.Click += new System.EventHandler(this.recentlyActiveToolStripMenuItem_Click);
+            // 
+            // openNetworkShareButton
+            // 
+            this.openNetworkShareButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.openNetworkShareButton, "openNetworkShareButton");
+            this.openNetworkShareButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.folder_html;
+            this.openNetworkShareButton.Name = "openNetworkShareButton";
+            this.openNetworkShareButton.Click += new System.EventHandler(this.openNetworkShareButton_Click);
+            // 
+            // remoteCmdButton
+            // 
+            this.remoteCmdButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.remoteCmdButton, "remoteCmdButton");
+            this.remoteCmdButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.openterm;
+            this.remoteCmdButton.Name = "remoteCmdButton";
+            this.remoteCmdButton.Click += new System.EventHandler(this.runCmdButton_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+            // 
+            // localConfigureButton
+            // 
+            this.localConfigureButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.localConfigureButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.configure;
+            resources.ApplyResources(this.localConfigureButton, "localConfigureButton");
+            this.localConfigureButton.Name = "localConfigureButton";
+            this.localConfigureButton.Click += new System.EventHandler(this.localConfigureButton_Click);
+            // 
+            // remoteConfigureButton
+            // 
+            this.remoteConfigureButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.remoteConfigureButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.netconfigure;
+            resources.ApplyResources(this.remoteConfigureButton, "remoteConfigureButton");
+            this.remoteConfigureButton.Name = "remoteConfigureButton";
+            this.remoteConfigureButton.Click += new System.EventHandler(this.remoteConfigureButton_Click);
+            // 
+            // sessionStatsButton
+            // 
+            this.sessionStatsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.sessionStatsButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.hwinfo;
+            resources.ApplyResources(this.sessionStatsButton, "sessionStatsButton");
+            this.sessionStatsButton.Name = "sessionStatsButton";
+            this.sessionStatsButton.Click += new System.EventHandler(this.sessionStatsButton_Click);
             // 
             // torrentAndTabsSplitContainer
             // 
@@ -1444,6 +1457,8 @@ namespace TransmissionRemoteDotnet
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Resize += new System.EventHandler(this.MainWindow_Resize);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainWindow_KeyDown);
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.ContentPanel.PerformLayout();
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
@@ -1454,8 +1469,6 @@ namespace TransmissionRemoteDotnet
             this.statusStrip.PerformLayout();
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
             this.torrentAndTabsSplitContainer.Panel1.ResumeLayout(false);
             this.torrentAndTabsSplitContainer.Panel2.ResumeLayout(false);
             this.torrentAndTabsSplitContainer.ResumeLayout(false);

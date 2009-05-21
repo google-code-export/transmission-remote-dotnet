@@ -81,45 +81,45 @@ namespace TransmissionRemoteDotnet
             try
             {
                 JsonObject session = (JsonObject)Program.DaemonDescriptor.SessionData;
-                DownloadToField.Text = (string)session["download-dir"];
-                LimitDownloadValue.Enabled = LimitDownloadCheckBox.Checked = Toolbox.ToBool(session[ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED]);
-                SetLimitField(Toolbox.ToInt(session[ProtocolConstants.FIELD_SPEEDLIMITDOWN]), LimitDownloadValue);
-                LimitUploadValue.Enabled = LimitUploadCheckBox.Checked = Toolbox.ToBool(session[ProtocolConstants.FIELD_SPEEDLIMITUPENABLED]);
-                SetLimitField(Toolbox.ToInt(session[ProtocolConstants.FIELD_SPEEDLIMITUP]), LimitUploadValue);
+                downloadToField.Text = (string)session["download-dir"];
+                limitDownloadValue.Enabled = limitDownloadCheckBox.Checked = Toolbox.ToBool(session[ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED]);
+                SetLimitField(Toolbox.ToInt(session[ProtocolConstants.FIELD_SPEEDLIMITDOWN]), limitDownloadValue);
+                limitUploadValue.Enabled = limitUploadCheckBox.Checked = Toolbox.ToBool(session[ProtocolConstants.FIELD_SPEEDLIMITUPENABLED]);
+                SetLimitField(Toolbox.ToInt(session[ProtocolConstants.FIELD_SPEEDLIMITUP]), limitUploadValue);
                 if (session.Contains("port"))
                 {
-                    IncomingPortValue.Tag = "port";
-                    IncomingPortValue.Value = Toolbox.ToInt(session["port"]);
+                    incomingPortValue.Tag = "port";
+                    incomingPortValue.Value = Toolbox.ToInt(session["port"]);
                 }
                 else if (session.Contains("peer-port"))
                 {
-                    IncomingPortValue.Tag = "peer-port";
-                    IncomingPortValue.Value = Toolbox.ToInt(session["peer-port"]);
+                    incomingPortValue.Tag = "peer-port";
+                    incomingPortValue.Value = Toolbox.ToInt(session["peer-port"]);
                 }
-                PortForward.Checked = Toolbox.ToBool(session["port-forwarding-enabled"]);
+                portForwardCheckBox.Checked = Toolbox.ToBool(session["port-forwarding-enabled"]);
                 string enc = session["encryption"] as string;
                 if (enc.Equals("preferred"))
                 {
-                    EncryptionCombobox.SelectedIndex = 1;
+                    encryptionCombobox.SelectedIndex = 1;
                 }
                 else if (enc.Equals("required"))
                 {
-                    EncryptionCombobox.SelectedIndex = 2;
+                    encryptionCombobox.SelectedIndex = 2;
                 }
                 else
                 {
-                    EncryptionCombobox.SelectedIndex = 0;
+                    encryptionCombobox.SelectedIndex = 0;
                 }
                 // peer limit
                 if (session.Contains(ProtocolConstants.FIELD_PEERLIMIT))
                 {
-                    PeerLimitValue.Value = Toolbox.ToInt(session[ProtocolConstants.FIELD_PEERLIMIT]);
-                    PeerLimitValue.Tag = ProtocolConstants.FIELD_PEERLIMIT;
+                    peerLimitValue.Value = Toolbox.ToInt(session[ProtocolConstants.FIELD_PEERLIMIT]);
+                    peerLimitValue.Tag = ProtocolConstants.FIELD_PEERLIMIT;
                 }
                 else if (session.Contains(ProtocolConstants.FIELD_PEERLIMITGLOBAL))
                 {
-                    PeerLimitValue.Value = Toolbox.ToInt(session[ProtocolConstants.FIELD_PEERLIMITGLOBAL]);
-                    PeerLimitValue.Tag = ProtocolConstants.FIELD_PEERLIMITGLOBAL;
+                    peerLimitValue.Value = Toolbox.ToInt(session[ProtocolConstants.FIELD_PEERLIMITGLOBAL]);
+                    peerLimitValue.Tag = ProtocolConstants.FIELD_PEERLIMITGLOBAL;
                 }
                 // pex
                 if (session.Contains(ProtocolConstants.FIELD_PEXALLOWED))
@@ -165,8 +165,10 @@ namespace TransmissionRemoteDotnet
                     seedLimitUpDown.Value = Toolbox.ToDecimal(session[ProtocolConstants.FIELD_SEEDRATIOLIMIT]);
                     seedRatioEnabledCheckBox.Checked = Toolbox.ToBool(session[ProtocolConstants.FIELD_SEEDRATIOLIMITED]);
                 }
-                DhtEnabled.Checked = Toolbox.ToBool(session[ProtocolConstants.FIELD_DHTENABLED]);
-                DhtEnabled.Enabled = Program.DaemonDescriptor.Revision >= 8460;
+                if (dhtEnabled.Enabled = session.Contains(ProtocolConstants.FIELD_DHTENABLED))
+                {
+                    dhtEnabled.Checked = Toolbox.ToBool(session[ProtocolConstants.FIELD_DHTENABLED]);
+                }
                 testPortButton.Enabled = Program.DaemonDescriptor.RpcVersion >= 5;
             }
             catch (Exception ex)
@@ -190,24 +192,23 @@ namespace TransmissionRemoteDotnet
 
         private void LimitUploadCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            LimitUploadValue.Enabled = LimitUploadCheckBox.Checked;
+            limitUploadValue.Enabled = limitUploadCheckBox.Checked;
         }
 
         private void LimitDownloadCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            LimitDownloadValue.Enabled = LimitDownloadCheckBox.Checked;
+            limitDownloadValue.Enabled = limitDownloadCheckBox.Checked;
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
             JsonObject request = Requests.CreateBasicObject(ProtocolConstants.METHOD_SESSIONSET);
             JsonObject arguments = Requests.GetArgObject(request);
-            arguments.Put((string)IncomingPortValue.Tag, IncomingPortValue.Value);
-            arguments.Put(ProtocolConstants.FIELD_PORTFORWARDINGENABLED, PortForward.Checked);
-            arguments.Put(ProtocolConstants.FIELD_DHTENABLED, PortForward.Checked);
+            arguments.Put((string)incomingPortValue.Tag, incomingPortValue.Value);
+            arguments.Put(ProtocolConstants.FIELD_PORTFORWARDINGENABLED, portForwardCheckBox.Checked);
             arguments.Put((string)PEXcheckBox.Tag, PEXcheckBox.Checked);
-            arguments.Put((string)PeerLimitValue.Tag, PeerLimitValue.Value);
-            switch (EncryptionCombobox.SelectedIndex)
+            arguments.Put((string)peerLimitValue.Tag, peerLimitValue.Value);
+            switch (encryptionCombobox.SelectedIndex)
             {
                 case 1:
                     arguments.Put(ProtocolConstants.FIELD_ENCRYPTION, ProtocolConstants.VALUE_PREFERRED);
@@ -219,10 +220,10 @@ namespace TransmissionRemoteDotnet
                     arguments.Put(ProtocolConstants.FIELD_ENCRYPTION, ProtocolConstants.VALUE_TOLERATED);
                     break;
             }
-            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITUPENABLED, LimitUploadCheckBox.Checked);
-            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITUP, LimitUploadValue.Value);
-            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED, LimitDownloadCheckBox.Checked);
-            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITDOWN, LimitDownloadValue.Value);
+            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITUPENABLED, limitUploadCheckBox.Checked);
+            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITUP, limitUploadValue.Value);
+            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED, limitDownloadCheckBox.Checked);
+            arguments.Put(ProtocolConstants.FIELD_SPEEDLIMITDOWN, limitDownloadValue.Value);
             if (altSpeedLimitEnable.Enabled)
             {
                 arguments.Put(ProtocolConstants.FIELD_ALTSPEEDENABLED, altSpeedLimitEnable.Checked);
@@ -244,7 +245,11 @@ namespace TransmissionRemoteDotnet
                 arguments.Put(ProtocolConstants.FIELD_SEEDRATIOLIMITED, seedRatioEnabledCheckBox.Checked);
                 arguments.Put(ProtocolConstants.FIELD_SEEDRATIOLIMIT, seedLimitUpDown.Value);
             }
-            arguments.Put(ProtocolConstants.FIELD_DOWNLOADDIR, DownloadToField.Text);
+            if (dhtEnabled.Enabled)
+            {
+                arguments.Put(ProtocolConstants.FIELD_DHTENABLED, dhtEnabled.Checked);
+            }
+            arguments.Put(ProtocolConstants.FIELD_DOWNLOADDIR, downloadToField.Text);
             SettingsWorker.RunWorkerAsync(request);
             this.Close();
         }

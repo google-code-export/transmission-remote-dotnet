@@ -47,27 +47,27 @@ namespace TransmissionRemoteDotnet
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RemoteSettingsDialog));
             this.label1 = new System.Windows.Forms.Label();
-            this.DownloadToField = new System.Windows.Forms.TextBox();
-            this.LimitUploadCheckBox = new System.Windows.Forms.CheckBox();
-            this.LimitUploadValue = new System.Windows.Forms.NumericUpDown();
-            this.LimitDownloadCheckBox = new System.Windows.Forms.CheckBox();
-            this.LimitDownloadValue = new System.Windows.Forms.NumericUpDown();
+            this.downloadToField = new System.Windows.Forms.TextBox();
+            this.limitUploadCheckBox = new System.Windows.Forms.CheckBox();
+            this.limitUploadValue = new System.Windows.Forms.NumericUpDown();
+            this.limitDownloadCheckBox = new System.Windows.Forms.CheckBox();
+            this.limitDownloadValue = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.IncomingPortValue = new System.Windows.Forms.NumericUpDown();
+            this.incomingPortValue = new System.Windows.Forms.NumericUpDown();
             this.SaveButton = new System.Windows.Forms.Button();
             this.CloseFormButton = new System.Windows.Forms.Button();
             this.SettingsWorker = new System.ComponentModel.BackgroundWorker();
-            this.PeerLimitValue = new System.Windows.Forms.NumericUpDown();
+            this.peerLimitValue = new System.Windows.Forms.NumericUpDown();
             this.PEXcheckBox = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.PortForward = new System.Windows.Forms.CheckBox();
-            this.EncryptionCombobox = new System.Windows.Forms.ComboBox();
+            this.portForwardCheckBox = new System.Windows.Forms.CheckBox();
+            this.encryptionCombobox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.DhtEnabled = new System.Windows.Forms.CheckBox();
+            this.dhtEnabled = new System.Windows.Forms.CheckBox();
             this.label15 = new System.Windows.Forms.Label();
             this.testPortButton = new System.Windows.Forms.Button();
             this.updateBlocklistButton = new System.Windows.Forms.Button();
@@ -92,10 +92,10 @@ namespace TransmissionRemoteDotnet
             this.altTimeConstraintEnabled = new System.Windows.Forms.CheckBox();
             this.altSpeedLimitEnable = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.LimitUploadValue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LimitDownloadValue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.IncomingPortValue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PeerLimitValue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.limitUploadValue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.limitDownloadValue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incomingPortValue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peerLimitValue)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -116,42 +116,42 @@ namespace TransmissionRemoteDotnet
             // 
             // DownloadToField
             // 
-            resources.ApplyResources(this.DownloadToField, "DownloadToField");
-            this.DownloadToField.Name = "DownloadToField";
+            resources.ApplyResources(this.downloadToField, "DownloadToField");
+            this.downloadToField.Name = "DownloadToField";
             // 
             // LimitUploadCheckBox
             // 
-            resources.ApplyResources(this.LimitUploadCheckBox, "LimitUploadCheckBox");
-            this.LimitUploadCheckBox.Name = "LimitUploadCheckBox";
-            this.LimitUploadCheckBox.UseVisualStyleBackColor = true;
-            this.LimitUploadCheckBox.CheckedChanged += new System.EventHandler(this.LimitUploadCheckBox_CheckedChanged);
+            resources.ApplyResources(this.limitUploadCheckBox, "LimitUploadCheckBox");
+            this.limitUploadCheckBox.Name = "LimitUploadCheckBox";
+            this.limitUploadCheckBox.UseVisualStyleBackColor = true;
+            this.limitUploadCheckBox.CheckedChanged += new System.EventHandler(this.LimitUploadCheckBox_CheckedChanged);
             // 
             // LimitUploadValue
             // 
-            resources.ApplyResources(this.LimitUploadValue, "LimitUploadValue");
-            this.LimitUploadValue.Maximum = new decimal(new int[] {
+            resources.ApplyResources(this.limitUploadValue, "LimitUploadValue");
+            this.limitUploadValue.Maximum = new decimal(new int[] {
             1048576,
             0,
             0,
             0});
-            this.LimitUploadValue.Name = "LimitUploadValue";
+            this.limitUploadValue.Name = "LimitUploadValue";
             // 
             // LimitDownloadCheckBox
             // 
-            resources.ApplyResources(this.LimitDownloadCheckBox, "LimitDownloadCheckBox");
-            this.LimitDownloadCheckBox.Name = "LimitDownloadCheckBox";
-            this.LimitDownloadCheckBox.UseVisualStyleBackColor = true;
-            this.LimitDownloadCheckBox.CheckedChanged += new System.EventHandler(this.LimitDownloadCheckBox_CheckedChanged);
+            resources.ApplyResources(this.limitDownloadCheckBox, "LimitDownloadCheckBox");
+            this.limitDownloadCheckBox.Name = "LimitDownloadCheckBox";
+            this.limitDownloadCheckBox.UseVisualStyleBackColor = true;
+            this.limitDownloadCheckBox.CheckedChanged += new System.EventHandler(this.LimitDownloadCheckBox_CheckedChanged);
             // 
             // LimitDownloadValue
             // 
-            resources.ApplyResources(this.LimitDownloadValue, "LimitDownloadValue");
-            this.LimitDownloadValue.Maximum = new decimal(new int[] {
+            resources.ApplyResources(this.limitDownloadValue, "LimitDownloadValue");
+            this.limitDownloadValue.Maximum = new decimal(new int[] {
             1048576,
             0,
             0,
             0});
-            this.LimitDownloadValue.Name = "LimitDownloadValue";
+            this.limitDownloadValue.Name = "LimitDownloadValue";
             // 
             // label2
             // 
@@ -160,13 +160,13 @@ namespace TransmissionRemoteDotnet
             // 
             // IncomingPortValue
             // 
-            resources.ApplyResources(this.IncomingPortValue, "IncomingPortValue");
-            this.IncomingPortValue.Maximum = new decimal(new int[] {
+            resources.ApplyResources(this.incomingPortValue, "IncomingPortValue");
+            this.incomingPortValue.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
-            this.IncomingPortValue.Name = "IncomingPortValue";
+            this.incomingPortValue.Name = "IncomingPortValue";
             // 
             // SaveButton
             // 
@@ -190,13 +190,13 @@ namespace TransmissionRemoteDotnet
             // 
             // PeerLimitValue
             // 
-            resources.ApplyResources(this.PeerLimitValue, "PeerLimitValue");
-            this.PeerLimitValue.Maximum = new decimal(new int[] {
+            resources.ApplyResources(this.peerLimitValue, "PeerLimitValue");
+            this.peerLimitValue.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.PeerLimitValue.Name = "PeerLimitValue";
+            this.peerLimitValue.Name = "PeerLimitValue";
             // 
             // PEXcheckBox
             // 
@@ -211,20 +211,20 @@ namespace TransmissionRemoteDotnet
             // 
             // PortForward
             // 
-            resources.ApplyResources(this.PortForward, "PortForward");
-            this.PortForward.Name = "PortForward";
-            this.PortForward.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.portForwardCheckBox, "PortForward");
+            this.portForwardCheckBox.Name = "PortForward";
+            this.portForwardCheckBox.UseVisualStyleBackColor = true;
             // 
             // EncryptionCombobox
             // 
-            this.EncryptionCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.EncryptionCombobox.FormattingEnabled = true;
-            this.EncryptionCombobox.Items.AddRange(new object[] {
+            this.encryptionCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.encryptionCombobox.FormattingEnabled = true;
+            this.encryptionCombobox.Items.AddRange(new object[] {
             resources.GetString("EncryptionCombobox.Items"),
             resources.GetString("EncryptionCombobox.Items1"),
             resources.GetString("EncryptionCombobox.Items2")});
-            resources.ApplyResources(this.EncryptionCombobox, "EncryptionCombobox");
-            this.EncryptionCombobox.Name = "EncryptionCombobox";
+            resources.ApplyResources(this.encryptionCombobox, "EncryptionCombobox");
+            this.encryptionCombobox.Name = "EncryptionCombobox";
             // 
             // label3
             // 
@@ -252,7 +252,7 @@ namespace TransmissionRemoteDotnet
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.DhtEnabled);
+            this.tabPage1.Controls.Add(this.dhtEnabled);
             this.tabPage1.Controls.Add(this.label15);
             this.tabPage1.Controls.Add(this.testPortButton);
             this.tabPage1.Controls.Add(this.updateBlocklistButton);
@@ -260,10 +260,10 @@ namespace TransmissionRemoteDotnet
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.PEXcheckBox);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.IncomingPortValue);
-            this.tabPage1.Controls.Add(this.PortForward);
-            this.tabPage1.Controls.Add(this.DownloadToField);
-            this.tabPage1.Controls.Add(this.EncryptionCombobox);
+            this.tabPage1.Controls.Add(this.incomingPortValue);
+            this.tabPage1.Controls.Add(this.portForwardCheckBox);
+            this.tabPage1.Controls.Add(this.downloadToField);
+            this.tabPage1.Controls.Add(this.encryptionCombobox);
             this.tabPage1.Controls.Add(this.label3);
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
@@ -271,9 +271,9 @@ namespace TransmissionRemoteDotnet
             // 
             // DhtEnabled
             // 
-            resources.ApplyResources(this.DhtEnabled, "DhtEnabled");
-            this.DhtEnabled.Name = "DhtEnabled";
-            this.DhtEnabled.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.dhtEnabled, "DhtEnabled");
+            this.dhtEnabled.Name = "DhtEnabled";
+            this.dhtEnabled.UseVisualStyleBackColor = true;
             // 
             // label15
             // 
@@ -306,13 +306,13 @@ namespace TransmissionRemoteDotnet
             this.tabPage2.Controls.Add(this.seedLimitUpDown);
             this.tabPage2.Controls.Add(this.seedRatioEnabledCheckBox);
             this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.LimitUploadCheckBox);
-            this.tabPage2.Controls.Add(this.PeerLimitValue);
+            this.tabPage2.Controls.Add(this.limitUploadCheckBox);
+            this.tabPage2.Controls.Add(this.peerLimitValue);
             this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.LimitUploadValue);
-            this.tabPage2.Controls.Add(this.LimitDownloadValue);
+            this.tabPage2.Controls.Add(this.limitUploadValue);
+            this.tabPage2.Controls.Add(this.limitDownloadValue);
             this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.LimitDownloadCheckBox);
+            this.tabPage2.Controls.Add(this.limitDownloadCheckBox);
             resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -480,10 +480,10 @@ namespace TransmissionRemoteDotnet
             this.Name = "RemoteSettingsDialog";
             this.ShowInTaskbar = false;
             this.Load += new System.EventHandler(this.RemoteSettingsDialog_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.LimitUploadValue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LimitDownloadValue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.IncomingPortValue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PeerLimitValue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.limitUploadValue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.limitDownloadValue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incomingPortValue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peerLimitValue)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -505,22 +505,22 @@ namespace TransmissionRemoteDotnet
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox DownloadToField;
-        private System.Windows.Forms.CheckBox LimitUploadCheckBox;
-        private System.Windows.Forms.NumericUpDown LimitUploadValue;
-        private System.Windows.Forms.CheckBox LimitDownloadCheckBox;
-        private System.Windows.Forms.NumericUpDown LimitDownloadValue;
+        private System.Windows.Forms.TextBox downloadToField;
+        private System.Windows.Forms.CheckBox limitUploadCheckBox;
+        private System.Windows.Forms.NumericUpDown limitUploadValue;
+        private System.Windows.Forms.CheckBox limitDownloadCheckBox;
+        private System.Windows.Forms.NumericUpDown limitDownloadValue;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown IncomingPortValue;
+        private System.Windows.Forms.NumericUpDown incomingPortValue;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button CloseFormButton;
         private System.ComponentModel.BackgroundWorker SettingsWorker;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox EncryptionCombobox;
-        private System.Windows.Forms.CheckBox PortForward;
+        private System.Windows.Forms.ComboBox encryptionCombobox;
+        private System.Windows.Forms.CheckBox portForwardCheckBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox PEXcheckBox;
-        private System.Windows.Forms.NumericUpDown PeerLimitValue;
+        private System.Windows.Forms.NumericUpDown peerLimitValue;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TabControl tabControl1;
@@ -549,6 +549,6 @@ namespace TransmissionRemoteDotnet
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.NumericUpDown timeConstaintBeginMinutes;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.CheckBox DhtEnabled;
+        private System.Windows.Forms.CheckBox dhtEnabled;
     }
 }
