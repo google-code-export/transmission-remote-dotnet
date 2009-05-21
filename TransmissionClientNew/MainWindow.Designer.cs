@@ -31,7 +31,7 @@ namespace TransmissionRemoteDotnet
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.torrentAndTabsSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.torrentAndTabsSplitContainer = new TransmissionRemoteDotnet.SplitContainerFix();
             this.mainVerticalSplitContainer = new System.Windows.Forms.SplitContainer();
             this.stateListBox = new TransmissionRemoteDotnet.GListBox();
             this.torrentListView = new TransmissionRemoteDotnet.ListViewNF();
@@ -1508,7 +1508,7 @@ namespace TransmissionRemoteDotnet
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.SplitContainer mainVerticalSplitContainer;
-        private System.Windows.Forms.SplitContainer torrentAndTabsSplitContainer;
+        private TransmissionRemoteDotnet.SplitContainerFix torrentAndTabsSplitContainer;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripButton addTorrentButton;
         private System.Windows.Forms.TabPage trackersTabPage;

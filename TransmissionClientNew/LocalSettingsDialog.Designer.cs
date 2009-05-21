@@ -86,7 +86,6 @@ namespace TransmissionRemoteDotnet
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -102,7 +101,6 @@ namespace TransmissionRemoteDotnet
             this.uploadLimitItems = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.profileComboBox = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.removeProfileButton = new System.Windows.Forms.Button();
@@ -423,7 +421,6 @@ namespace TransmissionRemoteDotnet
             // 
             this.tabPage5.Controls.Add(this.label15);
             this.tabPage5.Controls.Add(this.linkLabel1);
-            this.tabPage5.Controls.Add(this.label14);
             this.tabPage5.Controls.Add(this.label13);
             this.tabPage5.Controls.Add(this.textBox3);
             this.tabPage5.Controls.Add(this.checkBox1);
@@ -445,11 +442,6 @@ namespace TransmissionRemoteDotnet
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.TabStop = true;
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // label14
-            // 
-            resources.ApplyResources(this.label14, "label14");
-            this.label14.Name = "label14";
             // 
             // label13
             // 
@@ -545,11 +537,6 @@ namespace TransmissionRemoteDotnet
             this.profileComboBox.Name = "profileComboBox";
             this.profileComboBox.SelectedIndexChanged += new System.EventHandler(this.profileComboBox_SelectedIndexChanged);
             // 
-            // label11
-            // 
-            resources.ApplyResources(this.label11, "label11");
-            this.label11.Name = "label11";
-            // 
             // textBox1
             // 
             resources.ApplyResources(this.textBox1, "textBox1");
@@ -559,7 +546,6 @@ namespace TransmissionRemoteDotnet
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.removeProfileButton);
-            this.groupBox5.Controls.Add(this.label11);
             this.groupBox5.Controls.Add(this.profileComboBox);
             resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Name = "groupBox5";
@@ -628,7 +614,6 @@ namespace TransmissionRemoteDotnet
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
@@ -668,7 +653,6 @@ namespace TransmissionRemoteDotnet
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox profileComboBox;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button addProfileButton;
         private System.Windows.Forms.GroupBox groupBox5;
@@ -691,7 +675,6 @@ namespace TransmissionRemoteDotnet
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.TextBox uploadLimitItems;
