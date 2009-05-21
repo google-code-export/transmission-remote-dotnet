@@ -159,7 +159,7 @@
     <value>329, 16</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Please send bug reports and patches through this site.</value>
@@ -219,7 +219,7 @@
     <value>0, 20</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -240,7 +240,7 @@
     <value>114, 27</value>
   </data>
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Close</value>

@@ -126,7 +126,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="comboBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;comboBox1.Name" xml:space="preserve">
     <value>comboBox1</value>
@@ -153,7 +153,7 @@
     <value>93, 13</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>10</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Bandwidth priority:</value>
@@ -180,7 +180,7 @@
     <value>123, 17</value>
   </data>
   <data name="honorsSessionLimits.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>12</value>
   </data>
   <data name="honorsSessionLimits.Text" xml:space="preserve">
     <value>Honors session limits</value>
@@ -210,7 +210,7 @@
     <value>96, 17</value>
   </data>
   <data name="seedRatioLimitedCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>8</value>
   </data>
   <data name="seedRatioLimitedCheckBox.Text" xml:space="preserve">
     <value>Limit seed ratio</value>
@@ -237,7 +237,7 @@
     <value>56, 20</value>
   </data>
   <data name="seedRatioLimitValue.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;seedRatioLimitValue.Name" xml:space="preserve">
     <value>seedRatioLimitValue</value>
@@ -258,7 +258,7 @@
     <value>56, 20</value>
   </data>
   <data name="peerLimitValue.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;peerLimitValue.Name" xml:space="preserve">
     <value>peerLimitValue</value>
@@ -282,7 +282,7 @@
     <value>80, 13</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>6</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Maximum peers</value>
@@ -309,7 +309,7 @@
     <value>103, 17</value>
   </data>
   <data name="uploadLimitEnableField.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>0</value>
   </data>
   <data name="uploadLimitEnableField.Text" xml:space="preserve">
     <value>Limit upload rate</value>
@@ -333,7 +333,7 @@
     <value>56, 20</value>
   </data>
   <data name="downloadLimitField.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;downloadLimitField.Name" xml:space="preserve">
     <value>downloadLimitField</value>
@@ -357,7 +357,7 @@
     <value>31, 13</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>KB/s</value>
@@ -381,7 +381,7 @@
     <value>56, 20</value>
   </data>
   <data name="uploadLimitField.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;uploadLimitField.Name" xml:space="preserve">
     <value>uploadLimitField</value>
@@ -405,7 +405,7 @@
     <value>31, 13</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>KB/s</value>
@@ -432,7 +432,7 @@
     <value>117, 17</value>
   </data>
   <data name="downloadLimitEnableField.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>3</value>
   </data>
   <data name="downloadLimitEnableField.Text" xml:space="preserve">
     <value>Limit download rate</value>
@@ -484,7 +484,7 @@
     <value>367, 213</value>
   </data>
   <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
     <value>tabControl1</value>
@@ -505,7 +505,7 @@
     <value>72, 33</value>
   </data>
   <data name="button2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="button2.Text" xml:space="preserve">
     <value>Cancel</value>
@@ -529,7 +529,7 @@
     <value>72, 33</value>
   </data>
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>OK</value>
@@ -556,7 +556,7 @@
     <value>192, 46</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>1</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>NOTE: Availability of some options may require a transmission-daemon upgrade.</value>

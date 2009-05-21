@@ -208,7 +208,7 @@
     <value>64, 20</value>
   </data>
   <data name="PortField.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;PortField.Name" xml:space="preserve">
     <value>PortField</value>
@@ -232,7 +232,7 @@
     <value>140, 23</value>
   </data>
   <data name="SaveButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="SaveButton.Text" xml:space="preserve">
     <value>Save</value>
@@ -289,7 +289,7 @@
     <value>90, 17</value>
   </data>
   <data name="AutoConnectCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="AutoConnectCheckBox.Text" xml:space="preserve">
     <value>Auto connect</value>
@@ -370,7 +370,7 @@
     <value>89, 17</value>
   </data>
   <data name="UseSSLCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="UseSSLCheckBox.Text" xml:space="preserve">
     <value>Secure (SSL)</value>
@@ -424,7 +424,7 @@
     <value>64, 20</value>
   </data>
   <data name="RetryLimitValue.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;RetryLimitValue.Name" xml:space="preserve">
     <value>RetryLimitValue</value>
@@ -805,7 +805,7 @@
     <value>109, 17</value>
   </data>
   <data name="minimizeOnCloseCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="minimizeOnCloseCheckBox.Text" xml:space="preserve">
     <value>Minimize on close</value>
@@ -865,7 +865,7 @@
     <value>148, 17</value>
   </data>
   <data name="notificationOnCompletionCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="notificationOnCompletionCheckBox.Text" xml:space="preserve">
     <value>Notification on completion</value>
@@ -1105,7 +1105,7 @@
     <value>35, 13</value>
   </data>
   <data name="label15.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>6</value>
   </data>
   <data name="label15.Text" xml:space="preserve">
     <value>Help: </value>
@@ -1135,7 +1135,7 @@
     <value>311, 13</value>
   </data>
   <data name="linkLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
     <value>http://code.google.com/p/transmission-remote-dotnet/wiki/SSH</value>
@@ -1165,7 +1165,7 @@
     <value>60, 13</value>
   </data>
   <data name="label13.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>4</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
     <value>Command: </value>
@@ -1192,7 +1192,7 @@
     <value>300, 20</value>
   </data>
   <data name="textBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;textBox3.Name" xml:space="preserve">
     <value>textBox3</value>
@@ -1219,7 +1219,7 @@
     <value>177, 17</value>
   </data>
   <data name="checkBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>0</value>
   </data>
   <data name="checkBox1.Text" xml:space="preserve">
     <value>Display remote command button</value>
@@ -1249,7 +1249,7 @@
     <value>52, 13</value>
   </data>
   <data name="label12.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
     <value>plink.exe:</value>
@@ -1279,7 +1279,7 @@
     <value>75, 23</value>
   </data>
   <data name="button2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="button2.Text" xml:space="preserve">
     <value>Browse</value>
@@ -1303,7 +1303,7 @@
     <value>212, 20</value>
   </data>
   <data name="textBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;textBox2.Name" xml:space="preserve">
     <value>textBox2</value>
@@ -1348,7 +1348,7 @@
     <value>217, 20</value>
   </data>
   <data name="sambaShare.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;sambaShare.Name" xml:space="preserve">
     <value>sambaShare</value>
@@ -1375,7 +1375,7 @@
     <value>155, 17</value>
   </data>
   <data name="sambaShareEnabledCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="sambaShareEnabledCheckBox.Text" xml:space="preserve">
     <value>Downloads network share: </value>
@@ -1435,7 +1435,7 @@
     <value>120, 13</value>
   </data>
   <data name="label16.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="label16.Text" xml:space="preserve">
     <value>Upload limit menu items:</value>
@@ -1459,7 +1459,7 @@
     <value>217, 20</value>
   </data>
   <data name="downloadLimitItems.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;downloadLimitItems.Name" xml:space="preserve">
     <value>downloadLimitItems</value>
@@ -1480,7 +1480,7 @@
     <value>217, 20</value>
   </data>
   <data name="uploadLimitItems.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;uploadLimitItems.Name" xml:space="preserve">
     <value>uploadLimitItems</value>
@@ -1528,7 +1528,7 @@
     <value>433, 160</value>
   </data>
   <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
     <value>tabControl1</value>
@@ -1552,7 +1552,7 @@
     <value>140, 23</value>
   </data>
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>4</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Save and Connect</value>
@@ -1576,7 +1576,7 @@
     <value>133, 21</value>
   </data>
   <data name="profileComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;profileComboBox.Name" xml:space="preserve">
     <value>profileComboBox</value>
@@ -1597,7 +1597,7 @@
     <value>131, 20</value>
   </data>
   <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
     <value>textBox1</value>
@@ -1624,7 +1624,7 @@
     <value>30, 30</value>
   </data>
   <data name="removeProfileButton.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;removeProfileButton.Name" xml:space="preserve">
     <value>removeProfileButton</value>
@@ -1645,7 +1645,7 @@
     <value>210, 51</value>
   </data>
   <data name="groupBox5.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>1</value>
   </data>
   <data name="groupBox5.Text" xml:space="preserve">
     <value>Current profile</value>
@@ -1675,7 +1675,7 @@
     <value>30, 30</value>
   </data>
   <data name="addProfileButton.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;addProfileButton.Name" xml:space="preserve">
     <value>addProfileButton</value>
@@ -1696,7 +1696,7 @@
     <value>210, 51</value>
   </data>
   <data name="groupBox6.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>2</value>
   </data>
   <data name="groupBox6.Text" xml:space="preserve">
     <value>New profile</value>

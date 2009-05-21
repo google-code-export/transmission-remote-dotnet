@@ -144,7 +144,7 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="DownloadToField.Location" type="System.Drawing.Point, System.Drawing">
     <value>173, 9</value>
@@ -165,7 +165,7 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;DownloadToField.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="LimitUploadCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -177,7 +177,7 @@
     <value>82, 17</value>
   </data>
   <data name="LimitUploadCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>0</value>
   </data>
   <data name="LimitUploadCheckBox.Text" xml:space="preserve">
     <value>Limit upload</value>
@@ -201,7 +201,7 @@
     <value>64, 20</value>
   </data>
   <data name="LimitUploadValue.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;LimitUploadValue.Name" xml:space="preserve">
     <value>LimitUploadValue</value>
@@ -225,7 +225,7 @@
     <value>96, 17</value>
   </data>
   <data name="LimitDownloadCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>3</value>
   </data>
   <data name="LimitDownloadCheckBox.Text" xml:space="preserve">
     <value>Limit download</value>
@@ -249,7 +249,7 @@
     <value>64, 20</value>
   </data>
   <data name="LimitDownloadValue.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;LimitDownloadValue.Name" xml:space="preserve">
     <value>LimitDownloadValue</value>
@@ -288,7 +288,7 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="IncomingPortValue.Location" type="System.Drawing.Point, System.Drawing">
     <value>173, 36</value>
@@ -309,7 +309,7 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;IncomingPortValue.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="SaveButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>239, 230</value>
@@ -318,7 +318,7 @@
     <value>89, 38</value>
   </data>
   <data name="SaveButton.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>1</value>
   </data>
   <data name="SaveButton.Text" xml:space="preserve">
     <value>Save</value>
@@ -342,7 +342,7 @@
     <value>89, 38</value>
   </data>
   <data name="CloseFormButton.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>2</value>
   </data>
   <data name="CloseFormButton.Text" xml:space="preserve">
     <value>Close</value>
@@ -369,7 +369,7 @@
     <value>64, 20</value>
   </data>
   <data name="PeerLimitValue.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;PeerLimitValue.Name" xml:space="preserve">
     <value>PeerLimitValue</value>
@@ -393,7 +393,7 @@
     <value>135, 17</value>
   </data>
   <data name="PEXcheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>9</value>
   </data>
   <data name="PEXcheckBox.Text" xml:space="preserve">
     <value>Enable Peer Exchange</value>
@@ -408,7 +408,7 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;PEXcheckBox.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -420,7 +420,7 @@
     <value>53, 13</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>6</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Peer Limit</value>
@@ -447,7 +447,7 @@
     <value>90, 17</value>
   </data>
   <data name="PortForward.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="PortForward.Text" xml:space="preserve">
     <value>Enable UPnP</value>
@@ -462,7 +462,7 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;PortForward.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="EncryptionCombobox.Items" xml:space="preserve">
     <value>tolerated</value>
@@ -480,7 +480,7 @@
     <value>102, 21</value>
   </data>
   <data name="EncryptionCombobox.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;EncryptionCombobox.Name" xml:space="preserve">
     <value>EncryptionCombobox</value>
@@ -492,7 +492,7 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;EncryptionCombobox.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -504,7 +504,7 @@
     <value>60, 13</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>5</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Encryption:</value>
@@ -519,7 +519,7 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -531,7 +531,7 @@
     <value>31, 13</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>5</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>KB/s</value>
@@ -558,7 +558,7 @@
     <value>31, 13</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>2</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>KB/s</value>
@@ -589,7 +589,7 @@
     <value>202, 17</value>
   </data>
   <data name="DhtEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>11</value>
   </data>
   <data name="DhtEnabled.Text" xml:space="preserve">
     <value>Enable Distributed Hash Table (DHT)</value>
@@ -616,7 +616,7 @@
     <value>0, 13</value>
   </data>
   <data name="label15.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;label15.Name" xml:space="preserve">
     <value>label15</value>
@@ -628,7 +628,7 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="testPortButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -640,7 +640,7 @@
     <value>98, 23</value>
   </data>
   <data name="testPortButton.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>4</value>
   </data>
   <data name="testPortButton.Text" xml:space="preserve">
     <value>Test Port</value>
@@ -655,7 +655,7 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;testPortButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="updateBlocklistButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -667,7 +667,7 @@
     <value>102, 23</value>
   </data>
   <data name="updateBlocklistButton.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>8</value>
   </data>
   <data name="updateBlocklistButton.Text" xml:space="preserve">
     <value>Update Blocklist</value>
@@ -682,7 +682,7 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;updateBlocklistButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="blocklistEnabledCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -697,7 +697,7 @@
     <value>106, 17</value>
   </data>
   <data name="blocklistEnabledCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>7</value>
   </data>
   <data name="blocklistEnabledCheckBox.Text" xml:space="preserve">
     <value>Blocklist enabled</value>
@@ -712,12 +712,11 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;blocklistEnabledCheckBox.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
@@ -752,7 +751,7 @@
     <value>64, 20</value>
   </data>
   <data name="seedLimitUpDown.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;seedLimitUpDown.Name" xml:space="preserve">
     <value>seedLimitUpDown</value>
@@ -779,7 +778,7 @@
     <value>103, 17</value>
   </data>
   <data name="seedRatioEnabledCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>8</value>
   </data>
   <data name="seedRatioEnabledCheckBox.Text" xml:space="preserve">
     <value>Seed Ratio Limit</value>
@@ -887,7 +886,7 @@
     <value>10, 13</value>
   </data>
   <data name="label13.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>9</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
     <value>:</value>
@@ -914,7 +913,7 @@
     <value>47, 20</value>
   </data>
   <data name="timeConstaintBeginMinutes.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;timeConstaintBeginMinutes.Name" xml:space="preserve">
     <value>timeConstaintBeginMinutes</value>
@@ -941,7 +940,7 @@
     <value>24, 13</value>
   </data>
   <data name="label12.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>4</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
     <value>Up:</value>
@@ -968,7 +967,7 @@
     <value>38, 13</value>
   </data>
   <data name="label11.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>1</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
     <value>Down:</value>
@@ -998,7 +997,7 @@
     <value>31, 13</value>
   </data>
   <data name="label9.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>6</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>KB/s</value>
@@ -1028,7 +1027,7 @@
     <value>31, 13</value>
   </data>
   <data name="label10.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>3</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>KB/s</value>
@@ -1052,7 +1051,7 @@
     <value>47, 20</value>
   </data>
   <data name="timeConstraintEndHours.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;timeConstraintEndHours.Name" xml:space="preserve">
     <value>timeConstraintEndHours</value>
@@ -1076,7 +1075,7 @@
     <value>16, 13</value>
   </data>
   <data name="label8.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>11</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>to</value>
@@ -1100,7 +1099,7 @@
     <value>47, 20</value>
   </data>
   <data name="timeConstraintBeginHours.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;timeConstraintBeginHours.Name" xml:space="preserve">
     <value>timeConstraintBeginHours</value>
@@ -1121,7 +1120,7 @@
     <value>69, 20</value>
   </data>
   <data name="altUploadLimitField.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;altUploadLimitField.Name" xml:space="preserve">
     <value>altUploadLimitField</value>
@@ -1166,7 +1165,7 @@
     <value>98, 17</value>
   </data>
   <data name="altTimeConstraintEnabled.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>7</value>
   </data>
   <data name="altTimeConstraintEnabled.Text" xml:space="preserve">
     <value>Time constraint</value>
@@ -1241,7 +1240,7 @@
     <value>411, 207</value>
   </data>
   <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
     <value>tabControl1</value>
@@ -1262,7 +1261,7 @@
     <value>212, 33</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>0</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>NOTE: Availability of some options may require a transmission-daemon upgrade.</value>

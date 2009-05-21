@@ -67,6 +67,7 @@ namespace TransmissionRemoteDotnet
             this.label5 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.DhtEnabled = new System.Windows.Forms.CheckBox();
             this.label15 = new System.Windows.Forms.Label();
             this.testPortButton = new System.Windows.Forms.Button();
             this.updateBlocklistButton = new System.Windows.Forms.Button();
@@ -91,7 +92,6 @@ namespace TransmissionRemoteDotnet
             this.altTimeConstraintEnabled = new System.Windows.Forms.CheckBox();
             this.altSpeedLimitEnable = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.DhtEnabled = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.LimitUploadValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LimitDownloadValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IncomingPortValue)).BeginInit();
@@ -268,6 +268,12 @@ namespace TransmissionRemoteDotnet
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // DhtEnabled
+            // 
+            resources.ApplyResources(this.DhtEnabled, "DhtEnabled");
+            this.DhtEnabled.Name = "DhtEnabled";
+            this.DhtEnabled.UseVisualStyleBackColor = true;
             // 
             // label15
             // 
@@ -458,12 +464,6 @@ namespace TransmissionRemoteDotnet
             // 
             resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
-            // 
-            // DhtEnabled
-            // 
-            resources.ApplyResources(this.DhtEnabled, "DhtEnabled");
-            this.DhtEnabled.Name = "DhtEnabled";
-            this.DhtEnabled.UseVisualStyleBackColor = true;
             // 
             // RemoteSettingsDialog
             // 

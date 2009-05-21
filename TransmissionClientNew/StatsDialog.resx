@@ -210,7 +210,7 @@
     <value>58, 13</value>
   </data>
   <data name="secondsActiveValue2.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>9</value>
   </data>
   <data name="secondsActiveValue2.Text" xml:space="preserve">
     <value>Querying...</value>
@@ -237,7 +237,7 @@
     <value>58, 13</value>
   </data>
   <data name="sessionCountValue2.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>7</value>
   </data>
   <data name="sessionCountValue2.Text" xml:space="preserve">
     <value>Querying...</value>
@@ -264,7 +264,7 @@
     <value>58, 13</value>
   </data>
   <data name="filesAddedValue2.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>5</value>
   </data>
   <data name="filesAddedValue2.Text" xml:space="preserve">
     <value>Querying...</value>
@@ -291,7 +291,7 @@
     <value>58, 13</value>
   </data>
   <data name="uploadedBytesValue2.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>3</value>
   </data>
   <data name="uploadedBytesValue2.Text" xml:space="preserve">
     <value>Querying...</value>
@@ -318,7 +318,7 @@
     <value>58, 13</value>
   </data>
   <data name="downloadedBytesValue2.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>1</value>
   </data>
   <data name="downloadedBytesValue2.Text" xml:space="preserve">
     <value>Querying...</value>
@@ -345,7 +345,7 @@
     <value>81, 13</value>
   </data>
   <data name="secondsActiveLabel2.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>8</value>
   </data>
   <data name="secondsActiveLabel2.Text" xml:space="preserve">
     <value>Seconds active</value>
@@ -372,7 +372,7 @@
     <value>75, 13</value>
   </data>
   <data name="sessionCountLabel2.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>6</value>
   </data>
   <data name="sessionCountLabel2.Text" xml:space="preserve">
     <value>Session Count</value>
@@ -399,7 +399,7 @@
     <value>64, 13</value>
   </data>
   <data name="filesAddedLabel2.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>4</value>
   </data>
   <data name="filesAddedLabel2.Text" xml:space="preserve">
     <value>Files added:</value>
@@ -423,7 +423,7 @@
     <value>228, 167</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>2</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Cumulative Stats</value>
@@ -453,7 +453,7 @@
     <value>58, 13</value>
   </data>
   <data name="secondsActiveValue1.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>9</value>
   </data>
   <data name="secondsActiveValue1.Text" xml:space="preserve">
     <value>Querying...</value>
@@ -480,7 +480,7 @@
     <value>58, 13</value>
   </data>
   <data name="sessionCountValue1.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>7</value>
   </data>
   <data name="sessionCountValue1.Text" xml:space="preserve">
     <value>Querying...</value>
@@ -507,7 +507,7 @@
     <value>58, 13</value>
   </data>
   <data name="filesAddedValue1.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>5</value>
   </data>
   <data name="filesAddedValue1.Text" xml:space="preserve">
     <value>Querying...</value>
@@ -534,7 +534,7 @@
     <value>58, 13</value>
   </data>
   <data name="uploadedBytesValue1.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>3</value>
   </data>
   <data name="uploadedBytesValue1.Text" xml:space="preserve">
     <value>Querying...</value>
@@ -561,7 +561,7 @@
     <value>58, 13</value>
   </data>
   <data name="downloadedBytesValue1.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>1</value>
   </data>
   <data name="downloadedBytesValue1.Text" xml:space="preserve">
     <value>Querying...</value>
@@ -588,7 +588,7 @@
     <value>81, 13</value>
   </data>
   <data name="secondsActiveLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>8</value>
   </data>
   <data name="secondsActiveLabel1.Text" xml:space="preserve">
     <value>Seconds active</value>
@@ -615,7 +615,7 @@
     <value>75, 13</value>
   </data>
   <data name="sessionCountLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>6</value>
   </data>
   <data name="sessionCountLabel1.Text" xml:space="preserve">
     <value>Session Count</value>
@@ -642,7 +642,7 @@
     <value>64, 13</value>
   </data>
   <data name="filesAddedLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>4</value>
   </data>
   <data name="filesAddedLabel1.Text" xml:space="preserve">
     <value>Files added:</value>
@@ -720,7 +720,7 @@
     <value>228, 167</value>
   </data>
   <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>1</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Current Session Stats</value>

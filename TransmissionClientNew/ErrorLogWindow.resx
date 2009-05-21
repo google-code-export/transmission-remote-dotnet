@@ -163,7 +163,7 @@
     <value>errorListView</value>
   </data>
   <data name="&gt;&gt;errorListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.6.3354.23796, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.8.3428.38424, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;errorListView.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -190,7 +190,7 @@
     <value>75, 23</value>
   </data>
   <data name="button2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="button2.Text" xml:space="preserve">
     <value>Clear</value>
@@ -217,7 +217,7 @@
     <value>343, 13</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value> You can copy the body of an error to the clipboard by double clicking it</value>
@@ -241,7 +241,7 @@
     <value>75, 23</value>
   </data>
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Close</value>
