@@ -91,6 +91,7 @@ namespace TransmissionRemoteDotnet
             this.altTimeConstraintEnabled = new System.Windows.Forms.CheckBox();
             this.altSpeedLimitEnable = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.DhtEnabled = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.LimitUploadValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LimitDownloadValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IncomingPortValue)).BeginInit();
@@ -251,6 +252,7 @@ namespace TransmissionRemoteDotnet
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.DhtEnabled);
             this.tabPage1.Controls.Add(this.label15);
             this.tabPage1.Controls.Add(this.testPortButton);
             this.tabPage1.Controls.Add(this.updateBlocklistButton);
@@ -457,6 +459,12 @@ namespace TransmissionRemoteDotnet
             resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
             // 
+            // DhtEnabled
+            // 
+            resources.ApplyResources(this.DhtEnabled, "DhtEnabled");
+            this.DhtEnabled.Name = "DhtEnabled";
+            this.DhtEnabled.UseVisualStyleBackColor = true;
+            // 
             // RemoteSettingsDialog
             // 
             this.AcceptButton = this.SaveButton;
@@ -541,5 +549,6 @@ namespace TransmissionRemoteDotnet
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.NumericUpDown timeConstaintBeginMinutes;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.CheckBox DhtEnabled;
     }
 }

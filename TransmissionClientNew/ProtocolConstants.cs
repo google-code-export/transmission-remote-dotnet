@@ -127,6 +127,7 @@ namespace TransmissionRemoteDotnet
             FIELD_ALTSPEEDENABLED = "alt-speed-enabled",
             FIELD_ALTSPEEDDOWN = "alt-speed-down",
             FIELD_ALTSPEEDUP = "alt-speed-up",
+            FIELD_DHTENABLED = "dht-enabled",
             FIELD_PEERLIMITGLOBAL = "peer-limit-global",
             FIELD_PEXENABLED = "pex-enabled",
             FIELD_PEXALLOWED = "pex-allowed",

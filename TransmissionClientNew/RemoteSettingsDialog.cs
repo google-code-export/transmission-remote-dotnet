@@ -165,6 +165,8 @@ namespace TransmissionRemoteDotnet
                     seedLimitUpDown.Value = Toolbox.ToDecimal(session[ProtocolConstants.FIELD_SEEDRATIOLIMIT]);
                     seedRatioEnabledCheckBox.Checked = Toolbox.ToBool(session[ProtocolConstants.FIELD_SEEDRATIOLIMITED]);
                 }
+                DhtEnabled.Checked = Toolbox.ToBool(session[ProtocolConstants.FIELD_DHTENABLED]);
+                DhtEnabled.Enabled = Program.DaemonDescriptor.Revision >= 8460;
                 testPortButton.Enabled = Program.DaemonDescriptor.RpcVersion >= 5;
             }
             catch (Exception ex)
@@ -202,6 +204,7 @@ namespace TransmissionRemoteDotnet
             JsonObject arguments = Requests.GetArgObject(request);
             arguments.Put((string)IncomingPortValue.Tag, IncomingPortValue.Value);
             arguments.Put(ProtocolConstants.FIELD_PORTFORWARDINGENABLED, PortForward.Checked);
+            arguments.Put(ProtocolConstants.FIELD_DHTENABLED, PortForward.Checked);
             arguments.Put((string)PEXcheckBox.Tag, PEXcheckBox.Checked);
             arguments.Put((string)PeerLimitValue.Tag, PeerLimitValue.Value);
             switch (EncryptionCombobox.SelectedIndex)
