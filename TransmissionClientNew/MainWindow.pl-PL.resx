@@ -205,7 +205,7 @@
     <value>Rozpoczęto:</value>
   </data>
   <data name="timeElapsedLabelLabel.Text" xml:space="preserve">
-    <value>Time elapsed:</value>
+    <value>Upłynęło:</value>
   </data>
   <data name="generalTabPage.Text" xml:space="preserve">
     <value>Ogólne</value>
@@ -274,7 +274,7 @@
     <value>Peerów</value>
   </data>
   <data name="label18.Text" xml:space="preserve">
-    <value>Odswież co:</value>
+    <value>Odśwież co:</value>
   </data>
   <data name="speedResComboBox.Items1" xml:space="preserve">
     <value>10 sek</value>
@@ -391,7 +391,7 @@
     <value>Wyjście</value>
   </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>File</value>
+    <value>Plik</value>
   </data>
   <data name="localSettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Ustawienia Lokalne</value>

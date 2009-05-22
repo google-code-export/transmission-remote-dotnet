@@ -47,8 +47,8 @@ Section "Transmission Remote (required)"
   File "Transmission Remote.exe"
   File "Jayrock.dll"
   File "Jayrock.Json.dll"
-  File "README.txt"
-  File "LICENCE.txt"
+  File "..\..\..\README.txt"
+  File "..\..\..\LICENCE.txt"
   
   ; Write the installation path into the registry
   WriteRegStr HKLM "SOFTWARE\TransmissionRemote" "Install_Dir" "$INSTDIR"

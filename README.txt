@@ -18,14 +18,15 @@ CREDITS AND ACKNOWLEDGEMENTS
  * Most icons are the creation of David Vignoni in his Nuvola theme. http://www.icon-king.com/
  * Some icons were kindly contributed by liuzhiyi and benketom.
  * charles and the other Transmission developers for their great work.
- * Első András has made a number of notable contributions including SSL, speed graphs, GeoIP support and many small patches.
+ * András Első has made many great contributions to this project including speed graphing, GeoIP
+   support, many small patches, and helpful suggestions.
  * Thank you to all the following users kind enough to translate this application:
     * Romaric R. for the French translation.
     * benba for the German translation.
     * drphrozen for the Danish translation.
-    * Első András for the Hungarian translation.
+    * András Első for the Hungarian translation.
     * liuzhiyi for the Chinese translation.
-    * Woodzu and joannacichon83 for the Polish translation.
+    * Woodzu and cichy for the Polish translation.
     * RayTracer for the Turkish translation.
     * Alexey Komarov for the Russian translation.
 	
