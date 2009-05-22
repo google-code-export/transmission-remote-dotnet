@@ -100,7 +100,7 @@ namespace TransmissionRemoteDotnet
                     }
                     else
                     {
-                        sb.Append(System.Environment.NewLine);
+                        sb.Append(Environment.NewLine);
                     }
                 }
             }
@@ -110,7 +110,7 @@ namespace TransmissionRemoteDotnet
                 {
                     for (int i = 0; i < item.SubItems.Count; i++)
                     {
-                        System.Windows.Forms.ListViewItem.ListViewSubItem si = item.SubItems[i];
+                        ListViewItem.ListViewSubItem si = item.SubItems[i];
                         sb.Append(si.Text.Contains(",") ? "\""+si.Text+"\"" : si.Text);
                         if (i != item.SubItems.Count - 1)
                         {
@@ -118,7 +118,7 @@ namespace TransmissionRemoteDotnet
                         }
                         else
                         {
-                            sb.Append(System.Environment.NewLine);
+                            sb.Append(Environment.NewLine);
                         }
                     }
                 }

@@ -854,7 +854,8 @@ namespace TransmissionRemoteDotnet
 
         private void remoteConfigureButton_Click(object sender, EventArgs e)
         {
-            RemoteSettingsDialog.Instance.ShowDialog();
+            if (Program.Connected)
+                RemoteSettingsDialog.Instance.ShowDialog();
         }
 
         private void OneOrMoreTorrentsSelected(bool oneOrMore)
@@ -979,41 +980,16 @@ namespace TransmissionRemoteDotnet
 
         private void addTorrentButton_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Filter = OtherStrings.OpenFileFilter;
-            openFile.RestoreDirectory = true;
-            openFile.Multiselect = true;
-            if (openFile.ShowDialog() == DialogResult.OK)
+            if (Program.Connected)
             {
-                CreateUploadWorker().RunWorkerAsync(openFile.FileNames);
-            }
-        }
-
-        private void MainWindow_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Control && e.KeyCode == Keys.X && !Program.Connected)
-            {
-                Connect();
-            }
-            else if (e.Control && e.KeyCode == Keys.X)
-            {
-                Program.Connected = false;
-            }
-            else if (e.KeyCode == Keys.F5)
-            {
-                ToggleTorrentDetailPanel();
-            }
-            else if (e.KeyCode == Keys.F7)
-            {
-                ToggleCategoriesVisiblePanel();
-            }
-            else if (e.Control && e.KeyCode == Keys.O)
-            {
-                (new LocalSettingsDialog()).ShowDialog();
-            }
-            else if (e.Control && e.KeyCode == Keys.R && Program.Connected)
-            {
-                RemoteSettingsDialog.Instance.ShowDialog();
+                OpenFileDialog openFile = new OpenFileDialog();
+                openFile.Filter = OtherStrings.OpenFileFilter;
+                openFile.RestoreDirectory = true;
+                openFile.Multiselect = true;
+                if (openFile.ShowDialog() == DialogResult.OK)
+                {
+                    CreateUploadWorker().RunWorkerAsync(openFile.FileNames);
+                }
             }
         }
 
@@ -1046,18 +1022,23 @@ namespace TransmissionRemoteDotnet
 
         public void disconnectButton_Click(object sender, EventArgs e)
         {
-            Program.Connected = false;
+            if (Program.Connected)
+                Program.Connected = false;
         }
 
         public void connectButton_Click(object sender, EventArgs e)
         {
-            Connect();
+            if (!Program.Connected)
+                Connect();
         }
 
         private void addWebTorrentButton_Click(object sender, EventArgs e)
         {
-            UriPromptWindow uriPrompt = new UriPromptWindow();
-            uriPrompt.ShowDialog();
+            if (Program.Connected)
+            {
+                UriPromptWindow uriPrompt = new UriPromptWindow();
+                uriPrompt.ShowDialog();
+            }
         }
 
         private void stateListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -1787,11 +1768,6 @@ namespace TransmissionRemoteDotnet
 
         private void showDetailsPanelToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ToggleTorrentDetailPanel();
-        }
-
-        private void ToggleTorrentDetailPanel()
-        {
             torrentAndTabsSplitContainer.Panel2Collapsed = !torrentAndTabsSplitContainer.Panel2Collapsed;
             showDetailsPanelToolStripMenuItem.Checked = !torrentAndTabsSplitContainer.Panel2Collapsed;
         }
@@ -1857,15 +1833,10 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        private void ToggleCategoriesVisiblePanel()
+        private void categoriesPanelToolStripMenuItem_Click(object sender, EventArgs e)
         {
             mainVerticalSplitContainer.Panel1Collapsed = !mainVerticalSplitContainer.Panel1Collapsed;
             categoriesPanelToolStripMenuItem.Checked = !mainVerticalSplitContainer.Panel1Collapsed;
-        }
-
-        private void categoriesPanelToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ToggleCategoriesVisiblePanel();
         }
 
         private void moveTorrentDataToolStripMenuItem_Click(object sender, EventArgs e)
