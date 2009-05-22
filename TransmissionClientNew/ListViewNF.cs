@@ -44,12 +44,8 @@ namespace TransmissionRemoteDotnet
                 base.OnNotifyMessage(m);
             }
         }
-    }
 
 #if !MONO
-    [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-    public static class ListViewExtensions
-    {
         [System.Runtime.InteropServices.StructLayout(System.Runtime.InteropServices.LayoutKind.Sequential)]
         private struct LVCOLUMN
         {
@@ -78,11 +74,11 @@ namespace TransmissionRemoteDotnet
         [System.Runtime.InteropServices.DllImport("user32.dll", EntryPoint = "SendMessage")]
         private static extern IntPtr SendMessageLVCOLUMN(IntPtr hWnd, Int32 Msg, IntPtr wParam, ref LVCOLUMN lPLVCOLUMN);
 
-        public static void SetSortIcon(this System.Windows.Forms.ListView ListViewControl, int ColumnIndex, System.Windows.Forms.SortOrder Order)
+        public void SetSortIcon(int ColumnIndex, System.Windows.Forms.SortOrder Order)
         {
-            IntPtr ColumnHeader = SendMessage(ListViewControl.Handle, LVM_GETHEADER, IntPtr.Zero, IntPtr.Zero);
+            IntPtr ColumnHeader = SendMessage(this.Handle, LVM_GETHEADER, IntPtr.Zero, IntPtr.Zero);
 
-            for (int ColumnNumber = 0; ColumnNumber <= ListViewControl.Columns.Count - 1; ColumnNumber++)
+            for (int ColumnNumber = 0; ColumnNumber <= this.Columns.Count - 1; ColumnNumber++)
             {
                 IntPtr ColumnPtr = new IntPtr(ColumnNumber);
                 LVCOLUMN lvColumn = new LVCOLUMN();
@@ -111,6 +107,6 @@ namespace TransmissionRemoteDotnet
                 SendMessageLVCOLUMN(ColumnHeader, HDM_SETITEM, ColumnPtr, ref lvColumn);
             }
         }
-    }
 #endif
+    }
 }

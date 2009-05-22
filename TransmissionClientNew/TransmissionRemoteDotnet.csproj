@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TransmissionRemoteDotnet</RootNamespace>
     <AssemblyName>Transmission Remote</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ApplicationIcon>transmission_large.ico</ApplicationIcon>
     <SignManifests>false</SignManifests>
@@ -55,9 +55,6 @@
     <Reference Include="Jayrock, Version=0.9.8316.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Jayrock.Json, Version=0.9.8316.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
