@@ -156,7 +156,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OtherStrings.pl-PL.resx</DependentUpon>
     </Compile>
-    <Compile Include="OtherStrings.ru-RU.Designer.cs" />
+    <Compile Include="OtherStrings.ru-RU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OtherStrings.ru-RU.resx</DependentUpon>
+    </Compile>
     <Compile Include="OtherStrings.ru-RU1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

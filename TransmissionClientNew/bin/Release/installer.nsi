@@ -11,7 +11,7 @@
 Name "Transmission Remote"
 
 ; The file to write
-OutFile "transmission-remote-dotnet-3.8-installer.exe"
+OutFile "transmission-remote-dotnet-3.9pre-installer.exe"
 
 ; The default installation directory
 InstallDir "$PROGRAMFILES\Transmission Remote"
