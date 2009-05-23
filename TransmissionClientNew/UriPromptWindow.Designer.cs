@@ -110,6 +110,7 @@ namespace TransmissionRemoteDotnet
             this.Name = "UriPromptWindow";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.Load += new System.EventHandler(this.UriPromptWindow_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);

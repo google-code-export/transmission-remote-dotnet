@@ -119,5 +119,16 @@ namespace TransmissionRemoteDotnet
             toolStripProgressBar1.Value = e.ProgressPercentage;
             toolStripStatusLabel1.Text = String.Format("{0} ({1}%)...", OtherStrings.Downloading, e.ProgressPercentage);
         }
+
+        private void UriPromptWindow_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                Uri uri = new Uri(Clipboard.GetText());
+                textBox1.Text = uri.ToString();
+            }
+            catch
+            { }
+        }
     }
 }
