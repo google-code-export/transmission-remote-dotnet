@@ -227,6 +227,7 @@ namespace TransmissionRemoteDotnet
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TorrentPropertiesDialog";
+            this.ShowInTaskbar = false;
             this.Load += new System.EventHandler(this.TorrentPropertiesDialog_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

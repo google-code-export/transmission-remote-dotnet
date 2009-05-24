@@ -434,7 +434,6 @@ namespace TransmissionRemoteDotnet
             // 
             this.openNetworkShareButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.openNetworkShareButton, "openNetworkShareButton");
-            this.openNetworkShareButton.Image = global::TransmissionRemoteDotnet.Properties.Resources.folder_html;
             this.openNetworkShareButton.Name = "openNetworkShareButton";
             this.openNetworkShareButton.Click += new System.EventHandler(this.openNetworkShareButton_Click);
             // 

@@ -146,121 +146,121 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="DownloadToField.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="downloadToField.Location" type="System.Drawing.Point, System.Drawing">
     <value>173, 9</value>
   </data>
-  <data name="DownloadToField.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="downloadToField.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 20</value>
   </data>
-  <data name="DownloadToField.TabIndex" type="System.Int32, mscorlib">
+  <data name="downloadToField.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;DownloadToField.Name" xml:space="preserve">
-    <value>DownloadToField</value>
+  <data name="&gt;&gt;downloadToField.Name" xml:space="preserve">
+    <value>downloadToField</value>
   </data>
-  <data name="&gt;&gt;DownloadToField.Type" xml:space="preserve">
+  <data name="&gt;&gt;downloadToField.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;DownloadToField.Parent" xml:space="preserve">
+  <data name="&gt;&gt;downloadToField.Parent" xml:space="preserve">
     <value>tabPage1</value>
   </data>
-  <data name="&gt;&gt;DownloadToField.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;downloadToField.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="LimitUploadCheckBox.AutoSize" type="System.Boolean, mscorlib">
+  <data name="limitUploadCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="LimitUploadCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="limitUploadCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 15</value>
   </data>
-  <data name="LimitUploadCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="limitUploadCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 17</value>
   </data>
-  <data name="LimitUploadCheckBox.TabIndex" type="System.Int32, mscorlib">
+  <data name="limitUploadCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="LimitUploadCheckBox.Text" xml:space="preserve">
+  <data name="limitUploadCheckBox.Text" xml:space="preserve">
     <value>Limit upload</value>
   </data>
-  <data name="&gt;&gt;LimitUploadCheckBox.Name" xml:space="preserve">
-    <value>LimitUploadCheckBox</value>
+  <data name="&gt;&gt;limitUploadCheckBox.Name" xml:space="preserve">
+    <value>limitUploadCheckBox</value>
   </data>
-  <data name="&gt;&gt;LimitUploadCheckBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;limitUploadCheckBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LimitUploadCheckBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;limitUploadCheckBox.Parent" xml:space="preserve">
     <value>tabPage2</value>
   </data>
-  <data name="&gt;&gt;LimitUploadCheckBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;limitUploadCheckBox.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="LimitUploadValue.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="limitUploadValue.Location" type="System.Drawing.Point, System.Drawing">
     <value>170, 10</value>
   </data>
-  <data name="LimitUploadValue.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="limitUploadValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
   </data>
-  <data name="LimitUploadValue.TabIndex" type="System.Int32, mscorlib">
+  <data name="limitUploadValue.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;LimitUploadValue.Name" xml:space="preserve">
-    <value>LimitUploadValue</value>
+  <data name="&gt;&gt;limitUploadValue.Name" xml:space="preserve">
+    <value>limitUploadValue</value>
   </data>
-  <data name="&gt;&gt;LimitUploadValue.Type" xml:space="preserve">
+  <data name="&gt;&gt;limitUploadValue.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LimitUploadValue.Parent" xml:space="preserve">
+  <data name="&gt;&gt;limitUploadValue.Parent" xml:space="preserve">
     <value>tabPage2</value>
   </data>
-  <data name="&gt;&gt;LimitUploadValue.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;limitUploadValue.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="LimitDownloadCheckBox.AutoSize" type="System.Boolean, mscorlib">
+  <data name="limitDownloadCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="LimitDownloadCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="limitDownloadCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 41</value>
   </data>
-  <data name="LimitDownloadCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="limitDownloadCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 17</value>
   </data>
-  <data name="LimitDownloadCheckBox.TabIndex" type="System.Int32, mscorlib">
+  <data name="limitDownloadCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="LimitDownloadCheckBox.Text" xml:space="preserve">
+  <data name="limitDownloadCheckBox.Text" xml:space="preserve">
     <value>Limit download</value>
   </data>
-  <data name="&gt;&gt;LimitDownloadCheckBox.Name" xml:space="preserve">
-    <value>LimitDownloadCheckBox</value>
+  <data name="&gt;&gt;limitDownloadCheckBox.Name" xml:space="preserve">
+    <value>limitDownloadCheckBox</value>
   </data>
-  <data name="&gt;&gt;LimitDownloadCheckBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;limitDownloadCheckBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LimitDownloadCheckBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;limitDownloadCheckBox.Parent" xml:space="preserve">
     <value>tabPage2</value>
   </data>
-  <data name="&gt;&gt;LimitDownloadCheckBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;limitDownloadCheckBox.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="LimitDownloadValue.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="limitDownloadValue.Location" type="System.Drawing.Point, System.Drawing">
     <value>170, 36</value>
   </data>
-  <data name="LimitDownloadValue.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="limitDownloadValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
   </data>
-  <data name="LimitDownloadValue.TabIndex" type="System.Int32, mscorlib">
+  <data name="limitDownloadValue.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;LimitDownloadValue.Name" xml:space="preserve">
-    <value>LimitDownloadValue</value>
+  <data name="&gt;&gt;limitDownloadValue.Name" xml:space="preserve">
+    <value>limitDownloadValue</value>
   </data>
-  <data name="&gt;&gt;LimitDownloadValue.Type" xml:space="preserve">
+  <data name="&gt;&gt;limitDownloadValue.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;LimitDownloadValue.Parent" xml:space="preserve">
+  <data name="&gt;&gt;limitDownloadValue.Parent" xml:space="preserve">
     <value>tabPage2</value>
   </data>
-  <data name="&gt;&gt;LimitDownloadValue.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;limitDownloadValue.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
@@ -290,25 +290,25 @@
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="IncomingPortValue.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="incomingPortValue.Location" type="System.Drawing.Point, System.Drawing">
     <value>173, 36</value>
   </data>
-  <data name="IncomingPortValue.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="incomingPortValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
   </data>
-  <data name="IncomingPortValue.TabIndex" type="System.Int32, mscorlib">
+  <data name="incomingPortValue.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;IncomingPortValue.Name" xml:space="preserve">
-    <value>IncomingPortValue</value>
+  <data name="&gt;&gt;incomingPortValue.Name" xml:space="preserve">
+    <value>incomingPortValue</value>
   </data>
-  <data name="&gt;&gt;IncomingPortValue.Type" xml:space="preserve">
+  <data name="&gt;&gt;incomingPortValue.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;IncomingPortValue.Parent" xml:space="preserve">
+  <data name="&gt;&gt;incomingPortValue.Parent" xml:space="preserve">
     <value>tabPage1</value>
   </data>
-  <data name="&gt;&gt;IncomingPortValue.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;incomingPortValue.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="SaveButton.Location" type="System.Drawing.Point, System.Drawing">
@@ -359,28 +359,25 @@
   <data name="&gt;&gt;CloseFormButton.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="SettingsWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="PeerLimitValue.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="peerLimitValue.Location" type="System.Drawing.Point, System.Drawing">
     <value>170, 63</value>
   </data>
-  <data name="PeerLimitValue.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="peerLimitValue.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 20</value>
   </data>
-  <data name="PeerLimitValue.TabIndex" type="System.Int32, mscorlib">
+  <data name="peerLimitValue.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;PeerLimitValue.Name" xml:space="preserve">
-    <value>PeerLimitValue</value>
+  <data name="&gt;&gt;peerLimitValue.Name" xml:space="preserve">
+    <value>peerLimitValue</value>
   </data>
-  <data name="&gt;&gt;PeerLimitValue.Type" xml:space="preserve">
+  <data name="&gt;&gt;peerLimitValue.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PeerLimitValue.Parent" xml:space="preserve">
+  <data name="&gt;&gt;peerLimitValue.Parent" xml:space="preserve">
     <value>tabPage2</value>
   </data>
-  <data name="&gt;&gt;PeerLimitValue.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;peerLimitValue.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="PEXcheckBox.AutoSize" type="System.Boolean, mscorlib">
@@ -437,61 +434,61 @@
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="PortForward.AutoSize" type="System.Boolean, mscorlib">
+  <data name="portForwardCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="PortForward.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="portForwardCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 138</value>
   </data>
-  <data name="PortForward.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="portForwardCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 17</value>
   </data>
-  <data name="PortForward.TabIndex" type="System.Int32, mscorlib">
+  <data name="portForwardCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="PortForward.Text" xml:space="preserve">
+  <data name="portForwardCheckBox.Text" xml:space="preserve">
     <value>Enable UPnP</value>
   </data>
-  <data name="&gt;&gt;PortForward.Name" xml:space="preserve">
-    <value>PortForward</value>
+  <data name="&gt;&gt;portForwardCheckBox.Name" xml:space="preserve">
+    <value>portForwardCheckBox</value>
   </data>
-  <data name="&gt;&gt;PortForward.Type" xml:space="preserve">
+  <data name="&gt;&gt;portForwardCheckBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PortForward.Parent" xml:space="preserve">
+  <data name="&gt;&gt;portForwardCheckBox.Parent" xml:space="preserve">
     <value>tabPage1</value>
   </data>
-  <data name="&gt;&gt;PortForward.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;portForwardCheckBox.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="EncryptionCombobox.Items" xml:space="preserve">
+  <data name="encryptionCombobox.Items" xml:space="preserve">
     <value>tolerated</value>
   </data>
-  <data name="EncryptionCombobox.Items1" xml:space="preserve">
+  <data name="encryptionCombobox.Items1" xml:space="preserve">
     <value>preferred</value>
   </data>
-  <data name="EncryptionCombobox.Items2" xml:space="preserve">
+  <data name="encryptionCombobox.Items2" xml:space="preserve">
     <value>required</value>
   </data>
-  <data name="EncryptionCombobox.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="encryptionCombobox.Location" type="System.Drawing.Point, System.Drawing">
     <value>173, 64</value>
   </data>
-  <data name="EncryptionCombobox.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="encryptionCombobox.Size" type="System.Drawing.Size, System.Drawing">
     <value>102, 21</value>
   </data>
-  <data name="EncryptionCombobox.TabIndex" type="System.Int32, mscorlib">
+  <data name="encryptionCombobox.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;EncryptionCombobox.Name" xml:space="preserve">
-    <value>EncryptionCombobox</value>
+  <data name="&gt;&gt;encryptionCombobox.Name" xml:space="preserve">
+    <value>encryptionCombobox</value>
   </data>
-  <data name="&gt;&gt;EncryptionCombobox.Type" xml:space="preserve">
+  <data name="&gt;&gt;encryptionCombobox.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;EncryptionCombobox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;encryptionCombobox.Parent" xml:space="preserve">
     <value>tabPage1</value>
   </data>
-  <data name="&gt;&gt;EncryptionCombobox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;encryptionCombobox.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
@@ -575,35 +572,35 @@
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="DhtEnabled.AutoSize" type="System.Boolean, mscorlib">
+  <data name="dhtEnabled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="DhtEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="dhtEnabled.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="DhtEnabled.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="dhtEnabled.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 158</value>
   </data>
-  <data name="DhtEnabled.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="dhtEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>202, 17</value>
   </data>
-  <data name="DhtEnabled.TabIndex" type="System.Int32, mscorlib">
+  <data name="dhtEnabled.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="DhtEnabled.Text" xml:space="preserve">
+  <data name="dhtEnabled.Text" xml:space="preserve">
     <value>Enable Distributed Hash Table (DHT)</value>
   </data>
-  <data name="&gt;&gt;DhtEnabled.Name" xml:space="preserve">
-    <value>DhtEnabled</value>
+  <data name="&gt;&gt;dhtEnabled.Name" xml:space="preserve">
+    <value>dhtEnabled</value>
   </data>
-  <data name="&gt;&gt;DhtEnabled.Type" xml:space="preserve">
+  <data name="&gt;&gt;dhtEnabled.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;DhtEnabled.Parent" xml:space="preserve">
+  <data name="&gt;&gt;dhtEnabled.Parent" xml:space="preserve">
     <value>tabPage1</value>
   </data>
-  <data name="&gt;&gt;DhtEnabled.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;dhtEnabled.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="label15.AutoSize" type="System.Boolean, mscorlib">
@@ -1313,12 +1310,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Remote Settings</value>
-  </data>
-  <data name="&gt;&gt;SettingsWorker.Name" xml:space="preserve">
-    <value>SettingsWorker</value>
-  </data>
-  <data name="&gt;&gt;SettingsWorker.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>RemoteSettingsDialog</value>

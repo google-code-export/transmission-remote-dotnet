@@ -250,8 +250,16 @@ namespace TransmissionRemoteDotnet
                 arguments.Put(ProtocolConstants.FIELD_DHTENABLED, dhtEnabled.Checked);
             }
             arguments.Put(ProtocolConstants.FIELD_DOWNLOADDIR, downloadToField.Text);
-            SettingsWorker.RunWorkerAsync(request);
+            CreateSettingsWorker().RunWorkerAsync(request);
             this.Close();
+        }
+
+        private BackgroundWorker CreateSettingsWorker()
+        {
+            BackgroundWorker worker = new BackgroundWorker();
+            worker.DoWork += new DoWorkEventHandler(SettingsWorker_DoWork);
+            worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(SettingsWorker_RunWorkerCompleted);
+            return worker;
         }
 
         private void SettingsWorker_DoWork(object sender, DoWorkEventArgs e)

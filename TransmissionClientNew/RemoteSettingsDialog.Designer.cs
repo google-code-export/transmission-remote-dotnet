@@ -56,7 +56,6 @@ namespace TransmissionRemoteDotnet
             this.incomingPortValue = new System.Windows.Forms.NumericUpDown();
             this.SaveButton = new System.Windows.Forms.Button();
             this.CloseFormButton = new System.Windows.Forms.Button();
-            this.SettingsWorker = new System.ComponentModel.BackgroundWorker();
             this.peerLimitValue = new System.Windows.Forms.NumericUpDown();
             this.PEXcheckBox = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -114,59 +113,59 @@ namespace TransmissionRemoteDotnet
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
-            // DownloadToField
+            // downloadToField
             // 
-            resources.ApplyResources(this.downloadToField, "DownloadToField");
-            this.downloadToField.Name = "DownloadToField";
+            resources.ApplyResources(this.downloadToField, "downloadToField");
+            this.downloadToField.Name = "downloadToField";
             // 
-            // LimitUploadCheckBox
+            // limitUploadCheckBox
             // 
-            resources.ApplyResources(this.limitUploadCheckBox, "LimitUploadCheckBox");
-            this.limitUploadCheckBox.Name = "LimitUploadCheckBox";
+            resources.ApplyResources(this.limitUploadCheckBox, "limitUploadCheckBox");
+            this.limitUploadCheckBox.Name = "limitUploadCheckBox";
             this.limitUploadCheckBox.UseVisualStyleBackColor = true;
             this.limitUploadCheckBox.CheckedChanged += new System.EventHandler(this.LimitUploadCheckBox_CheckedChanged);
             // 
-            // LimitUploadValue
+            // limitUploadValue
             // 
-            resources.ApplyResources(this.limitUploadValue, "LimitUploadValue");
+            resources.ApplyResources(this.limitUploadValue, "limitUploadValue");
             this.limitUploadValue.Maximum = new decimal(new int[] {
             1048576,
             0,
             0,
             0});
-            this.limitUploadValue.Name = "LimitUploadValue";
+            this.limitUploadValue.Name = "limitUploadValue";
             // 
-            // LimitDownloadCheckBox
+            // limitDownloadCheckBox
             // 
-            resources.ApplyResources(this.limitDownloadCheckBox, "LimitDownloadCheckBox");
-            this.limitDownloadCheckBox.Name = "LimitDownloadCheckBox";
+            resources.ApplyResources(this.limitDownloadCheckBox, "limitDownloadCheckBox");
+            this.limitDownloadCheckBox.Name = "limitDownloadCheckBox";
             this.limitDownloadCheckBox.UseVisualStyleBackColor = true;
             this.limitDownloadCheckBox.CheckedChanged += new System.EventHandler(this.LimitDownloadCheckBox_CheckedChanged);
             // 
-            // LimitDownloadValue
+            // limitDownloadValue
             // 
-            resources.ApplyResources(this.limitDownloadValue, "LimitDownloadValue");
+            resources.ApplyResources(this.limitDownloadValue, "limitDownloadValue");
             this.limitDownloadValue.Maximum = new decimal(new int[] {
             1048576,
             0,
             0,
             0});
-            this.limitDownloadValue.Name = "LimitDownloadValue";
+            this.limitDownloadValue.Name = "limitDownloadValue";
             // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
             // 
-            // IncomingPortValue
+            // incomingPortValue
             // 
-            resources.ApplyResources(this.incomingPortValue, "IncomingPortValue");
+            resources.ApplyResources(this.incomingPortValue, "incomingPortValue");
             this.incomingPortValue.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
-            this.incomingPortValue.Name = "IncomingPortValue";
+            this.incomingPortValue.Name = "incomingPortValue";
             // 
             // SaveButton
             // 
@@ -183,20 +182,15 @@ namespace TransmissionRemoteDotnet
             this.CloseFormButton.UseVisualStyleBackColor = true;
             this.CloseFormButton.Click += new System.EventHandler(this.CloseFormButton_Click);
             // 
-            // SettingsWorker
+            // peerLimitValue
             // 
-            this.SettingsWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.SettingsWorker_DoWork);
-            this.SettingsWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.SettingsWorker_RunWorkerCompleted);
-            // 
-            // PeerLimitValue
-            // 
-            resources.ApplyResources(this.peerLimitValue, "PeerLimitValue");
+            resources.ApplyResources(this.peerLimitValue, "peerLimitValue");
             this.peerLimitValue.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.peerLimitValue.Name = "PeerLimitValue";
+            this.peerLimitValue.Name = "peerLimitValue";
             // 
             // PEXcheckBox
             // 
@@ -209,22 +203,22 @@ namespace TransmissionRemoteDotnet
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
             // 
-            // PortForward
+            // portForwardCheckBox
             // 
-            resources.ApplyResources(this.portForwardCheckBox, "PortForward");
-            this.portForwardCheckBox.Name = "PortForward";
+            resources.ApplyResources(this.portForwardCheckBox, "portForwardCheckBox");
+            this.portForwardCheckBox.Name = "portForwardCheckBox";
             this.portForwardCheckBox.UseVisualStyleBackColor = true;
             // 
-            // EncryptionCombobox
+            // encryptionCombobox
             // 
             this.encryptionCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.encryptionCombobox.FormattingEnabled = true;
             this.encryptionCombobox.Items.AddRange(new object[] {
-            resources.GetString("EncryptionCombobox.Items"),
-            resources.GetString("EncryptionCombobox.Items1"),
-            resources.GetString("EncryptionCombobox.Items2")});
-            resources.ApplyResources(this.encryptionCombobox, "EncryptionCombobox");
-            this.encryptionCombobox.Name = "EncryptionCombobox";
+            resources.GetString("encryptionCombobox.Items"),
+            resources.GetString("encryptionCombobox.Items1"),
+            resources.GetString("encryptionCombobox.Items2")});
+            resources.ApplyResources(this.encryptionCombobox, "encryptionCombobox");
+            this.encryptionCombobox.Name = "encryptionCombobox";
             // 
             // label3
             // 
@@ -269,10 +263,10 @@ namespace TransmissionRemoteDotnet
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // DhtEnabled
+            // dhtEnabled
             // 
-            resources.ApplyResources(this.dhtEnabled, "DhtEnabled");
-            this.dhtEnabled.Name = "DhtEnabled";
+            resources.ApplyResources(this.dhtEnabled, "dhtEnabled");
+            this.dhtEnabled.Name = "dhtEnabled";
             this.dhtEnabled.UseVisualStyleBackColor = true;
             // 
             // label15
@@ -514,7 +508,6 @@ namespace TransmissionRemoteDotnet
         private System.Windows.Forms.NumericUpDown incomingPortValue;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button CloseFormButton;
-        private System.ComponentModel.BackgroundWorker SettingsWorker;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox encryptionCombobox;
         private System.Windows.Forms.CheckBox portForwardCheckBox;

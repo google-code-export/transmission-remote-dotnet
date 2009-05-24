@@ -169,7 +169,7 @@
     <value>stateListBox</value>
   </data>
   <data name="&gt;&gt;stateListBox.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.GListBox, Transmission Remote, Version=3.8.3430.34079, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.GListBox, Transmission Remote, Version=3.8.3430.43192, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;stateListBox.Parent" xml:space="preserve">
     <value>mainVerticalSplitContainer.Panel1</value>
@@ -259,7 +259,7 @@
     <value>0, 0</value>
   </data>
   <data name="torrentListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>861, 280</value>
+    <value>861, 285</value>
   </data>
   <data name="torrentListView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -268,7 +268,7 @@
     <value>torrentListView</value>
   </data>
   <data name="&gt;&gt;torrentListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.8.3430.34079, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.8.3430.43192, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;torrentListView.Parent" xml:space="preserve">
     <value>mainVerticalSplitContainer.Panel2</value>
@@ -289,7 +289,7 @@
     <value>1</value>
   </data>
   <data name="mainVerticalSplitContainer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>974, 280</value>
+    <value>974, 285</value>
   </data>
   <data name="mainVerticalSplitContainer.SplitterDistance" type="System.Int32, mscorlib">
     <value>109</value>
@@ -415,7 +415,7 @@
     <value>piecesGraph</value>
   </data>
   <data name="&gt;&gt;piecesGraph.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.PiecesGraph, Transmission Remote, Version=3.8.3430.34079, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.PiecesGraph, Transmission Remote, Version=3.8.3430.43192, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;piecesGraph.Parent" xml:space="preserve">
     <value>splitContainer5.Panel1</value>
@@ -1618,7 +1618,7 @@
     <value>0, 0</value>
   </data>
   <data name="generalTorrentNameGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>960, 173</value>
+    <value>960, 168</value>
   </data>
   <data name="generalTorrentNameGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1648,7 +1648,7 @@
     <value>1</value>
   </data>
   <data name="splitContainer3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>960, 202</value>
+    <value>960, 197</value>
   </data>
   <data name="splitContainer3.SplitterDistance" type="System.Int32, mscorlib">
     <value>25</value>
@@ -1675,7 +1675,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="generalTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>966, 208</value>
+    <value>966, 203</value>
   </data>
   <data name="generalTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1732,7 +1732,7 @@
     <value>trackersListView</value>
   </data>
   <data name="&gt;&gt;trackersListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.8.3430.34079, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.8.3430.43192, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;trackersListView.Parent" xml:space="preserve">
     <value>trackersTorrentNameGroupBox</value>
@@ -1846,7 +1846,7 @@
     <value>filesListView</value>
   </data>
   <data name="&gt;&gt;filesListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.8.3430.34079, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.8.3430.43192, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;filesListView.Parent" xml:space="preserve">
     <value>filesTorrentNameGroupBox</value>
@@ -1969,7 +1969,7 @@
     <value>peersListView</value>
   </data>
   <data name="&gt;&gt;peersListView.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.8.3430.34079, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.ListViewNF, Transmission Remote, Version=3.8.3430.43192, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;peersListView.Parent" xml:space="preserve">
     <value>peersTorrentNameGroupBox</value>
@@ -2260,7 +2260,7 @@
     <value>speedGraph</value>
   </data>
   <data name="&gt;&gt;speedGraph.Type" xml:space="preserve">
-    <value>CustomUIControls.Graphing.C2DPushGraph, Transmission Remote, Version=3.8.3430.34079, Culture=neutral, PublicKeyToken=null</value>
+    <value>CustomUIControls.Graphing.C2DPushGraph, Transmission Remote, Version=3.8.3430.43192, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;speedGraph.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -2368,7 +2368,7 @@
     <value>0, 0</value>
   </data>
   <data name="torrentTabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>974, 235</value>
+    <value>974, 230</value>
   </data>
   <data name="torrentTabControl.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2398,13 +2398,13 @@
     <value>1</value>
   </data>
   <data name="torrentAndTabsSplitContainer.Panel2MinSize" type="System.Int32, mscorlib">
-    <value>235</value>
+    <value>220</value>
   </data>
   <data name="torrentAndTabsSplitContainer.Size" type="System.Drawing.Size, System.Drawing">
     <value>974, 519</value>
   </data>
   <data name="torrentAndTabsSplitContainer.SplitterDistance" type="System.Int32, mscorlib">
-    <value>280</value>
+    <value>285</value>
   </data>
   <data name="torrentAndTabsSplitContainer.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2413,7 +2413,7 @@
     <value>torrentAndTabsSplitContainer</value>
   </data>
   <data name="&gt;&gt;torrentAndTabsSplitContainer.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.SplitContainerFix, Transmission Remote, Version=3.8.3430.34079, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.SplitContainerFix, Transmission Remote, Version=3.8.3430.43192, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;torrentAndTabsSplitContainer.Parent" xml:space="preserve">
     <value>toolStripContainer1.ContentPanel</value>
@@ -2741,6 +2741,46 @@
   </data>
   <data name="openNetworkShareButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="openNetworkShareButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
   </data>
   <data name="openNetworkShareButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
