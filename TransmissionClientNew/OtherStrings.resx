@@ -163,7 +163,7 @@
     <value>Connecting</value>
   </data>
   <data name="CopyAsCSV" xml:space="preserve">
-    <value>Copy as CSV</value>
+    <value>CSV info to clipboard</value>
   </data>
   <data name="Disconnect" xml:space="preserve">
     <value>Disconnect</value>
@@ -423,5 +423,8 @@
   </data>
   <data name="MoveX" xml:space="preserve">
     <value>Move {0}</value>
+  </data>
+  <data name="InfoObjectToClipboard" xml:space="preserve">
+    <value>Info object to clipboard</value>
   </data>
 </root>

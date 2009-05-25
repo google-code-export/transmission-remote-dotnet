@@ -640,7 +640,6 @@
     <None Include="Resources\openterm.png" />
     <None Include="Resources\incomplete.png" />
     <None Include="Resources\reannounce.png" />
-    <None Include="Resources\folder_html.png" />
     <None Include="Resources\16x16_ledpurple.png" />
     <None Include="Resources\down16.png" />
     <None Include="Resources\error16.png" />

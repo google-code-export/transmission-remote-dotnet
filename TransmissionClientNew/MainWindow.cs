@@ -212,7 +212,9 @@ namespace TransmissionRemoteDotnet
             this.torrentSelectionMenu.MenuItems.Add(upLimitMenuItem);
             this.torrentSelectionMenu.MenuItems.Add(new MenuItem("-"));
             this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Properties, new EventHandler(this.ShowTorrentPropsHandler)));
+
             this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.CopyAsCSV, new EventHandler(this.TorrentsToClipboardHandler)));
+            this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.InfoObjectToClipboard, new EventHandler(this.copyInfoObjectToClipboardToolStripMenuItem_Click)));
         }
 
         private void downlimit_Opening(object sender, EventArgs e)
@@ -864,6 +866,7 @@ namespace TransmissionRemoteDotnet
                 = removeTorrentButton.Enabled = recheckTorrentButton.Enabled
                 = removeAndDeleteButton.Enabled = configureTorrentButton.Enabled
                 = startToolStripMenuItem.Enabled = pauseToolStripMenuItem.Enabled
+                = copyInfoObjectToClipboardToolStripMenuItem.Enabled = cSVInfoToClipboardToolStripMenuItem.Enabled
                 = recheckToolStripMenuItem.Enabled = propertiesToolStripMenuItem.Enabled
                 = removeDeleteToolStripMenuItem.Enabled = removeToolStripMenuItem.Enabled
                 = reannounceButton.Enabled = reannounceToolStripMenuItem.Enabled
@@ -1622,25 +1625,9 @@ namespace TransmissionRemoteDotnet
 
         private void torrentListView_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Delete && e.Shift)
-            {
-                RemoveAndDeleteTorrentsPrompt();
-            }
-            else if (e.KeyCode == Keys.Delete)
-            {
-                RemoveTorrentsPrompt();
-            }
-            else if (e.Control && e.KeyCode == Keys.A)
+            if (e.Control && e.KeyCode == Keys.A)
             {
                 Toolbox.SelectAll(torrentListView);
-            }
-            else if (e.Control && e.Shift && e.KeyCode == Keys.C)
-            {
-                TorrentJsonToClipboard();
-            }
-            else if (e.Control && e.KeyCode == Keys.C)
-            {
-                Toolbox.CopyListViewToClipboard(torrentListView);
             }
         }
 
@@ -1842,6 +1829,11 @@ namespace TransmissionRemoteDotnet
         private void moveTorrentDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
             (new MoveDataPrompt(this.torrentListView.SelectedItems)).ShowDialog();
+        }
+
+        private void copyInfoObjectToClipboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TorrentJsonToClipboard();
         }
     }
 }
