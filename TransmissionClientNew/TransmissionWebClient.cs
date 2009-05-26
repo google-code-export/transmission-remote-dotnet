@@ -69,7 +69,7 @@ namespace TransmissionRemoteDotnet
             if (settings.AuthEnabled && authenticate)
             {
                 request.Credentials = new NetworkCredential(settings.User, settings.Pass);
-                request.PreAuthenticate = Program.DaemonDescriptor.Version < 1.40;
+                request.PreAuthenticate = Program.DaemonDescriptor.Version < 1.40 || Program.DaemonDescriptor.Version >= 1.6;
             }
             if (settings.ProxyMode == ProxyMode.Enabled)
             {

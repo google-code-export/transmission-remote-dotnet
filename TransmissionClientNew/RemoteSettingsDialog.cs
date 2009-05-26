@@ -54,7 +54,9 @@ namespace TransmissionRemoteDotnet
         public static void CloseIfOpen()
         {
             if (IsActive())
-                instance.Close();
+            {
+                instance.CloseAndDispose();
+            }
         }
 
         public static void PortTestReplyArrived()
@@ -73,7 +75,7 @@ namespace TransmissionRemoteDotnet
 
         private void CloseFormButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            CloseAndDispose();
         }
 
         private void RemoteSettingsDialog_Load(object sender, EventArgs e)
@@ -174,8 +176,14 @@ namespace TransmissionRemoteDotnet
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Unable to load settings data", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
+                CloseAndDispose();
             }
+        }
+
+        private void CloseAndDispose()
+        {
+            this.Close();
+            this.Dispose();
         }
 
         private void SetLimitField(int limit, NumericUpDown field)
@@ -251,7 +259,7 @@ namespace TransmissionRemoteDotnet
             }
             arguments.Put(ProtocolConstants.FIELD_DOWNLOADDIR, downloadToField.Text);
             CreateSettingsWorker().RunWorkerAsync(request);
-            this.Close();
+            CloseAndDispose();
         }
 
         private BackgroundWorker CreateSettingsWorker()
@@ -272,7 +280,7 @@ namespace TransmissionRemoteDotnet
             ICommand command = (ICommand)e.Result;
             command.Execute();
             Timer t = new Timer();
-            t.Interval = 1000;
+            t.Interval = 250;
             t.Tick += new EventHandler(t_Tick);
             t.Start();
         }

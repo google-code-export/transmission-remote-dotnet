@@ -53,14 +53,20 @@ namespace TransmissionRemoteDotnet
 
         private void CloseFormButton_Click(object sender, EventArgs e)
         {
+            CloseAndDispose();
+        }
+
+        private void CloseAndDispose()
+        {
             this.Close();
+            this.Dispose();
         }
 
         public static void CloseIfOpen()
         {
             if (IsActive())
             {
-                instance.Close();
+                instance.CloseAndDispose();
             }
         }
 
@@ -99,7 +105,7 @@ namespace TransmissionRemoteDotnet
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Unable to load stats data", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
+                CloseAndDispose();
             }
         }
 
