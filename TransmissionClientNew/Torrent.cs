@@ -153,7 +153,7 @@ namespace TransmissionRemoteDotnet
                         form.stateListBox.Items.Add(item.SubItems[13].Text);
                     }
                 }
-                if (LocalSettingsSingleton.Instance.StartedBalloon && this.updateSerial > 1)
+                if (LocalSettingsSingleton.Instance.StartedBalloon && this.updateSerial > 2)
                 {
                     Program.Form.notifyIcon.ShowBalloonTip(LocalSettingsSingleton.BALLOON_TIMEOUT, this.Name, String.Format(OtherStrings.NewTorrentIs, this.Status.ToLower()), ToolTipIcon.Info);
                 }

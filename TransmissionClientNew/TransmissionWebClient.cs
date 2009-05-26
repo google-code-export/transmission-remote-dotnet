@@ -62,8 +62,8 @@ namespace TransmissionRemoteDotnet
         public static void SetupWebRequest(HttpWebRequest request, bool authenticate)
         {
             request.KeepAlive = false;
-            request.UserAgent = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)";
-            if (x_transmission_session_id != null)
+            request.UserAgent = "Mozilla/5.0 (X11; U; Linux i686; en-GB; rv:1.9.0.10) Gecko/2009042523 Ubuntu/9.04 (jaunty) Firefox/3.0.10";
+            if (x_transmission_session_id != null && authenticate)
                 request.Headers["X-Transmission-Session-Id"] = x_transmission_session_id;
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
             if (settings.AuthEnabled && authenticate)
