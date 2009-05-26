@@ -24,6 +24,7 @@ namespace TransmissionRemoteDotnet.Commmands
 {
     public class ErrorCommand : ICommand
     {
+        private static bool dialogLock = false;
         private const int MAX_MESSAGE_DIALOG_LENGTH = 500;
         private const int MAX_MESSAGE_STATUSBAR_LENGTH = 120;
 
@@ -47,7 +48,12 @@ namespace TransmissionRemoteDotnet.Commmands
 
         private void ShowErrorBox(string title, string body)
         {
-            MessageBox.Show(TrimText(body, MAX_MESSAGE_DIALOG_LENGTH), title, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            if (!dialogLock)
+            {
+                dialogLock = true;
+                MessageBox.Show(TrimText(body, MAX_MESSAGE_DIALOG_LENGTH), title, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                dialogLock = false;
+            }
         }
 
         private delegate void ExecuteDelegate();

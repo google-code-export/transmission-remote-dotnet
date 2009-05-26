@@ -175,7 +175,7 @@ namespace TransmissionRemoteDotnet
             {
                 this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Reannounce, new EventHandler(this.reannounceButton_ButtonClick)));
             }
-            if (Program.DaemonDescriptor.Revision >= 8385)
+            if (Program.DaemonDescriptor.Version >= 1.70)
             {
                 this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.MoveTorrentData, new EventHandler(this.moveTorrentDataToolStripMenuItem_Click)));
             }
@@ -185,12 +185,11 @@ namespace TransmissionRemoteDotnet
             downLimitMenuItem.MenuItems.Add(OtherStrings.Unlimited, ChangeDownLimit);
             downLimitMenuItem.MenuItems.Add("-");
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-            string[] split = settings.DownLimit.Split(',');
-            for (int i = 0; i < split.Length; i++)
+            foreach(string limit in settings.DownLimit.Split(','))
             {
                 try
                 {
-                    downLimitMenuItem.MenuItems.Add(Toolbox.KbpsString(int.Parse(split[i])), ChangeDownLimit);
+                    downLimitMenuItem.MenuItems.Add(Toolbox.KbpsString(int.Parse(limit)), ChangeDownLimit);
                     downLimitMenuItem.Popup += new EventHandler(this.downlimit_Opening);
                 }
                 catch { }
@@ -199,12 +198,11 @@ namespace TransmissionRemoteDotnet
             MenuItem upLimitMenuItem = new MenuItem(OtherStrings.UploadLimit);
             upLimitMenuItem.MenuItems.Add(OtherStrings.Unlimited, ChangeUpLimit);
             upLimitMenuItem.MenuItems.Add("-");
-            split = settings.UpLimit.Split(',');
-            for (int i = 0; i < split.Length; i++)
+            foreach (string limit in settings.UpLimit.Split(','))
             {
                 try
                 {
-                    upLimitMenuItem.MenuItems.Add(Toolbox.KbpsString(int.Parse(split[i])), ChangeUpLimit);
+                    upLimitMenuItem.MenuItems.Add(Toolbox.KbpsString(int.Parse(limit)), ChangeUpLimit);
                     upLimitMenuItem.Popup += new EventHandler(this.uplimit_Opening);
                 }
                 catch { }

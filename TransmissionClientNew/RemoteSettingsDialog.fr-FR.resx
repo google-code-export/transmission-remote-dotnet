@@ -110,7 +110,25 @@
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="limitUploadCheckBox.Text" xml:space="preserve">
+    <value>Limit upload</value>
+  </data>
+  <data name="limitDownloadCheckBox.Text" xml:space="preserve">
+    <value>Limit download</value>
+  </data>
+  <data name="portForwardCheckBox.Text" xml:space="preserve">
+    <value>Enable UPnP</value>
+  </data>
+  <data name="encryptionCombobox.Items1" xml:space="preserve">
+    <value>preferred</value>
+  </data>
+  <data name="encryptionCombobox.Items2" xml:space="preserve">
+    <value>required</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="dhtEnabled.Text" xml:space="preserve">
+    <value>Enable Distributed Hash Table (DHT)</value>
+  </data>
   <data name="testPortButton.Text" xml:space="preserve">
     <value>Test Port</value>
   </data>
@@ -165,12 +183,6 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Télécharger vers :</value>
   </data>
-  <data name="LimitUploadCheckBox.Text" xml:space="preserve">
-    <value>Limite d'envoi</value>
-  </data>
-  <data name="LimitDownloadCheckBox.Text" xml:space="preserve">
-    <value>Limite de réception</value>
-  </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Port entrant :</value>
   </data>
@@ -185,15 +197,6 @@
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Limite du nombre de sources :</value>
-  </data>
-  <data name="PortForward.Text" xml:space="preserve">
-    <value>Utiliser UPNP</value>
-  </data>
-  <data name="EncryptionCombobox.Items1" xml:space="preserve">
-    <value>préféré</value>
-  </data>
-  <data name="EncryptionCombobox.Items2" xml:space="preserve">
-    <value>requis</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Encryption :</value>

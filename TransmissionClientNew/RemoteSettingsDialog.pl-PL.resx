@@ -110,14 +110,27 @@
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="limitUploadCheckBox.Text" xml:space="preserve">
+    <value>Limit upload</value>
+  </data>
+  <data name="limitDownloadCheckBox.Text" xml:space="preserve">
+    <value>Limit download</value>
+  </data>
+  <data name="portForwardCheckBox.Text" xml:space="preserve">
+    <value>Enable UPnP</value>
+  </data>
+  <data name="encryptionCombobox.Items1" xml:space="preserve">
+    <value>preferred</value>
+  </data>
+  <data name="encryptionCombobox.Items2" xml:space="preserve">
+    <value>required</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="dhtEnabled.Text" xml:space="preserve">
+    <value>Enable Distributed Hash Table (DHT)</value>
+  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Pobieraj do:</value>
-  </data>
-  <data name="LimitUploadCheckBox.Text" xml:space="preserve">
-    <value>Limit Wysyłania:</value>
-  </data>
-  <data name="LimitDownloadCheckBox.Text" xml:space="preserve">
-    <value>Limit Pobierania:</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Port:</value>
@@ -128,23 +141,11 @@
   <data name="CloseFormButton.Text" xml:space="preserve">
     <value>Zamknij</value>
   </data>
-  <metadata name="SettingsWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="PEXcheckBox.Text" xml:space="preserve">
     <value>Włącz wymianę Peerów</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Limit Peerów:</value>
-  </data>
-  <data name="PortForward.Text" xml:space="preserve">
-    <value>Włącz UPnP</value>
-  </data>
-  <data name="EncryptionCombobox.Items1" xml:space="preserve">
-    <value>Preferowane</value>
-  </data>
-  <data name="EncryptionCombobox.Items2" xml:space="preserve">
-    <value>Wymagane</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Szyfrowanie:</value>
@@ -164,7 +165,6 @@
   <data name="blocklistEnabledCheckBox.Text" xml:space="preserve">
     <value>Włączono Blocklist</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Ogólne</value>
   </data>
@@ -207,9 +207,6 @@
   <data name="label7.Text" xml:space="preserve">
     <value>WAŻNE: Niektóre opcje dostępne są tylko po uaktualnieniu transmission-daemon.</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="$this.Text" xml:space="preserve">
     <value>Ustawienia Zdalne</value>
   </data>
