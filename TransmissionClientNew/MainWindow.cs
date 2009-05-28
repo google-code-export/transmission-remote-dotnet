@@ -175,7 +175,7 @@ namespace TransmissionRemoteDotnet
             {
                 this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Reannounce, new EventHandler(this.reannounceButton_ButtonClick)));
             }
-            if (Program.DaemonDescriptor.Version >= 1.70)
+            if (Program.DaemonDescriptor.RpcVersion >= 6)
             {
                 this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.MoveTorrentData, new EventHandler(this.moveTorrentDataToolStripMenuItem_Click)));
             }
@@ -860,8 +860,7 @@ namespace TransmissionRemoteDotnet
 
         private void OneOrMoreTorrentsSelected(bool oneOrMore)
         {
-            startTorrentButton.Enabled = pauseTorrentButton.Enabled
-                = removeTorrentButton.Enabled = recheckTorrentButton.Enabled
+                removeTorrentButton.Enabled = recheckTorrentButton.Enabled
                 = removeAndDeleteButton.Enabled = configureTorrentButton.Enabled
                 = startToolStripMenuItem.Enabled = pauseToolStripMenuItem.Enabled
                 = copyInfoObjectToClipboardToolStripMenuItem.Enabled = cSVInfoToClipboardToolStripMenuItem.Enabled
@@ -870,6 +869,8 @@ namespace TransmissionRemoteDotnet
                 = reannounceButton.Enabled = reannounceToolStripMenuItem.Enabled
                 = moveTorrentDataToolStripMenuItem.Enabled = openNetworkShareToolStripMenuItem.Enabled
                 = oneOrMore;
+            pauseTorrentButton.Image = oneOrMore ? global::TransmissionRemoteDotnet.Properties.Resources.player_pause : global::TransmissionRemoteDotnet.Properties.Resources.player_pause_all;
+            startTorrentButton.Image = oneOrMore ? global::TransmissionRemoteDotnet.Properties.Resources.player_play1 : global::TransmissionRemoteDotnet.Properties.Resources.player_play_all;
         }
 
         private void OneTorrentsSelected(bool one, Torrent t)
@@ -956,14 +957,12 @@ namespace TransmissionRemoteDotnet
 
         private void startTorrentButton_Click(object sender, EventArgs e)
         {
-            if (torrentListView.SelectedItems.Count > 0)
-                CreateActionWorker().RunWorkerAsync(Requests.Generic(ProtocolConstants.METHOD_TORRENTSTART, BuildIdArray()));
+            CreateActionWorker().RunWorkerAsync(Requests.Generic(ProtocolConstants.METHOD_TORRENTSTART, torrentListView.SelectedItems.Count > 0 ? BuildIdArray() : null));
         }
 
         private void pauseTorrentButton_Click(object sender, EventArgs e)
         {
-            if (torrentListView.SelectedItems.Count > 0)           
-                CreateActionWorker().RunWorkerAsync(Requests.Generic(ProtocolConstants.METHOD_TORRENTSTOP, BuildIdArray()));
+            CreateActionWorker().RunWorkerAsync(Requests.Generic(ProtocolConstants.METHOD_TORRENTSTOP, torrentListView.SelectedItems.Count > 0 ? BuildIdArray() : null));
         }
 
         public void UpdateGraph(int downspeed, int upspeed)

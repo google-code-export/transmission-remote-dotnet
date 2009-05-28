@@ -646,6 +646,8 @@
     <None Include="Resources\pause16.png" />
     <None Include="Resources\up16.png" />
     <None Include="Resources\samba.png" />
+    <None Include="Resources\player_pause_all.png" />
+    <None Include="Resources\player_play_all.png" />
     <Content Include="transmission_large.ico" />
   </ItemGroup>
   <ItemGroup>
