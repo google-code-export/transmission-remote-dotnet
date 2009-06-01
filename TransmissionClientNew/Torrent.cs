@@ -47,14 +47,6 @@ namespace TransmissionRemoteDotnet
             get { return updateSerial; }
         }
 
-        /*            stateListBox.Items.Add(new GListBoxItem(OtherStrings.All, 0));
-            stateListBox.Items.Add(new GListBoxItem(OtherStrings.Downloading, 1));
-            stateListBox.Items.Add(new GListBoxItem(OtherStrings.Paused, 2));
-            stateListBox.Items.Add(new GListBoxItem(OtherStrings.Checking, 5));
-            stateListBox.Items.Add(new GListBoxItem(OtherStrings.Complete, 3));
-            stateListBox.Items.Add(new GListBoxItem(OtherStrings.Incomplete, 7));
-            stateListBox.Items.Add(new GListBoxItem(OtherStrings.Seeding, 4));
-            stateListBox.Items.Add(new GListBoxItem(OtherStrings.Broken, 6));*/
         private void UpdateIcon()
         {
             if (this.HasError)
@@ -148,9 +140,9 @@ namespace TransmissionRemoteDotnet
                 }
                 lock (form.stateListBox)
                 {
-                    if (!form.stateListBox.Items.Contains(item.SubItems[13].Text))
+                    if (form.stateListBox.FindItem(item.SubItems[13].Text) == null)
                     {
-                        form.stateListBox.Items.Add(item.SubItems[13].Text);
+                        form.stateListBox.Items.Add(new GListBoxItem(item.SubItems[13].Text, 8));
                     }
                 }
                 if (LocalSettingsSingleton.Instance.StartedBalloon && this.updateSerial > 2)
@@ -232,18 +224,18 @@ namespace TransmissionRemoteDotnet
             {
                 lock (form.stateListBox)
                 {
-                    form.stateListBox.Items.Remove(item.SubItems[13].Text);
+                    form.stateListBox.RemoveItem(item.SubItems[13].Text);
                 }
             }
         }
 
-        public delegate void UpdateDelegate(JsonObject info);
-        public void Update(JsonObject info)
+        public delegate bool UpdateDelegate(JsonObject info);
+        public bool Update(JsonObject info)
         {
             MainWindow form = Program.Form;
             if (form.InvokeRequired)
             {
-                form.Invoke(new UpdateDelegate(this.Update), info);
+                return (bool)form.Invoke(new UpdateDelegate(this.Update), info);
             }
             else
             {
@@ -257,6 +249,7 @@ namespace TransmissionRemoteDotnet
                     item.SubItems[12].Text = DateTime.Now.ToString();
                     item.SubItems[12].Tag = DateTime.Now;
                 }
+                bool stateChange = this.StatusCode != Toolbox.ToShort(info[ProtocolConstants.FIELD_STATUS]);
                 this.info = info;
                 UpdateIcon();
                 item.SubItems[0].Text = this.Name;
@@ -277,6 +270,7 @@ namespace TransmissionRemoteDotnet
                 //item.SubItems[12].Text = this.IsFinished ? this.DoneDate : "";
                 this.updateSerial = Program.DaemonDescriptor.UpdateSerial;
                 LogError();
+                return stateChange;
             }
         }
 

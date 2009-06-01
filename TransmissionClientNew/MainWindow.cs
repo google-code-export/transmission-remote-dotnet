@@ -122,6 +122,7 @@ namespace TransmissionRemoteDotnet
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.player_reload16);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.warning);
             stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.incomplete);
+            stateListBoxImageList.Images.Add(global::TransmissionRemoteDotnet.Properties.Resources.server16);
             torrentListView.SmallImageList = stateListBox.ImageList = stateListBoxImageList;
             stateListBox.Items.Add(new GListBoxItem(OtherStrings.All, 0));
             stateListBox.Items.Add(new GListBoxItem(OtherStrings.Downloading, 1));
@@ -869,8 +870,8 @@ namespace TransmissionRemoteDotnet
                 = reannounceButton.Enabled = reannounceToolStripMenuItem.Enabled
                 = moveTorrentDataToolStripMenuItem.Enabled = openNetworkShareToolStripMenuItem.Enabled
                 = oneOrMore;
-            pauseTorrentButton.Image = oneOrMore ? global::TransmissionRemoteDotnet.Properties.Resources.player_pause : global::TransmissionRemoteDotnet.Properties.Resources.player_pause_all;
-            startTorrentButton.Image = oneOrMore ? global::TransmissionRemoteDotnet.Properties.Resources.player_play1 : global::TransmissionRemoteDotnet.Properties.Resources.player_play_all;
+            pauseTorrentButton.Image = oneOrMore && torrentListView.SelectedItems.Count != torrentListView.Items.Count ? global::TransmissionRemoteDotnet.Properties.Resources.player_pause : global::TransmissionRemoteDotnet.Properties.Resources.player_pause_all;
+            startTorrentButton.Image = oneOrMore && torrentListView.SelectedItems.Count != torrentListView.Items.Count ? global::TransmissionRemoteDotnet.Properties.Resources.player_play1 : global::TransmissionRemoteDotnet.Properties.Resources.player_play_all;
         }
 
         private void OneTorrentsSelected(bool one, Torrent t)
@@ -1224,6 +1225,95 @@ namespace TransmissionRemoteDotnet
                 filesListView.ResumeLayout();
             }
             DispatchFilesUpdate();
+        }
+
+        public void SetAllStateCounters()
+        {
+            int all = 0;
+            int downloading = 0;
+            int paused = 0;
+            int checking = 0;
+            int complete = 0;
+            int incomplete = 0;
+            int seeding = 0;
+            int broken = 0;
+            Dictionary<string, int> trackers = new Dictionary<string, int>();
+            Dictionary<string, Torrent> torrents = Program.TorrentIndex;
+            lock(torrents)
+            {
+                all = torrents.Count;
+                foreach (KeyValuePair<string, Torrent> pair in torrents)
+                {
+                    Torrent t = pair.Value;
+                    string tracker = t.GetFirstTracker(true);
+                    short statusCode = t.StatusCode;
+                    if (trackers.ContainsKey(tracker))
+                        trackers[tracker] = trackers[tracker] + 1;
+                    else
+                        trackers[tracker] = 1;
+                    if (t.HasError)
+                    {
+                        broken++;
+                        Console.WriteLine(t.ErrorString);
+                    }
+                    if (statusCode == ProtocolConstants.STATUS_DOWNLOADING)
+                    {
+                        downloading++;
+                    }
+                    else if (statusCode == ProtocolConstants.STATUS_PAUSED)
+                    {
+                        paused++;
+                    }
+                    else if (statusCode == ProtocolConstants.STATUS_SEEDING)
+                    {
+                        seeding++;
+                    }
+                    else if (statusCode == ProtocolConstants.STATUS_WAITING_TO_CHECK || statusCode == ProtocolConstants.STATUS_CHECKING)
+                    {
+                        checking++;
+                    }
+
+                    if (t.IsFinished)
+                    {
+                        complete++;
+                    }
+                    else
+                    {
+                        incomplete++;
+                    }
+                }
+            }
+            Console.WriteLine("Broken = " + broken);
+            SetStateCounter(0, all);
+            SetStateCounter(1, downloading);
+            SetStateCounter(2, paused);
+            SetStateCounter(3, checking);
+            SetStateCounter(4, complete);
+            SetStateCounter(5, incomplete);
+            SetStateCounter(6, seeding);
+            SetStateCounter(7, broken);
+            foreach (KeyValuePair<string, int> pair in trackers)
+            {
+                GListBoxItem item = stateListBox.FindItem(pair.Key);
+                if (item != null)
+                {
+                    item.Counter = pair.Value;
+                }
+            }
+            /*            stateListBox.Items.Add(new GListBoxItem(OtherStrings.All, 0));
+stateListBox.Items.Add(new GListBoxItem(OtherStrings.Downloading, 1));
+stateListBox.Items.Add(new GListBoxItem(OtherStrings.Paused, 2));
+stateListBox.Items.Add(new GListBoxItem(OtherStrings.Checking, 5));
+stateListBox.Items.Add(new GListBoxItem(OtherStrings.Complete, 3));
+stateListBox.Items.Add(new GListBoxItem(OtherStrings.Incomplete, 7));
+stateListBox.Items.Add(new GListBoxItem(OtherStrings.Seeding, 4));
+stateListBox.Items.Add(new GListBoxItem(OtherStrings.Broken, 6));*/
+            stateListBox.Refresh();
+        }
+
+        private void SetStateCounter(int index, int count)
+        {
+            ((GListBoxItem)stateListBox.Items[index]).Counter = count;
         }
 
         private void SetWantedHandler(object sender, EventArgs e)

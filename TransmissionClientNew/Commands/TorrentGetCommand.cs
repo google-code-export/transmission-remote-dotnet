@@ -58,6 +58,12 @@ namespace TransmissionRemoteDotnet.Commmands
                 JsonArray torrents = (JsonArray)arguments[ProtocolConstants.KEY_TORRENTS];
                 Program.DaemonDescriptor.UpdateSerial++;
                 form.SuspendTorrentListView();
+                bool stateChange = false;
+                int oldCount = -1;
+                lock(Program.TorrentIndex)
+                {
+                    oldCount = Program.TorrentIndex.Count;
+                }
                 foreach (JsonObject torrent in torrents)
                 {
                     string hash = (string)torrent[ProtocolConstants.FIELD_HASHSTRING];
@@ -87,9 +93,9 @@ namespace TransmissionRemoteDotnet.Commmands
                     {
                         t = new Torrent(torrent);
                     }
-                    else
+                    else if (t.Update(torrent))
                     {
-                        t.Update(torrent);
+                        stateChange = true;
                     }
                 }
                 form.ResumeTorrentListView();
@@ -134,7 +140,11 @@ namespace TransmissionRemoteDotnet.Commmands
                             pair.Value.Remove();
                         }
                     }
+                    if (oldCount != Program.TorrentIndex.Count)
+                        stateChange = true;
                 }
+                if (stateChange)
+                    form.SetAllStateCounters();
                 Program.RaisePostUpdateEvent();
             }
         }

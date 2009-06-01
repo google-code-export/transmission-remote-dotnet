@@ -2,6 +2,7 @@
  * + some of my fixes. */
  
 using System.Windows.Forms;
+using System;
 
 namespace TransmissionRemoteDotnet
 {
@@ -10,10 +11,36 @@ namespace TransmissionRemoteDotnet
         private string _myText;
         private int _myImageIndex;
 
+        private int counter = 0;
+        public int Counter
+        {
+            get { return this.counter; }
+            set { this.counter = value; }
+        }
+
         public string Text
         {
-            get { return _myText; }
+            get { return this._myText; }
             set { _myText = value; }
+        }
+
+        public string TextWithCounter
+        {
+            get
+            {
+                if (_myText.Length < 1)
+                {
+                    return "";
+                }
+                else if (counter > 0)
+                {
+                    return String.Format("{0} ({1})", _myText, counter);
+                }
+                else
+                {
+                    return _myText;
+                }
+            }
         }
 
         public int ImageIndex

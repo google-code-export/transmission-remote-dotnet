@@ -51,7 +51,7 @@ Section "Transmission Remote (required)"
   File "..\..\..\LICENCE.txt"
   
   ; Write the installation path into the registry
-  WriteRegStr HKLM "SOFTWARE\TransmissionRemote" "Install_Dir" "$INSTDIR"
+  WriteRegStr HKCU "SOFTWARE\TransmissionRemote" "Install_Dir" "$INSTDIR"
   
   ; Write the uninstall keys for Windows
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Transmission Remote" "DisplayName" "Transmission Remote"

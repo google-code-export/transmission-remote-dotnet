@@ -3,6 +3,7 @@
  
 using System.Windows.Forms;
 using System.Drawing;
+using System;
 
 namespace TransmissionRemoteDotnet
 {
@@ -61,6 +62,37 @@ namespace TransmissionRemoteDotnet
             base.OnPaint(e);
         }
 
+        public GListBoxItem FindItem(string key)
+        {
+            foreach (object o in Items)
+            {
+                if (o.GetType().Equals(typeof(GListBoxItem)))
+                {
+                    GListBoxItem gi = (GListBoxItem)o;
+                    if (gi.Text.Equals(key))
+                        return gi;
+                }
+            }
+            return null;
+        }
+
+        public void RemoveItem(string key)
+        {
+            object toRemove = null;
+            foreach (object o in Items)
+            {
+                if (o.GetType().Equals(typeof(GListBoxItem)))
+                {
+                    if (((GListBoxItem)o).Text.Equals(key))
+                    {
+                        toRemove = o;
+                        break;
+                    }
+                }
+            }
+            Items.Remove(toRemove);
+        }
+
         protected override void OnDrawItem(DrawItemEventArgs e)
         {
             e.DrawBackground();
@@ -75,12 +107,12 @@ namespace TransmissionRemoteDotnet
                     {
                         Size imageSize = _myImageList.ImageSize;
                         _myImageList.Draw(e.Graphics, bounds.Left, bounds.Top, item.ImageIndex);
-                        e.Graphics.DrawString(item.Text, e.Font, new SolidBrush(e.ForeColor),
+                        e.Graphics.DrawString(item.TextWithCounter, e.Font, new SolidBrush(e.ForeColor),
                             bounds.Left + imageSize.Width, bounds.Top);
                     }
                     else
                     {
-                        e.Graphics.DrawString(item.Text, e.Font, new SolidBrush(e.ForeColor),
+                        e.Graphics.DrawString(item.TextWithCounter, e.Font, new SolidBrush(e.ForeColor),
                             bounds.Left, bounds.Top);
                     }
                 }
