@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TransmissionRemoteDotnet</RootNamespace>
     <AssemblyName>Transmission Remote</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ApplicationIcon>transmission_large.ico</ApplicationIcon>
     <SignManifests>false</SignManifests>
@@ -55,9 +55,13 @@
     <Reference Include="Jayrock, Version=0.9.8316.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Jayrock.Json, Version=0.9.8316.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -117,6 +121,27 @@
     <Compile Include="LocalSettingsDialog.Designer.cs">
       <DependentUpon>LocalSettingsDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="MonoTorrent\BEncodedDictionary.cs" />
+    <Compile Include="MonoTorrent\BEncodedList.cs" />
+    <Compile Include="MonoTorrent\BEncodedNumber.cs" />
+    <Compile Include="MonoTorrent\BEncodedString.cs" />
+    <Compile Include="MonoTorrent\BEncodingException.cs" />
+    <Compile Include="MonoTorrent\BitField.cs" />
+    <Compile Include="MonoTorrent\Check.cs" />
+    <Compile Include="MonoTorrent\EncryptionTypes.cs" />
+    <Compile Include="MonoTorrent\Enums.cs" />
+    <Compile Include="MonoTorrent\HashAlgoFactory.cs" />
+    <Compile Include="MonoTorrent\Hashes.cs" />
+    <Compile Include="MonoTorrent\IBEncodedValue.cs" />
+    <Compile Include="MonoTorrent\IMessage.cs" />
+    <Compile Include="MonoTorrent\InfoHash.cs" />
+    <Compile Include="MonoTorrent\Message.cs" />
+    <Compile Include="MonoTorrent\MonoTorrentCollectionBase.cs" />
+    <Compile Include="MonoTorrent\PeerID.cs" />
+    <Compile Include="MonoTorrent\RawReader.cs" />
+    <Compile Include="MonoTorrent\ToolBox.cs" />
+    <Compile Include="MonoTorrent\Torrent.cs" />
+    <Compile Include="MonoTorrent\TorrentFile.cs" />
     <Compile Include="MoveDataPrompt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -450,6 +475,10 @@
       <DependentUpon>StatsDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="TorrentLoadDialog.resx">
+      <DependentUpon>TorrentLoadDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="TorrentPropertiesDialog.da-DK.resx">
       <DependentUpon>TorrentPropertiesDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -562,6 +591,12 @@
     <Compile Include="Toolbox.cs" />
     <Compile Include="Torrent.cs" />
     <Compile Include="Requests.cs" />
+    <Compile Include="TorrentLoadDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TorrentLoadDialog.Designer.cs">
+      <DependentUpon>TorrentLoadDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="TorrentPropertiesDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -642,12 +677,12 @@
     <None Include="Resources\reannounce.png" />
     <None Include="Resources\16x16_ledpurple.png" />
     <None Include="Resources\down16.png" />
-    <None Include="Resources\error16.png" />
     <None Include="Resources\pause16.png" />
     <None Include="Resources\up16.png" />
     <None Include="Resources\samba.png" />
     <None Include="Resources\player_pause_all.png" />
     <None Include="Resources\player_play_all.png" />
+    <None Include="Resources\error16.png" />
     <Content Include="transmission_large.ico" />
   </ItemGroup>
   <ItemGroup>

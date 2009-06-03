@@ -143,6 +143,7 @@ namespace TransmissionRemoteDotnet
             ADDRESS = "address",
             TIER = "tier",
             ANNOUNCE = "announce",
-            SCRAPE = "scrape";
+            SCRAPE = "scrape",
+            DOWNLOAD_DIR = "download-dir";
     }
 }

@@ -63,20 +63,7 @@ namespace TransmissionRemoteDotnet.Commands
         public UpdateFilesCreateSubCommand(string name, long length, bool wanted,
             JsonNumber priority, long bytesCompleted, ImageList img, int mainHandle)
         {
-            int fwdSlashPos = name.IndexOf('/');
-            if (fwdSlashPos > 0)
-            {
-                name = name.Remove(0, fwdSlashPos + 1);
-            }
-            else
-            {
-                int bckSlashPos = name.IndexOf('\\');
-                if (bckSlashPos > 0)
-                {
-                    name = name.Remove(0, bckSlashPos + 1);
-                }
-            }
-            this.item = new ListViewItem(name);
+            this.item = new ListViewItem(Toolbox.TrimPath(name));
             string[] split = name.Split('.');
             string typeName = "";
             if (split.Length > 1)

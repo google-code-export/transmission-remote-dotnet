@@ -18,7 +18,7 @@ InstallDir "$PROGRAMFILES\Transmission Remote"
 
 ; Registry key to check for directory (so if you install again, it will 
 ; overwrite the old one automatically)
-InstallDirRegKey HKCU "Software\TransmissionRemote" "Install_Dir"
+InstallDirRegKey HKLM "Software\TransmissionRemote" "Install_Dir"
 
 ; Request application privileges for Windows Vista
 RequestExecutionLevel admin
@@ -51,7 +51,7 @@ Section "Transmission Remote (required)"
   File "..\..\..\LICENCE.txt"
   
   ; Write the installation path into the registry
-  WriteRegStr HKCU "SOFTWARE\TransmissionRemote" "Install_Dir" "$INSTDIR"
+  WriteRegStr HKLM "SOFTWARE\TransmissionRemote" "Install_Dir" "$INSTDIR"
   
   ; Write the uninstall keys for Windows
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Transmission Remote" "DisplayName" "Transmission Remote"

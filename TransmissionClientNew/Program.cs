@@ -148,7 +148,7 @@ namespace TransmissionRemoteDotnet
                 {
                     if (connected)
                     {
-                        form.CreateUploadWorker().RunWorkerAsync(e.Args);
+                        form.Upload(e.Args);
                     }
                     else
                     {

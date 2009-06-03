@@ -107,6 +107,7 @@ namespace TransmissionRemoteDotnet
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.addProfileButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.PortField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RefreshRateValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RetryLimitValue)).BeginInit();
@@ -336,6 +337,7 @@ namespace TransmissionRemoteDotnet
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.checkBox2);
             this.tabPage4.Controls.Add(this.minimizeOnCloseCheckBox);
             this.tabPage4.Controls.Add(this.notificationOnAdditionCheckBox);
             this.tabPage4.Controls.Add(this.notificationOnCompletionCheckBox);
@@ -579,6 +581,12 @@ namespace TransmissionRemoteDotnet
             // 
             resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
+            // checkBox2
+            // 
+            resources.ApplyResources(this.checkBox2, "checkBox2");
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
             // LocalSettingsDialog
             // 
             this.AcceptButton = this.SaveButton;
@@ -683,5 +691,6 @@ namespace TransmissionRemoteDotnet
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.CheckBox sambaShareEnabledCheckBox;
         private System.Windows.Forms.TextBox sambaShare;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }

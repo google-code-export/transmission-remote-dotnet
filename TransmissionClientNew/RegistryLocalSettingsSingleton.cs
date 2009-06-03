@@ -73,7 +73,8 @@ namespace TransmissionRemoteDotnet
             REGKEY_DOWNLIMIT = "downlimit",
             REGKEY_UPLIMIT = "uplimit",
             REGKEY_SAMBASHARE = "sambaShare",
-            REGKEY_SAMBASHAREENABLED = "sambaShareEnabled";
+            REGKEY_SAMBASHAREENABLED = "sambaShareEnabled",
+            REGKEY_UPLOADPROMPT = "uploadPrompt";
 
         private static LocalSettingsSingleton instance = null;
         private static readonly object padlock = new object();
@@ -335,6 +336,18 @@ namespace TransmissionRemoteDotnet
             set
             {
                 profileConfMap[REGKEY_REFRESHRATE] = value;
+            }
+        }
+
+        public bool UploadPrompt
+        {
+            get
+            {
+                return profileConfMap.ContainsKey(REGKEY_UPLOADPROMPT) ? ToBool(profileConfMap[REGKEY_UPLOADPROMPT]) : false;
+            }
+            set
+            {
+                this.profileConfMap[REGKEY_UPLOADPROMPT] = ToInt(value);
             }
         }
 

@@ -475,6 +475,15 @@ namespace TransmissionRemoteDotnet {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Loading {0}....
+        /// </summary>
+        internal static string LoadingFile {
+            get {
+                return ResourceManager.GetString("LoadingFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Low.
         /// </summary>
         internal static string Low {

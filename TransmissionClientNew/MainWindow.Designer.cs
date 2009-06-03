@@ -160,6 +160,7 @@ namespace TransmissionRemoteDotnet
             this.disconnectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.addTorrentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addTorrentWithOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addTorrentFromUrlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileMenuItemSeperator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -199,6 +200,7 @@ namespace TransmissionRemoteDotnet
             this.filesTimer = new System.Windows.Forms.Timer(this.components);
             this.filesWorker = new System.ComponentModel.BackgroundWorker();
             this.refreshElapsedTimer = new System.Windows.Forms.Timer(this.components);
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -1143,6 +1145,7 @@ namespace TransmissionRemoteDotnet
             this.disconnectToolStripMenuItem,
             this.toolStripMenuItem2,
             this.addTorrentToolStripMenuItem,
+            this.addTorrentWithOptionsToolStripMenuItem,
             this.addTorrentFromUrlToolStripMenuItem,
             this.fileMenuItemSeperator1,
             this.exitToolStripMenuItem});
@@ -1171,6 +1174,13 @@ namespace TransmissionRemoteDotnet
             resources.ApplyResources(this.addTorrentToolStripMenuItem, "addTorrentToolStripMenuItem");
             this.addTorrentToolStripMenuItem.Name = "addTorrentToolStripMenuItem";
             this.addTorrentToolStripMenuItem.Click += new System.EventHandler(this.addTorrentButton_Click);
+            // 
+            // addTorrentWithOptionsToolStripMenuItem
+            // 
+            this.addTorrentWithOptionsToolStripMenuItem.Image = global::TransmissionRemoteDotnet.Properties.Resources.edit_add;
+            this.addTorrentWithOptionsToolStripMenuItem.Name = "addTorrentWithOptionsToolStripMenuItem";
+            resources.ApplyResources(this.addTorrentWithOptionsToolStripMenuItem, "addTorrentWithOptionsToolStripMenuItem");
+            this.addTorrentWithOptionsToolStripMenuItem.Click += new System.EventHandler(this.addTorrentWithOptionsToolStripMenuItem_Click);
             // 
             // addTorrentFromUrlToolStripMenuItem
             // 
@@ -1421,6 +1431,11 @@ namespace TransmissionRemoteDotnet
             this.refreshElapsedTimer.Interval = 1000;
             this.refreshElapsedTimer.Tick += new System.EventHandler(this.refreshElapsedTimer_Tick);
             // 
+            // openFileDialog1
+            // 
+            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
+            this.openFileDialog1.Multiselect = true;
+            // 
             // MainWindow
             // 
             this.AllowDrop = true;
@@ -1662,5 +1677,7 @@ namespace TransmissionRemoteDotnet
         private System.Windows.Forms.ToolStripMenuItem moveTorrentDataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copyInfoObjectToClipboardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cSVInfoToClipboardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addTorrentWithOptionsToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

@@ -427,4 +427,7 @@
   <data name="InfoObjectToClipboard" xml:space="preserve">
     <value>Info object to clipboard</value>
   </data>
+  <data name="LoadingFile" xml:space="preserve">
+    <value>Loading {0}...</value>
+  </data>
 </root>

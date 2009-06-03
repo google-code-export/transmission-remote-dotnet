@@ -121,6 +121,13 @@ namespace TransmissionRemoteDotnet
 
         public static JsonObject TorrentAddByFile(string file, bool deleteAfter)
         {
+            return TorrentAddByFile(file, deleteAfter, null, null, null, null, null, null, -1);
+        }
+
+        public static JsonObject TorrentAddByFile(string file, bool deleteAfter,
+            JsonArray high, JsonArray normal, JsonArray low, JsonArray wanted,
+            JsonArray unwanted, string destination, int peerLimit)
+        {
             FileStream inFile = new FileStream(file, FileMode.Open, FileAccess.Read);
             byte[] binaryData = new Byte[inFile.Length];
             if (inFile.Read(binaryData, 0, (int)inFile.Length) < 1)
@@ -132,6 +139,20 @@ namespace TransmissionRemoteDotnet
             JsonObject arguments = GetArgObject(request);
             arguments.Put(ProtocolConstants.FIELD_METAINFO, Convert.ToBase64String(binaryData, 0, binaryData.Length));
             arguments.Put(ProtocolConstants.FIELD_PAUSED, LocalSettingsSingleton.Instance.StartPaused);
+            if (high != null)
+                arguments.Put(ProtocolConstants.PRIORITY_HIGH, high);
+            if (normal != null)
+                arguments.Put(ProtocolConstants.PRIORITY_NORMAL, normal);
+            if (low != null)
+                arguments.Put(ProtocolConstants.PRIORITY_LOW, low);
+            if (wanted != null)
+                arguments.Put(ProtocolConstants.FILES_WANTED, wanted);
+            if (unwanted != null)
+                arguments.Put(ProtocolConstants.FILES_UNWANTED, unwanted);
+            if (destination != null)
+                arguments.Put(ProtocolConstants.DOWNLOAD_DIR, destination);
+            if (peerLimit > 0)
+                arguments.Put(ProtocolConstants.FIELD_PEERLIMIT, peerLimit);
             if (deleteAfter && File.Exists(file))
             {
                 try

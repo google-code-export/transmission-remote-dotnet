@@ -417,6 +417,7 @@ namespace TransmissionRemoteDotnet
             connectButton.Visible = connectToolStripMenuItem.Visible
                 = mainVerticalSplitContainer.Panel1Collapsed = !connected;
             disconnectButton.Visible = addTorrentToolStripMenuItem.Visible
+                = addTorrentWithOptionsToolStripMenuItem.Visible
                 = addTorrentButton.Visible = addWebTorrentButton.Visible
                 = remoteConfigureButton.Visible = pauseTorrentButton.Visible
                 = removeTorrentButton.Visible = toolStripSeparator4.Visible
@@ -631,7 +632,7 @@ namespace TransmissionRemoteDotnet
         {
             if (Program.Connected)
             {
-                CreateUploadWorker().RunWorkerAsync(e.Data.GetData(DataFormats.FileDrop));
+                Upload((string[])e.Data.GetData(DataFormats.FileDrop));
             }
             else
             {
@@ -684,16 +685,23 @@ namespace TransmissionRemoteDotnet
         {
             try
             {
-                foreach (string file in (string[])e.Argument)
+                if (e.Argument.GetType().Equals(typeof(string[])))
                 {
-                    if (file != null && file.Length > 0 && File.Exists(file))
+                    foreach (string file in (string[])e.Argument)
                     {
-                        if ((e.Result = CommandFactory.Request(Requests.TorrentAddByFile(file, false))).GetType() == typeof(ErrorCommand))
+                        if (file != null && file.Length > 0 && File.Exists(file))
                         {
-                            /* An exception occured, so display it. */
-                            return;
+                            if ((e.Result = CommandFactory.Request(Requests.TorrentAddByFile(file, false))).GetType() == typeof(ErrorCommand))
+                            {
+                                /* An exception occured, so display it. */
+                                return;
+                            }
                         }
                     }
+                }
+                else if (e.Argument.GetType().Equals(typeof(JsonObject)))
+                {
+                    e.Result = CommandFactory.Request((JsonObject)e.Argument);
                 }
             }
             catch (Exception ex)
@@ -994,6 +1002,23 @@ namespace TransmissionRemoteDotnet
             }
         }
 
+        public void Upload(string[] args)
+        {
+            if (LocalSettingsSingleton.Instance.UploadPrompt)
+            {
+                foreach (string s in args)
+                {
+                    Console.WriteLine(s);
+                    TorrentLoadDialog dialog = new TorrentLoadDialog(s);
+                    dialog.ShowDialog();
+                }
+            }
+            else
+            {
+                CreateUploadWorker().RunWorkerAsync(args);
+            }
+        }
+
         private void MainWindow_Shown(object sender, EventArgs e)
         {
             if (this.minimise)
@@ -1254,7 +1279,6 @@ namespace TransmissionRemoteDotnet
                     if (t.HasError)
                     {
                         broken++;
-                        Console.WriteLine(t.ErrorString);
                     }
                     if (statusCode == ProtocolConstants.STATUS_DOWNLOADING)
                     {
@@ -1283,7 +1307,6 @@ namespace TransmissionRemoteDotnet
                     }
                 }
             }
-            Console.WriteLine("Broken = " + broken);
             SetStateCounter(0, all);
             SetStateCounter(1, downloading);
             SetStateCounter(2, paused);
@@ -1921,6 +1944,21 @@ stateListBox.Items.Add(new GListBoxItem(OtherStrings.Broken, 6));*/
         private void copyInfoObjectToClipboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TorrentJsonToClipboard();
+        }
+
+        private void addTorrentWithOptionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Program.Connected)
+            {
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    foreach (string fileName in openFileDialog1.FileNames)
+                    {
+                        TorrentLoadDialog torrentDialog = new TorrentLoadDialog(fileName);
+                        torrentDialog.ShowDialog();
+                    }
+                }
+            }
         }
     }
 }

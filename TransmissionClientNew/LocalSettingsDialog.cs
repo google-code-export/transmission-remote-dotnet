@@ -69,6 +69,7 @@ namespace TransmissionRemoteDotnet
             uploadLimitItems.Text = settings.UpLimit;
             sambaShare.Enabled = sambaShareEnabledCheckBox.Checked = settings.SambaShareEnabled;
             sambaShare.Text = settings.SambaShare;
+            checkBox2.Checked = settings.UploadPrompt;
         }
 
         private void LocalSettingsDialog_Load(object sender, EventArgs e)
@@ -126,6 +127,7 @@ namespace TransmissionRemoteDotnet
             settings.DownLimit = downloadLimitItems.Text;
             settings.SambaShareEnabled = sambaShareEnabledCheckBox.Checked;
             settings.SambaShare = sambaShare.Text;
+            settings.UploadPrompt = checkBox2.Checked;
             Program.Form.SetRemoteCmdButtonVisible(Program.Connected);
             settings.Commit();
         }

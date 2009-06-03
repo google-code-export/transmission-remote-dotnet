@@ -41,6 +41,24 @@ namespace TransmissionRemoteDotnet
             return resultMultiplied <= 100 ? resultMultiplied : result;
         }
 
+        public static string TrimPath(string s)
+        {
+            int fwdSlashPos = s.IndexOf('/');
+            if (fwdSlashPos > 0)
+            {
+                return s.Remove(0, fwdSlashPos + 1);
+            }
+            else
+            {
+                int bckSlashPos = s.IndexOf('\\');
+                if (bckSlashPos > 0)
+                {
+                    return s.Remove(0, bckSlashPos + 1);
+                }
+            }
+            return s;
+        }
+
         public static double ToDouble(object o)
         {
             if (o.GetType().Equals(typeof(string)))

@@ -28,11 +28,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                if (_myText.Length < 1)
-                {
-                    return "";
-                }
-                else if (counter > 0)
+                if (counter > 0)
                 {
                     return String.Format("{0} ({1})", _myText, counter);
                 }
