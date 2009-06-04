@@ -405,6 +405,10 @@ namespace TransmissionRemoteDotnet
                 this.Text = MainWindow.DEFAULT_WINDOW_TITLE;
                 lock (this.stateListBox)
                 {
+                    for (int i = 0; i < 8; i++)
+                    {
+                        ((GListBoxItem)stateListBox.Items[i]).Counter = 0;
+                    }
                     if (this.stateListBox.Items.Count > 8)
                     {
                         for (int i = this.stateListBox.Items.Count - 1; i > 8; i--)
@@ -417,7 +421,6 @@ namespace TransmissionRemoteDotnet
             connectButton.Visible = connectToolStripMenuItem.Visible
                 = mainVerticalSplitContainer.Panel1Collapsed = !connected;
             disconnectButton.Visible = addTorrentToolStripMenuItem.Visible
-                = addTorrentWithOptionsToolStripMenuItem.Visible
                 = addTorrentButton.Visible = addWebTorrentButton.Visible
                 = remoteConfigureButton.Visible = pauseTorrentButton.Visible
                 = removeTorrentButton.Visible = toolStripSeparator4.Visible
@@ -434,6 +437,7 @@ namespace TransmissionRemoteDotnet
             removeAndDeleteButton.Visible = connected && dd.Version >= 1.5;
             sessionStatsButton.Visible = connected && dd.RpcVersion >= 4;
             moveTorrentDataToolStripMenuItem.Visible = connected && dd.Revision >= 8385;
+            addTorrentWithOptionsToolStripMenuItem.Visible = dd.Version < 1.60 || dd.Version >= 1.61;
         }
 
         public void SetRemoteCmdButtonVisible(bool connected)
@@ -1948,7 +1952,7 @@ stateListBox.Items.Add(new GListBoxItem(OtherStrings.Broken, 6));*/
 
         private void addTorrentWithOptionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Program.Connected)
+            if (Program.Connected && (Program.DaemonDescriptor.Version < 1.60 || Program.DaemonDescriptor.Version >= 1.61))
             {
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {

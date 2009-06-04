@@ -111,6 +111,9 @@
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="addTorrentWithOptionsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Add torrent with options</value>
+  </data>
   <data name="moveTorrentDataToolStripMenuItem.Text" xml:space="preserve">
     <value>Move torrent data</value>
   </data>
@@ -327,14 +330,8 @@
   <data name="addWebTorrentButton.Text" xml:space="preserve">
     <value>Dodaj Torrent z adresu</value>
   </data>
-  <data name="startAllToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Uruchom Wszystkie</value>
-  </data>
   <data name="startTorrentButton.Text" xml:space="preserve">
     <value>Uruchom torrent(y)</value>
-  </data>
-  <data name="pauseAllToolStripMenuItem.Text" xml:space="preserve">
-    <value>Wstrzymaj Wszystkie</value>
   </data>
   <data name="pauseTorrentButton.Text" xml:space="preserve">
     <value>Wstrzymaj torrent(y)</value>

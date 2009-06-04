@@ -140,7 +140,7 @@ namespace TransmissionRemoteDotnet
                     listView1.Items.Add(item);
                 }
                 Toolbox.StripeListView(listView1);
-                listView1.Enabled = button1.Enabled = true;
+                listView1.Enabled = button1.Enabled = checkBox1.Enabled = checkBox2.Enabled = true;
                 listView1.ResumeLayout();
                 this.Text = torrent.Name;
                 this.toolStripStatusLabel1.Text = "";
@@ -221,6 +221,11 @@ namespace TransmissionRemoteDotnet
             );
             Program.Form.CreateUploadWorker().RunWorkerAsync(request);
             this.Close();
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            numericUpDown1.Enabled = checkBox2.Checked;
         }
     }
 }
