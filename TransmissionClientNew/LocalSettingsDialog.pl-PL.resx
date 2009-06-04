@@ -111,9 +111,6 @@
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="checkBox2.Text" xml:space="preserve">
-    <value>Upload prompt</value>
-  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Host:</value>
   </data>
@@ -168,6 +165,18 @@
   <data name="tabPage1.Text" xml:space="preserve">
     <value>Serwer</value>
   </data>
+  <data name="checkBox2.Text" xml:space="preserve">
+    <value>Powiadom o uplodowaniu</value>
+  </data>
+  <data name="minimizeOnCloseCheckBox.Text" xml:space="preserve">
+    <value>Minimalizuj przy zamknięciu</value>
+  </data>
+  <data name="notificationOnAdditionCheckBox.Text" xml:space="preserve">
+    <value>Powiadom o dodaniu zadania</value>
+  </data>
+  <data name="notificationOnCompletionCheckBox.Text" xml:space="preserve">
+    <value>Powiadom o zakończeniu</value>
+  </data>
   <data name="tabPage4.Text" xml:space="preserve">
     <value>Ogólne</value>
   </data>
@@ -180,26 +189,8 @@
   <data name="tabPage5.Text" xml:space="preserve">
     <value>SSH</value>
   </data>
-  <data name="sambaShareEnabledCheckBox.Text" xml:space="preserve">
-    <value>Folder sieciowy torrentów: </value>
-  </data>
-  <data name="label17.Text" xml:space="preserve">
-    <value>Elementy menu limitu pobierania:</value>
-  </data>
-  <data name="label16.Text" xml:space="preserve">
-    <value>Elementy menu limitu wysyłania:</value>
-  </data>
   <data name="tabPage6.Text" xml:space="preserve">
     <value>Różne</value>
-  </data>
-  <data name="minimizeOnCloseCheckBox.Text" xml:space="preserve">
-    <value>Minimalizuj przy zamykaniu</value>
-  </data>
-  <data name="notificationOnAdditionCheckBox.Text" xml:space="preserve">
-    <value>Powiadomienie o dodaniu zadania</value>
-  </data>
-  <data name="notificationOnCompletionCheckBox.Text" xml:space="preserve">
-    <value>Powiadomienie o zakończeniu zadania</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Hasło:</value>
@@ -217,10 +208,10 @@
     <value>http://code.google.com/p/transmission-remote-dotnet/wiki/SSH</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
-    <value>Komenda: </value>
+    <value>Polecenie: </value>
   </data>
   <data name="checkBox1.Text" xml:space="preserve">
-    <value>Pokaż przycisk komend zdalnych</value>
+    <value>Pokaż przycisk poleceń zdalnych</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
     <value>plink.exe:</value>
@@ -228,15 +219,33 @@
   <data name="button2.Text" xml:space="preserve">
     <value>Przeglądaj...</value>
   </data>
+  <data name="sambaShareEnabledCheckBox.Text" xml:space="preserve">
+    <value>Folder sieciowy torrentów: </value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Elementy menu limitu pobierania:</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Elementy menu limitu wysyłania:</value>
+  </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Zapisz i Połącz</value>
   </data>
   <data name="groupBox5.Text" xml:space="preserve">
-    <value>Obecny profil</value>
+    <value>Obecny profil:</value>
   </data>
   <data name="groupBox6.Text" xml:space="preserve">
-    <value>Nowy profil</value>
+    <value>Nowy profil:</value>
   </data>
+  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="$this.Text" xml:space="preserve">
     <value>Ustawienia Lokalne</value>
   </data>

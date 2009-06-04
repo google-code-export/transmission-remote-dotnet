@@ -111,18 +111,6 @@
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="addTorrentWithOptionsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Add torrent with options</value>
-  </data>
-  <data name="moveTorrentDataToolStripMenuItem.Text" xml:space="preserve">
-    <value>Move torrent data</value>
-  </data>
-  <data name="copyInfoObjectToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>Info object to clipboard</value>
-  </data>
-  <data name="cSVInfoToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>CSV info to clipboard</value>
-  </data>
   <data name="columnHeader6.Text" xml:space="preserve">
     <value>Nazwa</value>
   </data>
@@ -130,7 +118,7 @@
     <value>Rozmiar</value>
   </data>
   <data name="columnHeader8.Text" xml:space="preserve">
-    <value>Zakończone</value>
+    <value>Ukończono</value>
   </data>
   <data name="columnHeader9.Text" xml:space="preserve">
     <value>Status</value>
@@ -157,10 +145,10 @@
     <value>Ratio</value>
   </data>
   <data name="columnHeader18.Text" xml:space="preserve">
-    <value>Dodany</value>
+    <value>Dodano</value>
   </data>
   <data name="columnHeader19.Text" xml:space="preserve">
-    <value>Ukończony</value>
+    <value>Ukończono</value>
   </data>
   <data name="columnHeader30.Text" xml:space="preserve">
     <value>Tracker</value>
@@ -169,7 +157,7 @@
     <value>Części:</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
-    <value>Utworzony:</value>
+    <value>Utworzony w:</value>
   </data>
   <data name="label16.Text" xml:space="preserve">
     <value>Utworzono:</value>
@@ -235,7 +223,7 @@
     <value>Trackery</value>
   </data>
   <data name="columnHeader1.Text" xml:space="preserve">
-    <value>Ścieżka\Nazwa pliku</value>
+    <value>Folder\Nazwa pliku</value>
   </data>
   <data name="columnHeader32.Text" xml:space="preserve">
     <value>Typ</value>
@@ -259,7 +247,7 @@
     <value>Pliki</value>
   </data>
   <data name="columnHeader23.Text" xml:space="preserve">
-    <value>Adres IP:</value>
+    <value>Adres IP</value>
   </data>
   <data name="columnHeader24.Text" xml:space="preserve">
     <value>Host</value>
@@ -312,12 +300,21 @@
   <data name="speedTabPage.Text" xml:space="preserve">
     <value>Prędkość</value>
   </data>
+  <metadata name="tabControlImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>506, 39</value>
+  </metadata>
+  <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 519</value>
+  </metadata>
   <data name="statusStrip.Text" xml:space="preserve">
     <value>statusStrip1</value>
   </data>
   <data name="toolStripContainer1.Text" xml:space="preserve">
     <value>toolStripContainer1</value>
   </data>
+  <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>3, 0</value>
+  </metadata>
   <data name="connectButton.Text" xml:space="preserve">
     <value>Połącz</value>
   </data>
@@ -369,6 +366,9 @@
   <data name="sessionStatsButton.Text" xml:space="preserve">
     <value>Pokaż Statystyki</value>
   </data>
+  <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 0</value>
+  </metadata>
   <data name="connectToolStripMenuItem.Text" xml:space="preserve">
     <value>Połącz</value>
   </data>
@@ -378,26 +378,29 @@
   <data name="addTorrentToolStripMenuItem.Text" xml:space="preserve">
     <value>Dodaj Torrent</value>
   </data>
+  <data name="addTorrentWithOptionsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Dodaj Torrent z opcjami</value>
+  </data>
   <data name="addTorrentFromUrlToolStripMenuItem.Text" xml:space="preserve">
     <value>Dodaj Torrent z adresu</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
-    <value>Wyjście</value>
+    <value>Zamknij</value>
   </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>Plik</value>
   </data>
   <data name="localSettingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ustawienia Lokalne</value>
+    <value>Lokalne</value>
   </data>
   <data name="remoteSettingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ustawienia Zdalne</value>
+    <value>Zdalne</value>
   </data>
   <data name="languageToolStripMenuItem.Text" xml:space="preserve">
-    <value>Język</value>
+    <value>Język:</value>
   </data>
   <data name="optionsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Opcje</value>
+    <value>Ustawienia</value>
   </data>
   <data name="startToolStripMenuItem.Text" xml:space="preserve">
     <value>Uruchom</value>
@@ -420,8 +423,17 @@
   <data name="reannounceToolStripMenuItem.Text" xml:space="preserve">
     <value>Aktualizuj Tracker</value>
   </data>
+  <data name="moveTorrentDataToolStripMenuItem.Text" xml:space="preserve">
+    <value>Przenieś dane torrenta</value>
+  </data>
   <data name="openNetworkShareToolStripMenuItem.Text" xml:space="preserve">
     <value>Otwórz Folder Sieciowy</value>
+  </data>
+  <data name="copyInfoObjectToClipboardToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kopiuj info o objekcie</value>
+  </data>
+  <data name="cSVInfoToClipboardToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kopiuj do CSV</value>
   </data>
   <data name="startAllToolStripMenuItem.Text" xml:space="preserve">
     <value>Uruchom Wszystkie</value>
@@ -445,7 +457,7 @@
     <value>Pokaż Log Błędów</value>
   </data>
   <data name="projectSiteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Strona Projektu</value>
+    <value>Strona Domowa</value>
   </data>
   <data name="checkForNewVersionToolStripMenuItem.Text" xml:space="preserve">
     <value>Sprawdź Uaktualnienia</value>
@@ -459,9 +471,39 @@
   <data name="menuStrip.Text" xml:space="preserve">
     <value>menuStrip1</value>
   </data>
+  <metadata name="flagsImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>211, 0</value>
+  </metadata>
+  <metadata name="refreshWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>340, 0</value>
+  </metadata>
+  <metadata name="notifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>469, 0</value>
+  </metadata>
   <data name="notifyIcon.Text" xml:space="preserve">
     <value>Transmission Remote</value>
   </data>
+  <metadata name="refreshTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>575, 0</value>
+  </metadata>
+  <metadata name="filesTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>127, 39</value>
+  </metadata>
+  <metadata name="filesWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>231, 39</value>
+  </metadata>
+  <metadata name="refreshElapsedTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>344, 39</value>
+  </metadata>
+  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 78</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>114</value>
+  </metadata>
   <data name="$this.Text" xml:space="preserve">
     <value>Transmission Remote</value>
   </data>

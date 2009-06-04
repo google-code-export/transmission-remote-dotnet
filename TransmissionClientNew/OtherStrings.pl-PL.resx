@@ -117,27 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="LoadingFile" xml:space="preserve">
-    <value>Loading {0}...</value>
-  </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Exit</value>
-  </data>
-  <data name="NewTorrentIs" xml:space="preserve">
-    <value>New torrent {0}.</value>
-  </data>
-  <data name="MoveMultipleTorrents" xml:space="preserve">
-    <value>Move multiple torrent data</value>
-  </data>
-  <data name="MoveTorrentData" xml:space="preserve">
-    <value>Move torrent data</value>
-  </data>
-  <data name="MoveX" xml:space="preserve">
-    <value>Move {0}</value>
-  </data>
-  <data name="InfoObjectToClipboard" xml:space="preserve">
-    <value>Info object to clipboard</value>
-  </data>
   <data name="All" xml:space="preserve">
     <value>Wszystkie</value>
   </data>
@@ -145,13 +124,13 @@
     <value>Autor</value>
   </data>
   <data name="Broken" xml:space="preserve">
-    <value>Uszkodzony</value>
+    <value>Uszkodzone</value>
   </data>
   <data name="Build" xml:space="preserve">
     <value>Build</value>
   </data>
   <data name="Checking" xml:space="preserve">
-    <value>Sprawdzanie</value>
+    <value>Sprawdzane</value>
   </data>
   <data name="Complete" xml:space="preserve">
     <value>Ukończone</value>
@@ -163,13 +142,13 @@
     <value>Wybrałeś {0} torrentów do usunięcia. Jesteś tego pewien?</value>
   </data>
   <data name="ConfirmMultipleRemoveAndDelete" xml:space="preserve">
-    <value>Wybrałeś {0} torrentów do usunięcia. Jesteś tego pewien?{1}WSZYSTKIE DANE ZWIĄZANE Z TORRENTEM ZOSTANĄ USUNIĘTE!</value>
+    <value>Wybrałeś {0} torrentów do usunięcia. Jesteś tego pewien?{1}WSZYSTKIE DANE ZWIĄZANE Z TORRENTEM ZOSTANĄ USUNIĘTE!"</value>
   </data>
   <data name="ConfirmSingleRemove" xml:space="preserve">
     <value>Czy chcesz usunąć {0}?</value>
   </data>
   <data name="ConfirmSingleRemoveAndDelete" xml:space="preserve">
-    <value>Czy chcesz usunąć i skasować {0}?{1}WSZYSTKIE DANE ZWIĄZANE Z TORRENTEM ZOSTANĄ USUNIĘTE!</value>
+    <value>Czy chcesz usunąć i skasować {0}?{1}WSZYSTKIE DANE ZWIĄZANE Z TORRENTEM ZOSTANĄ USUNIĘTE!"</value>
   </data>
   <data name="Connect" xml:space="preserve">
     <value>Połącz</value>
@@ -202,10 +181,10 @@
     <value>Pobieranie</value>
   </data>
   <data name="Download" xml:space="preserve">
-    <value>Pobieranie</value>
+    <value>Pobierz</value>
   </data>
   <data name="DownloadedValid" xml:space="preserve">
-    <value>{0} ({1} ważny)</value>
+    <value>{0} ({1} poprawnych)</value>
   </data>
   <data name="Downloading" xml:space="preserve">
     <value>Pobieranie</value>
@@ -259,7 +238,7 @@
     <value>Normalny priorytet</value>
   </data>
   <data name="NotConnected" xml:space="preserve">
-    <value>Nie połączony</value>
+    <value>Niepołączony</value>
   </data>
   <data name="NoUpgradeAvailable" xml:space="preserve">
     <value>Upgrade niedostępny</value>
@@ -316,7 +295,7 @@
     <value>Torrent został pobrany</value>
   </data>
   <data name="Torrents" xml:space="preserve">
-    <value>Torrent</value>
+    <value>Torrenty</value>
   </data>
   <data name="UnableToParse" xml:space="preserve">
     <value>Nieznana odpowiedź serwera</value>
@@ -349,7 +328,7 @@
     <value>Tak</value>
   </data>
   <data name="Incomplete" xml:space="preserve">
-    <value>Nie dokończone</value>
+    <value>Niedokończone</value>
   </data>
   <data name="LanguageUpdated" xml:space="preserve">
     <value>Język programu uaktualniony</value>
@@ -429,5 +408,26 @@
   </data>
   <data name="OpenNetworkShare" xml:space="preserve">
     <value>Otwórz Folder Sieciowy</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Zamknij</value>
+  </data>
+  <data name="NewTorrentIs" xml:space="preserve">
+    <value>Nowy torrent {0}.</value>
+  </data>
+  <data name="MoveMultipleTorrents" xml:space="preserve">
+    <value>Zmień folder docelowy wielu torrentów</value>
+  </data>
+  <data name="MoveTorrentData" xml:space="preserve">
+    <value>Zmień folder docelowy torrenta</value>
+  </data>
+  <data name="MoveX" xml:space="preserve">
+    <value>Przenieś {0}</value>
+  </data>
+  <data name="InfoObjectToClipboard" xml:space="preserve">
+    <value>Kopiuj info o torrencie</value>
+  </data>
+  <data name="LoadingFile" xml:space="preserve">
+    <value>Przenoszę {0}...</value>
   </data>
 </root>

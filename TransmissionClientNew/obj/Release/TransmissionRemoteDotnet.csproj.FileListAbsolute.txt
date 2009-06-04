@@ -365,3 +365,4 @@ C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Rel
 C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\tr-TR\Transmission Remote.resources.dll
 C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\zh-CN\Transmission Remote.resources.dll
 C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentLoadDialog.resources
+C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentLoadDialog.pl-PL.resources
