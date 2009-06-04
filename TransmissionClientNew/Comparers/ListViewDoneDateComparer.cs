@@ -7,13 +7,6 @@ namespace TransmissionRemoteDotnet
 {
     public class ListViewDoneDateComparer : IComparer
     {
-        private int index;
-
-        public ListViewDoneDateComparer(int index)
-        {
-            this.index = index;
-        }
-
         int IComparer.Compare(object x, object y)
         {
             ListViewItem lx = (ListViewItem)x;

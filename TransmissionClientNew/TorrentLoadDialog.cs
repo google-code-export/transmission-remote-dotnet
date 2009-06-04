@@ -7,8 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+#if !MONO
 using Etier.IconHelper;
+#endif
 using Jayrock.Json;
+
 
 namespace TransmissionRemoteDotnet
 {
