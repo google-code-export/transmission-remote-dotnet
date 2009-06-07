@@ -29,11 +29,18 @@ namespace TransmissionRemoteDotnet
             {
                 this.Text = OtherStrings.MoveMultipleTorrents;
             }
+            foreach (string s in LocalSettingsSingleton.Instance.DestPathHistory)
+            {
+                comboBox1.Items.Add(s);
+            }
+            if (comboBox1.Items.Count > 0)
+                comboBox1.SelectedIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Program.Form.CreateActionWorker().RunWorkerAsync(Requests.TorrentSetLocation(Toolbox.ListViewSelectionToIdArray(selections), textBox1.Text, true));
+            LocalSettingsSingleton.Instance.AddDestinationPath(comboBox1.Text);
+            Program.Form.CreateActionWorker().RunWorkerAsync(Requests.TorrentSetLocation(Toolbox.ListViewSelectionToIdArray(selections), comboBox1.Text, true));
             this.Close();
         }
 
@@ -42,9 +49,14 @@ namespace TransmissionRemoteDotnet
             this.Close();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void ValidateInput()
         {
-            button1.Enabled = textBox1.Text.IndexOf('/') >= 0;
+            button1.Enabled = comboBox1.Text.IndexOf('/') >= 0;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValidateInput();
         }
     }
 }

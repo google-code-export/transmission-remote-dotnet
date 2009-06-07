@@ -126,7 +126,6 @@
     <Compile Include="MonoTorrent\BEncodedNumber.cs" />
     <Compile Include="MonoTorrent\BEncodedString.cs" />
     <Compile Include="MonoTorrent\BEncodingException.cs" />
-    <Compile Include="MonoTorrent\BitField.cs" />
     <Compile Include="MonoTorrent\Check.cs" />
     <Compile Include="MonoTorrent\HashAlgoFactory.cs" />
     <Compile Include="MonoTorrent\Hashes.cs" />

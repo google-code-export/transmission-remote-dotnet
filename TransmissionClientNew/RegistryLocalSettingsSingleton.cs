@@ -260,11 +260,16 @@ namespace TransmissionRemoteDotnet
                             newArray.Add(oldString);
                     }
                     profileConfMap[REGKEY_DESTINATION_PATH_HISTORY] = newArray.ToString();
-                    return;
                 }
-                catch { }
+                catch
+                {
+                    profileConfMap[REGKEY_DESTINATION_PATH_HISTORY] = (new JsonArray(new string[] { path })).ToString();
+                }
             }
-            profileConfMap.Add(REGKEY_DESTINATION_PATH_HISTORY, (new JsonArray(new string[] { path })).ToString());
+            else
+            {
+                profileConfMap.Add(REGKEY_DESTINATION_PATH_HISTORY, (new JsonArray(new string[] { path })).ToString());
+            }
         }
 
         private RegistryKey GetRootKey(bool writeable)

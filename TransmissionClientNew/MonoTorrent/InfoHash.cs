@@ -92,7 +92,7 @@ namespace MonoTorrent
             return new InfoHash(hash);
         }
 
-        public static InfoHash FromMagnetLink(string magnetLink)
+        /*public static InfoHash FromMagnetLink(string magnetLink)
         {
             Check.MagnetLink(magnetLink);
             if (!magnetLink.StartsWith("magnet:?"))
@@ -110,7 +110,7 @@ namespace MonoTorrent
                 throw new ArgumentException("Infohash is not 40 characters long");
             
             return FromHex(magnetLink.Substring(hashStart, 40));
-        }
+        }*/
 
         public static InfoHash UrlDecode(string infoHash)
         {

@@ -1325,14 +1325,16 @@ namespace TransmissionRemoteDotnet
             // 
             // startAllToolStripMenuItem
             // 
-            resources.ApplyResources(this.startAllToolStripMenuItem, "startAllToolStripMenuItem");
+            this.startAllToolStripMenuItem.Image = global::TransmissionRemoteDotnet.Properties.Resources.player_play_all;
             this.startAllToolStripMenuItem.Name = "startAllToolStripMenuItem";
+            resources.ApplyResources(this.startAllToolStripMenuItem, "startAllToolStripMenuItem");
             this.startAllToolStripMenuItem.Click += new System.EventHandler(this.startAllMenuItem_Click);
             // 
             // stopAllToolStripMenuItem
             // 
-            resources.ApplyResources(this.stopAllToolStripMenuItem, "stopAllToolStripMenuItem");
+            this.stopAllToolStripMenuItem.Image = global::TransmissionRemoteDotnet.Properties.Resources.player_pause_all;
             this.stopAllToolStripMenuItem.Name = "stopAllToolStripMenuItem";
+            resources.ApplyResources(this.stopAllToolStripMenuItem, "stopAllToolStripMenuItem");
             this.stopAllToolStripMenuItem.Click += new System.EventHandler(this.stopAllMenuItem_Click);
             // 
             // viewToolStripMenuItem

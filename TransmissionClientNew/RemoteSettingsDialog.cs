@@ -78,6 +78,16 @@ namespace TransmissionRemoteDotnet
             CloseAndDispose();
         }
 
+        private void SetNumeric(NumericUpDown numeric, int value, int def)
+        {
+            SetNumeric(numeric, (decimal)value, def);
+        }
+
+        private void SetNumeric(NumericUpDown numeric, decimal value, int def)
+        {
+            numeric.Value = value <= numeric.Maximum && value >= numeric.Minimum ? value : def;
+        }
+
         private void RemoteSettingsDialog_Load(object sender, EventArgs e)
         {
             try
@@ -85,18 +95,18 @@ namespace TransmissionRemoteDotnet
                 JsonObject session = (JsonObject)Program.DaemonDescriptor.SessionData;
                 downloadToField.Text = (string)session["download-dir"];
                 limitDownloadValue.Enabled = limitDownloadCheckBox.Checked = Toolbox.ToBool(session[ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED]);
-                SetLimitField(Toolbox.ToInt(session[ProtocolConstants.FIELD_SPEEDLIMITDOWN]), limitDownloadValue);
+                SetLimitField(limitDownloadValue, Toolbox.ToInt(session[ProtocolConstants.FIELD_SPEEDLIMITDOWN]));
                 limitUploadValue.Enabled = limitUploadCheckBox.Checked = Toolbox.ToBool(session[ProtocolConstants.FIELD_SPEEDLIMITUPENABLED]);
-                SetLimitField(Toolbox.ToInt(session[ProtocolConstants.FIELD_SPEEDLIMITUP]), limitUploadValue);
+                SetLimitField(limitUploadValue, Toolbox.ToInt(session[ProtocolConstants.FIELD_SPEEDLIMITUP]));
                 if (session.Contains("port"))
                 {
                     incomingPortValue.Tag = "port";
-                    incomingPortValue.Value = Toolbox.ToInt(session["port"]);
+                    SetNumeric(incomingPortValue, Toolbox.ToInt(session["port"]), 5555);
                 }
                 else if (session.Contains("peer-port"))
                 {
                     incomingPortValue.Tag = "peer-port";
-                    incomingPortValue.Value = Toolbox.ToInt(session["peer-port"]);
+                    SetNumeric(incomingPortValue, Toolbox.ToInt(session["peer-port"]), 5555);
                 }
                 portForwardCheckBox.Checked = Toolbox.ToBool(session["port-forwarding-enabled"]);
                 string enc = session["encryption"] as string;
@@ -115,12 +125,12 @@ namespace TransmissionRemoteDotnet
                 // peer limit
                 if (session.Contains(ProtocolConstants.FIELD_PEERLIMIT))
                 {
-                    peerLimitValue.Value = Toolbox.ToInt(session[ProtocolConstants.FIELD_PEERLIMIT]);
+                    SetNumeric(peerLimitValue, Toolbox.ToInt(session[ProtocolConstants.FIELD_PEERLIMIT]), 100);
                     peerLimitValue.Tag = ProtocolConstants.FIELD_PEERLIMIT;
                 }
                 else if (session.Contains(ProtocolConstants.FIELD_PEERLIMITGLOBAL))
                 {
-                    peerLimitValue.Value = Toolbox.ToInt(session[ProtocolConstants.FIELD_PEERLIMITGLOBAL]);
+                    SetNumeric(peerLimitValue, Toolbox.ToInt(session[ProtocolConstants.FIELD_PEERLIMITGLOBAL]), 100);
                     peerLimitValue.Tag = ProtocolConstants.FIELD_PEERLIMITGLOBAL;
                 }
                 // pex
@@ -149,22 +159,20 @@ namespace TransmissionRemoteDotnet
                     timeConstaintBeginMinutes.Enabled =
                     session.Contains(ProtocolConstants.FIELD_ALTSPEEDENABLED))
                 {
-                    int altDown = Toolbox.ToInt(session[ProtocolConstants.FIELD_ALTSPEEDDOWN]);
-                    altDownloadLimitField.Value = altDown <= altDownloadLimitField.Maximum ? altDown : 0;
-                    int altUp = Toolbox.ToInt(session[ProtocolConstants.FIELD_ALTSPEEDUP]);
-                    altUploadLimitField.Value = altUp <= altUploadLimitField.Maximum ? altUp : 0;
+                    SetNumeric(altDownloadLimitField, Toolbox.ToInt(session[ProtocolConstants.FIELD_ALTSPEEDDOWN]), 0);
+                    SetNumeric(altUploadLimitField, Toolbox.ToInt(session[ProtocolConstants.FIELD_ALTSPEEDUP]), 0);
                     altDownloadLimitField.Enabled = altUploadLimitField.Enabled = altSpeedLimitEnable.Checked = Toolbox.ToBool(session[ProtocolConstants.FIELD_ALTSPEEDENABLED]);
                     timeConstaintBeginMinutes.Enabled = timeConstaintEndMinutes.Enabled = timeConstraintBeginHours.Enabled = timeConstraintEndHours.Enabled = altTimeConstraintEnabled.Checked = Toolbox.ToBool(session["alt-speed-time-enabled"]);
                     int altSpeedTimeBegin = Toolbox.ToInt(session[ProtocolConstants.FIELD_ALTSPEEDTIMEBEGIN]);
                     int altSpeedTimeEnd = Toolbox.ToInt(session[ProtocolConstants.FIELD_ALTSPEEDTIMEEND]);
-                    timeConstraintBeginHours.Value = Math.Floor((decimal)altSpeedTimeBegin / 60);
-                    timeConstraintEndHours.Value = Math.Floor((decimal)altSpeedTimeEnd / 60);
+                    SetNumeric(timeConstraintBeginHours, Math.Floor((decimal)altSpeedTimeBegin / 60), 0);
+                    SetNumeric(timeConstraintEndHours, Math.Floor((decimal)altSpeedTimeEnd / 60), 0);
                     timeConstaintBeginMinutes.Value = altSpeedTimeBegin % 60;
                     timeConstaintEndMinutes.Value = altSpeedTimeEnd % 60;
                 }
                 if (seedRatioEnabledCheckBox.Enabled = seedLimitUpDown.Enabled = session.Contains(ProtocolConstants.FIELD_SEEDRATIOLIMITED))
                 {
-                    seedLimitUpDown.Value = Toolbox.ToDecimal(session[ProtocolConstants.FIELD_SEEDRATIOLIMIT]);
+                    SetNumeric(seedLimitUpDown, Toolbox.ToDecimal(session[ProtocolConstants.FIELD_SEEDRATIOLIMIT]), 1);
                     seedRatioEnabledCheckBox.Checked = Toolbox.ToBool(session[ProtocolConstants.FIELD_SEEDRATIOLIMITED]);
                 }
                 if (dhtEnabled.Enabled = session.Contains(ProtocolConstants.FIELD_DHTENABLED))
@@ -186,15 +194,15 @@ namespace TransmissionRemoteDotnet
             this.Dispose();
         }
 
-        private void SetLimitField(int limit, NumericUpDown field)
+        private void SetLimitField(NumericUpDown field, int limit)
         {
             if (Program.DaemonDescriptor.Version < 1.40)
             {
-                field.Value = limit >= 1024 && limit <= field.Maximum ? limit / 1024 : 0;
+                field.Value = limit >= field.Minimum && limit >= 1024 && limit <= field.Maximum ? limit / 1024 : 0;
             }
             else
             {
-                field.Value = limit >= 0 && limit <= field.Maximum ? limit : 0;
+                field.Value = limit >= field.Minimum && limit <= field.Maximum ? limit : 0;
             }
         }
 

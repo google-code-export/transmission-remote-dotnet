@@ -1959,8 +1959,7 @@ stateListBox.Items.Add(new GListBoxItem(OtherStrings.Broken, 6));*/
                 {
                     foreach (string fileName in openFileDialog1.FileNames)
                     {
-                        TorrentLoadDialog torrentDialog = new TorrentLoadDialog(fileName);
-                        torrentDialog.ShowDialog();
+                        (new TorrentLoadDialog(fileName)).ShowDialog();
                     }
                 }
             }

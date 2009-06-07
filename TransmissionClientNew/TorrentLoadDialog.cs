@@ -82,16 +82,16 @@ namespace TransmissionRemoteDotnet
             torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.SelectAll, new EventHandler(this.SelectAllHandler)));
             this.path = path;
             this.toolStripStatusLabel1.Text = this.Text = String.Format(OtherStrings.LoadingFile, path);
-        }
-
-        private void TorrentLoadDialog_Load(object sender, EventArgs e)
-        {
             foreach (string s in LocalSettingsSingleton.Instance.DestPathHistory)
             {
                 comboBox1.Items.Add(s);
             }
             if (comboBox1.Items.Count > 0)
                 comboBox1.SelectedIndex = 0;
+        }
+
+        private void TorrentLoadDialog_Load(object sender, EventArgs e)
+        {
             backgroundWorker1.RunWorkerAsync();
         }
 
