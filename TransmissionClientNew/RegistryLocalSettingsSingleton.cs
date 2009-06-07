@@ -74,7 +74,8 @@ namespace TransmissionRemoteDotnet
             REGKEY_UPLIMIT = "uplimit",
             REGKEY_SAMBASHARE = "sambaShare",
             REGKEY_SAMBASHAREENABLED = "sambaShareEnabled",
-            REGKEY_UPLOADPROMPT = "uploadPrompt";
+            REGKEY_UPLOADPROMPT = "uploadPrompt",
+            REGKEY_DESTINATION_PATH_HISTORY = "destPathHistory";
 
         private static LocalSettingsSingleton instance = null;
         private static readonly object padlock = new object();
@@ -224,6 +225,46 @@ namespace TransmissionRemoteDotnet
             root.CreateSubKey(name);
             root.Close();
             this.CurrentProfile = name;
+        }
+
+        public string[] DestPathHistory
+        {
+            get
+            {
+                if (profileConfMap.ContainsKey(REGKEY_DESTINATION_PATH_HISTORY))
+                {
+                    try
+                    {
+                        JsonArray array = (JsonArray)JsonConvert.Import((string)profileConfMap[REGKEY_DESTINATION_PATH_HISTORY]);
+                        return (string[])array.ToArray(typeof(string));
+                    }
+                    catch { }
+                }
+                return new string[] { };
+            }
+        }
+
+        public void AddDestinationPath(string path)
+        {
+            if (profileConfMap.ContainsKey(REGKEY_DESTINATION_PATH_HISTORY))
+            {
+                try
+                {
+                    JsonArray oldArray = (JsonArray)JsonConvert.Import((string)profileConfMap[REGKEY_DESTINATION_PATH_HISTORY]);
+                    JsonArray newArray = new JsonArray();
+                    newArray.Add(path);
+                    for (int i = 0; i < oldArray.Length && newArray.Length < 5; i++)
+                    {
+                        string oldString = (string)oldArray[i];
+                        if (oldString != path)
+                            newArray.Add(oldString);
+                    }
+                    profileConfMap[REGKEY_DESTINATION_PATH_HISTORY] = newArray.ToString();
+                    return;
+                }
+                catch { }
+            }
+            profileConfMap.Add(REGKEY_DESTINATION_PATH_HISTORY, (new JsonArray(new string[] { path })).ToString());
         }
 
         private RegistryKey GetRootKey(bool writeable)

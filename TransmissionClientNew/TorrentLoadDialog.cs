@@ -7,11 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
-#if !MONO
 using Etier.IconHelper;
-#endif
 using Jayrock.Json;
-
 
 namespace TransmissionRemoteDotnet
 {
@@ -89,6 +86,12 @@ namespace TransmissionRemoteDotnet
 
         private void TorrentLoadDialog_Load(object sender, EventArgs e)
         {
+            foreach (string s in LocalSettingsSingleton.Instance.DestPathHistory)
+            {
+                comboBox1.Items.Add(s);
+            }
+            if (comboBox1.Items.Count > 0)
+                comboBox1.SelectedIndex = 0;
             backgroundWorker1.RunWorkerAsync();
         }
 
@@ -98,7 +101,6 @@ namespace TransmissionRemoteDotnet
             {
                 List<ListViewItem> items = new List<ListViewItem>();
                 torrent = MonoTorrent.Common.Torrent.Load(new FileStream(path, FileMode.Open, FileAccess.Read));
-
                 foreach (MonoTorrent.Common.TorrentFile file in torrent.Files)
                 {
                     ListViewItem item = new ListViewItem(file.Path);
@@ -162,7 +164,7 @@ namespace TransmissionRemoteDotnet
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            textBox1.Enabled = checkBox1.Checked;
+            comboBox1.Enabled = checkBox1.Checked;
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -219,9 +221,10 @@ namespace TransmissionRemoteDotnet
                 low.Count > 0 ? low : null,
                 wanted.Count > 0 ? wanted : null,
                 unwanted.Count > 0 ? unwanted : null,
-                checkBox1.Checked ? textBox1.Text : null,
+                checkBox1.Checked ? comboBox1.Text : null,
                 checkBox2.Checked ? (int)numericUpDown1.Value : -1
             );
+            LocalSettingsSingleton.Instance.AddDestinationPath(comboBox1.Text);
             Program.Form.CreateUploadWorker().RunWorkerAsync(request);
             this.Close();
         }

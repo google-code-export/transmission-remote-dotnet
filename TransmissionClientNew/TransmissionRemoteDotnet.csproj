@@ -128,8 +128,6 @@
     <Compile Include="MonoTorrent\BEncodingException.cs" />
     <Compile Include="MonoTorrent\BitField.cs" />
     <Compile Include="MonoTorrent\Check.cs" />
-    <Compile Include="MonoTorrent\EncryptionTypes.cs" />
-    <Compile Include="MonoTorrent\Enums.cs" />
     <Compile Include="MonoTorrent\HashAlgoFactory.cs" />
     <Compile Include="MonoTorrent\Hashes.cs" />
     <Compile Include="MonoTorrent\IBEncodedValue.cs" />
@@ -137,7 +135,6 @@
     <Compile Include="MonoTorrent\InfoHash.cs" />
     <Compile Include="MonoTorrent\Message.cs" />
     <Compile Include="MonoTorrent\MonoTorrentCollectionBase.cs" />
-    <Compile Include="MonoTorrent\PeerID.cs" />
     <Compile Include="MonoTorrent\RawReader.cs" />
     <Compile Include="MonoTorrent\ToolBox.cs" />
     <Compile Include="MonoTorrent\Torrent.cs" />

@@ -26,14 +26,11 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-
-
 using System;
 using System.Collections;
 using System.Text;
 using System.Collections.Generic;
 using System.Threading;
-using MonoTorrent.Client.Encryption;
 
 namespace MonoTorrent.Common
 {
@@ -170,11 +167,6 @@ namespace MonoTorrent.Common
                     return false;
 
             return true;
-        }
-
-        internal static bool HasEncryption(EncryptionTypes available, EncryptionTypes check)
-        {
-            return (available & check) == check;
         }
     }
 }

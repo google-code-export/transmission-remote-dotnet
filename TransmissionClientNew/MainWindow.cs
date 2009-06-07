@@ -437,7 +437,7 @@ namespace TransmissionRemoteDotnet
             removeAndDeleteButton.Visible = connected && dd.Version >= 1.5;
             sessionStatsButton.Visible = connected && dd.RpcVersion >= 4;
             moveTorrentDataToolStripMenuItem.Visible = connected && dd.Revision >= 8385;
-            addTorrentWithOptionsToolStripMenuItem.Visible = dd.Version < 1.60 || dd.Version >= 1.61;
+            addTorrentWithOptionsToolStripMenuItem.Visible = dd.Version < 1.60 || dd.Version >= 1.7 && connected;
         }
 
         public void SetRemoteCmdButtonVisible(bool connected)
@@ -1952,7 +1952,8 @@ stateListBox.Items.Add(new GListBoxItem(OtherStrings.Broken, 6));*/
 
         private void addTorrentWithOptionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Program.Connected && (Program.DaemonDescriptor.Version < 1.60 || Program.DaemonDescriptor.Version >= 1.61))
+            /* This crashes 1.6x */
+            if (Program.Connected && (Program.DaemonDescriptor.Version < 1.60 || Program.DaemonDescriptor.Version >= 1.7))
             {
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
