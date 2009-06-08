@@ -208,7 +208,7 @@
     <value>293, 21</value>
   </data>
   <data name="comboBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;comboBox1.Name" xml:space="preserve">
     <value>comboBox1</value>
@@ -238,7 +238,7 @@
     <value>774, 22</value>
   </data>
   <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="statusStrip1.Text" xml:space="preserve">
     <value>statusStrip1</value>
@@ -265,7 +265,7 @@
     <value>70, 20</value>
   </data>
   <data name="numericUpDown1.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;numericUpDown1.Name" xml:space="preserve">
     <value>numericUpDown1</value>
@@ -292,7 +292,7 @@
     <value>118, 17</value>
   </data>
   <data name="checkBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>2</value>
   </data>
   <data name="checkBox2.Text" xml:space="preserve">
     <value>Alternate peer limit: </value>
@@ -322,7 +322,7 @@
     <value>171, 17</value>
   </data>
   <data name="checkBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>0</value>
   </data>
   <data name="checkBox1.Text" xml:space="preserve">
     <value>Alternate destination directory: </value>
@@ -346,7 +346,7 @@
     <value>75, 23</value>
   </data>
   <data name="button2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="button2.Text" xml:space="preserve">
     <value>Cancel</value>
@@ -373,7 +373,7 @@
     <value>75, 23</value>
   </data>
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>OK</value>
