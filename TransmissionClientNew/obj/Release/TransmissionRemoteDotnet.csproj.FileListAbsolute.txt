@@ -366,3 +366,114 @@ C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Rel
 C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\zh-CN\Transmission Remote.resources.dll
 C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentLoadDialog.resources
 C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentLoadDialog.pl-PL.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\bin\Release\Transmission Remote.exe.config
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\Transmission Remote.exe
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\Transmission Remote.pdb
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\bin\Release\Transmission Remote.exe
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\bin\Release\Transmission Remote.pdb
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\bin\Release\da-DK\Transmission Remote.resources.dll
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\bin\Release\de-DE\Transmission Remote.resources.dll
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\bin\Release\fr-FR\Transmission Remote.resources.dll
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\bin\Release\hu-HU\Transmission Remote.resources.dll
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\bin\Release\pl-PL\Transmission Remote.resources.dll
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\bin\Release\ru-RU\Transmission Remote.resources.dll
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\bin\Release\tr-TR\Transmission Remote.resources.dll
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\bin\Release\zh-CN\Transmission Remote.resources.dll
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\ResolveAssemblyReference.cache
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.AboutDialog.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.ErrorLogWindow.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.LocalSettingsDialog.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.MoveDataPrompt.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.OtherStrings.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.Properties.Flags.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.Properties.Resources.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.RemoteSettingsDialog.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.StatsDialog.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentLoadDialog.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentPropertiesDialog.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.UriPromptWindow.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.MainWindow.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.AboutDialog.da-DK.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.AboutDialog.de-DE.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.AboutDialog.fr-FR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.AboutDialog.hu-HU.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.AboutDialog.pl-PL.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.AboutDialog.ru-RU.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.AboutDialog.tr-TR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.AboutDialog.zh-CN.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.ErrorLogWindow.da-DK.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.ErrorLogWindow.de-DE.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.ErrorLogWindow.fr-FR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.ErrorLogWindow.hu-HU.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.ErrorLogWindow.pl-PL.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.ErrorLogWindow.ru-RU.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.ErrorLogWindow.tr-TR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.ErrorLogWindow.zh-CN.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.LocalSettingsDialog.da-DK.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.LocalSettingsDialog.de-DE.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.LocalSettingsDialog.fr-FR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.LocalSettingsDialog.hu-HU.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.LocalSettingsDialog.pl-PL.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.LocalSettingsDialog.ru-RU.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.LocalSettingsDialog.tr-TR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.LocalSettingsDialog.zh-CN.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.MainWindow.da-DK.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.MainWindow.de-DE.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.MainWindow.fr-FR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.MainWindow.hu-HU.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.MainWindow.pl-PL.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.MainWindow.ru-RU.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.MainWindow.tr-TR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.MainWindow.zh-CN.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.OtherStrings.da-DK.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.OtherStrings.de-DE.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.OtherStrings.fr-FR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.OtherStrings.hu-HU.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.OtherStrings.pl-PL.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.OtherStrings.ru-RU.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.OtherStrings.tr-TR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.OtherStrings.zh-CN.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.RemoteSettingsDialog.da-DK.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.RemoteSettingsDialog.de-DE.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.RemoteSettingsDialog.fr-FR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.RemoteSettingsDialog.hu-HU.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.RemoteSettingsDialog.pl-PL.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.RemoteSettingsDialog.ru-RU.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.RemoteSettingsDialog.tr-TR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.RemoteSettingsDialog.zh-CN.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.StatsDialog.da-DK.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.StatsDialog.de-DE.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.StatsDialog.fr-FR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.StatsDialog.hu-HU.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.StatsDialog.pl-PL.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.StatsDialog.ru-RU.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.StatsDialog.tr-TR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.StatsDialog.zh-CN.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentLoadDialog.pl-PL.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentPropertiesDialog.da-DK.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentPropertiesDialog.de-DE.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentPropertiesDialog.fr-FR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentPropertiesDialog.hu-HU.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentPropertiesDialog.pl-PL.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentPropertiesDialog.ru-RU.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentPropertiesDialog.tr-TR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentPropertiesDialog.zh-CN.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.UriPromptWindow.da-DK.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.UriPromptWindow.de-DE.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.UriPromptWindow.fr-FR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.UriPromptWindow.hu-HU.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.UriPromptWindow.pl-PL.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.UriPromptWindow.ru-RU.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.UriPromptWindow.tr-TR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.UriPromptWindow.zh-CN.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.csproj.GenerateResource.Cache
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\da-DK\Transmission Remote.resources.dll
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\de-DE\Transmission Remote.resources.dll
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\fr-FR\Transmission Remote.resources.dll
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\hu-HU\Transmission Remote.resources.dll
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\pl-PL\Transmission Remote.resources.dll
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\ru-RU\Transmission Remote.resources.dll
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\tr-TR\Transmission Remote.resources.dll
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\zh-CN\Transmission Remote.resources.dll
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.MoveDataPrompt.hu-HU.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentLoadDialog.hu-HU.resources

@@ -254,5 +254,23 @@ namespace TransmissionRemoteDotnet
         {
             sambaShare.Enabled = sambaShareEnabledCheckBox.Checked;
         }
+
+        private void HostField_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Uri uri = new Uri(HostField.Text);
+                HostField.Text = uri.Host;
+                PortField.Value = uri.Port;
+                if (uri.UserInfo != null)
+                {
+                    string[] authComponents = uri.UserInfo.Split(':');
+                    UserField.Text = authComponents[0];
+                    if (authComponents.Length > 1)
+                        PassField.Text = authComponents[1];
+                }
+            }
+            catch { }
+        }
     }
 }

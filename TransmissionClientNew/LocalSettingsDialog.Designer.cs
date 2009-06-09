@@ -73,6 +73,7 @@ namespace TransmissionRemoteDotnet
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.minimizeOnCloseCheckBox = new System.Windows.Forms.CheckBox();
             this.notificationOnAdditionCheckBox = new System.Windows.Forms.CheckBox();
             this.notificationOnCompletionCheckBox = new System.Windows.Forms.CheckBox();
@@ -107,7 +108,6 @@ namespace TransmissionRemoteDotnet
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.addProfileButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.PortField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RefreshRateValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RetryLimitValue)).BeginInit();
@@ -132,6 +132,7 @@ namespace TransmissionRemoteDotnet
             // 
             resources.ApplyResources(this.HostField, "HostField");
             this.HostField.Name = "HostField";
+            this.HostField.TextChanged += new System.EventHandler(this.HostField_TextChanged);
             // 
             // label2
             // 
@@ -346,6 +347,12 @@ namespace TransmissionRemoteDotnet
             resources.ApplyResources(this.tabPage4, "tabPage4");
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            resources.ApplyResources(this.checkBox2, "checkBox2");
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // minimizeOnCloseCheckBox
             // 
@@ -580,12 +587,6 @@ namespace TransmissionRemoteDotnet
             // openFileDialog1
             // 
             resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
-            // 
-            // checkBox2
-            // 
-            resources.ApplyResources(this.checkBox2, "checkBox2");
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // LocalSettingsDialog
             // 

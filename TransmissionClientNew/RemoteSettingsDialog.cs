@@ -145,7 +145,7 @@ namespace TransmissionRemoteDotnet
                     PEXcheckBox.Tag = ProtocolConstants.FIELD_PEXENABLED;
                 }
                 // blocklist
-                if (updateBlocklistButton.Enabled = blocklistEnabledCheckBox.Enabled = session.Contains(ProtocolConstants.FIELD_BLOCKLISTENABLED))
+                if (blocklistEnabledCheckBox.Enabled = updateBlocklistButton.Enabled = blocklistEnabledCheckBox.Enabled = session.Contains(ProtocolConstants.FIELD_BLOCKLISTENABLED))
                 {
                     blocklistEnabledCheckBox.Checked = Toolbox.ToBool(session[ProtocolConstants.FIELD_BLOCKLISTENABLED]);
                 }
@@ -173,7 +173,7 @@ namespace TransmissionRemoteDotnet
                 if (seedRatioEnabledCheckBox.Enabled = seedLimitUpDown.Enabled = session.Contains(ProtocolConstants.FIELD_SEEDRATIOLIMITED))
                 {
                     SetNumeric(seedLimitUpDown, Toolbox.ToDecimal(session[ProtocolConstants.FIELD_SEEDRATIOLIMIT]), 1);
-                    seedRatioEnabledCheckBox.Checked = Toolbox.ToBool(session[ProtocolConstants.FIELD_SEEDRATIOLIMITED]);
+                    seedLimitUpDown.Enabled = seedRatioEnabledCheckBox.Checked = Toolbox.ToBool(session[ProtocolConstants.FIELD_SEEDRATIOLIMITED]);
                 }
                 if (dhtEnabled.Enabled = session.Contains(ProtocolConstants.FIELD_DHTENABLED))
                 {

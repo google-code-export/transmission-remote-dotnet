@@ -356,12 +356,12 @@ namespace TransmissionRemoteDotnet
             ContextMenu trayMenu = new ContextMenu();
             if (Program.Connected)
             {
-                trayMenu.MenuItems.Add(OtherStrings.StartAll, new EventHandler(this.startAllMenuItem_Click));
-                trayMenu.MenuItems.Add(OtherStrings.PauseAll, new EventHandler(this.stopAllMenuItem_Click));
+                trayMenu.MenuItems.Add(startAllToolStripMenuItem.Text, new EventHandler(this.startAllMenuItem_Click));
+                trayMenu.MenuItems.Add(stopAllToolStripMenuItem.Text, new EventHandler(this.stopAllMenuItem_Click));
                 trayMenu.MenuItems.Add("-");
                 if (Program.DaemonDescriptor.RpcVersion >= 4)
                 {
-                    trayMenu.MenuItems.Add(OtherStrings.DisplayStatistics, new EventHandler(this.sessionStatsButton_Click));
+                    trayMenu.MenuItems.Add(sessionStatsButton.Text, new EventHandler(this.sessionStatsButton_Click));
                 }
                 trayMenu.MenuItems.Add(OtherStrings.Disconnect, new EventHandler(this.disconnectButton_Click));
             }
@@ -371,7 +371,7 @@ namespace TransmissionRemoteDotnet
             }
             this.notifyIcon.Text = MainWindow.DEFAULT_WINDOW_TITLE;
             trayMenu.MenuItems.Add("-");
-            trayMenu.MenuItems.Add(OtherStrings.Exit, new EventHandler(this.exitToolStripMenuItem_Click));
+            trayMenu.MenuItems.Add(exitToolStripMenuItem.Text, new EventHandler(this.exitToolStripMenuItem_Click));
             this.notifyIcon.ContextMenu = trayMenu;
         }
 
@@ -437,7 +437,7 @@ namespace TransmissionRemoteDotnet
             removeAndDeleteButton.Visible = connected && dd.Version >= 1.5;
             sessionStatsButton.Visible = connected && dd.RpcVersion >= 4;
             moveTorrentDataToolStripMenuItem.Visible = connected && dd.Revision >= 8385;
-            addTorrentWithOptionsToolStripMenuItem.Visible = dd.Version < 1.60 || dd.Version >= 1.7 && connected;
+            addTorrentWithOptionsToolStripMenuItem.Visible = (dd.Version < 1.60 || dd.Version >= 1.7) && connected;
         }
 
         public void SetRemoteCmdButtonVisible(bool connected)
