@@ -208,7 +208,7 @@
     <value>Información</value>
   </data>
   <data name="InputAccepted" xml:space="preserve">
-    <value>Entrada aceptada</value>
+    <value>URL aceptada</value>
   </data>
   <data name="LatestVersion" xml:space="preserve">
     <value>Estás usando la última versión ({0}.{1}).</value>
@@ -316,7 +316,7 @@
     <value>Versión</value>
   </data>
   <data name="WaitingForInput" xml:space="preserve">
-    <value>Esperando entrada</value>
+    <value>Esperando URL</value>
   </data>
   <data name="WaitingToCheck" xml:space="preserve">
     <value>Esperando para comprobar</value>

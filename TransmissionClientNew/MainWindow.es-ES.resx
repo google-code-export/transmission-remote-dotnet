@@ -336,6 +336,9 @@
   <data name="pauseTorrentButton.Text" xml:space="preserve">
     <value>Pausar torrent(s)</value>
   </data>
+  <data name="pauseTorrentButton.ToolTipText" xml:space="preserve">
+    <value>Pausar torrent(s)</value>
+  </data>
   <data name="recheckTorrentButton.Text" xml:space="preserve">
     <value>Recomprobar torrent(s)</value>
   </data>
@@ -351,7 +354,13 @@
   <data name="removeTorrentButton.Text" xml:space="preserve">
     <value>Quitar torrent(s)</value>
   </data>
+  <data name="removeTorrentButton.ToolTipText" xml:space="preserve">
+    <value>Quitar torrent(s)</value>
+  </data>
   <data name="removeAndDeleteButton.Text" xml:space="preserve">
+    <value>Quitar y borrar torrent(s)</value>
+  </data>
+  <data name="removeAndDeleteButton.ToolTipText" xml:space="preserve">
     <value>Quitar y borrar torrent(s)</value>
   </data>
   <data name="allToolStripMenuItem.Text" xml:space="preserve">

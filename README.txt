@@ -29,8 +29,8 @@ CREDITS AND ACKNOWLEDGEMENTS
     * Woodzu and cichy for the Polish translation.
     * RayTracer for the Turkish translation.
     * Alexey Komarov for the Russian translation.
-	* huexxx for the Spanish translation.
-	* twohertz for the Korean translation.
+    * huexxx for the Spanish translation.
+    * twohertz for the Korean translation.
 	
 ABOUT
 ----------------------------

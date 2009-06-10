@@ -219,6 +219,11 @@ namespace TransmissionRemoteDotnet
             // RetryLimitValue
             // 
             resources.ApplyResources(this.RetryLimitValue, "RetryLimitValue");
+            this.RetryLimitValue.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
             this.RetryLimitValue.Name = "RetryLimitValue";
             // 
             // MinToTrayCheckBox

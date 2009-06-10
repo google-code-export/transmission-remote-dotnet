@@ -111,15 +111,6 @@
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="startTorrentButton.ToolTipText" xml:space="preserve">
-    <value>Start torrent(s)</value>
-  </data>
-  <data name="recheckTorrentButton.ToolTipText" xml:space="preserve">
-    <value>Recheck torrent(s)</value>
-  </data>
-  <data name="configureTorrentButton.ToolTipText" xml:space="preserve">
-    <value>Set torrent(s) properties</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Transmission Remote</value>
   </data>
@@ -247,6 +238,9 @@
     <value>상태</value>
   </data>
   <data name="configureTorrentButton.Text" xml:space="preserve">
+    <value>토런트 등록 정보</value>
+  </data>
+  <data name="configureTorrentButton.ToolTipText" xml:space="preserve">
     <value>토런트 등록 정보</value>
   </data>
   <data name="connectButton.Text" xml:space="preserve">
@@ -402,6 +396,9 @@
   <data name="recheckTorrentButton.Text" xml:space="preserve">
     <value>토런트 재검사</value>
   </data>
+  <data name="recheckTorrentButton.ToolTipText" xml:space="preserve">
+    <value>토런트 재검사</value>
+  </data>
   <data name="remoteConfigureButton.Text" xml:space="preserve">
     <value>트랜스미션 데몬 설정</value>
   </data>
@@ -451,6 +448,9 @@
     <value>시작</value>
   </data>
   <data name="startTorrentButton.Text" xml:space="preserve">
+    <value>토런트 시작</value>
+  </data>
+  <data name="startTorrentButton.ToolTipText" xml:space="preserve">
     <value>토런트 시작</value>
   </data>
   <data name="statusStrip.Text" xml:space="preserve">

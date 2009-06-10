@@ -111,17 +111,17 @@
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="columnHeader1.Text" xml:space="preserve">
-    <value>Time</value>
+    <value>Fecha y Hora</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="columnHeader2.Text" xml:space="preserve">
-    <value>Title</value>
+    <value>Título</value>
   </data>
   <data name="columnHeader3.Text" xml:space="preserve">
-    <value>Body</value>
+    <value>Cuerpo</value>
   </data>
   <data name="button2.Text" xml:space="preserve">
-    <value>Clear</value>
+    <value>Vaciar</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value> Puedes copiar el cuerpo de un error al portapapeles haciendo doble click en él</value>

@@ -111,7 +111,7 @@
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Text" xml:space="preserve">
-    <value>Descargar En:</value>
+    <value>Descargar en:</value>
   </data>
   <data name="limitUploadCheckBox.Text" xml:space="preserve">
     <value>Limitar subida</value>
@@ -137,6 +137,9 @@
   <data name="portForwardCheckBox.Text" xml:space="preserve">
     <value>Activar UPnP</value>
   </data>
+  <data name="encryptionCombobox.Items" xml:space="preserve">
+    <value>tolerada</value>
+  </data>
   <data name="encryptionCombobox.Items1" xml:space="preserve">
     <value>preferida</value>
   </data>
@@ -160,10 +163,10 @@
     <value>Comprobar Puerto</value>
   </data>
   <data name="updateBlocklistButton.Text" xml:space="preserve">
-    <value>Actualizar Lista de Bloqueo</value>
+    <value>Actualizar LB</value>
   </data>
   <data name="blocklistEnabledCheckBox.Text" xml:space="preserve">
-    <value>Activar lista de bloqueo</value>
+    <value>Activar Lista de Bloqueo (LB)</value>
   </data>
   <data name="tabPage1.Text" xml:space="preserve">
     <value>General</value>
@@ -205,7 +208,7 @@
     <value>Límites alternativos</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>NOTA: La disponibilidad de ciertas opciones puede requerir una actualización de transmission-daemon.</value>
+    <value>NOTA: Ciertas opciones puede requerir la actualización de transmission-daemon.</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

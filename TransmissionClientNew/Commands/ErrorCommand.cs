@@ -77,7 +77,7 @@ namespace TransmissionRemoteDotnet.Commmands
                 {
                     ShowErrorBox(this.title, this.body);
                 }
-                else if (++Program.DaemonDescriptor.FailCount > LocalSettingsSingleton.Instance.RetryLimit)
+                else if (++Program.DaemonDescriptor.FailCount > LocalSettingsSingleton.Instance.RetryLimit && LocalSettingsSingleton.Instance.RetryLimit >= 0)
                 {
                     Program.Connected = false;
                     form.toolStripStatusLabel.Text = OtherStrings.DisconnectedExceeded;
