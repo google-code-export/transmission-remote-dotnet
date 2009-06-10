@@ -120,6 +120,12 @@ Section /o "Russian translation"
   File "ru-RU\Transmission Remote.resources.dll"
 SectionEnd
 
+Section /o "Spanish translation"
+  CreateDirectory "$INSTDIR\es-ES"
+  SetOutPath "$INSTDIR\es-ES"
+  File "es-ES\Transmission Remote.resources.dll"
+SectionEnd
+
 Section /o "Turkish translation"
   CreateDirectory "$INSTDIR\tr-TR"
   SetOutPath "$INSTDIR\tr-TR"
@@ -151,6 +157,7 @@ Section "Uninstall"
   Delete "$INSTDIR\pl-PL\Transmission Remote.resources.dll"
   Delete "$INSTDIR\ru-RU\Transmission Remote.resources.dll"
   Delete "$INSTDIR\tr-TR\Transmission Remote.resources.dll"
+  Delete "$INSTDIR\es-ES\Transmission Remote.resources.dll"
 
   ; Remove shortcuts, if any
   Delete "$SMPROGRAMS\Transmission Remote\*.*"
@@ -165,6 +172,7 @@ Section "Uninstall"
   RMDir "$INSTDIR\ru-RU"
   RMDir "$INSTDIR\pl-PL"
   RMDir "$INSTDIR\tr-TR"
+  RMDir "$INSTDIR\es-ES"
   RMDir "$INSTDIR"
 
 SectionEnd
