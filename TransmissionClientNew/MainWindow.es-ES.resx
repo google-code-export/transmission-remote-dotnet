@@ -330,13 +330,22 @@
   <data name="startTorrentButton.Text" xml:space="preserve">
     <value>Comenzar torrent(s)</value>
   </data>
+  <data name="startTorrentButton.ToolTipText" xml:space="preserve">
+    <value>Comenzar torrent(s)</value>
+  </data>
   <data name="pauseTorrentButton.Text" xml:space="preserve">
     <value>Pausar torrent(s)</value>
   </data>
   <data name="recheckTorrentButton.Text" xml:space="preserve">
     <value>Recomprobar torrent(s)</value>
   </data>
+  <data name="recheckTorrentButton.ToolTipText" xml:space="preserve">
+    <value>Recomprobar torrent(s)</value>
+  </data>
   <data name="configureTorrentButton.Text" xml:space="preserve">
+    <value>Configurar torrent(s)</value>
+  </data>
+  <data name="configureTorrentButton.ToolTipText" xml:space="preserve">
     <value>Configurar torrent(s)</value>
   </data>
   <data name="removeTorrentButton.Text" xml:space="preserve">

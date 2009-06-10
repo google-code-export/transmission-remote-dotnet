@@ -120,9 +120,6 @@
   <data name="portForwardCheckBox.Text" xml:space="preserve">
     <value>UPnP használata</value>
   </data>
-  <data name="encryptionCombobox.Items" xml:space="preserve">
-    <value>megenged</value>
-  </data>
   <data name="encryptionCombobox.Items1" xml:space="preserve">
     <value>előnyben részesít</value>
   </data>
