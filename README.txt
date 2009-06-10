@@ -30,6 +30,7 @@ CREDITS AND ACKNOWLEDGEMENTS
     * RayTracer for the Turkish translation.
     * Alexey Komarov for the Russian translation.
 	* huexxx for the Spanish translation.
+	* twohertz for the Korean translation.
 	
 ABOUT
 ----------------------------

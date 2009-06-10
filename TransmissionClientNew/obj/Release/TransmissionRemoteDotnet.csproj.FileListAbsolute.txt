@@ -490,3 +490,16 @@ E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\Transmiss
 E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentLoadDialog.es-ES.resources
 E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentPropertiesDialog.es-ES.resources
 E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\es-ES\Transmission Remote.resources.dll
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\bin\Release\ko-KR\Transmission Remote.resources.dll
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.AboutDialog.ko-KR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.ErrorLogWindow.ko-KR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.LocalSettingsDialog.ko-KR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.MainWindow.ko-KR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.MoveDataPrompt.ko-KR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.OtherStrings.ko-KR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.RemoteSettingsDialog.ko-KR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.StatsDialog.ko-KR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentLoadDialog.ko-KR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentPropertiesDialog.ko-KR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.UriPromptWindow.ko-KR.resources
+E:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\ko-KR\Transmission Remote.resources.dll
