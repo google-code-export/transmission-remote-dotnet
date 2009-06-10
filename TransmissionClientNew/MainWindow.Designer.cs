@@ -125,17 +125,18 @@ namespace TransmissionRemoteDotnet
             this.generalTabPage = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.downloadProgressLabel = new System.Windows.Forms.Label();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.piecesGraph = new TransmissionRemoteDotnet.PiecesGraph();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.percentageLabel = new TransmissionRemoteDotnet.SelectableLabel();
             this.generalTorrentNameGroupBox = new System.Windows.Forms.GroupBox();
+            this.timeElapsedLabel = new System.Windows.Forms.Label();
             this.startedAtLabel = new TransmissionRemoteDotnet.SelectableLabel();
             this.uploadLimitLabel = new TransmissionRemoteDotnet.SelectableLabel();
             this.uploadRateLabel = new TransmissionRemoteDotnet.SelectableLabel();
             this.uploadedLabel = new TransmissionRemoteDotnet.SelectableLabel();
             this.remainingLabel = new TransmissionRemoteDotnet.SelectableLabel();
-            this.timeElapsedLabel = new TransmissionRemoteDotnet.SelectableLabel();
             this.downloadedLabel = new TransmissionRemoteDotnet.SelectableLabel();
             this.downloadSpeedLabel = new TransmissionRemoteDotnet.SelectableLabel();
             this.downloadLimitLabel = new TransmissionRemoteDotnet.SelectableLabel();
@@ -200,7 +201,6 @@ namespace TransmissionRemoteDotnet
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.speedGraph = new CustomUIControls.Graphing.C2DPushGraph();
-            this.downloadProgressLabel = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -928,6 +928,11 @@ namespace TransmissionRemoteDotnet
             // 
             this.splitContainer4.Panel2.Controls.Add(this.splitContainer5);
             // 
+            // downloadProgressLabel
+            // 
+            resources.ApplyResources(this.downloadProgressLabel, "downloadProgressLabel");
+            this.downloadProgressLabel.Name = "downloadProgressLabel";
+            // 
             // splitContainer5
             // 
             resources.ApplyResources(this.splitContainer5, "splitContainer5");
@@ -965,12 +970,12 @@ namespace TransmissionRemoteDotnet
             // generalTorrentNameGroupBox
             // 
             resources.ApplyResources(this.generalTorrentNameGroupBox, "generalTorrentNameGroupBox");
+            this.generalTorrentNameGroupBox.Controls.Add(this.timeElapsedLabel);
             this.generalTorrentNameGroupBox.Controls.Add(this.startedAtLabel);
             this.generalTorrentNameGroupBox.Controls.Add(this.uploadLimitLabel);
             this.generalTorrentNameGroupBox.Controls.Add(this.uploadRateLabel);
             this.generalTorrentNameGroupBox.Controls.Add(this.uploadedLabel);
             this.generalTorrentNameGroupBox.Controls.Add(this.remainingLabel);
-            this.generalTorrentNameGroupBox.Controls.Add(this.timeElapsedLabel);
             this.generalTorrentNameGroupBox.Controls.Add(this.downloadedLabel);
             this.generalTorrentNameGroupBox.Controls.Add(this.downloadSpeedLabel);
             this.generalTorrentNameGroupBox.Controls.Add(this.downloadLimitLabel);
@@ -1001,6 +1006,11 @@ namespace TransmissionRemoteDotnet
             this.generalTorrentNameGroupBox.Controls.Add(this.timeElapsedLabelLabel);
             this.generalTorrentNameGroupBox.Name = "generalTorrentNameGroupBox";
             this.generalTorrentNameGroupBox.TabStop = false;
+            // 
+            // timeElapsedLabel
+            // 
+            resources.ApplyResources(this.timeElapsedLabel, "timeElapsedLabel");
+            this.timeElapsedLabel.Name = "timeElapsedLabel";
             // 
             // startedAtLabel
             // 
@@ -1036,13 +1046,6 @@ namespace TransmissionRemoteDotnet
             resources.ApplyResources(this.remainingLabel, "remainingLabel");
             this.remainingLabel.Name = "remainingLabel";
             this.remainingLabel.ReadOnly = true;
-            // 
-            // timeElapsedLabel
-            // 
-            this.timeElapsedLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.timeElapsedLabel, "timeElapsedLabel");
-            this.timeElapsedLabel.Name = "timeElapsedLabel";
-            this.timeElapsedLabel.ReadOnly = true;
             // 
             // downloadedLabel
             // 
@@ -1470,11 +1473,6 @@ namespace TransmissionRemoteDotnet
             this.speedGraph.ShowLabels = true;
             this.speedGraph.TextColor = System.Drawing.Color.White;
             // 
-            // downloadProgressLabel
-            // 
-            resources.ApplyResources(this.downloadProgressLabel, "downloadProgressLabel");
-            this.downloadProgressLabel.Name = "downloadProgressLabel";
-            // 
             // MainWindow
             // 
             this.AllowDrop = true;
@@ -1705,7 +1703,6 @@ namespace TransmissionRemoteDotnet
         private SelectableLabel createdAtLabel;
         private SelectableLabel leechersLabel;
         private SelectableLabel ratioLabel;
-        private SelectableLabel timeElapsedLabel;
         private SelectableLabel downloadedLabel;
         private SelectableLabel downloadSpeedLabel;
         private SelectableLabel downloadLimitLabel;
@@ -1718,5 +1715,6 @@ namespace TransmissionRemoteDotnet
         private SelectableLabel uploadLimitLabel;
         private SelectableLabel uploadRateLabel;
         private System.Windows.Forms.Label downloadProgressLabel;
+        private System.Windows.Forms.Label timeElapsedLabel;
     }
 }

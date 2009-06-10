@@ -12,10 +12,10 @@ namespace TransmissionRemoteDotnet
     {
         public SelectableLabel()
         {
-            
             base.BorderStyle = System.Windows.Forms.BorderStyle.None;
             base.ReadOnly = true;
             base.Text = "";
+            base.Visible = false;
 #if !MONO
             base.MouseUp += new MouseEventHandler(
                 delegate(object sender, MouseEventArgs e) { HideCaret((sender as Control).Handle); }
@@ -23,20 +23,22 @@ namespace TransmissionRemoteDotnet
 #endif
         }
 
-        public override System.Drawing.Color BackColor
-        {
-            get
-            {
-                return base.BackColor;
-            }
-            set
-            {
-                base.BackColor = value;
-            }
-        }
 #if !MONO
         [DllImport("User32.dll")]
         static extern Boolean HideCaret(IntPtr hWnd);
+
+        public override string Text
+        {
+            get
+            {
+                return base.Text;
+            }
+            set
+            {
+                base.Text = value;
+                base.Visible = value.Length > 0;
+            }
+        }
 #endif
     }
 }
