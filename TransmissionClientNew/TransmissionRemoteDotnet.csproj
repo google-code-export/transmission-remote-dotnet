@@ -672,6 +672,9 @@
       <DependentUpon>RemoteSettingsDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="NamedPipeSingleInstance.cs" />
+    <Compile Include="SelectableLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SplitContainerFix.cs">
       <SubType>Component</SubType>
     </Compile>

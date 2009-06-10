@@ -1745,14 +1745,6 @@ stateListBox.Items.Add(new GListBoxItem(OtherStrings.Broken, 6));*/
             }
         }
 
-        private void TorrentJsonToClipboard()
-        {
-            if (torrentListView.SelectedItems.Count == 1)
-            {
-                Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
-                Clipboard.SetText(t.Info.ToString());
-            }
-        }
 
         private void torrentDetailsTabListView_KeyDown(object sender, KeyEventArgs e)
         {
@@ -1947,7 +1939,11 @@ stateListBox.Items.Add(new GListBoxItem(OtherStrings.Broken, 6));*/
 
         private void copyInfoObjectToClipboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TorrentJsonToClipboard();
+            if (torrentListView.SelectedItems.Count == 1)
+            {
+                Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
+                Clipboard.SetText(t.Info.ToString());
+            }
         }
 
         private void addTorrentWithOptionsToolStripMenuItem_Click(object sender, EventArgs e)

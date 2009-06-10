@@ -38,7 +38,7 @@ foreach my $file (@files)
 			}
 			if (m/\<data name=\"(.*?)\"/)
 			{
-				if ($1 !~ m/\.(Item|ToolTipText|Text|Items\d+)$/)
+				if ($1 !~ m/\.(Items|ToolTipText|Text|Items\d+)$/)
 				{
 					$skip = 1;
 					next;
