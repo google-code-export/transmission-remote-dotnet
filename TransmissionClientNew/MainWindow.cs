@@ -183,9 +183,9 @@ namespace TransmissionRemoteDotnet
             this.torrentSelectionMenu.MenuItems.Add(openNetworkShareMenuItem = new MenuItem(OtherStrings.OpenNetworkShare, this.openNetworkShareButton_Click));
             this.torrentSelectionMenu.MenuItems.Add("-");
             MenuItem bandwidthAllocationMenu = new MenuItem(OtherStrings.BandwidthAllocation);
-            bandwidthAllocationMenu.MenuItems.Add(OtherStrings.High, this.bandwidthPriorityHighButton_Click).Tag = ProtocolConstants.BANDWIDTH_HIGH;
-            bandwidthAllocationMenu.MenuItems.Add(OtherStrings.Normal, this.bandwidthPriorityNormalButton_Click).Tag = ProtocolConstants.BANDWIDTH_NORMAL;
-            bandwidthAllocationMenu.MenuItems.Add(OtherStrings.Low, this.bandwidthPriorityLowButton_Click).Tag = ProtocolConstants.BANDWIDTH_LOW;
+            bandwidthAllocationMenu.MenuItems.Add(OtherStrings.High, this.bandwidthPriorityButton_Click).Tag = ProtocolConstants.BANDWIDTH_HIGH;
+            bandwidthAllocationMenu.MenuItems.Add(OtherStrings.Normal, this.bandwidthPriorityButton_Click).Tag = ProtocolConstants.BANDWIDTH_NORMAL;
+            bandwidthAllocationMenu.MenuItems.Add(OtherStrings.Low, this.bandwidthPriorityButton_Click).Tag = ProtocolConstants.BANDWIDTH_LOW;
             bandwidthAllocationMenu.MenuItems.Add("-");
             bandwidthAllocationMenu.Popup += new EventHandler(this.bandwidth_Opening);
             MenuItem downLimitMenuItem = new MenuItem(OtherStrings.DownloadLimit);
@@ -977,27 +977,12 @@ namespace TransmissionRemoteDotnet
             Application.Exit();
         }
 
-        private void SetBandwidthPriority(int i)
+        private void bandwidthPriorityButton_Click(object sender, EventArgs e)
         {
             JsonObject request = Requests.Generic(ProtocolConstants.METHOD_TORRENTSET, torrentListView.SelectedItems.Count > 0 ? BuildIdArray() : null);
             JsonObject arguments = Requests.GetArgObject(request);
-            arguments.Put(ProtocolConstants.FIELD_BANDWIDTHPRIORITY, i);
+            arguments.Put(ProtocolConstants.FIELD_BANDWIDTHPRIORITY, (int)((MenuItem)sender).Tag);
             CreateActionWorker().RunWorkerAsync(request);
-        }
-
-        private void bandwidthPriorityHighButton_Click(object sender, EventArgs e)
-        {
-            SetBandwidthPriority(ProtocolConstants.BANDWIDTH_HIGH);
-        }
-
-        private void bandwidthPriorityNormalButton_Click(object sender, EventArgs e)
-        {
-            SetBandwidthPriority(ProtocolConstants.BANDWIDTH_NORMAL);
-        }
-
-        private void bandwidthPriorityLowButton_Click(object sender, EventArgs e)
-        {
-            SetBandwidthPriority(ProtocolConstants.BANDWIDTH_LOW);
         }
 
         private void startTorrentButton_Click(object sender, EventArgs e)

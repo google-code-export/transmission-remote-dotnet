@@ -531,3 +531,5 @@ C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Rel
 C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.UriPromptWindow.ko-KR.resources
 C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\es-ES\Transmission Remote.resources.dll
 C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\ko-KR\Transmission Remote.resources.dll
+C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.MoveDataPrompt.zh-CN.resources
+C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentLoadDialog.zh-CN.resources
