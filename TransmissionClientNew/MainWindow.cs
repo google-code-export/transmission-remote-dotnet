@@ -164,56 +164,79 @@ namespace TransmissionRemoteDotnet
         private void CreateTorrentSelectionContextMenu()
         {
             this.torrentSelectionMenu = new ContextMenu();
-            this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Start, new EventHandler(this.startTorrentButton_Click)));
-            this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Pause, new EventHandler(this.pauseTorrentButton_Click)));
-            this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Remove, new EventHandler(this.removeTorrentButton_Click)));
+            this.torrentSelectionMenu.MenuItems.Add(OtherStrings.Start, this.startTorrentButton_Click);
+            this.torrentSelectionMenu.MenuItems.Add(OtherStrings.Pause, this.pauseTorrentButton_Click);
+            this.torrentSelectionMenu.MenuItems.Add(OtherStrings.Remove, this.removeTorrentButton_Click);
             if (Program.DaemonDescriptor.Version >= 1.5)
             {
-                this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.RemoveAndDelete, new EventHandler(this.removeAndDeleteButton_Click)));
+                this.torrentSelectionMenu.MenuItems.Add(OtherStrings.RemoveAndDelete, this.removeAndDeleteButton_Click);
             }
-            this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Recheck, new EventHandler(this.recheckTorrentButton_Click)));
+            this.torrentSelectionMenu.MenuItems.Add(OtherStrings.Recheck, this.recheckTorrentButton_Click);
             if (Program.DaemonDescriptor.RpcVersion >= 5)
             {
-                this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Reannounce, new EventHandler(this.reannounceButton_ButtonClick)));
+                this.torrentSelectionMenu.MenuItems.Add(OtherStrings.Reannounce, this.reannounceButton_ButtonClick);
             }
             if (Program.DaemonDescriptor.RpcVersion >= 6)
             {
-                this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.MoveTorrentData, new EventHandler(this.moveTorrentDataToolStripMenuItem_Click)));
+                this.torrentSelectionMenu.MenuItems.Add(OtherStrings.MoveTorrentData, this.moveTorrentDataToolStripMenuItem_Click);
             }
-            this.torrentSelectionMenu.MenuItems.Add(openNetworkShareMenuItem = new MenuItem(OtherStrings.OpenNetworkShare, new EventHandler(this.openNetworkShareButton_Click)));
-            this.torrentSelectionMenu.MenuItems.Add(new MenuItem("-"));
+            this.torrentSelectionMenu.MenuItems.Add(openNetworkShareMenuItem = new MenuItem(OtherStrings.OpenNetworkShare, this.openNetworkShareButton_Click));
+            this.torrentSelectionMenu.MenuItems.Add("-");
+            MenuItem bandwidthAllocationMenu = new MenuItem(OtherStrings.BandwidthAllocation);
+            bandwidthAllocationMenu.MenuItems.Add(OtherStrings.High, this.bandwidthPriorityHighButton_Click).Tag = ProtocolConstants.BANDWIDTH_HIGH;
+            bandwidthAllocationMenu.MenuItems.Add(OtherStrings.Normal, this.bandwidthPriorityNormalButton_Click).Tag = ProtocolConstants.BANDWIDTH_NORMAL;
+            bandwidthAllocationMenu.MenuItems.Add(OtherStrings.Low, this.bandwidthPriorityLowButton_Click).Tag = ProtocolConstants.BANDWIDTH_LOW;
+            bandwidthAllocationMenu.MenuItems.Add("-");
+            bandwidthAllocationMenu.Popup += new EventHandler(this.bandwidth_Opening);
             MenuItem downLimitMenuItem = new MenuItem(OtherStrings.DownloadLimit);
-            downLimitMenuItem.MenuItems.Add(OtherStrings.Unlimited, ChangeDownLimit);
+            downLimitMenuItem.MenuItems.Add(OtherStrings.Unlimited, ChangeDownLimit).Tag = -1;
             downLimitMenuItem.MenuItems.Add("-");
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
             foreach(string limit in settings.DownLimit.Split(','))
             {
                 try
                 {
-                    downLimitMenuItem.MenuItems.Add(Toolbox.KbpsString(int.Parse(limit)), ChangeDownLimit);
-                    downLimitMenuItem.Popup += new EventHandler(this.downlimit_Opening);
+                    int l = int.Parse(limit);
+                    downLimitMenuItem.MenuItems.Add(Toolbox.KbpsString(l), ChangeDownLimit).Tag = l;
                 }
                 catch { }
             }
-            this.torrentSelectionMenu.MenuItems.Add(downLimitMenuItem);
+            downLimitMenuItem.Popup += new EventHandler(this.downlimit_Opening);
+            bandwidthAllocationMenu.MenuItems.Add(downLimitMenuItem);
             MenuItem upLimitMenuItem = new MenuItem(OtherStrings.UploadLimit);
-            upLimitMenuItem.MenuItems.Add(OtherStrings.Unlimited, ChangeUpLimit);
+            upLimitMenuItem.MenuItems.Add(OtherStrings.Unlimited, ChangeUpLimit).Tag = -1;
             upLimitMenuItem.MenuItems.Add("-");
             foreach (string limit in settings.UpLimit.Split(','))
             {
                 try
                 {
-                    upLimitMenuItem.MenuItems.Add(Toolbox.KbpsString(int.Parse(limit)), ChangeUpLimit);
-                    upLimitMenuItem.Popup += new EventHandler(this.uplimit_Opening);
+                    int l = int.Parse(limit);
+                    upLimitMenuItem.MenuItems.Add(Toolbox.KbpsString(l), ChangeDownLimit).Tag = l;
                 }
                 catch { }
             }
-            this.torrentSelectionMenu.MenuItems.Add(upLimitMenuItem);
-            this.torrentSelectionMenu.MenuItems.Add(new MenuItem("-"));
-            this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.Properties, new EventHandler(this.ShowTorrentPropsHandler)));
+            upLimitMenuItem.Popup += new EventHandler(this.uplimit_Opening);
+            bandwidthAllocationMenu.MenuItems.Add(upLimitMenuItem);
+            this.torrentSelectionMenu.MenuItems.Add(bandwidthAllocationMenu);
+            this.torrentSelectionMenu.MenuItems.Add("-");
+            this.torrentSelectionMenu.MenuItems.Add(OtherStrings.Properties, this.ShowTorrentPropsHandler);
 
-            this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.CopyAsCSV, new EventHandler(this.TorrentsToClipboardHandler)));
-            this.torrentSelectionMenu.MenuItems.Add(new MenuItem(OtherStrings.InfoObjectToClipboard, new EventHandler(this.copyInfoObjectToClipboardToolStripMenuItem_Click)));
+            this.torrentSelectionMenu.MenuItems.Add(OtherStrings.CopyAsCSV, this.TorrentsToClipboardHandler);
+            this.torrentSelectionMenu.MenuItems.Add(OtherStrings.InfoObjectToClipboard, this.copyInfoObjectToClipboardToolStripMenuItem_Click);
+        }
+
+        private void bandwidth_Opening(object sender, EventArgs e)
+        {
+            Torrent firstTorrent = (Torrent)torrentListView.SelectedItems[0].Tag;
+            if (firstTorrent == null)
+                return;
+            int priority = firstTorrent.BandwidthPriority;
+            for (int i = 0; i < ((MenuItem)sender).MenuItems.Count; i++)
+            {
+                MenuItem m = ((MenuItem)sender).MenuItems[i];
+                if (m.Tag != null)
+                    m.Checked = ((int)m.Tag == priority);
+            }
         }
 
         private void downlimit_Opening(object sender, EventArgs e)
@@ -225,10 +248,8 @@ namespace TransmissionRemoteDotnet
             for (int i = 0; i < ((MenuItem)sender).MenuItems.Count; i++)
             {
                 MenuItem m = ((MenuItem)sender).MenuItems[i];
-                if (ParseSpeed(m.Text) == limit || (m.Text == OtherStrings.Unlimited && limit < 0))
-                    m.Checked = true;
-                else
-                    m.Checked = false;
+                if (m.Tag != null)
+                    m.Checked = (int)m.Tag == limit;
             }
         }
 
@@ -241,22 +262,8 @@ namespace TransmissionRemoteDotnet
             for (int i = 0; i < ((MenuItem)sender).MenuItems.Count; i++)
             {
                 MenuItem m = ((MenuItem)sender).MenuItems[i];
-                if (ParseSpeed(m.Text) == limit || (m.Text == OtherStrings.Unlimited && limit < 0))
-                    m.Checked = true;
-                else
-                    m.Checked = false;
-            }
-        }
-
-        private int ParseSpeed(string s)
-        {
-            try
-            {
-                return int.Parse(s.Substring(0, s.IndexOf(' ')));
-            }
-            catch
-            {
-                return -1;
+                if (m.Tag != null)
+                    m.Checked = (int)m.Tag == limit;
             }
         }
 
@@ -264,13 +271,14 @@ namespace TransmissionRemoteDotnet
         {
             JsonObject request = CreateLimitChangeRequest();
             JsonObject arguments = Requests.GetArgObject(request);
+            int limit = (int)((MenuItem)sender).Tag;
             foreach (string key in new string[] { ProtocolConstants.FIELD_SPEEDLIMITDOWNENABLED, ProtocolConstants.FIELD_DOWNLOADLIMITED, ProtocolConstants.FIELD_DOWNLOADLIMITMODE })
             {
-                arguments.Put(key, ((MenuItem)sender).Text != OtherStrings.Unlimited ? 1 : 0);
+                arguments.Put(key, limit != -1 ? 1 : 0);
             }
             foreach (string key in new string[] { ProtocolConstants.FIELD_DOWNLOADLIMIT, ProtocolConstants.FIELD_SPEEDLIMITDOWN })
             {
-                arguments.Put(key, (((MenuItem)sender).Text == OtherStrings.Unlimited ? 0 : ParseSpeed(((MenuItem)sender).Text)));
+                arguments.Put(key, limit == -1 ? 0 : limit);
             }
             CreateActionWorker().RunWorkerAsync(request);
         }
@@ -292,13 +300,14 @@ namespace TransmissionRemoteDotnet
         {
             JsonObject request = CreateLimitChangeRequest();
             JsonObject arguments = Requests.GetArgObject(request);
+            int limit = (int)((MenuItem)sender).Tag;
             foreach (string key in new string[] { ProtocolConstants.FIELD_SPEEDLIMITUPENABLED, ProtocolConstants.FIELD_UPLOADLIMITED, ProtocolConstants.FIELD_UPLOADLIMITMODE })
             {
-                arguments.Put(key, (((MenuItem)sender).Text != OtherStrings.Unlimited) ? 1 : 0);
+                arguments.Put(key, limit != -1 ? 1 : 0);
             }
             foreach (string key in new string[] { ProtocolConstants.FIELD_UPLOADLIMIT, ProtocolConstants.FIELD_SPEEDLIMITUP })
             {
-                arguments.Put(key, ((((MenuItem)sender).Text == OtherStrings.Unlimited) ? 0 : ParseSpeed(((MenuItem)sender).Text)));
+                arguments.Put(key, limit == -1 ? 0 : limit);
             }
             CreateActionWorker().RunWorkerAsync(request);
         }
@@ -966,6 +975,29 @@ namespace TransmissionRemoteDotnet
         public void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void SetBandwidthPriority(int i)
+        {
+            JsonObject request = Requests.Generic(ProtocolConstants.METHOD_TORRENTSET, torrentListView.SelectedItems.Count > 0 ? BuildIdArray() : null);
+            JsonObject arguments = Requests.GetArgObject(request);
+            arguments.Put(ProtocolConstants.FIELD_BANDWIDTHPRIORITY, i);
+            CreateActionWorker().RunWorkerAsync(request);
+        }
+
+        private void bandwidthPriorityHighButton_Click(object sender, EventArgs e)
+        {
+            SetBandwidthPriority(ProtocolConstants.BANDWIDTH_HIGH);
+        }
+
+        private void bandwidthPriorityNormalButton_Click(object sender, EventArgs e)
+        {
+            SetBandwidthPriority(ProtocolConstants.BANDWIDTH_NORMAL);
+        }
+
+        private void bandwidthPriorityLowButton_Click(object sender, EventArgs e)
+        {
+            SetBandwidthPriority(ProtocolConstants.BANDWIDTH_LOW);
         }
 
         private void startTorrentButton_Click(object sender, EventArgs e)

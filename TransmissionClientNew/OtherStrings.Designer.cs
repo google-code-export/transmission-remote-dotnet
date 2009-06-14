@@ -79,6 +79,15 @@ namespace TransmissionRemoteDotnet {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bandwidth allocation.
+        /// </summary>
+        internal static string BandwidthAllocation {
+            get {
+                return ResourceManager.GetString("BandwidthAllocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Broken.
         /// </summary>
         internal static string Broken {
@@ -552,6 +561,15 @@ namespace TransmissionRemoteDotnet {
         internal static string MoveX {
             get {
                 return ResourceManager.GetString("MoveX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Multiple torrent properties.
+        /// </summary>
+        internal static string MultipleTorrentProperties {
+            get {
+                return ResourceManager.GetString("MultipleTorrentProperties", resourceCulture);
             }
         }
         

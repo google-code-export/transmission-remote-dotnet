@@ -30,6 +30,11 @@ namespace TransmissionRemoteDotnet
             STATUS_SEEDING = 8,
             STATUS_PAUSED = 16;
 
+        public const int
+            BANDWIDTH_LOW = -1,
+            BANDWIDTH_NORMAL = 0,
+            BANDWIDTH_HIGH = 1;
+
         public const string
             KEY_TAG = "tag",
             KEY_METHOD = "method",

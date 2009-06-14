@@ -118,37 +118,37 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="LoadingFile" xml:space="preserve">
-    <value>Loading {0}...</value>
+    <value>载入中 {0}...</value>
   </data>
   <data name="InfoObjectToClipboard" xml:space="preserve">
-    <value>Info object to clipboard</value>
+    <value>复制对象信息到剪贴板</value>
   </data>
   <data name="MoveMultipleTorrents" xml:space="preserve">
-    <value>Move multiple torrent data</value>
+    <value>移动 (多选)</value>
   </data>
   <data name="MoveTorrentData" xml:space="preserve">
-    <value>Move torrent data</value>
+    <value>更改下载目录</value>
   </data>
   <data name="MoveX" xml:space="preserve">
-    <value>Move {0}</value>
+    <value>移动 {0}</value>
   </data>
   <data name="Exit" xml:space="preserve">
-    <value>Exit</value>
+    <value>退出</value>
   </data>
   <data name="NewTorrentIs" xml:space="preserve">
     <value>New torrent {0}.</value>
   </data>
   <data name="Pieces" xml:space="preserve">
-    <value>Pieces</value>
+    <value>区块</value>
   </data>
   <data name="Progress" xml:space="preserve">
-    <value>Progress</value>
+    <value>进度</value>
   </data>
   <data name="Reannounce" xml:space="preserve">
-    <value>Reannounce</value>
+    <value>重新通告</value>
   </data>
   <data name="OpenNetworkShare" xml:space="preserve">
-    <value>Open on Network Share</value>
+    <value>在网络共享目录中打开</value>
   </data>
   <data name="All" xml:space="preserve">
     <value>全部</value>
@@ -229,7 +229,7 @@
     <value>错误的请求</value>
   </data>
   <data name="High" xml:space="preserve">
-    <value>High</value>
+    <value>高</value>
   </data>
   <data name="HighPriority" xml:space="preserve">
     <value>高优先级</value>
@@ -250,7 +250,7 @@
     <value>最新版本检查失败</value>
   </data>
   <data name="Low" xml:space="preserve">
-    <value>Low</value>
+    <value>低</value>
   </data>
   <data name="LowPriority" xml:space="preserve">
     <value>低优先级</value>
@@ -265,7 +265,7 @@
     <value>No</value>
   </data>
   <data name="Normal" xml:space="preserve">
-    <value>Normal</value>
+    <value>普通</value>
   </data>
   <data name="NormalPriority" xml:space="preserve">
     <value>普通优先级</value>

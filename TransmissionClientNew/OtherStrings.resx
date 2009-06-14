@@ -430,4 +430,7 @@
   <data name="LoadingFile" xml:space="preserve">
     <value>Loading {0}...</value>
   </data>
+  <data name="BandwidthAllocation" xml:space="preserve">
+    <value>Bandwidth allocation</value>
+  </data>
 </root>
