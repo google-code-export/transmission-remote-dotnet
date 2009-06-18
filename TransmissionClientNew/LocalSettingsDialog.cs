@@ -22,6 +22,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Jayrock.Json;
 
 namespace TransmissionRemoteDotnet
 {
@@ -33,6 +34,21 @@ namespace TransmissionRemoteDotnet
         public LocalSettingsDialog()
         {
             InitializeComponent();
+            LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
+            List<string> profiles = settings.Profiles;
+            for (int i = 0; i < profiles.Count; i++)
+            {
+                profileComboBox.Items.Add(profiles[i]);
+                if (profiles[i].Equals(settings.CurrentProfile))
+                {
+                    profileComboBox.SelectedIndex = i;
+                }
+            }
+            if (profileComboBox.SelectedIndex < 0)
+            {
+                profileComboBox.SelectedIndex = 0;
+            }
+            LoadCurrentProfile();
         }
 
         private void LoadCurrentProfile()
@@ -67,28 +83,13 @@ namespace TransmissionRemoteDotnet
             textBox3.Text = settings.PlinkCmd;
             downloadLimitItems.Text = settings.DownLimit;
             uploadLimitItems.Text = settings.UpLimit;
-            sambaShare.Enabled = sambaShareEnabledCheckBox.Checked = settings.SambaShareEnabled;
-            sambaShare.Text = settings.SambaShare;
             checkBox2.Checked = settings.UploadPrompt;
-        }
-
-        private void LocalSettingsDialog_Load(object sender, EventArgs e)
-        {
-            LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-            List<string> profiles = settings.Profiles;
-            for (int i = 0; i < profiles.Count; i++)
+            listBox1.Items.Clear();
+            JsonObject mappings = settings.SambaShareMappings;
+            foreach (string key in mappings.Names)
             {
-                profileComboBox.Items.Add(profiles[i]);
-                if (profiles[i].Equals(settings.CurrentProfile))
-                {
-                    profileComboBox.SelectedIndex = i;
-                }
+                listBox1.Items.Add(String.Format("{0} => {1}", key, (string)mappings[key]));
             }
-            if (profileComboBox.SelectedIndex < 0)
-            {
-                profileComboBox.SelectedIndex = 0;
-            }
-            LoadCurrentProfile();
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -125,8 +126,6 @@ namespace TransmissionRemoteDotnet
             settings.PlinkPath = textBox2.Text;
             settings.UpLimit = uploadLimitItems.Text;
             settings.DownLimit = downloadLimitItems.Text;
-            settings.SambaShareEnabled = sambaShareEnabledCheckBox.Checked;
-            settings.SambaShare = sambaShare.Text;
             settings.UploadPrompt = checkBox2.Checked;
             Program.Form.SetRemoteCmdButtonVisible(Program.Connected);
             settings.Commit();
@@ -250,11 +249,6 @@ namespace TransmissionRemoteDotnet
             System.Diagnostics.Process.Start(linkLabel1.Text);
         }
 
-        private void sambaShareEnabledCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            sambaShare.Enabled = sambaShareEnabledCheckBox.Checked;
-        }
-
         private void HostField_TextChanged(object sender, EventArgs e)
         {
             try
@@ -271,6 +265,29 @@ namespace TransmissionRemoteDotnet
                 }
             }
             catch { }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            button3.Enabled = listBox1.SelectedIndex >= 0;
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            button4.Enabled = textBox4.Text.Length > 0 && textBox5.Text.Length > 4;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string itemText = listBox1.SelectedItem.ToString();
+            LocalSettingsSingleton.Instance.RemoveSambaMapping(itemText.Substring(0, itemText.IndexOf("=>")-1));
+            listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            LocalSettingsSingleton.Instance.AddSambaMapping(textBox4.Text, textBox5.Text);
+            listBox1.Items.Add(String.Format("{0} => {1}", textBox4.Text, textBox5.Text));
         }
     }
 }

@@ -453,7 +453,8 @@ namespace TransmissionRemoteDotnet
         {
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
             remoteCmdButton.Visible = connected && settings.PlinkEnable && settings.PlinkCmd != null && settings.PlinkPath != null && File.Exists(settings.PlinkPath);
-            openNetworkShareToolStripMenuItem.Visible = openNetworkShareButton.Visible = connected && settings.SambaShareEnabled && settings.SambaShare != null && settings.SambaShare.Length > 5;
+            //openNetworkShareToolStripMenuItem.Visible = openNetworkShareButton.Visible = connected && settings.SambaShareEnabled && settings.SambaShare != null && settings.SambaShare.Length > 5;
+            openNetworkShareButton.Visible = openNetworkShareToolStripMenuItem.Visible = connected && LocalSettingsSingleton.Instance.SambaShareMappings.Count > 0;
 	        if (openNetworkShareMenuItem != null)
 		        openNetworkShareMenuItem.Visible = openNetworkShareButton.Visible;
         }
@@ -947,6 +948,7 @@ namespace TransmissionRemoteDotnet
                     = generalTorrentNameGroupBox.Enabled
                     = remoteCmdButton.Enabled
                     = openNetworkShareButton.Enabled = one;
+            openNetworkShareButton.Enabled = openNetworkShareToolStripMenuItem.Enabled = one && t.SambaLocation != null;
         }
 
         private void torrentListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -1936,14 +1938,17 @@ stateListBox.Items.Add(new GListBoxItem(OtherStrings.Broken, 6));*/
             if (torrentListView.SelectedItems.Count == 1)
             {
                 Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
-                string unc = LocalSettingsSingleton.Instance.SambaShare + '\\' + t.Name;
-                try
+                string sambaPath = t.SambaLocation;
+                if (sambaPath != null)
                 {
-                    Process.Start(unc);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Unable to open network share", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    try
+                    {
+                        Process.Start(sambaPath);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Unable to open network share", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }

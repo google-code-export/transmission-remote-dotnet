@@ -11,6 +11,7 @@
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
+
 //
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
@@ -72,8 +73,9 @@ namespace TransmissionRemoteDotnet
             REGKEY_CUSTOMPATH = "customPath",
             REGKEY_DOWNLIMIT = "downlimit",
             REGKEY_UPLIMIT = "uplimit",
-            REGKEY_SAMBASHARE = "sambaShare",
-            REGKEY_SAMBASHAREENABLED = "sambaShareEnabled",
+            /*REGKEY_SAMBASHARE = "sambaShare",
+            REGKEY_SAMBASHAREENABLED = "sambaShareEnabled",*/
+            REGKEY_SAMBASHAREMAPPINGS = "sambaShareMappings",
             REGKEY_UPLOADPROMPT = "uploadPrompt",
             REGKEY_DESTINATION_PATH_HISTORY = "destPathHistory";
 
@@ -192,7 +194,7 @@ namespace TransmissionRemoteDotnet
                 foreach (KeyValuePair<string, object> pair in rootConfMap)
                 {
                     if (pair.Key != null && pair.Value != null)
-                        rootKey.SetValue("_"+pair.Key, pair.Value);
+                        rootKey.SetValue("_" + pair.Key, pair.Value);
                 }
                 profileKey = GetProfileKey(this.CurrentProfile, true);
                 if (profileKey != null)
@@ -694,28 +696,39 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        public string SambaShare
+        public JsonObject SambaShareMappings
         {
             get
             {
-                return profileConfMap.ContainsKey(REGKEY_SAMBASHARE) ? (string)profileConfMap[REGKEY_SAMBASHARE] : @"\\host\share\torrents";
+                if (profileConfMap.ContainsKey(REGKEY_SAMBASHAREMAPPINGS))
+                {
+                    try
+                    {
+                        return (JsonObject)JsonConvert.Import((string)profileConfMap[REGKEY_SAMBASHAREMAPPINGS]);
+                    }
+                    catch { }
+                }
+                return new JsonObject();
             }
             set
             {
-                profileConfMap[REGKEY_SAMBASHARE] = value;
+                this.profileConfMap[REGKEY_SAMBASHAREMAPPINGS] = value.ToString();
             }
         }
 
-        public bool SambaShareEnabled
+        public void RemoveSambaMapping(string unixPrefix)
         {
-            get
-            {
-                return profileConfMap.ContainsKey(REGKEY_SAMBASHAREENABLED) ? ToBool(profileConfMap[REGKEY_SAMBASHAREENABLED]) : false;
-            }
-            set
-            {
-                profileConfMap[REGKEY_SAMBASHAREENABLED] = ToInt(value);
-            }
+            JsonObject mappings = this.SambaShareMappings;
+            if (mappings.Contains(unixPrefix))
+                mappings.Remove(unixPrefix);
+            this.SambaShareMappings = mappings;
+        }
+
+        public void AddSambaMapping(string unixPrefix, string sambaPrefix)
+        {
+            JsonObject mappings = this.SambaShareMappings;
+            mappings[unixPrefix] = sambaPrefix;
+            this.SambaShareMappings = mappings;
         }
     }
 }

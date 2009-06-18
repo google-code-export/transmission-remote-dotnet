@@ -94,8 +94,6 @@ namespace TransmissionRemoteDotnet
             this.button2 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.sambaShare = new System.Windows.Forms.TextBox();
-            this.sambaShareEnabledCheckBox = new System.Windows.Forms.CheckBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.downloadLimitItems = new System.Windows.Forms.TextBox();
@@ -108,6 +106,15 @@ namespace TransmissionRemoteDotnet
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.addProfileButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.PortField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RefreshRateValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RetryLimitValue)).BeginInit();
@@ -121,6 +128,8 @@ namespace TransmissionRemoteDotnet
             this.tabPage6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -321,6 +330,7 @@ namespace TransmissionRemoteDotnet
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
             resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -494,8 +504,6 @@ namespace TransmissionRemoteDotnet
             // 
             // tabPage6
             // 
-            this.tabPage6.Controls.Add(this.sambaShare);
-            this.tabPage6.Controls.Add(this.sambaShareEnabledCheckBox);
             this.tabPage6.Controls.Add(this.label17);
             this.tabPage6.Controls.Add(this.label16);
             this.tabPage6.Controls.Add(this.downloadLimitItems);
@@ -503,18 +511,6 @@ namespace TransmissionRemoteDotnet
             resources.ApplyResources(this.tabPage6, "tabPage6");
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // sambaShare
-            // 
-            resources.ApplyResources(this.sambaShare, "sambaShare");
-            this.sambaShare.Name = "sambaShare";
-            // 
-            // sambaShareEnabledCheckBox
-            // 
-            resources.ApplyResources(this.sambaShareEnabledCheckBox, "sambaShareEnabledCheckBox");
-            this.sambaShareEnabledCheckBox.Name = "sambaShareEnabledCheckBox";
-            this.sambaShareEnabledCheckBox.UseVisualStyleBackColor = true;
-            this.sambaShareEnabledCheckBox.CheckedChanged += new System.EventHandler(this.sambaShareEnabledCheckBox_CheckedChanged);
             // 
             // label17
             // 
@@ -593,6 +589,69 @@ namespace TransmissionRemoteDotnet
             // 
             resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.groupBox1);
+            this.tabPage7.Controls.Add(this.button3);
+            this.tabPage7.Controls.Add(this.listBox1);
+            resources.ApplyResources(this.tabPage7, "tabPage7");
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            resources.ApplyResources(this.listBox1, "listBox1");
+            this.listBox1.Name = "listBox1";
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // button3
+            // 
+            resources.ApplyResources(this.button3, "button3");
+            this.button3.Name = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
+            // 
+            // textBox4
+            // 
+            resources.ApplyResources(this.textBox4, "textBox4");
+            this.textBox4.Name = "textBox4";
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // label14
+            // 
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.Name = "label14";
+            // 
+            // textBox5
+            // 
+            resources.ApplyResources(this.textBox5, "textBox5");
+            this.textBox5.Name = "textBox5";
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // button4
+            // 
+            resources.ApplyResources(this.button4, "button4");
+            this.button4.Name = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.textBox5);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
+            // 
             // LocalSettingsDialog
             // 
             this.AcceptButton = this.SaveButton;
@@ -609,7 +668,6 @@ namespace TransmissionRemoteDotnet
             this.MaximizeBox = false;
             this.Name = "LocalSettingsDialog";
             this.ShowInTaskbar = false;
-            this.Load += new System.EventHandler(this.LocalSettingsDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PortField)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RefreshRateValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RetryLimitValue)).EndInit();
@@ -630,6 +688,9 @@ namespace TransmissionRemoteDotnet
             this.groupBox5.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.tabPage7.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -695,8 +756,15 @@ namespace TransmissionRemoteDotnet
         private System.Windows.Forms.TextBox downloadLimitItems;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.CheckBox sambaShareEnabledCheckBox;
-        private System.Windows.Forms.TextBox sambaShare;
         private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button button3;
     }
 }
