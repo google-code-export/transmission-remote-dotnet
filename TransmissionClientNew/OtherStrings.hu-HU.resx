@@ -432,4 +432,7 @@
   <data name="PortTestResult" xml:space="preserve">
     <value>Bejövő kapcsolat port tesztelés eredménye</value>
   </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Ismeretlen</value>
+  </data>
 </root>

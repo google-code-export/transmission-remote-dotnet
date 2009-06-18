@@ -453,7 +453,7 @@ namespace TransmissionRemoteDotnet
         {
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
             remoteCmdButton.Visible = connected && settings.PlinkEnable && settings.PlinkCmd != null && settings.PlinkPath != null && File.Exists(settings.PlinkPath);
-            openNetworkShareButton.Visible = connected && settings.SambaShareEnabled && settings.SambaShare != null && settings.SambaShare.Length > 5;
+            openNetworkShareToolStripMenuItem.Visible = openNetworkShareButton.Visible = connected && settings.SambaShareEnabled && settings.SambaShare != null && settings.SambaShare.Length > 5;
 	        if (openNetworkShareMenuItem != null)
 		        openNetworkShareMenuItem.Visible = openNetworkShareButton.Visible;
         }

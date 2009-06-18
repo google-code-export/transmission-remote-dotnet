@@ -389,18 +389,18 @@ namespace TransmissionRemoteDotnet
             {
                 switch (this.StatusCode)
                 {
-                    case 1:
+                    case ProtocolConstants.STATUS_WAITING_TO_CHECK:
                         return OtherStrings.WaitingToCheck;
-                    case 2:
+                    case ProtocolConstants.STATUS_CHECKING:
                         return OtherStrings.Checking;
-                    case 4:
+                    case ProtocolConstants.STATUS_DOWNLOADING:
                         return OtherStrings.Downloading;
-                    case 8:
+                    case ProtocolConstants.STATUS_SEEDING:
                         return OtherStrings.Seeding;
-                    case 16:
+                    case ProtocolConstants.STATUS_PAUSED:
                         return OtherStrings.Paused;
                     default:
-                        return "Unknown";
+                        return OtherStrings.Unknown;
                 }
             }
         }

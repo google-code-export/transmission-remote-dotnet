@@ -433,4 +433,10 @@
   <data name="BandwidthAllocation" xml:space="preserve">
     <value>Bandwidth allocation</value>
   </data>
+  <data name="MultipleTorrentProperties" xml:space="preserve">
+    <value>Multiple Torrent Properties</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
 </root>
