@@ -274,7 +274,7 @@ namespace TransmissionRemoteDotnet
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            button4.Enabled = textBox4.Text.Length > 0 && textBox5.Text.Length > 4;
+            button4.Enabled = textBox4.Text.Length > 0 && textBox5.Text.Length >= 3;
         }
 
         private void button3_Click(object sender, EventArgs e)
