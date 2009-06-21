@@ -20,6 +20,7 @@ CREDITS AND ACKNOWLEDGEMENTS
  * charles and the other Transmission developers for their great work.
  * András Első has made many great contributions to this project including speed graphing, GeoIP
    support, many small patches, and helpful suggestions.
+ * The code for reading .torrent files was taken from Alan McGovern's MonoTorrent project.
  * Thank you to all the following users kind enough to translate this application:
     * Romaric R. for the French translation.
     * benba for the German translation.

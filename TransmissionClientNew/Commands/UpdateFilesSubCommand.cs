@@ -64,6 +64,7 @@ namespace TransmissionRemoteDotnet.Commands
             JsonNumber priority, long bytesCompleted, ImageList img, int mainHandle)
         {
             this.item = new ListViewItem(Toolbox.TrimPath(name));
+            item.SubItems[0].Tag = item.SubItems[0].Text.Length != name.Length;
             string[] split = name.Split('.');
             string typeName = "";
             if (split.Length > 1)

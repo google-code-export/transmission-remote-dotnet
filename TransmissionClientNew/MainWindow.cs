@@ -1987,5 +1987,25 @@ stateListBox.Items.Add(new GListBoxItem(OtherStrings.Broken, 6));*/
                 }
             }
         }
+
+        private void filesListView_DoubleClick(object sender, EventArgs e)
+        {
+            if (filesListView.Enabled && torrentListView.SelectedItems.Count == 1 && filesListView.SelectedItems.Count == 1)
+            {
+                Torrent t = (Torrent)torrentListView.SelectedItems[0].Tag;
+                string sambaShare = t.SambaLocation;
+                if (sambaShare != null)
+                {
+                    try
+                    {
+                        Process.Start((bool)filesListView.SelectedItems[0].SubItems[0].Tag ? sambaShare + @"\" + filesListView.SelectedItems[0].SubItems[0].Text.Replace(@"/", @"\") : sambaShare);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, OtherStrings.UnableToOpenFile, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
     }
 }

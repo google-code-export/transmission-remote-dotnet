@@ -889,6 +889,15 @@ namespace TransmissionRemoteDotnet {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unable to open file.
+        /// </summary>
+        internal static string UnableToOpenFile {
+            get {
+                return ResourceManager.GetString("UnableToOpenFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unable to parse the server response.
         /// </summary>
         internal static string UnableToParse {
