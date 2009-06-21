@@ -439,7 +439,7 @@
   <data name="Unknown" xml:space="preserve">
     <value>Unknown</value>
   </data>
-  <data name="UnableToOpenFile" xml:space="preserve">
-    <value>Unable to open file</value>
+  <data name="UnableToOpen" xml:space="preserve">
+    <value>Unable to open</value>
   </data>
 </root>

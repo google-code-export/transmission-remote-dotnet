@@ -889,11 +889,11 @@ namespace TransmissionRemoteDotnet {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unable to open file.
+        ///   Looks up a localized string similar to Unable to open.
         /// </summary>
-        internal static string UnableToOpenFile {
+        internal static string UnableToOpen {
             get {
-                return ResourceManager.GetString("UnableToOpenFile", resourceCulture);
+                return ResourceManager.GetString("UnableToOpen", resourceCulture);
             }
         }
         

@@ -1943,7 +1943,7 @@ stateListBox.Items.Add(new GListBoxItem(OtherStrings.Broken, 6));*/
                 {
                     try
                     {
-                        Process.Start(sambaPath);
+                        BackgroundProcessStart(new ProcessStartInfo(sambaPath));
                     }
                     catch (Exception ex)
                     {
@@ -1988,6 +1988,32 @@ stateListBox.Items.Add(new GListBoxItem(OtherStrings.Broken, 6));*/
             }
         }
 
+        private void BackgroundProcessStart(ProcessStartInfo info)
+        {
+            BackgroundWorker worker = new BackgroundWorker();
+            worker.DoWork += new DoWorkEventHandler(worker_DoWork);
+            worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(worker_RunWorkerCompleted);
+            worker.RunWorkerAsync(info);
+        }
+
+        void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (e.Result != null)
+                MessageBox.Show(((Exception)e.Result).Message, OtherStrings.UnableToOpen, MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        void worker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+                Process.Start((ProcessStartInfo)e.Argument);
+            }
+            catch (Exception ex)
+            {
+                e.Result = ex;
+            }
+        }
+
         private void filesListView_DoubleClick(object sender, EventArgs e)
         {
             if (filesListView.Enabled && torrentListView.SelectedItems.Count == 1 && filesListView.SelectedItems.Count == 1)
@@ -1996,14 +2022,7 @@ stateListBox.Items.Add(new GListBoxItem(OtherStrings.Broken, 6));*/
                 string sambaShare = t.SambaLocation;
                 if (sambaShare != null)
                 {
-                    try
-                    {
-                        Process.Start((bool)filesListView.SelectedItems[0].SubItems[0].Tag ? sambaShare + @"\" + filesListView.SelectedItems[0].SubItems[0].Text.Replace(@"/", @"\") : sambaShare);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, OtherStrings.UnableToOpenFile, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    BackgroundProcessStart(new ProcessStartInfo((bool)filesListView.SelectedItems[0].SubItems[0].Tag ? sambaShare + @"\" + filesListView.SelectedItems[0].SubItems[0].Text.Replace(@"/", @"\") : sambaShare));
                 }
             }
         }
