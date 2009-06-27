@@ -520,7 +520,7 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return Toolbox.CalcPercentage(this.HaveTotal, this.TotalSize);
+                return Toolbox.CalcPercentage(this.HaveTotal, this.SizeWhenDone);
             }
         }
 
@@ -529,6 +529,14 @@ namespace TransmissionRemoteDotnet
             get
             {
                 return Toolbox.ToInt(info[ProtocolConstants.FIELD_SEEDERS]);
+            }
+        }
+
+        public long SizeWhenDone
+        {
+            get
+            {
+                return Toolbox.ToLong(info[ProtocolConstants.FIELD_SIZEWHENDONE]);
             }
         }
 

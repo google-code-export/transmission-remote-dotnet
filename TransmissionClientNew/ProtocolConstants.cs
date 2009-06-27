@@ -95,6 +95,7 @@ namespace TransmissionRemoteDotnet
             FIELD_WANTED = "wanted",
             FIELD_TRACKERS = "trackers",
             FIELD_PEERS = "peers",
+            FIELD_SIZEWHENDONE = "sizeWhenDone",
             FIELD_PEERLIMIT = "peer-limit",
             FIELD_LENGTH = "length",
             FIELD_BYTESCOMPLETED = "bytesCompleted",
