@@ -418,13 +418,12 @@ namespace TransmissionRemoteDotnet
             get
             {
                 string downloadDir = this.DownloadDir;
+                string name = this.Name;
                 JsonObject mappings = LocalSettingsSingleton.Instance.SambaShareMappings;
                 foreach (string key in mappings.Names)
                 {
                     if (downloadDir.StartsWith(key))
-                    {
-                        return String.Format(@"{0}\{1}{2}", (string)mappings[key], downloadDir.Length > key.Length+1 ? downloadDir.Substring(key.Length+1).Replace(@"/", @"\") + @"\" : null, this.Name);
-                    }
+                        return String.Format(@"{0}\{1}{2}", (string)mappings[key], downloadDir.Length > key.Length ? downloadDir.Substring(key.Length+1).Replace(@"/", @"\") + @"\" : null, this.Name);
                 }
                 return null;
             }

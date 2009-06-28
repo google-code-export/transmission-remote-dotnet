@@ -33,6 +33,7 @@ using System.Net.Sockets;
 using System.Reflection;
 using System.Globalization;
 using System.Threading;
+using Jayrock.Json.Conversion;
 
 namespace TransmissionRemoteDotnet
 {
@@ -47,6 +48,8 @@ namespace TransmissionRemoteDotnet
             CONFKEY_MAINWINDOW_LOCATION_Y = "mainwindow-loc-y",
             CONFKEY_SPLITTERDISTANCE = "mainwindow-splitterdistance",
             CONFKEY_MAINWINDOW_STATE = "mainwindow-state",
+            CONFKEYPREFIX_LISTVIEW_WIDTHS = "listview-width-",
+            CONFKEYPREFIX_LISTVIEW_INDEXES = "listview-indexes-",
             PROJECT_SITE = "http://code.google.com/p/transmission-remote-dotnet/",
             LATEST_VERSION = "http://transmission-remote-dotnet.googlecode.com/svn/wiki/latest_version.txt",
             DOWNLOADS_PAGE = "http://code.google.com/p/transmission-remote-dotnet/downloads/list";
@@ -513,8 +516,53 @@ namespace TransmissionRemoteDotnet
                         this.WindowState = _mainWindowState;
                     }
                 }
+                RestoreListViewProperties(torrentListView);
+                RestoreListViewProperties(filesListView);
+                RestoreListViewProperties(peersListView);
             }
             catch { }
+        }
+
+        public void SaveListViewProperties(ListView listView)
+        {
+            JsonArray widths = new JsonArray();
+            JsonArray indexes = new JsonArray();
+            foreach (ColumnHeader column in listView.Columns)
+            {
+                widths.Add(column.Width);
+                indexes.Add(column.DisplayIndex);
+            }
+            LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
+            settings.SetObject(CONFKEYPREFIX_LISTVIEW_WIDTHS + listView.Name, widths.ToString());
+            settings.SetObject(CONFKEYPREFIX_LISTVIEW_INDEXES + listView.Name, indexes.ToString());
+        }
+
+        public void RestoreListViewProperties(ListView listView)
+        {
+            LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
+            string widthsConfKey = CONFKEYPREFIX_LISTVIEW_WIDTHS+listView.Name;
+            string indexesConfKey = CONFKEYPREFIX_LISTVIEW_INDEXES+listView.Name;
+            if (settings.ContainsKey(widthsConfKey))
+            {
+                JsonArray widths = GetListViewPropertyArray(widthsConfKey);
+                for (int i = 0; i < widths.Count; i++)
+                {
+                    listView.Columns[i].Width = Toolbox.ToInt(widths[i]);
+                }
+            }
+            if (settings.ContainsKey(indexesConfKey))
+            {
+                JsonArray indexes = GetListViewPropertyArray(indexesConfKey);
+                for (int i = 0; i < indexes.Count; i++)
+                {
+                    listView.Columns[i].DisplayIndex = Toolbox.ToInt(indexes[i]);
+                }
+            }
+        }
+
+        private JsonArray GetListViewPropertyArray(string key)
+        {
+            return (JsonArray)JsonConvert.Import((string)LocalSettingsSingleton.Instance.GetObject(key));
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
@@ -1826,6 +1874,9 @@ stateListBox.Items.Add(new GListBoxItem(OtherStrings.Broken, 6));*/
                     settings.SetObject(CONFKEY_MAINWINDOW_HEIGHT, this.Size.Height);
                     settings.SetObject(CONFKEY_MAINWINDOW_WIDTH, this.Size.Width);
                 }
+                SaveListViewProperties(torrentListView);
+                SaveListViewProperties(filesListView);
+                SaveListViewProperties(peersListView);
                 settings.Commit();
             }
         }
