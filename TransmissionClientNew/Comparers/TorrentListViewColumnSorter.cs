@@ -22,9 +22,9 @@ using System.Text;
 using System.Windows.Forms;
 using TransmissionRemoteDotnet.Comparers;
 
-namespace TransmissionRemoteDotnet
+namespace TransmissionRemoteDotnet.Comparers
 {
-    public class ListViewItemSorter : IComparer
+    public class ListViewItemSorter : IComparer, IListViewItemSorter
     {
         private int columnToSort;
         private SortOrder orderOfSort;
