@@ -23,7 +23,7 @@ using System.Windows.Forms;
 
 namespace TransmissionRemoteDotnet.Comparers
 {
-    public class PeersListViewItemSorter : IComparer
+    public class PeersListViewItemSorter : IComparer, IListViewItemSorter
     {
         private int columnToSort;
         private SortOrder orderOfSort;

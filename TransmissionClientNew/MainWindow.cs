@@ -50,6 +50,7 @@ namespace TransmissionRemoteDotnet
             CONFKEY_MAINWINDOW_STATE = "mainwindow-state",
             CONFKEYPREFIX_LISTVIEW_WIDTHS = "listview-width-",
             CONFKEYPREFIX_LISTVIEW_INDEXES = "listview-indexes-",
+            CONFKEYPREFIX_LISTVIEW_SORTINDEX = "listview-sortindex-",
             PROJECT_SITE = "http://code.google.com/p/transmission-remote-dotnet/",
             LATEST_VERSION = "http://transmission-remote-dotnet.googlecode.com/svn/wiki/latest_version.txt",
             DOWNLOADS_PAGE = "http://code.google.com/p/transmission-remote-dotnet/downloads/list";
@@ -105,6 +106,18 @@ namespace TransmissionRemoteDotnet
             speedGraph.AddLine("Download", Color.Green);
             speedGraph.AddLine("Upload", Color.Yellow);
             speedResComboBox.SelectedIndex = 2;
+            RestoreFormProperties();
+            List<string> profiles = settings.Profiles;
+            for (int i = 0; i < profiles.Count; i++)
+            {
+                ToolStripMenuItem profile = CreateProfileMenuItem(profiles[i]);
+                if (profiles[i].Equals(settings.CurrentProfile))
+                {
+                    profile.Checked = true;
+                }
+            }
+            OpenGeoipDatabase();
+            PopulateLanguagesMenu();
         }
 
         public ToolStripMenuItem CreateProfileMenuItem(string name)
@@ -535,13 +548,17 @@ namespace TransmissionRemoteDotnet
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
             settings.SetObject(CONFKEYPREFIX_LISTVIEW_WIDTHS + listView.Name, widths.ToString());
             settings.SetObject(CONFKEYPREFIX_LISTVIEW_INDEXES + listView.Name, indexes.ToString());
+            IListViewItemSorter listViewItemSorter = (IListViewItemSorter)listView.ListViewItemSorter;
+            settings.SetObject(CONFKEYPREFIX_LISTVIEW_SORTINDEX + listView.Name, listViewItemSorter.Order == SortOrder.Descending ? -listViewItemSorter.SortColumn : listViewItemSorter.SortColumn);
         }
 
         public void RestoreListViewProperties(ListView listView)
         {
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-            string widthsConfKey = CONFKEYPREFIX_LISTVIEW_WIDTHS+listView.Name;
-            string indexesConfKey = CONFKEYPREFIX_LISTVIEW_INDEXES+listView.Name;
+            string widthsConfKey = CONFKEYPREFIX_LISTVIEW_WIDTHS + listView.Name,
+              indexesConfKey = CONFKEYPREFIX_LISTVIEW_INDEXES + listView.Name,
+              sortIndexConfKey = CONFKEYPREFIX_LISTVIEW_SORTINDEX + listView.Name;
+
             if (settings.ContainsKey(widthsConfKey))
             {
                 JsonArray widths = GetListViewPropertyArray(widthsConfKey);
@@ -558,6 +575,13 @@ namespace TransmissionRemoteDotnet
                     listView.Columns[i].DisplayIndex = Toolbox.ToInt(indexes[i]);
                 }
             }
+            if (settings.ContainsKey(sortIndexConfKey))
+            {
+                IListViewItemSorter sorter = (IListViewItemSorter)listView.ListViewItemSorter;
+                int sortIndex = (int)settings.GetObject(sortIndexConfKey);
+                sorter.Order = sortIndex < 0 ? SortOrder.Descending : SortOrder.Ascending;
+                sorter.SortColumn = sortIndex < 0 ? -sortIndex : sortIndex;
+            }
         }
 
         private JsonArray GetListViewPropertyArray(string key)
@@ -568,7 +592,6 @@ namespace TransmissionRemoteDotnet
         private void MainWindow_Load(object sender, EventArgs e)
         {
             LocalSettingsSingleton settings = LocalSettingsSingleton.Instance;
-            RestoreFormProperties();
             if (notifyIcon.Visible = settings.MinToTray)
             {
                 foreach (string arg in Environment.GetCommandLineArgs())
@@ -580,21 +603,10 @@ namespace TransmissionRemoteDotnet
                     }
                 }
             }
-            List<string> profiles = settings.Profiles;
-            for (int i = 0; i < profiles.Count; i++)
-            {
-                ToolStripMenuItem profile = CreateProfileMenuItem(profiles[i]);
-                if (profiles[i].Equals(settings.CurrentProfile))
-                {
-                    profile.Checked = true;
-                }
-            }
             if (settings.AutoConnect)
             {
                 Connect();
             }
-            OpenGeoipDatabase();
-            PopulateLanguagesMenu();
         }
 
         private void PopulateLanguagesMenu()

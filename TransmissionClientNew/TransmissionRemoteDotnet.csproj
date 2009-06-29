@@ -87,6 +87,7 @@
     <Compile Include="Commands\UpdateBlocklistCommand.cs" />
     <Compile Include="Commands\UpdateFilesCommand.cs" />
     <Compile Include="Commands\UpdateFilesSubCommand.cs" />
+    <Compile Include="Comparers\IListViewItemSorter.cs" />
     <Compile Include="Comparers\ListViewDoneDateComparer.cs" />
     <Compile Include="Comparers\ListViewItemIPComparer.cs" />
     <Compile Include="Comparers\ListViewItemDecimalComparer.cs" />
@@ -111,7 +112,7 @@
     </Compile>
     <Compile Include="GListBoxItem.cs" />
     <Compile Include="IconHelper.cs" />
-    <Compile Include="ListViewColumnSorter.cs" />
+    <Compile Include="Comparers\TorrentListViewColumnSorter.cs" />
     <Compile Include="ListViewNF.cs">
       <SubType>Component</SubType>
     </Compile>
