@@ -1383,8 +1383,6 @@ namespace TransmissionRemoteDotnet
             // 
             // showDetailsPanelToolStripMenuItem
             // 
-            this.showDetailsPanelToolStripMenuItem.Checked = true;
-            this.showDetailsPanelToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.showDetailsPanelToolStripMenuItem.Name = "showDetailsPanelToolStripMenuItem";
             resources.ApplyResources(this.showDetailsPanelToolStripMenuItem, "showDetailsPanelToolStripMenuItem");
             this.showDetailsPanelToolStripMenuItem.Click += new System.EventHandler(this.showDetailsPanelToolStripMenuItem_Click);

@@ -51,6 +51,7 @@ namespace TransmissionRemoteDotnet
             CONFKEYPREFIX_LISTVIEW_WIDTHS = "listview-width-",
             CONFKEYPREFIX_LISTVIEW_INDEXES = "listview-indexes-",
             CONFKEYPREFIX_LISTVIEW_SORTINDEX = "listview-sortindex-",
+            CONFKEY_MAINWINDOW_DETAILSPANEL_COLLAPSED = "mainwindow-detailspanel-collapsed",
             PROJECT_SITE = "http://code.google.com/p/transmission-remote-dotnet/",
             LATEST_VERSION = "http://transmission-remote-dotnet.googlecode.com/svn/wiki/latest_version.txt",
             DOWNLOADS_PAGE = "http://code.google.com/p/transmission-remote-dotnet/downloads/list";
@@ -521,6 +522,7 @@ namespace TransmissionRemoteDotnet
                     this.Location = new Point((int)settings.GetObject(CONFKEY_MAINWINDOW_LOCATION_X), (int)settings.GetObject(CONFKEY_MAINWINDOW_LOCATION_Y));
                 if (settings.ContainsKey(CONFKEY_SPLITTERDISTANCE))
                     this.torrentAndTabsSplitContainer.SplitterDistance = (int)settings.GetObject(CONFKEY_SPLITTERDISTANCE);
+                this.showDetailsPanelToolStripMenuItem.Checked = !(this.torrentAndTabsSplitContainer.Panel2Collapsed = !settings.ContainsKey(CONFKEY_MAINWINDOW_DETAILSPANEL_COLLAPSED) || (int)settings.GetObject(CONFKEY_MAINWINDOW_DETAILSPANEL_COLLAPSED) == 1);
                 if (settings.ContainsKey(CONFKEY_MAINWINDOW_STATE))
                 {
                     FormWindowState _mainWindowState = (FormWindowState)((int)settings.GetObject(CONFKEY_MAINWINDOW_STATE));
@@ -1886,11 +1888,12 @@ stateListBox.Items.Add(new GListBoxItem(OtherStrings.Broken, 6));*/
                     settings.SetObject(CONFKEY_MAINWINDOW_HEIGHT, this.Size.Height);
                     settings.SetObject(CONFKEY_MAINWINDOW_WIDTH, this.Size.Width);
                 }
-                SaveListViewProperties(torrentListView);
-                SaveListViewProperties(filesListView);
-                SaveListViewProperties(peersListView);
-                settings.Commit();
             }
+            SaveListViewProperties(torrentListView);
+            SaveListViewProperties(filesListView);
+            SaveListViewProperties(peersListView);
+            settings.SetObject(CONFKEY_MAINWINDOW_DETAILSPANEL_COLLAPSED, this.torrentAndTabsSplitContainer.Panel2Collapsed ? 1 : 0);
+            settings.Commit();
         }
 
         private void checkForNewVersionToolStripMenuItem_Click(object sender, EventArgs e)
