@@ -17,6 +17,15 @@
     <resheader name="version">2.0</resheader>
     <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
     <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
                 
     There are any number of "resheader" rows that contain simple 
     name/value pairs.
@@ -108,11 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="EnableProxyCombo.Items" xml:space="preserve">
-    <value>Auto</value>
+    <value>자동</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>트랜스미션 리모트 설정</value>
@@ -148,7 +154,7 @@
     <value>현재 설정</value>
   </data>
   <data name="groupBox6.Text" xml:space="preserve">
-    <value>새로운 설정</value>
+    <value>새로운 설정으로 저장</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>주소:</value>
@@ -242,5 +248,23 @@
   </data>
   <data name="UseSSLCheckBox.Text" xml:space="preserve">
     <value>보안 접속(SSL)</value>
+  </data>
+  <data name="button3.Text" xml:space="preserve">
+    <value>삭제</value>
+  </data>
+  <data name="button4.Text" xml:space="preserve">
+    <value>추가</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>새로운 연결 추가:</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>유닉스 경로:</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>네트워크 공유 위치:</value>
+  </data>
+  <data name="tabPage7.Text" xml:space="preserve">
+    <value>삼바</value>
   </data>
 </root>
