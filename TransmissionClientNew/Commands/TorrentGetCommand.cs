@@ -69,7 +69,7 @@ namespace TransmissionRemoteDotnet.Commmands
                     string hash = (string)torrent[ProtocolConstants.FIELD_HASHSTRING];
                     totalUpload += Toolbox.ToLong(torrent[ProtocolConstants.FIELD_RATEUPLOAD]);
                     totalDownload += Toolbox.ToLong(torrent[ProtocolConstants.FIELD_RATEDOWNLOAD]);
-                    totalSize += Toolbox.ToLong(torrent[ProtocolConstants.FIELD_TOTALSIZE]);
+                    totalSize += Toolbox.ToLong(torrent[ProtocolConstants.FIELD_SIZEWHENDONE]);
                     totalDownloadedSize += Toolbox.ToLong(torrent[ProtocolConstants.FIELD_HAVEVALID]);
                     totalTorrents++;
                     short status = Toolbox.ToShort(torrent[ProtocolConstants.FIELD_STATUS]);
