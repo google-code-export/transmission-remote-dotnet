@@ -249,7 +249,7 @@ namespace TransmissionRemoteDotnet
                     item.SubItems[12].Text = DateTime.Now.ToString();
                     item.SubItems[12].Tag = DateTime.Now;
                 }
-                bool stateChange = this.StatusCode != Toolbox.ToShort(info[ProtocolConstants.FIELD_STATUS]);
+                bool stateChange = (this.StatusCode != Toolbox.ToShort(info[ProtocolConstants.FIELD_STATUS])) || (this.HasError != IsErrorString((string)info[ProtocolConstants.FIELD_ERRORSTRING]));
                 this.info = info;
                 UpdateIcon();
                 item.SubItems[0].Text = this.Name;
@@ -267,7 +267,6 @@ namespace TransmissionRemoteDotnet
                 item.SubItems[9].Text = this.UploadedString;
                 item.SubItems[10].Text = this.LocalRatioString;
                 item.SubItems[11].Text = this.Added.ToString();
-                //item.SubItems[12].Text = this.IsFinished ? this.DoneDate : "";
                 this.updateSerial = Program.DaemonDescriptor.UpdateSerial;
                 LogError();
                 return stateChange;
@@ -441,8 +440,13 @@ namespace TransmissionRemoteDotnet
         {
             get
             {
-                return this.ErrorString != null && !this.ErrorString.Equals("");
+                return IsErrorString(this.ErrorString);
             }
+        }
+
+        private static bool IsErrorString(string s)
+        {
+            return s != null && !s.Equals("");
         }
 
         public string ErrorString

@@ -1405,14 +1405,6 @@ namespace TransmissionRemoteDotnet
                     item.Counter = pair.Value;
                 }
             }
-            /*            stateListBox.Items.Add(new GListBoxItem(OtherStrings.All, 0));
-stateListBox.Items.Add(new GListBoxItem(OtherStrings.Downloading, 1));
-stateListBox.Items.Add(new GListBoxItem(OtherStrings.Paused, 2));
-stateListBox.Items.Add(new GListBoxItem(OtherStrings.Checking, 5));
-stateListBox.Items.Add(new GListBoxItem(OtherStrings.Complete, 3));
-stateListBox.Items.Add(new GListBoxItem(OtherStrings.Incomplete, 7));
-stateListBox.Items.Add(new GListBoxItem(OtherStrings.Seeding, 4));
-stateListBox.Items.Add(new GListBoxItem(OtherStrings.Broken, 6));*/
             stateListBox.Refresh();
         }
 
