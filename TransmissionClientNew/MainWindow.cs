@@ -228,7 +228,7 @@ namespace TransmissionRemoteDotnet
                 try
                 {
                     int l = int.Parse(limit);
-                    upLimitMenuItem.MenuItems.Add(Toolbox.KbpsString(l), ChangeDownLimit).Tag = l;
+                    upLimitMenuItem.MenuItems.Add(Toolbox.KbpsString(l), ChangeUpLimit).Tag = l;
                 }
                 catch { }
             }
@@ -262,11 +262,10 @@ namespace TransmissionRemoteDotnet
             if (firstTorrent == null)
                 return;
             int limit = firstTorrent.SpeedLimitDownEnabled ? firstTorrent.SpeedLimitDown : -1;
-            for (int i = 0; i < ((MenuItem)sender).MenuItems.Count; i++)
+            foreach (MenuItem menuItem in ((MenuItem)sender).MenuItems)
             {
-                MenuItem m = ((MenuItem)sender).MenuItems[i];
-                if (m.Tag != null)
-                    m.Checked = (int)m.Tag == limit;
+                if (menuItem.Tag != null)
+                    menuItem.Checked = (int)menuItem.Tag == limit;
             }
         }
 
@@ -276,11 +275,10 @@ namespace TransmissionRemoteDotnet
             if (firstTorrent == null)
                 return;
             int limit = firstTorrent.SpeedLimitUpEnabled ? firstTorrent.SpeedLimitUp : -1;
-            for (int i = 0; i < ((MenuItem)sender).MenuItems.Count; i++)
+            foreach (MenuItem menuItem in ((MenuItem)sender).MenuItems)
             {
-                MenuItem m = ((MenuItem)sender).MenuItems[i];
-                if (m.Tag != null)
-                    m.Checked = (int)m.Tag == limit;
+                if (menuItem.Tag != null)
+                    menuItem.Checked = (int)menuItem.Tag == limit;
             }
         }
 
@@ -303,13 +301,7 @@ namespace TransmissionRemoteDotnet
         private JsonObject CreateLimitChangeRequest()
         {
             JsonObject request = Requests.CreateBasicObject(ProtocolConstants.METHOD_TORRENTSET);
-            JsonArray ids = new JsonArray();
-            foreach (ListViewItem item in torrentListView.SelectedItems)
-            {
-                Torrent t = (Torrent)item.Tag;
-                ids.Put(t.Id);
-            }
-            Requests.GetArgObject(request).Put(ProtocolConstants.KEY_IDS, ids);
+            Requests.GetArgObject(request).Put(ProtocolConstants.KEY_IDS, BuildIdArray());
             return request;
         }
 
