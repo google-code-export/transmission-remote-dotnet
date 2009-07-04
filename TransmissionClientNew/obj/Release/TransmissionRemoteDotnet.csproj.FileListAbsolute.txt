@@ -672,3 +672,16 @@ C:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\Transmiss
 C:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\ru-RU\Transmission Remote.resources.dll
 C:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\tr-TR\Transmission Remote.resources.dll
 C:\Documents and Settings\Alan\My Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\zh-CN\Transmission Remote.resources.dll
+C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.AboutDialog.zh-TW.resources
+C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.ErrorLogWindow.zh-TW.resources
+C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.LocalSettingsDialog.zh-TW.resources
+C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.MainWindow.zh-TW.resources
+C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.MoveDataPrompt.zh-TW.resources
+C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.OtherStrings.zh-TW.resources
+C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.RemoteSettingsDialog.zh-TW.resources
+C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.StatsDialog.zh-TW.resources
+C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentLoadDialog.zh-TW.resources
+C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.TorrentPropertiesDialog.zh-TW.resources
+C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\TransmissionRemoteDotnet.UriPromptWindow.zh-TW.resources
+C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\bin\Release\zh-TW\Transmission Remote.resources.dll
+C:\Users\Alan\Documents\transmission-remote-dotnet\TransmissionClientNew\obj\Release\zh-TW\Transmission Remote.resources.dll

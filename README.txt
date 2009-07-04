@@ -32,6 +32,7 @@ CREDITS AND ACKNOWLEDGEMENTS
     * Alexey Komarov for the Russian translation.
     * huexxx for the Spanish translation.
     * twohertz for the Korean translation.
+    * zeal.tsai for the Taiwanese translation.
 	
 ABOUT
 ----------------------------

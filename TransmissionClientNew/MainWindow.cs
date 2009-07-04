@@ -620,8 +620,7 @@ namespace TransmissionRemoteDotnet
                     try
                     {
                         CultureInfo cInfo = new CultureInfo(dn.Substring(0, 2).ToLower() + "-" + dn.Substring(3, 2).ToUpper());
-                        string engName = cInfo.EnglishName;
-                        ToolStripMenuItem item = new ToolStripMenuItem(String.Format("{0} ({1})", GetUnbracketedFragment(cInfo.NativeName), GetUnbracketedFragment(cInfo.EnglishName)));
+                        ToolStripMenuItem item = new ToolStripMenuItem(cInfo.NativeName +" / " + cInfo.EnglishName);
                         item.Tag = cInfo;
                         item.Click += new EventHandler(this.ChangeUICulture);
                         item.Checked = LocalSettingsSingleton.Instance.Locale.Equals(cInfo.Name);
@@ -633,11 +632,6 @@ namespace TransmissionRemoteDotnet
                     }
                 }
             }
-        }
-
-        private string GetUnbracketedFragment(string s)
-        {
-            return s.Substring(0, s.IndexOf('(') - 1);
         }
 
         private void ChangeUICulture(object sender, EventArgs e)

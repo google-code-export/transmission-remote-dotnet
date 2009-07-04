@@ -26,12 +26,58 @@ using System.Net;
 using Jayrock.Json;
 using Jayrock.Json.Conversion;
 using System.IO;
+using System.IO.Compression;
 using TransmissionRemoteDotnet.Commmands;
 
 namespace TransmissionRemoteDotnet
 {
     public class CommandFactory
     {
+        /// <summary>
+        /// Returns a response stream, optionally decompressed
+        /// </summary>
+        /// <param name="response"></param>
+        /// <returns></returns>
+        private static Stream GetResponseStream(HttpWebResponse response)
+        {
+            Stream compressedStream = null;
+
+            // select right decompression stream (or null if content is not compressed)
+            if (response.ContentEncoding.Equals("gzip"))
+            {
+                compressedStream = new GZipStream(response.GetResponseStream(), CompressionMode.Decompress);
+            }
+            else if (response.ContentEncoding.Equals("deflate"))
+            {
+                compressedStream = new DeflateStream(response.GetResponseStream(), CompressionMode.Decompress);
+            }
+
+            if (compressedStream != null)
+            {
+                // decompress
+                MemoryStream decompressedStream = new MemoryStream();
+
+                int size = 2048;
+                byte[] writeData = new byte[2048];
+                while (true)
+                {
+                    size = compressedStream.Read(writeData, 0, size);
+                    if (size > 0)
+                    {
+                        decompressedStream.Write(writeData, 0, size);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                decompressedStream.Seek(0, SeekOrigin.Begin);
+                return decompressedStream;
+            }
+            else
+                return response.GetResponseStream();
+        }
+
         public static ICommand Request(JsonObject data)
         {
             return Request(data, true);
@@ -51,8 +97,8 @@ namespace TransmissionRemoteDotnet
                 StreamWriter stOut = new StreamWriter(request.GetRequestStream(), System.Text.Encoding.ASCII);
                 stOut.Write(json);
                 stOut.Close();
-                WebResponse webResponse = request.GetResponse();
-                StreamReader stIn = new StreamReader(webResponse.GetResponseStream());
+                HttpWebResponse webResponse = (HttpWebResponse)request.GetResponse();
+                StreamReader stIn = new StreamReader(GetResponseStream(webResponse), Encoding.UTF8);
                 str_response = stIn.ReadToEnd();
                 stIn.Close();
                 JsonObject jsonResponse = (JsonObject)JsonConvert.Import(str_response);

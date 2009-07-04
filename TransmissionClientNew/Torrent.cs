@@ -87,7 +87,7 @@ namespace TransmissionRemoteDotnet
             }
             item.ToolTipText = item.Name;
             item.Tag = this;
-            item.SubItems.Add(this.TotalSizeString);
+            item.SubItems.Add(Toolbox.GetFileSize(this.SizeWhenDone));
             decimal percentage = this.StatusCode == ProtocolConstants.STATUS_CHECKING ? this.RecheckPercentage : this.Percentage;
             item.SubItems.Add(percentage.ToString() + "%");
             item.SubItems[2].Tag = percentage;
@@ -254,7 +254,7 @@ namespace TransmissionRemoteDotnet
                 UpdateIcon();
                 item.SubItems[0].Text = this.Name;
                 item.ForeColor = this.HasError ? Color.Red : SystemColors.WindowText;
-                item.SubItems[1].Text = this.TotalSizeString;
+                item.SubItems[1].Text = Toolbox.GetFileSize(this.SizeWhenDone);
                 decimal percentage = this.StatusCode == ProtocolConstants.STATUS_CHECKING ? this.RecheckPercentage : this.Percentage;
                 item.SubItems[2].Tag = percentage;
                 item.SubItems[2].Text = percentage.ToString() + "%";
@@ -564,14 +564,6 @@ namespace TransmissionRemoteDotnet
             get
             {
                 return Toolbox.ToLong(info[ProtocolConstants.FIELD_TOTALSIZE]);
-            }
-        }
-
-        public string TotalSizeString
-        {
-            get
-            {
-                return Toolbox.GetFileSize(this.TotalSize);
             }
         }
 
