@@ -145,7 +145,7 @@ namespace TransmissionRemoteDotnet
                             StreamReader reader = new StreamReader(stream);
                             string errorStr = reader.ReadToEnd();
                             reader.Close();
-                            int index = errorStr.IndexOf("X-Transmission-Session-Id");
+                            int index = errorStr.IndexOf("X-Transmission-Session-Id:");
                             if (index > 0)
                             {
                                 TransmissionWebClient.X_transmission_session_id = errorStr.Substring(index + 27, 48);
