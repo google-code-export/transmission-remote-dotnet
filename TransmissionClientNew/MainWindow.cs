@@ -1629,6 +1629,7 @@ namespace TransmissionRemoteDotnet
                         decimal progress = Toolbox.ToProgress(peer[ProtocolConstants.FIELD_PROGRESS]);
                         item.SubItems[3].Text = (string)peer[ProtocolConstants.FIELD_FLAGSTR];
                         item.SubItems[5].Text = progress + "%";
+                        item.SubItems[5].Tag = progress;
                         long rateToClient = Toolbox.ToLong(peer[ProtocolConstants.FIELD_RATETOCLIENT]);
                         item.SubItems[6].Text = Toolbox.GetSpeed(rateToClient);
                         item.SubItems[6].Tag = rateToClient;

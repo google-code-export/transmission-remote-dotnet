@@ -168,7 +168,7 @@ namespace TransmissionRemoteDotnet
         {
             JsonObject request = CreateBasicObject(ProtocolConstants.METHOD_TORRENTADD);
             JsonObject arguments = GetArgObject(request);
-            arguments.Put(ProtocolConstants.FIELD_FILENAME, url);
+            arguments.Put(ProtocolConstants.FIELD_FILENAME, System.Web.HttpUtility.UrlEncode(url));
             arguments.Put(ProtocolConstants.FIELD_PAUSED, LocalSettingsSingleton.Instance.StartPaused);
             return request;
         }

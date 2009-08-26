@@ -46,7 +46,7 @@ namespace TransmissionRemoteDotnet
         {
             if (Program.DaemonDescriptor.Revision >= 7744)
             {
-                Program.Form.CreateActionWorker().RunWorkerAsync(Requests.TorrentAddByUrl(this.textBox1.Text));
+                Program.Form.CreateActionWorker().RunWorkerAsync(Requests.TorrentAddByUrl(textBox1.Text));
                 this.Close();
             }
             else
