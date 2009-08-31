@@ -141,14 +141,10 @@ namespace TransmissionRemoteDotnet
                     {
                         try
                         {
-                            Stream stream = ex.Response.GetResponseStream();
-                            StreamReader reader = new StreamReader(stream);
-                            string errorStr = reader.ReadToEnd();
-                            reader.Close();
-                            int index = errorStr.IndexOf("X-Transmission-Session-Id:");
-                            if (index > 0)
+                            string sessionid = ex.Response.Headers["X-Transmission-Session-Id"];
+                            if (sessionid != null && sessionid.Length > 0)
                             {
-                                TransmissionWebClient.X_transmission_session_id = errorStr.Substring(index + 27, 48);
+                                TransmissionWebClient.X_transmission_session_id = sessionid;
                                 return Request(data, false);
                             }
                         }
