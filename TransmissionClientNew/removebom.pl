@@ -3,7 +3,7 @@
 my @file;   # file content
 
 my $filename = $ARGV[0];
-die "only for .cs files" unless ($filename =~ m/.cs$/i);
+#die "only for .cs files" unless ($filename =~ m/.cs$/i);
 
     open( BOMFILE, "<$filename" ) || die "Could not open source file for reading.";
     while (<BOMFILE>) {
