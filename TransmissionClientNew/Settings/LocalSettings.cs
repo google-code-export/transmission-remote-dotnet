@@ -19,6 +19,7 @@ namespace TransmissionRemoteDotnet.Settings
         public bool MinOnClose = false;
         public bool MinToTray = false;
         public bool AutoCheckupdate = false;
+        public bool UpdateToBeta = false;
         public bool DeleteTorrentWhenAdding = false;
         public int DefaultDoubleClickAction = 0;
         public bool StartedBalloon = true;
@@ -80,6 +81,7 @@ namespace TransmissionRemoteDotnet.Settings
             Toolbox.JsonPut(jo, SettingsKey.REGKEY_STARTEDBALLOON, StartedBalloon);
             Toolbox.JsonPut(jo, SettingsKey.REGKEY_DONTSAVEPASSWORDS, DontSavePasswords);
             Toolbox.JsonPut(jo, SettingsKey.REGKEY_AUTOCHECKUPDATE, AutoCheckupdate);
+            Toolbox.JsonPut(jo, SettingsKey.REGKEY_UPDATETOBETA, UpdateToBeta);
             Toolbox.JsonPut(jo, SettingsKey.REGKEY_DELETETORRENT, DeleteTorrentWhenAdding);
             Toolbox.JsonPut(jo, SettingsKey.REGKEY_DEFAULTACTION, DefaultDoubleClickAction);
             Toolbox.JsonPut(jo, SettingsKey.REGKEY_LOCALE, Locale);
@@ -111,6 +113,7 @@ namespace TransmissionRemoteDotnet.Settings
             Toolbox.JsonGet(ref MinToTray, o[SettingsKey.REGKEY_MINTOTRAY]);
             Toolbox.JsonGet(ref StartedBalloon, o[SettingsKey.REGKEY_STARTEDBALLOON]);
             Toolbox.JsonGet(ref AutoCheckupdate, o[SettingsKey.REGKEY_AUTOCHECKUPDATE]);
+            Toolbox.JsonGet(ref UpdateToBeta, o[SettingsKey.REGKEY_UPDATETOBETA]);
             Toolbox.JsonGet(ref DeleteTorrentWhenAdding, o[SettingsKey.REGKEY_DELETETORRENT]);
             Toolbox.JsonGet(ref DefaultDoubleClickAction, o[SettingsKey.REGKEY_DEFAULTACTION]);
             Toolbox.JsonGet(ref StateImagePath, o[SettingsKey.REGKEY_STATEIMAGE]);
@@ -506,6 +509,7 @@ namespace TransmissionRemoteDotnet.Settings
             REGKEY_USESSL = "usessl",
             REGKEY_AUTOCONNECT = "autoConnect",
             REGKEY_AUTOCHECKUPDATE = "autoCheckupdate",
+            REGKEY_UPDATETOBETA = "updateToBeta",
             REGKEY_DELETETORRENT = "deleteTorrentWhenAdding",
             REGKEY_DEFAULTACTION = "defaultDoubleClickAction",
             REGKEY_USER = "user",

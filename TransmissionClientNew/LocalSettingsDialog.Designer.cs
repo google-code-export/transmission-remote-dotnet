@@ -61,6 +61,7 @@ namespace TransmissionRemoteDotnet
             this.PlinkPathButton = new System.Windows.Forms.Button();
             this.PlinkPathTextBox = new System.Windows.Forms.TextBox();
             this.groupBehavior = new System.Windows.Forms.GroupBox();
+            this.UpdateToBetaCheckBox = new System.Windows.Forms.CheckBox();
             this.DontSavePasswordsCheckBox = new System.Windows.Forms.CheckBox();
             this.defaultActionComboBox = new System.Windows.Forms.ComboBox();
             this.defaultActionLabel = new System.Windows.Forms.Label();
@@ -262,6 +263,7 @@ namespace TransmissionRemoteDotnet
             // 
             // groupBehavior
             // 
+            this.groupBehavior.Controls.Add(this.UpdateToBetaCheckBox);
             this.groupBehavior.Controls.Add(this.DontSavePasswordsCheckBox);
             this.groupBehavior.Controls.Add(this.defaultActionComboBox);
             this.groupBehavior.Controls.Add(this.defaultActionLabel);
@@ -275,6 +277,12 @@ namespace TransmissionRemoteDotnet
             resources.ApplyResources(this.groupBehavior, "groupBehavior");
             this.groupBehavior.Name = "groupBehavior";
             this.groupBehavior.TabStop = false;
+            // 
+            // UpdateToBetaCheckBox
+            // 
+            resources.ApplyResources(this.UpdateToBetaCheckBox, "UpdateToBetaCheckBox");
+            this.UpdateToBetaCheckBox.Name = "UpdateToBetaCheckBox";
+            this.UpdateToBetaCheckBox.UseVisualStyleBackColor = true;
             // 
             // DontSavePasswordsCheckBox
             // 
@@ -1004,6 +1012,7 @@ namespace TransmissionRemoteDotnet
         private System.Windows.Forms.ToolStripMenuItem removeServerToolStripMenuItem;
         private System.Windows.Forms.CheckBox StartPausedCheckBox;
         private System.Windows.Forms.CheckBox AutoCheckUpdateCheckBox;
+        private System.Windows.Forms.CheckBox UpdateToBetaCheckBox;
         private System.Windows.Forms.CheckBox DeleteTorrentCheckBox;
         private System.Windows.Forms.ComboBox defaultActionComboBox;
         private System.Windows.Forms.Label defaultActionLabel;
