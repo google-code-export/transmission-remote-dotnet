@@ -88,7 +88,7 @@ namespace TransmissionRemoteDotnet
 
         #region Assembly Attribute Accessors
 
-        public static string AssemblyTitle
+        public string AssemblyTitle
         {
             get
             {
@@ -102,14 +102,6 @@ namespace TransmissionRemoteDotnet
                     }
                 }
                 return System.IO.Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
-            }
-        }
-
-        public static string AssemblyLocation
-        {
-            get
-            {
-                return Assembly.GetExecutingAssembly().Location;
             }
         }
 

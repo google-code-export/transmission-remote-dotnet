@@ -147,7 +147,6 @@ msgstr "Zoektekst:"
 msgid "Local Settings"
 msgstr "Lokale instellingen"
 
-#: LocalSettingsDialog~AddFeedButton.Text
 #: LocalSettingsDialog~AddShareButton.Text
 #, csharp-format
 msgid "Add"
@@ -168,15 +167,10 @@ msgstr "Maak wachtwoord leeg bij het opslaan"
 #: OtherStrings~Cancel
 #: TorrentLoadDialog~CancelBtn.Text
 #: TorrentPropertiesDialog~button2.Text
-#: UriPromptWindow~CancelBtn.Text
+#: UriPromptWindow~button2.Text
 #, csharp-format
 msgid "Cancel"
 msgstr "Annuleren"
-
-#: LocalSettingsDialog~ColorTrayIconCheckBox.Text
-#, csharp-format
-msgid "Color tray icon"
-msgstr ""
 
 #: LocalSettingsDialog~DeleteTorrentCheckBox.Text
 #, csharp-format
@@ -208,16 +202,6 @@ msgstr "Ingeschakeld"
 msgid "Disabled"
 msgstr "Uitgeschakeld"
 
-#: LocalSettingsDialog~FeedNameLabel.Text
-#, csharp-format
-msgid "Feed name:"
-msgstr ""
-
-#: LocalSettingsDialog~FeedUrlLabel.Text
-#, csharp-format
-msgid "Feed url:"
-msgstr ""
-
 #: LocalSettingsDialog~MinToTrayCheckBox.Text
 #, csharp-format
 msgid "Enable tray icon"
@@ -238,7 +222,6 @@ msgstr "Bladeren"
 msgid "Authenticate"
 msgstr "Authenticatie"
 
-#: LocalSettingsDialog~RemoveFeedButton.Text
 #: LocalSettingsDialog~RemoveShareButton.Text
 #: MainWindow~removeToolStripMenuItem.Text
 #: OtherStrings~Remove
@@ -277,29 +260,22 @@ msgstr ""
 msgid "Secure (SSL)"
 msgstr "Beveiligde verbinding (SSL)"
 
-#: LocalSettingsDialog~addServerButton.Text
 #: LocalSettingsDialog~addServerToolStripMenuItem.Text
 #, csharp-format
 msgid "Add Server"
 msgstr "Server toevoegen"
-
-#: LocalSettingsDialog~columnFeedName.Text
-#: LocalSettingsDialog~columnName.Text
-#: MainWindow~columnHeader6.Text
-#, csharp-format
-msgid "Name"
-msgstr "Naam"
-
-#: LocalSettingsDialog~columnFeedUrl.Text
-#, csharp-format
-msgid "Url"
-msgstr ""
 
 #: LocalSettingsDialog~columnHost.Text
 #: OtherStrings~Host
 #, csharp-format
 msgid "Host"
 msgstr ""
+
+#: LocalSettingsDialog~columnName.Text
+#: MainWindow~columnHeader6.Text
+#, csharp-format
+msgid "Name"
+msgstr "Naam"
 
 #: LocalSettingsDialog~columnPort.Text
 #, csharp-format
@@ -346,14 +322,9 @@ msgstr "Nieuwe map:"
 msgid "Current profile"
 msgstr "Huidige profiel"
 
-#: LocalSettingsDialog~groupFeed.Text
-#, csharp-format
-msgid "Feed"
-msgstr ""
-
 #: LocalSettingsDialog~groupPlinkPath.Text
 #, csharp-format
-msgid "plink.exe or ssh.exe:"
+msgid "plink.exe:"
 msgstr ""
 
 #: LocalSettingsDialog~label1.Text
@@ -447,7 +418,6 @@ msgstr "Notificatie bij toevoegen"
 msgid "Notification on completion"
 msgstr "Notificatie bij afronden"
 
-#: LocalSettingsDialog~removeServerButton.Text
 #: LocalSettingsDialog~removeServerToolStripMenuItem.Text
 #, csharp-format
 msgid "Remove Server"
@@ -488,11 +458,6 @@ msgstr "Overig"
 msgid "Samba"
 msgstr ""
 
-#: LocalSettingsDialog~tabRssSettings.Text
-#, csharp-format
-msgid "Rss Feeds"
-msgstr ""
-
 #: LocalSettingsDialog~tabServersSettings.Text
 #, csharp-format
 msgid "Servers Settings"
@@ -513,11 +478,6 @@ msgstr ""
 #, csharp-format
 msgid "Alt Speed"
 msgstr "Alt Snelheid"
-
-#: MainWindow~RssButton.Text
-#, csharp-format
-msgid "Rss"
-msgstr ""
 
 #: MainWindow~aboutToolStripMenuItem.Text
 #, csharp-format
@@ -1254,11 +1214,6 @@ msgstr "Fout"
 msgid "Failed request"
 msgstr "Aantal pogingen"
 
-#: OtherStrings~FeedExists
-#, csharp-format
-msgid "Feed exists"
-msgstr ""
-
 #: OtherStrings~GeoipInitError
 #, csharp-format
 msgid "GeoIP init error ({0})"
@@ -1313,11 +1268,6 @@ msgstr "Info object naar klembord"
 #, csharp-format
 msgid "Input accepted"
 msgstr "Input ge-accepteerd"
-
-#: OtherStrings~InvalidRPCLocation
-#, csharp-format
-msgid "Invalid RPC location"
-msgstr ""
 
 #: OtherStrings~Kilobyte
 #, csharp-format
@@ -1558,11 +1508,6 @@ msgstr "Het openen is mislukt"
 #, csharp-format
 msgid "Unable to parse the server response"
 msgstr "Valideren van de server response is mislukt"
-
-#: OtherStrings~UnixPathExists
-#, csharp-format
-msgid "Unix path exists"
-msgstr ""
 
 #: OtherStrings~Unknown
 #, csharp-format
@@ -1833,7 +1778,7 @@ msgstr "Naam:"
 
 #: TorrentLoadDialog~OkButton.Text
 #: TorrentPropertiesDialog~button1.Text
-#: UriPromptWindow~OkButton.Text
+#: UriPromptWindow~button1.Text
 #, csharp-format
 msgid "OK"
 msgstr "Bevestigen"
@@ -1928,12 +1873,7 @@ msgstr "Limiteer upload snelheid"
 msgid "Upload by URL"
 msgstr "Geupload door URL"
 
-#: UriPromptWindow~UseTorrentLoadDialogCheckBox.Text
-#, csharp-format
-msgid "Set torrent options before upload"
-msgstr ""
-
-#: UriPromptWindow~toolStripStatusLabel.Text
+#: UriPromptWindow~toolStripStatusLabel1.Text
 #, csharp-format
 msgid "Waiting for URL..."
 msgstr "Wacht op URL..."

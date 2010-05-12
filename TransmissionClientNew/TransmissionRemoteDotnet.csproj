@@ -42,7 +42,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -52,7 +51,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoStdLib>false</NoStdLib>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Jayrock, Version=0.9.8316.0, Culture=neutral">
@@ -76,7 +74,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comparers\ListViewItemDoubleComparer.cs" />
-    <Compile Include="Comparers\RssItemsListViewColumnSorter.cs" />
     <Compile Include="CustomControls\2DPushGraph.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -108,28 +105,9 @@
     <Compile Include="CustomControls\FileBrowseTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomControls\PaintDotNet\Memory.cs" />
-    <Compile Include="CustomControls\PaintDotNet\NativeConstants.cs" />
-    <Compile Include="CustomControls\PaintDotNet\NativeDelegates.cs" />
-    <Compile Include="CustomControls\PaintDotNet\NativeErrors.cs" />
-    <Compile Include="CustomControls\PaintDotNet\NativeInterfaces.cs" />
-    <Compile Include="CustomControls\PaintDotNet\NativeMethods.cs" />
-    <Compile Include="CustomControls\PaintDotNet\NativeStructs.cs" />
-    <Compile Include="CustomControls\PaintDotNet\OS.cs" />
-    <Compile Include="CustomControls\PaintDotNet\OSType.cs" />
-    <Compile Include="CustomControls\PaintDotNet\Processor.cs" />
-    <Compile Include="CustomControls\PaintDotNet\ProcessorArchitecture.cs" />
-    <Compile Include="CustomControls\PaintDotNet\ProcessorFeature.cs" />
-    <Compile Include="CustomControls\PaintDotNet\SafeNativeMethods.cs" />
-    <Compile Include="CustomControls\PaintDotNet\Set.cs" />
-    <Compile Include="CustomControls\PaintDotNet\Set`1.cs" />
-    <Compile Include="CustomControls\PaintDotNet\Timing.cs" />
-    <Compile Include="CustomControls\PaintDotNet\Tracing.cs" />
-    <Compile Include="CustomControls\PaintDotNet\UI.cs" />
     <Compile Include="CustomControls\USButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CustomControls\Util.cs" />
     <Compile Include="ErrorLogWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,7 +178,6 @@
     <Compile Include="CustomControls\PiecesGraph.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PersistentCookies.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="PromiscuousCertificatePolicy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -626,9 +603,6 @@
       <DependentUpon>RemoteSettingsDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="RssForm.resx">
-      <DependentUpon>RssForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="StatsDialog.cs-CZ.resx">
       <DependentUpon>StatsDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -875,12 +849,6 @@
     <Compile Include="CustomControls\SelectableLabel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="RssForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RssForm.Designer.cs">
-      <DependentUpon>RssForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Settings\FileLocalSettings.cs" />
     <Compile Include="Settings\ILocalSettingsStore.cs" />
     <Compile Include="Settings\RegistryJsonLocalSettings.cs" />
@@ -921,7 +889,6 @@
     <Compile Include="CustomControls\UICultureChanger.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UnhandledException.cs" />
     <Compile Include="UriPromptWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1002,11 +969,6 @@
     <None Include="Resources\xmag.png" />
     <None Include="Resources\welcomefinish.png" />
     <None Include="Resources\help14.png" />
-    <None Include="Resources\feed-icon-28x28.png" />
-    <None Include="Resources\blue.ico" />
-    <None Include="Resources\yellow.ico" />
-    <None Include="Resources\red.ico" />
-    <None Include="Resources\green.ico" />
     <Content Include="transmission_large.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -1040,12 +1002,6 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Raccoom.Xml\Raccoom.Xml.csproj">
-      <Project>{5CAAE842-11D7-42F8-9C81-096252F57C76}</Project>
-      <Name>Raccoom.Xml</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

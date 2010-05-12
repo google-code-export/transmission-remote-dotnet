@@ -385,15 +385,6 @@ namespace TransmissionRemoteDotnet {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Feed exists.
-        /// </summary>
-        internal static string FeedExists {
-            get {
-                return ResourceManager.GetString("FeedExists", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to GeoIP init error ({0}).
         /// </summary>
         internal static string GeoipInitError {
@@ -997,15 +988,6 @@ namespace TransmissionRemoteDotnet {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TB.
-        /// </summary>
-        internal static string TerabyteShort {
-            get {
-                return ResourceManager.GetString("TerabyteShort", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to This torrent is now complete.
         /// </summary>
         internal static string TheTorrentHasFinishedDownloading {
@@ -1033,24 +1015,6 @@ namespace TransmissionRemoteDotnet {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} ({1} done) ({2} valid).
-        /// </summary>
-        internal static string TotalDoneValidSize {
-            get {
-                return ResourceManager.GetString("TotalDoneValidSize", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} ({1} done) ({2} valid) ({3} total).
-        /// </summary>
-        internal static string TotalDoneValidTotalSize {
-            get {
-                return ResourceManager.GetString("TotalDoneValidTotalSize", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Unable to open.
         /// </summary>
         internal static string UnableToOpen {
@@ -1065,15 +1029,6 @@ namespace TransmissionRemoteDotnet {
         internal static string UnableToParse {
             get {
                 return ResourceManager.GetString("UnableToParse", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Byte|Kilobyte|Megabyte|Gigabyte|Terabyte.
-        /// </summary>
-        internal static string UnitFactors {
-            get {
-                return ResourceManager.GetString("UnitFactors", resourceCulture);
             }
         }
         

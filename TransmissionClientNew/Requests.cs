@@ -82,7 +82,7 @@ namespace TransmissionRemoteDotnet
         {
             JsonObject request = CreateBasicObject(ProtocolConstants.METHOD_TORRENTREMOVE);
             JsonObject arguments = GetArgObject(request);
-            if (delete && Program.DaemonDescriptor.Version >= 1.5)
+            if (delete && Program.DaemonDescriptor.Revision >= 7331)
             {
                 arguments.Put(ProtocolConstants.FIELD_DELETELOCALDATA, true);
             }
@@ -231,7 +231,6 @@ namespace TransmissionRemoteDotnet
                 ProtocolConstants.FIELD_RATEUPLOAD,
                 ProtocolConstants.FIELD_SEEDERS,
                 ProtocolConstants.FIELD_TOTALSIZE,
-                ProtocolConstants.FIELD_DOWNLOADEDEVER,
                 ProtocolConstants.FIELD_UPLOADEDEVER,
                 ProtocolConstants.FIELD_STATUS,
                 ProtocolConstants.FIELD_LEFTUNTILDONE,

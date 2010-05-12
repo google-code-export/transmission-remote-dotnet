@@ -28,7 +28,6 @@ namespace TransmissionRemoteDotnet
     public class TransmissionWebClient : WebClient
     {
         private bool authenticate;
-        private bool rpc;
         private static string x_transmission_session_id;
 
         public static string X_transmission_session_id
@@ -37,9 +36,8 @@ namespace TransmissionRemoteDotnet
             set { x_transmission_session_id = value; }
         }
 
-        public TransmissionWebClient(bool rpc, bool authenticate)
+        public TransmissionWebClient(bool authenticate)
         {
-            this.rpc = rpc;
             this.authenticate = authenticate;
         }
 
@@ -68,7 +66,7 @@ namespace TransmissionRemoteDotnet
             {
                 if (request.GetType() == typeof(HttpWebRequest))
                 {
-                    SetupWebRequest((HttpWebRequest)request, rpc, authenticate);
+                    SetupWebRequest((HttpWebRequest)request, authenticate);
                 }
             }
             catch (PasswordEmptyException)
@@ -78,18 +76,14 @@ namespace TransmissionRemoteDotnet
             return request;
         }
 
-        public static void SetupWebRequest(HttpWebRequest request, bool rpc, bool authenticate)
+        public static void SetupWebRequest(HttpWebRequest request, bool authenticate)
         {
             request.KeepAlive = false;
             request.Headers.Add(HttpRequestHeader.AcceptEncoding, "gzip, deflate");
             request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
-            request.UserAgent = "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.10) Gecko/2009042523 Ubuntu/9.04 (jaunty) Firefox/3.0.10";
-            if (x_transmission_session_id != null && authenticate && rpc)
+            request.UserAgent = "Mozilla/5.0 (X11; U; Linux i686; en-GB; rv:1.9.0.10) Gecko/2009042523 Ubuntu/9.04 (jaunty) Firefox/3.0.10";
+            if (x_transmission_session_id != null && authenticate)
                 request.Headers["X-Transmission-Session-Id"] = x_transmission_session_id;
-            if (!rpc)
-            {
-                request.CookieContainer = PersistentCookies.GetCookieContainerForUrl(request.RequestUri);
-            }
             Settings.TransmissionServer settings = Program.Settings.Current;
             if (settings.AuthEnabled && authenticate)
             {

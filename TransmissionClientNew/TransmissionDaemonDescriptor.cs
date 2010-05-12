@@ -24,7 +24,7 @@ namespace TransmissionRemoteDotnet
 {
     class TransmissionDaemonDescriptor
     {
-        private double version = 0.0;
+        private double version = 1.91;
 
         public double Version
         {

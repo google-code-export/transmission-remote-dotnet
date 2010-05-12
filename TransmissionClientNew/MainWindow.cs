@@ -36,7 +36,6 @@ using System.Globalization;
 using System.Threading;
 using Jayrock.Json.Conversion;
 using System.Collections;
-using Etier.IconHelper;
 
 namespace TransmissionRemoteDotnet
 {
@@ -72,7 +71,7 @@ namespace TransmissionRemoteDotnet
         private WebClient refreshWebClient = new WebClient();
         private WebClient filesWebClient = new WebClient();
         private static FindDialog FindDialog;
-        private List<Bitmap> defaulttoolbarimages, defaultstateimages, defaultinfopanelimages, defaulttrayimages;
+        private List<Bitmap> defaulttoolbarimages, defaultstateimages, defaultinfopanelimages;
 
         public MainWindow()
         {
@@ -108,22 +107,6 @@ namespace TransmissionRemoteDotnet
             defaultstateimages.Add(global::TransmissionRemoteDotnet.Properties.Resources.incomplete16);
             stateListBoxImageList.Images.AddRange(defaultstateimages.ToArray());
             stateListBoxImageList.Images.Add(tabControlImageList.Images[1]);
-            List<ToolStripBitmap> initialtrayicons = new List<ToolStripBitmap>()
-            {
-                new ToolStripBitmap() { Name = "transmission", Image = global::TransmissionRemoteDotnet.Properties.Resources.icon_transmission.ToBitmap()},
-                new ToolStripBitmap() { Name = "notransfer", Image = global::TransmissionRemoteDotnet.Properties.Resources.icon_blue.ToBitmap()},
-                new ToolStripBitmap() { Name = "seed", Image = global::TransmissionRemoteDotnet.Properties.Resources.icon_red.ToBitmap()},
-                new ToolStripBitmap() { Name = "downloadseed", Image = global::TransmissionRemoteDotnet.Properties.Resources.icon_yellow.ToBitmap()},
-                new ToolStripBitmap() { Name = "download", Image = global::TransmissionRemoteDotnet.Properties.Resources.icon_green.ToBitmap()},
-            };
-            defaulttrayimages = new List<Bitmap>();
-            foreach (ToolStripBitmap tsb in initialtrayicons)
-            {
-                defaulttrayimages.Add(tsb.Image);
-                trayIconImageList.Images.Add(tsb.Image);
-                int idx = defaulttrayimages.IndexOf(tsb.Image);
-                trayIconImageList.Images.SetKeyName(idx, tsb.Name);
-            }
             LocalSettings settings = Program.Settings;
             /* 
              * ToolStrips havent got ImageList field in design time.
@@ -154,7 +137,6 @@ namespace TransmissionRemoteDotnet
                 new ToolStripBitmap() { Name = "netconfigure", Image = global::TransmissionRemoteDotnet.Properties.Resources.netconfigure, Controls = new ToolStripItem[]{remoteConfigureButton, remoteSettingsToolStripMenuItem} },
                 new ToolStripBitmap() { Name = "hwinfo", Image = global::TransmissionRemoteDotnet.Properties.Resources.hwinfo, Controls = new ToolStripItem[]{sessionStatsButton, statsToolStripMenuItem} },
                 new ToolStripBitmap() { Name = "find", Image = global::TransmissionRemoteDotnet.Properties.Resources.find, Controls = new ToolStripItem[]{findToolStripMenuItem} },
-                new ToolStripBitmap() { Name = "rss", Image = global::TransmissionRemoteDotnet.Properties.Resources.feed_icon, Controls = new ToolStripItem[]{RssButton} },
             };
             defaulttoolbarimages = new List<Bitmap>();
             foreach (ToolStripBitmap tsb in initialimages)
@@ -203,7 +185,6 @@ namespace TransmissionRemoteDotnet
             Toolbox.LoadSkinToImagelist(Program.Settings.ToolbarImagePath, 16, 32, toolStripImageList, defaulttoolbarimages);
             Toolbox.LoadSkinToImagelist(Program.Settings.StateImagePath, 16, 16, stateListBoxImageList, defaultstateimages);
             Toolbox.LoadSkinToImagelist(Program.Settings.InfopanelImagePath, 16, 16, tabControlImageList, defaultinfopanelimages);
-            Toolbox.LoadSkinToImagelist(Program.Settings.TrayImagePath, 48, 48, trayIconImageList, defaulttrayimages);
             stateListBoxImageList.Images.Add(tabControlImageList.Images[1]);
             toolStrip.ImageList = menuStrip.ImageList =
                 fileToolStripMenuItem.DropDown.ImageList = optionsToolStripMenuItem.DropDown.ImageList =
@@ -432,7 +413,6 @@ namespace TransmissionRemoteDotnet
                 if (categoriesPanelToolStripMenuItem.Checked)
                     mainVerticalSplitContainer.Panel1Collapsed = false;
                 FilterByStateOrTracker();
-                UpdateTrayIcon();
             }
         }
 
@@ -541,15 +521,8 @@ namespace TransmissionRemoteDotnet
             CreateTrayContextMenu();
             if (connected)
             {
-                JsonObject session = (JsonObject)Program.DaemonDescriptor.SessionData;
                 CreateTorrentSelectionContextMenu();
                 this.toolStripStatusLabel.Text = OtherStrings.ConnectedGettingInfo;
-                if (session.Contains("version"))
-                {
-                    this.toolStripVersionLabel.Visible = true;
-                    this.toolStripVersionLabel.Text = (string)session["version"];
-                    this.toolStripStatusLabel.Width = 0;
-                }
                 lvwColumnSorter.SetupColumn(Program.DaemonDescriptor.RpcVersion);
                 this.Text = MainWindow.DEFAULT_WINDOW_TITLE + " - " + Program.Settings.Current.Host;
                 speedGraph.MaxPeekMagnitude = 100;
@@ -571,7 +544,6 @@ namespace TransmissionRemoteDotnet
                 OneOrMoreTorrentsSelected(false);
                 OneTorrentsSelected(false, null);
                 this.toolStripStatusLabel.Text = OtherStrings.Disconnected;
-                this.toolStripVersionLabel.Visible = false;
                 this.Text = MainWindow.DEFAULT_WINDOW_TITLE;
                 speedGraph.RemoveLine("Download");
                 speedGraph.RemoveLine("Upload");
@@ -589,7 +561,6 @@ namespace TransmissionRemoteDotnet
                         }
                     }
                 }
-                UpdateNotifyIcon("transmission");
             }
             connectButton.Visible = connectButton.Enabled = connectToolStripMenuItem.Enabled
                 = mainVerticalSplitContainer.Panel1Collapsed = !connected;
@@ -627,54 +598,6 @@ namespace TransmissionRemoteDotnet
             openNetworkShareButton.Visible = openNetworkShareToolStripMenuItem.Enabled = connected && settings.Current.SambaShareMappings.Count > 0;
             if (openNetworkShareMenuItem != null)
                 openNetworkShareMenuItem.Visible = openNetworkShareButton.Visible;
-        }
-
-        public void ShowTrayTip(int timeout, string tipTitle, string tipText, ToolTipIcon tipIcon)
-        {
-            this.notifyIcon.ShowBalloonTip(timeout, tipTitle, tipText, tipIcon);
-        }
-
-        private string LastTrayIcon = "";
-        private void UpdateNotifyIcon(string name)
-        {
-            if (!name.Equals(LastTrayIcon))
-            {
-                IntPtr Hicon = (trayIconImageList.Images[name] as Bitmap).GetHicon();
-                notifyIcon.Icon = (Icon)Icon.FromHandle(Hicon).Clone();
-                User32.DestroyIcon(Hicon);
-                LastTrayIcon = name;
-            }
-        }
-
-        private void UpdateTrayIcon()
-        {
-            int seedcount = 0, downloadcount = 0;
-            lock (Program.TorrentIndex)
-            {
-                foreach (KeyValuePair<string, Torrent> pair in Program.TorrentIndex)
-                {
-                    if (IfTorrentStatus(pair.Value, ProtocolConstants.STATUS_DOWNLOADING))
-                        downloadcount++;
-                    if (IfTorrentStatus(pair.Value, ProtocolConstants.STATUS_SEEDING))
-                        seedcount++;
-                }
-            }
-
-            if (Program.Settings.ColorTray)
-            {
-                if (seedcount == 0 && downloadcount == 0)
-                    UpdateNotifyIcon("notransfer");
-                else if (seedcount > 0 && downloadcount > 0)
-                    UpdateNotifyIcon("downloadseed");
-                else if (seedcount > 0)
-                    UpdateNotifyIcon("seed");
-                else if (downloadcount > 0)
-                    UpdateNotifyIcon("download");
-                else
-                    UpdateNotifyIcon("transmission");
-            }
-            else
-                UpdateNotifyIcon("transmission");
         }
 
         public void TorrentsToClipboardHandler(object sender, EventArgs e)
@@ -715,6 +638,8 @@ namespace TransmissionRemoteDotnet
                     if (Toolbox.ScreenExists(p))
                         this.Location = p;
                 }
+                if (settings.Misc.ContainsKey(CONFKEY_SPLITTERDISTANCE))
+                    this.torrentAndTabsSplitContainer.SplitterDistance = (int)settings.GetObject(CONFKEY_SPLITTERDISTANCE);
                 this.showDetailsPanelToolStripMenuItem.Checked = !(this.torrentAndTabsSplitContainer.Panel2Collapsed = !settings.Misc.ContainsKey(CONFKEY_MAINWINDOW_DETAILSPANEL_COLLAPSED) || (int)settings.GetObject(CONFKEY_MAINWINDOW_DETAILSPANEL_COLLAPSED) == 1);
                 if (settings.Misc.ContainsKey(CONFKEY_MAINWINDOW_STATE))
                 {
@@ -815,7 +740,7 @@ namespace TransmissionRemoteDotnet
             {
                 if (Program.UploadArgs != null && Program.UploadArgs.Length > 0)
                 {
-                    ShowMustBeConnectedDialog(Program.UploadArgs, Program.Settings.UploadPrompt);
+                    ShowMustBeConnectedDialog(Program.UploadArgs);
                 }
             }
         }
@@ -824,8 +749,8 @@ namespace TransmissionRemoteDotnet
         {
             ToolStripMenuItem englishItem = new ToolStripMenuItem("English");
             englishItem.Click += new EventHandler(this.ChangeUICulture);
-            englishItem.Tag = new CultureInfo("en-US");
-            englishItem.Checked = Program.Settings.Locale.Equals("en-US");
+            englishItem.Tag = new CultureInfo("en-GB");
+            englishItem.Checked = Program.Settings.Locale.Equals("en-GB");
             languageToolStripMenuItem.DropDownItems.Add(englishItem);
             languageToolStripMenuItem.DropDownItems.Add(new ToolStripSeparator());
             DirectoryInfo di = new DirectoryInfo(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
@@ -939,20 +864,19 @@ namespace TransmissionRemoteDotnet
         {
             if (Program.Connected)
             {
-                Upload((string[])e.Data.GetData(DataFormats.FileDrop), Program.Settings.UploadPrompt);
+                Upload((string[])e.Data.GetData(DataFormats.FileDrop));
             }
             else
             {
-                ShowMustBeConnectedDialog((string[])e.Data.GetData(DataFormats.FileDrop), Program.Settings.UploadPrompt);
+                ShowMustBeConnectedDialog((string[])e.Data.GetData(DataFormats.FileDrop));
             }
         }
 
-        public void ShowMustBeConnectedDialog(string[] args, bool uploadPrompt)
+        public void ShowMustBeConnectedDialog(string[] args)
         {
             if (MessageBox.Show(OtherStrings.MustBeConnected, OtherStrings.NotConnected, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Program.UploadArgs = args;
-                Program.UploadPrompt = uploadPrompt;
                 Connect();
             }
             else
@@ -1106,19 +1030,15 @@ namespace TransmissionRemoteDotnet
         private void localConfigureButton_Click(object sender, EventArgs e)
         {
             LocalSettingsDialog ls = new LocalSettingsDialog();
-            ls.SetImageNumbers(defaulttoolbarimages.Count, defaultstateimages.Count, defaultinfopanelimages.Count, defaulttrayimages.Count);
+            ls.SetImageNumbers(defaulttoolbarimages.Count, defaultstateimages.Count, defaultinfopanelimages.Count);
             if (ls.ShowDialog() == DialogResult.OK)
             {
-                notifyIcon.Visible = Program.Settings.MinToTray;
                 connectButton.DropDownItems.Clear();
                 connectToolStripMenuItem.DropDownItems.Clear();
                 CreateProfileMenu();
-                SetRemoteCmdButtonVisible(Program.Connected);
                 refreshTimer.Interval = Program.Settings.Current.RefreshRate * 1000;
                 filesTimer.Interval = Program.Settings.Current.RefreshRate * 1000 * LocalSettingsSingleton.FILES_REFRESH_MULTIPLICANT;
-                Program.UploadPrompt = Program.Settings.UploadPrompt;
                 LoadSkins();
-                UpdateTrayIcon();
             }
         }
 
@@ -1136,8 +1056,9 @@ namespace TransmissionRemoteDotnet
                 = recheckToolStripMenuItem.Enabled = propertiesToolStripMenuItem.Enabled
                 = removeDeleteToolStripMenuItem.Enabled = removeToolStripMenuItem.Enabled
                 = reannounceButton.Enabled = reannounceToolStripMenuItem.Enabled
-                = moveTorrentDataToolStripMenuItem.Enabled = cSVInfoToClipboardToolStripMenuItem.Enabled = oneOrMore;
-            moveTorrentDataToolStripMenuItem.Enabled = oneOrMore && Program.DaemonDescriptor.Version >= 1.7;
+                = moveTorrentDataToolStripMenuItem.Enabled = openNetworkShareToolStripMenuItem.Enabled
+                = cSVInfoToClipboardToolStripMenuItem.Enabled = oneOrMore;
+            moveTorrentDataToolStripMenuItem.Enabled = oneOrMore && Program.DaemonDescriptor.Revision >= 8385;
             pauseTorrentButton.ImageIndex = oneOrMore && torrentListView.SelectedItems.Count != torrentListView.Items.Count ? toolStripImageList.Images.IndexOfKey("player_pause") : toolStripImageList.Images.IndexOfKey("player_pause_all");
             startTorrentButton.ImageIndex = oneOrMore && torrentListView.SelectedItems.Count != torrentListView.Items.Count ? toolStripImageList.Images.IndexOfKey("player_play") : toolStripImageList.Images.IndexOfKey("player_play_all");
         }
@@ -1193,7 +1114,7 @@ namespace TransmissionRemoteDotnet
                     = leechersLabel.Text = ratioLabel.Text = createdAtLabel.Text
                     = createdByLabel.Text = errorLabel.Text = percentageLabel.Text
                     = hashLabel.Text = piecesInfoLabel.Text = locationLabel.Text
-                    = generalTorrentNameGroupBox.Text = totalSizeLabel.Text = "";
+                    = generalTorrentNameGroupBox.Text = "";
                 trackersTorrentNameGroupBox.Text
                    = peersTorrentNameGroupBox.Text = filesTorrentNameGroupBox.Text
                    = "N/A";
@@ -1207,10 +1128,9 @@ namespace TransmissionRemoteDotnet
                     = downloadProgressLabel.Enabled = refreshElapsedTimer.Enabled
                     = filesTimer.Enabled = downloadProgressLabel.Enabled
                     = generalTorrentNameGroupBox.Enabled
-                    = remoteCmdButton.Enabled = one;
-            openNetworkShareButton.Enabled = openNetworkShareToolStripMenuItem.Enabled = one && t.HaveTotal > 0 && t.SambaLocation != null;
-            if (openNetworkShareMenuItem != null)
-                openNetworkShareMenuItem.Enabled = openNetworkShareButton.Enabled;
+                    = remoteCmdButton.Enabled
+                    = openNetworkShareButton.Enabled = one;
+            openNetworkShareButton.Enabled = openNetworkShareToolStripMenuItem.Enabled = one && t.SambaLocation != null;
         }
 
         private void torrentListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -1295,11 +1215,10 @@ namespace TransmissionRemoteDotnet
             speedGraph.UpdateGraph();
         }
 
-        public void UpdateStatus(string text, bool updatenotify)
+        public void UpdateStatus(string text)
         {
             toolStripStatusLabel.Text = text;
-            if (updatenotify)
-                notifyIcon.Text = text.Length < 64 ? text : text.Substring(0, 63);
+            notifyIcon.Text = text.Length < 64 ? text : text.Substring(0, 63);
         }
 
         private void addTorrentButton_Click(object sender, EventArgs e)
@@ -1312,12 +1231,12 @@ namespace TransmissionRemoteDotnet
                 openFile.Multiselect = true;
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
-                    Upload(openFile.FileNames, Program.Settings.UploadPrompt);
+                    Upload(openFile.FileNames);
                 }
             }
         }
 
-        public void Upload(string[] args, bool uploadprompt)
+        public void Upload(string[] args)
         {
             foreach (string s in args)
             {
@@ -1325,21 +1244,14 @@ namespace TransmissionRemoteDotnet
                     continue;
                 if (File.Exists(s))
                 {
-                    if (uploadprompt)
+                    if (Program.Settings.UploadPrompt)
                     {
                         TorrentLoadDialog dialog = new TorrentLoadDialog(s);
                         dialog.ShowDialog();
                     }
                     else
                     {
-                        try
-                        {
-                            Program.Form.SetupAction(CommandFactory.RequestAsync(Requests.TorrentAddByFile(s, false)));
-                        }
-                        catch (Exception e)
-                        {
-                            MessageBox.Show(e.Message, OtherStrings.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        Program.Form.SetupAction(CommandFactory.RequestAsync(Requests.TorrentAddByFile(s, false)));
                     }
                 }
                 else
@@ -1749,7 +1661,7 @@ namespace TransmissionRemoteDotnet
                 trackersListView.EndUpdate();
             }
             remainingLabel.Text = t.IsFinished ? (t.DoneDate != null ? t.DoneDate.ToString() : "?") : t.LongEta;
-            label4.Text = (t.IsFinished ? torrentCompletedAtCol.Text : torrentEtaCol.Text) + ":";
+            label4.Text = (t.IsFinished ? columnHeader19.Text : columnHeader14.Text) + ":";
             uploadedLabel.Text = t.UploadedString;
             uploadLimitLabel.Text = t.SpeedLimitUpEnabled ? Toolbox.KbpsString(t.SpeedLimitUp) : "∞";
             uploadRateLabel.Text = t.UploadRateString;
@@ -1766,16 +1678,14 @@ namespace TransmissionRemoteDotnet
                 piecesInfoLabel.Text = String.Format("{0} x {1}", t.PieceCount, Toolbox.GetFileSize(t.PieceSize));
             locationLabel.Text = t.DownloadDir + "/" + t.TorrentName;
             percentageLabel.Text = t.Percentage.ToString() + "%";
-            if (t.TotalSize == t.SizeWhenDone)
+            if (t.IsFinished)
             {
-                totalSizeLabel.Text = String.Format(OtherStrings.TotalDoneValidSize, Toolbox.GetFileSize(t.SizeWhenDone), t.HaveTotalString, Toolbox.GetFileSize(t.HaveValid));
+                downloadedLabel.Text = t.HaveTotalString;
             }
             else
             {
-                totalSizeLabel.Text = String.Format(OtherStrings.TotalDoneValidTotalSize, Toolbox.GetFileSize(t.SizeWhenDone), t.HaveTotalString, Toolbox.GetFileSize(t.HaveValid), Toolbox.GetFileSize(t.TotalSize));
+                downloadedLabel.Text = String.Format(OtherStrings.DownloadedValid, t.HaveTotalString, Toolbox.GetFileSize(t.HaveValid));
             }
-            //totalSizeLabel.Text = String.Format(OtherStrings.DownloadedValid, t.HaveTotalString, Toolbox.GetFileSize(t.HaveValid));
-            downloadedLabel.Text = Toolbox.GetFileSize(t.Downloaded);
             downloadSpeedLabel.Text = t.DownloadRateString;
             downloadLimitLabel.Text = t.SpeedLimitDownEnabled ? Toolbox.KbpsString(t.SpeedLimitDown) : "∞";
             statusLabel.Text = t.Status;
@@ -1983,12 +1893,6 @@ namespace TransmissionRemoteDotnet
             ClassSingleton<StatsDialog>.Instance.BringToFront();
         }
 
-        private void RssButton_Click(object sender, EventArgs e)
-        {
-            ClassSingleton<RssForm>.Instance.Show();
-            ClassSingleton<RssForm>.Instance.BringToFront();
-        }
-
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             LocalSettings settings = Program.Settings;
@@ -2019,26 +1923,16 @@ namespace TransmissionRemoteDotnet
                     settings.SetObject(CONFKEY_MAINWINDOW_HEIGHT, this.RestoreBounds.Height);
                     settings.SetObject(CONFKEY_MAINWINDOW_WIDTH, this.RestoreBounds.Width);
                 }
+                if (this.WindowState != FormWindowState.Maximized)
+                {
+                    settings.SetObject(CONFKEY_SPLITTERDISTANCE, this.torrentAndTabsSplitContainer.SplitterDistance);
+                }
             }
             SaveListViewProperties(torrentListView);
             SaveListViewProperties(filesListView);
             SaveListViewProperties(peersListView);
             settings.SetObject(CONFKEY_MAINWINDOW_DETAILSPANEL_COLLAPSED, this.torrentAndTabsSplitContainer.Panel2Collapsed ? 1 : 0);
             settings.Commit();
-        }
-
-        private void MainWindow_VisibleChanged(object sender, EventArgs e)
-        {
-            if (this.Visible)
-            {
-                refreshTimer.Interval = Program.Settings.Current.RefreshRate * 1000;
-                filesTimer.Interval = Program.Settings.Current.RefreshRate * 1000 * LocalSettingsSingleton.FILES_REFRESH_MULTIPLICANT;
-            }
-            else
-            {
-                refreshTimer.Interval = Program.Settings.Current.RefreshRateTray * 1000;
-                filesTimer.Interval = Program.Settings.Current.RefreshRateTray * 1000 * LocalSettingsSingleton.FILES_REFRESH_MULTIPLICANT;
-            }
         }
 
         private void checkForNewVersionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2088,7 +1982,7 @@ namespace TransmissionRemoteDotnet
 
         private void checkVersionWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            TransmissionWebClient client = new TransmissionWebClient(false, false);
+            TransmissionWebClient client = new TransmissionWebClient(false);
             string response = client.DownloadString(Program.Settings.UpdateToBeta ? LATEST_VERSION_BETA : LATEST_VERSION);
             if (!response.StartsWith("#LATESTVERSION#"))
                 throw new FormatException("Response didn't contain the identification prefix.");
@@ -2184,9 +2078,9 @@ namespace TransmissionRemoteDotnet
             /* This crashes 1.6x */
             if (Program.Connected && (Program.DaemonDescriptor.Version < 1.60 || Program.DaemonDescriptor.Version >= 1.7))
             {
-                if (openTorrentFileDialog.ShowDialog() == DialogResult.OK)
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    foreach (string fileName in openTorrentFileDialog.FileNames)
+                    foreach (string fileName in openFileDialog1.FileNames)
                     {
                         (new TorrentLoadDialog(fileName)).ShowDialog();
                     }
@@ -2277,41 +2171,6 @@ namespace TransmissionRemoteDotnet
             public string Name;
             public Bitmap Image;
             public ToolStripItem[] Controls;
-        }
-
-        private void exportLocalSettingsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (saveSettingsFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                FileLocalSettingsStore store = new FileLocalSettingsStore();
-                store.Save(saveSettingsFileDialog.FileName, Program.Settings.SaveToJson());
-            }
-        }
-
-        private void importLocalSettingsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (openSettingsFileDialog.ShowDialog() == DialogResult.OK)
-                try
-                {
-                    LocalSettings sett = Program.Settings;
-                    string originalHost = sett.Current.Host;
-                    int originalPort = sett.Current.Port;
-                    FileLocalSettingsStore store = new FileLocalSettingsStore();
-                    JsonObject jo = store.Load(openSettingsFileDialog.FileName);
-                    LocalSettings newsettings = new LocalSettings(jo);
-
-                    // if no error, load to right place
-                    Program.Settings.LoadFromJson(jo);
-                    if (Program.Connected && (sett.Current.Host != originalHost || sett.Current.Port != originalPort))
-                    {
-                        Program.Connected = false;
-                        Connect();
-                    }
-                }
-                catch (Exception ee)
-                {
-                    MessageBox.Show(ee.Message, OtherStrings.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                };
         }
     }
 }

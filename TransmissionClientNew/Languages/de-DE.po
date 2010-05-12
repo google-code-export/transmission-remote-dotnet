@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: transmission-remote-dotnet\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-13 22:55+0100\n"
-"PO-Revision-Date: 2010-03-17 10:53+0100\n"
-"Last-Translator: benba <benjamin.brauner@gmx.de>\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: transmission-remote-dotnet <transmission-remote-dotnet@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +23,7 @@ msgstr "Über Transmission Remote"
 #: AboutDialog~labelCopyright.Text
 #, csharp-format
 msgid "Copyright"
-msgstr "Copyright"
+msgstr ""
 
 #: AboutDialog~labelCredits.Text
 #, csharp-format
@@ -49,12 +49,12 @@ msgstr "Produkt Name"
 #: OtherStrings~Version
 #, csharp-format
 msgid "Version"
-msgstr "Version"
+msgstr ""
 
 #: AboutDialog~okButton.Text
 #, csharp-format
 msgid "&OK"
-msgstr "&OK"
+msgstr ""
 
 #: AboutDialog~textBoxDescription.Text
 #, csharp-format
@@ -105,7 +105,7 @@ msgstr "Fehler-Log"
 #: ErrorLogWindow~DebugCheckBox.Text
 #, csharp-format
 msgid "Show debug logs"
-msgstr "Zeige Debug-Logs"
+msgstr ""
 
 #: ErrorLogWindow~clearButton.Text
 #, csharp-format
@@ -153,7 +153,7 @@ msgstr "Case insensitive"
 #: FindDialog~findButton.Text
 #, csharp-format
 msgid "Find"
-msgstr "Suche"
+msgstr ""
 
 #: FindDialog~findLabel.Text
 #, csharp-format
@@ -166,7 +166,6 @@ msgstr "Suche nach:"
 msgid "Local Settings"
 msgstr "Lokale Einstellungen"
 
-#: LocalSettingsDialog~AddFeedButton.Text
 #: LocalSettingsDialog~AddShareButton.Text
 #, csharp-format
 msgid "Add"
@@ -187,15 +186,10 @@ msgstr "Beim Speichern Passwort löschen"
 #: OtherStrings~Cancel
 #: TorrentLoadDialog~CancelBtn.Text
 #: TorrentPropertiesDialog~button2.Text
-#: UriPromptWindow~CancelBtn.Text
+#: UriPromptWindow~button2.Text
 #, csharp-format
 msgid "Cancel"
 msgstr "Abbrechen"
-
-#: LocalSettingsDialog~ColorTrayIconCheckBox.Text
-#, csharp-format
-msgid "Color tray icon"
-msgstr ""
 
 #: LocalSettingsDialog~DeleteTorrentCheckBox.Text
 #, csharp-format
@@ -215,7 +209,7 @@ msgstr "Authentifizierung"
 #: LocalSettingsDialog~EnableProxyCombo.Items
 #, csharp-format
 msgid "Auto"
-msgstr "Auto"
+msgstr ""
 
 #: LocalSettingsDialog~EnableProxyCombo.Items1
 #, csharp-format
@@ -226,16 +220,6 @@ msgstr "Aktiviert"
 #, csharp-format
 msgid "Disabled"
 msgstr "Deaktiviert"
-
-#: LocalSettingsDialog~FeedNameLabel.Text
-#, csharp-format
-msgid "Feed name:"
-msgstr ""
-
-#: LocalSettingsDialog~FeedUrlLabel.Text
-#, csharp-format
-msgid "Feed url:"
-msgstr ""
 
 #: LocalSettingsDialog~MinToTrayCheckBox.Text
 #, csharp-format
@@ -257,7 +241,6 @@ msgstr "Durchsuchen"
 msgid "Authenticate"
 msgstr "Authentifizierung"
 
-#: LocalSettingsDialog~RemoveFeedButton.Text
 #: LocalSettingsDialog~RemoveShareButton.Text
 #: MainWindow~removeToolStripMenuItem.Text
 #: OtherStrings~Remove
@@ -296,34 +279,27 @@ msgstr "Upload Prompt"
 msgid "Secure (SSL)"
 msgstr "Sicher (SSL)"
 
-#: LocalSettingsDialog~addServerButton.Text
 #: LocalSettingsDialog~addServerToolStripMenuItem.Text
 #, csharp-format
 msgid "Add Server"
 msgstr "Server hinzufügen"
 
-#: LocalSettingsDialog~columnFeedName.Text
-#: LocalSettingsDialog~columnName.Text
-#: MainWindow~columnHeader6.Text
-#, csharp-format
-msgid "Name"
-msgstr "Name"
-
-#: LocalSettingsDialog~columnFeedUrl.Text
-#, csharp-format
-msgid "Url"
-msgstr ""
-
 #: LocalSettingsDialog~columnHost.Text
 #: OtherStrings~Host
 #, csharp-format
 msgid "Host"
-msgstr "Host"
+msgstr ""
+
+#: LocalSettingsDialog~columnName.Text
+#: MainWindow~columnHeader6.Text
+#, csharp-format
+msgid "Name"
+msgstr ""
 
 #: LocalSettingsDialog~columnPort.Text
 #, csharp-format
 msgid "Port"
-msgstr "Port"
+msgstr ""
 
 #: LocalSettingsDialog~defaultActionComboBox.Items
 #, csharp-format
@@ -358,28 +334,23 @@ msgstr "Verhalten"
 #: LocalSettingsDialog~groupBox1.Text
 #, csharp-format
 msgid "New mapping:"
-msgstr "Neues Mapping:"
+msgstr ""
 
 #: LocalSettingsDialog~groupCurrentProfile.Text
 #, csharp-format
 msgid "Current profile"
 msgstr "akutelles Profil"
 
-#: LocalSettingsDialog~groupFeed.Text
-#, csharp-format
-msgid "Feed"
-msgstr ""
-
 #: LocalSettingsDialog~groupPlinkPath.Text
 #, csharp-format
-msgid "plink.exe or ssh.exe:"
+msgid "plink.exe:"
 msgstr ""
 
 #: LocalSettingsDialog~label1.Text
 #: LocalSettingsDialog~label6.Text
 #, csharp-format
 msgid "Host:"
-msgstr "Host:"
+msgstr ""
 
 #: LocalSettingsDialog~label10.Text
 #, csharp-format
@@ -390,12 +361,12 @@ msgstr "Wiederholungs-Limit:"
 #: OtherStrings~UnixPathPrefix
 #, csharp-format
 msgid "UNIX path prefix:"
-msgstr "UNIX Pfad Prefix:"
+msgstr ""
 
 #: LocalSettingsDialog~label12.Text
 #, csharp-format
 msgid "Custom rpc path:"
-msgstr "Angepasster RPC Pfad:"
+msgstr ""
 
 #: LocalSettingsDialog~label13.Text
 #, csharp-format
@@ -406,7 +377,7 @@ msgstr "Befehl: "
 #: OtherStrings~SambaShare
 #, csharp-format
 msgid "Samba share:"
-msgstr "Samba "
+msgstr ""
 
 #: LocalSettingsDialog~label15.Text
 #, csharp-format
@@ -427,7 +398,7 @@ msgstr "Download-Limit Menü Einträge:"
 #: LocalSettingsDialog~label7.Text
 #, csharp-format
 msgid "Port:"
-msgstr "Port:"
+msgstr ""
 
 #: LocalSettingsDialog~label3.Text
 #, csharp-format
@@ -449,7 +420,7 @@ msgstr "Passwort:"
 #: LocalSettingsDialog~linkLabel1.Text
 #, csharp-format
 msgid "http://code.google.com/p/transmission-remote-dotnet/wiki/SSH"
-msgstr "http://code.google.com/p/transmission-remote-dotnet/wiki/SSH"
+msgstr ""
 
 #: LocalSettingsDialog~minimizeOnCloseCheckBox.Text
 #, csharp-format
@@ -466,7 +437,6 @@ msgstr "Beim Hinzufügen benachrichtigen"
 msgid "Notification on completion"
 msgstr "Beim Fertigstellen benachrichtigen"
 
-#: LocalSettingsDialog~removeServerButton.Text
 #: LocalSettingsDialog~removeServerToolStripMenuItem.Text
 #, csharp-format
 msgid "Remove Server"
@@ -480,7 +450,7 @@ msgstr "Globale Einstellungen"
 #: LocalSettingsDialog~tabPage1.Text
 #, csharp-format
 msgid "Server"
-msgstr "Server"
+msgstr ""
 
 #: LocalSettingsDialog~tabPage2.Text
 #, csharp-format
@@ -490,12 +460,12 @@ msgstr "Authentifizierung"
 #: LocalSettingsDialog~tabPage3.Text
 #, csharp-format
 msgid "Proxy"
-msgstr "Proxy"
+msgstr ""
 
 #: LocalSettingsDialog~tabPage5.Text
 #, csharp-format
 msgid "SSH"
-msgstr "SSH"
+msgstr ""
 
 #: LocalSettingsDialog~tabPage6.Text
 #, csharp-format
@@ -505,11 +475,6 @@ msgstr "Verschiedenes"
 #: LocalSettingsDialog~tabPage7.Text
 #, csharp-format
 msgid "Samba"
-msgstr "Samba"
-
-#: LocalSettingsDialog~tabRssSettings.Text
-#, csharp-format
-msgid "Rss Feeds"
 msgstr ""
 
 #: LocalSettingsDialog~tabServersSettings.Text
@@ -520,23 +485,18 @@ msgstr "Server Einstellungen"
 #: LocalSettingsDialog~tabSkinSettings.Text
 #, csharp-format
 msgid "Skin"
-msgstr "Skin"
+msgstr ""
 
 #: MainWindow~$this.Text
 #: MainWindow~notifyIcon.Text
 #, csharp-format
 msgid "Transmission Remote"
-msgstr "Transmission Remote"
+msgstr ""
 
 #: MainWindow~AltSpeedButton.Text
 #, csharp-format
 msgid "Alt Speed"
 msgstr "Bandbreiten-Limit (de)aktivieren"
-
-#: MainWindow~RssButton.Text
-#, csharp-format
-msgid "Rss"
-msgstr ""
 
 #: MainWindow~aboutToolStripMenuItem.Text
 #, csharp-format
@@ -633,7 +593,7 @@ msgstr "Gesendet"
 #: MainWindow~columnHeader16.Text
 #, csharp-format
 msgid "Ratio"
-msgstr "Ratio"
+msgstr ""
 
 #: MainWindow~columnHeader17.Text
 #: OtherStrings~Skip
@@ -661,13 +621,13 @@ msgstr "Größe"
 #: MainWindow~columnHeader20.Text
 #, csharp-format
 msgid "Announce URL"
-msgstr "Announce URL"
+msgstr ""
 
 #: MainWindow~columnHeader21.Text
 #: MainWindow~columnHeader9.Text
 #, csharp-format
 msgid "Status"
-msgstr "Status"
+msgstr ""
 
 #: MainWindow~columnHeader22.Text
 #, csharp-format
@@ -682,7 +642,7 @@ msgstr "IP Adresse"
 #: MainWindow~columnHeader24.Text
 #, csharp-format
 msgid "Hostname"
-msgstr "Hostname"
+msgstr ""
 
 #: MainWindow~columnHeader25.Text
 #, csharp-format
@@ -692,7 +652,7 @@ msgstr "Land"
 #: MainWindow~columnHeader26.Text
 #, csharp-format
 msgid "Client"
-msgstr "Client"
+msgstr ""
 
 #: MainWindow~columnHeader27.Text
 #: OtherStrings~Progress
@@ -709,12 +669,12 @@ msgstr "Fertiggestellt"
 #: MainWindow~columnHeader30.Text
 #, csharp-format
 msgid "Tracker"
-msgstr "Tracker"
+msgstr ""
 
 #: MainWindow~columnHeader31.Text
 #, csharp-format
 msgid "Flags"
-msgstr "Flaggen"
+msgstr ""
 
 #: MainWindow~columnHeader32.Text
 #: TorrentLoadDialog~columnHeader4.Text
@@ -725,12 +685,12 @@ msgstr "Typ"
 #: MainWindow~columnHeader33.Text
 #, csharp-format
 msgid "Update In"
-msgstr "Update in"
+msgstr ""
 
 #: MainWindow~columnHeader36.Text
 #, csharp-format
 msgid "Downloaded"
-msgstr "Fertiggestellt"
+msgstr ""
 
 #: MainWindow~columnHeader4.Text
 #, csharp-format
@@ -819,7 +779,7 @@ msgstr "Seeder:"
 #: MainWindow~label11.Text
 #, csharp-format
 msgid "Status:"
-msgstr "Status:"
+msgstr ""
 
 #: MainWindow~label12.Text
 #, csharp-format
@@ -834,7 +794,7 @@ msgstr "Leecher:"
 #: MainWindow~label14.Text
 #, csharp-format
 msgid "Ratio:"
-msgstr "Ratio:"
+msgstr ""
 
 #: MainWindow~label15.Text
 #: TorrentLoadDialog~CommentLabelLabel.Text
@@ -861,13 +821,13 @@ msgstr "Intervall:"
 #: OtherStrings~Up
 #, csharp-format
 msgid "Up"
-msgstr "Up"
+msgstr ""
 
 #: MainWindow~label20.Text
 #: OtherStrings~Down
 #, csharp-format
 msgid "Down"
-msgstr "Down"
+msgstr ""
 
 #: MainWindow~label3.Text
 #, csharp-format
@@ -922,7 +882,7 @@ msgstr "Lokale Einstellungen"
 #: MainWindow~locationLabelLabel.Text
 #, csharp-format
 msgid "Location:"
-msgstr "Speicherort:"
+msgstr ""
 
 #: MainWindow~menuStrip.Text
 #, csharp-format
@@ -960,7 +920,7 @@ msgstr "Torrent(s) pausieren"
 #: MainWindow~peersTabPage.Text
 #, csharp-format
 msgid "Peers"
-msgstr "Peers"
+msgstr ""
 
 #: MainWindow~percentageLabel.Text
 #, csharp-format
@@ -1105,7 +1065,7 @@ msgstr ""
 #: MainWindow~torrentToolStripMenuItem.Text
 #, csharp-format
 msgid "Torrent"
-msgstr "Torrent"
+msgstr ""
 
 #: MainWindow~trackersTabPage.Text
 #: TorrentPropertiesDialog~tabTrackers.Text
@@ -1126,7 +1086,7 @@ msgstr ""
 #: MoveDataPrompt~button1.Text
 #, csharp-format
 msgid "Move"
-msgstr "Verschieben"
+msgstr "Vrschieben"
 
 #: MoveDataPrompt~label1.Text
 #, csharp-format
@@ -1151,12 +1111,12 @@ msgstr "Defekt"
 #: OtherStrings~Build
 #, csharp-format
 msgid "Build"
-msgstr "Build"
+msgstr ""
 
 #: OtherStrings~Byte
 #, csharp-format
 msgid "Byte"
-msgstr "Byte"
+msgstr ""
 
 #: OtherStrings~Checking
 #, csharp-format
@@ -1176,7 +1136,7 @@ msgstr "Sind Sie sicher?"
 #: OtherStrings~ConfirmMultipleRecheck
 #, csharp-format
 msgid "You have selected {0} torrents for recheck. It may take a long time. Are you sure?"
-msgstr "Es wurden {0} Torrents zur Überprüfung ausgewählt. Dies kann lange dauern. Sind Sie sicher?"
+msgstr ""
 
 #: OtherStrings~ConfirmMultipleRemove
 #, csharp-format
@@ -1191,12 +1151,12 @@ msgstr "Es wurden {0} Torrents zum Löschen ausgewählt, sind Sie sicher?{1}ALLE
 #: OtherStrings~ConfirmSaveServer
 #, csharp-format
 msgid "\"{0}\" server settings have been changed. Would you like to save it?"
-msgstr "\"{0}\" Die Server Einstellungen wurden geändert. Änderungen speichern?"
+msgstr ""
 
 #: OtherStrings~ConfirmSingleRecheck
 #, csharp-format
 msgid "Do you want to recheck {0}? It may take a long time."
-msgstr "{0} Überprüfen? Dies kann lange dauern."
+msgstr ""
 
 #: OtherStrings~ConfirmSingleRemove
 #, csharp-format
@@ -1241,7 +1201,7 @@ msgstr "Getrennt. Anzahl der fehlgeschlagegenen Anfragen überschritten."
 #: OtherStrings~Download
 #, csharp-format
 msgid "Download"
-msgstr "Download"
+msgstr ""
 
 #: OtherStrings~DownloadLimit
 #, csharp-format
@@ -1273,11 +1233,6 @@ msgstr "Fehler"
 msgid "Failed request"
 msgstr "Anfrage fehlgeschlagen"
 
-#: OtherStrings~FeedExists
-#, csharp-format
-msgid "Feed exists"
-msgstr ""
-
 #: OtherStrings~GeoipInitError
 #, csharp-format
 msgid "GeoIP init error ({0})"
@@ -1286,12 +1241,12 @@ msgstr "GeoIP Initalisierungs-Fehler ({0})"
 #: OtherStrings~Gigabyte
 #, csharp-format
 msgid "Gigabyte"
-msgstr "Gigabyte"
+msgstr ""
 
 #: OtherStrings~GigabyteShort
 #, csharp-format
 msgid "GB"
-msgstr "GB"
+msgstr ""
 
 #: OtherStrings~High
 #, csharp-format
@@ -1311,7 +1266,7 @@ msgstr "Stunde"
 #: OtherStrings~HttpError
 #, csharp-format
 msgid "Daemon try to download something, but the http result is:{0}{1}"
-msgstr "Dämon versucht etwas herunterzuladen, aber das HTTP Resultat ist:{0}{1}"
+msgstr ""
 
 #: OtherStrings~Incomplete
 #, csharp-format
@@ -1321,7 +1276,7 @@ msgstr "Nicht komplett"
 #: OtherStrings~Info
 #, csharp-format
 msgid "Info"
-msgstr "Info"
+msgstr ""
 
 #: OtherStrings~InfoObjectToClipboard
 #, csharp-format
@@ -1333,20 +1288,15 @@ msgstr "Torrenteigenschaften in die Zwischenablage kopieren"
 msgid "Input accepted"
 msgstr "Eingabe akzeptiert"
 
-#: OtherStrings~InvalidRPCLocation
-#, csharp-format
-msgid "Invalid RPC location"
-msgstr ""
-
 #: OtherStrings~Kilobyte
 #, csharp-format
 msgid "Kilobyte"
-msgstr "Kilobyte"
+msgstr ""
 
 #: OtherStrings~KilobyteShort
 #, csharp-format
 msgid "KB"
-msgstr "KB"
+msgstr ""
 
 #: OtherStrings~LatestVersion
 #, csharp-format
@@ -1376,22 +1326,22 @@ msgstr "Niedrige Priorität"
 #: OtherStrings~MappingSample
 #, csharp-format
 msgid "Sample mapping:"
-msgstr "Beispiel Mapping:"
+msgstr ""
 
 #: OtherStrings~Megabyte
 #, csharp-format
 msgid "Megabyte"
-msgstr "Megabyte"
+msgstr ""
 
 #: OtherStrings~MegabyteShort
 #, csharp-format
 msgid "MB"
-msgstr "MB"
+msgstr ""
 
 #: OtherStrings~Minute
 #, csharp-format
 msgid "Minute"
-msgstr "Minute"
+msgstr ""
 
 #: OtherStrings~MoveMultipleTorrents
 #, csharp-format
@@ -1431,7 +1381,7 @@ msgstr "Nein"
 #: OtherStrings~NoHostnameSet
 #, csharp-format
 msgid "No hostname has been set."
-msgstr "Kein Hostname eingetragen"
+msgstr ""
 
 #: OtherStrings~NoUpgradeAvailable
 #, csharp-format
@@ -1441,7 +1391,7 @@ msgstr "Kein Upgrade verfügbar"
 #: OtherStrings~Normal
 #, csharp-format
 msgid "Normal"
-msgstr "Normal"
+msgstr ""
 
 #: OtherStrings~NormalPriority
 #, csharp-format
@@ -1461,7 +1411,7 @@ msgstr "BitTorrent Metafile (*.torrent)|*.torrent|Alle Dateien (*.*)|*.*"
 #: OtherStrings~OpenImageFilter
 #, csharp-format
 msgid "PNG Image|*.png"
-msgstr "PNG Bild|*.png"
+msgstr ""
 
 #: OtherStrings~OpenNetworkShare
 #, csharp-format
@@ -1491,12 +1441,12 @@ msgstr "{0} x {1} ({2} Teile fertig)"
 #: OtherStrings~PortIsClosed
 #, csharp-format
 msgid "The incoming port on your daemon is CLOSED."
-msgstr "Incoming Port des Daemons ist GESCHLOSSEN."
+msgstr "Incoming Port des Daemons ist CLOSED."
 
 #: OtherStrings~PortIsOpen
 #, csharp-format
 msgid "The incoming port on your daemon is OPEN."
-msgstr "Incoming Port des Daemons ist OFFEN."
+msgstr "Incoming Port des Daemons ist OPEN."
 
 #: OtherStrings~PortTestResult
 #, csharp-format
@@ -1521,17 +1471,17 @@ msgstr "Anfrage läuft..."
 #: OtherStrings~Revision
 #, csharp-format
 msgid "Revision"
-msgstr "Revision"
+msgstr ""
 
 #: OtherStrings~RpcVersion
 #, csharp-format
 msgid "RpcVersion"
-msgstr "RpcVersion"
+msgstr ""
 
 #: OtherStrings~RpcVersionMinimum
 #, csharp-format
 msgid "RpcVersionMinimum"
-msgstr "RpcVersionMinimum"
+msgstr ""
 
 #: OtherStrings~Second
 #, csharp-format
@@ -1541,7 +1491,7 @@ msgstr "Sekunde"
 #: OtherStrings~Seeding
 #, csharp-format
 msgid "Seeding"
-msgstr "Seeding"
+msgstr ""
 
 #: OtherStrings~SelectAll
 #, csharp-format
@@ -1561,12 +1511,12 @@ msgstr "Dieser Torrent ist fertig heruntergeladen"
 #: OtherStrings~TorrentFinished
 #, csharp-format
 msgid "This torrent has finished downloading."
-msgstr "Dieser Torrent wurde fertiggestellt."
+msgstr ""
 
 #: OtherStrings~Torrents
 #, csharp-format
 msgid "Torrents"
-msgstr "Torrents"
+msgstr ""
 
 #: OtherStrings~UnableToOpen
 #, csharp-format
@@ -1577,11 +1527,6 @@ msgstr "Konnte nicht geöffnet werden"
 #, csharp-format
 msgid "Unable to parse the server response"
 msgstr "Serverantwort konnte nicht geparst werden."
-
-#: OtherStrings~UnixPathExists
-#, csharp-format
-msgid "Unix path exists"
-msgstr ""
 
 #: OtherStrings~Unknown
 #, csharp-format
@@ -1611,7 +1556,7 @@ msgstr "Anfrage gescheitert"
 #: OtherStrings~Updating
 #, csharp-format
 msgid "Updating..."
-msgstr "Update..."
+msgstr ""
 
 #: OtherStrings~UpgradeAvailable
 #, csharp-format
@@ -1641,7 +1586,7 @@ msgstr "{0} verbunden"
 #: OtherStrings~XInBlocklist
 #, csharp-format
 msgid "{0} in blocklist."
-msgstr "{0} in Blockliste."
+msgstr ""
 
 #: OtherStrings~XOfYConnected
 #, csharp-format
@@ -1706,28 +1651,28 @@ msgstr "Herunterladen nach:"
 #: TorrentPropertiesDialog~label2.Text
 #, csharp-format
 msgid "KB/s"
-msgstr "KB/s"
+msgstr ""
 
 #: RemoteSettingsDialog~label11.Text
 #, csharp-format
 msgid "Down:"
-msgstr "Down:"
+msgstr ""
 
 #: RemoteSettingsDialog~label12.Text
 #, csharp-format
 msgid "Up:"
-msgstr "Up:"
+msgstr ""
 
 #: RemoteSettingsDialog~label13.Text
 #: RemoteSettingsDialog~label14.Text
 #, csharp-format
 msgid ":"
-msgstr ":"
+msgstr ""
 
 #: RemoteSettingsDialog~label2.Text
 #, csharp-format
 msgid "Incoming port:"
-msgstr "Eingehender Port:"
+msgstr "Eingehender port:"
 
 #: RemoteSettingsDialog~label3.Text
 #, csharp-format
@@ -1737,7 +1682,7 @@ msgstr "Verschlüsselung:"
 #: RemoteSettingsDialog~label4.Text
 #, csharp-format
 msgid "Peer Limit"
-msgstr "Peer Limit"
+msgstr ""
 
 #: RemoteSettingsDialog~label7.Text
 #: TorrentPropertiesDialog~label7.Text
@@ -1768,7 +1713,7 @@ msgstr "UPnP aktivieren"
 #: RemoteSettingsDialog~seedRatioEnabledCheckBox.Text
 #, csharp-format
 msgid "Seed Ratio Limit"
-msgstr "Seed Ratio Limit"
+msgstr ""
 
 #: RemoteSettingsDialog~tabPage2.Text
 #, csharp-format
@@ -1843,49 +1788,49 @@ msgstr ""
 #: TorrentLoadDialog~DateLabelLabel.Text
 #, csharp-format
 msgid "Date:"
-msgstr "Datum:"
+msgstr ""
 
 #: TorrentLoadDialog~NameLabelLabel.Text
 #, csharp-format
 msgid "Name:"
-msgstr "Name:"
+msgstr ""
 
 #: TorrentLoadDialog~OkButton.Text
 #: TorrentPropertiesDialog~button1.Text
-#: UriPromptWindow~OkButton.Text
+#: UriPromptWindow~button1.Text
 #, csharp-format
 msgid "OK"
-msgstr "OK"
+msgstr ""
 
 #: TorrentLoadDialog~PropertiesGroupBox.Text
 #, csharp-format
 msgid "Torrent properties"
-msgstr "Torrent Eigenschaften"
+msgstr ""
 
 #: TorrentLoadDialog~SelectAllButton.Text
 #, csharp-format
 msgid "Select All"
-msgstr "Alle auswählen"
+msgstr ""
 
 #: TorrentLoadDialog~SelectInvertButton.Text
 #, csharp-format
 msgid "Select Invert"
-msgstr "Auswahl invertieren"
+msgstr ""
 
 #: TorrentLoadDialog~SelectNoneButton.Text
 #, csharp-format
 msgid "Select None"
-msgstr "Nichts auswählen"
+msgstr ""
 
 #: TorrentLoadDialog~SizelabelLabel.Text
 #, csharp-format
 msgid "Size:"
-msgstr "Größe:"
+msgstr ""
 
 #: TorrentLoadDialog~TorrentContentsGroupBox.Text
 #, csharp-format
 msgid "Torrent Contents"
-msgstr "Torrent Inhalt"
+msgstr ""
 
 #: TorrentLoadDialog~checkBox1.Text
 #, csharp-format
@@ -1900,7 +1845,7 @@ msgstr "Alternatives Peer Limit: "
 #: TorrentLoadDialog~checkBox3.Text
 #, csharp-format
 msgid "Start torrent"
-msgstr "Starte Torrent"
+msgstr ""
 
 #: TorrentLoadDialog~toolStripStatusLabel1.Text
 #, csharp-format
@@ -1947,18 +1892,10 @@ msgstr "Limitiere Upload-Rate"
 msgid "Upload by URL"
 msgstr "Upload mittels URL"
 
-#: UriPromptWindow~UseTorrentLoadDialogCheckBox.Text
-#, csharp-format
-msgid "Set torrent options before upload"
-msgstr ""
-
-#: UriPromptWindow~toolStripStatusLabel.Text
+#: UriPromptWindow~toolStripStatusLabel1.Text
 #, csharp-format
 msgid "Waiting for URL..."
 msgstr "Warte auf URL..."
-
-#~ msgid "plink.exe:"
-#~ msgstr "plink.exe:"
 
 #~ msgid "Scrape URL"
 #~ msgstr "Scrape URL"

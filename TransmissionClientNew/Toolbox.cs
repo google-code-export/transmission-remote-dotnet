@@ -34,16 +34,8 @@ namespace TransmissionRemoteDotnet
 {
     public class Toolbox
     {
-        public enum MaxSize
-        {
-            msByte = 1,
-            msKilo,
-            msMega,
-            msGiga,
-            msTera
-        }
         private const int STRIPE_OFFSET = 15;
-        public static readonly IFormatProvider NUMBER_FORMAT = (new CultureInfo("en-US")).NumberFormat;
+        public static readonly IFormatProvider NUMBER_FORMAT = (new CultureInfo("en-GB")).NumberFormat;
         static byte[] trueBitCount = new byte[] {
             0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4, 1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5,
             1, 2, 2, 3, 2, 3, 3, 4, 2, 3, 3, 4, 3, 4, 4, 5, 2, 3, 3, 4, 3, 4, 4, 5, 3, 4, 4, 5, 4, 5, 5, 6,
@@ -379,32 +371,22 @@ namespace TransmissionRemoteDotnet
 
         public static string GetFileSize(long bytes)
         {
-            return GetFileSize(bytes, MaxSize.msGiga);
-        }
-
-        public static string GetFileSize(long bytes, MaxSize maxsize)
-        {
-            if (bytes >= 1099511627776 && maxsize >= MaxSize.msTera)
-            {
-                Decimal size = Decimal.Divide(bytes, 1099511627776);
-                return String.Format("{0:##.##} {1}", size, OtherStrings.TerabyteShort);
-            }
-            else if (bytes >= 1073741824 && maxsize >= MaxSize.msGiga)
+            if (bytes >= 1073741824)
             {
                 Decimal size = Decimal.Divide(bytes, 1073741824);
                 return String.Format("{0:##.##} {1}", size, OtherStrings.GigabyteShort);
             }
-            else if (bytes >= 1048576 && maxsize >= MaxSize.msMega)
+            else if (bytes >= 1048576)
             {
                 Decimal size = Decimal.Divide(bytes, 1048576);
                 return String.Format("{0:##.##} {1}", size, OtherStrings.MegabyteShort);
             }
-            else if (bytes >= 1024 && maxsize >= MaxSize.msKilo)
+            else if (bytes >= 1024)
             {
                 Decimal size = Decimal.Divide(bytes, 1024);
                 return String.Format("{0:##.##} {1}", size, OtherStrings.KilobyteShort);
             }
-            else if ((bytes > 0) && maxsize >= MaxSize.msByte)
+            else if (bytes > 0 & bytes < 1024)
             {
                 Decimal size = bytes;
                 return String.Format("{0:##.##} {1}", size, OtherStrings.Byte[0]);
@@ -482,19 +464,6 @@ namespace TransmissionRemoteDotnet
                 }
                 lv.EndUpdate();
             }
-        }
-
-        public static string MD5(string input)
-        {
-            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
-            byte[] data = Encoding.ASCII.GetBytes(input);
-            data = md5.ComputeHash(data);
-            StringBuilder s = new StringBuilder();
-            foreach (byte b in data)
-            {
-                s.Append(b.ToString("x2").ToLower());
-            }
-            return s.ToString();
         }
 
         public static Bitmap LoadSkinImage(string FileName, int MinHeight, int MaxHeight, int ImageNumber)

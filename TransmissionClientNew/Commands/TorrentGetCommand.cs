@@ -137,7 +137,7 @@ namespace TransmissionRemoteDotnet.Commmands
 
             if (stateChange)
                 form.SetAllStateCounters();
-            form.UpdateStatus(this.statusBarUpdate, true);
+            form.UpdateStatus(this.statusBarUpdate);
             form.UpdateGraph(totalDownloadInt, totalUploadInt);
             Program.RaisePostUpdateEvent();
         }
