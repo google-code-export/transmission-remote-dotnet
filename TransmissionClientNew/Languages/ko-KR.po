@@ -147,7 +147,6 @@ msgstr "검색어 입력:"
 msgid "Local Settings"
 msgstr "설정"
 
-#: LocalSettingsDialog~AddFeedButton.Text
 #: LocalSettingsDialog~AddShareButton.Text
 #, csharp-format
 msgid "Add"
@@ -168,15 +167,10 @@ msgstr "저장 시 패스워드 지우기"
 #: OtherStrings~Cancel
 #: TorrentLoadDialog~CancelBtn.Text
 #: TorrentPropertiesDialog~button2.Text
-#: UriPromptWindow~CancelBtn.Text
+#: UriPromptWindow~button2.Text
 #, csharp-format
 msgid "Cancel"
 msgstr "취소"
-
-#: LocalSettingsDialog~ColorTrayIconCheckBox.Text
-#, csharp-format
-msgid "Color tray icon"
-msgstr ""
 
 #: LocalSettingsDialog~DeleteTorrentCheckBox.Text
 #, csharp-format
@@ -208,16 +202,6 @@ msgstr "사용"
 msgid "Disabled"
 msgstr "사용 안함"
 
-#: LocalSettingsDialog~FeedNameLabel.Text
-#, csharp-format
-msgid "Feed name:"
-msgstr ""
-
-#: LocalSettingsDialog~FeedUrlLabel.Text
-#, csharp-format
-msgid "Feed url:"
-msgstr ""
-
 #: LocalSettingsDialog~MinToTrayCheckBox.Text
 #, csharp-format
 msgid "Enable tray icon"
@@ -238,7 +222,6 @@ msgstr "찾아보기..."
 msgid "Authenticate"
 msgstr "사용자 인증 사용"
 
-#: LocalSettingsDialog~RemoveFeedButton.Text
 #: LocalSettingsDialog~RemoveShareButton.Text
 #: MainWindow~removeToolStripMenuItem.Text
 #: OtherStrings~Remove
@@ -262,20 +245,10 @@ msgstr "저장"
 msgid "Save Server"
 msgstr "이 서버 저장"
 
-#: LocalSettingsDialog~StartOnSystemCheckBox.Text
-#, csharp-format
-msgid "Start on system startup"
-msgstr ""
-
 #: LocalSettingsDialog~StartPausedCheckBox.Text
 #, csharp-format
 msgid "Start torrents paused"
 msgstr "일시정지 상태로 추가 "
-
-#: LocalSettingsDialog~UpdateToBetaCheckBox.Text
-#, csharp-format
-msgid "Update to beta versions"
-msgstr ""
 
 #: LocalSettingsDialog~UploadPromptCheckBox.Text
 #, csharp-format
@@ -287,29 +260,22 @@ msgstr "토런트 추가창 열기"
 msgid "Secure (SSL)"
 msgstr "보안 접속(SSL)"
 
-#: LocalSettingsDialog~addServerButton.Text
 #: LocalSettingsDialog~addServerToolStripMenuItem.Text
 #, csharp-format
 msgid "Add Server"
 msgstr "서버 추가"
-
-#: LocalSettingsDialog~columnFeedName.Text
-#: LocalSettingsDialog~columnName.Text
-#: MainWindow~torrentNameCol.Text
-#, csharp-format
-msgid "Name"
-msgstr "이름"
-
-#: LocalSettingsDialog~columnFeedUrl.Text
-#, csharp-format
-msgid "Url"
-msgstr ""
 
 #: LocalSettingsDialog~columnHost.Text
 #: OtherStrings~Host
 #, csharp-format
 msgid "Host"
 msgstr "호스트"
+
+#: LocalSettingsDialog~columnName.Text
+#: MainWindow~columnHeader6.Text
+#, csharp-format
+msgid "Name"
+msgstr "이름"
 
 #: LocalSettingsDialog~columnPort.Text
 #, csharp-format
@@ -356,14 +322,9 @@ msgstr "새로운 연결 추가:"
 msgid "Current profile"
 msgstr "현재 설정"
 
-#: LocalSettingsDialog~groupFeed.Text
-#, csharp-format
-msgid "Feed"
-msgstr ""
-
 #: LocalSettingsDialog~groupPlinkPath.Text
 #, csharp-format
-msgid "plink.exe or ssh.exe:"
+msgid "plink.exe:"
 msgstr ""
 
 #: LocalSettingsDialog~label1.Text
@@ -414,11 +375,6 @@ msgstr "업속도 제한 선택목록:"
 msgid "Download limit menu items:"
 msgstr "다운속도 제한 선택목록:"
 
-#: LocalSettingsDialog~label18.Text
-#, csharp-format
-msgid "Refresh rate when hidden:"
-msgstr ""
-
 #: LocalSettingsDialog~label2.Text
 #: LocalSettingsDialog~label7.Text
 #, csharp-format
@@ -462,7 +418,6 @@ msgstr "토런트 추가시 알림"
 msgid "Notification on completion"
 msgstr "다운로드 완료시 알림"
 
-#: LocalSettingsDialog~removeServerButton.Text
 #: LocalSettingsDialog~removeServerToolStripMenuItem.Text
 #, csharp-format
 msgid "Remove Server"
@@ -503,11 +458,6 @@ msgstr "기타"
 msgid "Samba"
 msgstr "삼바"
 
-#: LocalSettingsDialog~tabRssSettings.Text
-#, csharp-format
-msgid "Rss Feeds"
-msgstr ""
-
 #: LocalSettingsDialog~tabServersSettings.Text
 #, csharp-format
 msgid "Servers Settings"
@@ -528,11 +478,6 @@ msgstr "트랜스미션 리모트"
 #, csharp-format
 msgid "Alt Speed"
 msgstr "선택적 속도 제한"
-
-#: MainWindow~RssButton.Text
-#, csharp-format
-msgid "Rss Downloader"
-msgstr ""
 
 #: MainWindow~aboutToolStripMenuItem.Text
 #, csharp-format
@@ -586,6 +531,159 @@ msgstr "카테고리 보기"
 msgid "Check for new version"
 msgstr "업데이트 확인"
 
+#: MainWindow~columnHeader1.Text
+#: TorrentLoadDialog~columnHeader1.Text
+#, csharp-format
+msgid "Path"
+msgstr "경로"
+
+#: MainWindow~columnHeader10.Text
+#: MainWindow~columnHeader34.Text
+#, csharp-format
+msgid "Seeds"
+msgstr "배포"
+
+#: MainWindow~columnHeader11.Text
+#: MainWindow~columnHeader35.Text
+#, csharp-format
+msgid "Leechers"
+msgstr "리쳐"
+
+#: MainWindow~columnHeader12.Text
+#: MainWindow~columnHeader28.Text
+#, csharp-format
+msgid "Down Speed"
+msgstr "다운속도"
+
+#: MainWindow~columnHeader13.Text
+#: MainWindow~columnHeader29.Text
+#, csharp-format
+msgid "Up Speed"
+msgstr "업속도"
+
+#: MainWindow~columnHeader14.Text
+#, csharp-format
+msgid "ETA"
+msgstr "예상 시간"
+
+#: MainWindow~columnHeader15.Text
+#, csharp-format
+msgid "Uploaded"
+msgstr "업로드"
+
+#: MainWindow~columnHeader16.Text
+#, csharp-format
+msgid "Ratio"
+msgstr "비율"
+
+#: MainWindow~columnHeader17.Text
+#: OtherStrings~Skip
+#, csharp-format
+msgid "Skip"
+msgstr "건너뛰기"
+
+#: MainWindow~columnHeader18.Text
+#, csharp-format
+msgid "Added At"
+msgstr "추가 시간"
+
+#: MainWindow~columnHeader19.Text
+#, csharp-format
+msgid "Completed At"
+msgstr "완료 시간"
+
+#: MainWindow~columnHeader2.Text
+#: MainWindow~columnHeader7.Text
+#: TorrentLoadDialog~columnHeader5.Text
+#, csharp-format
+msgid "Size"
+msgstr "크기"
+
+#: MainWindow~columnHeader20.Text
+#, csharp-format
+msgid "Announce URL"
+msgstr "Announce 주소"
+
+#: MainWindow~columnHeader21.Text
+#: MainWindow~columnHeader9.Text
+#, csharp-format
+msgid "Status"
+msgstr "상태"
+
+#: MainWindow~columnHeader22.Text
+#, csharp-format
+msgid "Tier"
+msgstr "순서"
+
+#: MainWindow~columnHeader23.Text
+#, csharp-format
+msgid "IP Address"
+msgstr "IP 주소"
+
+#: MainWindow~columnHeader24.Text
+#, csharp-format
+msgid "Hostname"
+msgstr "호스트명"
+
+#: MainWindow~columnHeader25.Text
+#, csharp-format
+msgid "Country"
+msgstr "국가"
+
+#: MainWindow~columnHeader26.Text
+#, csharp-format
+msgid "Client"
+msgstr "클라이언트"
+
+#: MainWindow~columnHeader27.Text
+#: OtherStrings~Progress
+#, csharp-format
+msgid "Progress"
+msgstr "완료"
+
+#: MainWindow~columnHeader3.Text
+#: MainWindow~columnHeader8.Text
+#, csharp-format
+msgid "Done"
+msgstr "완료"
+
+#: MainWindow~columnHeader30.Text
+#, csharp-format
+msgid "Tracker"
+msgstr "트랙커"
+
+#: MainWindow~columnHeader31.Text
+#, csharp-format
+msgid "Flags"
+msgstr "상태"
+
+#: MainWindow~columnHeader32.Text
+#: TorrentLoadDialog~columnHeader4.Text
+#, csharp-format
+msgid "Type"
+msgstr "종류"
+
+#: MainWindow~columnHeader33.Text
+#, csharp-format
+msgid "Update In"
+msgstr ""
+
+#: MainWindow~columnHeader36.Text
+#, csharp-format
+msgid "Downloaded"
+msgstr ""
+
+#: MainWindow~columnHeader4.Text
+#, csharp-format
+msgid "%"
+msgstr ""
+
+#: MainWindow~columnHeader5.Text
+#: TorrentLoadDialog~columnHeader3.Text
+#, csharp-format
+msgid "Priority"
+msgstr "우선순위"
+
 #: MainWindow~configureTorrentButton.Text
 #: MainWindow~configureTorrentButton.ToolTipText
 #, csharp-format
@@ -617,62 +715,15 @@ msgstr "조각:"
 msgid "Exit"
 msgstr "종료"
 
-#: MainWindow~exportLocalSettingsToolStripMenuItem.Text
-#, csharp-format
-msgid "Export local settings..."
-msgstr ""
-
 #: MainWindow~fileToolStripMenuItem.Text
 #, csharp-format
 msgid "File"
 msgstr "파일"
 
-#: MainWindow~filesDoneCol.Text
-#: MainWindow~torrentDoneCol.Text
-#, csharp-format
-msgid "Done"
-msgstr "완료"
-
-#: MainWindow~filesPathCol.Text
-#: TorrentLoadDialog~columnHeader1.Text
-#, csharp-format
-msgid "Path"
-msgstr "경로"
-
-#: MainWindow~filesPercentCol.Text
-#, csharp-format
-msgid "%"
-msgstr ""
-
-#: MainWindow~filesPriorityCol.Text
-#: TorrentLoadDialog~columnHeader3.Text
-#, csharp-format
-msgid "Priority"
-msgstr "우선순위"
-
-#: MainWindow~filesSizeCol.Text
-#: MainWindow~torrentSizeCol.Text
-#: TorrentLoadDialog~columnHeader5.Text
-#, csharp-format
-msgid "Size"
-msgstr "크기"
-
-#: MainWindow~filesSkipCol.Text
-#: OtherStrings~Skip
-#, csharp-format
-msgid "Skip"
-msgstr "건너뛰기"
-
 #: MainWindow~filesTabPage.Text
 #, csharp-format
 msgid "Files"
 msgstr "파일"
-
-#: MainWindow~filesTypeCol.Text
-#: TorrentLoadDialog~columnHeader4.Text
-#, csharp-format
-msgid "Type"
-msgstr "종류"
 
 #: MainWindow~findToolStripMenuItem.Text
 #, csharp-format
@@ -700,16 +751,6 @@ msgstr "해쉬:"
 #, csharp-format
 msgid "Help"
 msgstr "도움말"
-
-#: MainWindow~importLocalSettingsToolStripMenuItem.Text
-#, csharp-format
-msgid "Import local settings..."
-msgstr ""
-
-#: MainWindow~label1.Text
-#, csharp-format
-msgid "Total size:"
-msgstr ""
 
 #: MainWindow~label10.Text
 #, csharp-format
@@ -857,53 +898,10 @@ msgstr "일시정지"
 msgid "Pause torrent(s)"
 msgstr "토런트 일시정지"
 
-#: MainWindow~peersClientCol.Text
-#, csharp-format
-msgid "Client"
-msgstr "클라이언트"
-
-#: MainWindow~peersCountryCol.Text
-#, csharp-format
-msgid "Country"
-msgstr "국가"
-
-#: MainWindow~peersDownSpeedCol.Text
-#: MainWindow~torrentDownSpeedCol.Text
-#, csharp-format
-msgid "Down Speed"
-msgstr "다운속도"
-
-#: MainWindow~peersFlagsCol.Text
-#, csharp-format
-msgid "Flags"
-msgstr "상태"
-
-#: MainWindow~peersHostnameCol.Text
-#, csharp-format
-msgid "Hostname"
-msgstr "호스트명"
-
-#: MainWindow~peersIpAddressCol.Text
-#, csharp-format
-msgid "IP Address"
-msgstr "IP 주소"
-
-#: MainWindow~peersProgressCol.Text
-#: OtherStrings~Progress
-#, csharp-format
-msgid "Progress"
-msgstr "완료"
-
 #: MainWindow~peersTabPage.Text
 #, csharp-format
 msgid "Peers"
 msgstr "연결"
-
-#: MainWindow~peersUpSpeedCol.Text
-#: MainWindow~torrentUpSpeedCol.Text
-#, csharp-format
-msgid "Up Speed"
-msgstr "업속도"
 
 #: MainWindow~percentageLabel.Text
 #, csharp-format
@@ -1045,89 +1043,16 @@ msgstr "경과 시간:"
 msgid "toolStripContainer1"
 msgstr ""
 
-#: MainWindow~torrentAddedAt.Text
-#, csharp-format
-msgid "Added At"
-msgstr "추가 시간"
-
-#: MainWindow~torrentCompletedAtCol.Text
-#, csharp-format
-msgid "Completed At"
-msgstr "완료 시간"
-
-#: MainWindow~torrentEtaCol.Text
-#, csharp-format
-msgid "ETA"
-msgstr "예상 시간"
-
-#: MainWindow~torrentLeechersCol.Text
-#: MainWindow~trackersLeechersCol.Text
-#, csharp-format
-msgid "Leechers"
-msgstr "리쳐"
-
-#: MainWindow~torrentNoCol.Text
-#, csharp-format
-msgid "#"
-msgstr ""
-
-#: MainWindow~torrentRatioCol.Text
-#, csharp-format
-msgid "Ratio"
-msgstr "비율"
-
-#: MainWindow~torrentSeedsCol.Text
-#: MainWindow~trackersSeedsCol.Text
-#, csharp-format
-msgid "Seeds"
-msgstr "배포"
-
-#: MainWindow~torrentStatusCol.Text
-#: MainWindow~trackersStatusCol.Text
-#, csharp-format
-msgid "Status"
-msgstr "상태"
-
 #: MainWindow~torrentToolStripMenuItem.Text
 #, csharp-format
 msgid "Torrent"
 msgstr "토런트"
-
-#: MainWindow~torrentTrackerCol.Text
-#, csharp-format
-msgid "Tracker"
-msgstr "트랙커"
-
-#: MainWindow~torrentUploadedCol.Text
-#, csharp-format
-msgid "Uploaded"
-msgstr "업로드"
-
-#: MainWindow~trackersAnnounceUrlCol.Text
-#, csharp-format
-msgid "Announce URL"
-msgstr "Announce 주소"
-
-#: MainWindow~trackersDownloadedCol.Text
-#, csharp-format
-msgid "Downloaded"
-msgstr ""
 
 #: MainWindow~trackersTabPage.Text
 #: TorrentPropertiesDialog~tabTrackers.Text
 #, csharp-format
 msgid "Trackers"
 msgstr "트랙커"
-
-#: MainWindow~trackersTierCol.Text
-#, csharp-format
-msgid "Tier"
-msgstr "순서"
-
-#: MainWindow~trackersUpdateInCol.Text
-#, csharp-format
-msgid "Update In"
-msgstr ""
 
 #: MainWindow~viewToolStripMenuItem.Text
 #, csharp-format
@@ -1289,11 +1214,6 @@ msgstr "오류"
 msgid "Failed request"
 msgstr "요청 실패"
 
-#: OtherStrings~FeedExists
-#, csharp-format
-msgid "Feed exists"
-msgstr ""
-
 #: OtherStrings~GeoipInitError
 #, csharp-format
 msgid "GeoIP init error ({0})"
@@ -1348,11 +1268,6 @@ msgstr "클립보드로 등록정보 객체 복사"
 #, csharp-format
 msgid "Input accepted"
 msgstr "입력 됨"
-
-#: OtherStrings~InvalidRPCLocation
-#, csharp-format
-msgid "Invalid RPC location"
-msgstr ""
 
 #: OtherStrings~Kilobyte
 #, csharp-format
@@ -1569,11 +1484,6 @@ msgstr "모두 선택"
 msgid "5 sec|10 sec|30 sec|5 min"
 msgstr "5 초|10 초|30 초|5 분"
 
-#: OtherStrings~TerabyteShort
-#, csharp-format
-msgid "TB"
-msgstr ""
-
 #: OtherStrings~TheTorrentHasFinishedDownloading
 #, csharp-format
 msgid "This torrent is now complete"
@@ -1589,21 +1499,6 @@ msgstr ""
 msgid "Torrents"
 msgstr "토런트 "
 
-#: OtherStrings~TotalDoneValidSize
-#, csharp-format
-msgid "{0} ({1} done) ({2} valid)"
-msgstr ""
-
-#: OtherStrings~TotalDoneValidTotalSize
-#, csharp-format
-msgid "{0} ({1} done) ({2} valid) ({3} total)"
-msgstr ""
-
-#: OtherStrings~UnableRunPlink
-#, csharp-format
-msgid "Unable to run plink"
-msgstr ""
-
 #: OtherStrings~UnableToOpen
 #, csharp-format
 msgid "Unable to open"
@@ -1613,16 +1508,6 @@ msgstr "열기 불가능"
 #, csharp-format
 msgid "Unable to parse the server response"
 msgstr "알 수 없는 서버 응답"
-
-#: OtherStrings~UnitFactors
-#, csharp-format
-msgid "Byte|Kilobyte|Megabyte|Gigabyte|Terabyte"
-msgstr ""
-
-#: OtherStrings~UnixPathExists
-#, csharp-format
-msgid "Unix path exists"
-msgstr ""
 
 #: OtherStrings~Unknown
 #, csharp-format
@@ -1694,11 +1579,6 @@ msgstr "{0}/{1} 접속됨"
 msgid "Yes"
 msgstr "예"
 
-#: RemoteSettingsDialog~LpdEnabledCheckBox.Text
-#, csharp-format
-msgid "Enable Local Peer Discovery"
-msgstr ""
-
 #: RemoteSettingsDialog~PEXcheckBox.Text
 #, csharp-format
 msgid "Enable Peer Exchange"
@@ -1738,11 +1618,6 @@ msgstr "선호"
 #, csharp-format
 msgid "required"
 msgstr "강제"
-
-#: RemoteSettingsDialog~incompleteToCheckBox.Text
-#, csharp-format
-msgid "Incomplete download to:"
-msgstr ""
 
 #: RemoteSettingsDialog~label1.Text
 #, csharp-format
@@ -1880,11 +1755,6 @@ msgstr "활성 시간"
 msgid "Session Count"
 msgstr "세션 수"
 
-#: StatsDialog~unitFactorLabel.Text
-#, csharp-format
-msgid "Unit factor:"
-msgstr ""
-
 #: StatsDialog~uploadedBytesLabel1.Text
 #: StatsDialog~uploadedBytesLabel2.Text
 #, csharp-format
@@ -1908,7 +1778,7 @@ msgstr ""
 
 #: TorrentLoadDialog~OkButton.Text
 #: TorrentPropertiesDialog~button1.Text
-#: UriPromptWindow~OkButton.Text
+#: UriPromptWindow~button1.Text
 #, csharp-format
 msgid "OK"
 msgstr "확인"
@@ -2003,12 +1873,7 @@ msgstr "최대 업속도 제한:"
 msgid "Upload by URL"
 msgstr "URL로 토런트 추가"
 
-#: UriPromptWindow~UseTorrentLoadDialogCheckBox.Text
-#, csharp-format
-msgid "Set torrent options before upload"
-msgstr ""
-
-#: UriPromptWindow~toolStripStatusLabel.Text
+#: UriPromptWindow~toolStripStatusLabel1.Text
 #, csharp-format
 msgid "Waiting for URL..."
 msgstr "URL 입력을 기다리는 중..."

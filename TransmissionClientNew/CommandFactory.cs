@@ -55,7 +55,7 @@ namespace TransmissionRemoteDotnet
 
         public static TransmissionWebClient RequestAsync(JsonObject data, bool allowRecursion)
         {
-            TransmissionWebClient wc = new TransmissionWebClient(true, true);
+            TransmissionWebClient wc = new TransmissionWebClient(true);
             byte[] bdata = GetBytes(data.ToString());
             int r = requestid++;
 #if LOGRPC

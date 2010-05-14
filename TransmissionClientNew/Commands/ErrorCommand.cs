@@ -69,7 +69,7 @@ namespace TransmissionRemoteDotnet.Commmands
                 Program.UploadArgs = null;
                 if (!Program.Connected)
                 {
-                    form.UpdateStatus(this.StatusBarMessage, false);
+                    form.toolStripStatusLabel.Text = this.StatusBarMessage;
                     Program.Connected = false;
                     form.connectButton.Enabled = form.connectToolStripMenuItem.Enabled = true;
                     ShowErrorBox(this.title, this.body);
@@ -81,12 +81,12 @@ namespace TransmissionRemoteDotnet.Commmands
                 else if (++Program.DaemonDescriptor.FailCount > Program.Settings.Current.RetryLimit && Program.Settings.Current.RetryLimit >= 0)
                 {
                     Program.Connected = false;
-                    form.UpdateStatus(OtherStrings.DisconnectedExceeded, false);
+                    form.toolStripStatusLabel.Text = OtherStrings.DisconnectedExceeded;
                     ShowErrorBox(this.title, this.body);
                 }
                 else
                 {
-                    form.UpdateStatus(String.Format("{0} #{1}: {2}", OtherStrings.FailedRequest, Program.DaemonDescriptor.FailCount, this.StatusBarMessage), false);
+                    form.toolStripStatusLabel.Text = String.Format("{0} #{1}: {2}", OtherStrings.FailedRequest, Program.DaemonDescriptor.FailCount, this.StatusBarMessage);
                 }
                 Program.Log(this.title, this.body);
             }

@@ -28,9 +28,9 @@ namespace TransmissionRemoteDotnet.Settings
         public override bool Equals(object obj)
         {
             if (obj is SambaShareMappings)
-                return UnixPathPrefix.StartsWith((obj as SambaShareMappings).UnixPathPrefix) || (obj as SambaShareMappings).UnixPathPrefix.StartsWith(UnixPathPrefix);
+                return UnixPathPrefix.Equals((obj as SambaShareMappings).UnixPathPrefix);
             else if (obj is string)
-                return UnixPathPrefix.StartsWith(obj as string) || (obj as string).StartsWith(UnixPathPrefix);
+                return UnixPathPrefix.Equals(obj as string);
             else
                 return false;
         }

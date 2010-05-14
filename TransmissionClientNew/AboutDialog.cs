@@ -43,7 +43,7 @@ namespace TransmissionRemoteDotnet
             this.tableLayoutPanel.ColumnStyles[0].Width = this.labelProductName.Width + 8;
             LinkLabel.Link hl = new LinkLabel.Link();
             hl.Description = "desc";
-            hl.LinkData = hl.Name = "http://code.google.com/p/transmission-remote-dotnet";
+            hl.LinkData = hl.Name  = "http://code.google.com/p/transmission-remote-dotnet";
             hl.Start = labelHomepageLink.Text.Length + 1;
             hl.Length = hl.Name.Length;
             labelHomepageLink.Text += " " + hl.Name;
@@ -88,7 +88,7 @@ namespace TransmissionRemoteDotnet
 
         #region Assembly Attribute Accessors
 
-        public static string AssemblyTitle
+        public string AssemblyTitle
         {
             get
             {
@@ -105,15 +105,7 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        public static string AssemblyLocation
-        {
-            get
-            {
-                return Assembly.GetExecutingAssembly().Location;
-            }
-        }
-
-        public static Version AssemblyVersion
+        public Version AssemblyVersion
         {
             get
             {
@@ -121,7 +113,7 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        public static string AssemblyDescription
+        public string AssemblyDescription
         {
             get
             {
@@ -134,7 +126,7 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        public static string AssemblyProduct
+        public string AssemblyProduct
         {
             get
             {
@@ -147,7 +139,7 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        public static string AssemblyCopyright
+        public string AssemblyCopyright
         {
             get
             {
@@ -160,7 +152,7 @@ namespace TransmissionRemoteDotnet
             }
         }
 
-        public static string AssemblyCompany
+        public string AssemblyCompany
         {
             get
             {

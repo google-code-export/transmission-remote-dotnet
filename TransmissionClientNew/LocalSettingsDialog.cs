@@ -20,13 +20,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using Jayrock.Json;
-using TransmissionRemoteDotnet.CustomControls;
 using TransmissionRemoteDotnet.Settings;
+using System.IO;
 
 namespace TransmissionRemoteDotnet
 {
@@ -53,7 +51,6 @@ namespace TransmissionRemoteDotnet
 
             PortField.ValueChanged += new EventHandler(Field_ValueChanged);
             RefreshRateValue.ValueChanged += new EventHandler(Field_ValueChanged);
-            RefreshRateTrayValue.ValueChanged += new EventHandler(Field_ValueChanged);
             RetryLimitValue.ValueChanged += new EventHandler(Field_ValueChanged);
             ProxyPortField.ValueChanged += new EventHandler(Field_ValueChanged);
 
@@ -65,16 +62,13 @@ namespace TransmissionRemoteDotnet
 
             AddShareButton.Click += new EventHandler(Field_ValueChanged);
             RemoveShareButton.Click += new EventHandler(Field_ValueChanged);
-            for (int i = 0; i < MinToTrayCheckBox.Text.Length; i++)
-                TrayGroupBox.Text += "  ";
         }
 
-        public void SetImageNumbers(int toolbar, int state, int infopanel, int tray)
+        public void SetImageNumbers(int toolbar, int state, int infopanel)
         {
             toolbarImageBrowse.ImageNumber = toolbar;
             stateImageBrowse.ImageNumber = state;
             infopanelImageBrowse.ImageNumber = infopanel;
-            trayImageBrowse.ImageNumber = tray;
         }
 
         private void LocalSettingsDialog_Load(object sender, EventArgs e)
@@ -95,7 +89,7 @@ namespace TransmissionRemoteDotnet
         private void LoadSettings()
         {
             LocalSettings sett = Program.Settings;
-            removeServerToolStripMenuItem.Enabled = removeServerButton.Enabled = tabServerSettings.Enabled = false;
+            removeServerToolStripMenuItem.Enabled = tabServerSettings.Enabled = false;
             listServers.Items.Clear();
             AutoConnectComboBox.Items.Clear();
             AutoConnectComboBox.Items.Add("-");
@@ -111,19 +105,13 @@ namespace TransmissionRemoteDotnet
                 if (s.Key.Equals(sett.CurrentProfile))
                     CurrentProfileComboBox.SelectedIndex = c;
             }
-            listRssFeeds.Items.Clear();
-            foreach (KeyValuePair<string, string> s in sett.RssFeeds)
-            {
-                listRssFeeds.Items.Add(new ListViewItem(new string[] { s.Key, s.Value })).Name = s.Key;
-            }
             try { defaultActionComboBox.SelectedIndex = sett.DefaultDoubleClickAction; }
             catch { }
             notificationOnCompletionCheckBox.Enabled = notificationOnAdditionCheckBox.Enabled
-                = minimizeOnCloseCheckBox.Enabled = ColorTrayIconCheckBox.Enabled
-                = MinToTrayCheckBox.Checked = sett.MinToTray;
+                = minimizeOnCloseCheckBox.Enabled = MinToTrayCheckBox.Checked
+                = sett.MinToTray;
             notificationOnAdditionCheckBox.Checked = sett.StartedBalloon;
             notificationOnCompletionCheckBox.Checked = sett.CompletedBaloon;
-            ColorTrayIconCheckBox.Checked = sett.ColorTray;
             minimizeOnCloseCheckBox.Checked = sett.MinOnClose;
             UploadPromptCheckBox.Checked = sett.UploadPrompt;
             AutoCheckUpdateCheckBox.Checked = sett.AutoCheckupdate;
@@ -134,8 +122,6 @@ namespace TransmissionRemoteDotnet
             stateImageBrowse.FileName = sett.StateImagePath;
             infopanelImageBrowse.FileName = sett.InfopanelImagePath;
             toolbarImageBrowse.FileName = sett.ToolbarImagePath;
-            trayImageBrowse.FileName = sett.TrayImagePath;
-            StartOnSystemCheckBox.Checked = Util.IsAutoStartEnabled(AboutDialog.AssemblyTitle, AboutDialog.AssemblyLocation);
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -151,10 +137,9 @@ namespace TransmissionRemoteDotnet
         private void SaveSettings()
         {
             LocalSettings sett = Program.Settings;
-            sett.MinToTray = MinToTrayCheckBox.Checked;
+            Program.Form.notifyIcon.Visible = sett.MinToTray = MinToTrayCheckBox.Checked;
             sett.StartedBalloon = notificationOnAdditionCheckBox.Checked;
             sett.CompletedBaloon = notificationOnCompletionCheckBox.Checked;
-            sett.ColorTray = ColorTrayIconCheckBox.Checked;
             sett.MinOnClose = minimizeOnCloseCheckBox.Checked;
             sett.UploadPrompt = UploadPromptCheckBox.Checked;
             sett.AutoCheckupdate = AutoCheckUpdateCheckBox.Checked;
@@ -165,7 +150,6 @@ namespace TransmissionRemoteDotnet
             sett.StateImagePath = stateImageBrowse.FileName;
             sett.InfopanelImagePath = infopanelImageBrowse.FileName;
             sett.ToolbarImagePath = toolbarImageBrowse.FileName;
-            sett.TrayImagePath = trayImageBrowse.FileName;
             sett.Servers.Clear();
             foreach (ListViewItem lvi in listServers.Items)
             {
@@ -181,16 +165,7 @@ namespace TransmissionRemoteDotnet
             else
                 sett.CurrentProfile = "";
             sett.DontSavePasswords = DontSavePasswordsCheckBox.Checked;
-            sett.RssFeeds.Clear();
-            foreach (ListViewItem lvi in listRssFeeds.Items)
-            {
-                sett.RssFeeds.Add(lvi.Name, lvi.SubItems[1].Text);
-            }
             sett.Commit();
-            if (StartOnSystemCheckBox.Checked)
-                Util.SetAutoStart(AboutDialog.AssemblyTitle, AboutDialog.AssemblyLocation);
-            else
-                Util.UnSetAutoStart(AboutDialog.AssemblyTitle);
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -239,7 +214,7 @@ namespace TransmissionRemoteDotnet
         private void MinToTrayCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             notificationOnAdditionCheckBox.Enabled = notificationOnCompletionCheckBox.Enabled
-                = minimizeOnCloseCheckBox.Enabled = ColorTrayIconCheckBox.Enabled = MinToTrayCheckBox.Checked;
+                = minimizeOnCloseCheckBox.Enabled = MinToTrayCheckBox.Checked;
         }
 
         private void PlinkPathButton_Click(object sender, EventArgs e)
@@ -291,6 +266,7 @@ namespace TransmissionRemoteDotnet
 
         private void RemoveShareButton_Click(object sender, EventArgs e)
         {
+            string itemText = listSambaShareMappings.SelectedItem.ToString();
             listSambaShareMappings.Items.RemoveAt(listSambaShareMappings.SelectedIndex);
         }
 
@@ -298,11 +274,7 @@ namespace TransmissionRemoteDotnet
         {
             string UnixPath = Path.GetDirectoryName(UnixPathPrefixTextBox.Text + "/").Replace(Path.DirectorySeparatorChar, '/');
             if (!listSambaShareMappings.Items.Contains(UnixPath))
-            {
                 listSambaShareMappings.Items.Add(new SambaShareMappings(UnixPath, SambaShareTextBox.Text));
-                UnixPathPrefixTextBox.Clear();
-                SambaShareTextBox.Clear();
-            }
             else
                 MessageBox.Show(OtherStrings.UnixPathExists, OtherStrings.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
@@ -327,7 +299,6 @@ namespace TransmissionRemoteDotnet
                 HostField.Text = ts.Host;
                 PortField.Value = ts.Port;
                 RefreshRateValue.Value = ts.RefreshRate;
-                RefreshRateTrayValue.Value = ts.RefreshRateTray;
                 UseSSLCheckBox.Checked = ts.UseSSL;
                 PassField.Enabled = UserField.Enabled = EnableAuthCheckBox.Checked = ts.AuthEnabled;
                 UserField.Text = ts.Username;
@@ -357,7 +328,7 @@ namespace TransmissionRemoteDotnet
                 AskToSaveServerIfNeed();
             }
             serversettingschanged = false;
-            removeServerToolStripMenuItem.Enabled = removeServerButton.Enabled = tabServerSettings.Enabled = (listServers.SelectedItems.Count > 0);
+            removeServerToolStripMenuItem.Enabled = tabServerSettings.Enabled = (listServers.SelectedItems.Count > 0);
         }
 
         private void AskToSaveServerIfNeed()
@@ -384,7 +355,6 @@ namespace TransmissionRemoteDotnet
             ts.Port = (int)PortField.Value;
             current.SubItems[2].Text = ts.Port.ToString();
             ts.RefreshRate = (int)RefreshRateValue.Value;
-            ts.RefreshRateTray = (int)RefreshRateTrayValue.Value;
             ts.UseSSL = UseSSLCheckBox.Checked;
             ts.Username = UserField.Text;
             ts.Password = !ClearPasswordCheckBox.Checked ? PassField.Text : null;
@@ -449,52 +419,6 @@ namespace TransmissionRemoteDotnet
         private void CurrentProfileComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             SaveAndConnectButton.Enabled = CurrentProfileComboBox.SelectedIndex != -1;
-        }
-
-        private void FeedNameTextBox_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                Uri u = new Uri(FeedUrlTextBox.Text);
-                AddFeedButton.Enabled = FeedNameTextBox.Text.Length > 0;
-            }
-            catch
-            {
-                AddFeedButton.Enabled = false;
-            }
-        }
-
-        private void AddFeedButton_Click(object sender, EventArgs e)
-        {
-            string FeedName = FeedNameTextBox.Text;
-            if (!listRssFeeds.Items.ContainsKey(FeedName))
-            {
-                listRssFeeds.Items.Add(new ListViewItem(new string[] { FeedName, FeedUrlTextBox.Text })).Name = FeedName;
-                FeedNameTextBox.Clear();
-                FeedUrlTextBox.Clear();
-            }
-            else
-                MessageBox.Show(OtherStrings.FeedExists, OtherStrings.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
-        private void listRssFeeds_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            RemoveFeedButton.Enabled = listRssFeeds.SelectedItems.Count > 0;
-        }
-
-        private void listRssFeeds_DoubleClick(object sender, EventArgs e)
-        {
-            if (listRssFeeds.SelectedItems.Count > 0)
-            {
-                ListViewItem l = listRssFeeds.SelectedItems[0];
-                FeedNameTextBox.Text = l.Text;
-                FeedUrlTextBox.Text = l.SubItems[1].Text;
-            }
-        }
-
-        private void RemoveFeedButton_Click(object sender, EventArgs e)
-        {
-            listRssFeeds.Items.Remove(listRssFeeds.SelectedItems[0]);
         }
     }
 }

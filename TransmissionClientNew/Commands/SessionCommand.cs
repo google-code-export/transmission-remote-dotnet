@@ -51,7 +51,7 @@ namespace TransmissionRemoteDotnet.Commmands
         public SessionCommand(JsonObject response, WebHeaderCollection headers)
         {
             TransmissionDaemonDescriptor descriptor = new TransmissionDaemonDescriptor();
-            JsonObject arguments = (JsonObject)response[ProtocolConstants.KEY_ARGUMENTS];
+            JsonObject arguments = (JsonObject)response["arguments"];
             if (arguments.Contains("version"))
             {
                 ParseVersionAndRevisionResponse((string)arguments["version"], descriptor);
@@ -104,7 +104,7 @@ namespace TransmissionRemoteDotnet.Commmands
                     form.RefreshIfNotRefreshing();
                     if (Program.UploadArgs != null)
                     {
-                        form.Upload(Program.UploadArgs, Program.UploadPrompt);
+                        form.Upload(Program.UploadArgs);
                         Program.UploadArgs = null;
                     }
                 }
