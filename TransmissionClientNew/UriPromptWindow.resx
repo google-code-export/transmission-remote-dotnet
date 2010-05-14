@@ -282,6 +282,6 @@
     <value>UriPromptWindow</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.CultureForm, Transmission Remote, Version=3.22.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.CultureForm, Transmission Remote, Version=3.22.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>
