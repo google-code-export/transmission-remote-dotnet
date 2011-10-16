@@ -349,6 +349,15 @@ namespace TransmissionRemoteDotnet {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Queued to download.
+        /// </summary>
+        internal static string DownloadWait {
+            get {
+                return ResourceManager.GetString("DownloadWait", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Empty file.
         /// </summary>
         internal static string EmptyFile {
@@ -880,6 +889,15 @@ namespace TransmissionRemoteDotnet {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Queued.
+        /// </summary>
+        internal static string Queued {
+            get {
+                return ResourceManager.GetString("Queued", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reannounce.
         /// </summary>
         internal static string Reannounce {
@@ -966,6 +984,15 @@ namespace TransmissionRemoteDotnet {
         internal static string Seeding {
             get {
                 return ResourceManager.GetString("Seeding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Queued to seed.
+        /// </summary>
+        internal static string SeedWait {
+            get {
+                return ResourceManager.GetString("SeedWait", resourceCulture);
             }
         }
         

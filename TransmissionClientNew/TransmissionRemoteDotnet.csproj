@@ -1110,6 +1110,7 @@
     <None Include="Resources\yellow.ico" />
     <None Include="Resources\red.ico" />
     <None Include="Resources\green.ico" />
+    <None Include="Resources\queue16.png" />
     <Content Include="transmission_large.ico" />
   </ItemGroup>
   <ItemGroup>

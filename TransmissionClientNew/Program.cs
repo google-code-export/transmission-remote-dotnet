@@ -227,9 +227,16 @@ namespace TransmissionRemoteDotnet
                 if (value.Equals(connected))
                     return;
                 connected = value;
-                if (!connected)
+                if (connected)
                 {
-                    form.torrentListView.Items.Clear();
+                    ProtocolConstants.SetupStatusValues(Program.DaemonDescriptor.RpcVersion >= 14);
+                }
+                else
+                {
+                    if (form.InvokeRequired)
+                        form.Invoke((MethodInvoker)delegate { form.torrentListView.Items.Clear(); });
+                    else
+                        form.torrentListView.Items.Clear(); //cant access ui thread as we are on a worker/events thread if power events sets connected state
                     torrentIndex.Clear();
                     Program.DaemonDescriptor.UpdateSerial = 0;
                 }

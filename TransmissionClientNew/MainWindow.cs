@@ -110,6 +110,7 @@ namespace TransmissionRemoteDotnet
             defaultstateimages.Add(global::TransmissionRemoteDotnet.Properties.Resources.player_reload16);
             defaultstateimages.Add(global::TransmissionRemoteDotnet.Properties.Resources.warning16);
             defaultstateimages.Add(global::TransmissionRemoteDotnet.Properties.Resources.incomplete16);
+            defaultstateimages.Add(global::TransmissionRemoteDotnet.Properties.Resources.queue16);
             stateListBoxImageList.Images.AddRange(defaultstateimages.ToArray());
             stateListBoxImageList.Images.Add(tabControlImageList.Images[1]);
             List<ToolStripBitmap> initialtrayicons = new List<ToolStripBitmap>()
@@ -243,6 +244,7 @@ namespace TransmissionRemoteDotnet
             stateListBox.Items.Add(new GListBoxItem(OtherStrings.Incomplete, 7));
             stateListBox.Items.Add(new GListBoxItem(OtherStrings.Seeding, 4));
             stateListBox.Items.Add(new GListBoxItem(OtherStrings.Broken, 6));
+            stateListBox.Items.Add(new GListBoxItem(OtherStrings.Queued, 8));
             stateListBox.Items.Add(new GListBoxItem(""));
             stateListBox.EndUpdate();
         }
@@ -584,13 +586,13 @@ namespace TransmissionRemoteDotnet
                 speedGraph.RemoveLine("Upload");
                 lock (this.stateListBox)
                 {
-                    for (int i = 0; i < 8; i++)
+                    for (int i = 0; i < 9; i++)
                     {
                         ((GListBoxItem)stateListBox.Items[i]).Counter = 0;
                     }
-                    if (this.stateListBox.Items.Count > 8)
+                    if (this.stateListBox.Items.Count > 9)
                     {
-                        for (int i = this.stateListBox.Items.Count - 1; i > 8; i--)
+                        for (int i = this.stateListBox.Items.Count - 1; i > 9; i--)
                         {
                             stateListBox.Items.RemoveAt(i);
                         }
@@ -664,9 +666,9 @@ namespace TransmissionRemoteDotnet
             {
                 foreach (KeyValuePair<string, Torrent> pair in Program.TorrentIndex)
                 {
-                    if (IfTorrentStatus(pair.Value, ProtocolConstants.STATUS_DOWNLOADING))
+                    if (IfTorrentStatus(pair.Value, ProtocolConstants.STATUS_DOWNLOAD))
                         downloadcount++;
-                    if (IfTorrentStatus(pair.Value, ProtocolConstants.STATUS_SEEDING))
+                    if (IfTorrentStatus(pair.Value, ProtocolConstants.STATUS_SEED))
                         seedcount++;
                 }
             }
@@ -1259,7 +1261,7 @@ namespace TransmissionRemoteDotnet
                     break;
                 case 2:
                     t = (Torrent)torrentListView.SelectedItems[0];
-                    if (IfTorrentStatus(t, ProtocolConstants.STATUS_PAUSED))
+                    if (IfTorrentStatus(t, ProtocolConstants.STATUS_STOPPED))
                         startTorrentButton.PerformClick();
                     else
                         pauseTorrentButton.PerformClick();
@@ -1341,11 +1343,11 @@ namespace TransmissionRemoteDotnet
                         selectedSize += t.TotalSize;
                         selectedDownloadedSize += t.HaveTotal;
                     }
-                    if (t.StatusCode == ProtocolConstants.STATUS_DOWNLOADING)
+                    if (t.StatusCode == ProtocolConstants.STATUS_DOWNLOAD)
                     {
                         totalDownloading++;
                     }
-                    else if (t.StatusCode == ProtocolConstants.STATUS_SEEDING)
+                    else if (t.StatusCode == ProtocolConstants.STATUS_SEED)
                     {
                         totalSeeding++;
                     }
@@ -1507,15 +1509,15 @@ namespace TransmissionRemoteDotnet
                     torrentListView.ListViewItemSorter = null;
                     if (stateListBox.SelectedIndex == 1)
                     {
-                        FilterTorrent(IfTorrentStatus, ProtocolConstants.STATUS_DOWNLOADING);
+                        FilterTorrent(IfTorrentStatus, ProtocolConstants.STATUS_DOWNLOAD);
                     }
                     else if (stateListBox.SelectedIndex == 2)
                     {
-                        FilterTorrent(IfTorrentStatus, ProtocolConstants.STATUS_PAUSED);
+                        FilterTorrent(IfTorrentStatus, ProtocolConstants.STATUS_STOPPED);
                     }
                     else if (stateListBox.SelectedIndex == 3)
                     {
-                        FilterTorrent(IfTorrentStatus, (short)(ProtocolConstants.STATUS_CHECKING | ProtocolConstants.STATUS_WAITING_TO_CHECK));
+                        FilterTorrent(IfTorrentStatus, (short)(ProtocolConstants.STATUS_CHECK | ProtocolConstants.STATUS_CHECK_WAIT));
                     }
                     else if (stateListBox.SelectedIndex == 4)
                     {
@@ -1527,15 +1529,19 @@ namespace TransmissionRemoteDotnet
                     }
                     else if (stateListBox.SelectedIndex == 6)
                     {
-                        FilterTorrent(IfTorrentStatus, ProtocolConstants.STATUS_SEEDING);
+                        FilterTorrent(IfTorrentStatus, ProtocolConstants.STATUS_SEED);
                     }
                     else if (stateListBox.SelectedIndex == 7)
                     {
                         FilterTorrent(TorrentHasError, null);
                     }
-                    else if (stateListBox.SelectedIndex > 8)
+                    else if (stateListBox.SelectedIndex == 8)
                     {
                         FilterTorrent(UsingTracker, stateListBox.SelectedItem.ToString());
+                    }
+                    else if (stateListBox.SelectedIndex > 9)
+                    {
+                        FilterTorrent(IfTorrentStatus, (short)(ProtocolConstants.STATUS_DOWNLOAD_WAIT | ProtocolConstants.STATUS_SEED_WAIT));
                     }
                     else
                     {
@@ -1663,6 +1669,7 @@ namespace TransmissionRemoteDotnet
             int incomplete = 0;
             int seeding = 0;
             int broken = 0;
+            int queued = 0;
             Dictionary<string, int> trackers = new Dictionary<string, int>();
             lock (Program.TorrentIndex)
             {
@@ -1681,19 +1688,23 @@ namespace TransmissionRemoteDotnet
                     {
                         broken++;
                     }
-                    if (statusCode == ProtocolConstants.STATUS_DOWNLOADING)
+                    if (statusCode == ProtocolConstants.STATUS_DOWNLOAD)
                     {
                         downloading++;
                     }
-                    else if (statusCode == ProtocolConstants.STATUS_PAUSED)
+                    else if (statusCode == ProtocolConstants.STATUS_STOPPED)
                     {
                         paused++;
                     }
-                    else if (statusCode == ProtocolConstants.STATUS_SEEDING)
+                    else if (statusCode == ProtocolConstants.STATUS_DOWNLOAD_WAIT || statusCode == ProtocolConstants.STATUS_SEED_WAIT)
+                    {
+                        queued++;
+                    }
+                    else if (statusCode == ProtocolConstants.STATUS_SEED)
                     {
                         seeding++;
                     }
-                    else if (statusCode == ProtocolConstants.STATUS_WAITING_TO_CHECK || statusCode == ProtocolConstants.STATUS_CHECKING)
+                    else if (statusCode == ProtocolConstants.STATUS_CHECK_WAIT || statusCode == ProtocolConstants.STATUS_CHECK)
                     {
                         checking++;
                     }
@@ -1716,6 +1727,7 @@ namespace TransmissionRemoteDotnet
             SetStateCounter(5, incomplete);
             SetStateCounter(6, seeding);
             SetStateCounter(7, broken);
+            SetStateCounter(8, queued);
             foreach (KeyValuePair<string, int> pair in trackers)
             {
                 GListBoxItem item = stateListBox.FindItem(pair.Key);
@@ -1867,7 +1879,7 @@ namespace TransmissionRemoteDotnet
             statusLabel.Text = t.Status;
             labelForErrorLabel.Visible = errorLabel.Visible = !(errorLabel.Text = t.ErrorString).Equals("");
             RefreshElapsedTimer();
-            peersListView.Enabled = t.StatusCode != ProtocolConstants.STATUS_PAUSED;
+            peersListView.Enabled = t.StatusCode != ProtocolConstants.STATUS_STOPPED;
             if (t.Peers != null && peersListView.Enabled)
             {
                 PeerListViewItem.CurrentUpdateSerial++;
