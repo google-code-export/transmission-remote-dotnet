@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace TransmissionRemoteDotnet
 {
@@ -177,6 +178,11 @@ namespace TransmissionRemoteDotnet
         private void SetRedraw(int Param)
         {
             SendMessage(this.Handle, WM_SETREDRAW, new IntPtr(Param), IntPtr.Zero);
+        }
+
+        private void commentField_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            Process.Start(e.LinkText);
         }
     }
 }

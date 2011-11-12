@@ -171,6 +171,9 @@
   <data name="commentField.TabIndex" type="System.Int32, mscorlib">
     <value>41</value>
   </data>
+  <data name="commentField.Text" xml:space="preserve">
+    <value />
+  </data>
   <data name="commentField.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -178,7 +181,7 @@
     <value>commentField</value>
   </data>
   <data name="&gt;&gt;commentField.Type" xml:space="preserve">
-    <value>TransmissionRemoteDotnet.SelectableLabel, Transmission Remote, Version=3.24.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>TransmissionRemoteDotnet.SelectableLinkLabel, Transmission Remote, Version=3.24.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;commentField.Parent" xml:space="preserve">
     <value>generalTableLayoutPanel</value>

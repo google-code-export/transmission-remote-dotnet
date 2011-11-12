@@ -130,6 +130,9 @@
     <Compile Include="CustomControls\RefreshingListBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CustomControls\SelectableLinkLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="GeneralTorrentInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
