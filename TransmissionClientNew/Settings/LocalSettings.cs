@@ -498,7 +498,7 @@ namespace TransmissionRemoteDotnet.Settings
         {
             get
             {
-                return !Username.Equals("");
+                return !Username.Equals("") || !Password.Equals("");
             }
         }
 
