@@ -97,7 +97,7 @@ namespace TransmissionRemoteDotnet
                 base.SubItems.Add("");
             string name = (string)file[ProtocolConstants.FIELD_NAME];
             this.FileName = Toolbox.TrimPath(name);
-            base.SubItems[0].Tag = name.Length != this.FileName.Length;
+            base.SubItems[0].Tag = name;
             this.FileIndex = index;
             string[] split = this.Name.Split('.');
             if (split.Length > 1)

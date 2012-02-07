@@ -528,12 +528,9 @@ namespace TransmissionRemoteDotnet
             set;
         }
 
-        public string SambaLocation
+        public string SambaLocation(bool thefolder)
         {
-            get
-            {
-                return Toolbox.BuildSambaLocation(Program.Settings.Current.SambaShareMappings, this.DownloadDir, this.TorrentName, this.Files.Count);
-            }
+            return Toolbox.BuildSambaLocation(Program.Settings.Current.SambaShareMappings, this.DownloadDir, thefolder, this.TorrentName, this.Files.Count);
         }
 
         public int Id

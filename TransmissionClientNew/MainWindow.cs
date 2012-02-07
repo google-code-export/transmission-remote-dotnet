@@ -338,6 +338,14 @@ namespace TransmissionRemoteDotnet
 
             this.torrentSelectionMenu.MenuItems.Add(OtherStrings.CopyAsCSV, this.TorrentsToClipboardHandler);
             //this.torrentSelectionMenu.MenuItems.Add(OtherStrings.InfoObjectToClipboard, this.copyInfoObjectToClipboardToolStripMenuItem_Click);
+            this.torrentSelectionMenu.Popup += delegate(object sender, EventArgs e)
+            {
+                Torrent t = (sender as ContextMenu).Tag as Torrent;
+                openNetworkShareDirToolStripMenuItem.Enabled = openNetworkShareDirMenuItem.Enabled = openNetworkShareButton.Enabled
+                    = t.HaveTotal > 0 && t.SambaLocation(true) != null;
+                openNetworkShareToolStripMenuItem.Enabled = openNetworkShareMenuItem.Enabled 
+                    = openNetworkShareButton.Enabled && t.Files.Count >= 1 && t.Files[0].BytesCompleted == t.Files[0].FileSize;
+            };
         }
 
         private void bandwidth_Opening(object sender, EventArgs e)
@@ -1330,12 +1338,6 @@ namespace TransmissionRemoteDotnet
                     = filesTimer.Enabled = downloadProgressLabel.Enabled
                     = remoteCmdButton.Enabled = one;
             generalTorrentInfo.EndUpdate();
-            openNetworkShareButton.Enabled = openNetworkShareDirToolStripMenuItem.Enabled = one && t.HaveTotal > 0 && t.SambaLocation != null;
-            openNetworkShareToolStripMenuItem.Enabled = openNetworkShareButton.Enabled && t.Files.Count == 1 && t.Files[0].BytesCompleted == t.Files[0].FileSize;
-            if (openNetworkShareMenuItem != null)
-                openNetworkShareMenuItem.Enabled = openNetworkShareToolStripMenuItem.Enabled;
-            if (openNetworkShareDirMenuItem != null)
-                openNetworkShareDirMenuItem.Enabled = openNetworkShareDirToolStripMenuItem.Enabled;
         }
 
         private void torrentListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -1345,7 +1347,7 @@ namespace TransmissionRemoteDotnet
             lock (torrentListView)
             {
                 if (oneOrMore = torrentListView.SelectedItems.Count > 0)
-                    t = (Torrent)torrentListView.SelectedItems[0];
+                    this.torrentSelectionMenu.Tag = t = (Torrent)torrentListView.SelectedItems[0];
                 one = torrentListView.SelectedItems.Count == 1;
             }
             torrentListView.ContextMenu = oneOrMore ? this.torrentSelectionMenu : this.noTorrentSelectionMenu;
@@ -2448,7 +2450,7 @@ namespace TransmissionRemoteDotnet
             if (torrentListView.SelectedItems.Count == 1)
             {
                 Torrent t = (Torrent)torrentListView.SelectedItems[0];
-                string sambaPath = t.SambaLocation;
+                string sambaPath = t.SambaLocation(true);
                 if (sambaPath != null)
                 {
                     try
@@ -2468,12 +2470,12 @@ namespace TransmissionRemoteDotnet
             if (torrentListView.SelectedItems.Count == 1)
             {
                 Torrent t = (Torrent)torrentListView.SelectedItems[0];
-                string sambaPath = t.SambaLocation;
+                string sambaPath = t.SambaLocation(false);
                 if (sambaPath != null)
                 {
                     try
                     {
-                        BackgroundProcessStart(new ProcessStartInfo(sambaPath + "\\" + t.TorrentName));
+                        BackgroundProcessStart(new ProcessStartInfo(sambaPath));
                     }
                     catch (Exception ex)
                     {
@@ -2540,10 +2542,10 @@ namespace TransmissionRemoteDotnet
             if (filesListView.Enabled && torrentListView.SelectedItems.Count == 1 && filesListView.SelectedItems.Count == 1)
             {
                 Torrent t = (Torrent)torrentListView.SelectedItems[0];
-                string sambaShare = t.SambaLocation;
+                string sambaShare = t.SambaLocation(false);
                 if (sambaShare != null)
                 {
-                    BackgroundProcessStart(new ProcessStartInfo((bool)filesListView.SelectedItems[0].SubItems[0].Tag ? sambaShare + @"\" + filesListView.SelectedItems[0].SubItems[0].Text.Replace(@"/", @"\") : sambaShare));
+                    BackgroundProcessStart(new ProcessStartInfo(sambaShare + @"\" + filesListView.SelectedItems[0].SubItems[0].Text.Replace(@"/", @"\")));
                 }
             }
         }

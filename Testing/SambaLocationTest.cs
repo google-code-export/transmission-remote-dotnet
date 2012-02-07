@@ -78,7 +78,10 @@ namespace Testing
             int fcount = 3;
             string expected = @"\\server\torrent\testtorrent\";
             string actual;
-            actual = Toolbox.BuildSambaLocation(mappings, downloadDir, torrentname, fcount);
+            actual = Toolbox.BuildSambaLocation(mappings, downloadDir, false, torrentname, fcount);
+            Assert.AreEqual(expected, actual);
+            expected = @"\\server\torrent\";
+            actual = Toolbox.BuildSambaLocation(mappings, downloadDir, true, torrentname, fcount);
             Assert.AreEqual(expected, actual);
         }
 
@@ -97,7 +100,10 @@ namespace Testing
             int fcount = 1;
             string expected = @"\\server\torrent\";
             string actual;
-            actual = Toolbox.BuildSambaLocation(mappings, downloadDir, torrentname, fcount);
+            actual = Toolbox.BuildSambaLocation(mappings, downloadDir, false, torrentname, fcount);
+            Assert.AreEqual(expected, actual);
+            expected = @"\\server\torrent\";
+            actual = Toolbox.BuildSambaLocation(mappings, downloadDir, true, torrentname, fcount);
             Assert.AreEqual(expected, actual);
         }
         /// <summary>
@@ -115,7 +121,10 @@ namespace Testing
             int fcount = 3;
             string expected = @"\\server\torrent\foo\testtorrent\";
             string actual;
-            actual = Toolbox.BuildSambaLocation(mappings, downloadDir, torrentname, fcount);
+            actual = Toolbox.BuildSambaLocation(mappings, downloadDir, false, torrentname, fcount);
+            Assert.AreEqual(expected, actual);
+            expected = @"\\server\torrent\foo\";
+            actual = Toolbox.BuildSambaLocation(mappings, downloadDir, true, torrentname, fcount);
             Assert.AreEqual(expected, actual);
         }
 
@@ -134,7 +143,10 @@ namespace Testing
             int fcount = 1;
             string expected = @"\\server\torrent\foo\";
             string actual;
-            actual = Toolbox.BuildSambaLocation(mappings, downloadDir, torrentname, fcount);
+            actual = Toolbox.BuildSambaLocation(mappings, downloadDir, false, torrentname, fcount);
+            Assert.AreEqual(expected, actual);
+            expected = @"\\server\torrent\foo\";
+            actual = Toolbox.BuildSambaLocation(mappings, downloadDir, true, torrentname, fcount);
             Assert.AreEqual(expected, actual);
         }
     }

@@ -594,10 +594,10 @@ namespace TransmissionRemoteDotnet
                 imageList.Images.SetKeyName(i, keys[i]);
         }
 
-        public static string BuildSambaLocation(Dictionary<string, string> mappings, string downloadDir, string torrentname, int fcount)
+        public static string BuildSambaLocation(Dictionary<string, string> mappings, string downloadDir, bool thefolder, string torrentname, int fcount)
         {
             if (!downloadDir.EndsWith("/")) downloadDir += "/";
-            string name = fcount > 1 ? torrentname + @"\" : "";
+            string name = !thefolder && fcount > 1 ? torrentname + @"\" : "";
             foreach (string key in mappings.Keys)
             {
                 if (downloadDir.StartsWith(key))
