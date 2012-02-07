@@ -341,10 +341,8 @@ namespace TransmissionRemoteDotnet
             this.torrentSelectionMenu.Popup += delegate(object sender, EventArgs e)
             {
                 Torrent t = (sender as ContextMenu).Tag as Torrent;
-                openNetworkShareDirToolStripMenuItem.Enabled = openNetworkShareDirMenuItem.Enabled = openNetworkShareButton.Enabled
-                    = t.HaveTotal > 0 && t.SambaLocation(true) != null;
-                openNetworkShareToolStripMenuItem.Enabled = openNetworkShareMenuItem.Enabled 
-                    = openNetworkShareButton.Enabled && t.Files.Count >= 1 && t.Files[0].BytesCompleted == t.Files[0].FileSize;
+                openNetworkShareDirMenuItem.Enabled = openNetworkShareDirToolStripMenuItem.Enabled;
+                openNetworkShareMenuItem.Enabled = openNetworkShareToolStripMenuItem.Enabled;
             };
         }
 
@@ -1212,6 +1210,7 @@ namespace TransmissionRemoteDotnet
 
         public void FillfilesListView(Torrent t)
         {
+            openNetworkShareToolStripMenuItem.Enabled = openNetworkShareButton.Enabled && t.Files.Count >= 1 && t.Files[0].BytesCompleted == t.Files[0].FileSize;
             lock (filesListView)
             {
                 filesListView.BeginUpdate();
@@ -1296,6 +1295,7 @@ namespace TransmissionRemoteDotnet
             if (one)
             {
                 UpdateInfoPanel(true, t);
+                openNetworkShareDirToolStripMenuItem.Enabled = openNetworkShareButton.Enabled = t.HaveTotal > 0 && t.SambaLocation(true) != null;
                 if (t.Files.Count == 0)
                     Program.Form.SetupAction(CommandFactory.RequestAsync(Requests.FilesAndPriorities(t.Id)));
                 else
@@ -1331,6 +1331,7 @@ namespace TransmissionRemoteDotnet
                 generalTorrentInfo.errorVisible
                     = filesFilterLabel.Enabled = filesFilterButton.Enabled = filesFilterTextBox.Enabled
                     = filesListView.Enabled = peersListView.Enabled
+                    = openNetworkShareDirToolStripMenuItem.Enabled = openNetworkShareButton.Enabled
                     = trackersListView.Enabled = false;
             }
             generalTorrentInfo.Enabled
